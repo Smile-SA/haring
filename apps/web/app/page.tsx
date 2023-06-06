@@ -1,10 +1,5 @@
-import { Button, Header } from "ui";
+import { Button } from 'react-front-kit';
 
-export default function Page() {
-  return (
-    <>
-      <Header text="Web" />
-      <Button />
-    </>
-  );
+export default function Page(): JSX.Element {
+  return <Button label="Button" />;
 }

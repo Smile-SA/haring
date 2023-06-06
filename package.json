@@ -1,22 +1,45 @@
 {
+  "name": "front-kit",
+  "version": "0.0.0",
   "private": true,
+  "description": "Front Kit Monorepo",
+  "license": "MIT",
   "scripts": {
+    "prepare": "husky install",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write --ignore-unknown --ignore-path .gitignore .",
+    "changeset": "turbo run build lint test && changeset",
+    "version": "turbo run build lint test && changeset version",
+    "publish": "changeset publish"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.1",
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
     "@turbo/gen": "^1.9.7",
-    "eslint": "^7.32.0",
+    "eslint": "^8.42.0",
     "eslint-config-custom": "*",
-    "prettier": "^2.5.1",
-    "turbo": "^1.9.7"
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "turbo": "^1.9.7",
+    "typescript": "5.0.4"
   },
-  "name": "front-kit",
   "packageManager": "npm@8.19.2",
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown --ignore-path .gitignore",
+    "*.{js,jsx,ts,tsx}": "eslint --fix --max-warnings=0 --ignore-path .gitignore"
+  }
 }

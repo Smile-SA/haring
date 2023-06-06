@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+[ -n "$CI" ] && exit 0
+
+. "$(dirname -- "$0")/_/husky.sh"
+
+if [[ "$1" == "rebase" ]]
+then
+    $(dirname "$0")/post-merge
+fi

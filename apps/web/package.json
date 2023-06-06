@@ -1,6 +1,6 @@
 {
   "name": "web",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,7 +12,7 @@
     "next": "^13.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ui": "*"
+    "react-front-kit": "*"
   },
   "devDependencies": {
     "@types/node": "^17.0.12",
@@ -20,6 +20,6 @@
     "@types/react-dom": "^18.0.7",
     "eslint-config-custom": "*",
     "tsconfig": "*",
-    "typescript": "^4.5.3"
+    "typescript": "5.0.4"
   }
 }
