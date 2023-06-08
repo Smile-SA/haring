@@ -1,0 +1,16 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { {{pascalCase name}} as Cmp } from './{{pascalCase name}}';
+
+const meta = {
+  component: Cmp,
+  tags: ['autodocs'],
+  title: '{{path}}/{{pascalCase name}}',
+} satisfies Meta<typeof Cmp>;
+
+export default meta;
+type IStory = StoryObj<typeof meta>;
+
+export const {{pascalCase name}}: IStory = {
+  args: {},
+};

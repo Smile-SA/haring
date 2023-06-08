@@ -4,7 +4,6 @@ import { Select as Cmp } from './Select';
 
 const meta = {
   component: Cmp,
-  tags: ['autodocs'],
   title: '2-Mantine/Inputs/Select',
 } satisfies Meta<typeof Cmp>;
 
