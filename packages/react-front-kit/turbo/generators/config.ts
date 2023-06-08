@@ -7,14 +7,15 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
   plop.setGenerator('react-component', {
     actions: [
       {
-        path: 'src/{{pascalCase name}}/{{pascalCase name}}.tsx',
+        path: 'src/3-custom/{{pascalCase name}}/{{pascalCase name}}.tsx',
         templateFile: 'templates/component.hbs',
         type: 'add',
       },
       {
         path: 'src/index.tsx',
         pattern: /(\/\/ component exports)/g,
-        template: 'export * from "./{{pascalCase name}}/{{pascalCase name}}";',
+        template:
+          'export * from "./3-custom/{{pascalCase name}}/{{pascalCase name}}";',
         type: 'append',
       },
     ],

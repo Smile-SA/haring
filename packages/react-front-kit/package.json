@@ -29,7 +29,8 @@
     "email": "tonai59+github@gmail.com",
     "url": "https://github.com/tonai"
   },
-  "main": "./src/index.tsx",
+  "main": "./dist/index.tsx",
+  "module": "./src/index.tsx",
   "types": "./src/index.tsx",
   "scripts": {
     "prepare": "npm run build",
@@ -40,6 +41,9 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@mantine/core": "^6.0.13",
+    "@mantine/styles": "^6.0.13",
+    "@phosphor-icons/react": "^2.0.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

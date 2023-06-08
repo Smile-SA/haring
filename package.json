@@ -9,7 +9,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write --ignore-unknown --ignore-path .gitignore .",
+    "format": "prettier --write --ignore-unknown --ignore-path <(cat .gitignore .prettierignore) .",
     "changeset": "turbo run build lint test && changeset",
     "version": "turbo run build lint test && changeset version",
     "publish": "changeset publish"
@@ -39,7 +39,7 @@
     ]
   },
   "lint-staged": {
-    "*": "prettier --write --ignore-unknown --ignore-path .gitignore",
+    "*": "prettier --write --ignore-unknown --ignore-path <(cat .gitignore .prettierignore)",
     "*.{js,jsx,ts,tsx}": "eslint --fix --max-warnings=0 --ignore-path .gitignore"
   }
 }
