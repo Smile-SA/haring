@@ -3,22 +3,13 @@ import type {
   ChangeEventHandler,
   ElementType,
   FormEvent,
-  MouseEvent,
   MouseEventHandler,
   ReactNode,
 } from 'react';
 
-import {
-  Box,
-  CloseButton,
-  Flex,
-  Input,
-  Header as MantineHeader,
-  MantineProvider,
-  useMantineTheme,
-} from '@mantine/core';
+import { Flex, Header as MantineHeader } from '@mantine/core';
 import { useClickOutside } from '@mantine/hooks';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { HeaderSearch } from '../HeaderSearch/HeaderSearch';
 
@@ -49,22 +40,7 @@ export function Header(props: IHeaderProps): JSX.Element {
     ...headerProps
   } = props;
   const [opened, setOpened] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
   const header = useClickOutside(() => setOpened(false));
-  const theme = useMantineTheme();
-
-  useEffect(() => {
-    if (inputRef.current && opened) {
-      inputRef.current.focus();
-    }
-  }, [opened]);
-
-  function handleSearchClear(event: MouseEvent<HTMLButtonElement>): void {
-    onSearchClear?.(event);
-    if (inputRef.current && opened) {
-      inputRef.current.focus();
-    }
-  }
 
   return (
     <MantineHeader
@@ -97,38 +73,19 @@ export function Header(props: IHeaderProps): JSX.Element {
           {children}
         </Flex>
         <Flex align="center" gap="xs">
-          <HeaderSearch height={height} onChange={setOpened} opened={opened} />
+          <HeaderSearch
+            height={height}
+            onChange={onSearchChange}
+            onClear={onSearchClear}
+            onSubmit={onSearchSubmit}
+            onToggle={setOpened}
+            opened={opened}
+            theme={searchTheme}
+            value={searchValue}
+          />
           {right}
         </Flex>
       </Flex>
-      {Boolean(opened) && (
-        <MantineProvider theme={searchTheme ?? theme}>
-          <Box
-            p="30px 64px"
-            sx={(theme) => ({
-              background:
-                theme.colorScheme === 'dark' ? theme.black : theme.white,
-            })}
-          >
-            <form onSubmit={onSearchSubmit}>
-              <Input
-                ref={inputRef}
-                onChange={onSearchChange}
-                rightSection={
-                  <CloseButton
-                    aria-label="Clear"
-                    onClick={handleSearchClear}
-                    size="lg"
-                    variant="white"
-                  />
-                }
-                size="lg"
-                value={searchValue}
-              />
-            </form>
-          </Box>
-        </MantineProvider>
-      )}
     </MantineHeader>
   );
 }
