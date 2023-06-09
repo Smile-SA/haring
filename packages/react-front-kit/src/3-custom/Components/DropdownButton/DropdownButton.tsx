@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/sort-type-constituents */
 import type { MenuProps } from '@mantine/core';
-import type { FloatingPosition } from '@mantine/core/lib/Floating';
 import type { ReactNode } from 'react';
 
 import { Button, Menu } from '@mantine/core';
@@ -10,19 +8,6 @@ import { useState } from 'react';
 interface IDropdownButtonProps extends MenuProps {
   children?: ReactNode;
   label: string;
-  position?:
-    | 'top'
-    | 'right'
-    | 'bottom'
-    | 'left'
-    | 'top-start'
-    | 'right-start'
-    | 'bottom-start'
-    | 'left-start'
-    | 'top-end'
-    | 'right-end'
-    | 'bottom-end'
-    | 'left-end';
 }
 
 export function DropdownButton(props: IDropdownButtonProps): JSX.Element {
@@ -42,5 +27,5 @@ export function DropdownButton(props: IDropdownButtonProps): JSX.Element {
 }
 
 DropdownButton.defaultProps = {
-  position: 'bottom-start' as FloatingPosition,
+  position: 'bottom-start' as MenuProps['position'],
 };

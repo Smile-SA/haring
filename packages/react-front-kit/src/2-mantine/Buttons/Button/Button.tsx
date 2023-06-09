@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/sort-type-constituents */
 import type { ButtonProps } from '@mantine/core';
 
 import { Button as MantineButton } from '@mantine/core';

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/sort-type-constituents */
 import type { SwitchProps } from '@mantine/core';
 
 import { Switch as MantineSwitch } from '@mantine/core';

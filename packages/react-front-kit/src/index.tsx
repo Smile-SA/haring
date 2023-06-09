@@ -1,4 +1,6 @@
 // component exports
+export * from './3-custom/Components/CollapseButton/CollapseButton';
+export * from './3-custom/Components/SidebarMenu/SidebarMenu';
 export * from './3-custom/Components/HeaderSearch/HeaderSearch';
 export * from './3-custom/Components/DropdownButton/DropdownButton';
 export * from './3-custom/Components/Header/Header';

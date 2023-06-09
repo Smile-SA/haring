@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/sort-type-constituents */
 import type { ActionIconProps } from '@mantine/core';
 
 import { ActionIcon as MantineActionIcon } from '@mantine/core';

@@ -32,7 +32,6 @@ interface IHeaderProps extends Omit<HeaderProps, 'height' | 'left' | 'right'> {
   right?: ReactNode;
   searchTheme?: MantineThemeOverride;
   searchValue?: string;
-  withBorder?: boolean;
 }
 
 export function Header(props: IHeaderProps): JSX.Element {
