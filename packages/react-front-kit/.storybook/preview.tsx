@@ -3,7 +3,7 @@ import type { Preview, StoryContext, StoryFn } from '@storybook/react';
 import * as React from 'react';
 
 import { Provider } from '../src/3-custom/Provider/Provider';
-import { themes } from '../src/3-custom/theme';
+import { themes } from '../src/theme';
 
 function withProvider(Story: StoryFn, context: StoryContext): JSX.Element {
   return (
@@ -23,7 +23,7 @@ const preview: Preview = {
   decorators: [withProvider],
   globalTypes: {
     theme: {
-      defaultValue: 'light',
+      defaultValue: 'main',
       description: 'Theme',
       toolbar: {
         dynamicTitle: true,

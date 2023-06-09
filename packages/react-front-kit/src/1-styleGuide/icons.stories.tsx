@@ -1,8 +1,8 @@
-import type { Icon } from '@phosphor-icons/react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Center, Grid, Text } from '@mantine/core';
-import * as icons from '@phosphor-icons/react';
+
+import { icons } from '../icons';
 
 const meta = {
   argTypes: {
@@ -21,7 +21,6 @@ const meta = {
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-const componentsToIgnore = ['IconBase', 'IconContext'];
 export const PhosphorIcons: IStory = {
   args: {
     color: '#000',
@@ -31,21 +30,18 @@ export const PhosphorIcons: IStory = {
   },
   render: (props) => (
     <Grid>
-      {Object.entries(icons)
-        .filter(([key]) => !componentsToIgnore.includes(key))
-        .map(([key, IconCmp]) => {
-          const IconComponent = IconCmp as Icon;
-          return (
-            <Grid.Col key={key} span={1} title={key}>
-              <Center sx={{ flexDirection: 'column' }}>
-                <Text fz="xs" lineClamp={1} sx={{ maxWidth: '100%' }}>
-                  {key}
-                </Text>
-                <IconComponent {...props} />
-              </Center>
-            </Grid.Col>
-          );
-        })}
+      {Object.entries(icons).map(([key, IconCmp]) => {
+        return (
+          <Grid.Col key={key} span={1} title={key}>
+            <Center sx={{ flexDirection: 'column' }}>
+              <Text fz="xs" lineClamp={1} sx={{ maxWidth: '100%' }}>
+                {key}
+              </Text>
+              <IconCmp {...props} />
+            </Center>
+          </Grid.Col>
+        );
+      })}
     </Grid>
   ),
 };
