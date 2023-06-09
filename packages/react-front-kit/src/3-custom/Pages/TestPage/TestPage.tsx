@@ -1,11 +1,13 @@
 import type { ChangeEvent, FormEvent } from 'react';
 
 import { AppShell, Avatar, Container, Grid, Menu } from '@mantine/core';
+import { Chat, HouseLine, Star, User } from '@phosphor-icons/react';
 import { useState } from 'react';
 
 import { primaryTheme } from '../../../theme';
 import { DropdownButton } from '../../Components/DropdownButton/DropdownButton';
 import { Header } from '../../Components/Header/Header';
+import { SidebarMenu } from '../../Components/SidebarMenu/SidebarMenu';
 
 /**
  * Primary UI component for user interaction
@@ -64,8 +66,47 @@ export function TestPage(): JSX.Element {
       padding={0}
     >
       <Container fluid p="48px 64px">
-        <Grid gutter="md">
-          <Grid.Col span={3}>Left</Grid.Col>
+        <Grid gutter="xl">
+          <Grid.Col span={3}>
+            <SidebarMenu
+              menu={[
+                {
+                  children: [{ label: 'Home' }],
+                  label: 'Home',
+                  leftIcon: <HouseLine />,
+                },
+                {
+                  children: [{ label: 'Security' }],
+                  label: 'Security',
+                  leftIcon: <Chat />,
+                },
+                {
+                  children: [
+                    { label: 'Release' },
+                    { children: [{ label: 'Account' }], label: 'Account' },
+                    { label: 'Upcoming release' },
+                  ],
+                  label: 'Dashboard',
+                  leftIcon: <Star />,
+                },
+                { label: 'Open Issues', leftIcon: <HouseLine /> },
+                {
+                  children: [
+                    {
+                      children: [
+                        { label: 'Wiki pages' },
+                        { label: 'Settings' },
+                      ],
+                      label: 'Dashboard',
+                    },
+                    { label: 'Home' },
+                  ],
+                  label: 'Pull Requests',
+                  leftIcon: <User />,
+                },
+              ]}
+            />
+          </Grid.Col>
           <Grid.Col span={9}>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
