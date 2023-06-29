@@ -67,6 +67,7 @@ Thumbs.db
 
 # Storybook
 !.storybook
+storybook-static
 
 # Turbo
 .turbo
