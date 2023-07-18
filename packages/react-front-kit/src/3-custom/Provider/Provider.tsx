@@ -7,13 +7,18 @@ import { mainTheme } from '../../theme';
 
 interface IProviderProps {
   children?: ReactNode;
+  colorScheme?: 'light' | 'dark';
   theme?: MantineThemeOverride;
 }
 export function Provider(props: IProviderProps): JSX.Element {
-  const { children, theme = mainTheme } = props;
+  const { children, colorScheme = 'light', theme = mainTheme } = props;
 
   return (
-    <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
+    <MantineProvider
+      theme={{ ...theme, colorScheme }}
+      withGlobalStyles
+      withNormalizeCSS
+    >
       {children}
     </MantineProvider>
   );

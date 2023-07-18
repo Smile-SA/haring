@@ -7,11 +7,9 @@ export const baseTheme: MantineThemeOverride = {
     transform: '',
   },
   components: {
-    ActionIcon: {
+    Checkbox: {
       defaultProps: {
-        color: 'cyan',
         radius: 'sm',
-        variant: 'light',
       },
     },
   },
@@ -45,7 +43,10 @@ export const mainTheme: MantineThemeOverride = {
       textDecoration: 'none',
     },
     body: {
-      background: theme.colors.gray[1],
+      background:
+        theme.colorScheme === 'light'
+          ? theme.colors.gray[1]
+          : theme.colors.gray[9],
     },
   }),
   primaryColor: 'cyan',

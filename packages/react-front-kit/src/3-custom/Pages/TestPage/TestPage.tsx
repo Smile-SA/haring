@@ -32,7 +32,7 @@ export function TestPage(): JSX.Element {
       header={
         <Header
           childrenComponent="nav"
-          left={<img alt="logo" height="58" src="/logo.svg" width="128" />}
+          left={<img alt="logo" height="58" src="./logo.svg" width="128" />}
           onSearchChange={handleSearchChange}
           onSearchClear={handleSearchClear}
           onSearchSubmit={handleSearchSubmit}

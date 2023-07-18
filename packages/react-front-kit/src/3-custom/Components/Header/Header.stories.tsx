@@ -52,7 +52,7 @@ export const Header: IStory = {
     ),
     childrenComponent: 'nav',
     height: 90,
-    left: <img alt="logo" height="58" src="/logo.svg" width="128" />,
+    left: <img alt="logo" height="58" src="./logo.svg" width="128" />,
     right: (
       <>
         <DropdownButton label="Mon espace">

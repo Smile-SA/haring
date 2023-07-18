@@ -13,6 +13,7 @@
     "changeset": "turbo run build lint test && changeset",
     "version": "turbo run build lint test && changeset version",
     "publish": "changeset publish",
+    "storybook": "npm run storybook -w ./packages/react-front-kit",
     "build-storybook": "npm run build-storybook -w ./packages/react-front-kit"
   },
   "devDependencies": {

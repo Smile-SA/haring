@@ -7,7 +7,10 @@ import { themes } from '../src/theme';
 
 function withProvider(Story: StoryFn, context: StoryContext): JSX.Element {
   return (
-    <Provider theme={themes[context.globals.theme]?.theme}>
+    <Provider
+      colorScheme={context.globals.colorScheme}
+      theme={themes[context.globals.theme]?.theme}
+    >
       <Story />
     </Provider>
   );
@@ -22,6 +25,17 @@ const style = {
 const preview: Preview = {
   decorators: [withProvider],
   globalTypes: {
+    colorScheme: {
+      defaultValue: 'light',
+      description: 'Light mode / Dark mode',
+      toolbar: {
+        dynamicTitle: true,
+        items: [
+          { icon: 'circlehollow', title: 'Light', value: 'light' },
+          { icon: 'circle', title: 'Dark', value: 'dark' },
+        ],
+      },
+    },
     theme: {
       defaultValue: 'main',
       description: 'Theme',
@@ -32,7 +46,6 @@ const preview: Preview = {
           left: <div style={{ ...style, background: theme.color }} />,
           value: key,
         })),
-        title: 'Theme',
       },
     },
   },
