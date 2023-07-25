@@ -6,6 +6,17 @@ import { CaretDown, CaretRight } from '@phosphor-icons/react';
 import { useState } from 'react';
 
 const useStyles = createStyles((theme) => ({
+  button: {
+    background: 'transparent',
+    border: 0,
+    color: 'inherit',
+    cursor: 'inherit',
+    flex: 1,
+    font: 'inherit',
+    height: '100%',
+    padding: 0,
+    textAlign: 'left',
+  },
   iconSelected: {
     background:
       theme.colorScheme === 'light' ? theme.white : theme.colors.dark[7],
@@ -15,7 +26,7 @@ const useStyles = createStyles((theme) => ({
       theme.colorScheme === 'light'
         ? theme.colors.dark[3]
         : theme.colors.dark[0],
-    marginRight: 'auto',
+    flex: 1,
   },
   labelDeepLevel: {
     fontSize: theme.fontSizes.sm,
@@ -106,6 +117,7 @@ export function CollapseButton<T>(props: ICollapseButtonProps<T>): JSX.Element {
           rightIcon: classes.rightIcon,
           root: rootClasses.join(' '),
         }}
+        component="div"
         leftIcon={
           Boolean(leftIcon) && (
             <ActionIcon
@@ -130,7 +142,9 @@ export function CollapseButton<T>(props: ICollapseButtonProps<T>): JSX.Element {
         variant={selected ? 'light' : 'white'}
         {...buttonProps}
       >
-        {label}
+        <button className={classes.button} type="button">
+          {label}
+        </button>
       </Button>
       {Boolean(children) && (
         <Collapse className={line ? classes.line : ''} in={opened}>

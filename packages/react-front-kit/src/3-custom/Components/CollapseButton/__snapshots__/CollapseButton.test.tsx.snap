@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CollapseButton matches snapshot 1`] = `
+<div>
+  <div>
+    <div
+      class="mantine-UnstyledButton-root mantine-Button-root mantine-zsgagm"
+      data-button="true"
+      type="button"
+    >
+      <div
+        class="mantine-1wpc1xj mantine-Button-inner"
+      >
+        <span
+          class="mantine-Button-label mantine-12tfho7"
+        >
+          <button
+            class="mantine-o4vq62"
+            type="button"
+          />
+        </span>
+        <span
+          class="mantine-Button-icon mantine-Button-rightIcon mantine-1ydydo3"
+        >
+          <button
+            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1v3i31z"
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 256 256"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
+              />
+            </svg>
+          </button>
+        </span>
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      class="mantine-1avyp1d"
+      style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+    >
+      <div
+        style="opacity: 0; transition: opacity 200ms ease;"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius bibendum dui non imperdiet. Donec vehicula fringilla lorem vitae rutrum. Etiam malesuada ullamcorper aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras elit lacus, viverra vitae risus et, pharetra tincidunt felis. Aliquam erat volutpat. In vitae nibh eu turpis commodo luctus vitae id libero. Curabitur eget nunc volutpat, luctus quam rutrum, ultricies tellus. Integer diam nulla, vestibulum id enim quis, molestie luctus magna. Phasellus et rhoncus augue, id maximus mi. Vivamus consequat quam tristique ex laoreet, ut eleifend eros sodales. Cras bibendum enim dolor, id rutrum urna vestibulum non.
+      </div>
+    </div>
+  </div>
+</div>
+`;
