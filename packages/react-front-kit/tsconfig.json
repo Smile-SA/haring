@@ -1,6 +1,12 @@
 {
   "extends": "tsconfig/react-library.json",
   "include": ["src"],
+  "exclude": [
+    "__snapshots__",
+    "src/**/*.test.tsx",
+    "src/**/*.stories.tsx",
+    "src/**/*.mock.tsx"
+  ],
   "compilerOptions": {
     "outDir": "dist"
   }
