@@ -61,6 +61,5 @@ export const Nested: IStory = {
     level: 0,
     line: true,
     radius: 0,
-    variant: 'white',
   },
 };

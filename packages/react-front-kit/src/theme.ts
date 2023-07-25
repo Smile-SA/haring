@@ -39,8 +39,7 @@ export const mainTheme: MantineThemeOverride = {
   colorScheme: 'light',
   globalStyles: (theme) => ({
     a: {
-      color: theme.black,
-      textDecoration: 'none',
+      color: 'inherit',
     },
     body: {
       background:

@@ -27,11 +27,6 @@ const useStyles = createStyles((theme) => ({
     gap: theme.spacing.xs,
   },
   button: {
-    background: 'transparent',
-    borderRadius: 0,
-    position: 'relative',
-  },
-  buttonOpened: {
     '&::after': {
       background:
         theme.colorScheme === 'light'
@@ -45,6 +40,14 @@ const useStyles = createStyles((theme) => ({
       top: '50%',
       translate: '0 -50%',
       width: 1,
+    },
+    background: 'transparent',
+    borderRadius: 0,
+    position: 'relative',
+  },
+  buttonOpened: {
+    '&::after': {
+      display: 'none',
     },
     background: theme.fn.primaryColor(),
     color: theme.white,

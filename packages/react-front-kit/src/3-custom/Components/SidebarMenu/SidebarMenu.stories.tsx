@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Chat, HouseLine, Star, User } from '@phosphor-icons/react';
-
 import { SidebarMenu as Cmp } from './SidebarMenu';
+import { menu } from './SidebarMenu.mock';
 
 const meta = {
   component: Cmp,
@@ -15,34 +14,6 @@ type IStory = StoryObj<typeof meta>;
 
 export const SidebarMenu: IStory = {
   args: {
-    menu: [
-      { children: [{ label: 'Home' }], label: 'Home', leftIcon: <HouseLine /> },
-      {
-        children: [{ label: 'Security' }],
-        label: 'Security',
-        leftIcon: <Chat />,
-      },
-      {
-        children: [
-          { label: 'Release' },
-          { children: [{ label: 'Account' }], label: 'Account' },
-          { label: 'Upcoming release' },
-        ],
-        label: 'Dashboard',
-        leftIcon: <Star />,
-      },
-      { label: 'Open Issues', leftIcon: <HouseLine /> },
-      {
-        children: [
-          {
-            children: [{ label: 'Wiki pages' }, { label: 'Settings' }],
-            label: 'Dashboard',
-          },
-          { label: 'Home' },
-        ],
-        label: 'Pull Requests',
-        leftIcon: <User />,
-      },
-    ],
+    menu,
   },
 };
