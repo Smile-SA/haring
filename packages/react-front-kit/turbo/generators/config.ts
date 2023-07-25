@@ -23,6 +23,13 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
           type: 'add',
         },
       ];
+      if (data?.type !== 'pages') {
+        actions.push({
+          path: 'src/{{path}}/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
+          templateFile: 'templates/test.hbs',
+          type: 'add',
+        });
+      }
       if (data?.index) {
         actions.push({
           path: 'src/index.tsx',
