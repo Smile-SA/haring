@@ -17,11 +17,14 @@ export function DropdownButton(props: IDropdownButtonProps): JSX.Element {
   return (
     <Menu onChange={setOpened} opened={opened} {...menuProps}>
       <Menu.Target>
-        <Button rightIcon={opened ? <CaretUp /> : <CaretDown />}>
+        <Button
+          data-testid="button"
+          rightIcon={opened ? <CaretUp /> : <CaretDown />}
+        >
           {label}
         </Button>
       </Menu.Target>
-      <Menu.Dropdown>{children}</Menu.Dropdown>
+      <Menu.Dropdown data-testid="dropdown">{children}</Menu.Dropdown>
     </Menu>
   );
 }

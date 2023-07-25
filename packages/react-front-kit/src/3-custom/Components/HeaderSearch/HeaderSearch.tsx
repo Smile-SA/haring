@@ -1,3 +1,4 @@
+import type { BoxProps } from '@mantine/core';
 import type {
   ChangeEventHandler,
   FormEvent,
@@ -20,7 +21,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface IHeaderSearchProps {
+interface IHeaderSearchProps extends BoxProps {
   clearButtonAriaLabel?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onClear?: MouseEventHandler<HTMLButtonElement>;
@@ -37,6 +38,7 @@ export function HeaderSearch(props: IHeaderSearchProps): JSX.Element {
     onClear,
     onSubmit,
     value,
+    ...boxProps
   } = props;
   const { classes } = useStyles();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -55,7 +57,7 @@ export function HeaderSearch(props: IHeaderSearchProps): JSX.Element {
   }
 
   return (
-    <Box className={classes.search}>
+    <Box className={classes.search} {...boxProps}>
       <form onSubmit={onSubmit}>
         <Input
           ref={inputRef}

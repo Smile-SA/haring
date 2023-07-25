@@ -128,6 +128,7 @@ export function Header(props: IHeaderProps): JSX.Element {
         <Flex className={classes.around}>
           <Button
             className={buttonClasses.join(' ')}
+            data-testid="search"
             h={height}
             onClick={handleClick}
             variant="white"
@@ -138,6 +139,7 @@ export function Header(props: IHeaderProps): JSX.Element {
           {Boolean(opened) && (
             <MantineProvider theme={searchTheme ?? defaultTheme}>
               <HeaderSearch
+                data-testid="searchBar"
                 onChange={onSearchChange}
                 onClear={onSearchClear}
                 onSubmit={onSearchSubmit}

@@ -10,6 +10,12 @@ import { render } from '@testing-library/react';
 
 import { Provider } from '../3-custom/Provider/Provider';
 
+export function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
 export function renderWithProviders<
   Q extends Queries = typeof queries,
   Container extends Element | DocumentFragment = HTMLElement,

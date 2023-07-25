@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { expect } from '@storybook/jest';
+import { userEvent, within } from '@storybook/testing-library';
+
 import { iconsElements } from '../../../icons';
+import { sleep } from '../../../utils/tests';
 
 import { CollapseButton as Cmp } from './CollapseButton';
 
@@ -41,6 +45,13 @@ vestibulum non.`,
     line: false,
     radius: 0,
     variant: 'white',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByTestId('content')).not.toBeVisible();
+    await userEvent.click(canvas.getByTestId('toggle'));
+    await sleep(200);
+    await expect(canvas.getByTestId('content')).toBeVisible();
   },
 };
 

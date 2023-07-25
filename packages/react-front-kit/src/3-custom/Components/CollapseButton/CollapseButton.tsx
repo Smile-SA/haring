@@ -110,14 +110,17 @@ export function CollapseButton<T>(props: ICollapseButtonProps<T>): JSX.Element {
   }
 
   return (
-    <div>
+    <>
       <Button
+        aria-expanded={opened ? 'true' : 'false'}
         classNames={{
           label: labelClasses.join(' '),
           rightIcon: classes.rightIcon,
           root: rootClasses.join(' '),
         }}
         component="div"
+        data-selected={selected}
+        data-testid="root"
         leftIcon={
           Boolean(leftIcon) && (
             <ActionIcon
@@ -134,7 +137,12 @@ export function CollapseButton<T>(props: ICollapseButtonProps<T>): JSX.Element {
         onClick={handleSelect}
         rightIcon={
           Boolean(children) && (
-            <ActionIcon onClick={handleClick} radius="sm" variant="transparent">
+            <ActionIcon
+              data-testid="toggle"
+              onClick={handleClick}
+              radius="sm"
+              variant="transparent"
+            >
               {opened ? <CaretDown /> : <CaretRight />}
             </ActionIcon>
           )
@@ -142,16 +150,20 @@ export function CollapseButton<T>(props: ICollapseButtonProps<T>): JSX.Element {
         variant={selected ? 'light' : 'white'}
         {...buttonProps}
       >
-        <button className={classes.button} type="button">
+        <button className={classes.button} data-testid="select" type="button">
           {label}
         </button>
       </Button>
       {Boolean(children) && (
-        <Collapse className={line ? classes.line : ''} in={opened}>
+        <Collapse
+          className={line ? classes.line : ''}
+          data-testid="content"
+          in={opened}
+        >
           {children}
         </Collapse>
       )}
-    </div>
+    </>
   );
 }
 
