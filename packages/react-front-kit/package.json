@@ -35,7 +35,8 @@
   "scripts": {
     "prepare": "npm run build",
     "build": "tsc",
-    "lint": "eslint --fix --max-warnings=0 --ignore-path ../../.gitignore . && tsc --noEmit",
+    "lint": "eslint --max-warnings=0 --ignore-path ../../.gitignore . && tsc --noEmit",
+    "lint:fix": "eslint --fix --max-warnings=0 --ignore-path ../../.gitignore . && tsc --noEmit",
     "test": "jest",
     "generate": "turbo gen react-component",
     "storybook": "storybook dev -p 6006",
