@@ -59,6 +59,16 @@ You will asked multiple questions and in the end it should generate:
 Components are by default created as client component (with `'use client';`).  
 If you are not creating a client component, don't forget to remove this line.
 
+## Testing
+
+When creating a component, the generator will automatically create a snapshot test for you (in the `Component.test.tsx` file).  
+Don't forget to add required props in the test file.  
+Maybe add other snapshot tests for special cases.
+
+And if you have to manage a state in your component, please create an interaction test in the storybook: https://storybook.js.org/docs/react/writing-tests/interaction-testing
+
+You can find examples in existing components.
+
 ## Publishing
 
 Make sure you git is clean before running the following commands:
