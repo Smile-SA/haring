@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar, Menu } from '@mantine/core';
+import { expect } from '@storybook/jest';
+import { userEvent, within } from '@storybook/testing-library';
 
 import { primaryTheme } from '../../../theme';
 import { DropdownButton } from '../DropdownButton/DropdownButton';
@@ -74,5 +76,10 @@ export const Header: IStory = {
     ),
     searchTheme: primaryTheme,
     withBorder: false,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('search'));
+    await expect(canvas.getByTestId('searchBar')).toBeInTheDocument();
   },
 };

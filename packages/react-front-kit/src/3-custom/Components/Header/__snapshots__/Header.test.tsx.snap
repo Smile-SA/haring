@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header matches snapshot 1`] = `
+<div>
+  <header
+    class="mantine-Header-root mantine-1qb6iub"
+  >
+    <div
+      class="mantine-o19s04"
+    >
+      <div
+        class="mantine-1dcfulj"
+      />
+      <div
+        class="mantine-jlqgta"
+      >
+        <a
+          href="#"
+        >
+          Espace documentaire
+        </a>
+        <a
+          href="#"
+        >
+          Espace workflow
+        </a>
+        <a
+          href="#"
+        >
+          Archives
+        </a>
+      </div>
+      <div
+        class="mantine-1dcfulj"
+      >
+        <button
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-103513z"
+          data-button="true"
+          data-testid="search"
+          type="button"
+        >
+          <div
+            class="mantine-1wpc1xj mantine-Button-inner"
+          >
+            <span
+              class="mantine-1ryt1ht mantine-Button-label"
+            >
+              <svg
+                fill="currentColor"
+                height="32"
+                viewBox="0 0 256 256"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+`;

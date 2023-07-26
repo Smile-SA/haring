@@ -1,9 +1,11 @@
+'use client';
+
 import type { MenuProps } from '@mantine/core';
 import type { ReactNode } from 'react';
 
 import { Button, Menu } from '@mantine/core';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
-import { useState } from 'react';
+import { useId, useState } from 'react';
 
 interface IDropdownButtonProps extends MenuProps {
   children?: ReactNode;
@@ -11,21 +13,27 @@ interface IDropdownButtonProps extends MenuProps {
 }
 
 export function DropdownButton(props: IDropdownButtonProps): JSX.Element {
-  const { children, label, ...menuProps } = props;
+  const { children, label, position = 'bottom-start', ...menuProps } = props;
   const [opened, setOpened] = useState(false);
+  const id = useId();
 
   return (
-    <Menu onChange={setOpened} opened={opened} {...menuProps}>
+    <Menu
+      id={id}
+      onChange={setOpened}
+      opened={opened}
+      position={position}
+      {...menuProps}
+    >
       <Menu.Target>
-        <Button rightIcon={opened ? <CaretUp /> : <CaretDown />}>
+        <Button
+          data-testid="button"
+          rightIcon={opened ? <CaretUp /> : <CaretDown />}
+        >
           {label}
         </Button>
       </Menu.Target>
-      <Menu.Dropdown>{children}</Menu.Dropdown>
+      <Menu.Dropdown data-testid="dropdown">{children}</Menu.Dropdown>
     </Menu>
   );
 }
-
-DropdownButton.defaultProps = {
-  position: 'bottom-start' as MenuProps['position'],
-};

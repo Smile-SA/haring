@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Menu } from '@mantine/core';
+import { expect } from '@storybook/jest';
+import { userEvent, within } from '@storybook/testing-library';
+
+import { sleep } from '../../../utils/tests';
 
 import { DropdownButton as Cmp } from './DropdownButton';
 
@@ -32,5 +36,13 @@ export const DropdownButton: IStory = {
       </>
     ),
     label: 'Mon espace',
+  },
+
+  play: async ({ canvasElement }) => {
+    // @ts-expect-error ignore
+    const canvas = within(canvasElement.parentElement);
+    await userEvent.click(canvas.getByTestId('button'));
+    await sleep(200);
+    await expect(canvas.getByTestId('dropdown')).toBeInTheDocument();
   },
 };

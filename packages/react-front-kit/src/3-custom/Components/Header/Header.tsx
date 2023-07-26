@@ -1,3 +1,5 @@
+'use client';
+
 import type { HeaderProps, MantineThemeOverride } from '@mantine/core';
 import type {
   ChangeEventHandler,
@@ -27,11 +29,6 @@ const useStyles = createStyles((theme) => ({
     gap: theme.spacing.xs,
   },
   button: {
-    background: 'transparent',
-    borderRadius: 0,
-    position: 'relative',
-  },
-  buttonOpened: {
     '&::after': {
       background:
         theme.colorScheme === 'light'
@@ -45,6 +42,14 @@ const useStyles = createStyles((theme) => ({
       top: '50%',
       translate: '0 -50%',
       width: 1,
+    },
+    background: 'transparent',
+    borderRadius: 0,
+    position: 'relative',
+  },
+  buttonOpened: {
+    '&::after': {
+      display: 'none',
     },
     background: theme.fn.primaryColor(),
     color: theme.white,
@@ -91,6 +96,7 @@ export function Header(props: IHeaderProps): JSX.Element {
     right,
     searchTheme,
     searchValue,
+    withBorder = true,
     ...headerProps
   } = props;
   const { classes } = useStyles();
@@ -111,6 +117,7 @@ export function Header(props: IHeaderProps): JSX.Element {
     <MantineHeader
       ref={header}
       height={opened ? height + 110 : height}
+      withBorder={withBorder}
       {...headerProps}
     >
       <Flex className={classes.container} h={height}>
@@ -125,6 +132,7 @@ export function Header(props: IHeaderProps): JSX.Element {
         <Flex className={classes.around}>
           <Button
             className={buttonClasses.join(' ')}
+            data-testid="search"
             h={height}
             onClick={handleClick}
             variant="white"
@@ -135,6 +143,7 @@ export function Header(props: IHeaderProps): JSX.Element {
           {Boolean(opened) && (
             <MantineProvider theme={searchTheme ?? defaultTheme}>
               <HeaderSearch
+                data-testid="searchBar"
                 onChange={onSearchChange}
                 onClear={onSearchClear}
                 onSubmit={onSearchSubmit}
@@ -149,7 +158,3 @@ export function Header(props: IHeaderProps): JSX.Element {
     </MantineHeader>
   );
 }
-
-Header.defaultProps = {
-  withBorder: false,
-};

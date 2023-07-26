@@ -1,0 +1,10 @@
+import { renderWithProviders } from '../../../utils/tests';
+
+import { {{pascalCase name}} } from './{{pascalCase name}}';
+
+describe('{{pascalCase name}}', () => {
+  it('matches snapshot', () => {
+    const { container } = renderWithProviders(<{{pascalCase name}} />);
+    expect(container).toMatchSnapshot();
+  });
+});

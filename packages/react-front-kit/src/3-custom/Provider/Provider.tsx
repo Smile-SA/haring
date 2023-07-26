@@ -1,3 +1,5 @@
+'use client';
+
 import type { MantineThemeOverride } from '@mantine/core';
 import type { ReactNode } from 'react';
 

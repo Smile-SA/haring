@@ -1,17 +1,34 @@
+'use client';
+
 import type { ButtonProps } from '@mantine/core';
-import type { ReactNode } from 'react';
+import type { MouseEvent, ReactNode } from 'react';
 
 import { ActionIcon, Button, Collapse, createStyles } from '@mantine/core';
 import { CaretDown, CaretRight } from '@phosphor-icons/react';
 import { useState } from 'react';
 
 const useStyles = createStyles((theme) => ({
+  button: {
+    background: 'transparent',
+    border: 0,
+    color: 'inherit',
+    cursor: 'inherit',
+    flex: 1,
+    font: 'inherit',
+    height: '100%',
+    padding: 0,
+    textAlign: 'left',
+  },
+  iconSelected: {
+    background:
+      theme.colorScheme === 'light' ? theme.white : theme.colors.dark[7],
+  },
   label: {
     color:
       theme.colorScheme === 'light'
         ? theme.colors.dark[3]
         : theme.colors.dark[0],
-    marginRight: 'auto',
+    flex: 1,
   },
   labelDeepLevel: {
     fontSize: theme.fontSizes.sm,
@@ -21,7 +38,10 @@ const useStyles = createStyles((theme) => ({
     fontSize: theme.fontSizes.md,
   },
   line: {
-    borderLeft: `1px solid ${theme.colors.gray[1]}`,
+    borderLeft:
+      theme.colorScheme === 'light'
+        ? `1px solid ${theme.colors.gray[1]}`
+        : `1px solid ${theme.colors.gray[8]}`,
     marginLeft: 30,
   },
   rightIcon: {
@@ -42,26 +62,50 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface ICollapseButtonProps extends ButtonProps {
+interface ICollapseButtonProps<T> extends ButtonProps {
   children?: ReactNode;
+  id?: T;
   label?: ReactNode;
   level?: number;
   line?: boolean;
+  onSelect?: (id?: T) => void;
+  selected?: boolean;
 }
 
-export function CollapseButton(props: ICollapseButtonProps): JSX.Element {
-  const { children, label, leftIcon, level = 0, line, ...buttonProps } = props;
+export function CollapseButton<T>(props: ICollapseButtonProps<T>): JSX.Element {
+  const {
+    children,
+    fullWidth = true,
+    id,
+    label,
+    leftIcon,
+    level = 0,
+    line,
+    onSelect,
+    radius = 0,
+    size = 'md',
+    selected,
+    ...buttonProps
+  } = props;
   const { classes } = useStyles();
   const [opened, setOpened] = useState(false);
 
-  function handleClick(): void {
+  function handleClick(event: MouseEvent<HTMLButtonElement>): void {
+    event.stopPropagation();
     if (children) {
       setOpened(!opened);
     }
   }
 
-  const rootClasses = [classes.root];
+  function handleSelect(): void {
+    onSelect?.(id);
+  }
+
+  const rootClasses = [];
   const labelClasses = [classes.label];
+  if (!selected) {
+    rootClasses.push(classes.root);
+  }
   if (level === 1) {
     rootClasses.push(classes.rootLevel1);
     labelClasses.push(classes.labelLevel1);
@@ -71,17 +115,22 @@ export function CollapseButton(props: ICollapseButtonProps): JSX.Element {
   }
 
   return (
-    <div>
+    <>
       <Button
+        aria-expanded={opened ? 'true' : 'false'}
         classNames={{
           label: labelClasses.join(' '),
           rightIcon: classes.rightIcon,
           root: rootClasses.join(' '),
         }}
-        color="dark"
+        component="div"
+        data-selected={selected}
+        data-testid="root"
+        fullWidth={fullWidth}
         leftIcon={
           Boolean(leftIcon) && (
             <ActionIcon
+              className={selected ? classes.iconSelected : ''}
               color="primary"
               component="div"
               radius="sm"
@@ -91,26 +140,37 @@ export function CollapseButton(props: ICollapseButtonProps): JSX.Element {
             </ActionIcon>
           )
         }
-        onClick={handleClick}
+        onClick={handleSelect}
+        radius={radius}
         rightIcon={
-          children ? opened ? <CaretDown /> : <CaretRight /> : undefined
+          Boolean(children) && (
+            <ActionIcon
+              data-testid="toggle"
+              onClick={handleClick}
+              radius="sm"
+              variant="transparent"
+            >
+              {opened ? <CaretDown /> : <CaretRight />}
+            </ActionIcon>
+          )
         }
+        size={size}
+        variant={selected ? 'light' : 'white'}
         {...buttonProps}
       >
-        {label}
+        <button className={classes.button} data-testid="select" type="button">
+          {label}
+        </button>
       </Button>
       {Boolean(children) && (
-        <Collapse className={line ? classes.line : ''} in={opened}>
+        <Collapse
+          className={line ? classes.line : ''}
+          data-testid="content"
+          in={opened}
+        >
           {children}
         </Collapse>
       )}
-    </div>
+    </>
   );
 }
-
-CollapseButton.defaultProps = {
-  fullWidth: true,
-  radius: 0,
-  size: 'md',
-  variant: 'white',
-};

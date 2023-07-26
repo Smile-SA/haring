@@ -1,13 +1,15 @@
+'use client';
+
 import type { ChangeEvent, FormEvent } from 'react';
 
 import { AppShell, Avatar, Container, Grid, Menu } from '@mantine/core';
-import { Chat, HouseLine, Star, User } from '@phosphor-icons/react';
 import { useState } from 'react';
 
 import { primaryTheme } from '../../../theme';
 import { DropdownButton } from '../../Components/DropdownButton/DropdownButton';
 import { Header } from '../../Components/Header/Header';
 import { SidebarMenu } from '../../Components/SidebarMenu/SidebarMenu';
+import { menu } from '../../Components/SidebarMenu/SidebarMenu.mock';
 
 /**
  * Primary UI component for user interaction
@@ -68,59 +70,22 @@ export function TestPage(): JSX.Element {
       <Container fluid p="48px 64px">
         <Grid gutter="xl">
           <Grid.Col span={3}>
-            <SidebarMenu
-              menu={[
-                {
-                  children: [{ label: 'Home' }],
-                  label: 'Home',
-                  leftIcon: <HouseLine />,
-                },
-                {
-                  children: [{ label: 'Security' }],
-                  label: 'Security',
-                  leftIcon: <Chat />,
-                },
-                {
-                  children: [
-                    { label: 'Release' },
-                    { children: [{ label: 'Account' }], label: 'Account' },
-                    { label: 'Upcoming release' },
-                  ],
-                  label: 'Dashboard',
-                  leftIcon: <Star />,
-                },
-                { label: 'Open Issues', leftIcon: <HouseLine /> },
-                {
-                  children: [
-                    {
-                      children: [
-                        { label: 'Wiki pages' },
-                        { label: 'Settings' },
-                      ],
-                      label: 'Dashboard',
-                    },
-                    { label: 'Home' },
-                  ],
-                  label: 'Pull Requests',
-                  leftIcon: <User />,
-                },
-              ]}
-            />
+            <SidebarMenu menu={menu} />
           </Grid.Col>
           <Grid.Col span={9}>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              varius bibendum dui non imperdiet. Donec vehicula fringilla lorem
-              vitae rutrum. Etiam malesuada ullamcorper aliquam. Vestibulum ante
-              ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-              curae; Cras elit lacus, viverra vitae risus et, pharetra tincidunt
-              felis. Aliquam erat volutpat. In vitae nibh eu turpis commodo
-              luctus vitae id libero. Curabitur eget nunc volutpat, luctus quam
-              rutrum, ultricies tellus. Integer diam nulla, vestibulum id enim
-              quis, molestie luctus magna. Phasellus et rhoncus augue, id
-              maximus mi. Vivamus consequat quam tristique ex laoreet, ut
-              eleifend eros sodales. Cras bibendum enim dolor, id rutrum urna
-              vestibulum non.
+              Lorem <a href="#">ipsum</a> dolor sit amet, consectetur adipiscing
+              elit. Sed varius bibendum dui non imperdiet. Donec vehicula
+              fringilla lorem vitae rutrum. Etiam malesuada ullamcorper aliquam.
+              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+              posuere cubilia curae; Cras elit lacus, viverra vitae risus et,
+              pharetra tincidunt felis. Aliquam erat volutpat. In vitae nibh eu
+              turpis commodo luctus vitae id libero. Curabitur eget nunc
+              volutpat, luctus quam rutrum, ultricies tellus. Integer diam
+              nulla, vestibulum id enim quis, molestie luctus magna. Phasellus
+              et rhoncus augue, id maximus mi. Vivamus consequat quam tristique
+              ex laoreet, ut eleifend eros sodales. Cras bibendum enim dolor, id
+              rutrum urna vestibulum non.
             </p>
             <p>
               Ut quis urna pharetra, elementum elit vel, venenatis sem. In
