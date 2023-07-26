@@ -1,12 +1,8 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
-  "changelog": [
-    "@changesets/changelog-github",
-    { "repo": "Smile-SA/react-front-kit" }
-  ],
+  "changelog": "@changesets/changelog-git",
   "commit": ["@changesets/cli/commit", { "skipCI": "version" }],
-  "fixed": [],
-  "linked": [["*"]],
+  "fixed": [["*"]],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",

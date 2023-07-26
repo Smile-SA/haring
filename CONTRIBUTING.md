@@ -59,7 +59,22 @@ You will asked multiple questions and in the end it should generate:
 Components are by default created as client component (with `'use client';`).  
 If you are not creating a client component, don't forget to remove this line.
 
+## Testing
+
+When creating a component, the generator will automatically create a snapshot test for you (in the `Component.test.tsx` file).  
+Don't forget to add required props in the test file.  
+Maybe add other snapshot tests for special cases.
+
+And if you have to manage a state in your component, please create an interaction test in the storybook: https://storybook.js.org/docs/react/writing-tests/interaction-testing
+
+You can find examples in existing components.
+
 ## Publishing
 
-When you are ready to publish a new version run the command `npm run changeset`.
-If the changeset sounds good you can send run `npm run version`.
+Make sure you git is clean before running the following commands:
+
+1. When you are ready to publish a new version run the command: `npm run changeset`.
+2. If the changeset sounds good you can then run: `npm run version`.
+3. Then, if everything is fine, to effectively publish the packages, run: `npm run publish`
+
+=> TODO: check changeset action: https://github.com/changesets/action
