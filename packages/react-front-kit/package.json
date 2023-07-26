@@ -41,7 +41,10 @@
     "generate": "turbo gen react-component",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test-storybook": "test-storybook"
+    "test-storybook": "test-storybook",
+    "serve-storybook": "http-server storybook-static --port 6006 --silent",
+    "wait-and-test-storybook": "wait-on http://127.0.0.1:6006/ -t 15000 && npm run test-storybook",
+    "serve-and-test-storybook": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run serve-storybook\" \"npm run wait-and-test-storybook\""
   },
   "dependencies": {
     "@mantine/core": "^6.0.13",
@@ -69,12 +72,15 @@
     "@types/jest": "^29.5.3",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "concurrently": "^8.2.0",
     "eslint": "^8.42.0",
     "eslint-config-custom": "*",
+    "http-server": "^14.1.1",
     "jest": "^29.6.1",
     "jest-environment-jsdom": "^29.6.1",
     "storybook": "^7.1.0",
     "tsconfig": "*",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "wait-on": "^7.0.1"
   }
 }

@@ -35,3 +35,9 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} run lint
       - name: Test
         run: ${{ steps.detect-package-manager.outputs.manager }} run test
+      - name: Install Playwright
+        run: ${{ steps.detect-package-manager.outputs.runner }} playwright install --with-deps
+      - name: Build Storybook
+        run: ${{ steps.detect-package-manager.outputs.manager }} run build-storybook
+      - name: Serve Storybook and run tests
+        run: ${{ steps.detect-package-manager.outputs.manager }} run serve-and-test-storybook
