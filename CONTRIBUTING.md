@@ -61,5 +61,10 @@ If you are not creating a client component, don't forget to remove this line.
 
 ## Publishing
 
-When you are ready to publish a new version run the command `npm run changeset`.
-If the changeset sounds good you can send run `npm run version`.
+Make sure you git is clean before running the following commands:
+
+1. When you are ready to publish a new version run the command: `npm run changeset`.
+2. If the changeset sounds good you can then run: `npm run version`.
+3. Then, if everything is fine, to effectively publish the packages, run: `npm run publish`
+
+=> TODO: check changeset action: https://github.com/changesets/action
