@@ -1,3 +1,5 @@
+'use client';
+
 import type { ChangeEvent, FormEvent } from 'react';
 
 import { AppShell, Avatar, Container, Grid, Menu } from '@mantine/core';

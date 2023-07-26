@@ -4,7 +4,7 @@ exports[`CollapseButton matches snapshot 1`] = `
 <div>
   <div
     aria-expanded="false"
-    class="mantine-UnstyledButton-root mantine-Button-root mantine-zsgagm"
+    class="mantine-UnstyledButton-root mantine-Button-root mantine-jqjceh"
     data-button="true"
     data-testid="root"
     type="button"
@@ -25,7 +25,7 @@ exports[`CollapseButton matches snapshot 1`] = `
         class="mantine-Button-icon mantine-Button-rightIcon mantine-1ydydo3"
       >
         <button
-          class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1v3i31z"
+          class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-ov71kq"
           data-testid="toggle"
           type="button"
         >

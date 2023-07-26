@@ -11,14 +11,14 @@ exports[`Header matches snapshot 1`] = `
       >
         <input
           aria-invalid="false"
-          class="mantine-Input-input mantine-hwfcrj"
+          class="mantine-Input-input mantine-sfetfq"
         />
         <div
           class="mantine-ihurxy mantine-Input-rightSection"
         >
           <button
             aria-label="Clear"
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-CloseButton-root mantine-1kt79zo"
+            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-CloseButton-root mantine-1ub2lfw"
             type="button"
           >
             <svg

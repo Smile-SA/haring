@@ -1,3 +1,5 @@
+'use client';
+
 import type { BoxProps } from '@mantine/core';
 import type {
   ChangeEventHandler,

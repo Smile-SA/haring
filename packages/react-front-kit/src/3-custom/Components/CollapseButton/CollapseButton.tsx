@@ -1,3 +1,5 @@
+'use client';
+
 import type { ButtonProps } from '@mantine/core';
 import type { MouseEvent, ReactNode } from 'react';
 
@@ -73,12 +75,15 @@ interface ICollapseButtonProps<T> extends ButtonProps {
 export function CollapseButton<T>(props: ICollapseButtonProps<T>): JSX.Element {
   const {
     children,
+    fullWidth = true,
     id,
     label,
     leftIcon,
     level = 0,
     line,
     onSelect,
+    radius = 0,
+    size = 'md',
     selected,
     ...buttonProps
   } = props;
@@ -121,6 +126,7 @@ export function CollapseButton<T>(props: ICollapseButtonProps<T>): JSX.Element {
         component="div"
         data-selected={selected}
         data-testid="root"
+        fullWidth={fullWidth}
         leftIcon={
           Boolean(leftIcon) && (
             <ActionIcon
@@ -135,6 +141,7 @@ export function CollapseButton<T>(props: ICollapseButtonProps<T>): JSX.Element {
           )
         }
         onClick={handleSelect}
+        radius={radius}
         rightIcon={
           Boolean(children) && (
             <ActionIcon
@@ -147,6 +154,7 @@ export function CollapseButton<T>(props: ICollapseButtonProps<T>): JSX.Element {
             </ActionIcon>
           )
         }
+        size={size}
         variant={selected ? 'light' : 'white'}
         {...buttonProps}
       >
@@ -166,9 +174,3 @@ export function CollapseButton<T>(props: ICollapseButtonProps<T>): JSX.Element {
     </>
   );
 }
-
-CollapseButton.defaultProps = {
-  fullWidth: true,
-  radius: 0,
-  size: 'md',
-};

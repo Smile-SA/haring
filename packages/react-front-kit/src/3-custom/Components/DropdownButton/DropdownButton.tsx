@@ -1,3 +1,5 @@
+'use client';
+
 import type { MenuProps } from '@mantine/core';
 import type { ReactNode } from 'react';
 
@@ -11,12 +13,18 @@ interface IDropdownButtonProps extends MenuProps {
 }
 
 export function DropdownButton(props: IDropdownButtonProps): JSX.Element {
-  const { children, label, ...menuProps } = props;
+  const { children, label, position = 'bottom-start', ...menuProps } = props;
   const [opened, setOpened] = useState(false);
   const id = useId();
 
   return (
-    <Menu id={id} onChange={setOpened} opened={opened} {...menuProps}>
+    <Menu
+      id={id}
+      onChange={setOpened}
+      opened={opened}
+      position={position}
+      {...menuProps}
+    >
       <Menu.Target>
         <Button
           data-testid="button"
@@ -29,7 +37,3 @@ export function DropdownButton(props: IDropdownButtonProps): JSX.Element {
     </Menu>
   );
 }
-
-DropdownButton.defaultProps = {
-  position: 'bottom-start' as MenuProps['position'],
-};

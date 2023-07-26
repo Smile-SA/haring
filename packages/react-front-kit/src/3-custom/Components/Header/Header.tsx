@@ -1,3 +1,5 @@
+'use client';
+
 import type { HeaderProps, MantineThemeOverride } from '@mantine/core';
 import type {
   ChangeEventHandler,
@@ -94,6 +96,7 @@ export function Header(props: IHeaderProps): JSX.Element {
     right,
     searchTheme,
     searchValue,
+    withBorder = true,
     ...headerProps
   } = props;
   const { classes } = useStyles();
@@ -114,6 +117,7 @@ export function Header(props: IHeaderProps): JSX.Element {
     <MantineHeader
       ref={header}
       height={opened ? height + 110 : height}
+      withBorder={withBorder}
       {...headerProps}
     >
       <Flex className={classes.container} h={height}>
@@ -154,7 +158,3 @@ export function Header(props: IHeaderProps): JSX.Element {
     </MantineHeader>
   );
 }
-
-Header.defaultProps = {
-  withBorder: false,
-};

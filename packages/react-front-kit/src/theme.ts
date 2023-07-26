@@ -1,3 +1,5 @@
+'use client';
+
 import type { MantineThemeOverride } from '@mantine/core';
 
 import { DEFAULT_THEME } from '@mantine/core';
@@ -15,7 +17,7 @@ export const baseTheme: MantineThemeOverride = {
   },
   cursorType: 'pointer',
   defaultRadius: '1.5rem',
-  fontFamily: 'Open Sans',
+  fontFamily: 'var(--rfk-font, Open Sans)',
   fontSizes: {
     lg: '18px',
     md: '14px',
