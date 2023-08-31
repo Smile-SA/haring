@@ -15,7 +15,20 @@ exports[`Breadcrumbs matches snapshot 1`] = `
     <div
       class="mantine-Text-root mantine-Breadcrumbs-separator mantine-1iubh7d"
     >
-      /
+      <svg
+        fill="none"
+        height="14"
+        viewBox="0 0 14 14"
+        width="14"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5.25 10.5L8.75 7L5.25 3.5"
+          stroke="#0B7285"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
     </div>
     <a
       class="mantine-Breadcrumbs-breadcrumb mantine-eg71k5"

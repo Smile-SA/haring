@@ -27,7 +27,7 @@ export const Breadcrumbs: IStory = {
         test
       </a>,
     ],
-    separator: '>',
+    separator: undefined,
     separatorStyle: {
       color: 'grey',
       fontSize: '16px',

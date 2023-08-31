@@ -1,14 +1,12 @@
 import { renderWithProviders } from '../../../utils/tests';
 
-// eslint-disable-next-line import/named
 import { Breadcrumbs } from './Breadcrumbs';
 
 describe('Breadcrumbs', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <Breadcrumbs
-        // eslint-disable-next-line react/no-children-prop
-        children={[
+      <Breadcrumbs>
+        {[
           <a key={1} href="test">
             test
           </a>,
@@ -16,8 +14,7 @@ describe('Breadcrumbs', () => {
             test
           </a>,
         ]}
-        separator="/"
-      />
+      </Breadcrumbs>
     );
     expect(container).toMatchSnapshot();
   });
