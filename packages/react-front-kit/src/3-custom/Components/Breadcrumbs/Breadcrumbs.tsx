@@ -6,14 +6,28 @@ import type { ReactNode } from 'react';
 import { Breadcrumbs as MantineBreadcrumbs, createStyles } from '@mantine/core';
 
 interface IBreadcrumbsProps extends BreadcrumbsProps {
-  children: ReactNode;
+  children: ReactNode[];
+  separator?: string;
   separatorStyle?: object;
 }
 
 export function Breadcrumbs(props: IBreadcrumbsProps): JSX.Element {
   const { separator, separatorStyle, children } = props;
 
-  const useStyles = createStyles(() => ({
+  const useStyles = createStyles((theme) => ({
+    breadcrumb: {
+      '&:first-of-type': {
+        fontSize: '16px',
+        fontWeight: 600,
+      },
+      color: theme.colors.dark[6],
+      fontSize: '14px',
+      fontWeight: 400,
+      marginLeft: '1em',
+      marginRight: '1em',
+      textDecoration: 'none',
+      textTransform: 'capitalize',
+    },
     separator: {
       ...separatorStyle,
     },
@@ -40,12 +54,13 @@ export function Breadcrumbs(props: IBreadcrumbsProps): JSX.Element {
 
   return (
     <MantineBreadcrumbs
-      classNames={{ separator: classes.separator }}
+      classNames={{
+        breadcrumb: classes.breadcrumb,
+        separator: classes.separator,
+      }}
+      data-testid="Breadcrumbs"
       separator={separator ? separator : svgSeparator}
     >
-      <a>a</a>
-      <a>a</a>
-      <a>a</a>
       {children}
     </MantineBreadcrumbs>
   );

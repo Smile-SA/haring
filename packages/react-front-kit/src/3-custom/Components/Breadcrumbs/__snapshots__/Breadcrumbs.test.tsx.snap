@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs matches snapshot 1`] = `
+<div>
+  <div
+    class="mantine-Breadcrumbs-root mantine-1ujbd2v"
+    data-testid="Breadcrumbs"
+  >
+    <a
+      class="mantine-Breadcrumbs-breadcrumb mantine-eg71k5"
+      href="test"
+    >
+      test
+    </a>
+    <div
+      class="mantine-Text-root mantine-Breadcrumbs-separator mantine-1iubh7d"
+    >
+      /
+    </div>
+    <a
+      class="mantine-Breadcrumbs-breadcrumb mantine-eg71k5"
+      href="test"
+    >
+      test
+    </a>
+  </div>
+</div>
+`;
