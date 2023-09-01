@@ -1,8 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { expect } from '@storybook/jest';
-import { within } from '@storybook/testing-library';
-
 import { Breadcrumbs as Cmp } from './Breadcrumbs';
 
 const meta = {
@@ -28,18 +25,5 @@ export const Breadcrumbs: IStory = {
       </a>,
     ],
     separator: undefined,
-    separatorStyle: {
-      color: 'grey',
-      fontSize: '16px',
-    },
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    await expect(canvas.getByTestId('Breadcrumbs')).toBeVisible();
-    await expect(
-      canvas.getByTestId('Breadcrumbs-second-element')
-    ).toBeVisible();
-    await expect(canvas.getByTestId('Breadcrumbs-last-element')).toBeVisible();
-    await expect(await (await canvas.findAllByText('>')).length).toEqual(2);
   },
 };

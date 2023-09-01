@@ -13,7 +13,7 @@ exports[`Breadcrumbs matches snapshot 1`] = `
       test
     </a>
     <div
-      class="mantine-Text-root mantine-Breadcrumbs-separator mantine-1iubh7d"
+      class="mantine-Text-root mantine-Breadcrumbs-separator mantine-omiwqm"
     >
       <svg
         fill="none"
