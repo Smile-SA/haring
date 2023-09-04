@@ -5,12 +5,12 @@ import { renderWithProviders } from '../../../utils/tests';
 
 import { Pagination } from './Pagination';
 
-beforeAll(() => {
-  // Prevent mantine random ID
-  Math.random = () => 0.42;
-});
-
 describe('Pagination', () => {
+  beforeEach(() => {
+    // Prevent mantine random ID
+    Math.random = () => 0.42;
+  });
+
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
       <Pagination
@@ -28,6 +28,7 @@ describe('Pagination', () => {
     );
     expect(container).toMatchSnapshot();
   });
+
   it('renders with minimal props', () => {
     const { container } = renderWithProviders(
       <Pagination page={2} rowsPerPage={15} totalPages={10} />
@@ -37,13 +38,10 @@ describe('Pagination', () => {
     expect(canvas.queryByTestId('pagination-rowsPerPage')).toBeNull();
     expect(canvas.queryByTestId('pagination-page')).toBeVisible();
   });
+
   it('renders with full props', () => {
-    const pageChange = (): unknown => jest.fn();
-    const rowsPerPageChange = (): unknown => jest.fn();
     const { container } = renderWithProviders(
       <Pagination
-        onPageChange={pageChange}
-        onRowsPerPageChange={rowsPerPageChange}
         page={2}
         rowsPerPage={15}
         rowsPerPageLabel="Number of results per page"

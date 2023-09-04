@@ -1,6 +1,6 @@
 import { useArgs } from '@storybook/preview-api';
 
-import { isCallback, removeNulls } from '../utils/utilities';
+import { isCallback, isNotNullNotEmpty } from '../utils/utilities';
 
 export function useStorybookArgsConnect<T extends Record<string, unknown>>(
   args: T,
@@ -8,23 +8,22 @@ export function useStorybookArgsConnect<T extends Record<string, unknown>>(
 ): T {
   const [, setArgs] = useArgs<T>();
   const connectedProps = Object.entries(propsToConnect)
+    .filter(([key]) => isCallback(args[key]))
     .map(([key, value]) => {
-      const callbackProp: ((e: unknown) => void) | null = isCallback(args[key])
-        ? (args[key] as (e: unknown) => void)
-        : null;
+      const callbackProp: (e: unknown) => void = args[key] as (
+        e: unknown
+      ) => void;
       return callbackProp !== null
         ? {
             [key]: (v: unknown): void => {
-              if (isCallback(callbackProp)) {
-                callbackProp?.(v);
-                if (args[value] !== undefined) {
-                  setArgs({ [value]: v } as Partial<T>);
-                }
+              callbackProp?.(v);
+              if (args[value] !== undefined) {
+                setArgs({ [value]: v } as Partial<T>);
               }
             },
           }
         : null;
     })
-    .filter(removeNulls);
+    .filter(isNotNullNotEmpty);
   return { ...args, ...Object.assign({}, ...connectedProps) };
 }
