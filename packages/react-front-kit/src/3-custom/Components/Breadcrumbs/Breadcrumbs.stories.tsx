@@ -10,7 +10,6 @@ const meta = {
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
-/** You can change this style with the Mantine styles api: https://mantine.dev/core/breadcrumbs/?t=styles-api*/
 
 export const Breadcrumbs: IStory = {
   args: {
