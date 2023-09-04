@@ -46,7 +46,6 @@
     "wait-and-test-storybook": "wait-on http://127.0.0.1:6006/ -t 15000 && npm run test-storybook",
     "serve-and-test-storybook": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run serve-storybook\" \"npm run wait-and-test-storybook\""
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
@@ -83,7 +82,12 @@
     "@mantine/styles": ">=6",
     "@phosphor-icons/react": ">=2",
     "react": ">=18.0",
-    "react-dom": ">=18.0"
+    "react-dom": ">=18.0",
+    "@emotion/react": "^11.11.1",
+    "@mantine/dates": "^6.0.19",
+    "@tabler/icons-react": "^2.32.0",
+    "dayjs": "^1.11.9",
+    "mantine-react-table": "^1.2.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --max-warnings=0 --ignore-path ../../.gitignore"
