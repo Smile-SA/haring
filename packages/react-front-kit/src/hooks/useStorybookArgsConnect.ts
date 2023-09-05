@@ -1,6 +1,6 @@
 import { useArgs } from '@storybook/preview-api';
 
-import { isCallback, isNotNullNotEmpty } from '../utils/utilities';
+import { isCallback } from '../utils/utilities';
 
 export function useStorybookArgsConnect<T extends Record<string, unknown>>(
   args: T,
@@ -8,20 +8,16 @@ export function useStorybookArgsConnect<T extends Record<string, unknown>>(
 ): T {
   const [, setArgs] = useArgs<T>();
   const connectedProps = Object.entries(propsToConnect)
-    .filter(([key]) => isCallback(args[key]))
-    .map(([key, value]) => {
-      const callbackProp: (e: unknown) => void = args[key] as (
-        e: unknown
-      ) => void;
-      return {
-        [key]: (v: unknown): void => {
-          callbackProp?.(v);
-          if (args[value] !== undefined) {
-            setArgs({ [value]: v } as Partial<T>);
-          }
-        },
-      };
-    })
-    .filter(isNotNullNotEmpty);
-  return { ...args, ...Object.assign({}, ...connectedProps) };
+    .filter(([action]) => isCallback(args[action]))
+    .map(([action, prop]) => [
+      [action],
+      (...params: unknown[]): void => {
+        (args[action] as (...params: unknown[]) => void)?.(...params);
+        if (args[prop] !== undefined) {
+          // We suppose the value is passed as the first argument in the callback
+          setArgs({ [prop]: params[0] } as Partial<T>);
+        }
+      },
+    ]);
+  return { ...args, ...Object.fromEntries(connectedProps) };
 }
