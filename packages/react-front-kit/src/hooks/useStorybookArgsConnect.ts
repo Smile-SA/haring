@@ -13,16 +13,14 @@ export function useStorybookArgsConnect<T extends Record<string, unknown>>(
       const callbackProp: (e: unknown) => void = args[key] as (
         e: unknown
       ) => void;
-      return callbackProp !== null
-        ? {
-            [key]: (v: unknown): void => {
-              callbackProp?.(v);
-              if (args[value] !== undefined) {
-                setArgs({ [value]: v } as Partial<T>);
-              }
-            },
+      return {
+        [key]: (v: unknown): void => {
+          callbackProp?.(v);
+          if (args[value] !== undefined) {
+            setArgs({ [value]: v } as Partial<T>);
           }
-        : null;
+        },
+      };
     })
     .filter(isNotNullNotEmpty);
   return { ...args, ...Object.assign({}, ...connectedProps) };
