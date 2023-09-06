@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination matches snapshot 1`] = `
+<div>
+  <div
+    class="mantine-z9baz5"
+    data-testid="pagination"
+  >
+    <div
+      class="mantine-InputWrapper-root mantine-Select-root mantine-q6oiko"
+    >
+      <div
+        aria-controls="mantine-f4bipx4bi"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class=""
+        role="combobox"
+        tabindex="-1"
+      >
+        <input
+          type="hidden"
+          value="15"
+        />
+        <div
+          class="mantine-Input-wrapper mantine-Select-wrapper mantine-1v7s5f8"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-invalid="false"
+            aria-label="Number of results per page"
+            autocomplete="off"
+            class="mantine-Input-input mantine-Select-input mantine-1kaqzie"
+            data-mantine-stop-propagation="false"
+            data-testid="pagination-rowsPerPage"
+            id="mantine-f4bipx4bi"
+            readonly=""
+            type="search"
+            value="Display 15 results"
+          />
+          <div
+            class="mantine-1wnb5rr mantine-Input-rightSection mantine-Select-rightSection"
+          >
+            <svg
+              data-chevron="true"
+              fill="none"
+              height="0.875rem"
+              style="color: rgb(134, 142, 150);"
+              viewBox="0 0 15 15"
+              width="0.875rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M4.93179 5.43179C4.75605 5.60753 4.75605 5.89245 4.93179 6.06819C5.10753 6.24392 5.39245 6.24392 5.56819 6.06819L7.49999 4.13638L9.43179 6.06819C9.60753 6.24392 9.89245 6.24392 10.0682 6.06819C10.2439 5.89245 10.2439 5.60753 10.0682 5.43179L7.81819 3.18179C7.73379 3.0974 7.61933 3.04999 7.49999 3.04999C7.38064 3.04999 7.26618 3.0974 7.18179 3.18179L4.93179 5.43179ZM10.0682 9.56819C10.2439 9.39245 10.2439 9.10753 10.0682 8.93179C9.89245 8.75606 9.60753 8.75606 9.43179 8.93179L7.49999 10.8636L5.56819 8.93179C5.39245 8.75606 5.10753 8.75606 4.93179 8.93179C4.75605 9.10753 4.75605 9.39245 4.93179 9.56819L7.18179 11.8182C7.35753 11.9939 7.64245 11.9939 7.81819 11.8182L10.0682 9.56819Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mantine-Group-root mantine-11nlj0o"
+      data-testid="pagination-page"
+    >
+      <button
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-15w5krq"
+        type="button"
+      >
+        1
+      </button>
+      <button
+        aria-current="page"
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-15w5krq"
+        data-active="true"
+        type="button"
+      >
+        2
+      </button>
+      <button
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-15w5krq"
+        type="button"
+      >
+        3
+      </button>
+      <button
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-15w5krq"
+        type="button"
+      >
+        4
+      </button>
+      <button
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-15w5krq"
+        type="button"
+      >
+        5
+      </button>
+      <div
+        class="mantine-Pagination-dots mantine-90n090"
+      >
+        <svg
+          height="calc(1.625rem / 2)"
+          viewBox="0 0 16 16"
+          width="calc(1.625rem / 2)"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2 8c0-.733.6-1.333 1.333-1.333.734 0 1.334.6 1.334 1.333s-.6 1.333-1.334 1.333C2.6 9.333 2 8.733 2 8zm9.333 0c0-.733.6-1.333 1.334-1.333C13.4 6.667 14 7.267 14 8s-.6 1.333-1.333 1.333c-.734 0-1.334-.6-1.334-1.333zM6.667 8c0-.733.6-1.333 1.333-1.333s1.333.6 1.333 1.333S8.733 9.333 8 9.333 6.667 8.733 6.667 8z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      <button
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-15w5krq"
+        type="button"
+      >
+        10
+      </button>
+    </div>
+  </div>
+</div>
+`;
