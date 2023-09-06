@@ -47,10 +47,15 @@
     "serve-and-test-storybook": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run serve-storybook\" \"npm run wait-and-test-storybook\""
   },
   "dependencies": {
-    "@mantine/core": "^6.0.13",
-    "@mantine/hooks": "^6.0.13",
+    "@emotion/react": "^11.11.1",
+    "@mantine/core": "^6.0.19",
+    "@mantine/dates": "^6.0.19",
+    "@mantine/hooks": "^6.0.19",
     "@mantine/styles": "^6.0.13",
     "@phosphor-icons/react": "^2.0.9",
+    "@tabler/icons-react": "^2.32.0",
+    "dayjs": "^1.11.9",
+    "mantine-react-table": "^1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
