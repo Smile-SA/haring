@@ -10,6 +10,12 @@ import { CollapseButton as Cmp } from './CollapseButton';
 
 const meta = {
   argTypes: {
+    id: {
+      control: 'text',
+    },
+    label: {
+      control: 'text',
+    },
     leftIcon: {
       control: 'select',
       mapping: iconsElements,
@@ -39,11 +45,13 @@ maximus mi. Vivamus consequat quam tristique ex laoreet, ut
 eleifend eros sodales. Cras bibendum enim dolor, id rutrum urna
 vestibulum non.`,
     fullWidth: true,
+    id: '',
     label: 'Home',
     leftIcon: iconsElements.HouseLine,
     level: 0,
     line: false,
     radius: 0,
+    selected: false,
     variant: 'white',
   },
   play: async ({ canvasElement }) => {
@@ -67,10 +75,12 @@ export const Nested: IStory = {
       </>
     ),
     fullWidth: true,
+    id: '',
     label: 'Pull Requests',
     leftIcon: iconsElements.User,
     level: 0,
     line: true,
     radius: 0,
+    selected: false,
   },
 };

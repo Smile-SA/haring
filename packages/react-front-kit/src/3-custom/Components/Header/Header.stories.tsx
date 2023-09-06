@@ -4,6 +4,7 @@ import { Avatar, Menu } from '@mantine/core';
 import { expect } from '@storybook/jest';
 import { userEvent, within } from '@storybook/testing-library';
 
+import { useStorybookArgsConnect } from '../../../hooks/useStorybookArgsConnect';
 import { primaryTheme } from '../../../theme';
 import { DropdownButton } from '../DropdownButton/DropdownButton';
 
@@ -12,27 +13,27 @@ import { Header as Cmp } from './Header';
 const meta = {
   argTypes: {
     children: {
-      table: {
-        disable: true,
-      },
+      control: false,
+    },
+    childrenComponent: {
+      control: 'text',
     },
     left: {
-      table: {
-        disable: true,
-      },
+      control: false,
     },
     right: {
-      table: {
-        disable: true,
-      },
-    },
-    searchTheme: {
-      table: {
-        disable: true,
-      },
+      control: false,
     },
   },
   component: Cmp,
+  decorators: [
+    function Component(Story, ctx) {
+      const args = useStorybookArgsConnect(ctx.args, {
+        onSearchChange: 'searchValue',
+      });
+      return <Story args={{ ...args }} />;
+    },
+  ],
   parameters: {
     layout: 'fullscreen',
   },
@@ -75,6 +76,7 @@ export const Header: IStory = {
       </>
     ),
     searchTheme: primaryTheme,
+    searchValue: '',
     withBorder: false,
   },
   play: async ({ canvasElement }) => {

@@ -1,5 +1,6 @@
 import type { Icon, IconProps } from '@phosphor-icons/react';
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ReactElement } from 'react';
 
 import { Center, Grid, Text } from '@mantine/core';
 
@@ -23,7 +24,7 @@ export default meta;
 type IStory = StoryObj<typeof meta>;
 
 function render(icons: Record<string, Icon>) {
-  return function Render(props: IconProps): JSX.Element {
+  return function Render(props: IconProps): ReactElement {
     return (
       <Grid>
         {Object.entries(icons).map(([key, IconCmp]) => {
