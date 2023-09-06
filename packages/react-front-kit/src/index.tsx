@@ -1,5 +1,6 @@
-/* eslint react-refresh/only-export-components: 0 */
+/* eslint-disable react-refresh/only-export-components */
 // component exports
+export * from './1-styleGuide/Icons';
 export * from './3-custom/Components/Breadcrumbs/Breadcrumbs';
 export * from './3-custom/Components/CollapseButton/CollapseButton';
 export * from './3-custom/Components/SidebarMenu/SidebarMenu';
