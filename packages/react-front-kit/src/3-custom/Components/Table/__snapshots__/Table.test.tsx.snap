@@ -3,7 +3,7 @@
 exports[`Table matches snapshot 1`] = `
 <div>
   <div
-    class="mantine-Paper-root mantine-11f6br8"
+    class="mantine-Paper-root mantine-1apciog"
     data-with-border="true"
   >
     <div
@@ -42,12 +42,12 @@ exports[`Table matches snapshot 1`] = `
               </svg>
             </button>
             <button
-              aria-controls="mantine-yifk44bl4-dropdown"
+              aria-controls="mantine-mnxa2acmz-dropdown"
               aria-expanded="false"
               aria-haspopup="menu"
               aria-label="Show/Hide columns"
               class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1tfns2e"
-              id="mantine-yifk44bl4-target"
+              id="mantine-mnxa2acmz-target"
               type="button"
             >
               <svg
@@ -220,7 +220,7 @@ exports[`Table matches snapshot 1`] = `
                             <input
                               aria-label="Toggle select all"
                               class="mantine-696iki mantine-Checkbox-input"
-                              id="mantine-x8j0pkmq9"
+                              id="mantine-v3hwfd8i5"
                               type="checkbox"
                             />
                             <svg
@@ -301,12 +301,12 @@ exports[`Table matches snapshot 1`] = `
                   class="mantine-TableHeadCell-Content-Actions mantine-1tfj5gu"
                 >
                   <button
-                    aria-controls="mantine-xx7h2ehlt-dropdown"
+                    aria-controls="mantine-sdmau48vx-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     aria-label="Column Actions"
                     class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1gomh5d"
-                    id="mantine-xx7h2ehlt-target"
+                    id="mantine-sdmau48vx-target"
                     type="button"
                   >
                     <svg
@@ -357,7 +357,7 @@ exports[`Table matches snapshot 1`] = `
                           <input
                             aria-invalid="false"
                             class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
-                            id="mantine-ybcqrip94"
+                            id="mantine-bd47l4c14"
                             placeholder="Filter by id"
                             title="Filter by id"
                             type="text"
@@ -421,12 +421,12 @@ exports[`Table matches snapshot 1`] = `
                   class="mantine-TableHeadCell-Content-Actions mantine-1tfj5gu"
                 >
                   <button
-                    aria-controls="mantine-e3pxvqsfe-dropdown"
+                    aria-controls="mantine-7z2zv843w-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     aria-label="Column Actions"
                     class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1gomh5d"
-                    id="mantine-e3pxvqsfe-target"
+                    id="mantine-7z2zv843w-target"
                     type="button"
                   >
                     <svg
@@ -477,7 +477,7 @@ exports[`Table matches snapshot 1`] = `
                           <input
                             aria-invalid="false"
                             class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
-                            id="mantine-lr8zswsdh"
+                            id="mantine-jbyfk47z8"
                             placeholder="Filter by Format"
                             title="Filter by Format"
                             type="text"
@@ -541,12 +541,12 @@ exports[`Table matches snapshot 1`] = `
                   class="mantine-TableHeadCell-Content-Actions mantine-1tfj5gu"
                 >
                   <button
-                    aria-controls="mantine-vosylqf87-dropdown"
+                    aria-controls="mantine-tr4uxo6c0-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     aria-label="Column Actions"
                     class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1gomh5d"
-                    id="mantine-vosylqf87-target"
+                    id="mantine-tr4uxo6c0-target"
                     type="button"
                   >
                     <svg
@@ -597,7 +597,7 @@ exports[`Table matches snapshot 1`] = `
                           <input
                             aria-invalid="false"
                             class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
-                            id="mantine-r2mehxgd8"
+                            id="mantine-w4j83pj6n"
                             placeholder="Filter by Titre"
                             title="Filter by Titre"
                             type="text"
@@ -661,12 +661,12 @@ exports[`Table matches snapshot 1`] = `
                   class="mantine-TableHeadCell-Content-Actions mantine-1tfj5gu"
                 >
                   <button
-                    aria-controls="mantine-iavo9v7l0-dropdown"
+                    aria-controls="mantine-2l9cb3hh7-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     aria-label="Column Actions"
                     class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1gomh5d"
-                    id="mantine-iavo9v7l0-target"
+                    id="mantine-2l9cb3hh7-target"
                     type="button"
                   >
                     <svg
@@ -717,7 +717,7 @@ exports[`Table matches snapshot 1`] = `
                           <input
                             aria-invalid="false"
                             class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
-                            id="mantine-w87k9d2v5"
+                            id="mantine-9hswrk501"
                             placeholder="Filter by Créateur"
                             title="Filter by Créateur"
                             type="text"
@@ -781,12 +781,12 @@ exports[`Table matches snapshot 1`] = `
                   class="mantine-TableHeadCell-Content-Actions mantine-1tfj5gu"
                 >
                   <button
-                    aria-controls="mantine-drdwckmjz-dropdown"
+                    aria-controls="mantine-atgn22xka-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     aria-label="Column Actions"
                     class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1gomh5d"
-                    id="mantine-drdwckmjz-target"
+                    id="mantine-atgn22xka-target"
                     type="button"
                   >
                     <svg
@@ -837,7 +837,7 @@ exports[`Table matches snapshot 1`] = `
                           <input
                             aria-invalid="false"
                             class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
-                            id="mantine-aviudlstl"
+                            id="mantine-gmr03l71n"
                             placeholder="Filter by Date publication"
                             title="Filter by Date publication"
                             type="text"
@@ -896,7 +896,7 @@ exports[`Table matches snapshot 1`] = `
                       <input
                         aria-label="Toggle select row"
                         class="mantine-696iki mantine-Checkbox-input"
-                        id="mantine-p35khod6l"
+                        id="mantine-bv6kieova"
                         type="checkbox"
                       />
                       <svg
@@ -950,7 +950,7 @@ exports[`Table matches snapshot 1`] = `
             >
               <div
                 class="actions"
-                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px;"
+                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px; opacity: 0;"
               >
                 <button
                   class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1yaiubm"
@@ -1022,11 +1022,11 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <div
-                    aria-controls="mantine-j4mbo1ga4-dropdown"
+                    aria-controls="mantine-blhq35oq7-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     class=""
-                    id="mantine-j4mbo1ga4-target"
+                    id="mantine-blhq35oq7-target"
                   >
                     <svg
                       fill="none"
@@ -1077,7 +1077,7 @@ exports[`Table matches snapshot 1`] = `
                       <input
                         aria-label="Toggle select row"
                         class="mantine-696iki mantine-Checkbox-input"
-                        id="mantine-32jmwrhy7"
+                        id="mantine-h8huyhgev"
                         type="checkbox"
                       />
                       <svg
@@ -1131,7 +1131,7 @@ exports[`Table matches snapshot 1`] = `
             >
               <div
                 class="actions"
-                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px;"
+                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px; opacity: 0;"
               >
                 <button
                   class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1yaiubm"
@@ -1203,11 +1203,11 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <div
-                    aria-controls="mantine-s26ux0ghk-dropdown"
+                    aria-controls="mantine-398fko0g7-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     class=""
-                    id="mantine-s26ux0ghk-target"
+                    id="mantine-398fko0g7-target"
                   >
                     <svg
                       fill="none"
@@ -1258,7 +1258,7 @@ exports[`Table matches snapshot 1`] = `
                       <input
                         aria-label="Toggle select row"
                         class="mantine-696iki mantine-Checkbox-input"
-                        id="mantine-qzefw6qnb"
+                        id="mantine-h18a1nvjw"
                         type="checkbox"
                       />
                       <svg
@@ -1312,7 +1312,7 @@ exports[`Table matches snapshot 1`] = `
             >
               <div
                 class="actions"
-                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px;"
+                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px; opacity: 0;"
               >
                 <button
                   class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1yaiubm"
@@ -1384,11 +1384,11 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <div
-                    aria-controls="mantine-gn7w081v4-dropdown"
+                    aria-controls="mantine-fq5km40ds-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     class=""
-                    id="mantine-gn7w081v4-target"
+                    id="mantine-fq5km40ds-target"
                   >
                     <svg
                       fill="none"
@@ -1439,7 +1439,7 @@ exports[`Table matches snapshot 1`] = `
                       <input
                         aria-label="Toggle select row"
                         class="mantine-696iki mantine-Checkbox-input"
-                        id="mantine-7d87gvhjm"
+                        id="mantine-mcu40uhkc"
                         type="checkbox"
                       />
                       <svg
@@ -1493,7 +1493,7 @@ exports[`Table matches snapshot 1`] = `
             >
               <div
                 class="actions"
-                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px;"
+                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px; opacity: 0;"
               >
                 <button
                   class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1yaiubm"
@@ -1565,11 +1565,11 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <div
-                    aria-controls="mantine-hu14tk80l-dropdown"
+                    aria-controls="mantine-4z91nr16c-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     class=""
-                    id="mantine-hu14tk80l-target"
+                    id="mantine-4z91nr16c-target"
                   >
                     <svg
                       fill="none"
@@ -1620,7 +1620,7 @@ exports[`Table matches snapshot 1`] = `
                       <input
                         aria-label="Toggle select row"
                         class="mantine-696iki mantine-Checkbox-input"
-                        id="mantine-wkuij0qip"
+                        id="mantine-jdk6pi63g"
                         type="checkbox"
                       />
                       <svg
@@ -1674,7 +1674,7 @@ exports[`Table matches snapshot 1`] = `
             >
               <div
                 class="actions"
-                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px;"
+                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px; opacity: 0;"
               >
                 <button
                   class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1yaiubm"
@@ -1746,11 +1746,11 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <div
-                    aria-controls="mantine-a31xssprn-dropdown"
+                    aria-controls="mantine-l4nfdrr5u-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     class=""
-                    id="mantine-a31xssprn-target"
+                    id="mantine-l4nfdrr5u-target"
                   >
                     <svg
                       fill="none"
