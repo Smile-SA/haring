@@ -3,9 +3,14 @@
 import type { MRT_ColumnDef } from 'mantine-react-table';
 import type { ReactNode } from 'react';
 
-import { ActionIcon, Button, Menu, Modal, Tooltip } from '@mantine/core';
+import { ActionIcon, Box, Button, Menu, Modal, Tooltip } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { ShareNetwork, Star, Trash } from '@phosphor-icons/react';
+import {
+  FolderNotchOpen,
+  ShareNetwork,
+  Star,
+  Trash,
+} from '@phosphor-icons/react';
 import { MantineReactTable, useMantineReactTable } from 'mantine-react-table';
 import { useMemo, useState } from 'react';
 
@@ -188,12 +193,28 @@ export function Table(): JSX.Element {
         right: ['mrt-row-actions'],
       },
     },
+    mantinePaperProps: {
+      sx: {
+        border: 'hidden',
+        borderRadius: '24px',
+        boxShadow:
+          '0px 3.43489px 2.74791px 0px rgba(0, 0, 0, 0.02), 0px 8.6871px 6.94968px 0px rgba(0, 0, 0, 0.02), 0px 17.72087px 14.1767px 0px rgba(0, 0, 0, 0.03), 0px 36.50164px 29.20132px 0px rgba(0, 0, 0, 0.03), 0px 100px 80px 0px rgba(0, 0, 0, 0.05)',
+      },
+    },
     mantineTableBodyRowProps: ({ row }) => ({
       onClick: () => {
         setCurrentElement(row.original);
       },
     }),
+    mantineToolbarAlertBannerProps: () => ({
+      color: 'white !important',
+      sx: {
+        background: '#0B7285',
+        border: 'none',
+      },
+    }),
     positionActionsColumn: 'last',
+    positionToolbarAlertBanner: 'top',
     renderRowActions: (cell) => (
       <div
         className="actions"
@@ -227,6 +248,32 @@ export function Table(): JSX.Element {
           "Plus d'options"
         )}
       </div>
+    ),
+    renderToolbarAlertBannerContent: (cell) => (
+      <Box
+        style={{
+          color: 'white',
+          display: 'flex',
+          padding: '4px 8px',
+          width: '100%',
+        }}
+      >
+        <p style={{ marginRight: '10px' }}>{cell.selectedAlert}</p>
+        <Button
+          leftIcon={<FolderNotchOpen size={12} />}
+          style={{ display: 'block', margin: 'auto 10px auto' }}
+          variant="default"
+        >
+          Déplacer dans l&apos;arborecence
+        </Button>
+        <Button
+          leftIcon={<Trash size={12} />}
+          style={{ display: 'block', margin: 'auto 10px auto' }}
+          variant="default"
+        >
+          Supprimer
+        </Button>
+      </Box>
     ),
   });
 
@@ -304,9 +351,7 @@ export function Table(): JSX.Element {
   };
   const sendCurrentElementValue = (action: string): void => {
     // eslint-disable-next-line no-console
-    console.info(currentElement);
-    // eslint-disable-next-line no-console
-    console.info(action);
+    console.log(currentElement, action);
     close();
   };
 
