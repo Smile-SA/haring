@@ -135,12 +135,14 @@ const data: IDocument[] = [
 
 export function Table(): JSX.Element {
   const [opened, { open, close }] = useDisclosure(false);
-
   const [modalTitle, setModalTitle] = useState<string>('');
   const [modalContent, setModalContent] = useState<ReactNode | undefined>();
   const [currentElement, setCurrentElement] = useState<
     number | string | IDocument
   >(0);
+  const [displayActionsButtons, setDisplayActionsButtons] = useState<
+    (boolean | null)[]
+  >(data.map(() => false));
 
   const columns = useMemo<MRT_ColumnDef<IDocument>[]>(
     () => [
@@ -192,15 +194,18 @@ export function Table(): JSX.Element {
       },
     }),
     positionActionsColumn: 'last',
-    renderRowActions: () => (
+    renderRowActions: (cell) => (
       <div
         className="actions"
+        onMouseEnter={() => actionButtonOnMouseHandler(cell.row.index, true)}
+        onMouseLeave={() => actionButtonOnMouseHandler(cell.row.index, false)}
         style={{
           boxShadow: 'none',
           display: 'flex',
           justifyContent: 'space-between',
           marginLeft: '24px',
           marginRight: '16px',
+          opacity: displayActionsButtons[cell.row.index] ? 1 : 0,
         }}
       >
         {tooltip(
@@ -249,7 +254,7 @@ export function Table(): JSX.Element {
     setModalContent(
       <>
         <Button
-          onClick={sendCurrentElementValue}
+          onClick={() => sendCurrentElementValue('ADD_TO_FAVORITES')}
           style={{ marginRight: '10px' }}
         >
           Oui
@@ -276,7 +281,7 @@ export function Table(): JSX.Element {
     setModalContent(
       <>
         <Button
-          onClick={sendCurrentElementValue}
+          onClick={() => sendCurrentElementValue('REMOVE')}
           style={{ marginRight: '10px' }}
         >
           Oui
@@ -287,8 +292,21 @@ export function Table(): JSX.Element {
     open();
   };
 
-  const sendCurrentElementValue = (): void => {
-    console.log(currentElement);
+  const actionButtonOnMouseHandler = (
+    rowIndex: number,
+    enter: boolean
+  ): void => {
+    const elementIndex = rowIndex;
+    const newDisplayActionsButtonArray = displayActionsButtons.map((_, index) =>
+      elementIndex === index ? enter : false
+    );
+    setDisplayActionsButtons(newDisplayActionsButtonArray);
+  };
+  const sendCurrentElementValue = (action: string): void => {
+    // eslint-disable-next-line no-console
+    console.info(currentElement);
+    // eslint-disable-next-line no-console
+    console.info(action);
     close();
   };
 
@@ -315,7 +333,6 @@ export function Table(): JSX.Element {
       </Menu.Dropdown>
     </Menu>
   );
-
   return (
     <>
       <MantineReactTable table={table} />
