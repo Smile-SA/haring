@@ -11,7 +11,13 @@ import {
   Star,
   Trash,
 } from '@phosphor-icons/react';
-import { MantineReactTable, useMantineReactTable } from 'mantine-react-table';
+import {
+  MRT_ShowHideColumnsButton as MRTShowHideColumnsButton,
+  MRT_ToggleFiltersButton as MRTToggleFiltersButton,
+  MantineReactTable,
+  useMantineReactTable,
+} from 'mantine-react-table';
+import { MRT_Localization_FR } from 'mantine-react-table/locales/fr';
 import { useMemo, useState } from 'react';
 
 interface IDocument {
@@ -192,7 +198,12 @@ export function Table(): JSX.Element {
       columnPinning: {
         right: ['mrt-row-actions'],
       },
+      columnVisibility: {
+        firstName: false,
+        id: false,
+      },
     },
+    localization: MRT_Localization_FR,
     mantinePaperProps: {
       sx: {
         border: 'hidden',
@@ -211,6 +222,7 @@ export function Table(): JSX.Element {
       sx: {
         background: '#0B7285',
         border: 'none',
+        borderRadius: '4px',
       },
     }),
     positionActionsColumn: 'last',
@@ -254,25 +266,60 @@ export function Table(): JSX.Element {
         style={{
           color: 'white',
           display: 'flex',
+          justifyContent: 'space-between',
+          padding: '0px 8px',
+          width: '100%',
+        }}
+      >
+        <p>{cell.selectedAlert}</p>
+        <div
+          className="buttons-action-groupe"
+          style={{ display: 'flex', marginRight: '78px' }}
+        >
+          <Button
+            leftIcon={<FolderNotchOpen size={12} />}
+            onClick={() => {
+              sendSelectedElementsValueWithAction(
+                cell.table.getSelectedRowModel().rows.map((x) => x.original),
+                'ARBO_CHANGE_LOCATION'
+              );
+            }}
+            style={{ display: 'block', margin: 'auto 0px auto' }}
+            variant="default"
+          >
+            Déplacer dans l&apos;arborecence
+          </Button>
+          <Button
+            leftIcon={<Trash size={12} />}
+            onClick={() => {
+              multiRemoveHandle(
+                cell.table.getSelectedRowModel().rows.map((x) => x.original)
+              );
+            }}
+            style={{ display: 'block', margin: 'auto 10px auto' }}
+            variant="default"
+          >
+            Supprimer
+          </Button>
+        </div>
+      </Box>
+    ),
+    renderToolbarInternalActions: (cell) => (
+      <Box
+        style={{
+          height: '100%',
           padding: '4px 8px',
           width: '100%',
         }}
       >
-        <p style={{ marginRight: '10px' }}>{cell.selectedAlert}</p>
-        <Button
-          leftIcon={<FolderNotchOpen size={12} />}
-          style={{ display: 'block', margin: 'auto 10px auto' }}
-          variant="default"
-        >
-          Déplacer dans l&apos;arborecence
-        </Button>
-        <Button
-          leftIcon={<Trash size={12} />}
-          style={{ display: 'block', margin: 'auto 10px auto' }}
-          variant="default"
-        >
-          Supprimer
-        </Button>
+        <MRTToggleFiltersButton
+          style={{ background: 'white', height: '34px', marginRight: '10px' }}
+          table={table}
+        />
+        <MRTShowHideColumnsButton
+          style={{ background: 'white', height: '34px' }}
+          table={cell.table}
+        />
       </Box>
     ),
   });
@@ -296,12 +343,12 @@ export function Table(): JSX.Element {
   // Handle
   const addToFavHandle = (): void => {
     setModalTitle(
-      'Êtes vous sure de vouloir ajouter aux favoris cette élément ?'
+      'Êtes vous sure de vouloir ajouter aux favoris cette document ?'
     );
     setModalContent(
       <>
         <Button
-          onClick={() => sendCurrentElementValue('ADD_TO_FAVORITES')}
+          onClick={() => sendCurrentElementValueWithAction('ADD_TO_FAVORITES')}
           style={{ marginRight: '10px' }}
         >
           Oui
@@ -324,11 +371,11 @@ export function Table(): JSX.Element {
     open();
   };
   const removeHandle = (): void => {
-    setModalTitle('Êtes vous sure de vouloir supprimer cette élément ?');
+    setModalTitle('Êtes vous sure de vouloir supprimer cette document ?');
     setModalContent(
       <>
         <Button
-          onClick={() => sendCurrentElementValue('REMOVE')}
+          onClick={() => sendCurrentElementValueWithAction('REMOVE')}
           style={{ marginRight: '10px' }}
         >
           Oui
@@ -339,6 +386,23 @@ export function Table(): JSX.Element {
     open();
   };
 
+  const multiRemoveHandle = (values: IDocument[]): void => {
+    setModalTitle('Êtes vous sure de vouloir supprimer ces documents ?');
+    setModalContent(
+      <div>
+        <Button
+          onClick={() =>
+            sendSelectedElementsValueWithAction(values, 'REMOVE_ALL')
+          }
+          style={{ marginRight: '10px' }}
+        >
+          Oui
+        </Button>
+        <Button onClick={close}>Non</Button>
+      </div>
+    );
+    open();
+  };
   const actionButtonOnMouseHandler = (
     rowIndex: number,
     enter: boolean
@@ -349,9 +413,16 @@ export function Table(): JSX.Element {
     );
     setDisplayActionsButtons(newDisplayActionsButtonArray);
   };
-  const sendCurrentElementValue = (action: string): void => {
-    // eslint-disable-next-line no-console
+  const sendCurrentElementValueWithAction = (action: string): void => {
     console.log(currentElement, action);
+    close();
+  };
+  const sendSelectedElementsValueWithAction = (
+    values: IDocument[],
+    action: string
+  ): void => {
+    // eslint-disable-next-line no-console
+    console.log(values, action);
     close();
   };
 
