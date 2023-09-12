@@ -14,7 +14,7 @@ describe('Breadcrumbs', () => {
             test
           </a>,
         ]}
-      </Breadcrumbs>
+      </Breadcrumbs>,
     );
     expect(container).toMatchSnapshot();
   });

@@ -22,11 +22,11 @@ export const SidebarMenu: IStory = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await expect(canvas.getAllByTestId('root')[0].dataset.selected).toEqual(
-      'false'
+      'false',
     );
     await userEvent.click(canvas.getAllByTestId('select')[0]);
     await expect(canvas.getAllByTestId('root')[0].dataset.selected).toEqual(
-      'true'
+      'true',
     );
   },
 };

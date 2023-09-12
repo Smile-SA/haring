@@ -6,6 +6,7 @@ import type {
   FormEvent,
   MouseEvent,
   MouseEventHandler,
+  ReactElement,
 } from 'react';
 
 import { Box, CloseButton, Input, createStyles } from '@mantine/core';
@@ -32,7 +33,7 @@ interface IHeaderSearchProps extends BoxProps {
   value?: string;
 }
 
-export function HeaderSearch(props: IHeaderSearchProps): JSX.Element {
+export function HeaderSearch(props: IHeaderSearchProps): ReactElement {
   const {
     clearButtonAriaLabel = 'Clear',
     opened,

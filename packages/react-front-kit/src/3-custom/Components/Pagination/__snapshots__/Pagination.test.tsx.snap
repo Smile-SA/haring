@@ -43,10 +43,8 @@ exports[`Pagination matches snapshot 1`] = `
             <svg
               data-chevron="true"
               fill="none"
-              height="0.875rem"
-              style="color: rgb(134, 142, 150);"
+              style="color: rgb(134, 142, 150); width: 0.875rem; height: 0.875rem;"
               viewBox="0 0 15 15"
-              width="0.875rem"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -65,33 +63,33 @@ exports[`Pagination matches snapshot 1`] = `
       data-testid="pagination-page"
     >
       <button
-        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-15w5krq"
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-16h8s0u"
         type="button"
       >
         1
       </button>
       <button
         aria-current="page"
-        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-15w5krq"
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-16h8s0u"
         data-active="true"
         type="button"
       >
         2
       </button>
       <button
-        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-15w5krq"
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-16h8s0u"
         type="button"
       >
         3
       </button>
       <button
-        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-15w5krq"
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-16h8s0u"
         type="button"
       >
         4
       </button>
       <button
-        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-15w5krq"
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-16h8s0u"
         type="button"
       >
         5
@@ -100,9 +98,8 @@ exports[`Pagination matches snapshot 1`] = `
         class="mantine-Pagination-dots mantine-90n090"
       >
         <svg
-          height="calc(1.625rem / 2)"
+          style="width: calc(1.625rem / 2); height: calc(1.625rem / 2);"
           viewBox="0 0 16 16"
-          width="calc(1.625rem / 2)"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -112,7 +109,7 @@ exports[`Pagination matches snapshot 1`] = `
         </svg>
       </div>
       <button
-        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-15w5krq"
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-16h8s0u"
         type="button"
       >
         10
