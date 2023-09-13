@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import type { ComponentType, ReactElement } from 'react';
 
 import { Center, Grid } from '@mantine/core';
 
@@ -10,10 +10,10 @@ interface IListProps {
   commonProps?: Record<string, unknown>;
   span?: number;
   title: string;
-  variantProps?: Record<string, unknown[]>;
+  variantProps?: Record<string, string[]>;
 }
 
-export default function List(props: IListProps): JSX.Element {
+export default function List(props: IListProps): ReactElement {
   const { commonProps = {}, Cmp, span = 1, title, variantProps = {} } = props;
   return (
     <Grid>
@@ -37,7 +37,7 @@ export default function List(props: IListProps): JSX.Element {
               <Cmp {...props} />
             </Item>
           );
-        })
+        }),
       )}
     </Grid>
   );

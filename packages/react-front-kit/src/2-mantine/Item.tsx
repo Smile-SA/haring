@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { Center, Grid, Text } from '@mantine/core';
 
@@ -8,7 +8,7 @@ interface IItemProps {
   title: string;
 }
 
-export default function Item(props: IItemProps): JSX.Element {
+export default function Item(props: IItemProps): ReactElement {
   const { children, span = 1, title } = props;
   return (
     <Grid.Col span={span}>

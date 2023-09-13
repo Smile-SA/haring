@@ -1,6 +1,6 @@
 'use client';
 
-import type { ChangeEvent, FormEvent } from 'react';
+import type { ChangeEvent, FormEvent, ReactElement } from 'react';
 
 import { AppShell, Avatar, Container, Grid, Menu } from '@mantine/core';
 import { useState } from 'react';
@@ -14,7 +14,7 @@ import { menu } from '../../Components/SidebarMenu/SidebarMenu.mock';
 /**
  * Primary UI component for user interaction
  */
-export function TestPage(): JSX.Element {
+export function TestPage(): ReactElement {
   const [search, setSearch] = useState('');
 
   function handleSearchChange(event: ChangeEvent<HTMLInputElement>): void {

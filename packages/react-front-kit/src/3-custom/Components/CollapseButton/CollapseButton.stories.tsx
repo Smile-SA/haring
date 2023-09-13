@@ -4,7 +4,7 @@ import { expect } from '@storybook/jest';
 import { userEvent, within } from '@storybook/testing-library';
 
 import { iconsElements } from '../../../icons';
-import { sleep } from '../../../utils/tests';
+import { sleep } from '../../../utils/storybook';
 
 import { CollapseButton as Cmp } from './CollapseButton';
 

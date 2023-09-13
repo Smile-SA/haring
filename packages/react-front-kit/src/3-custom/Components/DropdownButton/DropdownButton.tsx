@@ -1,7 +1,7 @@
 'use client';
 
 import type { MenuProps } from '@mantine/core';
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { Button, Menu } from '@mantine/core';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
@@ -12,7 +12,7 @@ interface IDropdownButtonProps extends MenuProps {
   label: string;
 }
 
-export function DropdownButton(props: IDropdownButtonProps): JSX.Element {
+export function DropdownButton(props: IDropdownButtonProps): ReactElement {
   const { children, label, position = 'bottom-start', ...menuProps } = props;
   const [opened, setOpened] = useState(false);
   const id = useId();

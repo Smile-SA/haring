@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import type { ChangeEvent } from 'react';
+import type { ChangeEvent, ReactElement } from 'react';
 
 import { useState } from 'react';
 
@@ -14,7 +14,7 @@ const meta = {
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-function Render(props: Record<string, unknown>): JSX.Element {
+function Render(props: Record<string, unknown>): ReactElement {
   const [search, setSearch] = useState('');
   function handleSearchChange(event: ChangeEvent<HTMLInputElement>): void {
     setSearch(event.target.value);

@@ -23,9 +23,8 @@ exports[`Header matches snapshot 1`] = `
           >
             <svg
               fill="none"
-              height="1.75rem"
+              style="width: 1.75rem; height: 1.75rem;"
               viewBox="0 0 15 15"
-              width="1.75rem"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path

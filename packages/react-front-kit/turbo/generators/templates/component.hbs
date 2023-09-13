@@ -1,12 +1,12 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 interface I{{pascalCase name}}Props {
   children?: ReactNode;
 }
 
-export function {{pascalCase name}}(props: I{{pascalCase name}}Props): JSX.Element {
+export function {{pascalCase name}}(props: I{{pascalCase name}}Props): ReactElement {
   const { children } = props;
   return (
     <div>

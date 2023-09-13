@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-unsafe-assignment: 0 */
 import type { PlopTypes } from '@turbo/gen';
 import type { Answers, Inquirer } from 'inquirer';
 import type { ActionType } from 'node-plop';
@@ -43,7 +44,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
     },
     description: 'Adds a new react component',
     prompts: async (inquirer: Inquirer): Promise<Answers> => {
-      const { type } = await inquirer.prompt({
+      const { type }: { type: string } = await inquirer.prompt({
         choices: [
           {
             name: 'Component',

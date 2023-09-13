@@ -1,5 +1,4 @@
-import { expect } from '@storybook/jest';
-import { within } from '@storybook/testing-library';
+import { within } from '@testing-library/react';
 
 import { renderWithProviders } from '../../../utils/tests';
 
@@ -24,14 +23,14 @@ describe('Pagination', () => {
           { label: 'Display 15 results', value: 15 },
         ]}
         totalPages={10}
-      />
+      />,
     );
     expect(container).toMatchSnapshot();
   });
 
   it('renders with minimal props', () => {
     const { container } = renderWithProviders(
-      <Pagination page={2} rowsPerPage={15} totalPages={10} />
+      <Pagination page={2} rowsPerPage={15} totalPages={10} />,
     );
     const canvas = within(container);
     expect(canvas.queryByTestId('pagination')).toBeVisible();
@@ -52,7 +51,7 @@ describe('Pagination', () => {
           { value: 15 },
         ]}
         totalPages={10}
-      />
+      />,
     );
     const canvas = within(container);
     expect(canvas.queryByTestId('pagination')).toBeVisible();
