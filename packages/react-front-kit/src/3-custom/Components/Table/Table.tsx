@@ -307,6 +307,7 @@ export function Table(): JSX.Element {
     renderToolbarInternalActions: (cell) => (
       <Box
         style={{
+          display: 'flex',
           height: '100%',
           padding: '4px 8px',
           width: '100%',
