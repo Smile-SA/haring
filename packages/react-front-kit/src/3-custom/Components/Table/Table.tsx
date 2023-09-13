@@ -6,6 +6,9 @@ import type { ReactNode } from 'react';
 import { ActionIcon, Box, Button, Menu, Modal, Tooltip } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
+  CaretDown,
+  CaretUp,
+  CaretUpDown,
   FolderNotchOpen,
   ShareNetwork,
   Star,
@@ -33,6 +36,7 @@ const menu = (
   <svg
     fill="none"
     height="12"
+    style={{ margin: 'auto' }}
     viewBox="0 0 12 12"
     width="12"
     xmlns="http://www.w3.org/2000/svg"
@@ -194,6 +198,15 @@ export function Table(): JSX.Element {
     enablePagination: false,
     enableRowActions: true,
     enableRowSelection: true,
+    /*
+    icons: {
+      IconFilter: () => 'filter',
+      IconFilterOff: () => 'filter',
+      IconSortAscending: () => <CaretUp size={16} />,
+      IconSortDescending: () => <CaretDown size={16} />,
+      IconArrowsSort: () => <CaretUpDown size={18} />,
+    },
+    */
     initialState: {
       columnPinning: {
         right: ['mrt-row-actions'],
@@ -430,7 +443,9 @@ export function Table(): JSX.Element {
   const menuAction = (
     <Menu radius={4} shadow="lg" width={200} withinPortal>
       <Menu.Target>
-        <div>{menu}</div>
+        <div style={{ width: '28px', height: '28px', display: 'flex' }}>
+          {menu}
+        </div>
       </Menu.Target>
 
       <Menu.Dropdown>
