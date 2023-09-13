@@ -1,11 +1,11 @@
 module.exports = {
   extends: ['custom'],
+  parserOptions: {
+    project: ['./tsconfig.json'],
+  },
   root: true,
   rules: {
-    '@next/next/no-html-link-for-pages': 'off',
-    '@next/next/no-img-element': 'off',
-    '@typescript-eslint/sort-type-constituents': 'off',
-    'react/default-props-match-prop-types': 'off',
-    'react/jsx-handler-names': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
+    'react/jsx-handler-names': ['error', { checkLocalVariables: false }],
   },
 };

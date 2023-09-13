@@ -7,5 +7,6 @@
     "lib": ["ESNext", "DOM"],
     "module": "ESNext",
     "target": "ES2017"
-  }
+  },
+  "exclude": [".turbo", "dist", "node_modules", "storybook-static"]
 }

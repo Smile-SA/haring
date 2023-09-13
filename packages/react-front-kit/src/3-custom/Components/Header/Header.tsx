@@ -6,6 +6,7 @@ import type {
   ElementType,
   FormEvent,
   MouseEventHandler,
+  ReactElement,
   ReactNode,
 } from 'react';
 
@@ -84,7 +85,7 @@ interface IHeaderProps extends Omit<HeaderProps, 'height' | 'left' | 'right'> {
   searchValue?: string;
 }
 
-export function Header(props: IHeaderProps): JSX.Element {
+export function Header(props: IHeaderProps): ReactElement {
   const {
     children,
     childrenComponent,
@@ -105,7 +106,7 @@ export function Header(props: IHeaderProps): JSX.Element {
   const defaultTheme = useMantineTheme();
 
   function handleClick(): void {
-    setOpened?.(!opened);
+    setOpened(!opened);
   }
 
   const buttonClasses = [classes.button];

@@ -1,15 +1,16 @@
 import type { Preview, StoryContext, StoryFn } from '@storybook/react';
-
-import * as React from 'react';
+import type { ReactElement } from 'react';
 
 import { Provider } from '../src/3-custom/Provider/Provider';
 import { themes } from '../src/theme';
 
-function withProvider(Story: StoryFn, context: StoryContext): JSX.Element {
+function withProvider(Story: StoryFn, context: StoryContext): ReactElement {
   return (
     <Provider
-      colorScheme={context.globals.colorScheme}
-      theme={themes[context.globals.theme]?.theme}
+      colorScheme={context.globals.colorScheme as 'dark' | 'light'}
+      theme={
+        themes[context.globals.theme as 'main' | 'primary' | 'secondary'].theme
+      }
     >
       <Story />
     </Provider>

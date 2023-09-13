@@ -1,6 +1,6 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { Paper } from '@mantine/core';
 import { useState } from 'react';
@@ -9,8 +9,8 @@ import { CollapseButton } from '../CollapseButton/CollapseButton';
 
 export interface IMenuItem {
   children?: IMenuItem[];
-  id: string | number;
-  label: string | number;
+  id: number | string;
+  label: number | string;
   leftIcon?: ReactNode;
 }
 
@@ -19,18 +19,18 @@ interface ISidebarMenuProps {
 }
 
 function getRecursiveMenu(
-  setSelectedId: (id?: string | number) => void,
-  selectedId?: string | number,
+  setSelectedId: (id?: number | string) => void,
+  selectedId?: number | string,
   menu?: IMenuItem[],
-  level = 0
-): ReactNode[] | null {
+  level = 0,
+): ReactElement[] | null {
   if (!menu) {
     return null;
   }
-  return menu.map(({ children, ...props }, i) => (
+  return menu.map(({ children, ...props }) => (
     <CollapseButton
       {...props}
-      key={props.id ?? i}
+      key={props.id}
       level={level}
       line={level === 0}
       onSelect={setSelectedId}
@@ -41,9 +41,9 @@ function getRecursiveMenu(
   ));
 }
 
-export function SidebarMenu(props: ISidebarMenuProps): JSX.Element {
+export function SidebarMenu(props: ISidebarMenuProps): ReactElement {
   const { menu } = props;
-  const [selectedId, setSelectedId] = useState<string | number>();
+  const [selectedId, setSelectedId] = useState<number | string>();
 
   return (
     <Paper p="lg" shadow="">

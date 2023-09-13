@@ -1,7 +1,7 @@
 'use client';
 
 import type { ButtonProps } from '@mantine/core';
-import type { MouseEvent, ReactNode } from 'react';
+import type { MouseEvent, ReactElement, ReactNode } from 'react';
 
 import { ActionIcon, Button, Collapse, createStyles } from '@mantine/core';
 import { CaretDown, CaretRight } from '@phosphor-icons/react';
@@ -72,7 +72,9 @@ interface ICollapseButtonProps<T> extends ButtonProps {
   selected?: boolean;
 }
 
-export function CollapseButton<T>(props: ICollapseButtonProps<T>): JSX.Element {
+export function CollapseButton<T>(
+  props: ICollapseButtonProps<T>,
+): ReactElement {
   const {
     children,
     fullWidth = true,

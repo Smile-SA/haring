@@ -9,7 +9,7 @@ describe('Header', () => {
         <a href="#">Espace documentaire</a>
         <a href="#">Espace workflow</a>
         <a href="#">Archives</a>
-      </Header>
+      </Header>,
     );
     expect(container).toMatchSnapshot();
   });

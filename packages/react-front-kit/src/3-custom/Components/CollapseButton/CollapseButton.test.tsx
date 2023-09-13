@@ -17,7 +17,7 @@ describe('CollapseButton', () => {
         augue, id maximus mi. Vivamus consequat quam tristique ex laoreet, ut
         eleifend eros sodales. Cras bibendum enim dolor, id rutrum urna
         vestibulum non.
-      </CollapseButton>
+      </CollapseButton>,
     );
     expect(container).toMatchSnapshot();
   });
