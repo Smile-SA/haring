@@ -3,13 +3,23 @@
 import type { MRT_ColumnDef } from 'mantine-react-table';
 import type { ReactNode } from 'react';
 
-import { ActionIcon, Box, Button, Menu, Modal, Tooltip } from '@mantine/core';
+import {
+  ActionIcon,
+  Box,
+  Button,
+  Menu,
+  Modal,
+  Tooltip,
+  createStyles,
+} from '@mantine/core';
+import { sizes } from '@mantine/core/lib/ActionIcon/ActionIcon.styles';
 import { useDisclosure } from '@mantine/hooks';
 import {
   CaretDown,
   CaretUp,
   CaretUpDown,
   FolderNotchOpen,
+  Scales,
   ShareNetwork,
   Star,
   Trash,
@@ -22,6 +32,8 @@ import {
 } from 'mantine-react-table';
 import { MRT_Localization_FR } from 'mantine-react-table/locales/fr';
 import { useMemo, useState } from 'react';
+
+import { themes } from '../../../theme';
 
 interface IDocument {
   creator: string;
@@ -110,6 +122,30 @@ const arbo = (
   </svg>
 );
 
+// Style
+const useStyles = createStyles((theme) => ({
+  buttonDontRemoveRoot: {
+    '&:hover': {
+      background: theme.colors.gray[7],
+    },
+    background: theme.colors.gray[8],
+    padding: '0.667em 3.333em',
+  },
+  buttonRemoveRoot: {
+    padding: '0.667em 3.333em',
+  },
+  modalBody: {
+    padding: '0px',
+  },
+  modalContent: {
+    padding: '48px',
+  },
+  modalHeader: {
+    height: '0px',
+    padding: '0px',
+  },
+}));
+
 const data: IDocument[] = [
   {
     creator: 'Valentin Perello',
@@ -150,7 +186,6 @@ const data: IDocument[] = [
 
 export function Table(): JSX.Element {
   const [opened, { open, close }] = useDisclosure(false);
-  const [modalTitle, setModalTitle] = useState<string>('');
   const [modalContent, setModalContent] = useState<ReactNode | undefined>();
   const [currentElement, setCurrentElement] = useState<
     number | string | IDocument
@@ -159,6 +194,7 @@ export function Table(): JSX.Element {
     (boolean | null)[]
   >(data.map(() => false));
 
+  const { classes } = useStyles();
   const columns = useMemo<MRT_ColumnDef<IDocument>[]>(
     () => [
       {
@@ -356,58 +392,88 @@ export function Table(): JSX.Element {
 
   // Handle
   const addToFavHandle = (): void => {
-    setModalTitle(
-      'Êtes vous sure de vouloir ajouter aux favoris cette document ?'
-    );
     setModalContent(
       <>
-        <Button
-          onClick={() => sendCurrentElementValueWithAction('ADD_TO_FAVORITES')}
-          style={{ marginRight: '10px' }}
-        >
-          Oui
-        </Button>
-        <Button onClick={close}>Non</Button>
+        <div className="modal__header" style={{ marginLeft: '12px' }}>
+          <h2>Ajouter aux favoris</h2>
+          <p>
+            Êtes-vous certain de vouloir ajouter cet élément à vos favoris ?
+          </p>
+        </div>
+        <div style={{ marginTop: '32px' }}>
+          <Button
+            classNames={{
+              root: classes.buttonDontRemoveRoot,
+            }}
+            onClick={close}
+            style={{ marginRight: '10px' }}
+          >
+            Annuler
+          </Button>
+          <Button
+            classNames={{
+              root: classes.buttonRemoveRoot,
+            }}
+            onClick={() =>
+              sendCurrentElementValueWithAction('ADD_TO_FAVORITES')
+            }
+          >
+            Ajouter aux favoris
+          </Button>
+        </div>
       </>
     );
     open();
   };
   const shareHandle = (): void => {
-    setModalTitle('SHARE');
     open();
   };
   const editHandle = (): void => {
-    setModalTitle('EDIT');
     open();
   };
   const arboHandle = (): void => {
-    setModalTitle("Changer l'arborecence ?");
     open();
   };
   const removeHandle = (): void => {
-    setModalTitle('Êtes vous sure de vouloir supprimer cette document ?');
     setModalContent(
       <>
-        <Button
-          onClick={() => sendCurrentElementValueWithAction('REMOVE')}
-          style={{ marginRight: '10px' }}
-        >
-          Oui
-        </Button>
-        <Button onClick={close}>Non</Button>
+        <div className="modal__header" style={{ marginLeft: '12px' }}>
+          <h2>Supprimer ?</h2>
+          <p>Êtes-vous certain de vouloir supprimer cet élément ?</p>
+        </div>
+        <div style={{ marginTop: '32px' }}>
+          <Button
+            classNames={{
+              root: classes.buttonDontRemoveRoot,
+            }}
+            onClick={close}
+            style={{ marginRight: '10px' }}
+          >
+            Ne pas supprimer
+          </Button>
+          <Button
+            classNames={{
+              root: classes.buttonRemoveRoot,
+            }}
+            color="red"
+            onClick={() => sendCurrentElementValueWithAction('REMOVE')}
+          >
+            Supprimer
+          </Button>
+        </div>
       </>
     );
     open();
   };
 
   const multiRemoveHandle = (values: IDocument[]): void => {
-    setModalTitle('Êtes vous sure de vouloir supprimer ces documents ?');
     setModalContent(
       <div>
         <Button
           onClick={() =>
             sendSelectedElementsValueWithAction(values, 'REMOVE_ALL')
           }
+          size="xs"
           style={{ marginRight: '10px' }}
         >
           Oui
@@ -443,7 +509,7 @@ export function Table(): JSX.Element {
   const menuAction = (
     <Menu radius={4} shadow="lg" width={200} withinPortal>
       <Menu.Target>
-        <div style={{ width: '28px', height: '28px', display: 'flex' }}>
+        <div style={{ display: 'flex', height: '28px', width: '28px' }}>
           {menu}
         </div>
       </Menu.Target>
@@ -470,11 +536,15 @@ export function Table(): JSX.Element {
       <MantineReactTable table={table} />
       <Modal
         centered
-        className="removeElementModal"
+        classNames={{
+          body: classes.modalBody,
+          content: classes.modalContent,
+          header: classes.modalHeader,
+        }}
         onClose={close}
         opened={opened}
-        radius={4}
-        title={modalTitle}
+        radius={16}
+        size="lg"
       >
         {modalContent}
       </Modal>
