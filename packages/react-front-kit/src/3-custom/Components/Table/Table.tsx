@@ -18,6 +18,8 @@ import {
   CaretDown,
   CaretUp,
   CaretUpDown,
+  DownloadSimple,
+  Eye,
   FolderNotchOpen,
   Scales,
   ShareNetwork,
@@ -297,16 +299,34 @@ export function Table(): JSX.Element {
           'Déplacer dans l’arborescence'
         )}
         {tooltip(
-          <ActionIcon onClick={editHandle} radius={4} type="button">
-            {edit}
+          <ActionIcon
+            onClick={() => sendCurrentElementValueWithAction('OPEN_ELEMENT')}
+            radius={4}
+            type="button"
+          >
+            <Eye color="#5C5F66" size={16} />
           </ActionIcon>,
-          'Modifier'
+          'Ouvrir le document'
         )}
         {tooltip(
-          <ActionIcon radius={4} type="button">
+          <ActionIcon
+            onClick={() => sendCurrentElementValueWithAction('UPDATE_ELEMENT')}
+            radius={4}
+            type="button"
+          >
+            {edit}
+          </ActionIcon>,
+          'Modifier le document'
+        )}
+        {tooltip(
+          <ActionIcon
+            radius={4}
+            style={{ backgroundColor: themes.primary.color }}
+            type="button"
+          >
             {menuAction}
           </ActionIcon>,
-          "Plus d'options"
+          'Affiche les autres actions'
         )}
       </div>
     ),
@@ -426,13 +446,38 @@ export function Table(): JSX.Element {
     open();
   };
   const shareHandle = (): void => {
-    open();
-  };
-  const editHandle = (): void => {
+    setModalContent(
+      <>
+        <div className="modal__header" style={{ marginLeft: '12px' }}>
+          <h2>Partager ?</h2>
+          <p>Êtes-vous certain de vouloir partager cette élément ?</p>
+        </div>
+        <div style={{ marginTop: '32px' }}>
+          <Button
+            classNames={{
+              root: classes.buttonDontRemoveRoot,
+            }}
+            onClick={close}
+            style={{ marginRight: '10px' }}
+          >
+            Ne pas partager
+          </Button>
+          <Button
+            classNames={{
+              root: classes.buttonRemoveRoot,
+            }}
+            onClick={() => sendCurrentElementValueWithAction('SHARE')}
+          >
+            Partager
+          </Button>
+        </div>
+      </>
+    );
     open();
   };
   const arboHandle = (): void => {
-    open();
+    // eslint-disable-next-line no-console
+    console.log(currentElement, 'ARBO_CHANGE_LOCATION');
   };
   const removeHandle = (): void => {
     setModalContent(
@@ -468,18 +513,34 @@ export function Table(): JSX.Element {
 
   const multiRemoveHandle = (values: IDocument[]): void => {
     setModalContent(
-      <div>
-        <Button
-          onClick={() =>
-            sendSelectedElementsValueWithAction(values, 'REMOVE_ALL')
-          }
-          size="xs"
-          style={{ marginRight: '10px' }}
-        >
-          Oui
-        </Button>
-        <Button onClick={close}>Non</Button>
-      </div>
+      <>
+        <div className="modal__header" style={{ marginLeft: '12px' }}>
+          <h2>Supprimer ?</h2>
+          <p>Êtes-vous certain de vouloir supprimer ces éléments ?</p>
+        </div>
+        <div style={{ marginTop: '32px' }}>
+          <Button
+            classNames={{
+              root: classes.buttonDontRemoveRoot,
+            }}
+            onClick={close}
+            style={{ marginRight: '10px' }}
+          >
+            Ne pas supprimer
+          </Button>
+          <Button
+            classNames={{
+              root: classes.buttonRemoveRoot,
+            }}
+            color="red"
+            onClick={() =>
+              sendSelectedElementsValueWithAction(values, 'REMOVE_ALL')
+            }
+          >
+            Supprimer
+          </Button>
+        </div>
+      </>
     );
     open();
   };
@@ -520,6 +581,12 @@ export function Table(): JSX.Element {
         </Menu.Item>
         <Menu.Item icon={<ShareNetwork size={14} />} onClick={shareHandle}>
           Partager
+        </Menu.Item>
+        <Menu.Item
+          icon={<DownloadSimple size={14} />}
+          onClick={() => sendCurrentElementValueWithAction('DOWNLOAD')}
+        >
+          Télécharger
         </Menu.Item>
         <Menu.Item
           color="red"
