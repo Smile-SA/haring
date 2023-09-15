@@ -132,6 +132,15 @@ const useStyles = createStyles((theme) => ({
   buttonRemoveRoot: {
     padding: '0.667em 3.333em',
   },
+  menuButton: {
+    [`&[aria-expanded=true]`]: {
+      '& svg': {
+        filter: 'contrast(8) invert(1)',
+      },
+      backgroundColor: theme.colors.cyan[9],
+      borderRadius: '4px',
+    },
+  },
   modalBody: {
     padding: '0px',
   },
@@ -323,9 +332,18 @@ export function Table(): JSX.Element {
         )}
         {tooltip(
           <ActionIcon radius={4} type="button">
-            <Menu radius={4} shadow="lg" width={200} withinPortal>
+            <Menu
+              // eslint-disable-next-line no-console
+              radius={4}
+              shadow="lg"
+              width={200}
+              withinPortal
+            >
               <Menu.Target>
-                <div style={{ display: 'flex', height: '28px', width: '28px' }}>
+                <div
+                  className={classes.menuButton}
+                  style={{ display: 'flex', height: '28px', width: '28px' }}
+                >
                   {menu}
                 </div>
               </Menu.Target>
