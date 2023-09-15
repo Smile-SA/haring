@@ -332,13 +332,7 @@ export function Table(): JSX.Element {
         )}
         {tooltip(
           <ActionIcon radius={4} type="button">
-            <Menu
-              // eslint-disable-next-line no-console
-              radius={4}
-              shadow="lg"
-              width={200}
-              withinPortal
-            >
+            <Menu radius={4} shadow="lg" width={200} withinPortal>
               <Menu.Target>
                 <div
                   className={classes.menuButton}
