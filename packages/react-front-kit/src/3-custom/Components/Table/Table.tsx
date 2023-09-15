@@ -12,7 +12,6 @@ import {
   Tooltip,
   createStyles,
 } from '@mantine/core';
-import { sizes } from '@mantine/core/lib/ActionIcon/ActionIcon.styles';
 import { useDisclosure } from '@mantine/hooks';
 import {
   CaretDown,
@@ -21,7 +20,7 @@ import {
   DownloadSimple,
   Eye,
   FolderNotchOpen,
-  Scales,
+  Funnel,
   ShareNetwork,
   Star,
   Trash,
@@ -34,8 +33,6 @@ import {
 } from 'mantine-react-table';
 import { MRT_Localization_FR } from 'mantine-react-table/locales/fr';
 import { useMemo, useState } from 'react';
-
-import { themes } from '../../../theme';
 
 interface IDocument {
   creator: string;
@@ -189,9 +186,6 @@ const data: IDocument[] = [
 export function Table(): JSX.Element {
   const [opened, { open, close }] = useDisclosure(false);
   const [modalContent, setModalContent] = useState<ReactNode | undefined>();
-  const [currentElement, setCurrentElement] = useState<
-    number | string | IDocument
-  >(0);
   const [displayActionsButtons, setDisplayActionsButtons] = useState<
     (boolean | null)[]
   >(data.map(() => false));
@@ -236,15 +230,14 @@ export function Table(): JSX.Element {
     enablePagination: false,
     enableRowActions: true,
     enableRowSelection: true,
-    /*
+
     icons: {
-      IconFilter: () => 'filter',
-      IconFilterOff: () => 'filter',
-      IconSortAscending: () => <CaretUp size={16} />,
-      IconSortDescending: () => <CaretDown size={16} />,
-      IconArrowsSort: () => <CaretUpDown size={18} />,
+      IconFilter: () => <Funnel size={18} />,
+      IconFilterOff: () => <Funnel size={18} />,
+      IconArrowsSort: CaretUpDown,
+      IconSortAscending: CaretUp,
+      IconSortDescending: CaretDown,
     },
-    */
     initialState: {
       columnPinning: {
         right: ['mrt-row-actions'],
@@ -263,11 +256,6 @@ export function Table(): JSX.Element {
           '0px 3.43489px 2.74791px 0px rgba(0, 0, 0, 0.02), 0px 8.6871px 6.94968px 0px rgba(0, 0, 0, 0.02), 0px 17.72087px 14.1767px 0px rgba(0, 0, 0, 0.03), 0px 36.50164px 29.20132px 0px rgba(0, 0, 0, 0.03), 0px 100px 80px 0px rgba(0, 0, 0, 0.05)',
       },
     },
-    mantineTableBodyRowProps: ({ row }) => ({
-      onClick: () => {
-        setCurrentElement(row.original);
-      },
-    }),
     mantineToolbarAlertBannerProps: () => ({
       color: 'white !important',
       sx: {
@@ -293,14 +281,23 @@ export function Table(): JSX.Element {
         }}
       >
         {tooltip(
-          <ActionIcon onClick={arboHandle} radius={4} type="button">
+          <ActionIcon
+            onClick={() => arboHandle(cell.row.original)}
+            radius={4}
+            type="button"
+          >
             {arbo}
           </ActionIcon>,
           'Déplacer dans l’arborescence'
         )}
         {tooltip(
           <ActionIcon
-            onClick={() => sendCurrentElementValueWithAction('OPEN_ELEMENT')}
+            onClick={() =>
+              sendCurrentElementValueWithAction(
+                cell.row.original,
+                'OPEN_ELEMENT'
+              )
+            }
             radius={4}
             type="button"
           >
@@ -310,7 +307,12 @@ export function Table(): JSX.Element {
         )}
         {tooltip(
           <ActionIcon
-            onClick={() => sendCurrentElementValueWithAction('UPDATE_ELEMENT')}
+            onClick={() =>
+              sendCurrentElementValueWithAction(
+                cell.row.original,
+                'UPDATE_ELEMENT'
+              )
+            }
             radius={4}
             type="button"
           >
@@ -319,12 +321,47 @@ export function Table(): JSX.Element {
           'Modifier le document'
         )}
         {tooltip(
-          <ActionIcon
-            radius={4}
-            style={{ backgroundColor: themes.primary.color }}
-            type="button"
-          >
-            {menuAction}
+          <ActionIcon radius={4} type="button">
+            <Menu radius={4} shadow="lg" width={200} withinPortal>
+              <Menu.Target>
+                <div style={{ display: 'flex', height: '28px', width: '28px' }}>
+                  {menu}
+                </div>
+              </Menu.Target>
+
+              <Menu.Dropdown>
+                <Menu.Item
+                  icon={<Star size={14} />}
+                  onClick={() => addToFavHandle(cell.row.original)}
+                >
+                  Ajout aux favoris
+                </Menu.Item>
+                <Menu.Item
+                  icon={<ShareNetwork size={14} />}
+                  onClick={() => shareHandle(cell.row.original)}
+                >
+                  Partager
+                </Menu.Item>
+                <Menu.Item
+                  icon={<DownloadSimple size={14} />}
+                  onClick={() =>
+                    sendCurrentElementValueWithAction(
+                      cell.row.original,
+                      'DOWNLOAD'
+                    )
+                  }
+                >
+                  Télécharger
+                </Menu.Item>
+                <Menu.Item
+                  color="red"
+                  icon={<Trash size={14} />}
+                  onClick={() => removeHandle(cell.row.original)}
+                >
+                  Supprimer
+                </Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
           </ActionIcon>,
           'Affiche les autres actions'
         )}
@@ -411,7 +448,7 @@ export function Table(): JSX.Element {
   };
 
   // Handle
-  const addToFavHandle = (): void => {
+  const addToFavHandle = (currentElement: IDocument): void => {
     setModalContent(
       <>
         <div className="modal__header" style={{ marginLeft: '12px' }}>
@@ -435,7 +472,10 @@ export function Table(): JSX.Element {
               root: classes.buttonRemoveRoot,
             }}
             onClick={() =>
-              sendCurrentElementValueWithAction('ADD_TO_FAVORITES')
+              sendCurrentElementValueWithAction(
+                currentElement,
+                'ADD_TO_FAVORITES'
+              )
             }
           >
             Ajouter aux favoris
@@ -445,7 +485,7 @@ export function Table(): JSX.Element {
     );
     open();
   };
-  const shareHandle = (): void => {
+  const shareHandle = (currentElement: IDocument): void => {
     setModalContent(
       <>
         <div className="modal__header" style={{ marginLeft: '12px' }}>
@@ -466,7 +506,9 @@ export function Table(): JSX.Element {
             classNames={{
               root: classes.buttonRemoveRoot,
             }}
-            onClick={() => sendCurrentElementValueWithAction('SHARE')}
+            onClick={() =>
+              sendCurrentElementValueWithAction(currentElement, 'SHARE')
+            }
           >
             Partager
           </Button>
@@ -475,11 +517,11 @@ export function Table(): JSX.Element {
     );
     open();
   };
-  const arboHandle = (): void => {
+  const arboHandle = (currentElement: IDocument): void => {
     // eslint-disable-next-line no-console
     console.log(currentElement, 'ARBO_CHANGE_LOCATION');
   };
-  const removeHandle = (): void => {
+  const removeHandle = (currentElement: IDocument): void => {
     setModalContent(
       <>
         <div className="modal__header" style={{ marginLeft: '12px' }}>
@@ -501,7 +543,9 @@ export function Table(): JSX.Element {
               root: classes.buttonRemoveRoot,
             }}
             color="red"
-            onClick={() => sendCurrentElementValueWithAction('REMOVE')}
+            onClick={() =>
+              sendCurrentElementValueWithAction(currentElement, 'REMOVE')
+            }
           >
             Supprimer
           </Button>
@@ -554,7 +598,11 @@ export function Table(): JSX.Element {
     );
     setDisplayActionsButtons(newDisplayActionsButtonArray);
   };
-  const sendCurrentElementValueWithAction = (action: string): void => {
+  const sendCurrentElementValueWithAction = (
+    currentElement: IDocument,
+    action: string
+  ): void => {
+    // eslint-disable-next-line no-console
     console.log(currentElement, action);
     close();
   };
@@ -566,38 +614,6 @@ export function Table(): JSX.Element {
     console.log(values, action);
     close();
   };
-
-  const menuAction = (
-    <Menu radius={4} shadow="lg" width={200} withinPortal>
-      <Menu.Target>
-        <div style={{ display: 'flex', height: '28px', width: '28px' }}>
-          {menu}
-        </div>
-      </Menu.Target>
-
-      <Menu.Dropdown>
-        <Menu.Item icon={<Star size={14} />} onClick={addToFavHandle}>
-          Ajout aux favoris
-        </Menu.Item>
-        <Menu.Item icon={<ShareNetwork size={14} />} onClick={shareHandle}>
-          Partager
-        </Menu.Item>
-        <Menu.Item
-          icon={<DownloadSimple size={14} />}
-          onClick={() => sendCurrentElementValueWithAction('DOWNLOAD')}
-        >
-          Télécharger
-        </Menu.Item>
-        <Menu.Item
-          color="red"
-          icon={<Trash size={14} />}
-          onClick={removeHandle}
-        >
-          Supprimer
-        </Menu.Item>
-      </Menu.Dropdown>
-    </Menu>
-  );
   return (
     <>
       <MantineReactTable table={table} />
