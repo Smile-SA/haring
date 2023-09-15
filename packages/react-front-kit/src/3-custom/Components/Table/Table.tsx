@@ -1,5 +1,4 @@
 'use client';
-
 import type { MRT_ColumnDef } from 'mantine-react-table';
 import type { ReactNode } from 'react';
 
@@ -214,7 +213,7 @@ export function Table(): JSX.Element {
         header: 'Date publication',
       },
     ],
-    []
+    [],
   );
   const table = useMantineReactTable({
     columns,
@@ -232,9 +231,11 @@ export function Table(): JSX.Element {
     enableRowSelection: true,
 
     icons: {
-      IconFilter: () => <Funnel size={18} />,
-      IconFilterOff: () => <Funnel size={18} />,
       IconArrowsSort: CaretUpDown,
+      // eslint-disable-next-line react/no-unstable-nested-components, react/no-multi-comp
+      IconFilter: () => <Funnel size={18} />,
+      // eslint-disable-next-line react/no-unstable-nested-components, react/no-multi-comp
+      IconFilterOff: () => <Funnel size={18} />,
       IconSortAscending: CaretUp,
       IconSortDescending: CaretDown,
     },
@@ -288,14 +289,14 @@ export function Table(): JSX.Element {
           >
             {arbo}
           </ActionIcon>,
-          'Déplacer dans l’arborescence'
+          'Déplacer dans l’arborescence',
         )}
         {tooltip(
           <ActionIcon
             onClick={() =>
               sendCurrentElementValueWithAction(
                 cell.row.original,
-                'OPEN_ELEMENT'
+                'OPEN_ELEMENT',
               )
             }
             radius={4}
@@ -303,14 +304,14 @@ export function Table(): JSX.Element {
           >
             <Eye color="#5C5F66" size={16} />
           </ActionIcon>,
-          'Ouvrir le document'
+          'Ouvrir le document',
         )}
         {tooltip(
           <ActionIcon
             onClick={() =>
               sendCurrentElementValueWithAction(
                 cell.row.original,
-                'UPDATE_ELEMENT'
+                'UPDATE_ELEMENT',
               )
             }
             radius={4}
@@ -318,7 +319,7 @@ export function Table(): JSX.Element {
           >
             {edit}
           </ActionIcon>,
-          'Modifier le document'
+          'Modifier le document',
         )}
         {tooltip(
           <ActionIcon radius={4} type="button">
@@ -347,7 +348,7 @@ export function Table(): JSX.Element {
                   onClick={() =>
                     sendCurrentElementValueWithAction(
                       cell.row.original,
-                      'DOWNLOAD'
+                      'DOWNLOAD',
                     )
                   }
                 >
@@ -363,7 +364,7 @@ export function Table(): JSX.Element {
               </Menu.Dropdown>
             </Menu>
           </ActionIcon>,
-          'Affiche les autres actions'
+          'Affiche les autres actions',
         )}
       </div>
     ),
@@ -387,7 +388,7 @@ export function Table(): JSX.Element {
             onClick={() => {
               sendSelectedElementsValueWithAction(
                 cell.table.getSelectedRowModel().rows.map((x) => x.original),
-                'ARBO_CHANGE_LOCATION'
+                'ARBO_CHANGE_LOCATION',
               );
             }}
             style={{ display: 'block', margin: 'auto 0px auto' }}
@@ -399,7 +400,7 @@ export function Table(): JSX.Element {
             leftIcon={<Trash size={12} />}
             onClick={() => {
               multiRemoveHandle(
-                cell.table.getSelectedRowModel().rows.map((x) => x.original)
+                cell.table.getSelectedRowModel().rows.map((x) => x.original),
               );
             }}
             style={{ display: 'block', margin: 'auto 10px auto' }}
@@ -474,14 +475,14 @@ export function Table(): JSX.Element {
             onClick={() =>
               sendCurrentElementValueWithAction(
                 currentElement,
-                'ADD_TO_FAVORITES'
+                'ADD_TO_FAVORITES',
               )
             }
           >
             Ajouter aux favoris
           </Button>
         </div>
-      </>
+      </>,
     );
     open();
   };
@@ -513,7 +514,7 @@ export function Table(): JSX.Element {
             Partager
           </Button>
         </div>
-      </>
+      </>,
     );
     open();
   };
@@ -550,7 +551,7 @@ export function Table(): JSX.Element {
             Supprimer
           </Button>
         </div>
-      </>
+      </>,
     );
     open();
   };
@@ -584,23 +585,23 @@ export function Table(): JSX.Element {
             Supprimer
           </Button>
         </div>
-      </>
+      </>,
     );
     open();
   };
   const actionButtonOnMouseHandler = (
     rowIndex: number,
-    enter: boolean
+    enter: boolean,
   ): void => {
     const elementIndex = rowIndex;
-    const newDisplayActionsButtonArray = displayActionsButtons.map((_, index) =>
-      elementIndex === index ? enter : false
+    const newDisplayActionsButtonArray = displayActionsButtons.map(
+      (_, index) => (elementIndex === index ? enter : false),
     );
     setDisplayActionsButtons(newDisplayActionsButtonArray);
   };
   const sendCurrentElementValueWithAction = (
     currentElement: IDocument,
-    action: string
+    action: string,
   ): void => {
     // eslint-disable-next-line no-console
     console.log(currentElement, action);
@@ -608,7 +609,7 @@ export function Table(): JSX.Element {
   };
   const sendSelectedElementsValueWithAction = (
     values: IDocument[],
-    action: string
+    action: string,
   ): void => {
     // eslint-disable-next-line no-console
     console.log(values, action);
