@@ -20,13 +20,11 @@ exports[`Table matches snapshot 1`] = `
             class="mantine-hiv720"
           >
             <div
-              class="mantine-1avyp1d"
-              style="display: flex; height: 100%; padding: 4px 8px; width: 100%;"
+              class="mantine-12jyepd"
             >
               <button
                 aria-label="Afficher/Masquer les filtres"
-                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1tfns2e"
-                style="background: white; height: 34px; margin-right: 10px;"
+                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-xfdsvr"
                 type="button"
               >
                 <svg
@@ -46,9 +44,8 @@ exports[`Table matches snapshot 1`] = `
                 aria-expanded="false"
                 aria-haspopup="menu"
                 aria-label="Afficher/Masquer les colonnes"
-                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1tfns2e"
+                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-159idz2"
                 id="undefined-target"
-                style="background: white; height: 34px;"
                 type="button"
               >
                 <svg
@@ -729,8 +726,8 @@ exports[`Table matches snapshot 1`] = `
               class="mantine-vej1ag"
             >
               <div
-                class="actions"
-                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px; opacity: 0;"
+                class="mantine-1w8fngz"
+                style="opacity: 0;"
               >
                 <button
                   class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1yaiubm"
@@ -768,7 +765,8 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <svg
-                    fill="#5C5F66"
+                    class="mantine-15ha46x"
+                    fill="currentColor"
                     height="16"
                     viewBox="0 0 256 256"
                     width="16"
@@ -821,7 +819,7 @@ exports[`Table matches snapshot 1`] = `
                     aria-controls="undefined-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
-                    class="mantine-1v0bkd6"
+                    class="mantine-2iyutx"
                     id="undefined-target"
                     style="display: flex; height: 28px; width: 28px;"
                   >
@@ -922,8 +920,8 @@ exports[`Table matches snapshot 1`] = `
               class="mantine-vej1ag"
             >
               <div
-                class="actions"
-                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px; opacity: 0;"
+                class="mantine-1w8fngz"
+                style="opacity: 0;"
               >
                 <button
                   class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1yaiubm"
@@ -961,7 +959,8 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <svg
-                    fill="#5C5F66"
+                    class="mantine-15ha46x"
+                    fill="currentColor"
                     height="16"
                     viewBox="0 0 256 256"
                     width="16"
@@ -1014,7 +1013,7 @@ exports[`Table matches snapshot 1`] = `
                     aria-controls="undefined-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
-                    class="mantine-1v0bkd6"
+                    class="mantine-2iyutx"
                     id="undefined-target"
                     style="display: flex; height: 28px; width: 28px;"
                   >
@@ -1115,8 +1114,8 @@ exports[`Table matches snapshot 1`] = `
               class="mantine-vej1ag"
             >
               <div
-                class="actions"
-                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px; opacity: 0;"
+                class="mantine-1w8fngz"
+                style="opacity: 0;"
               >
                 <button
                   class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1yaiubm"
@@ -1154,7 +1153,8 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <svg
-                    fill="#5C5F66"
+                    class="mantine-15ha46x"
+                    fill="currentColor"
                     height="16"
                     viewBox="0 0 256 256"
                     width="16"
@@ -1207,7 +1207,7 @@ exports[`Table matches snapshot 1`] = `
                     aria-controls="undefined-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
-                    class="mantine-1v0bkd6"
+                    class="mantine-2iyutx"
                     id="undefined-target"
                     style="display: flex; height: 28px; width: 28px;"
                   >
@@ -1308,8 +1308,8 @@ exports[`Table matches snapshot 1`] = `
               class="mantine-vej1ag"
             >
               <div
-                class="actions"
-                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px; opacity: 0;"
+                class="mantine-1w8fngz"
+                style="opacity: 0;"
               >
                 <button
                   class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1yaiubm"
@@ -1347,7 +1347,8 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <svg
-                    fill="#5C5F66"
+                    class="mantine-15ha46x"
+                    fill="currentColor"
                     height="16"
                     viewBox="0 0 256 256"
                     width="16"
@@ -1400,7 +1401,7 @@ exports[`Table matches snapshot 1`] = `
                     aria-controls="undefined-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
-                    class="mantine-1v0bkd6"
+                    class="mantine-2iyutx"
                     id="undefined-target"
                     style="display: flex; height: 28px; width: 28px;"
                   >
@@ -1501,8 +1502,8 @@ exports[`Table matches snapshot 1`] = `
               class="mantine-vej1ag"
             >
               <div
-                class="actions"
-                style="box-shadow: none; display: flex; justify-content: space-between; margin-left: 24px; margin-right: 16px; opacity: 0;"
+                class="mantine-1w8fngz"
+                style="opacity: 0;"
               >
                 <button
                   class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1yaiubm"
@@ -1540,7 +1541,8 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <svg
-                    fill="#5C5F66"
+                    class="mantine-15ha46x"
+                    fill="currentColor"
                     height="16"
                     viewBox="0 0 256 256"
                     width="16"
@@ -1593,7 +1595,7 @@ exports[`Table matches snapshot 1`] = `
                     aria-controls="undefined-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
-                    class="mantine-1v0bkd6"
+                    class="mantine-2iyutx"
                     id="undefined-target"
                     style="display: flex; height: 28px; width: 28px;"
                   >

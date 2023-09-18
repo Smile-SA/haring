@@ -31,7 +31,7 @@ import {
   useMantineReactTable,
 } from 'mantine-react-table';
 import { MRT_Localization_FR } from 'mantine-react-table/locales/fr';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 
 interface IDocument {
   creator: string;
@@ -41,7 +41,12 @@ interface IDocument {
   title: string;
 }
 
-// Icons
+interface IProps {
+  action: (action: string, element: IDocument | IDocument[]) => void;
+  columns: MRT_ColumnDef<IDocument>[];
+  data: IDocument[];
+}
+
 const menu = (
   <svg
     fill="none"
@@ -120,17 +125,34 @@ const arbo = (
   </svg>
 );
 
-// Style
 const useStyles = createStyles((theme) => ({
-  buttonDontRemoveRoot: {
+  buttonFilters: { background: 'white', height: '34px', marginRight: '10px' },
+  buttonGrey: {
     '&:hover': {
       background: theme.colors.gray[7],
     },
     background: theme.colors.gray[8],
     padding: '0.667em 3.333em',
   },
+  buttonLeftModal: { marginRight: '10px' },
   buttonRemoveRoot: {
     padding: '0.667em 3.333em',
+  },
+  buttonsShowHideColumns: { background: 'white', height: '34px' },
+  buttonsToolbarAlertGroupe: {
+    display: 'flex',
+    marginRight: '78px',
+  },
+  buttonsToolbarAlertRemove: {
+    display: 'block',
+    margin: 'auto 10px auto',
+  },
+  buttonsToolbarAlertTree: {
+    display: 'block',
+    margin: 'auto 0px auto',
+  },
+  iconsColor: {
+    color: theme.colors.gray[7],
   },
   menuButton: {
     [`&[aria-expanded=true]`]: {
@@ -139,10 +161,16 @@ const useStyles = createStyles((theme) => ({
       },
       backgroundColor: theme.colors.cyan[9],
       borderRadius: '4px',
+      display: 'flex',
+      height: '28px',
+      width: '28px',
     },
   },
   modalBody: {
     padding: '0px',
+  },
+  modalButtonsContainer: {
+    marginTop: '32px',
   },
   modalContent: {
     padding: '48px',
@@ -151,47 +179,33 @@ const useStyles = createStyles((theme) => ({
     height: '0px',
     padding: '0px',
   },
+  modalTitleContainer: {
+    marginLeft: '12px',
+  },
+  renderToolbarAlertBannerContent: {
+    color: 'white',
+    display: 'flex',
+    justifyContent: 'space-between',
+    padding: '0px 8px',
+    width: '100%',
+  },
+  renderToolbarInternalActions: {
+    display: 'flex',
+    height: '100%',
+    padding: '4px 8px',
+    width: '100%',
+  },
+  rowActions: {
+    boxShadow: 'none',
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginLeft: '24px',
+    marginRight: '16px',
+  },
 }));
 
-const data: IDocument[] = [
-  {
-    creator: 'Valentin Perello',
-    date: '20/05/2022',
-    format: 'SVG',
-    id: 1,
-    title: 'Doc test',
-  },
-  {
-    creator: 'Valentin Perello',
-    date: '20/05/2022',
-    format: 'PDF',
-    id: 2,
-    title: 'Doc test',
-  },
-  {
-    creator: 'Valentin Perello',
-    date: '20/05/2022',
-    format: 'PDF',
-    id: 3,
-    title: 'Doc test',
-  },
-  {
-    creator: 'Valentin Perello',
-    date: '20/05/2022',
-    format: 'PDF',
-    id: 4,
-    title: 'Doc test',
-  },
-  {
-    creator: 'Valentin Perello',
-    date: '20/05/2022',
-    format: 'PDF',
-    id: 5,
-    title: 'Doc test',
-  },
-];
-
-export function Table(): JSX.Element {
+export function Table(props: IProps): JSX.Element {
+  const { action, data, columns } = props;
   const [opened, { open, close }] = useDisclosure(false);
   const [modalContent, setModalContent] = useState<ReactNode | undefined>();
   const [displayActionsButtons, setDisplayActionsButtons] = useState<
@@ -199,31 +213,157 @@ export function Table(): JSX.Element {
   >(data.map(() => false));
 
   const { classes } = useStyles();
-  const columns = useMemo<MRT_ColumnDef<IDocument>[]>(
-    () => [
-      {
-        accessorKey: 'id',
-        header: 'id',
-      },
-      {
-        accessorKey: 'format',
-        header: 'Format',
-      },
-      {
-        accessorKey: 'title',
-        header: 'Titre',
-      },
-      {
-        accessorKey: 'creator',
-        header: 'Créateur',
-      },
-      {
-        accessorKey: 'date',
-        header: 'Date publication',
-      },
-    ],
-    [],
-  );
+
+  // Handle
+  function handleAddToFav(currentElement: IDocument): void {
+    setModalContent(
+      <>
+        <div className={classes.modalTitleContainer}>
+          <h2>Ajouter aux favoris</h2>
+          <p>
+            Êtes-vous certain de vouloir ajouter cet élément à vos favoris ?
+          </p>
+        </div>
+        <div className={classes.modalButtonsContainer}>
+          <Button
+            className={classes.buttonLeftModal}
+            classNames={{
+              root: classes.buttonGrey,
+            }}
+            onClick={close}
+          >
+            Annuler
+          </Button>
+          <Button
+            classNames={{
+              root: classes.buttonRemoveRoot,
+            }}
+            onClick={() =>
+              sendCurrentElementValueWithAction(
+                currentElement,
+                'ADD_TO_FAVORITES',
+              )
+            }
+          >
+            Ajouter aux favoris
+          </Button>
+        </div>
+      </>,
+    );
+    open();
+  }
+  function handleshare(currentElement: IDocument): void {
+    setModalContent(
+      <>
+        <div className={classes.modalTitleContainer}>
+          <h2>Partager ?</h2>
+          <p>Êtes-vous certain de vouloir partager cette élément ?</p>
+        </div>
+        <div className={classes.modalButtonsContainer}>
+          <Button
+            className={classes.buttonLeftModal}
+            classNames={{
+              root: classes.buttonGrey,
+            }}
+            onClick={close}
+          >
+            Ne pas partager
+          </Button>
+          <Button
+            classNames={{
+              root: classes.buttonRemoveRoot,
+            }}
+            onClick={() =>
+              sendCurrentElementValueWithAction(currentElement, 'SHARE')
+            }
+          >
+            Partager
+          </Button>
+        </div>
+      </>,
+    );
+    open();
+  }
+  function handleTree(currentElement: IDocument): void {
+    action('ARBO_CHANGE_LOCATION', currentElement);
+  }
+  function handleRemove(currentElement: IDocument): void {
+    setModalContent(
+      <>
+        <div className={classes.modalTitleContainer}>
+          <h2>Supprimer ?</h2>
+          <p>Êtes-vous certain de vouloir supprimer cet élément ?</p>
+        </div>
+        <div className={classes.modalButtonsContainer}>
+          <Button
+            className={classes.buttonLeftModal}
+            classNames={{
+              root: classes.buttonGrey,
+            }}
+            onClick={close}
+          >
+            Ne pas supprimer
+          </Button>
+          <Button
+            classNames={{
+              root: classes.buttonRemoveRoot,
+            }}
+            color="red"
+            onClick={() =>
+              sendCurrentElementValueWithAction(currentElement, 'REMOVE')
+            }
+          >
+            Supprimer
+          </Button>
+        </div>
+      </>,
+    );
+    open();
+  }
+  function handleMultiRemove(values: IDocument[]): void {
+    setModalContent(
+      <>
+        <div className={classes.modalTitleContainer}>
+          <h2>Supprimer ?</h2>
+          <p>Êtes-vous certain de vouloir supprimer ces éléments ?</p>
+        </div>
+        <div className={classes.modalButtonsContainer}>
+          <Button
+            className={classes.buttonLeftModal}
+            classNames={{
+              root: classes.buttonGrey,
+            }}
+            onClick={close}
+          >
+            Ne pas supprimer
+          </Button>
+          <Button
+            classNames={{
+              root: classes.buttonRemoveRoot,
+            }}
+            color="red"
+            onClick={() =>
+              sendSelectedElementsValueWithAction(values, 'REMOVE_ALL')
+            }
+          >
+            Supprimer
+          </Button>
+        </div>
+      </>,
+    );
+    open();
+  }
+  const actionButtonOnMouseHandler = (
+    rowIndex: number,
+    enter: boolean,
+  ): void => {
+    const elementIndex = rowIndex;
+    const newDisplayActionsButtonArray = displayActionsButtons.map(
+      (_, index) => (elementIndex === index ? enter : false),
+    );
+    setDisplayActionsButtons(newDisplayActionsButtonArray);
+  };
+
   const table = useMantineReactTable({
     columns,
     data,
@@ -238,7 +378,6 @@ export function Table(): JSX.Element {
     enablePagination: false,
     enableRowActions: true,
     enableRowSelection: true,
-
     icons: {
       IconArrowsSort: CaretUpDown,
       // eslint-disable-next-line react/no-unstable-nested-components, react/no-multi-comp
@@ -267,32 +406,25 @@ export function Table(): JSX.Element {
       },
     },
     mantineToolbarAlertBannerProps: () => ({
-      color: 'white !important',
-      sx: {
-        background: '#0B7285',
+      sx: (theme) => ({
+        background: theme.colors.cyan[9],
         border: 'none',
         borderRadius: '4px',
-      },
+        color: theme.colors.white,
+      }),
     }),
     positionActionsColumn: 'last',
     positionToolbarAlertBanner: 'top',
     renderRowActions: (cell) => (
       <div
-        className="actions"
+        className={classes.rowActions}
         onMouseEnter={() => actionButtonOnMouseHandler(cell.row.index, true)}
         onMouseLeave={() => actionButtonOnMouseHandler(cell.row.index, false)}
-        style={{
-          boxShadow: 'none',
-          display: 'flex',
-          justifyContent: 'space-between',
-          marginLeft: '24px',
-          marginRight: '16px',
-          opacity: displayActionsButtons[cell.row.index] ? 1 : 0,
-        }}
+        style={{ opacity: displayActionsButtons[cell.row.index] ? 1 : 0 }}
       >
         {tooltip(
           <ActionIcon
-            onClick={() => arboHandle(cell.row.original)}
+            onClick={() => handleTree(cell.row.original)}
             radius={4}
             type="button"
           >
@@ -311,7 +443,7 @@ export function Table(): JSX.Element {
             radius={4}
             type="button"
           >
-            <Eye color="#5C5F66" size={16} />
+            <Eye className={classes.iconsColor} size={16} />
           </ActionIcon>,
           'Ouvrir le document',
         )}
@@ -345,13 +477,13 @@ export function Table(): JSX.Element {
               <Menu.Dropdown>
                 <Menu.Item
                   icon={<Star size={14} />}
-                  onClick={() => addToFavHandle(cell.row.original)}
+                  onClick={() => handleAddToFav(cell.row.original)}
                 >
                   Ajout aux favoris
                 </Menu.Item>
                 <Menu.Item
                   icon={<ShareNetwork size={14} />}
-                  onClick={() => shareHandle(cell.row.original)}
+                  onClick={() => handleshare(cell.row.original)}
                 >
                   Partager
                 </Menu.Item>
@@ -369,7 +501,7 @@ export function Table(): JSX.Element {
                 <Menu.Item
                   color="red"
                   icon={<Trash size={14} />}
-                  onClick={() => removeHandle(cell.row.original)}
+                  onClick={() => handleRemove(cell.row.original)}
                 >
                   Supprimer
                 </Menu.Item>
@@ -381,21 +513,11 @@ export function Table(): JSX.Element {
       </div>
     ),
     renderToolbarAlertBannerContent: (cell) => (
-      <Box
-        style={{
-          color: 'white',
-          display: 'flex',
-          justifyContent: 'space-between',
-          padding: '0px 8px',
-          width: '100%',
-        }}
-      >
+      <Box className={classes.renderToolbarAlertBannerContent}>
         <p>{cell.selectedAlert}</p>
-        <div
-          className="buttons-action-groupe"
-          style={{ display: 'flex', marginRight: '78px' }}
-        >
+        <div className={classes.buttonsToolbarAlertGroupe}>
           <Button
+            className={classes.buttonsToolbarAlertTree}
             leftIcon={<FolderNotchOpen size={12} />}
             onClick={() => {
               sendSelectedElementsValueWithAction(
@@ -403,19 +525,18 @@ export function Table(): JSX.Element {
                 'ARBO_CHANGE_LOCATION',
               );
             }}
-            style={{ display: 'block', margin: 'auto 0px auto' }}
             variant="default"
           >
             Déplacer dans l&apos;arborecence
           </Button>
           <Button
+            className={classes.buttonsToolbarAlertRemove}
             leftIcon={<Trash size={12} />}
             onClick={() => {
-              multiRemoveHandle(
+              handleMultiRemove(
                 cell.table.getSelectedRowModel().rows.map((x) => x.original),
               );
             }}
-            style={{ display: 'block', margin: 'auto 10px auto' }}
             variant="default"
           >
             Supprimer
@@ -424,20 +545,13 @@ export function Table(): JSX.Element {
       </Box>
     ),
     renderToolbarInternalActions: (cell) => (
-      <Box
-        style={{
-          display: 'flex',
-          height: '100%',
-          padding: '4px 8px',
-          width: '100%',
-        }}
-      >
+      <Box className={classes.renderToolbarInternalActions}>
         <MRTToggleFiltersButton
-          style={{ background: 'white', height: '34px', marginRight: '10px' }}
+          className={classes.buttonFilters}
           table={table}
         />
         <MRTShowHideColumnsButton
-          style={{ background: 'white', height: '34px' }}
+          className={classes.buttonsShowHideColumns}
           table={cell.table}
         />
       </Box>
@@ -448,7 +562,7 @@ export function Table(): JSX.Element {
   const tooltip = (element: ReactNode, text: string): ReactNode => {
     return (
       <Tooltip
-        color="#495057"
+        color="gray.7"
         label={text}
         position="bottom"
         radius={6}
@@ -459,172 +573,18 @@ export function Table(): JSX.Element {
       </Tooltip>
     );
   };
-
-  // Handle
-  const addToFavHandle = (currentElement: IDocument): void => {
-    setModalContent(
-      <>
-        <div className="modal__header" style={{ marginLeft: '12px' }}>
-          <h2>Ajouter aux favoris</h2>
-          <p>
-            Êtes-vous certain de vouloir ajouter cet élément à vos favoris ?
-          </p>
-        </div>
-        <div style={{ marginTop: '32px' }}>
-          <Button
-            classNames={{
-              root: classes.buttonDontRemoveRoot,
-            }}
-            onClick={close}
-            style={{ marginRight: '10px' }}
-          >
-            Annuler
-          </Button>
-          <Button
-            classNames={{
-              root: classes.buttonRemoveRoot,
-            }}
-            onClick={() =>
-              sendCurrentElementValueWithAction(
-                currentElement,
-                'ADD_TO_FAVORITES',
-              )
-            }
-          >
-            Ajouter aux favoris
-          </Button>
-        </div>
-      </>,
-    );
-    open();
-  };
-  const shareHandle = (currentElement: IDocument): void => {
-    setModalContent(
-      <>
-        <div className="modal__header" style={{ marginLeft: '12px' }}>
-          <h2>Partager ?</h2>
-          <p>Êtes-vous certain de vouloir partager cette élément ?</p>
-        </div>
-        <div style={{ marginTop: '32px' }}>
-          <Button
-            classNames={{
-              root: classes.buttonDontRemoveRoot,
-            }}
-            onClick={close}
-            style={{ marginRight: '10px' }}
-          >
-            Ne pas partager
-          </Button>
-          <Button
-            classNames={{
-              root: classes.buttonRemoveRoot,
-            }}
-            onClick={() =>
-              sendCurrentElementValueWithAction(currentElement, 'SHARE')
-            }
-          >
-            Partager
-          </Button>
-        </div>
-      </>,
-    );
-    open();
-  };
-  const arboHandle = (currentElement: IDocument): void => {
-    // eslint-disable-next-line no-console
-    console.log(currentElement, 'ARBO_CHANGE_LOCATION');
-  };
-  const removeHandle = (currentElement: IDocument): void => {
-    setModalContent(
-      <>
-        <div className="modal__header" style={{ marginLeft: '12px' }}>
-          <h2>Supprimer ?</h2>
-          <p>Êtes-vous certain de vouloir supprimer cet élément ?</p>
-        </div>
-        <div style={{ marginTop: '32px' }}>
-          <Button
-            classNames={{
-              root: classes.buttonDontRemoveRoot,
-            }}
-            onClick={close}
-            style={{ marginRight: '10px' }}
-          >
-            Ne pas supprimer
-          </Button>
-          <Button
-            classNames={{
-              root: classes.buttonRemoveRoot,
-            }}
-            color="red"
-            onClick={() =>
-              sendCurrentElementValueWithAction(currentElement, 'REMOVE')
-            }
-          >
-            Supprimer
-          </Button>
-        </div>
-      </>,
-    );
-    open();
-  };
-
-  const multiRemoveHandle = (values: IDocument[]): void => {
-    setModalContent(
-      <>
-        <div className="modal__header" style={{ marginLeft: '12px' }}>
-          <h2>Supprimer ?</h2>
-          <p>Êtes-vous certain de vouloir supprimer ces éléments ?</p>
-        </div>
-        <div style={{ marginTop: '32px' }}>
-          <Button
-            classNames={{
-              root: classes.buttonDontRemoveRoot,
-            }}
-            onClick={close}
-            style={{ marginRight: '10px' }}
-          >
-            Ne pas supprimer
-          </Button>
-          <Button
-            classNames={{
-              root: classes.buttonRemoveRoot,
-            }}
-            color="red"
-            onClick={() =>
-              sendSelectedElementsValueWithAction(values, 'REMOVE_ALL')
-            }
-          >
-            Supprimer
-          </Button>
-        </div>
-      </>,
-    );
-    open();
-  };
-  const actionButtonOnMouseHandler = (
-    rowIndex: number,
-    enter: boolean,
-  ): void => {
-    const elementIndex = rowIndex;
-    const newDisplayActionsButtonArray = displayActionsButtons.map(
-      (_, index) => (elementIndex === index ? enter : false),
-    );
-    setDisplayActionsButtons(newDisplayActionsButtonArray);
-  };
   const sendCurrentElementValueWithAction = (
-    currentElement: IDocument,
-    action: string,
+    element: IDocument,
+    actionName: string,
   ): void => {
-    // eslint-disable-next-line no-console
-    console.log(currentElement, action);
+    action(actionName, element);
     close();
   };
   const sendSelectedElementsValueWithAction = (
-    values: IDocument[],
-    action: string,
+    elements: IDocument[],
+    actionName: string,
   ): void => {
-    // eslint-disable-next-line no-console
-    console.log(values, action);
+    action(actionName, elements);
     close();
   };
   return (
