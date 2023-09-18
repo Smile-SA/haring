@@ -9,6 +9,11 @@ import { sleep } from '../../../utils/storybook';
 import { DropdownButton as Cmp } from './DropdownButton';
 
 const meta = {
+  argTypes: {
+    children: {
+      control: false,
+    },
+  },
   component: Cmp,
   tags: ['autodocs'],
   title: '3-custom/Components/DropdownButton',

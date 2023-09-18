@@ -1,14 +1,7 @@
 'use client';
 
 import type { HeaderProps, MantineThemeOverride } from '@mantine/core';
-import type {
-  ChangeEventHandler,
-  ElementType,
-  FormEvent,
-  MouseEventHandler,
-  ReactElement,
-  ReactNode,
-} from 'react';
+import type { ElementType, FormEvent, ReactElement, ReactNode } from 'react';
 
 import {
   Button,
@@ -77,8 +70,7 @@ interface IHeaderProps extends Omit<HeaderProps, 'height' | 'left' | 'right'> {
   childrenComponent?: ElementType;
   height?: number;
   left?: ReactNode;
-  onSearchChange?: ChangeEventHandler<HTMLInputElement>;
-  onSearchClear?: MouseEventHandler<HTMLButtonElement>;
+  onSearchChange?: (value: string) => void;
   onSearchSubmit?: (event: FormEvent) => void;
   right?: ReactNode;
   searchTheme?: MantineThemeOverride;
@@ -92,7 +84,6 @@ export function Header(props: IHeaderProps): ReactElement {
     height = 90,
     left,
     onSearchChange,
-    onSearchClear,
     onSearchSubmit,
     right,
     searchTheme,
@@ -146,7 +137,6 @@ export function Header(props: IHeaderProps): ReactElement {
               <HeaderSearch
                 data-testid="searchBar"
                 onChange={onSearchChange}
-                onClear={onSearchClear}
                 onSubmit={onSearchSubmit}
                 opened={opened}
                 value={searchValue}

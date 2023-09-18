@@ -1,7 +1,7 @@
 'use client';
 
 import type { BreadcrumbsProps } from '@mantine/core';
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { Breadcrumbs as MantineBreadcrumbs, createStyles } from '@mantine/core';
 
@@ -28,7 +28,7 @@ const svgSeparator = (
 );
 
 /** Additional props will be forwarded to the [Mantine Breadcrumb component](https://mantine.dev/core/breadcrumbs) */
-export function Breadcrumbs(props: IBreadcrumbsProps): JSX.Element {
+export function Breadcrumbs(props: IBreadcrumbsProps): ReactElement {
   const { separator = svgSeparator, children, ...BreadcrumbsProps } = props;
 
   const useStyles = createStyles((theme) => ({
