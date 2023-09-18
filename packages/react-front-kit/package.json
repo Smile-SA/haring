@@ -46,14 +46,7 @@
     "wait-and-test-storybook": "wait-on http://127.0.0.1:6006/ -t 15000 && npm run test-storybook",
     "serve-and-test-storybook": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run serve-storybook\" \"npm run wait-and-test-storybook\""
   },
-  "dependencies": {
-    "@mantine/core": "^6.0.20",
-    "@mantine/hooks": "^6.0.20",
-    "@mantine/styles": "^6.0.20",
-    "@phosphor-icons/react": "^2.0.10",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
@@ -83,6 +76,14 @@
     "tsconfig": "*",
     "typescript": "^5.2.2",
     "wait-on": "^7.0.1"
+  },
+  "peerDependencies": {
+    "@mantine/core": ">=6",
+    "@mantine/hooks": ">=6",
+    "@mantine/styles": ">=6",
+    "@phosphor-icons/react": ">=2",
+    "react": ">=18.0",
+    "react-dom": ">=18.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --max-warnings=0 --ignore-path ../../.gitignore"
