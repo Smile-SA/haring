@@ -1,13 +1,7 @@
 'use client';
 
 import type { BoxProps } from '@mantine/core';
-import type {
-  ChangeEventHandler,
-  FormEvent,
-  MouseEvent,
-  MouseEventHandler,
-  ReactElement,
-} from 'react';
+import type { ChangeEvent, FormEvent, ReactElement } from 'react';
 
 import { Box, CloseButton, Input, createStyles } from '@mantine/core';
 import { useEffect, useRef } from 'react';
@@ -26,8 +20,7 @@ const useStyles = createStyles((theme) => ({
 
 interface IHeaderSearchProps extends BoxProps {
   clearButtonAriaLabel?: string;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-  onClear?: MouseEventHandler<HTMLButtonElement>;
+  onChange?: (value: string) => void;
   onSubmit?: (event: FormEvent) => void;
   opened?: boolean;
   value?: string;
@@ -38,7 +31,6 @@ export function HeaderSearch(props: IHeaderSearchProps): ReactElement {
     clearButtonAriaLabel = 'Clear',
     opened,
     onChange,
-    onClear,
     onSubmit,
     value,
     ...boxProps
@@ -52,8 +44,12 @@ export function HeaderSearch(props: IHeaderSearchProps): ReactElement {
     }
   }, [opened]);
 
-  function handleSearchClear(event: MouseEvent<HTMLButtonElement>): void {
-    onClear?.(event);
+  function handleSearchChange(event: ChangeEvent<HTMLInputElement>): void {
+    onChange?.(event.target.value);
+  }
+
+  function handleSearchClear(): void {
+    onChange?.('');
     if (inputRef.current && opened) {
       inputRef.current.focus();
     }
@@ -64,7 +60,7 @@ export function HeaderSearch(props: IHeaderSearchProps): ReactElement {
       <form onSubmit={onSubmit}>
         <Input
           ref={inputRef}
-          onChange={onChange}
+          onChange={handleSearchChange}
           rightSection={
             <CloseButton
               aria-label={clearButtonAriaLabel}

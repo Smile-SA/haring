@@ -1,6 +1,6 @@
 'use client';
 
-import type { ChangeEvent, FormEvent, ReactElement } from 'react';
+import type { FormEvent, ReactElement } from 'react';
 
 import { AppShell, Avatar, Container, Grid, Menu } from '@mantine/core';
 import { useState } from 'react';
@@ -17,14 +17,6 @@ import { menu } from '../../Components/SidebarMenu/SidebarMenu.mock';
 export function TestPage(): ReactElement {
   const [search, setSearch] = useState('');
 
-  function handleSearchChange(event: ChangeEvent<HTMLInputElement>): void {
-    setSearch(event.target.value);
-  }
-
-  function handleSearchClear(): void {
-    setSearch('');
-  }
-
   function handleSearchSubmit(event: FormEvent): void {
     event.preventDefault();
   }
@@ -35,8 +27,7 @@ export function TestPage(): ReactElement {
         <Header
           childrenComponent="nav"
           left={<img alt="logo" height="58" src="./logo.svg" width="128" />}
-          onSearchChange={handleSearchChange}
-          onSearchClear={handleSearchClear}
+          onSearchChange={setSearch}
           onSearchSubmit={handleSearchSubmit}
           right={
             <>

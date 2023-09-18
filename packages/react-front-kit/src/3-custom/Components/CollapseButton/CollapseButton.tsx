@@ -62,7 +62,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface ICollapseButtonProps<T> extends ButtonProps {
+interface ICollapseButtonProps<T extends number | string> extends ButtonProps {
   children?: ReactNode;
   id?: T;
   label?: ReactNode;
@@ -72,7 +72,7 @@ interface ICollapseButtonProps<T> extends ButtonProps {
   selected?: boolean;
 }
 
-export function CollapseButton<T>(
+export function CollapseButton<T extends number | string>(
   props: ICollapseButtonProps<T>,
 ): ReactElement {
   const {

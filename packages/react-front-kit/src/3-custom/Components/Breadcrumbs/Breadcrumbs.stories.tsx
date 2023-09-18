@@ -3,6 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Breadcrumbs as Cmp } from './Breadcrumbs';
 
 const meta = {
+  argTypes: {
+    children: {
+      control: false,
+    },
+  },
   component: Cmp,
   tags: ['autodocs'],
   title: '3-custom/Components/Breadcrumbs',
