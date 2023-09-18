@@ -1,5 +1,6 @@
 /* eslint react-refresh/only-export-components: 0 */
 // component exports
+export * from './3-custom/Components/TableTooltip/TableTooltip';
 export * from './3-custom/Components/Breadcrumbs/Breadcrumbs';
 export * from './3-custom/Components/Table/Table';
 export * from './3-custom/Components/CollapseButton/CollapseButton';
