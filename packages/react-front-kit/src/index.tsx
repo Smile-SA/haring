@@ -9,6 +9,7 @@ export * from './3-custom/Components/DropdownButton/DropdownButton';
 export * from './3-custom/Components/Header/Header';
 export * from './3-custom/Components/Pagination/Pagination';
 export * from './3-custom/Components/Table/Table';
+export * from './3-custom/Components/TableTooltip/TableTooltip';
 export * from './3-custom/Pages/TestPage/TestPage';
 export * from './3-custom/Provider/Provider';
 export * from './theme';
