@@ -4,9 +4,18 @@ import { expect } from '@storybook/jest';
 import { userEvent, within } from '@storybook/testing-library';
 
 import { SidebarMenu as Cmp } from './SidebarMenu';
-import { menu } from './SidebarMenu.mock';
+import { deeplyNestedMenu, menu } from './SidebarMenu.mock';
 
 const meta = {
+  argTypes: {
+    hasOnlyOneOpenMenu: {
+      description: 'Keeps only one menu per level open at once',
+    },
+    openedMenuIds: {
+      description:
+        'Controlled state of which menus are currently open, using `id` field of `IMenuItem`',
+    },
+  },
   component: Cmp,
   tags: ['autodocs'],
   title: '3-custom/Components/SidebarMenu',
@@ -18,6 +27,7 @@ type IStory = StoryObj<typeof meta>;
 export const SidebarMenu: IStory = {
   args: {
     menu,
+    openedMenuIds: [],
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -28,5 +38,13 @@ export const SidebarMenu: IStory = {
     await expect(canvas.getAllByTestId('root')[0].dataset.selected).toEqual(
       'true',
     );
+  },
+};
+
+export const OnlyOneOpenMenu: IStory = {
+  args: {
+    hasOnlyOneOpenMenu: true,
+    menu: deeplyNestedMenu,
+    openedMenuIds: [0, 2],
   },
 };

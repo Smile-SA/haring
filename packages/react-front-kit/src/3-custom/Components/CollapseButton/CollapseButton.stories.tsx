@@ -7,9 +7,13 @@ import { iconsElements } from '../../../icons';
 import { sleep } from '../../../utils/storybook';
 
 import { CollapseButton as Cmp } from './CollapseButton';
+import { CollapseButtonControlled as CmpControlled } from './CollapseButtonControlled';
 
 const meta = {
   argTypes: {
+    children: {
+      description: 'Content either collapsed or opened under Button',
+    },
     id: {
       control: 'text',
     },
@@ -83,4 +87,38 @@ export const Nested: IStory = {
     radius: 0,
     selected: false,
   },
+};
+
+const metaControlled = {
+  ...meta,
+  component: CmpControlled,
+} satisfies Meta<typeof CmpControlled>;
+
+type IStoryControlled = StoryObj<typeof metaControlled>;
+
+export const Controlled: IStoryControlled = {
+  argTypes: {
+    onCollapseChange: {
+      control: 'function',
+      description:
+        'Only in the Controlled version, use this prop to provide the setter function for the opened/collapsed state',
+    },
+    opened: {
+      control: 'boolean',
+      defaultValue: false,
+      description:
+        'Only in the Controlled version, use this prop to provide the opened/collapsed state',
+    },
+  },
+  args: {
+    ...CollapseButton.args,
+    onCollapseChange: () => null,
+    opened: true,
+  },
+  parameters: {
+    controls: {
+      include: ['opened', 'onCollapseChange'],
+    },
+  },
+  render: CmpControlled,
 };

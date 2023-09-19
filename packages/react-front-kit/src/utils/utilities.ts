@@ -1,7 +1,11 @@
-export function isNotNullNotEmpty<S>(
-  value: Record<string, never> | S,
+export function isNotNullNorEmpty<S>(
+  value: Record<string, never> | S | undefined,
 ): value is Exclude<S, null | undefined> {
-  return value != null && Object.keys(value).length !== 0;
+  return (
+    value !== null &&
+    value !== undefined &&
+    (typeof value === 'object' ? Object.keys(value).length !== 0 : true)
+  );
 }
 
 export function isCallback<T, U>(maybeFunc: T | U): maybeFunc is T {
