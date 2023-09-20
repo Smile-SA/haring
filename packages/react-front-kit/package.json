@@ -46,7 +46,6 @@
     "wait-and-test-storybook": "wait-on http://127.0.0.1:6006/ -t 15000 && npm run test-storybook",
     "serve-and-test-storybook": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run serve-storybook\" \"npm run wait-and-test-storybook\""
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
@@ -78,10 +77,15 @@
     "wait-on": "^7.0.1"
   },
   "peerDependencies": {
-    "@mantine/core": ">=6",
-    "@mantine/hooks": ">=6",
-    "@mantine/styles": ">=6",
+    "@emotion/react": ">=11",
+    "@mantine/core": "6",
+    "@mantine/dates": "6",
+    "@mantine/hooks": "6",
+    "@mantine/styles": "6",
     "@phosphor-icons/react": ">=2",
+    "@tabler/icons-react": ">=2",
+    "dayjs": ">=1",
+    "mantine-react-table": ">=1",
     "react": ">=18.0",
     "react-dom": ">=18.0"
   },
