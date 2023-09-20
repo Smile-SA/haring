@@ -1,7 +1,7 @@
 import type { ReactElement, ReactNode } from 'react';
 
+import { Provider, mainTheme } from '@smile/react-front-kit';
 import { Open_Sans } from 'next/font/google';
-import { Provider, mainTheme } from 'react-front-kit';
 
 const openSans = Open_Sans({
   display: 'swap',
