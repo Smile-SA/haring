@@ -42,7 +42,8 @@ import { ColumnPlus } from '../../../1-styleGuide/Icons/ColumnPlus';
 import { Edit } from '../../../1-styleGuide/Icons/Edit';
 import { MenuTable } from '../../../1-styleGuide/Icons/MenuTable';
 import { TreeStructure } from '../../../1-styleGuide/Icons/TreeStructure';
-import { TableTooltip } from '../TableTooltip/TableTooltip';
+
+import { TableTooltip } from './TableTooltip';
 
 interface IDocument {
   creator: string;
@@ -469,7 +470,7 @@ export function Table(props: IProps): JSX.Element {
             }}
             variant="default"
           >
-            Déplacer dans l&apos;arborescence
+            Déplacer dans l&lsquo;arborescence
           </Button>
           <Button
             className={classes.buttonsToolbarAlertRemove}
