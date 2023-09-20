@@ -1,4 +1,4 @@
 module.exports = {
   reactStrictMode: true,
-  transpilePackages: ['react-front-kit'],
+  transpilePackages: ['@smile/react-front-kit'],
 };
