@@ -49,40 +49,41 @@ exports[`Table matches snapshot 1`] = `
                 type="button"
               >
                 <svg
-                  class="tabler-icon tabler-icon-columns"
                   fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  width="24"
+                  height="1em"
+                  viewBox="0 0 12 12"
+                  width="1em"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M4 6l5.5 0"
+                    d="M3 1.86005V10.11"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                   />
                   <path
-                    d="M4 10l5.5 0"
+                    d="M5.99988 1.875V10.125"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                   />
                   <path
-                    d="M4 14l5.5 0"
+                    d="M9.0083 1.88995V6.76495"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                   />
                   <path
-                    d="M4 18l5.5 0"
+                    d="M8.9812 8.63989V10.8899"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                   />
                   <path
-                    d="M14.5 6l5.5 0"
-                  />
-                  <path
-                    d="M14.5 10l5.5 0"
-                  />
-                  <path
-                    d="M14.5 14l5.5 0"
-                  />
-                  <path
-                    d="M14.5 18l5.5 0"
+                    d="M7.8562 9.76489H10.1062"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                   />
                 </svg>
               </button>
@@ -735,9 +736,10 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="1em"
+                    style="margin: auto;"
                     viewBox="0 0 12 12"
-                    width="12"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -783,9 +785,10 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="1em"
+                    style="margin: auto;"
                     viewBox="0 0 12 12"
-                    width="12"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <g
@@ -825,10 +828,10 @@ exports[`Table matches snapshot 1`] = `
                   >
                     <svg
                       fill="none"
-                      height="12"
+                      height="1em"
                       style="margin: auto;"
                       viewBox="0 0 12 12"
-                      width="12"
+                      width="1em"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -929,9 +932,10 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="1em"
+                    style="margin: auto;"
                     viewBox="0 0 12 12"
-                    width="12"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -977,9 +981,10 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="1em"
+                    style="margin: auto;"
                     viewBox="0 0 12 12"
-                    width="12"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <g
@@ -1019,10 +1024,10 @@ exports[`Table matches snapshot 1`] = `
                   >
                     <svg
                       fill="none"
-                      height="12"
+                      height="1em"
                       style="margin: auto;"
                       viewBox="0 0 12 12"
-                      width="12"
+                      width="1em"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -1123,9 +1128,10 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="1em"
+                    style="margin: auto;"
                     viewBox="0 0 12 12"
-                    width="12"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -1171,9 +1177,10 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="1em"
+                    style="margin: auto;"
                     viewBox="0 0 12 12"
-                    width="12"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <g
@@ -1213,10 +1220,10 @@ exports[`Table matches snapshot 1`] = `
                   >
                     <svg
                       fill="none"
-                      height="12"
+                      height="1em"
                       style="margin: auto;"
                       viewBox="0 0 12 12"
-                      width="12"
+                      width="1em"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -1317,9 +1324,10 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="1em"
+                    style="margin: auto;"
                     viewBox="0 0 12 12"
-                    width="12"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -1365,9 +1373,10 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="1em"
+                    style="margin: auto;"
                     viewBox="0 0 12 12"
-                    width="12"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <g
@@ -1407,10 +1416,10 @@ exports[`Table matches snapshot 1`] = `
                   >
                     <svg
                       fill="none"
-                      height="12"
+                      height="1em"
                       style="margin: auto;"
                       viewBox="0 0 12 12"
-                      width="12"
+                      width="1em"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -1511,9 +1520,10 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="1em"
+                    style="margin: auto;"
                     viewBox="0 0 12 12"
-                    width="12"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -1559,9 +1569,10 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="1em"
+                    style="margin: auto;"
                     viewBox="0 0 12 12"
-                    width="12"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <g
@@ -1601,10 +1612,10 @@ exports[`Table matches snapshot 1`] = `
                   >
                     <svg
                       fill="none"
-                      height="12"
+                      height="1em"
                       style="margin: auto;"
                       viewBox="0 0 12 12"
-                      width="12"
+                      width="1em"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path

@@ -77,15 +77,15 @@
     "wait-on": "^7.0.1"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.11.1",
-    "@mantine/core": ">=6",
-    "@mantine/dates": ">=6",
-    "@mantine/hooks": ">=6",
-    "@mantine/styles": ">=6",
+    "@emotion/react": ">=11",
+    "@mantine/core": "6",
+    "@mantine/dates": "6",
+    "@mantine/hooks": "6",
+    "@mantine/styles": "6",
     "@phosphor-icons/react": ">=2",
-    "@tabler/icons-react": "^2.34.0",
-    "dayjs": "^1.11.10",
-    "mantine-react-table": "^1.3.0",
+    "@tabler/icons-react": ">=2",
+    "dayjs": ">=1",
+    "mantine-react-table": ">=1",
     "react": ">=18.0",
     "react-dom": ">=18.0"
   },
