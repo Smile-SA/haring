@@ -44,7 +44,8 @@
     "serve-storybook": "http-server storybook-static --port 6006 --silent",
     "test-storybook": "test-storybook",
     "wait-and-test-storybook": "wait-on http://127.0.0.1:6006/ -t 15000 && npm run test-storybook",
-    "serve-and-test-storybook": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run serve-storybook\" \"npm run wait-and-test-storybook\""
+    "serve-and-test-storybook": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run serve-storybook\" \"npm run wait-and-test-storybook\"",
+    "prepublishOnly": "node ./scripts/prepublish.mjs"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.22.15",
