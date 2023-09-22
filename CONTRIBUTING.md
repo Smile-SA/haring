@@ -69,12 +69,18 @@ And if you have to manage a state in your component, please create an interactio
 
 You can find examples in existing components.
 
+## Submitting a pull request
+
+We uses changesets to manage versioning. When submitting a PR add a changeset which contains what packages should be bumped, their associated semver bump types and some markdown which will be inserted into changelogs.
+
+To create a changeset:
+
+1. Run `npm run changeset`
+2. This will create a changeset file in the `.changeset` folder you can review
+3. Commit the changeset file
+
 ## Publishing
 
-Make sure you git is clean before running the following commands:
+When a PR containing changesets is merged into `main` it will automatically create a release PR.
 
-1. When you are ready to publish a new version run the command: `npm run changeset`.
-2. If the changeset sounds good you can then run: `npm run version`.
-3. Then, if everything is fine, to effectively publish the packages, run: `npm run publish`
-
-=> TODO: check changeset action: https://github.com/changesets/action
+Then when that PR is merged into `main`, it will automatically create a release and publish the packages on `npm`.
