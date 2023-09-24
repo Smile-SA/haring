@@ -32,6 +32,14 @@
   "main": "./dist/index.tsx",
   "module": "./src/index.tsx",
   "types": "./src/index.tsx",
+  "files": [
+    "dist",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
   "scripts": {
     "prepare": "npm run build",
     "build": "tsc --project tsconfig.build.json",
