@@ -1,5 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 // component exports
+export * from './3-custom/Components/ConfirmModal/ConfirmModal';
 export * from './1-styleGuide/Icons';
 export * from './3-custom/Components/Breadcrumbs/Breadcrumbs';
 export * from './3-custom/Components/CollapseButton/CollapseButtonControlled';
