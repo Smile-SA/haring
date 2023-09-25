@@ -1,4 +1,3 @@
 {
-  "extends": "tsconfig/react-library.json",
-  "include": [".", ".storybook/*"]
+  "extends": "tsconfig/react-library.json"
 }

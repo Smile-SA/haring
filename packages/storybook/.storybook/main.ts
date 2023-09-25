@@ -20,6 +20,9 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ['../public'],
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: [
+    '../../*/src/**/*.mdx',
+    '../../*/src/**/*.stories.@(js|jsx|ts|tsx)',
+  ],
 };
 export default config;
