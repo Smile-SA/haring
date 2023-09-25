@@ -6,7 +6,7 @@
 
 'use client';
 import type { MRT_ColumnDef } from 'mantine-react-table';
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import {
   ActionIcon,
@@ -38,10 +38,12 @@ import {
 import { MRT_Localization_FR } from 'mantine-react-table/locales/fr';
 import { useState } from 'react';
 
-import { ColumnPlus } from '../../../1-styleGuide/Icons/ColumnPlus';
-import { Edit } from '../../../1-styleGuide/Icons/Edit';
-import { MenuTable } from '../../../1-styleGuide/Icons/MenuTable';
-import { TreeStructure } from '../../../1-styleGuide/Icons/TreeStructure';
+import {
+  ColumnPlus,
+  Edit,
+  MenuTable,
+  TreeStructure,
+} from '../../../1-styleGuide/Icons';
 
 import { TableTooltip } from './TableTooltip';
 
@@ -53,7 +55,7 @@ interface IDocument {
   title: string;
 }
 
-interface IProps {
+interface ITableProps {
   action: (action: string, element: IDocument | IDocument[]) => void;
   columns: MRT_ColumnDef<IDocument>[];
   data: IDocument[];
@@ -138,7 +140,8 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function Table(props: IProps): JSX.Element {
+/** */
+export function Table(props: ITableProps): ReactElement {
   const { action, data, columns } = props;
   const [opened, { open, close }] = useDisclosure(false);
   const [modalContent, setModalContent] = useState<ReactNode | undefined>();
@@ -186,6 +189,7 @@ export function Table(props: IProps): JSX.Element {
     );
     open();
   }
+
   function handleshare(currentElement: IDocument): void {
     setModalContent(
       <>
@@ -218,9 +222,11 @@ export function Table(props: IProps): JSX.Element {
     );
     open();
   }
+
   function handleTree(currentElement: IDocument): void {
     action('TREE_STRUCTURE_CHANGE_LOCATION', currentElement);
   }
+
   function handleRemove(currentElement: IDocument): void {
     setModalContent(
       <>
@@ -254,6 +260,7 @@ export function Table(props: IProps): JSX.Element {
     );
     open();
   }
+
   function handleMultiRemove(values: IDocument[]): void {
     setModalContent(
       <>
@@ -287,6 +294,7 @@ export function Table(props: IProps): JSX.Element {
     );
     open();
   }
+
   const actionButtonOnMouseHandler = (
     rowIndex: number,
     enter: boolean,

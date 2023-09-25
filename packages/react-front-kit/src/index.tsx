@@ -2,6 +2,7 @@
 // component exports
 export * from './1-styleGuide/Icons';
 export * from './3-custom/Components/Breadcrumbs/Breadcrumbs';
+export * from './3-custom/Components/CollapseButton/CollapseButtonControlled';
 export * from './3-custom/Components/CollapseButton/CollapseButton';
 export * from './3-custom/Components/SidebarMenu/SidebarMenu';
 export * from './3-custom/Components/HeaderSearch/HeaderSearch';

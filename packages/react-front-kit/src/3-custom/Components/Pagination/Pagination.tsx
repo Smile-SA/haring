@@ -34,6 +34,7 @@ interface IPaginationProps extends FlexProps {
   totalPages: number;
 }
 
+/** Additional props will be forwarded to the [Mantine Flex component](https://mantine.dev/core/flex) */
 export function Pagination(props: IPaginationProps): ReactElement {
   const {
     onPageChange,
