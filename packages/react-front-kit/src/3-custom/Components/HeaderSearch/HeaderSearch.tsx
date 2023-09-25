@@ -26,6 +26,7 @@ interface IHeaderSearchProps extends BoxProps {
   value?: string;
 }
 
+/** Additional props will be forwarded to the [Mantine Box component](https://mantine.dev/core/box) */
 export function HeaderSearch(props: IHeaderSearchProps): ReactElement {
   const {
     clearButtonAriaLabel = 'Clear',

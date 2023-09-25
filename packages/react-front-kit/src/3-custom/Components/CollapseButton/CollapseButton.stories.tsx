@@ -11,9 +11,6 @@ import { CollapseButtonControlled as CmpControlled } from './CollapseButtonContr
 
 const meta = {
   argTypes: {
-    children: {
-      description: 'Content either collapsed or opened under Button',
-    },
     id: {
       control: 'text',
     },
@@ -97,19 +94,6 @@ const metaControlled = {
 type IStoryControlled = StoryObj<typeof metaControlled>;
 
 export const Controlled: IStoryControlled = {
-  argTypes: {
-    onCollapseChange: {
-      control: 'function',
-      description:
-        'Only in the Controlled version, use this prop to provide the setter function for the opened/collapsed state',
-    },
-    opened: {
-      control: 'boolean',
-      defaultValue: false,
-      description:
-        'Only in the Controlled version, use this prop to provide the opened/collapsed state',
-    },
-  },
   args: {
     ...CollapseButton.args,
     onCollapseChange: () => null,

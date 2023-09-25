@@ -1,5 +1,5 @@
 export function isNotNullNorEmpty<S>(
-  value: Record<string, never> | S | undefined,
+  value: Record<string, never> | S,
 ): value is Exclude<S, null | undefined> {
   return (
     value !== null &&

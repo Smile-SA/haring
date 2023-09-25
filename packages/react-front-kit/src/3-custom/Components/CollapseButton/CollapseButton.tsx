@@ -9,6 +9,7 @@ import { CollapseButtonControlled } from './CollapseButtonControlled';
 
 export interface ICollapseButtonProps<T extends number | string>
   extends ButtonProps {
+  /** Content either collapsed or opened under Button */
   children?: ReactNode;
   id?: T;
   isOpenOnSelect?: boolean;
@@ -19,6 +20,7 @@ export interface ICollapseButtonProps<T extends number | string>
   selected?: boolean;
 }
 
+/** Additional props will be forwarded to the [Mantine Button component](https://mantine.dev/core/button) */
 export function CollapseButton<T extends number | string>(
   props: ICollapseButtonProps<T>,
 ): ReactElement {

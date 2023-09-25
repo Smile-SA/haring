@@ -12,6 +12,7 @@ interface IDropdownButtonProps extends MenuProps {
   label: string;
 }
 
+/** Additional props will be forwarded to the [Mantine Menu component](https://mantine.dev/core/menu) */
 export function DropdownButton(props: IDropdownButtonProps): ReactElement {
   const { children, label, position = 'bottom-start', ...menuProps } = props;
   const [opened, setOpened] = useState(false);

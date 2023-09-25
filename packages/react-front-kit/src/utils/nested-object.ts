@@ -1,30 +1,33 @@
-export type INestedObjectWithDepth<O extends object> = O & {
-  children?: INestedObjectWithDepth<O>[];
+interface INestedObject<O extends object> {
+  children?: INestedObject<O>[];
   depth?: number;
-};
-
-export function flattenNestedObjects<O extends object>(
-  arr: INestedObjectWithDepth<O>[],
-): INestedObjectWithDepth<O>[] {
-  let children: INestedObjectWithDepth<O>[] = [];
-  const flattened = arr.map((m) => {
-    if (m.children && m.children.length) {
-      children = [...children, ...m.children];
-    }
-    return m;
-  });
-  return flattened.concat(
-    children.length ? flattenNestedObjects(children) : children,
-  );
+  id: number | string;
+  path?: (number | string)[];
 }
 
-export function assignDepth<O extends object>(
-  arr?: INestedObjectWithDepth<O>[],
-  depth = 0,
-): INestedObjectWithDepth<O>[] {
-  (arr ?? []).forEach((o) => {
-    o.depth = depth;
-    assignDepth(o.children, depth + 1);
+export function flattenNestedObjects<O extends object>(
+  arr: INestedObject<O>[],
+): INestedObject<O>[] {
+  let children: INestedObject<O>[] = [];
+  arr.forEach((o) => {
+    if (o.children && o.children.length) {
+      children = [...children, ...o.children];
+    }
   });
-  return arr ?? [];
+  return arr.concat(children.length ? flattenNestedObjects(children) : []);
+}
+
+export function addPathAndDepth<O extends object>(
+  arr: INestedObject<O>[] = [],
+  parentPath: (number | string)[] = [],
+): INestedObject<O>[] {
+  return arr.map((o) => {
+    const path = parentPath.concat(o.id);
+    return {
+      ...o,
+      children: addPathAndDepth(o.children, path),
+      depth: parentPath.length,
+      path,
+    };
+  });
 }
