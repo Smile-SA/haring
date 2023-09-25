@@ -77,6 +77,7 @@ interface IHeaderProps extends Omit<HeaderProps, 'height' | 'left' | 'right'> {
   searchValue?: string;
 }
 
+/** Additional props will be forwarded to the [Mantine AppShell (Header) component](https://mantine.dev/core/app-shell/) */
 export function Header(props: IHeaderProps): ReactElement {
   const {
     children,
