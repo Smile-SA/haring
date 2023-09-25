@@ -6,18 +6,10 @@
 
 'use client';
 import type { FloatingPosition } from '@mantine/core/lib/Floating';
-import type { MRT_ColumnDef } from 'mantine-react-table';
-import type { ReactElement, ReactNode } from 'react';
+import type { MRT_TableOptions } from 'mantine-react-table';
+import type { ReactNode } from 'react';
 
-import {
-  ActionIcon,
-  Box,
-  Button,
-  Menu,
-  Modal,
-  Tooltip,
-  createStyles,
-} from '@mantine/core';
+import { ActionIcon, Box, Button, Menu, Modal, Tooltip } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
   CaretDown,
@@ -39,12 +31,13 @@ import {
   MantineReactTable,
   useMantineReactTable,
 } from 'mantine-react-table';
-import { MRT_Localization_FR } from 'mantine-react-table/locales/fr';
 import { useState } from 'react';
 
 import { ColumnPlus, FolderMove } from '../../../1-styleGuide/Icons';
 
-interface IDocument {
+import { useStyles } from './Table.style';
+
+export interface IDocument {
   creator: string;
   date: string;
   format: string;
@@ -52,90 +45,9 @@ interface IDocument {
   title: string;
 }
 
-interface ITableProps {
-  action: (action: string, element: IDocument | IDocument[]) => void;
-  columns: MRT_ColumnDef<IDocument>[];
-  data: IDocument[];
+interface ITableProps extends MRT_TableOptions<IDocument> {
+  onAction: (onAction: string, element: IDocument | IDocument[]) => void;
 }
-
-const useStyles = createStyles((theme) => ({
-  buttonFilters: { background: 'white', height: '34px', marginRight: '10px' },
-  buttonGrey: {
-    '&:hover': {
-      background: theme.colors.gray[7],
-    },
-    background: theme.colors.gray[8],
-    padding: '0.667em 3.333em',
-  },
-  buttonLeftModal: { marginRight: '10px' },
-  buttonRemoveRoot: {
-    padding: '0.667em 3.333em',
-  },
-  buttonsShowHideColumns: { background: 'white', height: '34px' },
-  buttonsToolbarAlertGroupe: {
-    display: 'flex',
-    marginRight: '78px',
-  },
-  buttonsToolbarAlertRemove: {
-    display: 'block',
-    margin: 'auto 10px auto',
-  },
-  buttonsToolbarAlertTree: {
-    display: 'block',
-    margin: 'auto 0px auto',
-  },
-  iconsColor: {
-    color: theme.colors.gray[7],
-  },
-  menuButton: {
-    [`&[aria-expanded=true]`]: {
-      '& svg': {
-        filter: 'contrast(8) invert(1)',
-      },
-      backgroundColor: theme.colors.cyan[9],
-      borderRadius: '4px',
-      display: 'flex',
-      height: '28px',
-      width: '28px',
-    },
-  },
-  modalBody: {
-    padding: '0px',
-  },
-  modalButtonsContainer: {
-    marginTop: '32px',
-  },
-  modalContent: {
-    padding: '48px',
-  },
-  modalHeader: {
-    height: '0px',
-    padding: '0px',
-  },
-  modalTitleContainer: {
-    marginLeft: '12px',
-  },
-  renderToolbarAlertBannerContent: {
-    color: 'white',
-    display: 'flex',
-    justifyContent: 'space-between',
-    padding: '0px 8px',
-    width: '100%',
-  },
-  renderToolbarInternalActions: {
-    display: 'flex',
-    height: '100%',
-    padding: '4px 8px',
-    width: '100%',
-  },
-  rowActions: {
-    boxShadow: 'none',
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginLeft: '24px',
-    marginRight: '16px',
-  },
-}));
 
 const tooltipProps = {
   color: 'gray.7',
@@ -145,15 +57,13 @@ const tooltipProps = {
   withinPortal: true,
 };
 
-/** Additional props will be forwarded to the [Mantine React Table useMantineReactTable hook](https://www.mantine-react-table.com/docs/api/table-options) */
-export function Table(props: ITableProps): ReactElement {
-  const { action, data, columns } = props;
+export function Table(props: ITableProps): JSX.Element {
+  const { onAction, data, icons, initialState, ...mantineTable } = props;
   const [opened, { open, close }] = useDisclosure(false);
   const [modalContent, setModalContent] = useState<ReactNode | undefined>();
   const [displayActionsButtons, setDisplayActionsButtons] = useState<
     (boolean | null)[]
   >(data.map(() => false));
-
   const { classes } = useStyles();
 
   // Handle
@@ -229,7 +139,7 @@ export function Table(props: ITableProps): ReactElement {
   }
 
   function handleTree(currentElement: IDocument): void {
-    action('TREE_STRUCTURE_CHANGE_LOCATION', currentElement);
+    onAction('TREE_STRUCTURE_CHANGE_LOCATION', currentElement);
   }
 
   function handleRemove(currentElement: IDocument): void {
@@ -312,7 +222,6 @@ export function Table(props: ITableProps): ReactElement {
   };
 
   const table = useMantineReactTable({
-    columns,
     data,
     displayColumnDefOptions: {
       'mrt-row-actions': {
@@ -320,8 +229,6 @@ export function Table(props: ITableProps): ReactElement {
         size: 124,
       },
     },
-    enableColumnOrdering: false,
-    enableGlobalFilter: false,
     enablePagination: false,
     enableRowActions: true,
     enableRowSelection: true,
@@ -334,17 +241,15 @@ export function Table(props: ITableProps): ReactElement {
       IconFilterOff: () => <Funnel size={18} />,
       IconSortAscending: CaretUp,
       IconSortDescending: CaretDown,
+      ...icons,
     },
     initialState: {
       columnPinning: {
         right: ['mrt-row-actions'],
       },
-      columnVisibility: {
-        firstName: false,
-        id: false,
-      },
+      showColumnFilters: false,
+      ...initialState,
     },
-    localization: MRT_Localization_FR,
     mantinePaperProps: {
       sx: {
         border: 'hidden',
@@ -361,6 +266,9 @@ export function Table(props: ITableProps): ReactElement {
         color: theme.colors.white,
       }),
     }),
+    manualFiltering: false,
+    manualPagination: true,
+    manualSorting: true,
     positionActionsColumn: 'last',
     positionToolbarAlertBanner: 'top',
     renderRowActions: (cell) => (
@@ -493,6 +401,7 @@ export function Table(props: ITableProps): ReactElement {
         />
       </Box>
     ),
+    ...mantineTable,
   });
 
   // Component
@@ -500,14 +409,14 @@ export function Table(props: ITableProps): ReactElement {
     element: IDocument,
     actionName: string,
   ): void => {
-    action(actionName, element);
+    onAction(actionName, element);
     close();
   };
   const sendSelectedElementsValueWithAction = (
     elements: IDocument[],
     actionName: string,
   ): void => {
-    action(actionName, elements);
+    onAction(actionName, elements);
     close();
   };
   return (
