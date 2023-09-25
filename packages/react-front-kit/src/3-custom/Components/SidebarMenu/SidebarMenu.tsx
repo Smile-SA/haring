@@ -86,9 +86,11 @@ export function SidebarMenu(props: ISidebarMenuProps): ReactElement {
     } else {
       /** Add or remove id being clicked **/
       const exists = openedIds.includes(menuId);
-      let newOpenedIds = openedIds.concat(menuId);
+      let newOpenedIds;
       if (exists) {
-        newOpenedIds = newOpenedIds.filter((id) => id !== menuId);
+        newOpenedIds = openedIds.filter((id) => id !== menuId);
+      } else {
+        newOpenedIds = openedIds.concat(menuId);
       }
       setOpenedIds(newOpenedIds);
     }
