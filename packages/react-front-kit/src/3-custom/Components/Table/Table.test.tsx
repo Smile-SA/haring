@@ -74,9 +74,9 @@ describe('Table', () => {
             title: 'Doc test',
           },
         ]}
-        onAction={(action: string, _element) => {
+        onAction={(actionName, _elements) => {
           // eslint-disable-next-line no-alert
-          alert(`Action: ${action}`);
+          alert(actionName);
         }}
       />,
     );
