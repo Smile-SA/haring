@@ -284,7 +284,7 @@ export function Table(props: ITableProps): JSX.Element {
             radius={4}
             type="button"
           >
-            <FolderMove />
+            <FolderMove color="#495057" />
           </ActionIcon>
         </Tooltip>
         <Tooltip label="Ouvrir le document" {...tooltipProps}>
@@ -312,14 +312,14 @@ export function Table(props: ITableProps): JSX.Element {
             radius={4}
             type="button"
           >
-            <PencilSimple />
+            <PencilSimple color="#495057" />
           </ActionIcon>
         </Tooltip>
         <Menu radius={4} shadow="lg" width={200} withinPortal>
           <Menu.Target>
             <Tooltip label="Affiche les autres actions" {...tooltipProps}>
               <ActionIcon radius={4} type="button">
-                <DotsThreeVertical size={16} />
+                <DotsThreeVertical color="#495057" size={16} />
               </ActionIcon>
             </Tooltip>
           </Menu.Target>
