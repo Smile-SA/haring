@@ -5,11 +5,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 
 'use client';
+import type { MantineColor } from '@mantine/core';
 import type { FloatingPosition } from '@mantine/core/lib/Floating';
 import type { MRT_TableOptions } from 'mantine-react-table';
 import type { ReactNode } from 'react';
 
-import { ActionIcon, Box, Button, Menu, Modal, Tooltip } from '@mantine/core';
+import { ActionIcon, Box, Button, Menu, Tooltip } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
   CaretDown,
@@ -34,6 +35,7 @@ import {
 import { useState } from 'react';
 
 import { ColumnPlus, FolderMove } from '../../../1-styleGuide/Icons';
+import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
 
 import { useStyles } from './Table.style';
 
@@ -46,7 +48,10 @@ export interface IDocument {
 }
 
 interface ITableProps extends MRT_TableOptions<IDocument> {
-  onAction: (onAction: string, element: IDocument | IDocument[]) => void;
+  onAction: (
+    onAction: string | undefined,
+    element: IDocument | IDocument[] | undefined,
+  ) => void;
 }
 
 const tooltipProps = {
@@ -60,81 +65,42 @@ const tooltipProps = {
 export function Table(props: ITableProps): JSX.Element {
   const { onAction, data, icons, initialState, ...mantineTable } = props;
   const [opened, { open, close }] = useDisclosure(false);
-  const [modalContent, setModalContent] = useState<ReactNode | undefined>();
   const [displayActionsButtons, setDisplayActionsButtons] = useState<
     (boolean | null)[]
   >(data.map(() => false));
   const { classes } = useStyles();
-
+  const [modalCancelColor, setModalCancelColor] = useState<MantineColor>();
+  const [modalCancelLabel, setModalCancelLabel] = useState<string>();
+  const [modalConfirmColor, setModalConfirmColor] = useState<MantineColor>();
+  const [modalConfirmLabel, setModalConfirmLabel] = useState<string>();
+  const [modalOnConfirm, setModalOnConfirm] = useState<{
+    action: string | undefined;
+    value: IDocument | IDocument[] | undefined;
+  }>();
+  const [modalTitle, setModalTitle] = useState<string>();
+  const [modalChildren, setModalChildren] = useState<ReactNode>();
   // Handle
   function handleAddToFav(currentElement: IDocument): void {
-    setModalContent(
-      <>
-        <div className={classes.modalTitleContainer}>
-          <h2>Ajouter aux favoris</h2>
-          <p>
-            Êtes-vous certain de vouloir ajouter cet élément à vos favoris ?
-          </p>
-        </div>
-        <div className={classes.modalButtonsContainer}>
-          <Button
-            className={classes.buttonLeftModal}
-            classNames={{
-              root: classes.buttonGrey,
-            }}
-            onClick={close}
-          >
-            Annuler
-          </Button>
-          <Button
-            classNames={{
-              root: classes.buttonRemoveRoot,
-            }}
-            onClick={() =>
-              sendCurrentElementValueWithAction(
-                currentElement,
-                'ADD_TO_FAVORITES',
-              )
-            }
-          >
-            Ajouter aux favoris
-          </Button>
-        </div>
-      </>,
-    );
+    setModalCancelColor('gray');
+    setModalCancelLabel('Ne pas partager');
+    setModalConfirmColor('primary');
+    setModalConfirmLabel('partager');
+    setModalTitle('Partager ?');
+    setModalChildren('Êtes-vous certain de vouloir partager cette élément ?');
+    setModalOnConfirm({ action: 'SHARED', value: currentElement });
     open();
   }
 
   function handleshare(currentElement: IDocument): void {
-    setModalContent(
-      <>
-        <div className={classes.modalTitleContainer}>
-          <h2>Partager ?</h2>
-          <p>Êtes-vous certain de vouloir partager cette élément ?</p>
-        </div>
-        <div className={classes.modalButtonsContainer}>
-          <Button
-            className={classes.buttonLeftModal}
-            classNames={{
-              root: classes.buttonGrey,
-            }}
-            onClick={close}
-          >
-            Ne pas partager
-          </Button>
-          <Button
-            classNames={{
-              root: classes.buttonRemoveRoot,
-            }}
-            onClick={() =>
-              sendCurrentElementValueWithAction(currentElement, 'SHARE')
-            }
-          >
-            Partager
-          </Button>
-        </div>
-      </>,
+    setModalCancelColor('gray');
+    setModalCancelLabel('Ne pas Ajouter aux favoris');
+    setModalConfirmColor('primary');
+    setModalConfirmLabel('Ajouter aux favoris');
+    setModalTitle('Ajouter aux favoris ?');
+    setModalChildren(
+      'Êtes-vous certain de vouloir ajouter cet élément à vos favoris ?',
     );
+    setModalOnConfirm({ action: 'SHARED', value: currentElement });
     open();
   }
 
@@ -143,70 +109,24 @@ export function Table(props: ITableProps): JSX.Element {
   }
 
   function handleRemove(currentElement: IDocument): void {
-    setModalContent(
-      <>
-        <div className={classes.modalTitleContainer}>
-          <h2>Supprimer ?</h2>
-          <p>Êtes-vous certain de vouloir supprimer cet élément ?</p>
-        </div>
-        <div className={classes.modalButtonsContainer}>
-          <Button
-            className={classes.buttonLeftModal}
-            classNames={{
-              root: classes.buttonGrey,
-            }}
-            onClick={close}
-          >
-            Ne pas supprimer
-          </Button>
-          <Button
-            classNames={{
-              root: classes.buttonRemoveRoot,
-            }}
-            color="red"
-            onClick={() =>
-              sendCurrentElementValueWithAction(currentElement, 'REMOVE')
-            }
-          >
-            Supprimer
-          </Button>
-        </div>
-      </>,
-    );
+    setModalCancelColor('gray');
+    setModalCancelLabel('Ne pas supprimer');
+    setModalConfirmColor('red');
+    setModalConfirmLabel('Supprimer');
+    setModalTitle('Supprimer ?');
+    setModalChildren('Êtes-vous certain de vouloir supprimer cet élément ?');
+    setModalOnConfirm({ action: 'REMOVE', value: currentElement });
     open();
   }
 
   function handleMultiRemove(values: IDocument[]): void {
-    setModalContent(
-      <>
-        <div className={classes.modalTitleContainer}>
-          <h2>Supprimer ?</h2>
-          <p>Êtes-vous certain de vouloir supprimer ces éléments ?</p>
-        </div>
-        <div className={classes.modalButtonsContainer}>
-          <Button
-            className={classes.buttonLeftModal}
-            classNames={{
-              root: classes.buttonGrey,
-            }}
-            onClick={close}
-          >
-            Ne pas supprimer
-          </Button>
-          <Button
-            classNames={{
-              root: classes.buttonRemoveRoot,
-            }}
-            color="red"
-            onClick={() =>
-              sendSelectedElementsValueWithAction(values, 'REMOVE_ALL')
-            }
-          >
-            Supprimer
-          </Button>
-        </div>
-      </>,
-    );
+    setModalCancelColor('gray');
+    setModalCancelLabel('Ne pas supprimer');
+    setModalConfirmColor('red');
+    setModalConfirmLabel('Supprimer');
+    setModalTitle('Supprimer ?');
+    setModalChildren('Êtes-vous certain de vouloir supprimer ces éléments ?');
+    setModalOnConfirm({ action: 'MULTI_REMOVE', value: values });
     open();
   }
 
@@ -413,8 +333,8 @@ export function Table(props: ITableProps): JSX.Element {
     close();
   };
   const sendSelectedElementsValueWithAction = (
-    elements: IDocument[],
-    actionName: string,
+    elements: IDocument | IDocument[] | undefined,
+    actionName: string | undefined,
   ): void => {
     onAction(actionName, elements);
     close();
@@ -422,20 +342,24 @@ export function Table(props: ITableProps): JSX.Element {
   return (
     <>
       <MantineReactTable table={table} />
-      <Modal
-        centered
-        classNames={{
-          body: classes.modalBody,
-          content: classes.modalContent,
-          header: classes.modalHeader,
-        }}
+      <ConfirmModal
+        cancelColor={modalCancelColor}
+        cancelLabel={modalCancelLabel}
+        confirmColor={modalConfirmColor}
+        confirmLabel={modalConfirmLabel}
+        onCancel={close}
         onClose={close}
+        onConfirm={() =>
+          sendSelectedElementsValueWithAction(
+            modalOnConfirm?.value,
+            modalOnConfirm?.action,
+          )
+        }
         opened={opened}
-        radius={16}
-        size="lg"
+        title={modalTitle}
       >
-        {modalContent}
-      </Modal>
+        {modalChildren}
+      </ConfirmModal>
     </>
   );
 }
