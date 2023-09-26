@@ -2,8 +2,34 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ConfirmModal as Cmp } from './ConfirmModal';
 
+const buttonColorOptions = [
+  'primary',
+  'dark',
+  'gray',
+  'red',
+  'pink',
+  'grape',
+  'violet',
+  'indigo',
+  'blue',
+  'cyan',
+  'teal',
+  'green',
+  'lime',
+  'yellow',
+  'orange',
+];
+
 const meta = {
   argTypes: {
+    cancelColor: {
+      control: 'select',
+      options: buttonColorOptions,
+    },
+    confirmColor: {
+      control: 'select',
+      options: buttonColorOptions,
+    },
     onClick: { action: 'clicked' },
     opened: { control: 'boolean' },
   },

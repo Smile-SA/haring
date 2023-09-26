@@ -14,13 +14,17 @@ describe('ConfirmModal', () => {
           // eslint-disable-next-line no-console
           () => console.log('onCancel')
         }
+        // eslint-disable-next-line no-console
+        onClose={() => console.log('yolo')}
         onConfirm={
           // eslint-disable-next-line no-console
           () => console.log('onConfirm')
         }
         opened={false}
         title="Supprimer ?"
-      />,
+      >
+        Voulez vous supprimer cette élément ?
+      </ConfirmModal>,
     );
     expect(container).toMatchSnapshot();
   });

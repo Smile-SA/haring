@@ -1,6 +1,6 @@
 'use client';
 
-import type { ModalProps } from '@mantine/core';
+import type { MantineColor, ModalProps } from '@mantine/core';
 import type { ReactElement } from 'react';
 
 import { Button, Modal } from '@mantine/core';
@@ -8,11 +8,12 @@ import { Button, Modal } from '@mantine/core';
 import { useStyles } from './ConfirmModal.style';
 
 interface IConfirmModalProps extends ModalProps {
-  cancelColor?: string;
+  cancelColor?: MantineColor;
   cancelLabel?: string;
-  confirmColor?: string;
+  confirmColor?: MantineColor;
   confirmLabel?: string;
   onCancel?: () => void;
+  onClose: () => void;
   onConfirm?: () => void;
   title?: string;
 }
@@ -20,10 +21,11 @@ interface IConfirmModalProps extends ModalProps {
 export function ConfirmModal(props: IConfirmModalProps): ReactElement {
   const {
     cancelColor = 'gray',
-    cancelLabel = 'Cancel',
+    cancelLabel,
     confirmColor = 'red',
-    confirmLabel = 'Confirm',
+    confirmLabel,
     onCancel,
+    onClose,
     onConfirm,
     children,
     title,
@@ -38,6 +40,7 @@ export function ConfirmModal(props: IConfirmModalProps): ReactElement {
         content: classes.modalContent,
         header: classes.modalHeader,
       }}
+      onClose={onClose}
       radius={16}
       size="lg"
       {...modalProps}
@@ -56,7 +59,7 @@ export function ConfirmModal(props: IConfirmModalProps): ReactElement {
             color={cancelColor}
             onClick={onCancel}
           >
-            {cancelLabel}
+            {cancelLabel ? cancelLabel : 'Cancel'}
           </Button>
           <Button
             classNames={{
@@ -65,7 +68,7 @@ export function ConfirmModal(props: IConfirmModalProps): ReactElement {
             color={confirmColor}
             onClick={onConfirm}
           >
-            {confirmLabel}
+            {confirmLabel ? confirmLabel : 'Confirm'}
           </Button>
         </div>
       </>
