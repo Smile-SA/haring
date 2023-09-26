@@ -5,6 +5,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 
 'use client';
+import type { FloatingPosition } from '@mantine/core/lib/Floating';
 import type { MRT_ColumnDef } from 'mantine-react-table';
 import type { ReactElement, ReactNode } from 'react';
 
@@ -14,6 +15,7 @@ import {
   Button,
   Menu,
   Modal,
+  Tooltip,
   createStyles,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
@@ -21,10 +23,12 @@ import {
   CaretDown,
   CaretUp,
   CaretUpDown,
+  DotsThreeVertical,
   DownloadSimple,
   Eye,
   FolderNotchOpen,
   Funnel,
+  PencilSimple,
   ShareNetwork,
   Star,
   Trash,
@@ -38,14 +42,7 @@ import {
 import { MRT_Localization_FR } from 'mantine-react-table/locales/fr';
 import { useState } from 'react';
 
-import {
-  ColumnPlus,
-  Edit,
-  MenuTable,
-  TreeStructure,
-} from '../../../1-styleGuide/Icons';
-
-import { TableTooltip } from './TableTooltip';
+import { ColumnPlus, FolderMove } from '../../../1-styleGuide/Icons';
 
 interface IDocument {
   creator: string;
@@ -140,7 +137,15 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-/** */
+const tooltipProps = {
+  color: 'gray.7',
+  position: 'bottom' as FloatingPosition,
+  radius: 6,
+  withArrow: true,
+  withinPortal: true,
+};
+
+/** Additional props will be forwarded to the [Mantine React Table useMantineReactTable hook](https://www.mantine-react-table.com/docs/api/table-options) */
 export function Table(props: ITableProps): ReactElement {
   const { action, data, columns } = props;
   const [opened, { open, close }] = useDisclosure(false);
@@ -365,102 +370,82 @@ export function Table(props: ITableProps): ReactElement {
         onMouseLeave={() => actionButtonOnMouseHandler(cell.row.index, false)}
         style={{ opacity: displayActionsButtons[cell.row.index] ? 1 : 0 }}
       >
-        <TableTooltip
-          element={
-            <ActionIcon
-              onClick={() => handleTree(cell.row.original)}
-              radius={4}
-              type="button"
-            >
-              <TreeStructure />
-            </ActionIcon>
-          }
-          text="Déplacer dans l’arborescence"
-        />
-        <TableTooltip
-          element={
-            <ActionIcon
-              onClick={() =>
-                sendCurrentElementValueWithAction(
-                  cell.row.original,
-                  'OPEN_ELEMENT',
-                )
-              }
-              radius={4}
-              type="button"
-            >
-              <Eye className={classes.iconsColor} size={16} />
-            </ActionIcon>
-          }
-          text="Ouvrir le document"
-        />
-        <TableTooltip
-          element={
-            <ActionIcon
-              onClick={() =>
-                sendCurrentElementValueWithAction(
-                  cell.row.original,
-                  'UPDATE_ELEMENT',
-                )
-              }
-              radius={4}
-              type="button"
-            >
-              <Edit />
-            </ActionIcon>
-          }
-          text="Modifier le document"
-        />
-        <TableTooltip
-          element={
-            <ActionIcon radius={4} type="button">
-              <Menu radius={4} shadow="lg" width={200} withinPortal>
-                <Menu.Target>
-                  <div
-                    className={classes.menuButton}
-                    style={{ display: 'flex', height: '28px', width: '28px' }}
-                  >
-                    <MenuTable />
-                  </div>
-                </Menu.Target>
+        <Tooltip label="Déplacer dans l’arborescence" {...tooltipProps}>
+          <ActionIcon
+            onClick={() => handleTree(cell.row.original)}
+            radius={4}
+            type="button"
+          >
+            <FolderMove />
+          </ActionIcon>
+        </Tooltip>
+        <Tooltip label="Ouvrir le document" {...tooltipProps}>
+          <ActionIcon
+            onClick={() =>
+              sendCurrentElementValueWithAction(
+                cell.row.original,
+                'OPEN_ELEMENT',
+              )
+            }
+            radius={4}
+            type="button"
+          >
+            <Eye className={classes.iconsColor} size={16} />
+          </ActionIcon>
+        </Tooltip>
+        <Tooltip label="Modifier le document" {...tooltipProps}>
+          <ActionIcon
+            onClick={() =>
+              sendCurrentElementValueWithAction(
+                cell.row.original,
+                'UPDATE_ELEMENT',
+              )
+            }
+            radius={4}
+            type="button"
+          >
+            <PencilSimple />
+          </ActionIcon>
+        </Tooltip>
+        <Menu radius={4} shadow="lg" width={200} withinPortal>
+          <Menu.Target>
+            <Tooltip label="Affiche les autres actions" {...tooltipProps}>
+              <ActionIcon radius={4} type="button">
+                <DotsThreeVertical size={16} />
+              </ActionIcon>
+            </Tooltip>
+          </Menu.Target>
 
-                <Menu.Dropdown>
-                  <Menu.Item
-                    icon={<Star size={14} />}
-                    onClick={() => handleAddToFav(cell.row.original)}
-                  >
-                    Ajout aux favoris
-                  </Menu.Item>
-                  <Menu.Item
-                    icon={<ShareNetwork size={14} />}
-                    onClick={() => handleshare(cell.row.original)}
-                  >
-                    Partager
-                  </Menu.Item>
-                  <Menu.Item
-                    icon={<DownloadSimple size={14} />}
-                    onClick={() =>
-                      sendCurrentElementValueWithAction(
-                        cell.row.original,
-                        'DOWNLOAD',
-                      )
-                    }
-                  >
-                    Télécharger
-                  </Menu.Item>
-                  <Menu.Item
-                    color="red"
-                    icon={<Trash size={14} />}
-                    onClick={() => handleRemove(cell.row.original)}
-                  >
-                    Supprimer
-                  </Menu.Item>
-                </Menu.Dropdown>
-              </Menu>
-            </ActionIcon>
-          }
-          text="Affiche les autres actions"
-        />
+          <Menu.Dropdown>
+            <Menu.Item
+              icon={<Star size={14} />}
+              onClick={() => handleAddToFav(cell.row.original)}
+            >
+              Ajout aux favoris
+            </Menu.Item>
+            <Menu.Item
+              icon={<ShareNetwork size={14} />}
+              onClick={() => handleshare(cell.row.original)}
+            >
+              Partager
+            </Menu.Item>
+            <Menu.Item
+              icon={<DownloadSimple size={14} />}
+              onClick={() =>
+                sendCurrentElementValueWithAction(cell.row.original, 'DOWNLOAD')
+              }
+            >
+              Télécharger
+            </Menu.Item>
+            <Menu.Item
+              color="red"
+              icon={<Trash size={14} />}
+              onClick={() => handleRemove(cell.row.original)}
+            >
+              Supprimer
+            </Menu.Item>
+          </Menu.Dropdown>
+        </Menu>
       </div>
     ),
     renderToolbarAlertBannerContent: (cell) => (
