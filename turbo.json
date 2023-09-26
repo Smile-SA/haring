@@ -4,13 +4,21 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist"]
     },
     "lint": {},
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "test": {}
+    "test": {},
+    "storybook": {
+      "cache": false,
+      "persistent": true
+    },
+    "build-storybook": {
+      "outputs": ["storybook-static"]
+    },
+    "serve-and-test-storybook": {}
   }
 }

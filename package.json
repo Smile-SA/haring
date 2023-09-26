@@ -22,13 +22,13 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "test": "turbo run test",
+    "storybook": "turbo run storybook",
+    "build-storybook": "turbo run build-storybook",
+    "serve-and-test-storybook": "turbo run serve-and-test-storybook",
     "format": "prettier --write --ignore-unknown --ignore-path <(cat .gitignore .prettierignore) .",
     "changeset": "changeset",
     "version": "turbo run build lint test && changeset version",
-    "publish": "turbo run build lint test && changeset publish",
-    "storybook": "npm run storybook -w ./packages/react-front-kit",
-    "build-storybook": "npm run build-storybook -w ./packages/react-front-kit",
-    "serve-and-test-storybook": "npm run serve-and-test-storybook -w ./packages/react-front-kit"
+    "publish": "turbo run build lint test && changeset publish"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
