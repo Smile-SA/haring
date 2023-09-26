@@ -5,7 +5,7 @@ export const useStyles = createStyles(() => ({
   buttonGrey: {
     padding: '0.667em 3.333em',
   },
-  buttonLeftModal: { marginRight: '10px' },
+  buttonLeftModal: { marginBottom: '10px', marginRight: '10px' },
   buttonRemoveRoot: {
     padding: '0.667em 3.333em',
   },
