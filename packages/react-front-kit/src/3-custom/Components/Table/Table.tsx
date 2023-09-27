@@ -8,7 +8,7 @@
 import type { MantineColor } from '@mantine/core';
 import type { FloatingPosition } from '@mantine/core/lib/Floating';
 import type { MRT_TableOptions } from 'mantine-react-table';
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import {
   ActionIcon,
@@ -69,7 +69,8 @@ const tooltipProps = {
   withinPortal: true,
 };
 
-export function Table(props: ITableProps): JSX.Element {
+/** Additional props will be forwarded to the [Mantine React Table useMantineReactTable hook](https://www.mantine-react-table.com/docs/api/table-options) */
+export function Table(props: ITableProps): ReactElement {
   const { onAction, data, icons, initialState, ...mantineTable } = props;
   const [opened, { open, close }] = useDisclosure(false);
   const [displayActionsButtons, setDisplayActionsButtons] = useState<

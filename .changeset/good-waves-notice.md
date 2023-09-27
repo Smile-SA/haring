@@ -1,6 +1,5 @@
 ---
-'@smile/react-front-kit': patch
-'storybook': patch
+'@smile/react-front-kit': minor
 ---
 
-Add ConfirmModal component
+Add `ConfirmModal` component
