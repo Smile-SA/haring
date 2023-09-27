@@ -13,10 +13,6 @@ type IStory = StoryObj<typeof meta>;
 
 export const Table: IStory = {
   args: {
-    action: (action: string, _element) => {
-      // eslint-disable-next-line no-alert
-      alert(`Action: ${action}`);
-    },
     columns: [
       {
         accessorKey: 'id',
