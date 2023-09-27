@@ -1,5 +1,5 @@
 ---
-'@smile/react-front-kit': patch
+'@smile/react-front-kit': minor
 ---
 
-Added `Switch` example and `SidebarMenu` show/hide to `TestPage`
+Added `FoldableColumnLayout` layout, updated `TestPage`
