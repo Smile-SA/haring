@@ -4,17 +4,6 @@ import { Table as Cmp } from './Table';
 
 const meta = {
   component: Cmp,
-  decorators: [
-    function Component(Story, ctx) {
-      return <Story args={{ ...ctx.args }} />;
-    },
-  ],
-  parameters: {
-    actions: {
-      argTypesRegex:
-        '^(?!onShowColumnFiltersChange|onShowToolbarDropZoneChange)(on.*)',
-    },
-  },
   tags: ['autodocs'],
   title: '3-custom/Components/Table',
 } satisfies Meta<typeof Cmp>;
@@ -83,9 +72,5 @@ export const Table: IStory = {
         title: 'Doc test',
       },
     ],
-    onAction: (actionName, _elements) => {
-      // eslint-disable-next-line no-alert
-      alert(actionName);
-    },
   },
 };

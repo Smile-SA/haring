@@ -958,7 +958,7 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <svg
-                    fill="#495057"
+                    fill="currentColor"
                     height="16"
                     viewBox="0 0 256 256"
                     width="16"
@@ -1115,7 +1115,7 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <svg
-                    fill="#495057"
+                    fill="currentColor"
                     height="16"
                     viewBox="0 0 256 256"
                     width="16"
@@ -1272,7 +1272,7 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <svg
-                    fill="#495057"
+                    fill="currentColor"
                     height="16"
                     viewBox="0 0 256 256"
                     width="16"
@@ -1429,7 +1429,7 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <svg
-                    fill="#495057"
+                    fill="currentColor"
                     height="16"
                     viewBox="0 0 256 256"
                     width="16"
@@ -1586,7 +1586,7 @@ exports[`Table matches snapshot 1`] = `
                   type="button"
                 >
                   <svg
-                    fill="#495057"
+                    fill="currentColor"
                     height="16"
                     viewBox="0 0 256 256"
                     width="16"

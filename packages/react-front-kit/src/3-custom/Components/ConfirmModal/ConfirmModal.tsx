@@ -13,7 +13,6 @@ interface IConfirmModalProps extends ModalProps {
   confirmColor?: MantineColor;
   confirmLabel?: string;
   onCancel?: () => void;
-  onClose: () => void;
   onConfirm?: () => void;
   title?: string;
 }
@@ -21,9 +20,9 @@ interface IConfirmModalProps extends ModalProps {
 export function ConfirmModal(props: IConfirmModalProps): ReactElement {
   const {
     cancelColor = 'gray',
-    cancelLabel,
+    cancelLabel = 'cancel',
     confirmColor = 'red',
-    confirmLabel,
+    confirmLabel = 'confirm',
     onCancel,
     onClose,
     onConfirm,
@@ -47,7 +46,7 @@ export function ConfirmModal(props: IConfirmModalProps): ReactElement {
     >
       <>
         <div className={classes.modalTitleContainer}>
-          {title ? <h2>{title}</h2> : null}
+          {Boolean(title) && <h2>{title}</h2>}
           {children}
         </div>
         <div className={classes.modalButtonsContainer}>
@@ -59,7 +58,7 @@ export function ConfirmModal(props: IConfirmModalProps): ReactElement {
             color={cancelColor}
             onClick={onCancel}
           >
-            {cancelLabel ? cancelLabel : 'Cancel'}
+            {cancelLabel}
           </Button>
           <Button
             classNames={{
@@ -68,7 +67,7 @@ export function ConfirmModal(props: IConfirmModalProps): ReactElement {
             color={confirmColor}
             onClick={onConfirm}
           >
-            {confirmLabel ? confirmLabel : 'Confirm'}
+            {confirmLabel}
           </Button>
         </div>
       </>

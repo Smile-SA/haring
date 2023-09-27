@@ -74,10 +74,6 @@ describe('Table', () => {
             title: 'Doc test',
           },
         ]}
-        onAction={(actionName, _elements) => {
-          // eslint-disable-next-line no-alert
-          alert(actionName);
-        }}
       />,
     );
     expect(container).toMatchSnapshot();

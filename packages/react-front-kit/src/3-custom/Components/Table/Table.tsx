@@ -10,7 +10,14 @@ import type { FloatingPosition } from '@mantine/core/lib/Floating';
 import type { MRT_TableOptions } from 'mantine-react-table';
 import type { ReactNode } from 'react';
 
-import { ActionIcon, Box, Button, Menu, Tooltip } from '@mantine/core';
+import {
+  ActionIcon,
+  Box,
+  Button,
+  Menu,
+  Tooltip,
+  useMantineTheme,
+} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
   CaretDown,
@@ -48,7 +55,7 @@ export interface IDocument {
 }
 
 interface ITableProps extends MRT_TableOptions<IDocument> {
-  onAction: (
+  onAction?: (
     onAction: string | undefined,
     element: IDocument | IDocument[] | undefined,
   ) => void;
@@ -79,6 +86,8 @@ export function Table(props: ITableProps): JSX.Element {
   }>();
   const [modalTitle, setModalTitle] = useState<string>();
   const [modalChildren, setModalChildren] = useState<ReactNode>();
+
+  const theme = useMantineTheme();
   // Handle
   function handleAddToFav(currentElement: IDocument): void {
     setModalCancelColor('gray');
@@ -105,7 +114,7 @@ export function Table(props: ITableProps): JSX.Element {
   }
 
   function handleTree(currentElement: IDocument): void {
-    onAction('TREE_STRUCTURE_CHANGE_LOCATION', currentElement);
+    onAction && onAction('TREE_STRUCTURE_CHANGE_LOCATION', currentElement);
   }
 
   function handleRemove(currentElement: IDocument): void {
@@ -204,7 +213,7 @@ export function Table(props: ITableProps): JSX.Element {
             radius={4}
             type="button"
           >
-            <FolderMove color="#495057" />
+            <FolderMove color={theme.colors.gray[7]} />
           </ActionIcon>
         </Tooltip>
         <Tooltip label="Ouvrir le document" {...tooltipProps}>
@@ -232,14 +241,14 @@ export function Table(props: ITableProps): JSX.Element {
             radius={4}
             type="button"
           >
-            <PencilSimple color="#495057" />
+            <PencilSimple color={theme.colors.gray[7]} />
           </ActionIcon>
         </Tooltip>
         <Menu radius={4} shadow="lg" width={200} withinPortal>
           <Menu.Target>
             <Tooltip label="Affiche les autres actions" {...tooltipProps}>
               <ActionIcon radius={4} type="button">
-                <DotsThreeVertical color="#495057" size={16} />
+                <DotsThreeVertical size={16} />
               </ActionIcon>
             </Tooltip>
           </Menu.Target>
@@ -329,14 +338,14 @@ export function Table(props: ITableProps): JSX.Element {
     element: IDocument,
     actionName: string,
   ): void => {
-    onAction(actionName, element);
+    onAction && onAction(actionName, element);
     close();
   };
   const sendSelectedElementsValueWithAction = (
     elements: IDocument | IDocument[] | undefined,
     actionName: string | undefined,
   ): void => {
-    onAction(actionName, elements);
+    onAction && onAction(actionName, elements);
     close();
   };
   return (
