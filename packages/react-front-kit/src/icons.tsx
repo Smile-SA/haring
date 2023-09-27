@@ -5,7 +5,7 @@ import * as ppIcons from '@phosphor-icons/react';
 
 import * as customIcons from './1-styleGuide/Icons';
 
-const iconsToIgnore = ['IconBase', 'IconContext'];
+const iconsToIgnore = ['IconBase', 'IconContext', 'SSR'];
 const phosphorIconsEntries = Object.entries(ppIcons).filter(
   ([key]) => !iconsToIgnore.includes(key),
 ) as [string, Icon][];

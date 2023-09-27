@@ -5,9 +5,6 @@ module.exports = {
     'plugin:smile/ts',
     'plugin:smile/jest',
   ],
-  rules: {
-    'testing-library/no-node-access': 'off',
-  },
   overrides: [
     {
       files: ['**/__tests__/**/*', '**/*.{spec,test}.*'],
@@ -16,4 +13,7 @@ module.exports = {
       },
     },
   ],
+  rules: {
+    'testing-library/no-node-access': 'off',
+  },
 };

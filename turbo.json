@@ -11,14 +11,6 @@
       "cache": false,
       "persistent": true
     },
-    "test": {},
-    "storybook": {
-      "cache": false,
-      "persistent": true
-    },
-    "build-storybook": {
-      "outputs": ["storybook-static"]
-    },
-    "serve-and-test-storybook": {}
+    "test": {}
   }
 }
