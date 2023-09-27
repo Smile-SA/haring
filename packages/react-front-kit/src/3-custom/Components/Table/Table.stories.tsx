@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { FolderMove } from '../../../1-styleGuide/Icons';
+
 import { Table as Cmp } from './Table';
 
 const meta = {
@@ -13,6 +15,13 @@ type IStory = StoryObj<typeof meta>;
 
 export const Table: IStory = {
   args: {
+    actions: [
+      {
+        icon: <FolderMove />,
+        isMassAction: true,
+        label: 'Déplacer dans l’arborescence',
+      },
+    ],
     columns: [
       {
         accessorKey: 'id',
@@ -72,5 +81,6 @@ export const Table: IStory = {
         title: 'Doc test',
       },
     ],
+    rowActionNumber: 3,
   },
 };

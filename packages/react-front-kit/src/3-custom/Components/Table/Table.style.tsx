@@ -1,4 +1,4 @@
-import { createStyles } from '@mantine/styles';
+import { createStyles, getStylesRef } from '@mantine/styles';
 
 export const useStyles = createStyles((theme) => ({
   buttonFilters: { background: 'white', height: '34px', marginRight: '10px' },
@@ -41,6 +41,13 @@ export const useStyles = createStyles((theme) => ({
       width: '28px',
     },
   },
+  menuButtonWrapper: {
+    alignItems: 'center',
+    display: 'flex',
+    height: '100%',
+    justifyContent: 'center',
+    width: '100%',
+  },
   modalBody: {
     padding: '0px',
   },
@@ -76,5 +83,17 @@ export const useStyles = createStyles((theme) => ({
     justifyContent: 'space-between',
     marginLeft: '24px',
     marginRight: '16px',
+    opacity: 0,
+    ref: getStylesRef('rowActions'),
+  },
+  rowActionsMenuOpened: {
+    ref: getStylesRef('rowActionsMenuOpened'),
+  },
+  table: {
+    [`& tr:hover .${getStylesRef('rowActions')}, & tr .${getStylesRef(
+      'rowActionsMenuOpened',
+    )}`]: {
+      opacity: 1,
+    },
   },
 }));

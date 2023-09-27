@@ -7,7 +7,7 @@ import { Button, Modal } from '@mantine/core';
 
 import { useStyles } from './ConfirmModal.style';
 
-interface IConfirmModalProps extends ModalProps {
+export interface IConfirmModalProps extends ModalProps {
   cancelColor?: MantineColor;
   cancelLabel?: string;
   confirmColor?: MantineColor;
