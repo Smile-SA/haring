@@ -1,31 +1,32 @@
 import type { ReactElement } from 'react';
 
+import { primaryTheme } from '../../../theme';
+import { Header } from '../../Components/Header/Header';
 import { SidebarMenu } from '../../Components/SidebarMenu/SidebarMenu';
 import { menu } from '../../Components/SidebarMenu/SidebarMenu.mock';
 
-export const headerLeft: ReactElement = <p>Header left...</p>;
-
-export const headerChildren: ReactElement = (
-  <>
-    <span>Header children...</span>
-    <a href="#">Lorem</a>
-    <a href="#">Ipsum</a>
-    <a href="#">Dolor</a>
-  </>
+export const header: ReactElement = (
+  <Header
+    childrenComponent="nav"
+    onSearchSubmit={(e) => {
+      e.preventDefault();
+    }}
+    searchTheme={primaryTheme}
+  >
+    <span>Example Header...</span>
+  </Header>
 );
-
-export const headerRight: ReactElement = <p>Header right...</p>;
 
 export const sidebarContent: ReactElement = (
   <>
-    <span>Sidebar Content...</span>
+    <span>Example Sidebar Content...</span>
     <SidebarMenu menu={menu} />
   </>
 );
 
 export const mainContent: ReactElement = (
   <>
-    <span>Main content...</span>
+    <span>Example Main content...</span>
     <p>
       Lorem <a href="#">ipsum</a> dolor sit amet, <b>consectetur</b> adipiscing
       elit. Sed varius <i>bibendum</i> dui non imperdiet. Donec vehicula

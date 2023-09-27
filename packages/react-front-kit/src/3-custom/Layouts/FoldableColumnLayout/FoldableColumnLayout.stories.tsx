@@ -1,14 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { useStorybookArgsConnect } from '../../../hooks/useStorybookArgsConnect';
-import { primaryTheme } from '../../../theme';
-import { Header } from '../../Components/Header/Header';
 
 import { FoldableColumnLayout as Cmp } from './FoldableColumnLayout';
 import {
-  headerChildren,
-  headerLeft,
-  headerRight,
+  header,
   mainContent,
   sidebarContent,
 } from './FoldableColumnLayout.mock';
@@ -35,19 +31,7 @@ type IStory = StoryObj<typeof meta>;
 export const FoldableColumnLayout: IStory = {
   args: {
     appShellProps: {
-      header: (
-        <Header
-          childrenComponent="nav"
-          left={headerLeft}
-          onSearchSubmit={(e) => {
-            e.preventDefault();
-          }}
-          right={headerRight}
-          searchTheme={primaryTheme}
-        >
-          {headerChildren}
-        </Header>
-      ),
+      header,
       padding: 0,
     },
     children: mainContent,

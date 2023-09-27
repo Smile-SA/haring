@@ -1,6 +1,5 @@
 'use client';
 
-import type { IHeaderProps } from '../../Components/Header/Header';
 import type { ContainerProps } from '@mantine/core';
 import type { AppShellProps } from '@mantine/core/lib/AppShell/AppShell';
 import type { ChangeEvent, ReactElement, ReactNode } from 'react';
@@ -12,7 +11,6 @@ interface IFoldableColumnLayoutProps {
   appShellProps?: Omit<AppShellProps, 'children'>;
   children: ReactNode;
   containerProps?: ContainerProps;
-  headerProps?: IHeaderProps;
   sidebarContent: ReactNode;
   sidebarToggleLabel?: string;
 }

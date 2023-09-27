@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 import { primaryTheme } from '../../../theme';
 import { DropdownButton } from '../../Components/DropdownButton/DropdownButton';
+import { Header } from '../../Components/Header/Header';
 import { SidebarMenu } from '../../Components/SidebarMenu/SidebarMenu';
 import { menu } from '../../Components/SidebarMenu/SidebarMenu.mock';
 import { FoldableColumnLayout } from '../../Layouts/FoldableColumnLayout/FoldableColumnLayout';
@@ -23,39 +24,41 @@ export function TestPage(): ReactElement {
 
   return (
     <FoldableColumnLayout
-      headerProps={{
-        children: (
-          <>
+      appShellProps={{
+        header: (
+          <Header
+            childrenComponent="nav"
+            left={<img alt="logo" height="58" src="./logo.svg" width="128" />}
+            onSearchChange={setSearch}
+            onSearchSubmit={handleSearchSubmit}
+            right={
+              <>
+                <DropdownButton label="Mon espace">
+                  <Menu.Item component="a" href="#">
+                    Calico
+                  </Menu.Item>
+                  <Menu.Item component="a" href="#">
+                    Espace RH
+                  </Menu.Item>
+                  <Menu.Item component="a" href="#">
+                    Aventure IA
+                  </Menu.Item>
+                  <Menu.Item component="a" href="#">
+                    Lunette & CO
+                  </Menu.Item>
+                </DropdownButton>
+                <Avatar src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80" />
+              </>
+            }
+            searchTheme={primaryTheme}
+            searchValue={search}
+          >
             <a href="#">Espace documentaire</a>
             <a href="#">Espace workflow</a>
             <a href="#">Archives</a>
-          </>
+          </Header>
         ),
-        childrenComponent: 'nav',
-        left: <img alt="logo" height="58" src="./logo.svg" width="128" />,
-        onSearchChange: setSearch,
-        onSearchSubmit: handleSearchSubmit,
-        right: (
-          <>
-            <DropdownButton label="Mon espace">
-              <Menu.Item component="a" href="#">
-                Calico
-              </Menu.Item>
-              <Menu.Item component="a" href="#">
-                Espace RH
-              </Menu.Item>
-              <Menu.Item component="a" href="#">
-                Aventure IA
-              </Menu.Item>
-              <Menu.Item component="a" href="#">
-                Lunette & CO
-              </Menu.Item>
-            </DropdownButton>
-            <Avatar src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80" />
-          </>
-        ),
-        searchTheme: primaryTheme,
-        searchValue: search,
+        padding: 0,
       }}
       sidebarContent={<SidebarMenu menu={menu} />}
       sidebarToggleLabel="Voir l'arborescence"
