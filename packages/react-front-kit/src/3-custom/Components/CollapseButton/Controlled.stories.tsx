@@ -16,6 +16,8 @@ const meta = {
       return <Story args={{ ...args }} />;
     },
   ],
+  tags: [''],
+  title: '3-custom/Components/CollapseButton',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;

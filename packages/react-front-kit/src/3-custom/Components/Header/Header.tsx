@@ -66,7 +66,8 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface IHeaderProps extends Omit<HeaderProps, 'height' | 'left' | 'right'> {
+export interface IHeaderProps
+  extends Omit<HeaderProps, 'height' | 'left' | 'right'> {
   childrenComponent?: ElementType;
   height?: number;
   left?: ReactNode;

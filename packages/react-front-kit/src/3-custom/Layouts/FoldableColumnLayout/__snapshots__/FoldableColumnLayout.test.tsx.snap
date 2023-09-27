@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FoldableColumnLayout matches snapshot 1`] = `
+<div>
+  <div
+    class="mantine-AppShell-root mantine-1udmbix"
+  >
+    <div
+      class="mantine-hr6aor mantine-AppShell-body"
+    >
+      <main
+        class="mantine-we0muc mantine-AppShell-main"
+      >
+        <div
+          class="mantine-Container-root mantine-1fosfnc"
+        >
+          <div
+            class="mantine-Grid-root mantine-16fdnqw"
+          >
+            <div
+              class="mantine-Grid-col mantine-c6e1wb"
+            >
+              <div
+                class="mantine-Switch-root mantine-Switch-root mantine-1knyxmk"
+              >
+                <div
+                  class="mantine-hqx0d1 mantine-Switch-body"
+                >
+                  <input
+                    checked=""
+                    class="mantine-19htmtn mantine-Switch-input"
+                    id="sidebar-toggle"
+                    type="checkbox"
+                  />
+                  <label
+                    class="mantine-sxw4ip mantine-Switch-track"
+                    for="sidebar-toggle"
+                  >
+                    <div
+                      class="mantine-1nqstp3 mantine-Switch-thumb"
+                    />
+                    <div
+                      class="mantine-r9fta7 mantine-Switch-trackLabel"
+                    />
+                  </label>
+                  <div
+                    class="mantine-g88pth mantine-Switch-labelWrapper"
+                  >
+                    <label
+                      class="mantine-14fko7b mantine-Switch-label"
+                      for="sidebar-toggle"
+                    >
+                      <div
+                        class="mantine-Text-root mantine-awczux"
+                      >
+                        Display sidebar
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mantine-Grid-root mantine-1go31lo"
+          >
+            <div
+              class="mantine-Grid-col mantine-1slhqex"
+            >
+              <span>
+                sidebar content
+              </span>
+            </div>
+            <div
+              class="mantine-Grid-col mantine-1o31iwp"
+            >
+              <span>
+                main content
+              </span>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+`;
