@@ -15,10 +15,6 @@ describe('Table', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
       <Table
-        action={(action: string, _element) => {
-          // eslint-disable-next-line no-alert
-          alert(`Action: ${action}`);
-        }}
         columns={[
           {
             accessorKey: 'id',
@@ -78,6 +74,10 @@ describe('Table', () => {
             title: 'Doc test',
           },
         ]}
+        onAction={(actionName, _elements) => {
+          // eslint-disable-next-line no-alert
+          alert(actionName);
+        }}
       />,
     );
     expect(container).toMatchSnapshot();
