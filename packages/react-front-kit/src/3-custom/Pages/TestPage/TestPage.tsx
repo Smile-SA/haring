@@ -2,10 +2,12 @@
 
 import type { FormEvent, ReactElement } from 'react';
 
-import { Avatar, Menu } from '@mantine/core';
+import { Avatar, Button, Flex, Menu } from '@mantine/core';
+import { FolderPlus } from '@phosphor-icons/react';
 import { useState } from 'react';
 
 import { primaryTheme } from '../../../theme';
+import { flattenNestedObjects } from '../../../utils/nested-object';
 import { DropdownButton } from '../../Components/DropdownButton/DropdownButton';
 import { Header } from '../../Components/Header/Header';
 import { SidebarMenu } from '../../Components/SidebarMenu/SidebarMenu';
@@ -17,9 +19,22 @@ import { FoldableColumnLayout } from '../../Layouts/FoldableColumnLayout/Foldabl
  */
 export function TestPage(): ReactElement {
   const [search, setSearch] = useState('');
+  const [sidebarMenu, setSidebarMenu] = useState(menu);
 
   function handleSearchSubmit(event: FormEvent): void {
     event.preventDefault();
+  }
+
+  function handleAddFolder(): void {
+    setSidebarMenu(
+      sidebarMenu.concat([
+        {
+          id: flattenNestedObjects(sidebarMenu).length + 1,
+          label: 'Nouveau Dossier',
+          leftIcon: <FolderPlus />,
+        },
+      ]),
+    );
   }
 
   return (
@@ -60,9 +75,17 @@ export function TestPage(): ReactElement {
         ),
         padding: 0,
       }}
-      sidebarContent={<SidebarMenu menu={menu} />}
+      sidebarContent={
+        <Flex direction="column" gap={24}>
+          <Button onClick={handleAddFolder} size="md">
+            Nouveau dossier
+          </Button>
+          <SidebarMenu menu={sidebarMenu} />
+        </Flex>
+      }
       sidebarToggleLabel="Voir l'arborescence"
     >
+      <span>Lorem Ipsum dolor sit amet</span>
       <p>
         Lorem <a href="#">ipsum</a> dolor sit amet, consectetur adipiscing elit.
         Sed varius bibendum dui non imperdiet. Donec vehicula fringilla lorem
