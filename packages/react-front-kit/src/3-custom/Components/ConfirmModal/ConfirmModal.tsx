@@ -20,9 +20,9 @@ export interface IConfirmModalProps extends ModalProps {
 export function ConfirmModal(props: IConfirmModalProps): ReactElement {
   const {
     cancelColor = 'gray',
-    cancelLabel = 'cancel',
-    confirmColor = 'red',
-    confirmLabel = 'confirm',
+    cancelLabel = 'Cancel',
+    confirmColor = 'primary',
+    confirmLabel = 'Confirm',
     onCancel,
     onClose,
     onConfirm,

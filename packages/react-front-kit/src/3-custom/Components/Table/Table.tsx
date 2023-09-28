@@ -10,8 +10,7 @@ import type { FloatingPosition } from '@mantine/core/lib/Floating';
 import type { MRT_Row, MRT_TableOptions } from 'mantine-react-table';
 import type { ReactElement, ReactNode } from 'react';
 
-import { ActionIcon, Box, Button, Menu, Tooltip } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { ActionIcon, Button, Flex, Menu, Tooltip } from '@mantine/core';
 import {
   CaretDown,
   CaretUp,
@@ -20,9 +19,12 @@ import {
   Funnel,
 } from '@phosphor-icons/react';
 import {
-  MRT_ShowHideColumnsButton as MRTShowHideColumnsButton,
-  MRT_ToggleFiltersButton as MRTToggleFiltersButton,
   MantineReactTable,
+  MRT_ShowHideColumnsButton as MrtShowHideColumnsButton,
+  MRT_ToggleDensePaddingButton as MrtToggleDensePaddingButton,
+  MRT_ToggleFiltersButton as MrtToggleFiltersButton,
+  MRT_ToggleFullScreenButton as MrtToggleFullScreenButton,
+  MRT_ToggleGlobalFilterButton as MrtToggleGlobalFilterButton,
   useMantineReactTable,
 } from 'mantine-react-table';
 import { useState } from 'react';
@@ -32,26 +34,35 @@ import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
 
 import { useStyles } from './Table.style';
 
-export interface IDocument {
-  creator: string;
-  date: string;
-  format: string;
-  id: number | string;
-  title: string;
+export interface IActionConfirmModalProps<Data extends Record<string, unknown>>
+  extends Omit<
+    IConfirmModalProps,
+    'onCancel' | 'onClose' | 'onConfirm' | 'opened'
+  > {
+  onCancel?: (row: MRT_Row<Data> | MRT_Row<Data>[]) => false | void;
+  onClose?: () => void;
+  onConfirm?: (row: MRT_Row<Data> | MRT_Row<Data>[]) => false | void;
 }
 
-export interface IAction {
-  confirmModalProps?: IConfirmModalProps;
+export interface IAction<Data extends Record<string, unknown>> {
+  color?: string;
+  confirmModalProps?: IActionConfirmModalProps<Data>;
   confirmation?: boolean;
   icon: ReactNode;
   isMassAction?: boolean;
   isRowAction?: boolean;
   label: string;
-  onAction?: (row: MRT_Row<IDocument> | MRT_Row<IDocument>[]) => void;
+  onAction?: (row: MRT_Row<Data> | MRT_Row<Data>[]) => void;
 }
 
-export interface ITableProps extends MRT_TableOptions<IDocument> {
-  actions: IAction[];
+export interface IConfirmAction<Data extends Record<string, unknown>>
+  extends IAction<Data> {
+  row: MRT_Row<Data> | MRT_Row<Data>[];
+}
+
+export interface ITableProps<Data extends Record<string, unknown>>
+  extends MRT_TableOptions<Data> {
+  actions?: IAction<Data>[];
   rowActionNumber?: number;
 }
 
@@ -64,7 +75,9 @@ const tooltipProps = {
 };
 
 /** Additional props will be forwarded to the [Mantine React Table useMantineReactTable hook](https://www.mantine-react-table.com/docs/api/table-options) */
-export function Table(props: ITableProps): ReactElement {
+export function Table<Data extends Record<string, unknown>>(
+  props: ITableProps<Data>,
+): ReactElement {
   const {
     actions = [],
     icons,
@@ -72,8 +85,9 @@ export function Table(props: ITableProps): ReactElement {
     rowActionNumber = 0,
     ...mantineTable
   } = props;
-  const [opened, { close }] = useDisclosure(false);
   const { classes } = useStyles();
+  const [confirmAction, setConfirmAction] =
+    useState<IConfirmAction<Data> | null>(null);
   const [openedMenuRowIndex, setOpenedMenuRowIndex] = useState<number | null>(
     null,
   );
@@ -93,6 +107,39 @@ export function Table(props: ITableProps): ReactElement {
     }
   }
 
+  function handleAction(
+    row: MRT_Row<Data> | MRT_Row<Data>[],
+    action: IAction<Data>,
+  ): void {
+    if (action.confirmation) {
+      setConfirmAction({ ...action, row });
+    } else {
+      action.onAction?.(row);
+    }
+  }
+
+  function handleCancel(): void {
+    if (
+      confirmAction?.confirmModalProps?.onCancel?.(confirmAction.row) !== false
+    ) {
+      setConfirmAction(null);
+    }
+  }
+
+  function handleClose(): void {
+    setConfirmAction(null);
+    confirmAction?.confirmModalProps?.onClose?.();
+  }
+
+  function handleConfirm(): void {
+    if (
+      confirmAction?.confirmModalProps?.onConfirm?.(confirmAction.row) !== false
+    ) {
+      setConfirmAction(null);
+      confirmAction?.onAction?.(confirmAction.row);
+    }
+  }
+
   const table = useMantineReactTable({
     displayColumnDefOptions: {
       'mrt-row-actions': {
@@ -100,6 +147,9 @@ export function Table(props: ITableProps): ReactElement {
         size: 124,
       },
     },
+    enableDensityToggle: false,
+    enableFullScreenToggle: false,
+    enableGlobalFilter: false,
     enablePagination: false,
     enableRowActions: true,
     enableRowSelection: true,
@@ -122,24 +172,14 @@ export function Table(props: ITableProps): ReactElement {
       ...initialState,
     },
     mantinePaperProps: {
-      sx: {
-        border: 'hidden',
-        borderRadius: '24px',
-        boxShadow:
-          '0px 3.43489px 2.74791px 0px rgba(0, 0, 0, 0.02), 0px 8.6871px 6.94968px 0px rgba(0, 0, 0, 0.02), 0px 17.72087px 14.1767px 0px rgba(0, 0, 0, 0.03), 0px 36.50164px 29.20132px 0px rgba(0, 0, 0, 0.03), 0px 100px 80px 0px rgba(0, 0, 0, 0.05)',
-      },
+      className: classes.paper,
     },
     mantineTableProps: {
       className: classes.table,
     },
-    mantineToolbarAlertBannerProps: () => ({
-      sx: (theme) => ({
-        background: theme.colors.cyan[9],
-        border: 'none',
-        borderRadius: '4px',
-        color: theme.colors.white,
-      }),
-    }),
+    mantineToolbarAlertBannerProps: {
+      className: classes.alertBanner,
+    },
     manualFiltering: false,
     manualPagination: true,
     manualSorting: true,
@@ -156,7 +196,7 @@ export function Table(props: ITableProps): ReactElement {
             // eslint-disable-next-line react/no-array-index-key
             <Tooltip key={index} label={action.label} {...tooltipProps}>
               <ActionIcon
-                onClick={() => action.onAction?.(row)}
+                onClick={() => handleAction(row, action)}
                 radius={4}
                 type="button"
               >
@@ -182,7 +222,7 @@ export function Table(props: ITableProps): ReactElement {
                 >
                   <Tooltip label="Affiche les autres actions" {...tooltipProps}>
                     <div className={classes.menuButtonWrapper}>
-                      <DotsThreeVertical color="#495057" size={16} />
+                      <DotsThreeVertical size={16} />
                     </div>
                   </Tooltip>
                 </ActionIcon>
@@ -192,8 +232,9 @@ export function Table(props: ITableProps): ReactElement {
                   <Menu.Item
                     // eslint-disable-next-line react/no-array-index-key
                     key={index}
+                    color={action.color}
                     icon={action.icon}
-                    onClick={() => action.onAction?.(row)}
+                    onClick={() => handleAction(row, action)}
                   >
                     {action.label}
                   </Menu.Item>
@@ -204,40 +245,68 @@ export function Table(props: ITableProps): ReactElement {
         </div>
       );
     },
-    renderToolbarAlertBannerContent: (cell) => (
-      <Box className={classes.renderToolbarAlertBannerContent}>
-        <p>{cell.selectedAlert}</p>
-        <div className={classes.buttonsToolbarAlertGroupe}>
-          {massActions.map((action, index) => (
-            <Button
-              // eslint-disable-next-line react/no-array-index-key
-              key={index}
-              className={classes.buttonsToolbarAlertTree}
-              leftIcon={action.icon}
-              onClick={() =>
-                action.onAction?.(cell.table.getSelectedRowModel().rows)
-              }
-              variant="default"
-            >
-              {action.label}
-            </Button>
-          ))}
-        </div>
-      </Box>
+    renderToolbarAlertBannerContent: ({ selectedAlert }) => (
+      <div className={classes.alertToolbar}>
+        <p>{selectedAlert}</p>
+      </div>
     ),
-    renderToolbarInternalActions: (cell) => (
-      <Box className={classes.renderToolbarInternalActions}>
-        <MRTToggleFiltersButton
-          className={classes.buttonFilters}
-          table={table}
-        />
-        <MRTShowHideColumnsButton
-          className={classes.buttonsShowHideColumns}
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          table={cell.table}
-        />
-      </Box>
-    ),
+    renderToolbarInternalActions: ({ table }) => {
+      const { rows } = table.getSelectedRowModel();
+      return (
+        <Flex className={classes.internalToolbar}>
+          {rows.length > 0 &&
+            massActions.map((action, index) => (
+              <Button
+                // eslint-disable-next-line react/no-array-index-key
+                key={index}
+                color={action.color}
+                leftIcon={action.icon}
+                onClick={() => handleAction(rows, action)}
+                variant="default"
+              >
+                {action.label}
+              </Button>
+            ))}
+
+          {table.options.enableFilters &&
+          table.options.enableGlobalFilter &&
+          !initialState?.showGlobalFilter ? (
+            <MrtToggleGlobalFilterButton
+              className={classes.toolbarAction}
+              table={table}
+            />
+          ) : null}
+          {table.options.enableFilters &&
+          table.options.enableColumnFilters &&
+          table.options.columnFilterDisplayMode !== 'popover' ? (
+            <MrtToggleFiltersButton
+              className={classes.toolbarAction}
+              table={table}
+            />
+          ) : null}
+          {table.options.enableHiding ||
+          table.options.enableColumnOrdering ||
+          table.options.enablePinning ? (
+            <MrtShowHideColumnsButton
+              className={classes.toolbarAction}
+              table={table}
+            />
+          ) : null}
+          {table.options.enableDensityToggle ? (
+            <MrtToggleDensePaddingButton
+              className={classes.toolbarAction}
+              table={table}
+            />
+          ) : null}
+          {table.options.enableFullScreenToggle ? (
+            <MrtToggleFullScreenButton
+              className={classes.toolbarAction}
+              table={table}
+            />
+          ) : null}
+        </Flex>
+      );
+    },
     ...mantineTable,
   });
 
@@ -245,13 +314,13 @@ export function Table(props: ITableProps): ReactElement {
     <>
       <MantineReactTable table={table} />
       <ConfirmModal
-        onCancel={close}
-        onClose={close}
-        onConfirm={() => null}
-        opened={opened}
-      >
-        <div>test</div>
-      </ConfirmModal>
+        {...confirmAction?.confirmModalProps}
+        onCancel={handleCancel}
+        onClose={handleClose}
+        onConfirm={handleConfirm}
+        opened={Boolean(confirmAction)}
+        title={confirmAction?.confirmModalProps?.title ?? confirmAction?.label}
+      />
     </>
   );
 }
