@@ -52,7 +52,7 @@ export function FoldableColumnLayout(
             />
           </Grid.Col>
         </Grid>
-        <Grid grow gutter="xl">
+        <Grid grow gutter="xl" pt={12}>
           {Boolean(isColumnVisible) && (
             <Grid.Col span={3}>{sidebarContent}</Grid.Col>
           )}
