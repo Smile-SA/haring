@@ -7,7 +7,7 @@ import { Button, Modal } from '@mantine/core';
 
 import { useStyles } from './ConfirmModal.style';
 
-interface IConfirmModalProps extends ModalProps {
+export interface IConfirmModalProps extends ModalProps {
   cancelColor?: MantineColor;
   cancelLabel?: string;
   confirmColor?: MantineColor;
@@ -20,9 +20,9 @@ interface IConfirmModalProps extends ModalProps {
 export function ConfirmModal(props: IConfirmModalProps): ReactElement {
   const {
     cancelColor = 'gray',
-    cancelLabel = 'cancel',
-    confirmColor = 'red',
-    confirmLabel = 'confirm',
+    cancelLabel = 'Cancel',
+    confirmColor = 'primary',
+    confirmLabel = 'Confirm',
     onCancel,
     onClose,
     onConfirm,
