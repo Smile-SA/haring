@@ -63,6 +63,7 @@ export interface IConfirmAction<Data extends Record<string, unknown>>
 export interface ITableProps<Data extends Record<string, unknown>>
   extends MRT_TableOptions<Data> {
   actions?: IAction<Data>[];
+  menuLabel?: string;
   rowActionNumber?: number;
 }
 
@@ -82,6 +83,7 @@ export function Table<Data extends Record<string, unknown>>(
     actions = [],
     icons,
     initialState,
+    menuLabel = 'Other actions',
     rowActionNumber = 0,
     ...mantineTable
   } = props;
@@ -220,7 +222,7 @@ export function Table<Data extends Record<string, unknown>>(
                   radius={4}
                   type="button"
                 >
-                  <Tooltip label="Affiche les autres actions" {...tooltipProps}>
+                  <Tooltip label={menuLabel} {...tooltipProps}>
                     <div className={classes.menuButtonWrapper}>
                       <DotsThreeVertical size={16} />
                     </div>
