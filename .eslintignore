@@ -1,8 +1,6 @@
 # Packages
-packages/
+packages/react-front-kit*
 apps/
-!packages/eslint-config-custom/
-!packages/tsconfig/
 
 # Storybook
 !.storybook
