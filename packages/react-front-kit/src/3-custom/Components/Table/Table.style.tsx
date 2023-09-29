@@ -1,36 +1,21 @@
-import { createStyles } from '@mantine/styles';
+import { createStyles, getStylesRef } from '@mantine/styles';
 
 export const useStyles = createStyles((theme) => ({
-  buttonFilters: { background: 'white', height: '34px', marginRight: '10px' },
-  buttonGrey: {
-    '&:hover': {
-      background: theme.colors.gray[7],
-    },
-    background: theme.colors.gray[8],
-    padding: '0.667em 3.333em',
+  alertBanner: {
+    background: theme.colors.cyan[9],
+    border: 0,
+    borderRadius: 0,
+    height: '56px',
   },
-  buttonLeftModal: { marginRight: '10px' },
-  buttonRemoveRoot: {
-    padding: '0.667em 3.333em',
+  alertToolbar: {
+    color: theme.white,
   },
-  buttonsShowHideColumns: { background: 'white', height: '34px' },
-  buttonsToolbarAlertGroupe: {
-    display: 'flex',
-    marginRight: '78px',
-  },
-  buttonsToolbarAlertRemove: {
-    display: 'block',
-    margin: 'auto 10px auto',
-  },
-  buttonsToolbarAlertTree: {
-    display: 'block',
-    margin: 'auto 0px auto',
-  },
-  iconsColor: {
-    color: theme.colors.gray[7],
+  internalToolbar: {
+    alignItems: 'center',
+    gap: '10px',
   },
   menuButton: {
-    [`&[aria-expanded=true]`]: {
+    '&[aria-expanded=true]': {
       '& svg': {
         filter: 'contrast(8) invert(1)',
       },
@@ -41,34 +26,18 @@ export const useStyles = createStyles((theme) => ({
       width: '28px',
     },
   },
-  modalBody: {
-    padding: '0px',
-  },
-  modalButtonsContainer: {
-    marginTop: '32px',
-  },
-  modalContent: {
-    padding: '48px',
-  },
-  modalHeader: {
-    height: '0px',
-    padding: '0px',
-  },
-  modalTitleContainer: {
-    marginLeft: '12px',
-  },
-  renderToolbarAlertBannerContent: {
-    color: 'white',
-    display: 'flex',
-    justifyContent: 'space-between',
-    padding: '0px 8px',
-    width: '100%',
-  },
-  renderToolbarInternalActions: {
+  menuButtonWrapper: {
+    alignItems: 'center',
     display: 'flex',
     height: '100%',
-    padding: '4px 8px',
+    justifyContent: 'center',
     width: '100%',
+  },
+  paper: {
+    border: 0,
+    borderRadius: '24px',
+    boxShadow:
+      '0px 3.43489px 2.74791px 0px rgba(0, 0, 0, 0.02), 0px 8.6871px 6.94968px 0px rgba(0, 0, 0, 0.02), 0px 17.72087px 14.1767px 0px rgba(0, 0, 0, 0.03), 0px 36.50164px 29.20132px 0px rgba(0, 0, 0, 0.03), 0px 100px 80px 0px rgba(0, 0, 0, 0.05)',
   },
   rowActions: {
     boxShadow: 'none',
@@ -76,5 +45,20 @@ export const useStyles = createStyles((theme) => ({
     justifyContent: 'space-between',
     marginLeft: '24px',
     marginRight: '16px',
+    opacity: 0,
+    ref: getStylesRef('rowActions'),
+  },
+  rowActionsMenuOpened: {
+    ref: getStylesRef('rowActionsMenuOpened'),
+  },
+  table: {
+    [`& tr:hover .${getStylesRef('rowActions')}, & tr .${getStylesRef(
+      'rowActionsMenuOpened',
+    )}`]: {
+      opacity: 1,
+    },
+  },
+  toolbarAction: {
+    background: theme.white,
   },
 }));
