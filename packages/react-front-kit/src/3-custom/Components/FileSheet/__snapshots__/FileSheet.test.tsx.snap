@@ -6,7 +6,7 @@ exports[`FileSheet matches snapshot 1`] = `
     class="mantine-c5013w"
   >
     <div
-      class="mantine-1hswm1k"
+      class="mantine-15wxh6f"
     >
       <svg
         fill="none"
@@ -105,11 +105,15 @@ exports[`FileSheet matches snapshot 1`] = `
       </svg>
     </div>
     <div
-      class="mantine-quehkv"
+      class="mantine-1l8m76s"
     >
       <div
-        class="cards"
-      />
+        class="mantine-16uzd3i"
+      >
+        <div
+          class="mantine-ibur3b"
+        />
+      </div>
     </div>
   </div>
 </div>

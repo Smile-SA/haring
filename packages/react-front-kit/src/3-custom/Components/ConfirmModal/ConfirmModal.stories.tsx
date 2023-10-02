@@ -16,7 +16,6 @@ const meta = {
       control: 'select',
       options: colorOptions,
     },
-    onClick: { action: 'clicked' },
     opened: { control: 'boolean' },
   },
   component: Cmp,
