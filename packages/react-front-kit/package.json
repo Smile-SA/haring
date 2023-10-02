@@ -29,21 +29,22 @@
     "email": "tonai59+github@gmail.com",
     "url": "https://github.com/tonai"
   },
-  "main": "./dist/index.tsx",
+  "main": "./dist/index.js",
   "module": "./src/index.tsx",
-  "types": "./src/index.tsx",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "prepare": "npm run build",
     "build": "tsc --project tsconfig.build.json",
-    "lint": "eslint --max-warnings=0 --ignore-path ../../.gitignore . && tsc --noEmit",
-    "lint:fix": "eslint --fix --max-warnings=0 --ignore-path ../../.gitignore . && tsc --noEmit",
     "test": "jest",
     "generate": "turbo gen react-component",
-    "prepublishOnly": "node ./scripts/prepublish.mjs"
+    "prepublishOnly": "npm run build && node ./scripts/prepublish.mjs"
+  },
+  "dependencies": {
+    "@smile/react-front-kit-shared": "*"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.22.20",
     "@babel/preset-react": "^7.22.15",
-    "@babel/preset-typescript": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.0",
     "@storybook/addon-actions": "^7.4.1",
     "@storybook/jest": "^0.2.2",
     "@storybook/preview-api": "^7.4.1",
@@ -52,27 +53,19 @@
     "@testing-library/react": "^14.0.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "eslint": "^8.49.0",
-    "eslint-config-custom": "*",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "test": "*",
     "tsconfig": "*",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
     "@emotion/react": ">=11",
     "@mantine/core": "6",
-    "@mantine/dates": "6",
     "@mantine/hooks": "6",
     "@mantine/styles": "6",
     "@phosphor-icons/react": ">=2",
-    "@tabler/icons-react": ">=2",
-    "dayjs": ">=1",
-    "mantine-react-table": ">=1",
     "react": ">=18.0",
     "react-dom": ">=18.0"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --max-warnings=0 --ignore-path ../../.gitignore"
   }
 }

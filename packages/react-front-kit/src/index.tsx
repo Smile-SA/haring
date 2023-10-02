@@ -1,19 +1,16 @@
 /* eslint-disable react-refresh/only-export-components */
+export * from '@smile/react-front-kit-shared';
 // component exports
-export * from './1-styleGuide/Icons';
-export * from './3-custom/Components/Breadcrumbs/Breadcrumbs';
-export * from './3-custom/Components/CollapseButton/CollapseButtonControlled';
-export * from './3-custom/Components/CollapseButton/CollapseButton';
-export * from './3-custom/Components/DropdownButton/DropdownButton';
-export * from './3-custom/Components/Header/Header';
-export * from './3-custom/Components/HeaderSearch/HeaderSearch';
-export * from './3-custom/Components/Pagination/Pagination';
-export * from './3-custom/Components/SidebarMenu/SidebarMenu';
-export * from './3-custom/Components/Table/Table';
+export * from './Components/Breadcrumbs/Breadcrumbs';
+export * from './Components/CollapseButton/CollapseButtonControlled';
+export * from './Components/CollapseButton/CollapseButton';
+export * from './Components/ConfirmModal/ConfirmModal';
+export * from './Components/DropdownButton/DropdownButton';
+export * from './Components/Header/Header';
+export * from './Components/HeaderSearch/HeaderSearch';
+export * from './Components/Pagination/Pagination';
+export * from './Components/SidebarMenu/SidebarMenu';
 // layout exports
-export * from './3-custom/Layouts/FoldableColumnLayout/FoldableColumnLayout';
+export * from './Layouts/FoldableColumnLayout/FoldableColumnLayout';
 // page exports
-export * from './3-custom/Pages/TestPage/TestPage';
-// other exports
-export * from './3-custom/Provider/Provider';
-export * from './theme';
+export * from './Pages/TestPage/TestPage';
