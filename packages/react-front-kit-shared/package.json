@@ -33,13 +33,12 @@
   "module": "./src/index.tsx",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "prepare": "npm run build",
     "build": "tsc --project tsconfig.build.json",
     "lint": "eslint --max-warnings=0 --ignore-path ../../.gitignore . && tsc --noEmit",
     "lint:fix": "eslint --fix --max-warnings=0 --ignore-path ../../.gitignore . && tsc --noEmit",
     "test": "jest",
     "generate": "turbo gen react-component",
-    "prepublishOnly": "node ./scripts/prepublish.mjs"
+    "prepublishOnly": "npm run build && node ./scripts/prepublish.mjs"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.20",
