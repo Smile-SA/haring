@@ -1,7 +1,7 @@
 import type { Preview, StoryContext, StoryFn } from '@storybook/react';
 import type { ReactElement } from 'react';
 
-import { Provider, themes } from '@smile/react-front-kit';
+import { Provider, themes } from '@smile/react-front-kit-shared';
 
 function withProvider(Story: StoryFn, context: StoryContext): ReactElement {
   return (

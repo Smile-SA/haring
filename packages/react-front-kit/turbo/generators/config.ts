@@ -51,6 +51,10 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
             value: 'components',
           },
           {
+            name: 'Layout',
+            value: 'layouts',
+          },
+          {
             name: 'Page',
             value: 'pages',
           },
@@ -61,7 +65,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       });
       const capitalizedType = type.charAt(0).toUpperCase() + type.slice(1);
       const { path } = await inquirer.prompt({
-        default: `3-custom/${capitalizedType}`,
+        default: capitalizedType,
         message: 'What is the path of the component?',
         name: 'path',
         type: 'input',

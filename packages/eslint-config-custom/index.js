@@ -14,6 +14,14 @@ module.exports = {
     },
   ],
   rules: {
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      { disallowTypeAnnotations: false },
+    ],
+    '@typescript-eslint/no-invalid-void-type': 'off',
+    '@typescript-eslint/prefer-nullish-coalescing': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
+    'react/jsx-handler-names': ['error', { checkLocalVariables: false }],
     'testing-library/no-node-access': 'off',
   },
 };

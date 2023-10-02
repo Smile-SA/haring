@@ -1,8 +1,5 @@
 # Packages
-packages/
 apps/
-!packages/eslint-config-custom/
-!packages/tsconfig/
 
 # Storybook
 !.storybook
