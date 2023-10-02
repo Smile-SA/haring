@@ -35,7 +35,6 @@
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
     "test": "jest",
-    "generate": "turbo gen react-component",
     "prepublishOnly": "npm run build && node ./scripts/prepublish.mjs"
   },
   "devDependencies": {
@@ -60,7 +59,6 @@
     "@emotion/react": ">=11",
     "@mantine/core": "6",
     "@mantine/hooks": "6",
-    "@mantine/styles": "6",
     "@phosphor-icons/react": ">=2",
     "react": ">=18.0",
     "react-dom": ">=18.0"
