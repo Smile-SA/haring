@@ -20,9 +20,9 @@
     "prepare": "husky install",
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "concurrently -n \"PKG,ROOT\" -c \"magenta,blue\" \"npm run lint:pkg\" \"npm run lint:root\"",
-    "lint:pkg": "turbo run lint",
+    "lint": "turbo run lint && npm run lint:root",
     "lint:root": "DEBUG=eslint:cli-engine eslint --max-warnings=0 --ignore-path <(cat .gitignore .eslintignore) . && tsc --noEmit",
+    "lint:fix": "DEBUG=eslint:cli-engine eslint --fix --max-warnings=0 --ignore-path <(cat .gitignore .eslintignore) . && tsc --noEmit",
     "test": "turbo run test",
     "format": "prettier --write --ignore-unknown --ignore-path .prettierignore --ignore-path .gitignore .",
     "changeset": "changeset",
@@ -85,6 +85,7 @@
     ]
   },
   "lint-staged": {
-    "*": "prettier --write --ignore-unknown --ignore-path <(cat .gitignore .prettierignore)"
+    "*": "prettier --write --ignore-unknown --ignore-path <(cat .gitignore .prettierignore)",
+    "*.{js,jsx,ts,tsx}": "eslint --max-warnings=0 --ignore-path ../../.gitignore"
   }
 }

@@ -35,8 +35,6 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
-    "lint": "eslint --max-warnings=0 --ignore-path ../../.gitignore . && tsc --noEmit",
-    "lint:fix": "eslint --fix --max-warnings=0 --ignore-path ../../.gitignore . && tsc --noEmit",
     "test": "jest",
     "generate": "turbo gen react-component",
     "prepublishOnly": "npm run build && node ./scripts/prepublish.mjs"
@@ -57,8 +55,6 @@
     "@testing-library/react": "^14.0.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "eslint": "^8.49.0",
-    "eslint-config-custom": "*",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "test": "*",
@@ -77,8 +73,5 @@
     "mantine-react-table": ">=1",
     "react": ">=18.0",
     "react-dom": ">=18.0"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --max-warnings=0 --ignore-path ../../.gitignore"
   }
 }
