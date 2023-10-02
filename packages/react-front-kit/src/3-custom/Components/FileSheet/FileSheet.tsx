@@ -3,7 +3,7 @@
 import type { BoxProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
-import { Box, MantineProvider } from '@mantine/core';
+import { Box } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
 
 import Motif from './Motif';
@@ -30,7 +30,7 @@ export function FileSheet(props: IFileSheetProps): ReactElement {
   const {
     children,
     title,
-    cards,
+    cards = [],
     cardsColor,
     content,
     dropZone,
@@ -93,7 +93,7 @@ export function FileSheet(props: IFileSheetProps): ReactElement {
     rightContainer: {},
     title: {
       'h1, h2, h3, h4 h5, p': {
-        color: theme.white,
+        color: 'white',
         fontSize: '26px',
         fontWeight: 700,
         marginBottom: '24px',
@@ -102,40 +102,35 @@ export function FileSheet(props: IFileSheetProps): ReactElement {
   }));
   const { classes } = useStyles();
   return (
-    <MantineProvider theme={{ colorScheme: 'dark' }}>
-      <Box className={classes.fileSheet} {...BoxProps}>
-        {motifVisible ? (
-          <div className={classes.motif}>{motif ? motif : <Motif />}</div>
-        ) : null}
-        <div className={classes.container}>
-          <div className={classes.leftContainer}>
-            {title ? <div className={classes.title}>{title}</div> : null}
+    <Box className={classes.fileSheet} {...BoxProps}>
+      {Boolean(motifVisible) && (
+        <div className={classes.motif}>{motif ? motif : <Motif />}</div>
+      )}
+      <div className={classes.container}>
+        <div className={classes.leftContainer}>
+          {Boolean(title) && <div className={classes.title}>{title}</div>}
+          {Boolean(cards.length > 0) && (
             <div className={classes.cards}>
-              {cards
-                ? cards.map((item, key) => (
+              {cards.map((item, key) => (
+                <div key={`card-${key + key}`} className={classes.cardGroupe}>
+                  {Boolean(item.image) && (
                     <div
-                      key={`card-${key + key}`}
-                      className={classes.cardGroupe}
+                      aria-hidden="true"
+                      className={classes.card}
+                      onClick={() => item.onAction && item.onAction(item)}
                     >
-                      {item.image ? (
-                        <div
-                          aria-hidden="true"
-                          className={classes.card}
-                          onClick={() => item.onAction && item.onAction(item)}
-                        >
-                          {item.image}
-                        </div>
-                      ) : null}
-                      <span>{item.title ? item.title : null}</span>
+                      {item.image}
                     </div>
-                  ))
-                : null}
+                  )}
+                  <span>{Boolean(item.title) && item.title}</span>
+                </div>
+              ))}
             </div>
-            {content ? <div className={classes.content}>{content}</div> : null}
-          </div>
-          {dropZone ? <div className={classes.rightContainer} /> : null}
+          )}
+          {Boolean(content) && <div className={classes.content}>{content}</div>}
         </div>
-      </Box>
-    </MantineProvider>
+        {Boolean(dropZone) && <div className={classes.rightContainer} />}
+      </div>
+    </Box>
   );
 }
