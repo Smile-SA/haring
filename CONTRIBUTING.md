@@ -4,46 +4,48 @@
 
 In this monorepo project you will find the following projects:
 
-- packages/react-front-kit (public): contains the UI components
-- packages/eslint-config-custom (private): custom shared eslint configuration
-- packages/tsconfig (private): custom shared typescript configuration
-- apps/web (private): Next.js testing app
+Public packages:
+
+- packages/react-front-kit: Contains the basic UI components
+- packages/react-front-kit-shared: Contains the shared UI components and functions
+- packages/react-front-kit-table: Contains the table component
+
+Private configuration packages:
+
+- packages/eslint-config-custom: Shared eslint configuration
+- packages/test: Shared jest configuration
+- packages/tsconfig: Shared typescript configuration
+
+Private integration testing packages:
+
+- apps/web: Next.js testing app
 
 ## Root commands
 
 At the root level you can launch following commands:
 
-- `npm run build`: launch build command in all sub projects
-- `npm run dev`: launch dev command in all sub projects
-- `npm run lint`: launch lint command in all sub projects
-- `npm run test`: launch test command in all sub projects
-- `npm run format`: launch prettier on all project files
-- `npm run storybook`: launch the storybook of the `react-front-kit` project
+- `npm run build`: Builds all sub projects
+- `npm run dev`: Launches dev command in all sub projects
+- `npm run lint`: Lints everything
+- `npm run lint:root`: Lints everything but the `apps` folder
+- `npm run lint:fix`: Lints and fix everything but the `apps` folder
+- `npm run test`: Launches all unit tests
+- `npm run format`: Reformats all files
+- `npm run changeset`: Creates a changeset file (see [Submitting a pull request](#submitting-a-pull-request))
+- `npm run storybook`: Launches the global storybook
+- `npm run storybook:no-open`: Launches the global storybook without opening a new tab
 
 The following commands are used on the CI:
 
-- `npm run build-storybook`: Build the storybook of the `react-front-kit` project
-- `npm run serve-and-test-storybook`: Start the storybook and launch integration tests of the `react-front-kit` project
+- `npm run build-storybook`: Builds the static version of storybook
+- `npm run serve-and-test-storybook`: Launches storybook interaction tests
 
-You can also find commands related to publishing that we will see in [the dedicated chapter](#publishing).
+## `react-front-kit*` project commands
 
-## `react-front-kit` commands
+Inside all `react-front-kit*` directories you can launch following commands:
 
-Inside the `react-front-kit` directory you can launch following commands:
-
-- `npm run build`: build the library
-- `npm run lint`: lint the code
-- `npm run lint:fix`: lint and automatically fix the code whenever possible
-- `npm run test`: run unit tests
-
-You can also find commands related to storybook:
-
-- `npm run storybook`: start storybook for development
-- `npm run build-storybook`: build static version of storybook
-- `npm run serve-storybook`: serve the static version of storybook
-- `npm run test-storybook`: launch storybook integration tests (web version of storybook should be running)
-- `npm run wait-and-test-storybook`: used to wait for the storybook to be running before running the tests (used by another command)
-- `npm run serve-and-test-storybook`: start the static version of the storybook and launch the tests
+- `npm run build`: Builds the library
+- `npm run test`: Runs unit tests
 
 ## Creating a new component in `react-front-kit`
 
@@ -61,6 +63,8 @@ If you are not creating a client component, don't forget to remove this line.
 
 ## Testing
 
+### Components
+
 When creating a component, the generator will automatically create a snapshot test for you (in the `Component.test.tsx` file).  
 Don't forget to add required props in the test file.  
 Maybe add other snapshot tests for special cases.
@@ -68,6 +72,12 @@ Maybe add other snapshot tests for special cases.
 And if you have to manage a state in your component, please create an interaction test in the storybook: https://storybook.js.org/docs/react/writing-tests/interaction-testing
 
 You can find examples in existing components.
+
+### Helper functions
+
+Shared functions are located in the `helpers` directory.
+
+All these functions must be unit tested.
 
 ## Submitting a pull request
 
@@ -83,4 +93,4 @@ To create a changeset:
 
 When a PR containing changesets is merged into `main` it will automatically create a release PR.
 
-Then when that PR is merged into `main`, it will automatically create a release and publish the packages on `npm`.
+Then when that release PR is merged into `main`, it will automatically create a release and publish the packages on `npm`.
