@@ -1,106 +1,91 @@
 'use client';
 
-import { Box, BoxProps, MantineProvider } from '@mantine/core';
-import { createStyles } from '@mantine/styles';
+import type { BoxProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
+
+import { Box, MantineProvider } from '@mantine/core';
+import { createStyles } from '@mantine/styles';
+
 import Motif from './Motif';
 
 interface IFileSheetProps extends BoxProps {
+  cards?: { action?: () => void; image?: ReactElement; title?: 'string' }[];
   children?: ReactNode;
+  content?: ReactElement;
+  dropZone: boolean;
+  dropZoneContent?: ReactElement;
+  motif?: ReactElement;
+  motifVisible?: boolean;
   title?: ReactElement;
-  cards?: {title?: 'string', image?: ReactElement, action?: () => {}}[],
-  content?: ReactElement,
-  dropZone: boolean,
-  dropZoneContent?: ReactElement,
-  motif?: ReactElement,
 }
 
-
 const useStyles = createStyles((theme) => ({
+  card: {},
+  cards: {},
+  content: {},
   fileSheet: {
     backgroundColor: theme.black,
-    padding: '32px 42px', 
     borderRadius: '16px',
-    width: '100%',
     minHeight: '219px',
-    position: 'relative',
     overflow: 'hidden',
-  },
-  title: {
-    'h1, h2, h3, h4 h5, p': {
-      fontSize: '26px',
-      color: theme.white,
-      fontWeight: 700,
-      marginBottom: '24px',
-    }
+    padding: '32px 42px',
+    position: 'relative',
+    width: '100%',
   },
   leftContainer: {
     maxWidth: '342px',
   },
-  rightContainer: {
-
-  },
-  cards: {
-
-  },
-  card: {
-
-  },
-  content: {
-
-  },
   motif: {
+    left: 0,
     position: 'absolute',
     top: 0,
-    left: 0,
-  }
+  },
+  rightContainer: {},
+  title: {
+    'h1, h2, h3, h4 h5, p': {
+      color: theme.white,
+      fontSize: '26px',
+      fontWeight: 700,
+      marginBottom: '24px',
+    },
+  },
 }));
 
-
 export function FileSheet(props: IFileSheetProps): ReactElement {
-  const { children, title, cards,
-  content,
-  dropZone,
-  dropZoneContent, motif, ...BoxProps } = props;
+  const {
+    children,
+    title,
+    cards,
+    content,
+    dropZone,
+    dropZoneContent,
+    motif,
+    motifVisible = true,
+    ...BoxProps
+  } = props;
   const { classes } = useStyles();
   return (
-    <MantineProvider theme={{colorScheme: 'dark'}}>
-    <Box className={classes.fileSheet} {...BoxProps}>
-      {!motif == null &&     
-        <div className={classes.motif}>
-          {motif ? motif : <Motif/>}
-        </div>
-      }
-      <div className={classes.leftContainer}>
-        { title && 
-          <div className={classes.title}>
-            {title}
+    <MantineProvider theme={{ colorScheme: 'dark' }}>
+      <Box className={classes.fileSheet} {...BoxProps}>
+        {motifVisible ? (
+          <div className={classes.motif}>{motif ? motif : <Motif />}</div>
+        ) : null}
+        <div className={classes.leftContainer}>
+          {title ? <div className={classes.title}>{title}</div> : null}
+          <div className="cards">
+            {cards
+              ? cards.map((item, key) => (
+                  <div key={`card-${key + key}`}>
+                    {item.image ? item.image : ''}
+                    <span>{item.title ? item.title : null}</span>
+                  </div>
+                ))
+              : null}
           </div>
-        }
-        <div className="cards">
-          { cards && cards.map(item => 
-            <div>
-              {
-                item.image ? item.image : ""
-              }
-              <span>
-                {item.title && item.title}
-              </span>
-            </div>
-          )}
+          {content ? <div className={classes.content}>{content}</div> : null}
         </div>
-        {content &&  
-          <div className={classes.content}>
-            {content}
-          </div>
-        }
-      </div>
-      {dropZone &&   
-        <div className={classes.rightContainer}>
-
-        </div>
-      }
-    </Box>
+        {dropZone ? <div className={classes.rightContainer} /> : null}
+      </Box>
     </MantineProvider>
   );
 }

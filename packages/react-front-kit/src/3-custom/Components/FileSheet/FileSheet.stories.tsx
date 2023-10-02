@@ -13,7 +13,8 @@ type IStory = StoryObj<typeof meta>;
 
 export const FileSheet: IStory = {
   args: {
-    title: <h1>Jean-Michel DUPONT</h1>,
     dropZone: false,
+    motifVisible: true,
+    title: <h1>Jean-Michel DUPONT</h1>,
   },
 };
