@@ -8,10 +8,18 @@ You can check the components in Storybook: https://smile-sa.github.io/react-fron
 
 ## Getting Started
 
+React front kit is split into multiple packages:
+
+- [@smile/react-front-kit-shared](./packages/react-front-kit-shared/README.md): Shared components (required by other packages)
+- [@smile/react-front-kit](./packages/react-front-kit/README.md): Base components
+- [@smile/react-front-kit-table](./packages/react-front-table/README.md): Table component
+
 ### Installation
 
-1. Ensure you use React 18 or later.
-2. Install react-front-kit and peer dependencies with:
-   ```bash
-   npm i react-front-kit @mantine/core @mantine/hooks @mantine/styles @phosphor-icons/react
-   ```
+For a basic installation, ensure you use React 18 or later and then run:
+
+```bash
+npm i @smile/react-front-kit @emotion/react @mantine/core @mantine/hooks @mantine/styles @phosphor-icons/react
+```
+
+See each package README file for installation.
