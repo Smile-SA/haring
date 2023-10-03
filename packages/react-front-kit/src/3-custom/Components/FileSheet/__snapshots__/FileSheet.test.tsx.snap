@@ -3,7 +3,8 @@
 exports[`FileSheet matches snapshot 1`] = `
 <div>
   <div
-    class="mantine-c5013w"
+    class="mantine-1oa6pn8"
+    color="primary"
   >
     <div
       class="mantine-15wxh6f"

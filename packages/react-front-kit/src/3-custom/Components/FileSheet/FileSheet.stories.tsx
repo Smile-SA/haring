@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Suitcase, User } from '@phosphor-icons/react';
+import { Eye, Suitcase, User } from '@phosphor-icons/react';
 import { action } from '@storybook/addon-actions';
 
 import { FileSheet as Cmp } from './FileSheet';
@@ -38,6 +38,20 @@ export const FileSheet: IStory = {
       },
     ],
     cardsColor: '',
+    content: (
+      <p
+        style={{
+          cursor: 'pointer',
+          display: 'flex',
+          fontWeight: 600,
+          margin: '0',
+          verticalAlign: 'center',
+        }}
+      >
+        <Eye size={18} style={{ margin: 'auto 10px auto 0' }} weight="bold" />
+        View the folder properties
+      </p>
+    ),
     defaultMotifColor: '',
     defaultMotifOpacity: '',
     dropZone: false,

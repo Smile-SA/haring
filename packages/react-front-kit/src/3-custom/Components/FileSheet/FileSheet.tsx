@@ -103,7 +103,7 @@ export function FileSheet(props: IFileSheetProps): ReactElement {
   }));
   const { classes } = useStyles();
   return (
-    <Box className={classes.fileSheet} {...BoxProps}>
+    <Box className={classes.fileSheet} color="primary" {...BoxProps}>
       {Boolean(motifVisible) && (
         <div className={classes.motif}>
           {motif ? (
