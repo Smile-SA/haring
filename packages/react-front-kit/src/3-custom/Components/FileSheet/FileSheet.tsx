@@ -19,6 +19,8 @@ interface IFileSheetProps extends BoxProps {
   cardsColor?: string;
   children?: ReactNode;
   content?: ReactElement;
+  defaultMotifColor?: string;
+  defaultMotifOpacity?: string;
   dropZone: boolean;
   dropZoneContent?: ReactElement;
   motif?: ReactElement;
@@ -33,6 +35,8 @@ export function FileSheet(props: IFileSheetProps): ReactElement {
     cards = [],
     cardsColor,
     content,
+    defaultMotifColor,
+    defaultMotifOpacity,
     dropZone,
     dropZoneContent,
     motif,
@@ -55,7 +59,6 @@ export function FileSheet(props: IFileSheetProps): ReactElement {
     },
     cardGroupe: {
       alignItems: 'center',
-      color: 'white',
       display: 'flex',
       justifyContent: 'left',
       marginBottom: '20px',
@@ -73,7 +76,6 @@ export function FileSheet(props: IFileSheetProps): ReactElement {
     },
     content: {},
     fileSheet: {
-      backgroundColor: theme.black,
       borderRadius: '16px',
       minHeight: '219px',
       overflow: 'hidden',
@@ -93,7 +95,6 @@ export function FileSheet(props: IFileSheetProps): ReactElement {
     rightContainer: {},
     title: {
       'h1, h2, h3, h4 h5, p': {
-        color: 'white',
         fontSize: '26px',
         fontWeight: 700,
         marginBottom: '24px',
@@ -104,7 +105,13 @@ export function FileSheet(props: IFileSheetProps): ReactElement {
   return (
     <Box className={classes.fileSheet} {...BoxProps}>
       {Boolean(motifVisible) && (
-        <div className={classes.motif}>{motif ? motif : <Motif />}</div>
+        <div className={classes.motif}>
+          {motif ? (
+            motif
+          ) : (
+            <Motif color={defaultMotifColor} opacity={defaultMotifOpacity} />
+          )}
+        </div>
       )}
       <div className={classes.container}>
         <div className={classes.leftContainer}>

@@ -6,6 +6,11 @@ import { action } from '@storybook/addon-actions';
 import { FileSheet as Cmp } from './FileSheet';
 
 const meta = {
+  argTypes: {
+    defaultMotifOpacity: {
+      control: { max: 1, min: 0, step: 0.1, type: 'number' },
+    },
+  },
   component: Cmp,
   tags: ['autodocs'],
   title: '3-custom/Components/FileSheet',
@@ -33,6 +38,8 @@ export const FileSheet: IStory = {
       },
     ],
     cardsColor: '',
+    defaultMotifColor: '',
+    defaultMotifOpacity: '',
     dropZone: false,
     motifVisible: true,
     title: <h1>Jean-Michel DUPONT</h1>,

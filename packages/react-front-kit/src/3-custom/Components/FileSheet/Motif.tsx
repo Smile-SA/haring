@@ -8,12 +8,12 @@ interface IProps {
 }
 
 function Motif(props: IProps): ReactElement {
-  const { opacity = 0.1, color } = props;
+  const { opacity, color } = props;
 
   const useStyles = createStyles((theme) => ({
     motif: {
       fill: color ? color : theme.colors.gray[0],
-      opacity,
+      opacity: opacity ? opacity : 0.1,
     },
   }));
   const { classes } = useStyles();
