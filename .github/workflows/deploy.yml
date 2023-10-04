@@ -59,7 +59,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./packages/react-front-kit/storybook-static
+          path: ./storybook-static
 
   # Deployment job
   deploy:
