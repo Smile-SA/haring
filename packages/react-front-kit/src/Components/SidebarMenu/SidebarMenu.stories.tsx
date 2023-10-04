@@ -19,7 +19,6 @@ export const SidebarMenu: IStory = {
   args: {
     component: 'nav',
     menu,
-    openedMenuIds: [],
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -36,7 +35,7 @@ export const SidebarMenu: IStory = {
 export const OnlyOneOpenMenu: IStory = {
   args: {
     hasOnlyOneOpenMenu: true,
+    initialOpenedMenuIds: [0, 2],
     menu: deeplyNestedMenu,
-    openedMenuIds: [0, 2],
   },
 };

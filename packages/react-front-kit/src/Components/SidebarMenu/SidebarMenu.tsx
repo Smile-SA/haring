@@ -3,110 +3,51 @@
 import type { PaperProps } from '@mantine/core';
 import type { ElementType, ReactElement, ReactNode } from 'react';
 
-import { Paper } from '@mantine/core';
 import { useState } from 'react';
 
-import { addPathAndDepth, flattenNestedObjects } from '../../helpers';
-import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonControlled';
+import { SidebarMenuControlled } from './SidebarMenuControlled';
+
+export type IMenuId = number | string;
 
 export interface IMenuItem {
   children?: IMenuItem[];
   component?: ReactElement;
-  id: number | string;
+  id: IMenuId;
   label: number | string;
   leftIcon?: ReactNode;
 }
 
 export interface ISidebarMenuProps extends PaperProps {
+  /** Type of HTML element that will be rendered as the component root */
   component?: ElementType;
-  /** Keeps only one menu per level open at once */
+  /** Allow only one menu to be opened by level */
   hasOnlyOneOpenMenu?: boolean;
+  /** Initial open menus using `id` field of `IMenuItem` */
+  initialOpenedMenuIds?: IMenuId[];
+  /** Array of nested `IMenuItem` menus to be rendered */
   menu: IMenuItem[];
-  /** Controlled state of which menus are currently open, using `id` field of `IMenuItem` */
-  openedMenuIds?: (number | string)[];
-}
-
-function getRecursiveMenu(
-  setSelectedId: (id?: number | string) => void,
-  onMenuOpen: (id: number | string, isOpened: boolean) => void,
-  openedMenuIds: (number | string)[],
-  selectedId?: number | string,
-  menu?: IMenuItem[],
-  level = 0,
-): ReactElement[] | null {
-  if (!menu) {
-    return null;
-  }
-  return menu.map(({ children, ...props }) => (
-    <CollapseButtonControlled
-      {...props}
-      key={props.id}
-      isOpenOnSelect
-      level={level}
-      line={level === 0}
-      onCollapseChange={(isOpened) => onMenuOpen(props.id, isOpened)}
-      onSelect={setSelectedId}
-      opened={openedMenuIds.includes(props.id)}
-      selected={selectedId === props.id}
-    >
-      {getRecursiveMenu(
-        setSelectedId,
-        onMenuOpen,
-        openedMenuIds,
-        selectedId,
-        children,
-        level + 1,
-      )}
-    </CollapseButtonControlled>
-  ));
 }
 
 /** Additional props will be forwarded to the [Mantine Paper component](https://mantine.dev/core/paper) */
 export function SidebarMenu(props: ISidebarMenuProps): ReactElement {
   const {
-    hasOnlyOneOpenMenu = false,
-    menu,
-    openedMenuIds = [],
     component,
+    hasOnlyOneOpenMenu = false,
+    initialOpenedMenuIds = [],
+    menu,
   } = props;
-  const [openedIds, setOpenedIds] = useState(openedMenuIds);
+  const [openedIds, setOpenedIds] = useState(initialOpenedMenuIds);
   const [selectedId, setSelectedId] = useState<number | string>();
 
-  function handleOpenChange(menuId: number | string, isOpened: boolean): void {
-    if (hasOnlyOneOpenMenu && isOpened) {
-      /** Flatten and add calculated path property to the entire nested array of menus,
-       * keep only the path from the menu being clicked **/
-      const openedMenuPath = flattenNestedObjects<IMenuItem>(
-        addPathAndDepth<IMenuItem>(menu),
-      ).find((menu) => menu.id === menuId)?.path;
-      setOpenedIds(openedMenuPath ?? []);
-    } else {
-      /** Add or remove id being clicked **/
-      const exists = openedIds.includes(menuId);
-      let newOpenedIds;
-      if (exists) {
-        newOpenedIds = openedIds.filter((id) => id !== menuId);
-      } else {
-        newOpenedIds = openedIds.concat(menuId);
-      }
-      setOpenedIds(newOpenedIds);
-    }
-  }
-
   return (
-    <Paper
-      // @ts-expect-error wrong type for polymorphic component
+    <SidebarMenuControlled
       component={component}
-      p="lg"
-      shadow=""
-    >
-      {getRecursiveMenu(
-        setSelectedId,
-        handleOpenChange,
-        openedIds,
-        selectedId,
-        menu,
-      )}
-    </Paper>
+      hasOnlyOneOpenMenu={hasOnlyOneOpenMenu}
+      menu={menu}
+      onCollapseChange={setOpenedIds}
+      onSelectedChange={setSelectedId}
+      openedMenuIds={openedIds}
+      selectedId={selectedId}
+    />
   );
 }
