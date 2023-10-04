@@ -7,7 +7,7 @@ import { MantineProvider } from '@mantine/core';
 
 import { mainTheme } from '../../theme';
 
-interface IProviderProps {
+export interface IProviderProps {
   children?: ReactNode;
   colorScheme?: 'dark' | 'light';
   theme?: MantineThemeOverride;

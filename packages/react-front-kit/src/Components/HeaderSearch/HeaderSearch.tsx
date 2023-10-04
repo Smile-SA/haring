@@ -18,7 +18,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface IHeaderSearchProps extends BoxProps {
+export interface IHeaderSearchProps extends BoxProps {
   clearButtonAriaLabel?: string;
   onChange?: (value: string) => void;
   onSubmit?: (event: FormEvent) => void;

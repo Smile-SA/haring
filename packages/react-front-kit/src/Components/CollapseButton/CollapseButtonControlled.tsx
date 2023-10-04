@@ -61,7 +61,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface ICollapseButtonControlledProps<T extends number | string>
+export interface ICollapseButtonControlledProps<T extends number | string>
   extends ICollapseButtonProps<T> {
   /** Only in the Controlled version, use this prop to provide the setter function for the opened/collapsed state */
   onCollapseChange?: (isOpened: boolean) => void;

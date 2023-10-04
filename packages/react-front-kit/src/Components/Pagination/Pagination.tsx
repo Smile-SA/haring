@@ -22,7 +22,7 @@ export interface IRowsPerPageOption {
   value: number;
 }
 
-interface IPaginationProps extends FlexProps {
+export interface IPaginationProps extends FlexProps {
   onPageChange?: (value: number) => void;
   onRowsPerPageChange?: (value: number) => void;
   page: number;

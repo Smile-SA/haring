@@ -5,7 +5,7 @@ import type { ReactElement, ReactNode } from 'react';
 
 import { Breadcrumbs as MantineBreadcrumbs, createStyles } from '@mantine/core';
 
-interface IBreadcrumbsProps extends BreadcrumbsProps {
+export interface IBreadcrumbsProps extends BreadcrumbsProps {
   children: ReactNode;
   separator?: string;
 }
