@@ -1,11 +1,11 @@
 /* eslint-disable react-refresh/only-export-components */
 // component exports
-export * from './3-custom/Components/FileSheet/FileSheet';
 export * from './1-styleGuide/Icons';
 export * from './3-custom/Components/Breadcrumbs/Breadcrumbs';
 export * from './3-custom/Components/CollapseButton/CollapseButtonControlled';
 export * from './3-custom/Components/CollapseButton/CollapseButton';
 export * from './3-custom/Components/DropdownButton/DropdownButton';
+export * from './3-custom/Components/DropzoneCard/DropzoneCard';
 export * from './3-custom/Components/Header/Header';
 export * from './3-custom/Components/HeaderSearch/HeaderSearch';
 export * from './3-custom/Components/Pagination/Pagination';

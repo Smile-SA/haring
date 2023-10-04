@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Eye, Suitcase, User } from '@phosphor-icons/react';
 import { action } from '@storybook/addon-actions';
 
-import { FileSheet as Cmp } from './FileSheet';
+import { DropzoneCard as Cmp } from './DropzoneCard';
 
 const meta = {
   argTypes: {
@@ -13,13 +13,13 @@ const meta = {
   },
   component: Cmp,
   tags: ['autodocs'],
-  title: '3-custom/Components/FileSheet',
+  title: '3-custom/Components/DropzoneCard',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const FileSheet: IStory = {
+export const DropzoneCard: IStory = {
   args: {
     cards: [
       {
@@ -38,7 +38,7 @@ export const FileSheet: IStory = {
       },
     ],
     cardsColor: '',
-    content: (
+    children: (
       <p
         style={{
           cursor: 'pointer',

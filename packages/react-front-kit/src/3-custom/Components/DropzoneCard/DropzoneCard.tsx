@@ -1,7 +1,7 @@
 'use client';
 
 import type { BoxProps } from '@mantine/core';
-import type { ReactElement, ReactNode } from 'react';
+import type { ReactElement } from 'react';
 
 import { Box } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
@@ -14,11 +14,10 @@ interface ICard {
   title?: string;
 }
 
-interface IFileSheetProps extends BoxProps {
+interface IDropzoneCardProps extends BoxProps {
   cards?: ICard[];
   cardsColor?: string;
-  children?: ReactNode;
-  content?: ReactElement;
+  children?: ReactElement;
   defaultMotifColor?: string;
   defaultMotifOpacity?: string;
   dropZone: boolean;
@@ -28,13 +27,12 @@ interface IFileSheetProps extends BoxProps {
   title?: ReactElement;
 }
 
-export function FileSheet(props: IFileSheetProps): ReactElement {
+export function DropzoneCard(props: IDropzoneCardProps): ReactElement {
   const {
     children,
     title,
     cards = [],
     cardsColor,
-    content,
     defaultMotifColor,
     defaultMotifOpacity,
     dropZone,
@@ -74,8 +72,7 @@ export function FileSheet(props: IFileSheetProps): ReactElement {
       position: 'relative',
       zIndex: 1,
     },
-    content: {},
-    fileSheet: {
+    dropzoneCard: {
       borderRadius: '16px',
       minHeight: '219px',
       overflow: 'hidden',
@@ -103,7 +100,7 @@ export function FileSheet(props: IFileSheetProps): ReactElement {
   }));
   const { classes } = useStyles();
   return (
-    <Box className={classes.fileSheet} color="primary" {...BoxProps}>
+    <Box className={classes.dropzoneCard} color="primary" {...BoxProps}>
       {Boolean(motifVisible) && (
         <div className={classes.motif}>
           {motif ? (
@@ -134,7 +131,7 @@ export function FileSheet(props: IFileSheetProps): ReactElement {
               ))}
             </div>
           )}
-          {Boolean(content) && <div className={classes.content}>{content}</div>}
+          {Boolean(children) && <div>{children}</div>}
         </div>
         {Boolean(dropZone) && <div className={classes.rightContainer} />}
       </div>
