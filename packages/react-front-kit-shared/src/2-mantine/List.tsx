@@ -4,7 +4,7 @@ import { Center, Grid } from '@mantine/core';
 
 import Item from './Item';
 
-interface IListProps {
+export interface IListProps {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   Cmp: ComponentType;
   commonProps?: Record<string, unknown>;

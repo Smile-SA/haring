@@ -17,7 +17,7 @@ export interface IMenuItem {
   leftIcon?: ReactNode;
 }
 
-interface ISidebarMenuProps extends PaperProps {
+export interface ISidebarMenuProps extends PaperProps {
   component?: ElementType;
   /** Keeps only one menu per level open at once */
   hasOnlyOneOpenMenu?: boolean;

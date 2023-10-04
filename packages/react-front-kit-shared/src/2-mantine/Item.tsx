@@ -2,7 +2,7 @@ import type { ReactElement, ReactNode } from 'react';
 
 import { Center, Grid, Text } from '@mantine/core';
 
-interface IItemProps {
+export interface IItemProps {
   children: ReactNode;
   span?: number;
   title: string;
