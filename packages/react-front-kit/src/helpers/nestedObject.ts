@@ -1,4 +1,4 @@
-interface INestedObject<O extends object> {
+export interface INestedObject<O extends object> {
   children?: INestedObject<O>[];
   depth?: number;
   id: number | string;

@@ -7,7 +7,7 @@ import { Button, Menu } from '@mantine/core';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
 import { useId, useState } from 'react';
 
-interface IDropdownButtonProps extends MenuProps {
+export interface IDropdownButtonProps extends MenuProps {
   children?: ReactNode;
   label: string;
 }

@@ -9,7 +9,7 @@ const openSans = Open_Sans({
   variable: '--rfk-font',
 });
 
-interface IRootLayoutProps {
+export interface IRootLayoutProps {
   children: ReactNode;
 }
 

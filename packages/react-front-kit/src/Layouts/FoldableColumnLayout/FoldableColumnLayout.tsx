@@ -7,7 +7,7 @@ import type { ChangeEvent, ReactElement, ReactNode } from 'react';
 import { AppShell, Container, Grid, Switch, Text } from '@mantine/core';
 import { useState } from 'react';
 
-interface IFoldableColumnLayoutProps {
+export interface IFoldableColumnLayoutProps {
   appShellProps?: Omit<AppShellProps, 'children'>;
   children: ReactNode;
   containerProps?: ContainerProps;
