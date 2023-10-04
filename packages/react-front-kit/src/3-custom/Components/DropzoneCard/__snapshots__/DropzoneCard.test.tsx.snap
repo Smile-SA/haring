@@ -11,7 +11,7 @@ exports[`DropzoneCard matches snapshot 1`] = `
     >
       <svg
         height="219"
-        style="opacity: 0.1; fill: white;"
+        style="fill: white; opacity: 0.1;"
         viewBox="0 0 370 219"
         width="370"
         xmlns="http://www.w3.org/2000/svg"
