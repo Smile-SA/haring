@@ -6,11 +6,6 @@ import { action } from '@storybook/addon-actions';
 import { DropzoneCard as Cmp } from './DropzoneCard';
 
 const meta = {
-  argTypes: {
-    defaultMotifOpacity: {
-      control: { max: 1, min: 0, step: 0.1, type: 'number' },
-    },
-  },
   component: Cmp,
   tags: ['autodocs'],
   title: '3-custom/Components/DropzoneCard',
@@ -21,23 +16,6 @@ type IStory = StoryObj<typeof meta>;
 
 export const DropzoneCard: IStory = {
   args: {
-    cards: [
-      {
-        image: <User color="#0B7285" size={20} />,
-        onAction: (): void => {
-          action('Click on first card');
-        },
-        title: 'Individual contract',
-      },
-      {
-        image: <Suitcase color="#0B7285" size={20} />,
-        onAction: (): void => {
-          action('Click on second card');
-        },
-        title: '2 Lines text for example',
-      },
-    ],
-    cardsColor: '',
     children: (
       <p
         style={{
@@ -52,10 +30,23 @@ export const DropzoneCard: IStory = {
         View the folder properties
       </p>
     ),
-    defaultMotifColor: '',
-    defaultMotifOpacity: '',
-    dropZone: false,
-    motifVisible: true,
+    contentItems: [
+      {
+        icon: <User size={20} />,
+        label: 'Individual contract',
+        onAction: (): void => {
+          action('Click on first card');
+        },
+      },
+      {
+        icon: <Suitcase size={20} />,
+        label: '2 Lines text for example',
+        onAction: (): void => {
+          action('Click on second card');
+        },
+      },
+    ],
+    motif: undefined,
     title: <h1>Jean-Michel DUPONT</h1>,
   },
 };

@@ -4,9 +4,7 @@ import { DropzoneCard } from './DropzoneCard';
 
 describe('DropzoneCard', () => {
   it('matches snapshot', () => {
-    const { container } = renderWithProviders(
-      <DropzoneCard dropZone={false} />,
-    );
+    const { container } = renderWithProviders(<DropzoneCard />);
     expect(container).toMatchSnapshot();
   });
 });

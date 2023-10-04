@@ -1,139 +1,124 @@
 'use client';
 
-import type { BoxProps } from '@mantine/core';
+import type { ActionIconProps, BoxProps } from '@mantine/core';
 import type { ReactElement } from 'react';
 
-import { Box } from '@mantine/core';
+import { ActionIcon, Box } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
 
 import Motif from './Motif';
 
-interface ICard {
-  image?: ReactElement;
-  onAction?: (item: ICard) => void;
-  title?: string;
+interface IContentItem {
+  icon?: ReactElement;
+  iconProps?: Partial<ActionIconProps>;
+  label?: string;
+  onAction?: (item: IContentItem) => void;
 }
 
 interface IDropzoneCardProps extends BoxProps {
-  cards?: ICard[];
-  cardsColor?: string;
   children?: ReactElement;
-  defaultMotifColor?: string;
-  defaultMotifOpacity?: string;
-  dropZone: boolean;
-  dropZoneContent?: ReactElement;
+  contentItems?: IContentItem[];
+  dropzone?: ReactElement;
   motif?: ReactElement;
-  motifVisible?: boolean;
   title?: ReactElement;
 }
+
+const useStyles = createStyles((theme) => ({
+  container: {
+    position: 'relative',
+    zIndex: 1,
+  },
+  contentItem: {
+    alignItems: 'center',
+    color: theme.colors.cyan[7],
+    cursor: 'pointer',
+    display: 'flex',
+    justifyContent: 'center',
+    marginRight: '16px',
+  },
+  contentItemGroup: {
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'left',
+    marginBottom: '20px',
+    paddingRight: '20px',
+    width: '200px',
+  },
+  contentItems: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'left',
+  },
+  dropzoneContentItem: {
+    borderRadius: '16px',
+    minHeight: '219px',
+    overflow: 'hidden',
+    padding: '32px 42px',
+    position: 'relative',
+    width: '100%',
+  },
+  leftContainer: {
+    maxWidth: '410px',
+  },
+  motif: {
+    left: 0,
+    position: 'absolute',
+    top: 0,
+    zIndex: 0,
+  },
+  title: {
+    'h1, h2, h3, h4 h5, p': {
+      fontSize: '26px',
+      fontWeight: 700,
+      marginBottom: '24px',
+    },
+  },
+}));
 
 export function DropzoneCard(props: IDropzoneCardProps): ReactElement {
   const {
     children,
     title,
-    cards = [],
-    cardsColor,
-    defaultMotifColor,
-    defaultMotifOpacity,
-    dropZone,
-    dropZoneContent,
-    motif,
-    motifVisible = true,
+    contentItems = [],
+    dropzone,
+    motif = <Motif />,
     ...BoxProps
   } = props;
-
-  const useStyles = createStyles((theme) => ({
-    card: {
-      alignItems: 'center',
-      background: cardsColor ? cardsColor : theme.colors.cyan[0],
-      borderRadius: '4px',
-      cursor: 'pointer',
-      display: 'flex',
-      height: '40px',
-      justifyContent: 'center',
-      marginRight: '16px',
-      minWidth: '40px',
-      width: '40px',
-    },
-    cardGroupe: {
-      alignItems: 'center',
-      display: 'flex',
-      justifyContent: 'left',
-      marginBottom: '20px',
-      paddingRight: '20px',
-      width: '200px',
-    },
-    cards: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'left',
-    },
-    container: {
-      position: 'relative',
-      zIndex: 1,
-    },
-    dropzoneCard: {
-      borderRadius: '16px',
-      minHeight: '219px',
-      overflow: 'hidden',
-      padding: '32px 42px',
-      position: 'relative',
-      width: '100%',
-    },
-    leftContainer: {
-      maxWidth: '410px',
-    },
-    motif: {
-      left: 0,
-      position: 'absolute',
-      top: 0,
-      zIndex: 0,
-    },
-    rightContainer: {},
-    title: {
-      'h1, h2, h3, h4 h5, p': {
-        fontSize: '26px',
-        fontWeight: 700,
-        marginBottom: '24px',
-      },
-    },
-  }));
   const { classes } = useStyles();
   return (
-    <Box className={classes.dropzoneCard} color="primary" {...BoxProps}>
-      {Boolean(motifVisible) && (
-        <div className={classes.motif}>
-          {motif ? (
-            motif
-          ) : (
-            <Motif color={defaultMotifColor} opacity={defaultMotifOpacity} />
-          )}
-        </div>
-      )}
+    <Box className={classes.dropzoneContentItem} color="primary" {...BoxProps}>
+      <div className={classes.motif}>{motif}</div>
       <div className={classes.container}>
         <div className={classes.leftContainer}>
           {Boolean(title) && <div className={classes.title}>{title}</div>}
-          {Boolean(cards.length > 0) && (
-            <div className={classes.cards}>
-              {cards.map((item, key) => (
-                <div key={`card-${key + key}`} className={classes.cardGroupe}>
-                  {Boolean(item.image) && (
-                    <div
-                      aria-hidden="true"
-                      className={classes.card}
-                      onClick={() => item.onAction && item.onAction(item)}
+          {Boolean(contentItems.length > 0) && (
+            <div className={classes.contentItems}>
+              {contentItems.map((item, key) => (
+                <div
+                  key={`ContentItem-${key + key}`}
+                  className={classes.contentItemGroup}
+                >
+                  {Boolean(item.icon) && (
+                    <ActionIcon
+                      className={classes.contentItem}
+                      color="cyan"
+                      onClick={() => item.onAction?.(item)}
+                      radius="sm"
+                      size="xl"
+                      variant="filled"
+                      {...item.iconProps}
                     >
-                      {item.image}
-                    </div>
+                      {item.icon}
+                    </ActionIcon>
                   )}
-                  <span>{Boolean(item.title) && item.title}</span>
+                  {Boolean(item.label) && <span>{item.label}</span>}
                 </div>
               ))}
             </div>
           )}
           {Boolean(children) && <div>{children}</div>}
         </div>
-        {Boolean(dropZone) && <div className={classes.rightContainer} />}
+        {Boolean(dropzone) && <div />}
       </div>
     </Box>
   );

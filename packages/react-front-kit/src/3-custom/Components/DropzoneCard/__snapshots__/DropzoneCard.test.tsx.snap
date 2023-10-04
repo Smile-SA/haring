@@ -10,9 +10,8 @@ exports[`DropzoneCard matches snapshot 1`] = `
       class="mantine-15wxh6f"
     >
       <svg
-        class="mantine-1fa3yo0"
-        fill="none"
         height="219"
+        style="opacity: 0.1; fill: white;"
         viewBox="0 0 370 219"
         width="370"
         xmlns="http://www.w3.org/2000/svg"

@@ -1,30 +1,23 @@
-import type { ReactElement } from 'react';
+import type {
+  CSSProperties,
+  ComponentPropsWithoutRef,
+  ReactElement,
+} from 'react';
 
-import { createStyles } from '@mantine/styles';
-
-interface IProps {
-  color?: string;
-  opacity?: string;
+interface IProps extends ComponentPropsWithoutRef<'svg'> {
+  style?: CSSProperties;
 }
 
 function Motif(props: IProps): ReactElement {
-  const { opacity, color } = props;
-
-  const useStyles = createStyles((theme) => ({
-    motif: {
-      fill: color ? color : theme.colors.gray[0],
-      opacity: opacity ? opacity : 0.1,
-    },
-  }));
-  const { classes } = useStyles();
+  const { style = { fill: 'white', opacity: 0.1 }, ...svgProps } = props;
   return (
     <svg
-      className={classes.motif}
-      fill="none"
       height="219"
+      style={style}
       viewBox="0 0 370 219"
       width="370"
       xmlns="http://www.w3.org/2000/svg"
+      {...svgProps}
     >
       <g>
         <g clipPath="url(#clip0_1010_1651)">
