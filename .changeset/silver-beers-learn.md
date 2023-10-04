@@ -2,4 +2,4 @@
 '@smile/react-front-kit': patch
 ---
 
-dropzoneCard
+Add `DropzoneCard` component
