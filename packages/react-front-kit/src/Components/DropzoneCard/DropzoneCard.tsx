@@ -4,7 +4,9 @@ import type { ActionIconProps, BoxProps } from '@mantine/core';
 import type { ReactElement } from 'react';
 
 import { ActionIcon, Box } from '@mantine/core';
-import { createStyles } from '@mantine/styles';
+import { Dropzone, PDF_MIME_TYPE } from '@mantine/dropzone';
+import { createStyles, useMantineTheme } from '@mantine/styles';
+import { Eye, Plus } from '@phosphor-icons/react';
 
 import Motif from './Motif';
 
@@ -18,13 +20,20 @@ interface IContentItem {
 interface IDropzoneCardProps extends BoxProps {
   children?: ReactElement;
   contentItems?: IContentItem[];
-  dropzone?: ReactElement;
   motif?: ReactElement;
   title?: ReactElement;
 }
 
 const useStyles = createStyles((theme) => ({
   container: {
+    '@media (max-width: 834px)': {
+      flexDirection: 'column',
+      margin: 'auto',
+      width: 'fit-content',
+    },
+    display: 'flex',
+    flexWarp: 'wrap',
+    justifyContent: 'space-between',
     position: 'relative',
     zIndex: 1,
   },
@@ -42,23 +51,54 @@ const useStyles = createStyles((theme) => ({
     justifyContent: 'left',
     marginBottom: '20px',
     paddingRight: '20px',
-    width: '200px',
+    width: '220px',
   },
   contentItems: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'left',
   },
+  dropzoneBrowse: {
+    alignItems: 'center',
+    display: 'flex',
+    fontWeight: 600,
+    justifyContent: 'center',
+    marginTop: '0px',
+  },
+  dropzoneContainer: {
+    '@media (max-width: 834px)': {
+      marginTop: '24px',
+      maxWidth: '100%',
+    },
+    marginTop: '18px',
+    maxWidth: '400px',
+    width: '100%',
+  },
   dropzoneContentItem: {
+    '@media (max-width: 640px)': {
+      padding: '20px 20px',
+    },
     borderRadius: '16px',
     minHeight: '219px',
     overflow: 'hidden',
-    padding: '32px 42px',
     position: 'relative',
     width: '100%',
   },
+  dropzoneInner: {
+    margin: 'auto',
+    p: {
+      margin: '10px',
+    },
+    textAlign: 'center',
+  },
+  dropzoneRoot: {
+    display: 'flex',
+    minHeight: '100%',
+    minWidth: '100%',
+  },
   leftContainer: {
-    maxWidth: '410px',
+    marginRight: '20px',
+    maxWidth: '440px',
   },
   motif: {
     left: 0,
@@ -80,11 +120,11 @@ export function DropzoneCard(props: IDropzoneCardProps): ReactElement {
     children,
     title,
     contentItems = [],
-    dropzone,
     motif = <Motif />,
     ...BoxProps
   } = props;
   const { classes } = useStyles();
+  const theme = useMantineTheme();
   return (
     <Box className={classes.dropzoneContentItem} color="primary" {...BoxProps}>
       <div className={classes.motif}>{motif}</div>
@@ -118,7 +158,33 @@ export function DropzoneCard(props: IDropzoneCardProps): ReactElement {
           )}
           {Boolean(children) && <div>{children}</div>}
         </div>
-        {Boolean(dropzone) && <div />}
+        <div className={classes.dropzoneContainer}>
+          <Dropzone
+            accept={PDF_MIME_TYPE}
+            classNames={{
+              inner: classes.dropzoneInner,
+              root: classes.dropzoneRoot,
+            }}
+            maxSize={3 * 1024 ** 2}
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions, no-console
+            onDrop={(file) => console.log(`accept${file}`)}
+          >
+            <ActionIcon
+              className={classes.contentItem}
+              radius="xl"
+              size="xl"
+              style={{ margin: 'auto' }}
+              variant="filled"
+            >
+              <Plus color={theme.colors.gray[7]} size={20} weight="bold" />
+            </ActionIcon>
+            <p>Drag and drop your documents here</p>
+            <p className={classes.dropzoneBrowse}>
+              <Eye size={16} style={{ marginRight: '5px' }} weight="bold" />
+              Browse your device
+            </p>
+          </Dropzone>
+        </div>
       </div>
     </Box>
   );
