@@ -155,7 +155,7 @@ export const TreeItem = forwardRef<HTMLDivElement, ITreeItemProps>(
             </Action>
           ) : null}
           <span className={styles.Text}>{value}</span>
-          {!clone && onRemove ? <Remove onClick={onRemove} /> : null}
+          {/* {!clone && onRemove ? <Remove onClick={onRemove} /> : null}*/}
           {clone && childCount && childCount > 1 ? (
             <span className={styles.Count}>{childCount}</span>
           ) : null}

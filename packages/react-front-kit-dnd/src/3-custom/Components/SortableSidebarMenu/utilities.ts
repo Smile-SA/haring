@@ -1,5 +1,9 @@
-import type { IFlattenedItem, ITreeItem, ITreeItems } from './types';
 import type { UniqueIdentifier } from '@dnd-kit/core';
+import type {
+  IMenuItem,
+  IMenuItems,
+} from '@smile/react-front-kit/src/Components/SidebarMenu/types';
+import type { IFlattenedObject } from '@smile/react-front-kit/src/helpers';
 
 import { arrayMove } from '@dnd-kit/sortable';
 
@@ -9,30 +13,22 @@ function getDragDepth(offset: number, indentationWidth: number): number {
   return Math.round(offset / indentationWidth);
 }
 
-function getMaxDepth({
-  previousItem,
-}: {
-  previousItem: IFlattenedItem;
-}): number {
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+export function getMaxDepth(previousItem?: IFlattenedObject): number {
   if (previousItem) {
     return previousItem.depth + 1;
   }
-
   return 0;
 }
 
-function getMinDepth({ nextItem }: { nextItem: IFlattenedItem }): number {
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+function getMinDepth(nextItem?: IFlattenedObject): number {
   if (nextItem) {
     return nextItem.depth;
   }
-
   return 0;
 }
 
 export function getProjection(
-  items: IFlattenedItem[],
+  items: IFlattenedObject[],
   activeId: UniqueIdentifier,
   overId: UniqueIdentifier,
   dragOffset: number,
@@ -44,16 +40,15 @@ export function getProjection(
   parentId: UniqueIdentifier | null;
 } {
   function getParentId(): UniqueIdentifier | null {
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    if (depth === 0 || !previousItem) {
+    if (depth === 0) {
       return null;
     }
 
-    if (depth === previousItem.depth) {
+    if (previousItem?.depth && depth === previousItem.depth) {
       return previousItem.parentId;
     }
 
-    if (depth > previousItem.depth) {
+    if (previousItem?.depth && depth > previousItem.depth) {
       return previousItem.id;
     }
 
@@ -69,14 +64,14 @@ export function getProjection(
   const activeItemIndex = items.findIndex(({ id }) => id === activeId);
   const activeItem = items[activeItemIndex];
   const newItems = arrayMove(items, activeItemIndex, overItemIndex);
-  const previousItem = newItems[overItemIndex - 1];
-  const nextItem = newItems[overItemIndex + 1];
+  const previousItem = newItems[overItemIndex - 1] as
+    | IFlattenedObject
+    | undefined;
+  const nextItem = newItems[overItemIndex + 1] as IFlattenedObject | undefined;
   const dragDepth = getDragDepth(dragOffset, indentationWidth);
   const projectedDepth = activeItem.depth + dragDepth;
-  const maxDepth = getMaxDepth({
-    previousItem,
-  });
-  const minDepth = getMinDepth({ nextItem });
+  const maxDepth = getMaxDepth(previousItem);
+  const minDepth = getMinDepth(nextItem);
   let depth = projectedDepth;
 
   if (projectedDepth >= maxDepth) {
@@ -88,34 +83,16 @@ export function getProjection(
   return { depth, maxDepth, minDepth, parentId: getParentId() };
 }
 
-function flatten(
-  items: ITreeItems,
-  parentId: UniqueIdentifier | null = null,
-  depth = 0,
-): IFlattenedItem[] {
-  return items.reduce<IFlattenedItem[]>((acc, item, index) => {
-    return [
-      ...acc,
-      { ...item, depth, index, parentId },
-      ...flatten(item.children, item.id, depth + 1),
-    ];
-  }, []);
-}
-
-export function flattenTree(items: ITreeItems): IFlattenedItem[] {
-  return flatten(items);
-}
-
 export function findItem(
-  items: ITreeItem[],
+  items: IMenuItem[],
   itemId: UniqueIdentifier,
-): ITreeItem | undefined {
+): IMenuItem | undefined {
   return items.find(({ id }) => id === itemId);
 }
 
-export function buildTree(flattenedItems: IFlattenedItem[]): ITreeItems {
-  const root: ITreeItem = { children: [], id: 'root' };
-  const nodes: Record<string, ITreeItem> = { [root.id]: root };
+export function buildTree(flattenedItems: IFlattenedObject[]): IMenuItems {
+  const root: IMenuItem = { children: [], id: 'root' };
+  const nodes: Record<string, IMenuItem> = { [root.id]: root };
   const items = flattenedItems.map((item) => ({ ...item, children: [] }));
 
   for (const item of items) {
@@ -125,16 +102,16 @@ export function buildTree(flattenedItems: IFlattenedItem[]): ITreeItems {
     const parent = nodes[parentId] ?? findItem(items, parentId);
 
     nodes[id] = { children, id };
-    parent.children.push(item);
+    parent.children?.push(item);
   }
 
-  return root.children;
+  return root.children ?? [];
 }
 
 export function findItemDeep(
-  items: ITreeItems,
+  items: IMenuItems,
   itemId: UniqueIdentifier,
-): ITreeItem | undefined {
+): IMenuItem | undefined {
   for (const item of items) {
     const { id, children } = item;
 
@@ -142,7 +119,7 @@ export function findItemDeep(
       return item;
     }
 
-    if (children.length) {
+    if (children?.length) {
       const child = findItemDeep(children, itemId);
 
       if (child) {
@@ -155,9 +132,9 @@ export function findItemDeep(
 }
 
 export function removeItem(
-  items: ITreeItems,
+  items: IMenuItems,
   id: UniqueIdentifier,
-): ITreeItem[] {
+): IMenuItem[] {
   const newItems = [];
 
   for (const item of items) {
@@ -165,7 +142,7 @@ export function removeItem(
       continue;
     }
 
-    if (item.children.length) {
+    if (item.children?.length) {
       item.children = removeItem(item.children, id);
     }
 
@@ -175,19 +152,19 @@ export function removeItem(
   return newItems;
 }
 
-export function setProperty<T extends keyof ITreeItem>(
-  items: ITreeItems,
+export function setProperty<T extends keyof IMenuItem>(
+  items: IMenuItems,
   id: UniqueIdentifier,
   property: T,
-  setter: (value: ITreeItem[T]) => ITreeItem[T],
-): ITreeItem[] {
+  setter: (value: IMenuItem[T]) => IMenuItem[T],
+): IMenuItem[] {
   for (const item of items) {
     if (item.id === id) {
       item[property] = setter(item[property]);
       continue;
     }
 
-    if (item.children.length) {
+    if (item.children?.length) {
       item.children = setProperty(item.children, id, property, setter);
     }
   }
@@ -195,9 +172,9 @@ export function setProperty<T extends keyof ITreeItem>(
   return [...items];
 }
 
-function countChildren(items: ITreeItem[], count = 0): number {
+function countChildren(items: IMenuItem[], count = 0): number {
   return items.reduce((acc, { children }) => {
-    if (children.length) {
+    if (children?.length) {
       return countChildren(children, acc + 1);
     }
 
@@ -205,26 +182,8 @@ function countChildren(items: ITreeItem[], count = 0): number {
   }, count);
 }
 
-export function getChildCount(items: ITreeItems, id: UniqueIdentifier): number {
+export function getChildCount(items: IMenuItems, id: UniqueIdentifier): number {
   const item = findItemDeep(items, id);
 
-  return item ? countChildren(item.children) : 0;
-}
-
-export function removeChildrenOf(
-  items: IFlattenedItem[],
-  ids: UniqueIdentifier[],
-): IFlattenedItem[] {
-  const excludeParentIds = [...ids];
-
-  return items.filter((item) => {
-    if (item.parentId && excludeParentIds.includes(item.parentId)) {
-      if (item.children.length) {
-        excludeParentIds.push(item.id);
-      }
-      return false;
-    }
-
-    return true;
-  });
+  return item && item.children ? countChildren(item.children) : 0;
 }

@@ -1,21 +1,12 @@
 'use client';
 
+import type { IMenuId, IMenuItem } from './types';
 import type { PaperProps } from '@mantine/core';
-import type { ElementType, ReactElement, ReactNode } from 'react';
+import type { ElementType, ReactElement } from 'react';
 
 import { useState } from 'react';
 
 import { SidebarMenuControlled } from './SidebarMenuControlled';
-
-export type IMenuId = number | string;
-
-export interface IMenuItem {
-  children?: IMenuItem[];
-  component?: ReactElement;
-  id: IMenuId;
-  label: number | string;
-  leftIcon?: ReactNode;
-}
 
 export interface ISidebarMenuProps extends PaperProps {
   /** Type of HTML element that will be rendered as the component root */

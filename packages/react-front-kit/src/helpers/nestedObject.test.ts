@@ -1,10 +1,10 @@
-import { addPathAndDepth, flattenNestedObjects } from './nestedObject';
+import { addPath, flatten } from './nestedObject';
 
 describe('nestedObject', () => {
   describe('flattenNestedObjects', () => {
     it('should flatten a nested object', () => {
       expect(
-        flattenNestedObjects([
+        flatten([
           { id: '1' },
           { children: [{ id: '21' }], id: '2' },
           {
@@ -30,7 +30,7 @@ describe('nestedObject', () => {
   describe('addPathAndDepth', () => {
     it('should add path and deep property to nested object', () => {
       expect(
-        addPathAndDepth([
+        addPath([
           { id: '1' },
           { children: [{ id: '21' }], id: '2' },
           {

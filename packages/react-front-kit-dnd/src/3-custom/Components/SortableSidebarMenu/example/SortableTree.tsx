@@ -1,4 +1,3 @@
-import type { IFlattenedItem, ISensorContext, ITreeItems } from './types';
 import type {
   Announcements,
   DragEndEvent,

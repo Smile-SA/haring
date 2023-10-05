@@ -12,7 +12,7 @@ import { Header } from '../../Components/Header/Header';
 import { SidebarMenu } from '../../Components/SidebarMenu/SidebarMenu';
 import { menu } from '../../Components/SidebarMenu/SidebarMenu.mock';
 import { FoldableColumnLayout } from '../../Layouts/FoldableColumnLayout/FoldableColumnLayout';
-import { flattenNestedObjects } from '../../helpers';
+import { flatten } from '../../helpers';
 
 /**
  * Primary UI component for user interaction
@@ -29,7 +29,7 @@ export function TestPage(): ReactElement {
     setSidebarMenu(
       sidebarMenu.concat([
         {
-          id: flattenNestedObjects(sidebarMenu).length + 1,
+          id: flatten(sidebarMenu).length + 1,
           label: 'Nouveau Dossier',
           leftIcon: <FolderPlus />,
         },

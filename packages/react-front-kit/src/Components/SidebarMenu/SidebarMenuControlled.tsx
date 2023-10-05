@@ -1,11 +1,12 @@
 'use client';
 
-import type { IMenuId, IMenuItem, ISidebarMenuProps } from './SidebarMenu';
+import type { ISidebarMenuProps } from './SidebarMenu';
+import type { IMenuId, IMenuItem } from './types';
 import type { ReactElement } from 'react';
 
 import { Paper } from '@mantine/core';
 
-import { addPathAndDepth, flattenNestedObjects } from '../../helpers';
+import { flatten } from '../../helpers';
 import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonControlled';
 
 function getRecursiveMenu(
@@ -77,9 +78,9 @@ export function SidebarMenuControlled(
     if (hasOnlyOneOpenMenu && isOpened) {
       /** Flatten and add calculated path property to the entire nested array of menus,
        * keep only the path from the menu being clicked **/
-      const openedMenuPath = flattenNestedObjects<IMenuItem>(
-        addPathAndDepth<IMenuItem>(menu),
-      ).find((menu) => menu.id === menuId)?.path;
+      const openedMenuPath = flatten<IMenuItem>(menu).find(
+        (menu) => menu.id === menuId,
+      )?.path;
       onCollapseChange?.(openedMenuPath ?? []);
     } else {
       /** Add or remove id being clicked **/

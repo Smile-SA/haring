@@ -6,8 +6,9 @@ import type { CSSProperties, ReactElement } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 
+import { ios } from '../utilities';
+
 import { TreeItem } from './TreeItem';
-import { ios } from './utilities';
 
 interface ITreeItemProps extends TreeItemProps {
   id: UniqueIdentifier;
