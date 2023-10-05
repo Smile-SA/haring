@@ -39,7 +39,10 @@
     "prepublishOnly": "npm run build && node ./scripts/prepublish.mjs"
   },
   "dependencies": {
-    "@smile/react-front-kit-shared": "*"
+    "@mantine/dropzone": "^6.0.21",
+    "@smile/react-front-kit-shared": "*",
+    "install": "^0.13.0",
+    "npm": "^10.2.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.20",
