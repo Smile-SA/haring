@@ -5,7 +5,7 @@ import type { ReactElement } from 'react';
 
 import { ActionIcon, Box } from '@mantine/core';
 import { Dropzone, PDF_MIME_TYPE } from '@mantine/dropzone';
-import { createStyles, useMantineTheme } from '@mantine/styles';
+import { createStyles } from '@mantine/styles';
 import { Eye, Plus } from '@phosphor-icons/react';
 
 import Motif from './Motif';
@@ -19,12 +19,13 @@ interface IContentItem {
 
 interface IDropzoneCardProps extends BoxProps {
   children?: ReactElement;
+  content?: ReactElement;
   contentItems?: IContentItem[];
   motif?: ReactElement;
   title?: ReactElement;
 }
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(() => ({
   container: {
     '@media (max-width: 834px)': {
       flexDirection: 'column',
@@ -39,7 +40,6 @@ const useStyles = createStyles((theme) => ({
   },
   contentItem: {
     alignItems: 'center',
-    color: theme.colors.cyan[7],
     cursor: 'pointer',
     display: 'flex',
     justifyContent: 'center',
@@ -54,9 +54,13 @@ const useStyles = createStyles((theme) => ({
     width: '220px',
   },
   contentItems: {
+    '@media (max-width: 834px)': {
+      minWidth: '0px',
+    },
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'left',
+    minWidth: '440px',
   },
   dropzoneBrowse: {
     alignItems: 'center',
@@ -71,7 +75,6 @@ const useStyles = createStyles((theme) => ({
       maxWidth: '100%',
     },
     marginTop: '18px',
-    maxWidth: '400px',
     width: '100%',
   },
   dropzoneContentItem: {
@@ -101,9 +104,9 @@ const useStyles = createStyles((theme) => ({
     maxWidth: '440px',
   },
   motif: {
-    left: 0,
+    left: -40,
     position: 'absolute',
-    top: 0,
+    top: -60,
     zIndex: 0,
   },
   title: {
@@ -117,14 +120,13 @@ const useStyles = createStyles((theme) => ({
 
 export function DropzoneCard(props: IDropzoneCardProps): ReactElement {
   const {
-    children,
+    content,
     title,
     contentItems = [],
     motif = <Motif />,
     ...BoxProps
   } = props;
   const { classes } = useStyles();
-  const theme = useMantineTheme();
   return (
     <Box className={classes.dropzoneContentItem} color="primary" {...BoxProps}>
       <div className={classes.motif}>{motif}</div>
@@ -156,7 +158,7 @@ export function DropzoneCard(props: IDropzoneCardProps): ReactElement {
               ))}
             </div>
           )}
-          {Boolean(children) && <div>{children}</div>}
+          {Boolean(content) && <div>{content}</div>}
         </div>
         <div className={classes.dropzoneContainer}>
           <Dropzone
@@ -176,11 +178,11 @@ export function DropzoneCard(props: IDropzoneCardProps): ReactElement {
               style={{ margin: 'auto' }}
               variant="filled"
             >
-              <Plus color={theme.colors.gray[7]} size={20} weight="bold" />
+              <Plus size={20} weight="bold" />
             </ActionIcon>
             <p>Drag and drop your documents here</p>
             <p className={classes.dropzoneBrowse}>
-              <Eye size={16} style={{ marginRight: '5px' }} weight="bold" />
+              <Eye size={16} style={{ marginRight: '8px' }} weight="bold" />
               Browse your device
             </p>
           </Dropzone>

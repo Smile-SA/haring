@@ -16,7 +16,7 @@ type IStory = StoryObj<typeof meta>;
 
 export const DropzoneCard: IStory = {
   args: {
-    children: (
+    content: (
       <p
         style={{
           cursor: 'pointer',
