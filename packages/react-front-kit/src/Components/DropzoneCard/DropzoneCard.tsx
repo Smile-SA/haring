@@ -4,9 +4,7 @@ import type { ActionIconProps, BoxProps } from '@mantine/core';
 import type { ReactElement } from 'react';
 
 import { ActionIcon, Box } from '@mantine/core';
-import { Dropzone, PDF_MIME_TYPE } from '@mantine/dropzone';
 import { createStyles } from '@mantine/styles';
-import { Eye, Plus } from '@phosphor-icons/react';
 
 import Motif from './Motif';
 
@@ -62,13 +60,6 @@ const useStyles = createStyles(() => ({
     justifyContent: 'left',
     minWidth: '440px',
   },
-  dropzoneBrowse: {
-    alignItems: 'center',
-    display: 'flex',
-    fontWeight: 600,
-    justifyContent: 'center',
-    marginTop: '0px',
-  },
   dropzoneContainer: {
     '@media (max-width: 834px)': {
       marginTop: '24px',
@@ -84,20 +75,9 @@ const useStyles = createStyles(() => ({
     borderRadius: '16px',
     minHeight: '219px',
     overflow: 'hidden',
+    padding: '20px 20px',
     position: 'relative',
     width: '100%',
-  },
-  dropzoneInner: {
-    margin: 'auto',
-    p: {
-      margin: '10px',
-    },
-    textAlign: 'center',
-  },
-  dropzoneRoot: {
-    display: 'flex',
-    minHeight: '100%',
-    minWidth: '100%',
   },
   leftContainer: {
     marginRight: '20px',
@@ -124,6 +104,7 @@ export function DropzoneCard(props: IDropzoneCardProps): ReactElement {
     title,
     contentItems = [],
     motif = <Motif />,
+    children,
     ...BoxProps
   } = props;
   const { classes } = useStyles();
@@ -160,33 +141,7 @@ export function DropzoneCard(props: IDropzoneCardProps): ReactElement {
           )}
           {Boolean(content) && <div>{content}</div>}
         </div>
-        <div className={classes.dropzoneContainer}>
-          <Dropzone
-            accept={PDF_MIME_TYPE}
-            classNames={{
-              inner: classes.dropzoneInner,
-              root: classes.dropzoneRoot,
-            }}
-            maxSize={3 * 1024 ** 2}
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions, no-console
-            onDrop={(file) => console.log(`accept${file}`)}
-          >
-            <ActionIcon
-              className={classes.contentItem}
-              radius="xl"
-              size="xl"
-              style={{ margin: 'auto' }}
-              variant="filled"
-            >
-              <Plus size={20} weight="bold" />
-            </ActionIcon>
-            <p>Drag and drop your documents here</p>
-            <p className={classes.dropzoneBrowse}>
-              <Eye size={16} style={{ marginRight: '8px' }} weight="bold" />
-              Browse your device
-            </p>
-          </Dropzone>
-        </div>
+        <div className={classes.dropzoneContainer}>{children}</div>
       </div>
     </Box>
   );

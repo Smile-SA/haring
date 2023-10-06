@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Eye, Suitcase, User } from '@phosphor-icons/react';
 import { action } from '@storybook/addon-actions';
 
+import { Dropzone } from '../Dropzone/Dropzone';
+
 import { DropzoneCard as Cmp } from './DropzoneCard';
 
 const meta = {
@@ -16,6 +18,8 @@ type IStory = StoryObj<typeof meta>;
 
 export const DropzoneCard: IStory = {
   args: {
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions, no-console
+    children: <Dropzone onDrop={(file) => console.log(`accept ${file}`)} />,
     content: (
       <p
         style={{
