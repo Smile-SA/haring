@@ -45,7 +45,7 @@ function getRecursiveMenu(
   ));
 }
 
-interface ISidebarMenuControlledProps extends ISidebarMenuProps {
+export interface ISidebarMenuControlledProps extends ISidebarMenuProps {
   /** */
   onCollapseChange?: (openedMenuIds: IMenuId[]) => void;
   /** */

@@ -1,3 +1,4 @@
+import type { ISensorContext } from './types';
 import type {
   Announcements,
   DragEndEvent,
@@ -8,10 +9,7 @@ import type {
   Modifier,
   UniqueIdentifier,
 } from '@dnd-kit/core';
-import type {
-  IMenuItem,
-  ISensorContext,
-} from '@smile/react-front-kit/src/Components/SidebarMenu/types';
+import type { IMenuItem } from '@smile/react-front-kit/src/Components/SidebarMenu/types';
 import type { IFlattenedObject } from '@smile/react-front-kit/src/helpers';
 import type { ReactElement } from 'react';
 
@@ -36,7 +34,7 @@ import { flatten, removeChildrenOf } from '@smile/react-front-kit/src/helpers';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import { SortableMenu } from './SortableMenu';
+import { SortableMenuItem } from './MenuItem/SortableMenuItem';
 import { sortableTreeKeyboardCoordinates } from './keyboardCoordinates';
 import {
   buildTree,
@@ -158,7 +156,6 @@ export function SortableSidebarMenu(
 
       const sortedItems = arrayMove(clonedItems, activeIndex, overIndex);
       const newItems = buildTree(sortedItems);
-
       setItems(newItems);
     }
   }
@@ -320,21 +317,21 @@ export function SortableSidebarMenu(
       sensors={sensors}
     >
       <SortableContext items={sortedIds} strategy={verticalListSortingStrategy}>
-        {flattenedItems.map(({ id, children, collapsed, depth }) => (
-          <SortableMenu
+        {flattenedItems.map(({ id, label, children, collapsed, depth }) => (
+          <SortableMenuItem
             key={id}
             collapsed={Boolean(collapsed && children?.length)}
             depth={id === activeId && projected ? projected.depth : depth}
             id={id}
             indentationWidth={indentationWidth}
             indicator={indicator}
+            label={label?.toString() ?? ''}
             onCollapse={
               collapsible && children?.length
                 ? () => handleCollapse(id)
                 : undefined
             }
             onRemove={removable ? () => handleRemove(id) : undefined}
-            value={id.toString()}
           />
         ))}
         {createPortal(
@@ -345,13 +342,13 @@ export function SortableSidebarMenu(
             {activeId !== null &&
               activeItem !== null &&
               activeItem !== undefined && (
-                <SortableMenu
+                <SortableMenuItem
                   childCount={getChildCount(items, activeId) + 1}
                   clone
                   depth={activeItem.depth}
                   id={activeId}
                   indentationWidth={indentationWidth}
-                  value={activeId.toString()}
+                  label={activeItem.label?.toString() ?? ''}
                 />
               )}
           </DragOverlay>,

@@ -40,15 +40,13 @@ export function getProjection(
   parentId: UniqueIdentifier | null;
 } {
   function getParentId(): UniqueIdentifier | null {
-    if (depth === 0) {
+    if (depth === 0 || !previousItem) {
       return null;
     }
-
-    if (previousItem?.depth && depth === previousItem.depth) {
+    if (depth === previousItem.depth) {
       return previousItem.parentId;
     }
-
-    if (previousItem?.depth && depth > previousItem.depth) {
+    if (depth > previousItem.depth) {
       return previousItem.id;
     }
 
@@ -56,7 +54,6 @@ export function getProjection(
       .slice(0, overItemIndex)
       .reverse()
       .find((item) => item.depth === depth)?.parentId;
-
     return newParent ?? null;
   }
 

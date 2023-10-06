@@ -1,5 +1,4 @@
-import type { INestedObject } from '../../helpers';
-import type { MutableRefObject, ReactElement, ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 export type IMenuId = number | string;
 
@@ -13,8 +12,3 @@ export interface IMenuItem {
 }
 
 export type IMenuItems = IMenuItem[];
-
-export type ISensorContext = MutableRefObject<{
-  items: INestedObject<IMenuItem>[];
-  offset: number;
-}>;

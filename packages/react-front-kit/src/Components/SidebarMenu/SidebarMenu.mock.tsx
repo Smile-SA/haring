@@ -1,4 +1,4 @@
-import type { IMenuItem } from './SidebarMenu';
+import type { IMenuItem } from './types';
 
 import { Chat, HouseLine, Star, User } from '@phosphor-icons/react';
 

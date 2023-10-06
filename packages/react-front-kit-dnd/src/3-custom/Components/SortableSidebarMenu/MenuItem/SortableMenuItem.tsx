@@ -1,4 +1,4 @@
-import type { ITreeItemProps as TreeItemProps } from './TreeItem';
+import type { IMenuItemProps } from './MenuItem';
 import type { UniqueIdentifier } from '@dnd-kit/core';
 import type { AnimateLayoutChanges } from '@dnd-kit/sortable';
 import type { CSSProperties, ReactElement } from 'react';
@@ -6,11 +6,9 @@ import type { CSSProperties, ReactElement } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 
-import { ios } from '../utilities';
+import { MenuItem } from './MenuItem';
 
-import { TreeItem } from './TreeItem';
-
-interface ITreeItemProps extends TreeItemProps {
+interface ISortableMenuItemProps extends IMenuItemProps {
   id: UniqueIdentifier;
 }
 
@@ -19,11 +17,9 @@ const animateLayoutChanges: AnimateLayoutChanges = ({
   wasDragging,
 }) => !(isSorting || wasDragging);
 
-export function SortableTreeItem({
-  id,
-  depth,
-  ...props
-}: ITreeItemProps): ReactElement {
+export function SortableMenuItem(props: ISortableMenuItemProps): ReactElement {
+  const { id, depth, ...itemProps } = props;
+  const ios = /iPad|iPhone|iPod/.test(navigator.platform);
   const {
     attributes,
     isDragging,
@@ -43,7 +39,7 @@ export function SortableTreeItem({
   };
 
   return (
-    <TreeItem
+    <MenuItem
       ref={setDraggableNodeRef}
       depth={depth}
       disableInteraction={isSorting}
@@ -55,7 +51,7 @@ export function SortableTreeItem({
       }}
       style={style}
       wrapperRef={setDroppableNodeRef}
-      {...props}
+      {...itemProps}
     />
   );
 }

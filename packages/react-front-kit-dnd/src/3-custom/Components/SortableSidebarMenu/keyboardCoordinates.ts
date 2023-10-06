@@ -35,10 +35,10 @@ export const sortableTreeKeyboardCoordinates: (
         droppableContainers,
       },
     },
-  ) => {
+  ): { x: number; y: number } | undefined => {
     if (directions.includes(event.code)) {
       if (!active || !collisionRect) {
-        return;
+        return undefined;
       }
 
       event.preventDefault();
@@ -129,7 +129,7 @@ export const sortableTreeKeyboardCoordinates: (
           const activeIndex = items.findIndex(({ id }) => id === active.id);
           const activeItem = items[activeIndex];
 
-          if (newItem && activeItem) {
+          if (Boolean(newItem) && Boolean(activeItem)) {
             const { depth } = getProjection(
               items,
               active.id,
@@ -143,12 +143,10 @@ export const sortableTreeKeyboardCoordinates: (
               ? (collisionRect.height - activeRect.height) / 2
               : 0;
 
-            const newCoordinates = {
+            return {
               x: newRect.left + depth * indentationWidth,
               y: newRect.top + modifier * offset,
             };
-
-            return newCoordinates;
           }
         }
       }
