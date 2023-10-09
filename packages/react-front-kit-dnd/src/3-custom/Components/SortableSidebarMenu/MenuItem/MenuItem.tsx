@@ -47,7 +47,6 @@ const useStyles = createStyles(() => ({
     [`.${getStylesRef('clone')}`]: {
       [`.${getStylesRef('text')}, .${getStylesRef('count')}`]: {
         userSelect: 'none',
-        webkitUserSelect: 'none',
       },
     },
   },

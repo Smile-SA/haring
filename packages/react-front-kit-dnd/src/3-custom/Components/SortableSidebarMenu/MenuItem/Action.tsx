@@ -27,7 +27,6 @@ const useStyles = createStyles(() => ({
       boxShadow: '0 0 0 2px rgba(255, 255, 255, 0), 0 0 0 2px #4c9ffe',
       outline: 'none',
     },
-    '-webkit-tap-highlight-color': 'transparent',
     [`@media (hover: hover)`]: {
       '&hover': {
         backgroundColor: 'var(--action-background, rgba(0, 0, 0, 0.05))',
