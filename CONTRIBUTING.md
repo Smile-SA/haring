@@ -18,7 +18,7 @@ Private configuration packages:
 
 Private integration testing packages:
 
-- apps/web: Next.js testing app
+- apps/next: Next.js testing app
 
 ## Root commands
 
