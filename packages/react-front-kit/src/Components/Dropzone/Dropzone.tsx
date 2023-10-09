@@ -8,7 +8,10 @@ import { Dropzone as MantineDropzone } from '@mantine/dropzone';
 import { createStyles } from '@mantine/styles';
 import { Eye, Plus } from '@phosphor-icons/react';
 
-export type IDropzoneProps = Omit<IMantineDropzoneProps, 'children'>;
+export interface IDropzoneProps
+  extends Omit<IMantineDropzoneProps, 'children'> {
+  children?: ReactElement;
+}
 
 const useStyles = createStyles(() => ({
   buttonPlus: {
@@ -41,7 +44,7 @@ const useStyles = createStyles(() => ({
 }));
 
 export function Dropzone(props: IDropzoneProps): ReactElement {
-  const { ...MantineDropzoneProps } = props;
+  const { children, ...MantineDropzoneProps } = props;
   const { classes } = useStyles();
   return (
     <MantineDropzone
@@ -64,6 +67,7 @@ export function Dropzone(props: IDropzoneProps): ReactElement {
         <Eye className={classes.eye} size={16} weight="bold" />
         Browse your device
       </p>
+      {children}
     </MantineDropzone>
   );
 }

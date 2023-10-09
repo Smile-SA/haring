@@ -12,5 +12,7 @@ export default meta;
 type IStory = StoryObj<typeof meta>;
 
 export const Dropzone: IStory = {
-  args: {},
+  args: {
+    children: undefined,
+  },
 };
