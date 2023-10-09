@@ -10,7 +10,7 @@ import type {
   UniqueIdentifier,
 } from '@dnd-kit/core';
 import type { IMenuItem } from '@smile/react-front-kit/src/Components/SidebarMenu/types';
-import type { IFlattenedObject } from '@smile/react-front-kit/src/helpers';
+import type { INestedObjectInfo } from '@smile/react-front-kit/src/helpers';
 import type { ReactElement } from 'react';
 
 import {
@@ -30,7 +30,11 @@ import {
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { flatten, removeChildrenOf } from '@smile/react-front-kit/src/helpers';
+import {
+  addInfo,
+  flatten,
+  removeChildrenOf,
+} from '@smile/react-front-kit/src/helpers';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -145,9 +149,9 @@ export function SortableSidebarMenu(
 
     if (projected && over) {
       const { depth, parentId } = projected;
-      const clonedItems: IFlattenedObject<IMenuItem>[] = JSON.parse(
+      const clonedItems: INestedObjectInfo<IMenuItem>[] = JSON.parse(
         JSON.stringify(flatten(items)),
-      ) as IFlattenedObject<IMenuItem>[];
+      ) as INestedObjectInfo<IMenuItem>[];
       const overIndex = clonedItems.findIndex(({ id }) => id === over.id);
       const activeIndex = clonedItems.findIndex(({ id }) => id === active.id);
       const activeTreeItem = clonedItems[activeIndex];
@@ -198,9 +202,9 @@ export function SortableSidebarMenu(
       });
     }
 
-    const clonedItems: IFlattenedObject<IMenuItem>[] = JSON.parse(
+    const clonedItems: INestedObjectInfo<IMenuItem>[] = JSON.parse(
       JSON.stringify(flatten(items)),
-    ) as IFlattenedObject<IMenuItem>[];
+    ) as INestedObjectInfo<IMenuItem>[];
     const overIndex = clonedItems.findIndex(({ id }) => id === overId);
     const activeIndex = clonedItems.findIndex(({ id }) => id === activeId);
     const sortedItems = arrayMove(clonedItems, activeIndex, overIndex);
@@ -218,7 +222,7 @@ export function SortableSidebarMenu(
     } else if (projected.depth > previousItem.depth) {
       announcement = `${activeId} was ${nestedVerb} under ${previousItem.id}.`;
     } else {
-      let previousSibling: IFlattenedObject<IMenuItem> | undefined =
+      let previousSibling: INestedObjectInfo<IMenuItem> | undefined =
         previousItem;
       while (previousSibling && projected.depth < previousSibling.depth) {
         const parentId = previousSibling.parentId as UniqueIdentifier;
@@ -230,6 +234,7 @@ export function SortableSidebarMenu(
       }
     }
 
+    console.log(announcement);
     return announcement;
   }
 
@@ -271,10 +276,7 @@ export function SortableSidebarMenu(
     }),
   );
 
-  const sortedIds = useMemo(
-    () => flattenedItems.map(({ id }) => id),
-    [flattenedItems],
-  );
+  const sortedIds = useMemo(() => items.map(({ id }) => id), [items]);
   const activeItem = activeId
     ? flattenedItems.find(({ id }) => id === activeId)
     : null;
@@ -304,20 +306,17 @@ export function SortableSidebarMenu(
     },
   };
 
-  return (
-    <DndContext
-      accessibility={{ announcements }}
-      collisionDetection={closestCenter}
-      measuring={measuring}
-      onDragCancel={handleDragCancel}
-      onDragEnd={handleDragEnd}
-      onDragMove={handleDragMove}
-      onDragOver={handleDragOver}
-      onDragStart={handleDragStart}
-      sensors={sensors}
-    >
-      <SortableContext items={sortedIds} strategy={verticalListSortingStrategy}>
-        {flattenedItems.map(({ id, label, children, collapsed, depth }) => (
+  function getRecursiveMenu(
+    menu?: IMenuItem[],
+    level = 0,
+  ): ReactElement[] | null {
+    if (!menu) {
+      return null;
+    }
+    return addInfo(menu, level).map(
+      ({ id, collapsed, depth, label, children, ...props }) => {
+        const localSortedIds = menu.map((item) => item.id);
+        return (
           <SortableMenuItem
             key={id}
             collapsed={Boolean(collapsed && children?.length)}
@@ -332,8 +331,51 @@ export function SortableSidebarMenu(
                 : undefined
             }
             onRemove={removable ? () => handleRemove(id) : undefined}
-          />
-        ))}
+            {...props}
+          >
+            <SortableContext
+              items={localSortedIds}
+              strategy={verticalListSortingStrategy}
+            >
+              {getRecursiveMenu(children, level + 1)}
+            </SortableContext>
+          </SortableMenuItem>
+        );
+      },
+    );
+  }
+
+  return (
+    <DndContext
+      accessibility={{ announcements }}
+      collisionDetection={closestCenter}
+      measuring={measuring}
+      onDragCancel={handleDragCancel}
+      onDragEnd={handleDragEnd}
+      onDragMove={handleDragMove}
+      onDragOver={handleDragOver}
+      onDragStart={handleDragStart}
+      sensors={sensors}
+    >
+      <SortableContext items={sortedIds} strategy={verticalListSortingStrategy}>
+        {/*  {flattenedItems.map(({ id, label, children, collapsed, depth }) => (*/}
+        {/*    <SortableMenuItem*/}
+        {/*      key={id}*/}
+        {/*      collapsed={Boolean(collapsed && children?.length)}*/}
+        {/*      depth={id === activeId && projected ? projected.depth : depth}*/}
+        {/*      id={id}*/}
+        {/*      indentationWidth={indentationWidth}*/}
+        {/*      indicator={indicator}*/}
+        {/*      label={label?.toString() ?? ''}*/}
+        {/*      onCollapse={*/}
+        {/*        collapsible && children?.length*/}
+        {/*          ? () => handleCollapse(id)*/}
+        {/*          : undefined*/}
+        {/*      }*/}
+        {/*      onRemove={removable ? () => handleRemove(id) : undefined}*/}
+        {/*    />*/}
+        {/*  ))}*/}
+        {getRecursiveMenu(items)}
         {createPortal(
           <DragOverlay
             dropAnimation={dropAnimationConfig}

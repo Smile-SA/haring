@@ -2,6 +2,7 @@ import type { HTMLAttributes } from 'react';
 import type React from 'react';
 
 import { createStyles, getStylesRef } from '@mantine/core';
+import { CollapseButtonControlled } from '@smile/react-front-kit';
 import { forwardRef } from 'react';
 
 import { Action } from './Action';
@@ -147,16 +148,17 @@ export interface IMenuItemProps
   handleProps?: Record<string, unknown>;
   indentationWidth: number;
   indicator?: boolean;
-  label: string;
+  label?: string;
   onCollapse?: () => void;
   onRemove?: () => void;
-  wrapperRef?: (node: HTMLLIElement) => void;
+  wrapperRef?: (node: HTMLDivElement) => void;
 }
 
 // eslint-disable-next-line react/display-name,react/no-multi-comp
 export const MenuItem = forwardRef<HTMLDivElement, IMenuItemProps>(
-  (
-    {
+  (props: IMenuItemProps, ref) => {
+    const {
+      children,
       childCount,
       clone,
       depth,
@@ -172,56 +174,67 @@ export const MenuItem = forwardRef<HTMLDivElement, IMenuItemProps>(
       style,
       label,
       wrapperRef,
-      ...props
-    },
-    ref,
-  ) => {
-    const { classes } = useStyles();
+      ...buttonProps
+    } = props;
+    // const { classes } = useStyles();
 
     return (
-      <li
+      <div
         ref={wrapperRef}
-        className={[
-          classes.wrapper,
-          Boolean(clone) && classes.clone,
-          Boolean(ghost) && classes.ghost,
-          Boolean(indicator) && classes.indicator,
-          Boolean(disableSelection) && classes.disableSelection,
-          Boolean(disableInteraction) && classes.disableInteraction,
-        ].join(' ')}
-        style={
-          {
-            '--spacing': `${indentationWidth * depth}px`,
-          } as React.CSSProperties
-        }
-        {...props}
+        // className={[
+        //   classes.wrapper,
+        //   Boolean(clone) && classes.clone,
+        //   Boolean(ghost) && classes.ghost,
+        //   Boolean(indicator) && classes.indicator,
+        //   Boolean(disableSelection) && classes.disableSelection,
+        //   Boolean(disableInteraction) && classes.disableInteraction,
+        // ].join(' ')}
+        // style={
+        //   {
+        //     '--spacing': `${indentationWidth * depth}px`,
+        //   } as React.CSSProperties
+        // }
+        // {...buttonProps}
       >
-        <div ref={ref} className={classes.menuItem} style={style}>
-          <Handle {...handleProps} />
-          {onCollapse ? (
-            <Action
-              className={`
-                ${classes.collapse}
-                 ${collapsed && classes.collapsed}
-              `}
-              onClick={onCollapse}
-            >
-              {collapseIcon}
-            </Action>
-          ) : null}
-          <span className={classes.text}>{label}</span>
-          {!clone && onRemove ? <Remove onClick={onRemove} /> : null}
-          {clone && childCount && childCount > 1 ? (
-            <span className={classes.count}>{childCount}</span>
-          ) : null}
+        <div ref={ref}>
+          {/* {onCollapse ? (*/}
+          {/*  <Action*/}
+          {/*    className={`*/}
+          {/*      ${classes.collapse}*/}
+          {/*       ${collapsed && classes.collapsed}*/}
+          {/*    `}*/}
+          {/*    onClick={onCollapse}*/}
+          {/*  >*/}
+          {/*    {collapseIcon}*/}
+          {/*  </Action>*/}
+          {/* ) : null}*/}
+          {/* <span className={classes.text}>{label}</span>*/}
+          {/* {!clone && onRemove ? <Remove onClick={onRemove} /> : null}*/}
+          {/* {clone && childCount && childCount > 1 ? (*/}
+          {/*  <span className={classes.count}>{childCount}</span>*/}
+          {/* ) : null}*/}
+          <CollapseButtonControlled
+            handleProps={handleProps}
+            label={label}
+            // onCollapseChange={(isOpened) =>
+            //   onCollapseChange(props.id, isOpened)
+            // }
+            // onSelect={onSelectChange}
+            isOpenOnSelect
+            level={0}
+            line
+            opened
+          >
+            {children}
+          </CollapseButtonControlled>
         </div>
-      </li>
+      </div>
     );
   },
 );
 
-const collapseIcon = (
-  <svg viewBox="0 0 70 41" width="10" xmlns="http://www.w3.org/2000/svg">
-    <path d="M30.76 39.2402C31.885 40.3638 33.41 40.995 35 40.995C36.59 40.995 38.115 40.3638 39.24 39.2402L68.24 10.2402C69.2998 9.10284 69.8768 7.59846 69.8494 6.04406C69.822 4.48965 69.1923 3.00657 68.093 1.90726C66.9937 0.807959 65.5106 0.178263 63.9562 0.150837C62.4018 0.123411 60.8974 0.700397 59.76 1.76024L35 26.5102L10.24 1.76024C9.10259 0.700397 7.59822 0.123411 6.04381 0.150837C4.4894 0.178263 3.00632 0.807959 1.90702 1.90726C0.807714 3.00657 0.178019 4.48965 0.150593 6.04406C0.123167 7.59846 0.700153 9.10284 1.75999 10.2402L30.76 39.2402Z" />
-  </svg>
-);
+// const collapseIcon = (
+//   <svg viewBox="0 0 70 41" width="10" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M30.76 39.2402C31.885 40.3638 33.41 40.995 35 40.995C36.59 40.995 38.115 40.3638 39.24 39.2402L68.24 10.2402C69.2998 9.10284 69.8768 7.59846 69.8494 6.04406C69.822 4.48965 69.1923 3.00657 68.093 1.90726C66.9937 0.807959 65.5106 0.178263 63.9562 0.150837C62.4018 0.123411 60.8974 0.700397 59.76 1.76024L35 26.5102L10.24 1.76024C9.10259 0.700397 7.59822 0.123411 6.04381 0.150837C4.4894 0.178263 3.00632 0.807959 1.90702 1.90726C0.807714 3.00657 0.178019 4.48965 0.150593 6.04406C0.123167 7.59846 0.700153 9.10284 1.75999 10.2402L30.76 39.2402Z" />
+//   </svg>
+// );

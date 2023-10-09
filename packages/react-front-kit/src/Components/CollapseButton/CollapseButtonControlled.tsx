@@ -5,6 +5,8 @@ import type { MouseEvent, ReactElement } from 'react';
 
 import { ActionIcon, Button, Collapse, createStyles } from '@mantine/core';
 import { CaretDown, CaretRight } from '@phosphor-icons/react';
+import { Handle } from '@smile/react-front-kit-dnd/src/3-custom/Components/SortableSidebarMenu/MenuItem/Handle';
+import React from 'react';
 
 const useStyles = createStyles((theme) => ({
   button: {
@@ -75,6 +77,7 @@ export function CollapseButtonControlled<T extends number | string>(
   const {
     children,
     fullWidth = true,
+    handleProps,
     id,
     isOpenOnSelect = false,
     label,
@@ -162,6 +165,7 @@ export function CollapseButtonControlled<T extends number | string>(
         variant={selected ? 'light' : 'white'}
         {...buttonProps}
       >
+        {Boolean(handleProps) && <Handle {...handleProps} />}
         <button className={classes.button} data-testid="select" type="button">
           {label}
         </button>

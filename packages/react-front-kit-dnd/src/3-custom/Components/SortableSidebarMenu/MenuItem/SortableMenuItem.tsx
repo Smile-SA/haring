@@ -18,7 +18,7 @@ const animateLayoutChanges: AnimateLayoutChanges = ({
 }) => !(isSorting || wasDragging);
 
 export function SortableMenuItem(props: ISortableMenuItemProps): ReactElement {
-  const { id, depth, ...itemProps } = props;
+  const { children, id, depth, ...itemProps } = props;
   const ios = /iPad|iPhone|iPod/.test(navigator.platform);
   const {
     attributes,
@@ -52,6 +52,8 @@ export function SortableMenuItem(props: ISortableMenuItemProps): ReactElement {
       style={style}
       wrapperRef={setDroppableNodeRef}
       {...itemProps}
-    />
+    >
+      {children}
+    </MenuItem>
   );
 }

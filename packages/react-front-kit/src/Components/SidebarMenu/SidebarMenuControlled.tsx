@@ -1,7 +1,7 @@
 'use client';
 
 import type { ISidebarMenuProps } from './SidebarMenu';
-import type { IMenuId, IMenuItem } from './types';
+import type { IMenuItem } from './types';
 import type { ReactElement } from 'react';
 
 import { Paper } from '@mantine/core';
@@ -10,11 +10,11 @@ import { flatten } from '../../helpers';
 import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonControlled';
 
 function getRecursiveMenu(
-  onCollapseChange: (id: IMenuId, isOpened: boolean) => void,
-  onSelectChange: (id?: IMenuId) => void,
-  openedMenuIds: IMenuId[],
+  onCollapseChange: (id: string, isOpened: boolean) => void,
+  onSelectChange: (id?: string) => void,
+  openedMenuIds: string[],
   menu?: IMenuItem[],
-  selectedId?: IMenuId,
+  selectedId?: string,
   level = 0,
 ): ReactElement[] | null {
   if (!menu) {
@@ -47,13 +47,13 @@ function getRecursiveMenu(
 
 export interface ISidebarMenuControlledProps extends ISidebarMenuProps {
   /** */
-  onCollapseChange?: (openedMenuIds: IMenuId[]) => void;
+  onCollapseChange?: (openedMenuIds: string[]) => void;
   /** */
-  onSelectedChange?: (selectedId?: IMenuId) => void;
+  onSelectedChange?: (selectedId?: string) => void;
   /** Controlled state of which menus are currently open, using `id` field of `IMenuItem` */
-  openedMenuIds?: IMenuId[];
+  openedMenuIds?: string[];
   /** Controlled state of which `IMenuItem` menu is currently selected */
-  selectedId?: IMenuId;
+  selectedId?: string;
 }
 
 /** Props extend the `SidebarMenu` component */
@@ -71,16 +71,13 @@ export function SidebarMenuControlled(
     ...paperProps
   } = props;
 
-  function handleCollapseChange(
-    menuId: number | string,
-    isOpened: boolean,
-  ): void {
+  function handleCollapseChange(menuId: string, isOpened: boolean): void {
     if (hasOnlyOneOpenMenu && isOpened) {
       /** Flatten and add calculated path property to the entire nested array of menus,
        * keep only the path from the menu being clicked **/
-      const openedMenuPath = flatten<IMenuItem>(menu).find(
-        (menu) => menu.id === menuId,
-      )?.path;
+      const openedMenuPath = flatten<IMenuItem>(menu)
+        .find((menu) => menu.id === menuId)
+        ?.path.map((id) => id.toString());
       onCollapseChange?.(openedMenuPath ?? []);
     } else {
       /** Add or remove id being clicked **/

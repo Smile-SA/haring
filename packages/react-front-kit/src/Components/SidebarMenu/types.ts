@@ -5,7 +5,7 @@ export interface IMenuItem {
   collapsed?: boolean;
   component?: ReactElement;
   id: string;
-  label?: number | string;
+  label?: string;
   leftIcon?: ReactNode;
 }
 

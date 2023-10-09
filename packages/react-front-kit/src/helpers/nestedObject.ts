@@ -7,25 +7,26 @@ interface INestedObj<O extends object> {
 
 export type INestedObject<O extends object> = INestedObj<O> & O;
 
-interface IFlattenedObj<O extends object> extends INestedObj<O> {
+interface INestedObjInfo<O extends object> extends INestedObj<O> {
   depth: number;
   index: number;
   parentId: IUniqueIdentifier | null;
   path: IUniqueIdentifier[];
 }
 
-export type IFlattenedObject<O extends object = object> = IFlattenedObj<O> & O;
+export type INestedObjectInfo<O extends object = object> = INestedObjInfo<O> &
+  O;
 
 export function flatten<O extends object>(
   arr?: INestedObject<O>[],
   parentId: IUniqueIdentifier | null = null,
   parentPath: IUniqueIdentifier[] = [],
   depth = 0,
-): IFlattenedObject<O>[] {
+): INestedObjectInfo<O>[] {
   if (!arr) {
     return [];
   }
-  return arr.reduce<IFlattenedObject<O>[]>((acc, item, index) => {
+  return arr.reduce<INestedObjectInfo<O>[]>((acc, item, index) => {
     const path = parentPath.concat(item.id);
     return [
       ...acc,
@@ -35,10 +36,28 @@ export function flatten<O extends object>(
   }, []);
 }
 
+export function addInfo<O extends object>(
+  arr: INestedObject<O>[] = [],
+  parentId: IUniqueIdentifier | null = null,
+  parentPath: IUniqueIdentifier[] = [],
+): INestedObjectInfo<O>[] {
+  return arr.map((o, index) => {
+    const path = parentPath.concat(o.id);
+    return {
+      ...o,
+      children: addInfo(o.children, o.id, path),
+      depth: parentPath.length,
+      index,
+      parentId,
+      path,
+    };
+  });
+}
+
 export function removeChildrenOf<O extends object>(
-  items: IFlattenedObject<O>[],
+  items: INestedObjectInfo<O>[],
   ids: IUniqueIdentifier[],
-): IFlattenedObject<O>[] {
+): INestedObjectInfo<O>[] {
   const excludeParentIds = [...ids];
 
   return items.filter((item) => {

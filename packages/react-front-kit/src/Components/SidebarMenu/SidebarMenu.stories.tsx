@@ -35,7 +35,7 @@ export const SidebarMenu: IStory = {
 export const OnlyOneOpenMenu: IStory = {
   args: {
     hasOnlyOneOpenMenu: true,
-    initialOpenedMenuIds: [0, 2],
+    initialOpenedMenuIds: ['0', '2'],
     menu: deeplyNestedMenu,
   },
 };

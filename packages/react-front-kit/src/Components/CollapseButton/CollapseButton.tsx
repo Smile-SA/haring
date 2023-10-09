@@ -11,6 +11,7 @@ export interface ICollapseButtonProps<T extends number | string>
   extends ButtonProps {
   /** Content either collapsed or opened under Button */
   children?: ReactNode;
+  handleProps?: Record<string, unknown>;
   id?: T;
   isOpenOnSelect?: boolean;
   label?: ReactNode;

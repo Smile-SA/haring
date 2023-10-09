@@ -3,7 +3,7 @@ import type {
   IMenuItem,
   IMenuItems,
 } from '@smile/react-front-kit/src/Components/SidebarMenu/types';
-import type { IFlattenedObject } from '@smile/react-front-kit/src/helpers';
+import type { INestedObjectInfo } from '@smile/react-front-kit/src/helpers';
 
 import { arrayMove } from '@dnd-kit/sortable';
 
@@ -13,14 +13,14 @@ function getDragDepth(offset: number, indentationWidth: number): number {
   return Math.round(offset / indentationWidth);
 }
 
-export function getMaxDepth(previousItem?: IFlattenedObject): number {
+export function getMaxDepth(previousItem?: INestedObjectInfo): number {
   if (previousItem) {
     return previousItem.depth + 1;
   }
   return 0;
 }
 
-function getMinDepth(nextItem?: IFlattenedObject): number {
+function getMinDepth(nextItem?: INestedObjectInfo): number {
   if (nextItem) {
     return nextItem.depth;
   }
@@ -28,7 +28,7 @@ function getMinDepth(nextItem?: IFlattenedObject): number {
 }
 
 export function getProjection(
-  items: IFlattenedObject[],
+  items: INestedObjectInfo[],
   activeId: UniqueIdentifier,
   overId: UniqueIdentifier,
   dragOffset: number,
@@ -59,14 +59,15 @@ export function getProjection(
 
   const overItemIndex = items.findIndex(({ id }) => id === overId);
   const activeItemIndex = items.findIndex(({ id }) => id === activeId);
-  const activeItem = items[activeItemIndex];
+  const activeItem = items[activeItemIndex] as INestedObjectInfo | undefined;
   const newItems = arrayMove(items, activeItemIndex, overItemIndex);
   const previousItem = newItems[overItemIndex - 1] as
-    | IFlattenedObject
+    | INestedObjectInfo
     | undefined;
-  const nextItem = newItems[overItemIndex + 1] as IFlattenedObject | undefined;
+  const nextItem = newItems[overItemIndex + 1] as INestedObjectInfo | undefined;
   const dragDepth = getDragDepth(dragOffset, indentationWidth);
-  const projectedDepth = activeItem.depth + dragDepth;
+  // console.log(items, activeItemIndex, activeId, activeItem);
+  const projectedDepth = (activeItem?.depth ?? 0) + dragDepth;
   const maxDepth = getMaxDepth(previousItem);
   const minDepth = getMinDepth(nextItem);
   let depth = projectedDepth;
@@ -87,7 +88,9 @@ export function findItem(
   return items.find(({ id }) => id === itemId);
 }
 
-export function buildTree(flattenedItems: IFlattenedObject[]): IMenuItems {
+export function buildTree(
+  flattenedItems: INestedObjectInfo<IMenuItem>[],
+): IMenuItems {
   const root: IMenuItem = { children: [], id: 'root' };
   const nodes: Record<string, IMenuItem> = { [root.id]: root };
   const items = flattenedItems.map((item) => ({ ...item, children: [] }));
