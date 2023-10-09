@@ -202,7 +202,7 @@ export const MenuItem = forwardRef<HTMLDivElement, IMenuItemProps>(
             <Action
               className={`
                 ${classes.collapse}
-                ${collapsed && classes.collapsed}
+                 ${collapsed && classes.collapsed}
               `}
               onClick={onCollapse}
             >
