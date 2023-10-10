@@ -1,9 +1,6 @@
 'use client';
 
-import type {
-  FileWithPath,
-  DropzoneProps as IMantineDropzoneProps,
-} from '@mantine/dropzone';
+import type { DropzoneProps as IMantineDropzoneProps } from '@mantine/dropzone';
 import type { ReactElement } from 'react';
 
 import { ActionIcon, Tooltip } from '@mantine/core';
@@ -14,7 +11,13 @@ import { Eye, Plus } from '@phosphor-icons/react';
 export interface IDropzoneProps
   extends Omit<IMantineDropzoneProps, 'children'> {
   children?: ReactElement;
-  files?: FileWithPath[];
+  files?: {
+    lastModified: number;
+    name: string;
+    path: string;
+    size: number;
+    type: string;
+  }[];
 }
 
 const useStyles = createStyles((theme) => ({
@@ -35,7 +38,7 @@ const useStyles = createStyles((theme) => ({
     height: '70px',
     margin: '10px',
     padding: '10px',
-    width: '75px',
+    width: '170px',
   },
   cardFileText: {
     '&:first-of-type': {
@@ -111,8 +114,8 @@ export function Dropzone(props: IDropzoneProps): ReactElement {
           >
             <div className={classes.cardFile}>
               <span className={classes.cardFileText}>
-                {file.name.length > 7
-                  ? `${file.name.slice(0, 7)}...`
+                {file.name.length > 15
+                  ? `${file.name.slice(0, 15)}...`
                   : file.name}
               </span>
               <span className={classes.cardFileText}>
