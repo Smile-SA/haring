@@ -38,16 +38,12 @@ export const DropzoneCard: IStory = {
       {
         icon: <User size={20} />,
         label: 'Individual contract',
-        onAction: (): void => {
-          action('Click on first card');
-        },
+        onAction: action('onAction'),
       },
       {
         icon: <Suitcase size={20} />,
         label: '2 Lines text for example',
-        onAction: (): void => {
-          action('Click on second card');
-        },
+        onAction: action('onAction'),
       },
     ],
     motif: undefined,
