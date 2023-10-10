@@ -11,7 +11,6 @@ export const menu: IMenuItem[] = [
   },
   {
     children: [{ id: '2', label: 'Security' }],
-    collapsed: true,
     id: '3',
     label: 'Security',
     leftIcon: <Chat />,

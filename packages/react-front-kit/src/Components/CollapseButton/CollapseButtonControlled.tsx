@@ -1,12 +1,12 @@
 'use client';
 
 import type { ICollapseButtonProps } from './CollapseButton';
-import type { MouseEvent, ReactElement } from 'react';
+import type { ForwardedRef, MouseEvent, ReactElement } from 'react';
 
 import { ActionIcon, Button, Collapse, createStyles } from '@mantine/core';
 import { CaretDown, CaretRight } from '@phosphor-icons/react';
 import { Handle } from '@smile/react-front-kit-dnd/src/3-custom/Components/SortableSidebarMenu/MenuItem/Handle';
-import React from 'react';
+import { forwardRef } from 'react';
 
 const useStyles = createStyles((theme) => ({
   button: {
@@ -63,122 +63,128 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export interface ICollapseButtonControlledProps<T extends number | string>
-  extends ICollapseButtonProps<T> {
+export interface ICollapseButtonControlledProps extends ICollapseButtonProps {
+  /** Only in the Controlled version, use this prop to provide the opened/collapsed state */
+  collapsed?: boolean;
+  /** Forcefully enable/disable the collapse content */
+  isCollapsible?: boolean;
   /** Only in the Controlled version, use this prop to provide the setter function for the opened/collapsed state */
   onCollapseChange?: (isOpened: boolean) => void;
-  /** Only in the Controlled version, use this prop to provide the opened/collapsed state */
-  opened: boolean;
 }
 
-export function CollapseButtonControlled<T extends number | string>(
-  props: ICollapseButtonControlledProps<T>,
-): ReactElement {
-  const {
-    children,
-    fullWidth = true,
-    handleProps,
-    id,
-    isOpenOnSelect = false,
-    label,
-    leftIcon,
-    level = 0,
-    line,
-    onCollapseChange,
-    onSelect,
-    opened = false,
-    radius = 0,
-    size = 'md',
-    selected,
-    ...buttonProps
-  } = props;
-  const { classes } = useStyles();
+export const CollapseButtonControlled = forwardRef(
+  function CollapseButtonControlled(
+    props: ICollapseButtonControlledProps,
+    ref: ForwardedRef<HTMLDivElement>,
+  ): ReactElement {
+    const {
+      children,
+      fullWidth = true,
+      handleProps,
+      id,
+      isOpenOnSelect = false,
+      label,
+      leftIcon,
+      level = 0,
+      line,
+      onCollapseChange,
+      onSelect,
+      collapsed = true,
+      isCollapsible = true,
+      radius = 0,
+      size = 'md',
+      selected,
+      ...buttonProps
+    } = props;
+    const { classes } = useStyles();
 
-  function handleClick(event: MouseEvent<HTMLButtonElement>): void {
-    event.stopPropagation();
-    if (children) {
-      onCollapseChange?.(!opened);
+    function handleClick(event: MouseEvent<HTMLButtonElement>): void {
+      event.stopPropagation();
+      if (children) {
+        onCollapseChange?.(!collapsed);
+      }
     }
-  }
 
-  function handleSelect(): void {
-    if (children && isOpenOnSelect) {
-      onCollapseChange?.(!opened);
+    function handleSelect(): void {
+      if (children && isOpenOnSelect) {
+        onCollapseChange?.(!collapsed);
+      }
+      onSelect?.(id);
     }
-    onSelect?.(id);
-  }
 
-  const rootClasses = [];
-  const labelClasses = [classes.label];
-  if (!selected) {
-    rootClasses.push(classes.root);
-  }
-  if (level === 1) {
-    rootClasses.push(classes.rootLevel1);
-    labelClasses.push(classes.labelLevel1);
-  } else if (level > 1) {
-    rootClasses.push(classes.rootDeepLevel);
-    labelClasses.push(classes.labelDeepLevel);
-  }
+    const rootClasses = [];
+    const labelClasses = [classes.label];
+    if (!selected) {
+      rootClasses.push(classes.root);
+    }
+    if (level === 1) {
+      rootClasses.push(classes.rootLevel1);
+      labelClasses.push(classes.labelLevel1);
+    } else if (level > 1) {
+      rootClasses.push(classes.rootDeepLevel);
+      labelClasses.push(classes.labelDeepLevel);
+    }
 
-  return (
-    <>
-      <Button
-        aria-expanded={opened ? 'true' : 'false'}
-        classNames={{
-          label: labelClasses.join(' '),
-          rightIcon: classes.rightIcon,
-          root: rootClasses.join(' '),
-        }}
-        component="div"
-        data-selected={selected}
-        data-testid="root"
-        fullWidth={fullWidth}
-        leftIcon={
-          Boolean(leftIcon) && (
-            <ActionIcon
-              className={selected ? classes.iconSelected : ''}
-              color="primary"
-              component="div"
-              radius="sm"
-              variant="light"
-            >
-              {leftIcon}
-            </ActionIcon>
-          )
-        }
-        onClick={handleSelect}
-        radius={radius}
-        rightIcon={
-          Boolean(children) && (
-            <ActionIcon
-              data-testid="toggle"
-              onClick={handleClick}
-              radius="sm"
-              variant="transparent"
-            >
-              {opened ? <CaretDown /> : <CaretRight />}
-            </ActionIcon>
-          )
-        }
-        size={size}
-        variant={selected ? 'light' : 'white'}
-        {...buttonProps}
-      >
-        {Boolean(handleProps) && <Handle {...handleProps} />}
-        <button className={classes.button} data-testid="select" type="button">
-          {label}
-        </button>
-      </Button>
-      {Boolean(children) && (
-        <Collapse
-          className={line ? classes.line : ''}
-          data-testid="content"
-          in={opened}
+    return (
+      <div ref={ref}>
+        <Button
+          aria-expanded={collapsed ? 'false' : 'true'}
+          classNames={{
+            label: labelClasses.join(' '),
+            rightIcon: classes.rightIcon,
+            root: rootClasses.join(' '),
+          }}
+          component="div"
+          data-selected={selected}
+          data-testid="root"
+          fullWidth={fullWidth}
+          leftIcon={
+            Boolean(leftIcon) && (
+              <ActionIcon
+                className={selected ? classes.iconSelected : ''}
+                color="primary"
+                component="div"
+                radius="sm"
+                variant="light"
+              >
+                {leftIcon}
+              </ActionIcon>
+            )
+          }
+          onClick={handleSelect}
+          radius={radius}
+          rightIcon={
+            Boolean(children && isCollapsible) && (
+              <ActionIcon
+                data-testid="toggle"
+                onClick={handleClick}
+                radius="sm"
+                variant="transparent"
+              >
+                {collapsed ? <CaretRight /> : <CaretDown />}
+              </ActionIcon>
+            )
+          }
+          size={size}
+          variant={selected ? 'light' : 'white'}
+          {...buttonProps}
         >
-          {children}
-        </Collapse>
-      )}
-    </>
-  );
-}
+          {/* TODO: temp, have prop to add some arbitrary component, or specific Handle toggle, or no handle but a long press/other method*/}
+          {Boolean(handleProps) && <Handle {...handleProps} />}
+          <button className={classes.button} data-testid="select" type="button">
+            {label}
+          </button>
+        </Button>
+        {Boolean(children && isCollapsible) && (
+          <Collapse
+            className={line ? classes.line : ''}
+            data-testid="content"
+            in={!collapsed}
+          >
+            {children}
+          </Collapse>
+        )}
+      </div>
+    );
+  },
+);

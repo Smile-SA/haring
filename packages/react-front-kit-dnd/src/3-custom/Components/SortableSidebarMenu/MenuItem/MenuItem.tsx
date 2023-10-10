@@ -1,13 +1,8 @@
 import type { HTMLAttributes } from 'react';
-import type React from 'react';
 
 import { createStyles, getStylesRef } from '@mantine/core';
 import { CollapseButtonControlled } from '@smile/react-front-kit';
 import { forwardRef } from 'react';
-
-import { Action } from './Action';
-import { Handle } from './Handle';
-import { Remove } from './Remove';
 
 const useStyles = createStyles(() => ({
   clone: {
@@ -215,15 +210,15 @@ export const MenuItem = forwardRef<HTMLDivElement, IMenuItemProps>(
           {/* ) : null}*/}
           <CollapseButtonControlled
             handleProps={handleProps}
+            isOpenOnSelect
             label={label}
+            level={depth}
+            line
+            opened
             // onCollapseChange={(isOpened) =>
             //   onCollapseChange(props.id, isOpened)
             // }
             // onSelect={onSelectChange}
-            isOpenOnSelect
-            level={0}
-            line
-            opened
           >
             {children}
           </CollapseButtonControlled>

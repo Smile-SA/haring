@@ -33,5 +33,4 @@ export const Controlled: IStory = {
       include: ['opened', 'onCollapseChange'],
     },
   },
-  render: Cmp,
 };

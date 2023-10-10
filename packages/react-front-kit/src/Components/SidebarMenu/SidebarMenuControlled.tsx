@@ -2,6 +2,7 @@
 
 import type { ISidebarMenuProps } from './SidebarMenu';
 import type { IMenuItem } from './types';
+import type { IUniqueIdentifier } from '../../helpers';
 import type { ReactElement } from 'react';
 
 import { Paper } from '@mantine/core';
@@ -10,11 +11,11 @@ import { flatten } from '../../helpers';
 import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonControlled';
 
 function getRecursiveMenu(
-  onCollapseChange: (id: string, isOpened: boolean) => void,
-  onSelectChange: (id?: string) => void,
-  openedMenuIds: string[],
+  onCollapseChange: (id: IUniqueIdentifier, isOpened: boolean) => void,
+  onSelectChange: (id?: IUniqueIdentifier) => void,
+  openedMenuIds: IUniqueIdentifier[],
   menu?: IMenuItem[],
-  selectedId?: string,
+  selectedId?: IUniqueIdentifier,
   level = 0,
 ): ReactElement[] | null {
   if (!menu) {
@@ -24,13 +25,12 @@ function getRecursiveMenu(
     <CollapseButtonControlled
       {...props}
       key={props.id}
+      collapsed={openedMenuIds.includes(props.id)}
       isOpenOnSelect
       level={level}
-      // line={level === 0}
-      line
+      line={level === 0}
       onCollapseChange={(isOpened) => onCollapseChange(props.id, isOpened)}
       onSelect={onSelectChange}
-      opened={openedMenuIds.includes(props.id)}
       selected={selectedId === props.id}
     >
       {getRecursiveMenu(
@@ -47,13 +47,13 @@ function getRecursiveMenu(
 
 export interface ISidebarMenuControlledProps extends ISidebarMenuProps {
   /** */
-  onCollapseChange?: (openedMenuIds: string[]) => void;
+  onCollapseChange?: (openedMenuIds: IUniqueIdentifier[]) => void;
   /** */
-  onSelectedChange?: (selectedId?: string) => void;
+  onSelectedChange?: (selectedId?: IUniqueIdentifier) => void;
   /** Controlled state of which menus are currently open, using `id` field of `IMenuItem` */
-  openedMenuIds?: string[];
+  openedMenuIds?: IUniqueIdentifier[];
   /** Controlled state of which `IMenuItem` menu is currently selected */
-  selectedId?: string;
+  selectedId?: IUniqueIdentifier;
 }
 
 /** Props extend the `SidebarMenu` component */
@@ -71,13 +71,16 @@ export function SidebarMenuControlled(
     ...paperProps
   } = props;
 
-  function handleCollapseChange(menuId: string, isOpened: boolean): void {
+  function handleCollapseChange(
+    menuId: IUniqueIdentifier,
+    isOpened: boolean,
+  ): void {
     if (hasOnlyOneOpenMenu && isOpened) {
       /** Flatten and add calculated path property to the entire nested array of menus,
        * keep only the path from the menu being clicked **/
-      const openedMenuPath = flatten<IMenuItem>(menu)
-        .find((menu) => menu.id === menuId)
-        ?.path.map((id) => id.toString());
+      const openedMenuPath = flatten<IMenuItem>(menu).find(
+        (menu) => menu.id === menuId,
+      )?.path;
       onCollapseChange?.(openedMenuPath ?? []);
     } else {
       /** Add or remove id being clicked **/

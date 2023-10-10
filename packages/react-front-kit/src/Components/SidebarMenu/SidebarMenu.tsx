@@ -1,6 +1,7 @@
 'use client';
 
 import type { IMenuItem } from './types';
+import type { IUniqueIdentifier } from '../../helpers';
 import type { PaperProps } from '@mantine/core';
 import type { ElementType, ReactElement } from 'react';
 
@@ -14,7 +15,7 @@ export interface ISidebarMenuProps extends PaperProps {
   /** Allow only one menu to be opened by level */
   hasOnlyOneOpenMenu?: boolean;
   /** Initial open menus using `id` field of `IMenuItem` */
-  initialOpenedMenuIds?: string[];
+  initialOpenedMenuIds?: IUniqueIdentifier[];
   /** Array of nested `IMenuItem` menus to be rendered */
   menu: IMenuItem[];
 }
@@ -28,7 +29,7 @@ export function SidebarMenu(props: ISidebarMenuProps): ReactElement {
     menu,
   } = props;
   const [openedIds, setOpenedIds] = useState(initialOpenedMenuIds);
-  const [selectedId, setSelectedId] = useState<string>();
+  const [selectedId, setSelectedId] = useState<IUniqueIdentifier>();
 
   return (
     <SidebarMenuControlled

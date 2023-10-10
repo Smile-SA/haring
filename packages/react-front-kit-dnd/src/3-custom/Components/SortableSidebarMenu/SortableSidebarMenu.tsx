@@ -9,9 +9,13 @@ import type {
   Modifier,
   UniqueIdentifier,
 } from '@dnd-kit/core';
+import type { ISidebarMenuControlledProps } from '@smile/react-front-kit/src/Components/SidebarMenu/SidebarMenuControlled';
 import type { IMenuItem } from '@smile/react-front-kit/src/Components/SidebarMenu/types';
-import type { INestedObjectInfo } from '@smile/react-front-kit/src/helpers';
-import type { ReactElement } from 'react';
+import type {
+  INestedObjectInfo,
+  IUniqueIdentifier,
+} from '@smile/react-front-kit/src/helpers';
+import type { ReactElement, ReactNode } from 'react';
 
 import {
   DndContext,
@@ -40,13 +44,7 @@ import { createPortal } from 'react-dom';
 
 import { SortableMenuItem } from './MenuItem/SortableMenuItem';
 import { sortableTreeKeyboardCoordinates } from './keyboardCoordinates';
-import {
-  buildTree,
-  getChildCount,
-  getProjection,
-  removeItem,
-  setProperty,
-} from './utilities';
+import { buildTree, getChildCount, getProjection } from './utilities';
 
 const measuring = {
   droppable: {
@@ -80,27 +78,29 @@ const dropAnimationConfig: DropAnimation = {
 const adjustTranslate: Modifier = ({ transform }) => {
   return {
     ...transform,
-    y: transform.y - 25,
+    // y: transform.y - 25, // TODO: adjust?
+    y: transform.y,
   };
 };
 
-interface ISortableSidebarMenuProps {
-  collapsible?: boolean;
+interface ISortableSidebarMenuProps extends ISidebarMenuControlledProps {
   indentationWidth?: number;
   indicator?: boolean;
   menu: IMenuItem[];
-  removable?: boolean;
 }
 
 export function SortableSidebarMenu(
   props: ISortableSidebarMenuProps,
 ): ReactElement {
   const {
-    collapsible,
     menu,
+    hasOnlyOneOpenMenu = false,
     indicator = false,
     indentationWidth = 50,
-    removable,
+    onCollapseChange,
+    onSelectedChange,
+    openedMenuIds = [],
+    selectedId,
   } = props;
   const [items, setItems] = useState(() => menu);
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null);
@@ -110,6 +110,50 @@ export function SortableSidebarMenu(
     overId: UniqueIdentifier;
     parentId: UniqueIdentifier | null;
   } | null>(null);
+
+  const flattenedItems = useMemo(() => {
+    const flattenedTree = flatten<IMenuItem>(items);
+    const collapsedItems = flattenedTree.reduce<string[]>(
+      (acc, { children, id }) =>
+        openedMenuIds.includes(id) && children?.length
+          ? [...acc, id.toString()]
+          : acc,
+      [],
+    );
+    return removeChildrenOf(
+      flattenedTree,
+      activeId ? [activeId, ...collapsedItems] : collapsedItems,
+    );
+  }, [activeId, items, openedMenuIds]);
+  const sortedIds = useMemo(() => items.map(({ id }) => id), [items]);
+  const activeItem: INestedObjectInfo<IMenuItem> | null | undefined = activeId
+    ? flattenedItems.find(({ id }) => id === activeId)
+    : null;
+  const projected =
+    activeId && overId
+      ? getProjection(
+          flattenedItems,
+          activeId,
+          overId,
+          offsetLeft,
+          indentationWidth,
+        )
+      : null;
+
+  const sensorContext: ISensorContext = useRef({
+    items: flattenedItems,
+    offset: offsetLeft,
+  });
+  // eslint-disable-next-line react/hook-use-state
+  const [coordinateGetter] = useState(() =>
+    sortableTreeKeyboardCoordinates(sensorContext, indicator, indentationWidth),
+  );
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter,
+    }),
+  );
 
   function handleDragStart({ active: { id: activeId } }: DragStartEvent): void {
     setActiveId(activeId);
@@ -147,11 +191,10 @@ export function SortableSidebarMenu(
   function handleDragEnd({ active, over }: DragEndEvent): void {
     resetState();
 
+    console.log(items);
     if (projected && over) {
       const { depth, parentId } = projected;
-      const clonedItems: INestedObjectInfo<IMenuItem>[] = JSON.parse(
-        JSON.stringify(flatten(items)),
-      ) as INestedObjectInfo<IMenuItem>[];
+      const clonedItems = [...flatten(items)];
       const overIndex = clonedItems.findIndex(({ id }) => id === over.id);
       const activeIndex = clonedItems.findIndex(({ id }) => id === active.id);
       const activeTreeItem = clonedItems[activeIndex];
@@ -160,24 +203,13 @@ export function SortableSidebarMenu(
 
       const sortedItems = arrayMove(clonedItems, activeIndex, overIndex);
       const newItems = buildTree(sortedItems);
+      console.log(newItems);
       setItems(newItems);
     }
   }
 
   function handleDragCancel(): void {
     resetState();
-  }
-
-  function handleRemove(id: UniqueIdentifier): void {
-    setItems((items) => removeItem(items, id));
-  }
-
-  function handleCollapse(id: UniqueIdentifier): void {
-    setItems((items) =>
-      setProperty(items, id, 'collapsed', (value) => {
-        return !value;
-      }),
-    );
   }
 
   function getMovementAnnouncement(
@@ -202,9 +234,7 @@ export function SortableSidebarMenu(
       });
     }
 
-    const clonedItems: INestedObjectInfo<IMenuItem>[] = JSON.parse(
-      JSON.stringify(flatten(items)),
-    ) as INestedObjectInfo<IMenuItem>[];
+    const clonedItems = [...flatten(items)];
     const overIndex = clonedItems.findIndex(({ id }) => id === overId);
     const activeIndex = clonedItems.findIndex(({ id }) => id === activeId);
     const sortedItems = arrayMove(clonedItems, activeIndex, overIndex);
@@ -238,56 +268,6 @@ export function SortableSidebarMenu(
     return announcement;
   }
 
-  const flattenedItems = useMemo(() => {
-    const flattenedTree = flatten(items);
-    const collapsedItems = flattenedTree.reduce<string[]>(
-      (acc, { children, collapsed, id }) =>
-        collapsed && children?.length ? [...acc, id.toString()] : acc,
-      [],
-    );
-
-    return removeChildrenOf(
-      flattenedTree,
-      activeId ? [activeId, ...collapsedItems] : collapsedItems,
-    );
-  }, [activeId, items]);
-  const projected =
-    activeId && overId
-      ? getProjection(
-          flattenedItems,
-          activeId,
-          overId,
-          offsetLeft,
-          indentationWidth,
-        )
-      : null;
-  const sensorContext: ISensorContext = useRef({
-    items: flattenedItems,
-    offset: offsetLeft,
-  });
-  // eslint-disable-next-line react/hook-use-state
-  const [coordinateGetter] = useState(() =>
-    sortableTreeKeyboardCoordinates(sensorContext, indicator, indentationWidth),
-  );
-  const sensors = useSensors(
-    useSensor(PointerSensor),
-    useSensor(KeyboardSensor, {
-      coordinateGetter,
-    }),
-  );
-
-  const sortedIds = useMemo(() => items.map(({ id }) => id), [items]);
-  const activeItem = activeId
-    ? flattenedItems.find(({ id }) => id === activeId)
-    : null;
-
-  useEffect(() => {
-    sensorContext.current = {
-      items: flattenedItems,
-      offset: offsetLeft,
-    };
-  }, [flattenedItems, offsetLeft]);
-
   const announcements: Announcements = {
     onDragCancel({ active }) {
       return `Moving was cancelled. ${active.id} was dropped in its original position.`;
@@ -306,44 +286,115 @@ export function SortableSidebarMenu(
     },
   };
 
+  function handleCollapseChange(
+    menuId: IUniqueIdentifier,
+    isOpened: boolean,
+  ): void {
+    if (hasOnlyOneOpenMenu && isOpened) {
+      /** Flatten and add calculated path property to the entire nested array of menus,
+       * keep only the path from the menu being clicked **/
+      const openedMenuPath = flatten<IMenuItem>(menu).find(
+        (menu) => menu.id === menuId,
+      )?.path;
+      onCollapseChange?.(openedMenuPath ?? []);
+    } else {
+      /** Add or remove id being clicked **/
+      onCollapseChange?.(
+        openedMenuIds.includes(menuId)
+          ? openedMenuIds.filter((id) => id !== menuId)
+          : openedMenuIds.concat(menuId),
+      );
+    }
+  }
+
   function getRecursiveMenu(
+    onCollapseChange: (id: IUniqueIdentifier, isOpened: boolean) => void,
+    onSelectChange: (id?: IUniqueIdentifier) => void,
+    openedMenuIds: IUniqueIdentifier[],
     menu?: IMenuItem[],
+    selectedId?: IUniqueIdentifier,
     level = 0,
   ): ReactElement[] | null {
     if (!menu) {
       return null;
     }
     return addInfo(menu, level).map(
-      ({ id, collapsed, depth, label, children, ...props }) => {
+      ({
+        id,
+        depth,
+        label,
+        children,
+        parentId,
+        index,
+        path,
+        ...buttonProps
+      }) => {
         const localSortedIds = menu.map((item) => item.id);
         return (
           <SortableMenuItem
             key={id}
-            collapsed={Boolean(collapsed && children?.length)}
-            depth={id === activeId && projected ? projected.depth : depth}
+            collapsed={!openedMenuIds.includes(id) || id === activeId}
             id={id}
-            indentationWidth={indentationWidth}
-            indicator={indicator}
-            label={label?.toString() ?? ''}
-            onCollapse={
-              collapsible && children?.length
-                ? () => handleCollapse(id)
-                : undefined
-            }
-            onRemove={removable ? () => handleRemove(id) : undefined}
-            {...props}
+            isCollapsible={Boolean(children?.length && children.length > 0)}
+            isOpenOnSelect
+            label={label ?? ''}
+            level={id === activeId && projected ? projected.depth : depth}
+            line={depth === 0}
+            onCollapseChange={(isOpened) => onCollapseChange(id, isOpened)}
+            onSelect={onSelectChange}
+            selected={selectedId === id}
+            {...buttonProps}
+            // indentationWidth={indentationWidth}
+            // indicator={indicator}
           >
             <SortableContext
               items={localSortedIds}
               strategy={verticalListSortingStrategy}
             >
-              {getRecursiveMenu(children, level + 1)}
+              {getRecursiveMenu(
+                onCollapseChange,
+                onSelectChange,
+                openedMenuIds,
+                children,
+                selectedId,
+                level + 1,
+              )}
             </SortableContext>
           </SortableMenuItem>
         );
       },
     );
   }
+
+  function getDragMenu(item: INestedObjectInfo<IMenuItem>): ReactNode {
+    const {
+      id,
+      label,
+      depth,
+      children,
+      parentId,
+      index,
+      path,
+      ...buttonProps
+    } = item;
+    return (
+      <SortableMenuItem
+        childCount={getChildCount(items, id) + 1}
+        clone
+        id={id}
+        label={label?.toString() ?? ''}
+        level={depth}
+        {...buttonProps}
+      />
+    );
+  }
+
+  useEffect(() => {
+    sensorContext.current = {
+      items: flattenedItems,
+      offset: offsetLeft,
+    };
+  }, [flattenedItems, offsetLeft]);
 
   return (
     <DndContext
@@ -358,24 +409,14 @@ export function SortableSidebarMenu(
       sensors={sensors}
     >
       <SortableContext items={sortedIds} strategy={verticalListSortingStrategy}>
-        {/*  {flattenedItems.map(({ id, label, children, collapsed, depth }) => (*/}
-        {/*    <SortableMenuItem*/}
-        {/*      key={id}*/}
-        {/*      collapsed={Boolean(collapsed && children?.length)}*/}
-        {/*      depth={id === activeId && projected ? projected.depth : depth}*/}
-        {/*      id={id}*/}
-        {/*      indentationWidth={indentationWidth}*/}
-        {/*      indicator={indicator}*/}
-        {/*      label={label?.toString() ?? ''}*/}
-        {/*      onCollapse={*/}
-        {/*        collapsible && children?.length*/}
-        {/*          ? () => handleCollapse(id)*/}
-        {/*          : undefined*/}
-        {/*      }*/}
-        {/*      onRemove={removable ? () => handleRemove(id) : undefined}*/}
-        {/*    />*/}
-        {/*  ))}*/}
-        {getRecursiveMenu(items)}
+        {getRecursiveMenu(
+          (id, isOpened) =>
+            onCollapseChange && handleCollapseChange(id, isOpened),
+          (id) => onSelectedChange && onSelectedChange(id),
+          openedMenuIds,
+          items,
+          selectedId,
+        )}
         {createPortal(
           <DragOverlay
             dropAnimation={dropAnimationConfig}
@@ -383,16 +424,8 @@ export function SortableSidebarMenu(
           >
             {activeId !== null &&
               activeItem !== null &&
-              activeItem !== undefined && (
-                <SortableMenuItem
-                  childCount={getChildCount(items, activeId) + 1}
-                  clone
-                  depth={activeItem.depth}
-                  id={activeId}
-                  indentationWidth={indentationWidth}
-                  label={activeItem.label?.toString() ?? ''}
-                />
-              )}
+              activeItem !== undefined &&
+              getDragMenu(activeItem)}
           </DragOverlay>,
           document.body,
         )}
