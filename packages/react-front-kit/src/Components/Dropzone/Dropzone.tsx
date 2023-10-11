@@ -3,7 +3,7 @@
 import type { DropzoneProps as IMantineDropzoneProps } from '@mantine/dropzone';
 import type { ReactElement } from 'react';
 
-import { ActionIcon, Tooltip } from '@mantine/core';
+import { ActionIcon } from '@mantine/core';
 import { Dropzone as MantineDropzone } from '@mantine/dropzone';
 import { createStyles } from '@mantine/styles';
 import { Eye, Plus } from '@phosphor-icons/react';
@@ -103,28 +103,25 @@ export function Dropzone(props: IDropzoneProps): ReactElement {
       </p>
       <div className={classes.cardsFile}>
         {files.map((file) => (
-          <Tooltip
+          <div
             key={`fileCard-${
               Math.floor(Math.random() * 100) +
               file.size +
               Math.floor(Math.random() * 100)
             }`}
-            label={file.name}
-            withArrow
+            className={classes.cardFile}
           >
-            <div className={classes.cardFile}>
-              <span className={classes.cardFileText}>
-                {file.name.length > 15
-                  ? `${file.name.slice(0, 15)}...`
-                  : file.name}
-              </span>
-              <span className={classes.cardFileText}>
-                {file.size < 1000000
-                  ? `${file.size / 1000} KB`
-                  : file.size > 1000000 && `${file.size / 1000000} MB`}
-              </span>
-            </div>
-          </Tooltip>
+            <span className={classes.cardFileText}>
+              {file.name.length > 15
+                ? `${file.name.slice(0, 15)}...`
+                : file.name}
+            </span>
+            <span className={classes.cardFileText}>
+              {file.size < 1000000
+                ? `${file.size / 1000} KB`
+                : file.size > 1000000 && `${file.size / 1000000} MB`}
+            </span>
+          </div>
         ))}
       </div>
       {children}

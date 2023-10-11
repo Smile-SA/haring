@@ -6,8 +6,38 @@ describe('Dropzone', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
       <Dropzone
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions, no-console
-        onDrop={(file) => console.log(`accept ${file}`)}
+        files={[
+          {
+            lastModified: 1682342930770,
+            name: 'CERFA.postman_collection.json',
+            path: 'CERFA.postman_collection.json',
+            size: 1579,
+            type: 'application/json',
+          },
+          {
+            lastModified: 1682342930770,
+            name: 'CERFA.postman_collection.json',
+            path: 'CERFA.postman_collection.json',
+            size: 1579,
+            type: 'application/json',
+          },
+          {
+            lastModified: 1682342930770,
+            name: 'CERFA.postman_collection.json',
+            path: 'CERFA.postman_collection.json',
+            size: 1579,
+            type: 'application/json',
+          },
+          {
+            lastModified: 1682342930770,
+            name: 'CERFA.postman_collection.json',
+            path: 'CERFA.postman_collection.json',
+            size: 1579,
+            type: 'application/json',
+          },
+        ]}
+        // eslint-disable-next-line no-console
+        onDrop={(file) => console.log(file)}
       />,
     );
     expect(container).toMatchSnapshot();
