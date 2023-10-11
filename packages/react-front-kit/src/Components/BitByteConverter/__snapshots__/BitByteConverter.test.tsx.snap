@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BitByteConverter matches snapshot 1`] = `
+<div>
+  <div>
+    12 MB
+  </div>
+</div>
+`;
