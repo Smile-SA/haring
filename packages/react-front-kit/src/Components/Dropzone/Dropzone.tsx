@@ -3,21 +3,26 @@
 import type { DropzoneProps as IMantineDropzoneProps } from '@mantine/dropzone';
 import type { ReactElement } from 'react';
 
-import { ActionIcon } from '@mantine/core';
+import { ActionIcon, Tooltip } from '@mantine/core';
 import { Dropzone as MantineDropzone } from '@mantine/dropzone';
 import { createStyles } from '@mantine/styles';
-import { Eye, Plus } from '@phosphor-icons/react';
+import { Eye, Plus, X } from '@phosphor-icons/react';
+
+export interface IFile {
+  lastModified: number;
+  name: string;
+  path: string;
+  size: number;
+  type: string;
+}
 
 export interface IDropzoneProps
   extends Omit<IMantineDropzoneProps, 'children'> {
+  browseLabel?: string;
   children?: ReactElement;
-  files?: {
-    lastModified: number;
-    name: string;
-    path: string;
-    size: number;
-    type: string;
-  }[];
+  dragLabel?: string;
+  files?: IFile[];
+  onRemoveFile?: (item: IFile) => void;
 }
 
 const useStyles = createStyles((theme) => ({
@@ -29,16 +34,21 @@ const useStyles = createStyles((theme) => ({
     margin: 'auto',
   },
   cardFile: {
-    background: theme.colors.gray[2],
-    border: `2px solid ${theme.colors.gray[2]}`,
+    background:
+      theme.colorScheme === 'dark' ? theme.black : theme.colors.gray[2],
     borderRadius: '10px',
-    color: 'black',
     display: 'flex',
     flexDirection: 'column',
     height: '70px',
     margin: '10px',
     padding: '10px',
-    width: '170px',
+    position: 'relative',
+    width: '80px',
+  },
+  cardFileButtonClose: {
+    position: 'absolute',
+    right: '-7px',
+    top: '-7px',
   },
   cardFileText: {
     '&:first-of-type': {
@@ -67,6 +77,7 @@ const useStyles = createStyles((theme) => ({
     p: {
       margin: '10px',
     },
+    pointerEvents: 'auto',
     textAlign: 'center',
   },
   dropzoneRoot: {
@@ -78,7 +89,16 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function Dropzone(props: IDropzoneProps): ReactElement {
-  const { children, files = [], ...MantineDropzoneProps } = props;
+  const {
+    children,
+    dragLabel = 'Drag and drop your documents here',
+    browseLabel = 'Browse your device',
+    files = [],
+    onRemoveFile = () => {
+      return null;
+    },
+    ...MantineDropzoneProps
+  } = props;
   const { classes } = useStyles();
   return (
     <MantineDropzone
@@ -92,36 +112,58 @@ export function Dropzone(props: IDropzoneProps): ReactElement {
         className={classes.buttonPlus}
         radius="xl"
         size="xl"
+        title="add button"
         variant="filled"
       >
         <Plus size={20} weight="bold" />
       </ActionIcon>
-      <p>Drag and drop your documents here</p>
+      <p>{dragLabel}</p>
       <p className={classes.dropzoneBrowse}>
         <Eye className={classes.eye} size={16} weight="bold" />
-        Browse your device
+        {browseLabel}
       </p>
       <div className={classes.cardsFile}>
         {files.map((file) => (
-          <div
+          <Tooltip
             key={`fileCard-${
               Math.floor(Math.random() * 100) +
               file.size +
               Math.floor(Math.random() * 100)
             }`}
-            className={classes.cardFile}
+            label={file.name}
+            position="bottom"
+            radius={6}
+            withArrow
           >
-            <span className={classes.cardFileText}>
-              {file.name.length > 15
-                ? `${file.name.slice(0, 15)}...`
-                : file.name}
-            </span>
-            <span className={classes.cardFileText}>
-              {file.size < 1000000
-                ? `${file.size / 1000} KB`
-                : file.size > 1000000 && `${file.size / 1000000} MB`}
-            </span>
-          </div>
+            <div
+              aria-hidden="true"
+              className={classes.cardFile}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+              }}
+            >
+              <ActionIcon
+                className={classes.cardFileButtonClose}
+                onClick={() => onRemoveFile(file)}
+                radius="xl"
+                size="sm"
+                variant="filled"
+              >
+                <X size={8} weight="bold" />
+              </ActionIcon>
+              <span className={classes.cardFileText}>
+                {file.name.length > 15
+                  ? `${file.name.slice(0, 6)}...`
+                  : file.name}
+              </span>
+              <span className={classes.cardFileText}>
+                {file.size < 1000000
+                  ? `${file.size / 1000} KB`
+                  : file.size > 1000000 && `${file.size / 1000000} MB`}
+              </span>
+            </div>
+          </Tooltip>
         ))}
       </div>
       {children}

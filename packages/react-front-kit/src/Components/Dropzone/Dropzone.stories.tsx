@@ -1,9 +1,18 @@
-import type { FileWithPath } from '@mantine/dropzone';
 import type { Meta, StoryObj } from '@storybook/react';
+
+import { action } from '@storybook/addon-actions';
 
 import { Dropzone as Cmp } from './Dropzone';
 
 const meta = {
+  argTypes: {
+    browseLabel: {
+      control: 'text',
+    },
+    dragLabel: {
+      control: 'text',
+    },
+  },
   component: Cmp,
   tags: ['autodocs'],
   title: '3-custom/Components/Dropzone',
@@ -14,7 +23,9 @@ type IStory = StoryObj<typeof meta>;
 
 export const Dropzone: IStory = {
   args: {
+    browseLabel: undefined,
     children: undefined,
+    dragLabel: undefined,
     files: [
       {
         lastModified: 1682342930770,
@@ -45,9 +56,7 @@ export const Dropzone: IStory = {
         type: 'application/json',
       },
     ],
-    onDrop: (files: FileWithPath[]): void => {
-      // eslint-disable-next-line no-console
-      console.log(files);
-    },
+    onDrop: action('onDrop'),
+    onRemoveFile: action('onRemoveFile'),
   },
 };
