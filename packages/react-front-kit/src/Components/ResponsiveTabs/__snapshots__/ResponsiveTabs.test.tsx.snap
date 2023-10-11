@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResponsiveTabs matches snapshot 1`] = `
+<div>
+  <div
+    class="mantine-Tabs-root mantine-ro6hk9"
+    style="overflow: hidden;"
+  >
+    <div
+      aria-orientation="horizontal"
+      class="mantine-Tabs-tabsList mantine-i7gwaj"
+      role="tablist"
+    >
+      <button
+        aria-controls="mantine-xj4wuvfjs-dropdown"
+        aria-expanded="false"
+        aria-haspopup="menu"
+        class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-3zan65"
+        id="mantine-xj4wuvfjs-target"
+        type="button"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 256 256"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      aria-labelledby="mantine-ocee5lhcn-tab-1"
+      class="mantine-Tabs-panel mantine-18ozoug"
+      id="mantine-ocee5lhcn-panel-1"
+      role="tabpanel"
+    >
+      <div
+        style="padding-top: 20px;"
+      >
+        First Content
+      </div>
+    </div>
+    <div
+      aria-labelledby="mantine-ocee5lhcn-tab-2"
+      class="mantine-Tabs-panel mantine-18ozoug"
+      id="mantine-ocee5lhcn-panel-2"
+      role="tabpanel"
+    >
+      <div
+        style="padding-top: 20px;"
+      >
+        Second Content
+      </div>
+    </div>
+    <div
+      aria-labelledby="mantine-ocee5lhcn-tab-3"
+      class="mantine-Tabs-panel mantine-18ozoug"
+      id="mantine-ocee5lhcn-panel-3"
+      role="tabpanel"
+    >
+      <div
+        style="padding-top: 20px;"
+      >
+        Third Content
+      </div>
+    </div>
+    <div
+      aria-labelledby="mantine-ocee5lhcn-tab-4"
+      class="mantine-Tabs-panel mantine-18ozoug"
+      id="mantine-ocee5lhcn-panel-4"
+      role="tabpanel"
+    >
+      <div
+        style="padding-top: 20px;"
+      >
+        Fourth Content
+      </div>
+    </div>
+    <div
+      aria-labelledby="mantine-ocee5lhcn-tab-5"
+      class="mantine-Tabs-panel mantine-18ozoug"
+      id="mantine-ocee5lhcn-panel-5"
+      role="tabpanel"
+    >
+      <div
+        style="padding-top: 20px;"
+      >
+        Overflow 1 Content
+      </div>
+    </div>
+    <div
+      aria-labelledby="mantine-ocee5lhcn-tab-6"
+      class="mantine-Tabs-panel mantine-18ozoug"
+      id="mantine-ocee5lhcn-panel-6"
+      role="tabpanel"
+    >
+      <div
+        style="padding-top: 20px;"
+      >
+        Overflow 2 Content
+      </div>
+    </div>
+  </div>
+</div>
+`;

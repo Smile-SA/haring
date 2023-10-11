@@ -8,13 +8,21 @@ import { CaretDown, CaretUp } from '@phosphor-icons/react';
 import { useId, useState } from 'react';
 
 export interface IDropdownButtonProps extends MenuProps {
+  /** Override default menu target with custom component*/
+  buttonComponent?: ReactNode;
   children?: ReactNode;
-  label: string;
+  label?: string;
 }
 
 /** Additional props will be forwarded to the [Mantine Menu component](https://mantine.dev/core/menu) */
 export function DropdownButton(props: IDropdownButtonProps): ReactElement {
-  const { children, label, position = 'bottom-start', ...menuProps } = props;
+  const {
+    buttonComponent,
+    children,
+    label,
+    position = 'bottom-start',
+    ...menuProps
+  } = props;
   const [opened, setOpened] = useState(false);
   const id = useId();
 
@@ -27,12 +35,16 @@ export function DropdownButton(props: IDropdownButtonProps): ReactElement {
       {...menuProps}
     >
       <Menu.Target>
-        <Button
-          data-testid="button"
-          rightIcon={opened ? <CaretUp /> : <CaretDown />}
-        >
-          {label}
-        </Button>
+        {buttonComponent ? (
+          buttonComponent
+        ) : (
+          <Button
+            data-testid="button"
+            rightIcon={opened ? <CaretUp /> : <CaretDown />}
+          >
+            {label}
+          </Button>
+        )}
       </Menu.Target>
       <Menu.Dropdown data-testid="dropdown">{children}</Menu.Dropdown>
     </Menu>
