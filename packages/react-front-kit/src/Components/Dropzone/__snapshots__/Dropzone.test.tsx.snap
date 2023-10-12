@@ -78,14 +78,18 @@ exports[`Dropzone matches snapshot 1`] = `
             </svg>
           </button>
           <span
-            class="mantine-hxke7"
+            class="mantine-1472iol"
           >
-            CERFA....
+            <span
+              class="mantine-1yjvws8"
+            >
+              CERFA.postman_collection.json
+            </span>
           </span>
           <span
-            class="mantine-hxke7"
+            class="mantine-1472iol"
           >
-            1.579 KB
+            1.5 KiB
           </span>
         </div>
         <div
@@ -109,14 +113,18 @@ exports[`Dropzone matches snapshot 1`] = `
             </svg>
           </button>
           <span
-            class="mantine-hxke7"
+            class="mantine-1472iol"
           >
-            CERFA....
+            <span
+              class="mantine-1yjvws8"
+            >
+              CERFA.postman_collection.json
+            </span>
           </span>
           <span
-            class="mantine-hxke7"
+            class="mantine-1472iol"
           >
-            1.579 KB
+            1.5 KiB
           </span>
         </div>
         <div
@@ -140,14 +148,18 @@ exports[`Dropzone matches snapshot 1`] = `
             </svg>
           </button>
           <span
-            class="mantine-hxke7"
+            class="mantine-1472iol"
           >
-            CERFA....
+            <span
+              class="mantine-1yjvws8"
+            >
+              CERFA.postman_collection.json
+            </span>
           </span>
           <span
-            class="mantine-hxke7"
+            class="mantine-1472iol"
           >
-            1.579 KB
+            1.5 KiB
           </span>
         </div>
         <div
@@ -171,14 +183,18 @@ exports[`Dropzone matches snapshot 1`] = `
             </svg>
           </button>
           <span
-            class="mantine-hxke7"
+            class="mantine-1472iol"
           >
-            CERFA....
+            <span
+              class="mantine-1yjvws8"
+            >
+              CERFA.postman_collection.json
+            </span>
           </span>
           <span
-            class="mantine-hxke7"
+            class="mantine-1472iol"
           >
-            1.579 KB
+            1.5 KiB
           </span>
         </div>
       </div>

@@ -47,5 +47,5 @@ export function BitByteConverter(props: IBitByteConverterProps): ReactElement {
     }`;
   }
 
-  return <div>{niceBytes(children)}</div>;
+  return <>{niceBytes(children)}</>;
 }

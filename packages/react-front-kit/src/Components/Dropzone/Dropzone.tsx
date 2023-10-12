@@ -8,6 +8,9 @@ import { Dropzone as MantineDropzone } from '@mantine/dropzone';
 import { createStyles } from '@mantine/styles';
 import { Eye, Plus, X } from '@phosphor-icons/react';
 
+import { BitByteConverter } from '../BitByteConverter/BitByteConverter';
+import { TruncateStringWithEllipsis } from '../TruncateStringWithEllipsis/TruncateStringWithEllipsis';
+
 export interface IFile {
   lastModified: number;
   name: string;
@@ -58,7 +61,7 @@ const useStyles = createStyles((theme) => ({
     fontSize: '12px',
     height: 'fit-content',
     margin: 'auto',
-    width: 'fit-content',
+    width: '100%',
   },
   cardsFile: {
     display: 'flex',
@@ -153,14 +156,12 @@ export function Dropzone(props: IDropzoneProps): ReactElement {
                 <X size={8} weight="bold" />
               </ActionIcon>
               <span className={classes.cardFileText}>
-                {file.name.length > 15
-                  ? `${file.name.slice(0, 6)}...`
-                  : file.name}
+                <TruncateStringWithEllipsis>
+                  {file.name}
+                </TruncateStringWithEllipsis>
               </span>
               <span className={classes.cardFileText}>
-                {file.size < 1000000
-                  ? `${file.size / 1000} KB`
-                  : file.size > 1000000 && `${file.size / 1000000} MB`}
+                <BitByteConverter>{String(file.size)}</BitByteConverter>
               </span>
             </div>
           </Tooltip>
