@@ -24,8 +24,10 @@ Private integration testing packages:
 
 At the root level you can launch following commands:
 
-- `npm run build`: Builds all sub projects
-- `npm run dev`: Launches dev command in all sub projects
+- `npm run build`: Builds all packages projects
+- `npm run build:app`: Builds all apps projects
+- `npm run dev`: Launches dev command in apps projects
+- `npm run start`: Launches start command in apps projects
 - `npm run lint`: Lints everything
 - `npm run lint:root`: Lints everything but the `apps` folder
 - `npm run lint:fix`: Lints and fix everything but the `apps` folder
@@ -89,8 +91,8 @@ To create a changeset:
 2. This will create a changeset file in the `.changeset` folder you can review
 3. Commit the changeset file
 
-## Publishing
+## Release
 
-When a PR containing changesets is merged into `main` it will automatically create a release PR.
+When a PR containing changesets is merged into `*.x` branch it will automatically create a release PR.
 
-Then when that release PR is merged into `main`, it will automatically create a release and publish the packages on `npm`.
+Then when that release PR is merged into the `*.x` branch, it will automatically create a release and publish the packages on `npm`.

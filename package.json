@@ -19,6 +19,7 @@
   "scripts": {
     "prepare": "husky install",
     "build": "turbo run build",
+    "build:app": "turbo run build:app",
     "dev": "turbo run dev",
     "lint": "turbo run lint && npm run lint:root",
     "lint:root": "DEBUG=eslint:cli-engine eslint --max-warnings=0 --ignore-path <(cat .gitignore .eslintignore) . && tsc --noEmit",
