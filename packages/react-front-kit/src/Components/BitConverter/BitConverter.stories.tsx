@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { BitByteConverter as Cmp } from './BitByteConverter';
+import { BitConverter as Cmp } from './BitConverter';
 
 const meta = {
   component: Cmp,
   tags: ['autodocs'],
-  title: '3-custom/Components/BitByteConverter',
+  title: '3-custom/Components/BitConverter',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const BitByteConverter: IStory = {
+export const BitConverter: IStory = {
   args: {
-    base: 1000,
-    children: '121212',
+    options: { locale: 'fr' },
+    value: 121212,
   },
 };

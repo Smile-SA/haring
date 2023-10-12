@@ -1,11 +1,11 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/src/test-utils';
 
-import { BitByteConverter } from './BitByteConverter';
+import { BitConverter } from './BitConverter';
 
-describe('BitByteConverter', () => {
+describe('BitConverter', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <BitByteConverter base={1000}>12121212</BitByteConverter>,
+      <BitConverter options={{ locale: 'fr' }} value={12121212} />,
     );
     expect(container).toMatchSnapshot();
   });

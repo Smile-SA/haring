@@ -8,8 +8,8 @@ import { Dropzone as MantineDropzone } from '@mantine/dropzone';
 import { createStyles } from '@mantine/styles';
 import { Eye, Plus, X } from '@phosphor-icons/react';
 
-import { BitByteConverter } from '../BitByteConverter/BitByteConverter';
-import { TruncateStringWithEllipsis } from '../TruncateStringWithEllipsis/TruncateStringWithEllipsis';
+import { BitConverter } from '../BitConverter/BitConverter';
+import { TruncateString } from '../TruncateString/TruncateString';
 
 export interface IFile {
   lastModified: number;
@@ -22,6 +22,7 @@ export interface IFile {
 export interface IDropzoneProps
   extends Omit<IMantineDropzoneProps, 'children'> {
   browseLabel?: string;
+  buttonPlusTitle?: string;
   children?: ReactElement;
   dragLabel?: string;
   files?: IFile[];
@@ -95,14 +96,19 @@ export function Dropzone(props: IDropzoneProps): ReactElement {
   const {
     children,
     dragLabel = 'Drag and drop your documents here',
+    buttonPlusTitle = 'Add button',
     browseLabel = 'Browse your device',
     files = [],
-    onRemoveFile = () => {
-      return null;
-    },
+    onRemoveFile,
     ...MantineDropzoneProps
   } = props;
   const { classes } = useStyles();
+
+  function handleFileClick(e: React.MouseEvent<HTMLDivElement>): void {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
   return (
     <MantineDropzone
       {...MantineDropzoneProps}
@@ -115,7 +121,7 @@ export function Dropzone(props: IDropzoneProps): ReactElement {
         className={classes.buttonPlus}
         radius="xl"
         size="xl"
-        title="add button"
+        title={buttonPlusTitle}
         variant="filled"
       >
         <Plus size={20} weight="bold" />
@@ -126,13 +132,9 @@ export function Dropzone(props: IDropzoneProps): ReactElement {
         {browseLabel}
       </p>
       <div className={classes.cardsFile}>
-        {files.map((file) => (
+        {files.map((file, i) => (
           <Tooltip
-            key={`fileCard-${
-              Math.floor(Math.random() * 100) +
-              file.size +
-              Math.floor(Math.random() * 100)
-            }`}
+            key={`${i + i}`}
             label={file.name}
             position="bottom"
             radius={6}
@@ -142,26 +144,25 @@ export function Dropzone(props: IDropzoneProps): ReactElement {
               aria-hidden="true"
               className={classes.cardFile}
               onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
+                handleFileClick(e);
               }}
             >
-              <ActionIcon
-                className={classes.cardFileButtonClose}
-                onClick={() => onRemoveFile(file)}
-                radius="xl"
-                size="sm"
-                variant="filled"
-              >
-                <X size={8} weight="bold" />
-              </ActionIcon>
+              {Boolean(onRemoveFile) && (
+                <ActionIcon
+                  className={classes.cardFileButtonClose}
+                  onClick={() => onRemoveFile?.(file)}
+                  radius="xl"
+                  size="sm"
+                  variant="filled"
+                >
+                  <X size={8} weight="bold" />
+                </ActionIcon>
+              )}
               <span className={classes.cardFileText}>
-                <TruncateStringWithEllipsis>
-                  {file.name}
-                </TruncateStringWithEllipsis>
+                <TruncateString>{file.name}</TruncateString>
               </span>
               <span className={classes.cardFileText}>
-                <BitByteConverter>{String(file.size)}</BitByteConverter>
+                <BitConverter options={{ locale: 'fr' }} value={file.size} />
               </span>
             </div>
           </Tooltip>

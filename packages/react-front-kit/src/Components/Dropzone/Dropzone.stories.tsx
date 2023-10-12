@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { action } from '@storybook/addon-actions';
-
 import { Dropzone as Cmp } from './Dropzone';
 
 const meta = {
@@ -56,7 +54,5 @@ export const Dropzone: IStory = {
         type: 'application/json',
       },
     ],
-    onDrop: action('onDrop'),
-    onRemoveFile: action('onRemoveFile'),
   },
 };

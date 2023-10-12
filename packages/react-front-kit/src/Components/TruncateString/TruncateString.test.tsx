@@ -1,16 +1,16 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/src/test-utils';
 
-import { TruncateStringWithEllipsis } from './TruncateStringWithEllipsis';
+import { TruncateString } from './TruncateString';
 
-describe('TruncateStringWithEllipsis', () => {
+describe('TruncateString', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
       <div style={{ width: '200px' }}>
         <h1>
-          <TruncateStringWithEllipsis>
+          <TruncateString>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua
-          </TruncateStringWithEllipsis>
+          </TruncateString>
         </h1>
         ,
       </div>,

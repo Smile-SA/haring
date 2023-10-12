@@ -1,8 +1,8 @@
 /* eslint-disable react-refresh/only-export-components */
 export * from '@smile/react-front-kit-shared';
 // component exports
-export * from './Components/TruncateStringWithEllipsis/TruncateStringWithEllipsis';
-export * from './Components/BitByteConverter/BitByteConverter';
+export * from './Components/TruncateString/TruncateString';
+export * from './Components/BitConverter/BitConverter';
 export * from './Components/Dropzone/Dropzone';
 export * from './Components/Breadcrumbs/Breadcrumbs';
 export * from './Components/CollapseButton/CollapseButtonControlled';

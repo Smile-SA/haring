@@ -4,7 +4,7 @@ import type { ReactElement } from 'react';
 
 import { createStyles } from '@mantine/core';
 
-export interface ITruncateStringWithEllipsisProps {
+export interface ITruncateStringProps {
   children: string;
 }
 
@@ -20,9 +20,7 @@ const useStyles = createStyles(() => ({
   },
 }));
 
-export function TruncateStringWithEllipsis(
-  props: ITruncateStringWithEllipsisProps,
-): ReactElement {
+export function TruncateString(props: ITruncateStringProps): ReactElement {
   const { children } = props;
   const { classes } = useStyles();
   return <span className={classes.trucateRoot}>{children}</span>;

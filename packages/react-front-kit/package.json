@@ -42,7 +42,8 @@
     "@mantine/dropzone": "^6.0.21",
     "@smile/react-front-kit-shared": "*",
     "install": "^0.13.0",
-    "npm": "^10.2.0"
+    "npm": "^10.2.0",
+    "pretty-bytes": "^6.1.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.20",
