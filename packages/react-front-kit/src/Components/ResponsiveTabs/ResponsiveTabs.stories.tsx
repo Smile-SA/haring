@@ -22,14 +22,16 @@ function Wrapper({ children }: { children: ReactNode }): ReactNode {
     <div
       style={{
         border: '1px solid darkgrey',
-        height: 200,
+        boxSizing: 'content-box',
+        height: 250,
         margin: 'auto',
         overflow: 'hidden',
+        padding: 30,
         resize: 'both',
-        width: 320,
+        width: 300,
       }}
     >
-      <div style={{ margin: 20 }}>{children}</div>
+      {children}
     </div>
   );
 }
@@ -43,7 +45,7 @@ export const ResponsiveTabs: IStory = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await expect(canvas.getByText('First Content')).toBeVisible();
-    await userEvent.click(canvas.getByTestId('test-tab'));
+    await userEvent.click(canvas.getAllByTestId('test-tab')[1]);
     await sleep(200);
     await expect(canvas.getByText('Second Content')).toBeVisible();
   },

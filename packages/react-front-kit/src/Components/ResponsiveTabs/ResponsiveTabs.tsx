@@ -2,17 +2,29 @@ import type { TabsProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
 import { ActionIcon, Tabs } from '@mantine/core';
-import { useId } from '@mantine/hooks';
+import { useElementSize, useId } from '@mantine/hooks';
 import { createStyles } from '@mantine/styles';
 import { CaretDoubleRight } from '@phosphor-icons/react';
-import { createRef, useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 import { DropdownButton } from '../DropdownButton/DropdownButton';
 
 const useStyles = createStyles(() => ({
+  container: {
+    position: 'relative',
+  },
   dropdown: {
     display: 'flex',
     flexDirection: 'column',
+  },
+  hidden: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'nowrap',
+    opacity: 0,
+    position: 'absolute',
+    visibility: 'hidden',
+    width: '100%',
   },
   tabs: {
     flexWrap: 'nowrap',
@@ -26,34 +38,30 @@ export interface IResponsiveTabs extends TabsProps {
 
 export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
   const { children, tabs, ...tabsProps } = props;
-  const [overflowIndex, setOverflowIndex] = useState<number>(tabs.length);
-  const tabsRef = createRef<HTMLDivElement>();
+  const { ref, width } = useElementSize<HTMLDivElement>();
   const overflowButtonId = useId();
+  const [overflowIndex, setOverflowIndex] = useState(tabs.length);
   const { classes } = useStyles();
 
-  // TODO: useElementSize (https://v6.mantine.dev/hooks/use-element-size/) to re-calculate overflow on resize
-  useEffect(() => {
-    const parentElement = tabsRef.current;
-    if (parentElement) {
-      const tabElements = Array.from(
-        parentElement.children,
-      ) as HTMLButtonElement[];
-      const overflowIndex = tabElements.findIndex((el) => {
-        return (
-          el.id !== overflowButtonId &&
-          (el.offsetLeft - parentElement.offsetWidth + 30 >
-            parentElement.offsetWidth ||
-            el.offsetTop - parentElement.offsetTop > parentElement.offsetHeight)
-        );
-      });
-      setOverflowIndex(overflowIndex);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  useLayoutEffect(() => {
+    const tabElements = Array.from(ref.current.children) as HTMLElement[];
+    const index = tabElements.findIndex(
+      (el, i) =>
+        el.id !== overflowButtonId &&
+        el.offsetLeft +
+          el.offsetWidth +
+          (i === tabElements.length - 1 ? 0 : 30) >
+          width,
+    );
+    setOverflowIndex(index !== -1 ? index : tabs.length);
+  }, [overflowButtonId, ref, tabs.length, width]);
 
   return (
-    <Tabs {...tabsProps} style={{ overflow: 'hidden' }}>
-      <Tabs.List ref={tabsRef} className={classes.tabs}>
+    <Tabs {...tabsProps} className={classes.container}>
+      <div ref={ref} className={classes.hidden}>
+        {tabs}
+      </div>
+      <Tabs.List className={classes.tabs}>
         {tabs.slice(0, overflowIndex)}
         {Boolean(overflowIndex < tabs.length) && (
           <DropdownButton
