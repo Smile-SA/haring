@@ -6,11 +6,11 @@ import type {
 } from '@mantine/dropzone';
 import type { MouseEvent, ReactElement } from 'react';
 
-import { ActionIcon, Tooltip } from '@mantine/core';
+import { ActionIcon, Text, Tooltip } from '@mantine/core';
 import { Dropzone as MantineDropzone } from '@mantine/dropzone';
 import { createStyles } from '@mantine/styles';
 import { Eye, Plus, X } from '@phosphor-icons/react';
-import { BitConverter, TruncateString } from '@smile/react-front-kit';
+import { BitConverter } from '@smile/react-front-kit';
 
 export interface IFile extends Partial<FileWithPath> {
   name: string;
@@ -157,9 +157,9 @@ export function Dropzone(props: IDropzoneProps): ReactElement {
                     <X size={8} weight="bold" />
                   </ActionIcon>
                 )}
-                <span className={classes.cardFileText}>
-                  <TruncateString>{name}</TruncateString>
-                </span>
+                <Text className={classes.cardFileText} span truncate>
+                  {name}
+                </Text>
                 {size !== undefined && (
                   <span className={classes.cardFileText}>
                     <BitConverter options={{ locale: 'fr' }} value={size} />
