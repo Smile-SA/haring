@@ -18,8 +18,7 @@ type IStory = StoryObj<typeof meta>;
 
 export const DropzoneCard: IStory = {
   args: {
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions, no-console
-    children: <Dropzone onDrop={(file) => console.log(`accept ${file}`)} />,
+    children: <Dropzone onDrop={action('onDrop')} />,
     content: (
       <p
         style={{

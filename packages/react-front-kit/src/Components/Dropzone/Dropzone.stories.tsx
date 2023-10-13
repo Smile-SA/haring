@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/src/storybook-utils';
+
 import { Dropzone as Cmp } from './Dropzone';
 
 const meta = {
@@ -12,6 +14,17 @@ const meta = {
     },
   },
   component: Cmp,
+  decorators: [
+    function Component(Story, ctx) {
+      const args = useStorybookArgsConnect(ctx.args, {
+        onDrop: 'files',
+        onRemoveFile: (file) => ({
+          files: ctx.args.files?.filter((f) => f !== file),
+        }),
+      });
+      return <Story args={{ ...args }} />;
+    },
+  ],
   tags: ['autodocs'],
   title: '3-custom/Components/Dropzone',
 } satisfies Meta<typeof Cmp>;
@@ -24,35 +37,6 @@ export const Dropzone: IStory = {
     browseLabel: undefined,
     children: undefined,
     dragLabel: undefined,
-    files: [
-      {
-        lastModified: 1682342930770,
-        name: 'CERFA.postman_collection.json',
-        path: 'CERFA.postman_collection.json',
-        size: 1579,
-        type: 'application/json',
-      },
-      {
-        lastModified: 1682342930770,
-        name: 'CERFA.postman_collection.json',
-        path: 'CERFA.postman_collection.json',
-        size: 1579,
-        type: 'application/json',
-      },
-      {
-        lastModified: 1682342930770,
-        name: 'CERFA.postman_collection.json',
-        path: 'CERFA.postman_collection.json',
-        size: 1579,
-        type: 'application/json',
-      },
-      {
-        lastModified: 1682342930770,
-        name: 'CERFA.postman_collection.json',
-        path: 'CERFA.postman_collection.json',
-        size: 1579,
-        type: 'application/json',
-      },
-    ],
+    files: [],
   },
 };

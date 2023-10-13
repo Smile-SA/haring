@@ -1,7 +1,10 @@
 'use client';
 
-import type { DropzoneProps as IMantineDropzoneProps } from '@mantine/dropzone';
-import type { ReactElement } from 'react';
+import type {
+  FileWithPath,
+  DropzoneProps as IMantineDropzoneProps,
+} from '@mantine/dropzone';
+import type { MouseEvent, ReactElement } from 'react';
 
 import { ActionIcon, Tooltip } from '@mantine/core';
 import { Dropzone as MantineDropzone } from '@mantine/dropzone';
@@ -11,12 +14,8 @@ import { Eye, Plus, X } from '@phosphor-icons/react';
 import { BitConverter } from '../BitConverter/BitConverter';
 import { TruncateString } from '../TruncateString/TruncateString';
 
-export interface IFile {
-  lastModified: number;
+export interface IFile extends Partial<FileWithPath> {
   name: string;
-  path: string;
-  size: number;
-  type: string;
 }
 
 export interface IDropzoneProps
@@ -26,7 +25,7 @@ export interface IDropzoneProps
   children?: ReactElement;
   dragLabel?: string;
   files?: IFile[];
-  onRemoveFile?: (item: IFile) => void;
+  onRemoveFile?: (file: IFile) => void;
 }
 
 const useStyles = createStyles((theme) => ({
@@ -104,7 +103,7 @@ export function Dropzone(props: IDropzoneProps): ReactElement {
   } = props;
   const { classes } = useStyles();
 
-  function handleFileClick(e: React.MouseEvent<HTMLDivElement>): void {
+  function handleFileClick(e: MouseEvent<HTMLDivElement>): void {
     e.preventDefault();
     e.stopPropagation();
   }
@@ -132,41 +131,46 @@ export function Dropzone(props: IDropzoneProps): ReactElement {
         {browseLabel}
       </p>
       <div className={classes.cardsFile}>
-        {files.map((file, i) => (
-          <Tooltip
-            key={`${i + i}`}
-            label={file.name}
-            position="bottom"
-            radius={6}
-            withArrow
-          >
-            <div
-              aria-hidden="true"
-              className={classes.cardFile}
-              onClick={(e) => {
-                handleFileClick(e);
-              }}
+        {files.map((file, i) => {
+          const { name, size } = file;
+          return (
+            <Tooltip
+              key={`${i + i}`}
+              label={name}
+              position="bottom"
+              radius={6}
+              withArrow
             >
-              {Boolean(onRemoveFile) && (
-                <ActionIcon
-                  className={classes.cardFileButtonClose}
-                  onClick={() => onRemoveFile?.(file)}
-                  radius="xl"
-                  size="sm"
-                  variant="filled"
-                >
-                  <X size={8} weight="bold" />
-                </ActionIcon>
-              )}
-              <span className={classes.cardFileText}>
-                <TruncateString>{file.name}</TruncateString>
-              </span>
-              <span className={classes.cardFileText}>
-                <BitConverter options={{ locale: 'fr' }} value={file.size} />
-              </span>
-            </div>
-          </Tooltip>
-        ))}
+              <div
+                aria-hidden="true"
+                className={classes.cardFile}
+                onClick={(e) => {
+                  handleFileClick(e);
+                }}
+              >
+                {Boolean(onRemoveFile) && (
+                  <ActionIcon
+                    className={classes.cardFileButtonClose}
+                    onClick={() => onRemoveFile?.(file)}
+                    radius="xl"
+                    size="sm"
+                    variant="filled"
+                  >
+                    <X size={8} weight="bold" />
+                  </ActionIcon>
+                )}
+                <span className={classes.cardFileText}>
+                  <TruncateString>{name}</TruncateString>
+                </span>
+                {size !== undefined && (
+                  <span className={classes.cardFileText}>
+                    <BitConverter options={{ locale: 'fr' }} value={size} />
+                  </span>
+                )}
+              </div>
+            </Tooltip>
+          );
+        })}
       </div>
       {children}
     </MantineDropzone>

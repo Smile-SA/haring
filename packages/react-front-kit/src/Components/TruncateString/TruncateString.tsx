@@ -1,11 +1,11 @@
 'use client';
 
-import type { ReactElement } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { createStyles } from '@mantine/core';
 
 export interface ITruncateStringProps {
-  children: string;
+  children: ReactNode;
 }
 
 const useStyles = createStyles(() => ({
