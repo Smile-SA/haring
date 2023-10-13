@@ -19,7 +19,7 @@ exports[`Dropzone matches snapshot 1`] = `
     >
       <button
         class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-w4fu6v"
-        title="add button"
+        title="Add button"
         type="button"
       >
         <svg
@@ -61,22 +61,6 @@ exports[`Dropzone matches snapshot 1`] = `
           aria-hidden="true"
           class="mantine-gcifvd"
         >
-          <button
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-15zzi9h"
-            type="button"
-          >
-            <svg
-              fill="currentColor"
-              height="8"
-              viewBox="0 0 256 256"
-              width="8"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"
-              />
-            </svg>
-          </button>
           <span
             class="mantine-1472iol"
           >
@@ -89,29 +73,13 @@ exports[`Dropzone matches snapshot 1`] = `
           <span
             class="mantine-1472iol"
           >
-            1.5 KiB
+            1,58 kB
           </span>
         </div>
         <div
           aria-hidden="true"
           class="mantine-gcifvd"
         >
-          <button
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-15zzi9h"
-            type="button"
-          >
-            <svg
-              fill="currentColor"
-              height="8"
-              viewBox="0 0 256 256"
-              width="8"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"
-              />
-            </svg>
-          </button>
           <span
             class="mantine-1472iol"
           >
@@ -124,29 +92,13 @@ exports[`Dropzone matches snapshot 1`] = `
           <span
             class="mantine-1472iol"
           >
-            1.5 KiB
+            1,58 kB
           </span>
         </div>
         <div
           aria-hidden="true"
           class="mantine-gcifvd"
         >
-          <button
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-15zzi9h"
-            type="button"
-          >
-            <svg
-              fill="currentColor"
-              height="8"
-              viewBox="0 0 256 256"
-              width="8"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"
-              />
-            </svg>
-          </button>
           <span
             class="mantine-1472iol"
           >
@@ -159,29 +111,13 @@ exports[`Dropzone matches snapshot 1`] = `
           <span
             class="mantine-1472iol"
           >
-            1.5 KiB
+            1,58 kB
           </span>
         </div>
         <div
           aria-hidden="true"
           class="mantine-gcifvd"
         >
-          <button
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-15zzi9h"
-            type="button"
-          >
-            <svg
-              fill="currentColor"
-              height="8"
-              viewBox="0 0 256 256"
-              width="8"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"
-              />
-            </svg>
-          </button>
           <span
             class="mantine-1472iol"
           >
@@ -194,7 +130,7 @@ exports[`Dropzone matches snapshot 1`] = `
           <span
             class="mantine-1472iol"
           >
-            1.5 KiB
+            1,58 kB
           </span>
         </div>
       </div>
