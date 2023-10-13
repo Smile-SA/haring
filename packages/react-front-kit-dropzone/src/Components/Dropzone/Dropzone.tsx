@@ -10,9 +10,7 @@ import { ActionIcon, Tooltip } from '@mantine/core';
 import { Dropzone as MantineDropzone } from '@mantine/dropzone';
 import { createStyles } from '@mantine/styles';
 import { Eye, Plus, X } from '@phosphor-icons/react';
-
-import { BitConverter } from '../BitConverter/BitConverter';
-import { TruncateString } from '../TruncateString/TruncateString';
+import { BitConverter, TruncateString } from '@smile/react-front-kit';
 
 export interface IFile extends Partial<FileWithPath> {
   name: string;

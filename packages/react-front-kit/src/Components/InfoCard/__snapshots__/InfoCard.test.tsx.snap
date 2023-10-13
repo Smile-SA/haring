@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DropzoneCard matches snapshot 1`] = `
+exports[`InfoCard matches snapshot 1`] = `
 <div>
   <div
     class="mantine-b8z88k"

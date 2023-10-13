@@ -3,22 +3,20 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Eye, Suitcase, User } from '@phosphor-icons/react';
 import { action } from '@storybook/addon-actions';
 
-import { Dropzone } from '../Dropzone/Dropzone';
-
-import { DropzoneCard as Cmp } from './DropzoneCard';
+import { InfoCard as Cmp } from './InfoCard';
 
 const meta = {
   component: Cmp,
   tags: ['autodocs'],
-  title: '3-custom/Components/DropzoneCard',
+  title: '3-custom/Components/InfoCard',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const DropzoneCard: IStory = {
+export const InfoCard: IStory = {
   args: {
-    children: <Dropzone onDrop={action('onDrop')} />,
+    children: <p>Customizable content</p>,
     content: (
       <p
         style={{

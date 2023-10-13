@@ -15,7 +15,7 @@ interface IContentItem {
   onAction?: (item: IContentItem) => void;
 }
 
-interface IDropzoneCardProps extends BoxProps {
+interface IInfoCardProps extends BoxProps {
   children?: ReactElement;
   content?: ReactElement;
   contentItems?: IContentItem[];
@@ -60,25 +60,6 @@ const useStyles = createStyles(() => ({
     justifyContent: 'left',
     minWidth: '440px',
   },
-  dropzoneContainer: {
-    '@media (max-width: 834px)': {
-      marginTop: '24px',
-      maxWidth: '100%',
-    },
-    marginTop: '18px',
-    width: '100%',
-  },
-  dropzoneContentItem: {
-    '@media (max-width: 640px)': {
-      padding: '20px 20px',
-    },
-    borderRadius: '16px',
-    minHeight: '219px',
-    overflow: 'hidden',
-    padding: '20px 20px',
-    position: 'relative',
-    width: '100%',
-  },
   leftContainer: {
     marginRight: '20px',
     maxWidth: '440px',
@@ -89,6 +70,25 @@ const useStyles = createStyles(() => ({
     top: -60,
     zIndex: 0,
   },
+  rightContainer: {
+    '@media (max-width: 834px)': {
+      marginTop: '24px',
+      maxWidth: '100%',
+    },
+    marginTop: '18px',
+    width: '100%',
+  },
+  root: {
+    '@media (max-width: 640px)': {
+      padding: '20px 20px',
+    },
+    borderRadius: '16px',
+    minHeight: '219px',
+    overflow: 'hidden',
+    padding: '20px 20px',
+    position: 'relative',
+    width: '100%',
+  },
   title: {
     'h1, h2, h3, h4 h5, p': {
       fontSize: '26px',
@@ -98,7 +98,7 @@ const useStyles = createStyles(() => ({
   },
 }));
 
-export function DropzoneCard(props: IDropzoneCardProps): ReactElement {
+export function InfoCard(props: IInfoCardProps): ReactElement {
   const {
     content,
     title,
@@ -109,7 +109,7 @@ export function DropzoneCard(props: IDropzoneCardProps): ReactElement {
   } = props;
   const { classes } = useStyles();
   return (
-    <Box className={classes.dropzoneContentItem} color="primary" {...BoxProps}>
+    <Box className={classes.root} color="primary" {...BoxProps}>
       <div className={classes.motif}>{motif}</div>
       <div className={classes.container}>
         <div className={classes.leftContainer}>
@@ -141,7 +141,7 @@ export function DropzoneCard(props: IDropzoneCardProps): ReactElement {
           )}
           {Boolean(content) && <div>{content}</div>}
         </div>
-        <div className={classes.dropzoneContainer}>{children}</div>
+        <div className={classes.rightContainer}>{children}</div>
       </div>
     </Box>
   );
