@@ -3,20 +3,21 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Eye, Suitcase, User } from '@phosphor-icons/react';
 import { action } from '@storybook/addon-actions';
 
-import { DropzoneCard as Cmp } from './DropzoneCard';
+import { InfoCard as Cmp } from './InfoCard';
 
 const meta = {
   component: Cmp,
   tags: ['autodocs'],
-  title: '3-custom/Components/DropzoneCard',
+  title: '3-custom/Components/InfoCard',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const DropzoneCard: IStory = {
+export const InfoCard: IStory = {
   args: {
-    children: (
+    children: <p>Customizable content</p>,
+    content: (
       <p
         style={{
           cursor: 'pointer',
@@ -34,16 +35,12 @@ export const DropzoneCard: IStory = {
       {
         icon: <User size={20} />,
         label: 'Individual contract',
-        onAction: (): void => {
-          action('Click on first card');
-        },
+        onAction: action('onAction'),
       },
       {
         icon: <Suitcase size={20} />,
         label: '2 Lines text for example',
-        onAction: (): void => {
-          action('Click on second card');
-        },
+        onAction: action('onAction'),
       },
     ],
     motif: undefined,

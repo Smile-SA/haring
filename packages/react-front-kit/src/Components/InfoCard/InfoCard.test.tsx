@@ -1,10 +1,10 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/src/test-utils';
 
-import { DropzoneCard } from './DropzoneCard';
+import { InfoCard } from './InfoCard';
 
-describe('DropzoneCard', () => {
+describe('InfoCard', () => {
   it('matches snapshot', () => {
-    const { container } = renderWithProviders(<DropzoneCard />);
+    const { container } = renderWithProviders(<InfoCard />);
     expect(container).toMatchSnapshot();
   });
 });
