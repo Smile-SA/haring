@@ -30,23 +30,28 @@ export const contents = (
   </>
 );
 
+const style = {
+  fontSize: 16,
+  fontWeight: 600,
+};
+
 export const tabs = [
-  <Tabs.Tab key={1} value="1">
+  <Tabs.Tab key={1} id="tab-1" style={style} value="1">
     First
   </Tabs.Tab>,
-  <Tabs.Tab key={2} data-testid="test-tab" value="2">
+  <Tabs.Tab key={2} data-testid="test-tab" id="tab-1" style={style} value="2">
     Second
   </Tabs.Tab>,
-  <Tabs.Tab key={3} value="3">
+  <Tabs.Tab key={3} style={style} value="3">
     Third
   </Tabs.Tab>,
-  <Tabs.Tab key={4} value="4">
+  <Tabs.Tab key={4} style={style} value="4">
     Fourth
   </Tabs.Tab>,
-  <Tabs.Tab key={5} value="5">
+  <Tabs.Tab key={5} style={style} value="5">
     Overflow 1
   </Tabs.Tab>,
-  <Tabs.Tab key={6} value="6">
+  <Tabs.Tab key={6} style={style} value="6">
     Overflow 2
   </Tabs.Tab>,
 ];

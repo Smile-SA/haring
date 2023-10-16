@@ -1,4 +1,5 @@
-import type { TabsProps } from '@mantine/core';
+import type { IDropdownButtonProps } from '../DropdownButton/DropdownButton';
+import type { TabsListProps, TabsProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
 import { ActionIcon, Tabs } from '@mantine/core';
@@ -9,11 +10,53 @@ import { useLayoutEffect, useState } from 'react';
 
 import { DropdownButton } from '../DropdownButton/DropdownButton';
 
-const useStyles = createStyles(() => ({
+const useStyles = createStyles((theme) => ({
+  button: {
+    '&[data-expanded]': {
+      backgroundColor:
+        theme.colorScheme === 'light'
+          ? theme.colors.gray[0]
+          : theme.colors.dark[6],
+    },
+    ':hover': {
+      background:
+        theme.colorScheme === 'light'
+          ? theme.colors.gray[0]
+          : theme.colors.dark[6],
+    },
+    alignSelf: 'center',
+    marginBottom: 6,
+    marginLeft: 'auto',
+  },
   container: {
     position: 'relative',
   },
   dropdown: {
+    background:
+      theme.colorScheme === 'light' ? theme.white : theme.colors.dark[0],
+    borderColor:
+      theme.colorScheme === 'light' ? theme.white : theme.colors.dark[0],
+    borderRadius: 4,
+    padding: '20px',
+  },
+  dropdownContainer: {
+    '> .mantine-Tabs-tab': {
+      '&[data-active]': {
+        background: theme.colors.gray[0],
+        border: 'none',
+      },
+      ':hover': {
+        backgroundColor: theme.colors.gray[0],
+        border: 'none',
+      },
+      '> span': {
+        color: theme.colorScheme === 'light' ? theme.black : theme.white,
+        fontWeight: 'initial',
+      },
+      border: 'none',
+      borderRadius: 4,
+      padding: '10px',
+    },
     display: 'flex',
     flexDirection: 'column',
   },
@@ -26,6 +69,12 @@ const useStyles = createStyles(() => ({
     visibility: 'hidden',
     width: '100%',
   },
+  tab: {
+    '&[data-active]': {
+      color: theme.colorScheme === 'light' ? theme.black : theme.colors.dark[0],
+    },
+    paddingBottom: 16,
+  },
   tabs: {
     flexWrap: 'nowrap',
   },
@@ -33,11 +82,14 @@ const useStyles = createStyles(() => ({
 
 export interface IResponsiveTabs extends TabsProps {
   children: ReactNode;
+  dropdownButtonProps?: IDropdownButtonProps;
   tabs: ReactElement[];
+  tabsListProps?: TabsListProps;
 }
 
 export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
-  const { children, tabs, ...tabsProps } = props;
+  const { children, tabs, tabsListProps, dropdownButtonProps, ...tabsProps } =
+    props;
   const { ref, width } = useElementSize<HTMLDivElement>();
   const overflowButtonId = useId();
   const [overflowIndex, setOverflowIndex] = useState(tabs.length);
@@ -57,22 +109,31 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
   }, [overflowButtonId, ref, tabs.length, width]);
 
   return (
-    <Tabs {...tabsProps} className={classes.container}>
+    <Tabs
+      className={classes.container}
+      classNames={{ tab: classes.tab }}
+      radius="sm"
+      {...tabsProps}
+    >
       <div ref={ref} className={classes.hidden}>
         {tabs}
       </div>
-      <Tabs.List className={classes.tabs}>
+      <Tabs.List className={classes.tabs} grow {...tabsListProps}>
         {tabs.slice(0, overflowIndex)}
         {Boolean(overflowIndex < tabs.length) && (
           <DropdownButton
             buttonComponent={
-              <ActionIcon>
+              <ActionIcon className={classes.button} radius="sm">
                 <CaretDoubleRight />
               </ActionIcon>
             }
+            classNames={{ dropdown: classes.dropdown }}
             id={overflowButtonId}
+            offset={4}
+            position="bottom-end"
+            {...dropdownButtonProps}
           >
-            <div className={classes.dropdown}>
+            <div className={classes.dropdownContainer}>
               {tabs.slice(overflowIndex, tabs.length)}
             </div>
           </DropdownButton>
