@@ -15,22 +15,29 @@ interface IContentItem {
   onAction?: (item: IContentItem) => void;
 }
 
-interface IDropzoneCardProps extends BoxProps {
+interface IInfoCardProps extends BoxProps {
   children?: ReactElement;
+  content?: ReactElement;
   contentItems?: IContentItem[];
-  dropzone?: ReactElement;
   motif?: ReactElement;
   title?: ReactElement;
 }
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(() => ({
   container: {
+    '@media (max-width: 834px)': {
+      flexDirection: 'column',
+      margin: 'auto',
+      width: 'fit-content',
+    },
+    display: 'flex',
+    flexWarp: 'wrap',
+    justifyContent: 'space-between',
     position: 'relative',
     zIndex: 1,
   },
   contentItem: {
     alignItems: 'center',
-    color: theme.colors.cyan[7],
     cursor: 'pointer',
     display: 'flex',
     justifyContent: 'center',
@@ -42,29 +49,45 @@ const useStyles = createStyles((theme) => ({
     justifyContent: 'left',
     marginBottom: '20px',
     paddingRight: '20px',
-    width: '200px',
+    width: '220px',
   },
   contentItems: {
+    '@media (max-width: 834px)': {
+      minWidth: '0px',
+    },
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'left',
+    minWidth: '440px',
   },
-  dropzoneContentItem: {
+  leftContainer: {
+    marginRight: '20px',
+    maxWidth: '440px',
+  },
+  motif: {
+    left: -40,
+    position: 'absolute',
+    top: -60,
+    zIndex: 0,
+  },
+  rightContainer: {
+    '@media (max-width: 834px)': {
+      marginTop: '24px',
+      maxWidth: '100%',
+    },
+    marginTop: '18px',
+    width: '100%',
+  },
+  root: {
+    '@media (max-width: 640px)': {
+      padding: '20px 20px',
+    },
     borderRadius: '16px',
     minHeight: '219px',
     overflow: 'hidden',
-    padding: '32px 42px',
+    padding: '20px 20px',
     position: 'relative',
     width: '100%',
-  },
-  leftContainer: {
-    maxWidth: '410px',
-  },
-  motif: {
-    left: 0,
-    position: 'absolute',
-    top: 0,
-    zIndex: 0,
   },
   title: {
     'h1, h2, h3, h4 h5, p': {
@@ -75,18 +98,18 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function DropzoneCard(props: IDropzoneCardProps): ReactElement {
+export function InfoCard(props: IInfoCardProps): ReactElement {
   const {
-    children,
+    content,
     title,
     contentItems = [],
-    dropzone,
     motif = <Motif />,
+    children,
     ...BoxProps
   } = props;
   const { classes } = useStyles();
   return (
-    <Box className={classes.dropzoneContentItem} color="primary" {...BoxProps}>
+    <Box className={classes.root} color="primary" {...BoxProps}>
       <div className={classes.motif}>{motif}</div>
       <div className={classes.container}>
         <div className={classes.leftContainer}>
@@ -116,9 +139,9 @@ export function DropzoneCard(props: IDropzoneCardProps): ReactElement {
               ))}
             </div>
           )}
-          {Boolean(children) && <div>{children}</div>}
+          {Boolean(content) && <div>{content}</div>}
         </div>
-        {Boolean(dropzone) && <div />}
+        <div className={classes.rightContainer}>{children}</div>
       </div>
     </Box>
   );

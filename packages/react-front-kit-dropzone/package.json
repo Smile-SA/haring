@@ -1,7 +1,7 @@
 {
-  "name": "@smile/react-front-kit",
+  "name": "@smile/react-front-kit-dropzone",
   "version": "0.2.0",
-  "description": "React component library based on mantine",
+  "description": "Dropzone React component library based on mantine",
   "license": "MIT",
   "homepage": "https://github.com/Smile-SA/react-front-kit",
   "repository": {
@@ -22,7 +22,8 @@
     "library",
     "frontend",
     "design",
-    "emotion"
+    "emotion",
+    "dropzone"
   ],
   "author": {
     "name": "Tony Cabaye",
@@ -35,15 +36,11 @@
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
     "test": "jest",
-    "generate": "turbo gen react-component",
     "prepublishOnly": "npm run build && node ./scripts/prepublish.mjs"
   },
   "dependencies": {
-    "@mantine/dropzone": "^6.0.21",
-    "@smile/react-front-kit-shared": "*",
-    "install": "^0.13.0",
-    "npm": "^10.2.0",
-    "pretty-bytes": "^6.1.1"
+    "@smile/react-front-kit": "*",
+    "@smile/react-front-kit-shared": "*"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.20",
@@ -66,6 +63,7 @@
   "peerDependencies": {
     "@emotion/react": ">=11",
     "@mantine/core": "6",
+    "@mantine/dropzone": "6",
     "@mantine/hooks": "6",
     "@mantine/styles": "6",
     "@phosphor-icons/react": ">=2",
