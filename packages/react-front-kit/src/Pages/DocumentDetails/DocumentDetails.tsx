@@ -35,7 +35,7 @@ export function DocumentDetails(props: IDocumentDetailsProps): ReactElement {
   const { children } = props;
   return (
     <div>
-      <MantineProvider theme={primaryTheme}>
+      <MantineProvider theme={theme}>
         <Card padding="40px" radius="lg">
           <Text fw="600" size="lg" span>
             Générales

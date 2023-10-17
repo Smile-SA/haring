@@ -1,7 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 export * from '@smile/react-front-kit-shared';
 // component exports
-export * from './Pages/DocumentDetails/DocumentDetails';
 export * from './Components/Breadcrumbs/Breadcrumbs';
 export * from './Components/CollapseButton/CollapseButtonControlled';
 export * from './Components/CollapseButton/CollapseButton';
@@ -16,3 +15,4 @@ export * from './Components/SidebarMenu/SidebarMenu';
 export * from './Layouts/FoldableColumnLayout/FoldableColumnLayout';
 // page exports
 export * from './Pages/TestPage/TestPage';
+export * from './Pages/DocumentDetails/DocumentDetails';
