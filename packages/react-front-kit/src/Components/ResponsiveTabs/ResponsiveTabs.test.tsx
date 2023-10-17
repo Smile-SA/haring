@@ -6,7 +6,9 @@ import { contents, tabs } from './ResponsiveTabs.mock';
 describe('ResponsiveTabs', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <ResponsiveTabs tabs={tabs}>{contents}</ResponsiveTabs>,
+      <ResponsiveTabs id="responsive-tabs" tabs={tabs}>
+        {contents}
+      </ResponsiveTabs>,
     );
     expect(container).toMatchSnapshot();
   });

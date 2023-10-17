@@ -91,7 +91,10 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
   const { children, tabs, tabsListProps, dropdownButtonProps, ...tabsProps } =
     props;
   const { ref, width } = useElementSize<HTMLDivElement>();
-  const overflowButtonId = useId();
+  const generatedId = useId();
+  const overflowButtonId = tabsProps.id
+    ? `${tabsProps.id}-overflow-button`
+    : generatedId;
   const [overflowIndex, setOverflowIndex] = useState(tabs.length);
   const { classes } = useStyles();
 

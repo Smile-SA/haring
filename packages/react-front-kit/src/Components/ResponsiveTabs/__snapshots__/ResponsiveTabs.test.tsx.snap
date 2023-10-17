@@ -11,7 +11,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
     >
       <button
         aria-selected="false"
-        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1kjub9k"
+        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
         id="responsive-tabs-tab-1"
         role="tab"
         style="font-size: 16px; font-weight: 600;"
@@ -26,7 +26,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       </button>
       <button
         aria-selected="false"
-        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1kjub9k"
+        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
         data-testid="test-tab"
         id="responsive-tabs-tab-2"
         role="tab"
@@ -42,7 +42,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       </button>
       <button
         aria-selected="false"
-        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1kjub9k"
+        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
         id="responsive-tabs-tab-3"
         role="tab"
         style="font-size: 16px; font-weight: 600;"
@@ -57,7 +57,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       </button>
       <button
         aria-selected="false"
-        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1kjub9k"
+        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
         id="responsive-tabs-tab-4"
         role="tab"
         style="font-size: 16px; font-weight: 600;"
@@ -72,7 +72,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       </button>
       <button
         aria-selected="false"
-        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1kjub9k"
+        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
         id="responsive-tabs-tab-5"
         role="tab"
         style="font-size: 16px; font-weight: 600;"
@@ -87,7 +87,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       </button>
       <button
         aria-selected="false"
-        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1kjub9k"
+        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
         id="responsive-tabs-tab-6"
         role="tab"
         style="font-size: 16px; font-weight: 600;"
@@ -110,7 +110,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
         aria-controls="responsive-tabs-overflow-button-dropdown"
         aria-expanded="false"
         aria-haspopup="menu"
-        class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1wqogov"
+        class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1i00min"
         id="responsive-tabs-overflow-button-target"
         type="button"
       >
