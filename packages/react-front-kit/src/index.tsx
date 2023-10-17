@@ -16,3 +16,4 @@ export * from './Components/SidebarMenu/SidebarMenu';
 export * from './Layouts/FoldableColumnLayout/FoldableColumnLayout';
 // page exports
 export * from './Pages/TestPage/TestPage';
+export * from './Pages/DocumentDetails/DocumentDetails';
