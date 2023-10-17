@@ -35,9 +35,7 @@ export function DropdownButton(props: IDropdownButtonProps): ReactElement {
       {...menuProps}
     >
       <Menu.Target>
-        {buttonComponent ? (
-          buttonComponent
-        ) : (
+        {buttonComponent ?? (
           <Button
             data-testid="button"
             rightIcon={opened ? <CaretUp /> : <CaretDown />}

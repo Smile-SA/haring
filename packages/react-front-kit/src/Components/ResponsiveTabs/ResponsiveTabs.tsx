@@ -80,6 +80,8 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+const dropdownButtonWidth = 30;
+
 export interface IResponsiveTabs extends TabsProps {
   children: ReactNode;
   dropdownButtonProps?: IDropdownButtonProps;
@@ -101,11 +103,12 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
   useLayoutEffect(() => {
     const tabElements = Array.from(ref.current.children) as HTMLElement[];
     const index = tabElements.findIndex(
+      // calculate which elements overflow out of parent width, include width of potential dropdown button in the calculation except on last element
       (el, i) =>
         el.id !== overflowButtonId &&
         el.offsetLeft +
           el.offsetWidth +
-          (i === tabElements.length - 1 ? 0 : 30) >
+          (i === tabElements.length - 1 ? 0 : dropdownButtonWidth) >
           width,
     );
     setOverflowIndex(index !== -1 ? index : tabs.length);
@@ -132,6 +135,7 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
             }
             classNames={{ dropdown: classes.dropdown }}
             id={overflowButtonId}
+            keepMounted
             offset={4}
             position="bottom-end"
             {...dropdownButtonProps}
