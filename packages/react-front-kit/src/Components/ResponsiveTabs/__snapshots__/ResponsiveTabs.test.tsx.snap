@@ -109,6 +109,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
         aria-label="Overflow Button"
         class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1i00min"
         id="responsive-tabs-overflow-button-target"
+        role="tab"
         type="button"
       >
         <svg

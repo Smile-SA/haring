@@ -153,6 +153,7 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
                 aria-label={dropdownButtonAriaLabel}
                 className={classes.button}
                 radius="sm"
+                role="tab"
               >
                 <CaretDoubleRight />
               </ActionIcon>
