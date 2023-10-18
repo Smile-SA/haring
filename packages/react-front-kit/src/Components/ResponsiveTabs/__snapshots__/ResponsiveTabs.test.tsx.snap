@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResponsiveTabs matches snapshot 1`] = `
+<div>
+  <div
+    class="mantine-Tabs-root mantine-1w1w6vj"
+    id="responsive-tabs"
+  >
+    <div
+      aria-hidden="true"
+      class="mantine-cdxve1"
+      hidden=""
+    >
+      <button
+        aria-selected="false"
+        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+        role="tab"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="mantine-480qv8 mantine-Tabs-tabLabel"
+        >
+          First
+        </span>
+      </button>
+      <button
+        aria-selected="false"
+        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+        data-testid="test-tab"
+        role="tab"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="mantine-480qv8 mantine-Tabs-tabLabel"
+        >
+          Second
+        </span>
+      </button>
+      <button
+        aria-selected="false"
+        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+        role="tab"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="mantine-480qv8 mantine-Tabs-tabLabel"
+        >
+          Third
+        </span>
+      </button>
+      <button
+        aria-selected="false"
+        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+        role="tab"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="mantine-480qv8 mantine-Tabs-tabLabel"
+        >
+          Fourth
+        </span>
+      </button>
+      <button
+        aria-selected="false"
+        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+        role="tab"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="mantine-480qv8 mantine-Tabs-tabLabel"
+        >
+          Overflow 1
+        </span>
+      </button>
+      <button
+        aria-selected="false"
+        class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+        role="tab"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="mantine-480qv8 mantine-Tabs-tabLabel"
+        >
+          Overflow 2
+        </span>
+      </button>
+    </div>
+    <div
+      aria-orientation="horizontal"
+      class="mantine-Tabs-tabsList mantine-1c0ih2u"
+      role="tablist"
+    >
+      <button
+        aria-controls="responsive-tabs-overflow-button-dropdown"
+        aria-expanded="false"
+        aria-haspopup="menu"
+        aria-label="Overflow Button"
+        class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1i00min"
+        id="responsive-tabs-overflow-button-target"
+        role="tab"
+        type="button"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 256 256"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"
+          />
+        </svg>
+      </button>
+      <div
+        aria-labelledby="responsive-tabs-overflow-button-target"
+        aria-orientation="vertical"
+        class="mantine-Menu-dropdown mantine-34g9l4"
+        data-position="bottom-end"
+        data-testid="dropdown"
+        id="responsive-tabs-overflow-button-dropdown"
+        role="menu"
+        style="display: none; z-index: 300; top: 0px; left: 0px;"
+        tabindex="-1"
+      >
+        <div
+          data-autofocus="true"
+          data-menu-dropdown="true"
+          style="outline: 0;"
+          tabindex="-1"
+        >
+          <div
+            class="mantine-rocuxk"
+          >
+            <button
+              aria-selected="false"
+              class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+              id="responsive-tabs-tab-1"
+              role="tab"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="mantine-480qv8 mantine-Tabs-tabLabel"
+              >
+                First
+              </span>
+            </button>
+            <button
+              aria-selected="false"
+              class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+              data-testid="test-tab"
+              id="responsive-tabs-tab-2"
+              role="tab"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="mantine-480qv8 mantine-Tabs-tabLabel"
+              >
+                Second
+              </span>
+            </button>
+            <button
+              aria-selected="false"
+              class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+              id="responsive-tabs-tab-3"
+              role="tab"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="mantine-480qv8 mantine-Tabs-tabLabel"
+              >
+                Third
+              </span>
+            </button>
+            <button
+              aria-selected="false"
+              class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+              id="responsive-tabs-tab-4"
+              role="tab"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="mantine-480qv8 mantine-Tabs-tabLabel"
+              >
+                Fourth
+              </span>
+            </button>
+            <button
+              aria-selected="false"
+              class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+              id="responsive-tabs-tab-5"
+              role="tab"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="mantine-480qv8 mantine-Tabs-tabLabel"
+              >
+                Overflow 1
+              </span>
+            </button>
+            <button
+              aria-selected="false"
+              class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+              id="responsive-tabs-tab-6"
+              role="tab"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="mantine-480qv8 mantine-Tabs-tabLabel"
+              >
+                Overflow 2
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-labelledby="responsive-tabs-tab-1"
+      class="mantine-Tabs-panel mantine-18ozoug"
+      id="responsive-tabs-panel-1"
+      role="tabpanel"
+    >
+      First Content
+    </div>
+    <div
+      aria-labelledby="responsive-tabs-tab-2"
+      class="mantine-Tabs-panel mantine-18ozoug"
+      id="responsive-tabs-panel-2"
+      role="tabpanel"
+    >
+      Second Content
+    </div>
+    <div
+      aria-labelledby="responsive-tabs-tab-3"
+      class="mantine-Tabs-panel mantine-18ozoug"
+      id="responsive-tabs-panel-3"
+      role="tabpanel"
+    >
+      Third Content
+    </div>
+    <div
+      aria-labelledby="responsive-tabs-tab-4"
+      class="mantine-Tabs-panel mantine-18ozoug"
+      id="responsive-tabs-panel-4"
+      role="tabpanel"
+    >
+      Fourth Content
+    </div>
+    <div
+      aria-labelledby="responsive-tabs-tab-5"
+      class="mantine-Tabs-panel mantine-18ozoug"
+      id="responsive-tabs-panel-5"
+      role="tabpanel"
+    >
+      Overflow 1 Content
+    </div>
+    <div
+      aria-labelledby="responsive-tabs-tab-6"
+      class="mantine-Tabs-panel mantine-18ozoug"
+      id="responsive-tabs-panel-6"
+      role="tabpanel"
+    >
+      Overflow 2 Content
+    </div>
+  </div>
+</div>
+`;
