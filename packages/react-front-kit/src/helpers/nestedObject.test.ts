@@ -1,4 +1,8 @@
-import { addPathAndDepth, flattenNestedObjects } from './nestedObject';
+import {
+  addPathAndDepth,
+  flattenNestedObjects,
+  setChildrenToTree,
+} from './nestedObject';
 
 describe('nestedObject', () => {
   describe('flattenNestedObjects', () => {
@@ -61,6 +65,39 @@ describe('nestedObject', () => {
           depth: 0,
           id: '3',
           path: ['3'],
+        },
+      ]);
+    });
+  });
+
+  describe('setChildrenToTree', () => {
+    it('should add path and deep property to nested object', () => {
+      expect(
+        setChildrenToTree(
+          [{ id: '311' }, { id: '312' }, { id: '313' }],
+          ['3', '31'],
+          [
+            { id: '1' },
+            { children: [{ id: '21' }], id: '2' },
+            {
+              children: [
+                { children: [{ id: '311' }, { id: '312' }], id: '31' },
+              ],
+              id: '3',
+            },
+          ],
+        ),
+      ).toEqual([
+        { id: '1' },
+        { children: [{ id: '21' }], id: '2' },
+        {
+          children: [
+            {
+              children: [{ id: '311' }, { id: '312' }, { id: '313' }],
+              id: '31',
+            },
+          ],
+          id: '3',
         },
       ]);
     });
