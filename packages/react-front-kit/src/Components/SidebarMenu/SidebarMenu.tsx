@@ -11,7 +11,6 @@ import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonContro
 
 export interface IMenuItem {
   children?: IMenuItem[];
-  component?: ReactElement;
   id: number | string;
   label: number | string;
   leftIcon?: ReactNode;
@@ -22,6 +21,7 @@ export interface ISidebarMenuProps extends PaperProps {
   /** Keeps only one menu per level open at once */
   hasOnlyOneOpenMenu?: boolean;
   menu: IMenuItem[];
+  onMenuOpen?: (id: number | string, isOpened: boolean) => void;
   /** Controlled state of which menus are currently open, using `id` field of `IMenuItem` */
   openedMenuIds?: (number | string)[];
 }
@@ -34,20 +34,22 @@ function getRecursiveMenu(
   menu?: IMenuItem[],
   level = 0,
 ): ReactElement[] | null {
-  if (!menu) {
+  if (!menu || menu.length === 0) {
     return null;
   }
-  return menu.map(({ children, ...props }) => (
+  return menu.map(({ children, id, label, leftIcon }) => (
     <CollapseButtonControlled
-      {...props}
-      key={props.id}
+      key={id}
+      id={id}
       isOpenOnSelect
+      label={label}
+      leftIcon={leftIcon}
       level={level}
       line={level === 0}
-      onCollapseChange={(isOpened) => onMenuOpen(props.id, isOpened)}
+      onCollapseChange={(isOpened) => onMenuOpen(id, isOpened)}
       onSelect={setSelectedId}
-      opened={openedMenuIds.includes(props.id)}
-      selected={selectedId === props.id}
+      opened={openedMenuIds.includes(id)}
+      selected={selectedId === id}
     >
       {getRecursiveMenu(
         setSelectedId,
@@ -66,6 +68,7 @@ export function SidebarMenu(props: ISidebarMenuProps): ReactElement {
   const {
     hasOnlyOneOpenMenu = false,
     menu,
+    onMenuOpen,
     openedMenuIds = [],
     component,
   } = props;
@@ -73,12 +76,12 @@ export function SidebarMenu(props: ISidebarMenuProps): ReactElement {
   const [selectedId, setSelectedId] = useState<number | string>();
 
   function handleOpenChange(menuId: number | string, isOpened: boolean): void {
+    onMenuOpen?.(menuId, isOpened);
     if (hasOnlyOneOpenMenu && isOpened) {
       /** Flatten and add calculated path property to the entire nested array of menus,
        * keep only the path from the menu being clicked **/
-      const openedMenuPath = flattenNestedObjects<IMenuItem>(
-        addPathAndDepth<IMenuItem>(menu),
-      ).find((menu) => menu.id === menuId)?.path;
+      const flatMenu = flattenNestedObjects(addPathAndDepth(menu));
+      const openedMenuPath = flatMenu.find((menu) => menu.id === menuId)?.path;
       setOpenedIds(openedMenuPath ?? []);
     } else {
       /** Add or remove id being clicked **/
