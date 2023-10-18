@@ -7,12 +7,13 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
     id="responsive-tabs"
   >
     <div
+      aria-hidden="true"
       class="mantine-cdxve1"
+      hidden=""
     >
       <button
         aria-selected="false"
         class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
-        id="responsive-tabs-tab-1"
         role="tab"
         style="font-size: 16px; font-weight: 600;"
         tabindex="0"
@@ -28,7 +29,6 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
         aria-selected="false"
         class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
         data-testid="test-tab"
-        id="responsive-tabs-tab-2"
         role="tab"
         style="font-size: 16px; font-weight: 600;"
         tabindex="0"
@@ -43,7 +43,6 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       <button
         aria-selected="false"
         class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
-        id="responsive-tabs-tab-3"
         role="tab"
         style="font-size: 16px; font-weight: 600;"
         tabindex="0"
@@ -58,7 +57,6 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       <button
         aria-selected="false"
         class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
-        id="responsive-tabs-tab-4"
         role="tab"
         style="font-size: 16px; font-weight: 600;"
         tabindex="0"
@@ -73,7 +71,6 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       <button
         aria-selected="false"
         class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
-        id="responsive-tabs-tab-5"
         role="tab"
         style="font-size: 16px; font-weight: 600;"
         tabindex="0"
@@ -88,7 +85,6 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       <button
         aria-selected="false"
         class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
-        id="responsive-tabs-tab-6"
         role="tab"
         style="font-size: 16px; font-weight: 600;"
         tabindex="0"
@@ -110,6 +106,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
         aria-controls="responsive-tabs-overflow-button-dropdown"
         aria-expanded="false"
         aria-haspopup="menu"
+        aria-label="Overflow Button"
         class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1i00min"
         id="responsive-tabs-overflow-button-target"
         type="button"
@@ -126,6 +123,120 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
           />
         </svg>
       </button>
+      <div
+        aria-labelledby="responsive-tabs-overflow-button-target"
+        aria-orientation="vertical"
+        class="mantine-Menu-dropdown mantine-34g9l4"
+        data-position="bottom-end"
+        data-testid="dropdown"
+        id="responsive-tabs-overflow-button-dropdown"
+        role="menu"
+        style="display: none; z-index: 300; top: 0px; left: 0px;"
+        tabindex="-1"
+      >
+        <div
+          data-autofocus="true"
+          data-menu-dropdown="true"
+          style="outline: 0;"
+          tabindex="-1"
+        >
+          <div
+            class="mantine-rocuxk"
+          >
+            <button
+              aria-selected="false"
+              class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+              id="responsive-tabs-tab-1"
+              role="tab"
+              style="font-size: 16px; font-weight: 600;"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="mantine-480qv8 mantine-Tabs-tabLabel"
+              >
+                First
+              </span>
+            </button>
+            <button
+              aria-selected="false"
+              class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+              data-testid="test-tab"
+              id="responsive-tabs-tab-2"
+              role="tab"
+              style="font-size: 16px; font-weight: 600;"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="mantine-480qv8 mantine-Tabs-tabLabel"
+              >
+                Second
+              </span>
+            </button>
+            <button
+              aria-selected="false"
+              class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+              id="responsive-tabs-tab-3"
+              role="tab"
+              style="font-size: 16px; font-weight: 600;"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="mantine-480qv8 mantine-Tabs-tabLabel"
+              >
+                Third
+              </span>
+            </button>
+            <button
+              aria-selected="false"
+              class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+              id="responsive-tabs-tab-4"
+              role="tab"
+              style="font-size: 16px; font-weight: 600;"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="mantine-480qv8 mantine-Tabs-tabLabel"
+              >
+                Fourth
+              </span>
+            </button>
+            <button
+              aria-selected="false"
+              class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+              id="responsive-tabs-tab-5"
+              role="tab"
+              style="font-size: 16px; font-weight: 600;"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="mantine-480qv8 mantine-Tabs-tabLabel"
+              >
+                Overflow 1
+              </span>
+            </button>
+            <button
+              aria-selected="false"
+              class="mantine-UnstyledButton-root mantine-Tabs-tab mantine-1d12h3a"
+              id="responsive-tabs-tab-6"
+              role="tab"
+              style="font-size: 16px; font-weight: 600;"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="mantine-480qv8 mantine-Tabs-tabLabel"
+              >
+                Overflow 2
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       aria-labelledby="responsive-tabs-tab-1"

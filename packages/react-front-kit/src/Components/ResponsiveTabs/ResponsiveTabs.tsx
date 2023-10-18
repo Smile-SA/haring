@@ -84,24 +84,43 @@ const dropdownButtonWidth = 30;
 
 export interface IResponsiveTabs extends TabsProps {
   children: ReactNode;
+  dropdownButtonAriaLabel?: string;
   dropdownButtonProps?: IDropdownButtonProps;
-  tabs: ReactElement[];
+  tabs: ReactElement<HTMLButtonElement>[];
   tabsListProps?: TabsListProps;
 }
 
 export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
-  const { children, tabs, tabsListProps, dropdownButtonProps, ...tabsProps } =
-    props;
+  const {
+    children,
+    dropdownButtonAriaLabel = 'Overflow Button',
+    dropdownButtonProps,
+    tabs,
+    tabsListProps,
+    ...tabsProps
+  } = props;
   const { ref, width } = useElementSize<HTMLDivElement>();
   const generatedId = useId();
   const overflowButtonId = tabsProps.id
     ? `${tabsProps.id}-overflow-button`
     : generatedId;
   const [overflowIndex, setOverflowIndex] = useState(tabs.length);
+  const [opened, setOpened] = useState(false);
   const { classes } = useStyles();
+
+  function handleTabChange(value: string): void {
+    if (overflowIndex < tabs.length) {
+      const activeIndex = tabs.findIndex((tab) => tab.props.value === value);
+      if (activeIndex >= overflowIndex) {
+        setOpened(true);
+      }
+    }
+  }
 
   useLayoutEffect(() => {
     const tabElements = Array.from(ref.current.children) as HTMLElement[];
+    // Remove ids of hidden tabs to prevent duplicate ids
+    tabElements.forEach((el) => el.removeAttribute('id'));
     const index = tabElements.findIndex(
       // calculate which elements overflow out of parent width, include width of potential dropdown button in the calculation except on last element
       (el, i) =>
@@ -118,10 +137,11 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
     <Tabs
       className={classes.container}
       classNames={{ tab: classes.tab }}
+      onTabChange={handleTabChange}
       radius="sm"
       {...tabsProps}
     >
-      <div ref={ref} className={classes.hidden}>
+      <div ref={ref} aria-hidden className={classes.hidden} hidden>
         {tabs}
       </div>
       <Tabs.List className={classes.tabs} grow {...tabsListProps}>
@@ -129,7 +149,11 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
         {Boolean(overflowIndex < tabs.length) && (
           <DropdownButton
             buttonComponent={
-              <ActionIcon className={classes.button} radius="sm">
+              <ActionIcon
+                aria-label={dropdownButtonAriaLabel}
+                className={classes.button}
+                radius="sm"
+              >
                 <CaretDoubleRight />
               </ActionIcon>
             }
@@ -137,6 +161,8 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
             id={overflowButtonId}
             keepMounted
             offset={4}
+            onChange={setOpened}
+            opened={opened}
             position="bottom-end"
             {...dropdownButtonProps}
           >
