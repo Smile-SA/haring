@@ -31,6 +31,13 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
           type: 'add',
         });
       }
+      if (data?.type === 'pages') {
+        actions.push({
+          path: 'src/{{path}}/{{pascalCase name}}/Code.mdx',
+          templateFile: 'templates/pageCode.hbs',
+          type: 'add',
+        });
+      }
       if (data?.index) {
         actions.push({
           path: 'src/index.tsx',

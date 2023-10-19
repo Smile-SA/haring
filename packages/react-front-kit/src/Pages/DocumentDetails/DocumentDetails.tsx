@@ -23,10 +23,6 @@ import {
 } from '@phosphor-icons/react';
 import { FolderMove, primaryTheme } from '@smile/react-front-kit-shared';
 
-const theme = primaryTheme;
-
-theme.colorScheme = 'dark';
-
 export interface IDocumentDetailsProps {
   children?: ReactNode;
 }
@@ -35,7 +31,7 @@ export function DocumentDetails(props: IDocumentDetailsProps): ReactElement {
   const { children } = props;
   return (
     <div>
-      <MantineProvider theme={theme}>
+      <MantineProvider theme={primaryTheme}>
         <Card padding="40px" radius="lg">
           <Text fw="600" size="lg" span>
             Générales
@@ -238,3 +234,5 @@ export function DocumentDetails(props: IDocumentDetailsProps): ReactElement {
     </div>
   );
 }
+
+export default DocumentDetails;
