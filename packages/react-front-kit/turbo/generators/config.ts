@@ -30,7 +30,8 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
           templateFile: 'templates/test.hbs',
           type: 'add',
         });
-      } else {
+      }
+      if (data?.type === 'pages') {
         actions.push({
           path: 'src/{{path}}/{{pascalCase name}}/Code.mdx',
           templateFile: 'templates/pageCode.hbs',
