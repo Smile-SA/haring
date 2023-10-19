@@ -2,7 +2,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { DocumentDetails as Cmp } from './DocumentDetails';
+import Cmp from './DocumentDetails';
 
 const meta = {
   component: Cmp,
