@@ -84,7 +84,10 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function DocumentDetails(): ReactElement {
+/**
+ * Example Page of a document preview, actions and attributes in a `ResponsiveTabs` component
+ */
+export function DocumentDetails(): ReactElement {
   const { classes } = useStyles();
 
   const tabs = [
