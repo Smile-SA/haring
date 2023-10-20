@@ -1,10 +1,12 @@
 'use client';
 
+import type { ISearchBarProps } from '../SearchBar/SearchBar';
 import type { BoxProps } from '@mantine/core';
-import type { ChangeEvent, FormEvent, ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
-import { Box, CloseButton, Input, createStyles } from '@mantine/core';
-import { useEffect, useRef } from 'react';
+import { Box, createStyles } from '@mantine/core';
+
+import { SearchBar } from '../SearchBar/SearchBar';
 
 const useStyles = createStyles((theme) => ({
   search: {
@@ -18,62 +20,18 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export interface IHeaderSearchProps extends BoxProps {
-  clearButtonAriaLabel?: string;
-  onChange?: (value: string) => void;
-  onSubmit?: (event: FormEvent) => void;
-  opened?: boolean;
-  value?: string;
+export interface IHeaderSearchProps extends ISearchBarProps {
+  boxProps?: BoxProps;
 }
 
 /** Additional props will be forwarded to the [Mantine Box component](https://mantine.dev/core/box) */
 export function HeaderSearch(props: IHeaderSearchProps): ReactElement {
-  const {
-    clearButtonAriaLabel = 'Clear',
-    opened,
-    onChange,
-    onSubmit,
-    value,
-    ...boxProps
-  } = props;
+  const { boxProps, ...searchBarProps } = props;
   const { classes } = useStyles();
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (inputRef.current && opened) {
-      inputRef.current.focus();
-    }
-  }, [opened]);
-
-  function handleSearchChange(event: ChangeEvent<HTMLInputElement>): void {
-    onChange?.(event.target.value);
-  }
-
-  function handleSearchClear(): void {
-    onChange?.('');
-    if (inputRef.current && opened) {
-      inputRef.current.focus();
-    }
-  }
 
   return (
     <Box className={classes.search} {...boxProps}>
-      <form onSubmit={onSubmit}>
-        <Input
-          ref={inputRef}
-          onChange={handleSearchChange}
-          rightSection={
-            <CloseButton
-              aria-label={clearButtonAriaLabel}
-              onClick={handleSearchClear}
-              size="lg"
-              variant="white"
-            />
-          }
-          size="lg"
-          value={value}
-        />
-      </form>
+      <SearchBar {...searchBarProps} />
     </Box>
   );
 }

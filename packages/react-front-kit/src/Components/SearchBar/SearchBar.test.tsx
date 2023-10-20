@@ -1,11 +1,11 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/src/test-utils';
 
-import { HeaderSearch } from './HeaderSearch';
+import { SearchBar } from './SearchBar';
 
-describe('HeaderSearch', () => {
+describe('SearchBar', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <HeaderSearch id="header-search-test" />,
+      <SearchBar id="search-bar-test" />,
     );
     expect(container).toMatchSnapshot();
   });
