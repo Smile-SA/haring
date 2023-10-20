@@ -33,6 +33,14 @@
   "main": "./dist/index.js",
   "module": "./src/index.tsx",
   "types": "./dist/index.d.ts",
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE",
+    "package.json",
+    "README.md",
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
     "test": "jest",
