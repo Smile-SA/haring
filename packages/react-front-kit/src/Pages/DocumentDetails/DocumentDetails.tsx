@@ -158,7 +158,7 @@ export function DocumentDetails(): ReactElement {
             </div>
             <Space h="xl" />
             <div className={classes.document}>
-              <DocumentView url="/packages/react-front-kit/src/Pages/DocumentDetails/example.pdf" />
+              <DocumentView url="./example.pdf" />
             </div>
           </Flex>
         </Grid.Col>
