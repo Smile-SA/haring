@@ -34,7 +34,7 @@ exports[`Header matches snapshot 1`] = `
         class="mantine-1dcfulj"
       >
         <button
-          class="mantine-UnstyledButton-root mantine-Button-root mantine-103513z"
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-1ckwbd"
           data-button="true"
           data-testid="search"
           type="button"

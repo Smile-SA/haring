@@ -14,7 +14,6 @@ import {
   Menu,
   Space,
   Tabs,
-  rem,
 } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
 import { CaretLeft, Plus, Star } from '@phosphor-icons/react';
@@ -34,15 +33,6 @@ import {
 
 const theme = primaryTheme;
 theme.colorScheme = 'dark';
-theme.focusRingStyles = {
-  // Default orange for focus-ring on all elements and Input-based components
-  inputStyles: (theme) => ({
-    outline: `${rem(2)} solid ${theme.colors.orange[5]}`,
-  }),
-  styles: (theme) => ({
-    outline: `${rem(2)} solid ${theme.colors.orange[5]}`,
-  }),
-};
 
 const useStyles = createStyles((theme) => ({
   actionIcons: {
