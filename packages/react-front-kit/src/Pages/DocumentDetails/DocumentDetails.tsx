@@ -30,6 +30,7 @@ import {
   CardNative,
   CardPermissions,
 } from './DocumentDetails.mock';
+import { DocumentView } from './DocumentView';
 
 const theme = primaryTheme;
 theme.colorScheme = 'dark';
@@ -156,7 +157,9 @@ export function DocumentDetails(): ReactElement {
               </div>
             </div>
             <Space h="xl" />
-            <div className={classes.document} />
+            <div className={classes.document}>
+              <DocumentView url="./example.pdf" />
+            </div>
           </Flex>
         </Grid.Col>
         <Grid.Col className={classes.colRight} span={4}>
