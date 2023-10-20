@@ -1,5 +1,5 @@
 {
   "extends": "tsconfig/react-library.json",
   "include": [".", ".storybook/*"],
-  "exclude": ["apps"]
+  "exclude": ["apps", "out", ".husky", ".changeset", ".github"]
 }
