@@ -7,7 +7,7 @@ exports[`Header matches snapshot 1`] = `
   >
     <div
       aria-expanded="false"
-      class="mantine-UnstyledButton-root mantine-Button-root mantine-q2kgt7"
+      class="mantine-UnstyledButton-root mantine-Button-root mantine-11gubhm"
       data-button="true"
       data-selected="false"
       data-testid="root"
@@ -20,7 +20,7 @@ exports[`Header matches snapshot 1`] = `
           class="mantine-Button-icon mantine-Button-leftIcon mantine-1jbrfp"
         >
           <div
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-ytdhdl"
+            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1oyh8s0"
           >
             <svg
               fill="currentColor"
@@ -50,7 +50,7 @@ exports[`Header matches snapshot 1`] = `
           class="mantine-Button-icon mantine-Button-rightIcon mantine-1ydydo3"
         >
           <button
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-ov71kq"
+            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
             data-testid="toggle"
             type="button"
           >
@@ -80,7 +80,7 @@ exports[`Header matches snapshot 1`] = `
       >
         <div
           aria-expanded="false"
-          class="mantine-UnstyledButton-root mantine-Button-root mantine-1wyrseg"
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-2t623x"
           data-button="true"
           data-selected="false"
           data-testid="root"
@@ -106,7 +106,7 @@ exports[`Header matches snapshot 1`] = `
     </div>
     <div
       aria-expanded="false"
-      class="mantine-UnstyledButton-root mantine-Button-root mantine-q2kgt7"
+      class="mantine-UnstyledButton-root mantine-Button-root mantine-11gubhm"
       data-button="true"
       data-selected="false"
       data-testid="root"
@@ -119,7 +119,7 @@ exports[`Header matches snapshot 1`] = `
           class="mantine-Button-icon mantine-Button-leftIcon mantine-1jbrfp"
         >
           <div
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-ytdhdl"
+            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1oyh8s0"
           >
             <svg
               fill="currentColor"
@@ -149,7 +149,7 @@ exports[`Header matches snapshot 1`] = `
           class="mantine-Button-icon mantine-Button-rightIcon mantine-1ydydo3"
         >
           <button
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-ov71kq"
+            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
             data-testid="toggle"
             type="button"
           >
@@ -179,7 +179,7 @@ exports[`Header matches snapshot 1`] = `
       >
         <div
           aria-expanded="false"
-          class="mantine-UnstyledButton-root mantine-Button-root mantine-1wyrseg"
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-2t623x"
           data-button="true"
           data-selected="false"
           data-testid="root"
@@ -205,7 +205,7 @@ exports[`Header matches snapshot 1`] = `
     </div>
     <div
       aria-expanded="false"
-      class="mantine-UnstyledButton-root mantine-Button-root mantine-q2kgt7"
+      class="mantine-UnstyledButton-root mantine-Button-root mantine-11gubhm"
       data-button="true"
       data-selected="false"
       data-testid="root"
@@ -218,7 +218,7 @@ exports[`Header matches snapshot 1`] = `
           class="mantine-Button-icon mantine-Button-leftIcon mantine-1jbrfp"
         >
           <div
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-ytdhdl"
+            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1oyh8s0"
           >
             <svg
               fill="currentColor"
@@ -248,7 +248,7 @@ exports[`Header matches snapshot 1`] = `
           class="mantine-Button-icon mantine-Button-rightIcon mantine-1ydydo3"
         >
           <button
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-ov71kq"
+            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
             data-testid="toggle"
             type="button"
           >
@@ -278,7 +278,7 @@ exports[`Header matches snapshot 1`] = `
       >
         <div
           aria-expanded="false"
-          class="mantine-UnstyledButton-root mantine-Button-root mantine-1wyrseg"
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-2t623x"
           data-button="true"
           data-selected="false"
           data-testid="root"
@@ -302,7 +302,7 @@ exports[`Header matches snapshot 1`] = `
         </div>
         <div
           aria-expanded="false"
-          class="mantine-UnstyledButton-root mantine-Button-root mantine-ay44ke"
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-1bv8mw8"
           data-button="true"
           data-selected="false"
           data-testid="root"
@@ -326,7 +326,7 @@ exports[`Header matches snapshot 1`] = `
               class="mantine-Button-icon mantine-Button-rightIcon mantine-1ydydo3"
             >
               <button
-                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-ov71kq"
+                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
                 data-testid="toggle"
                 type="button"
               >
@@ -356,7 +356,7 @@ exports[`Header matches snapshot 1`] = `
           >
             <div
               aria-expanded="false"
-              class="mantine-UnstyledButton-root mantine-Button-root mantine-10gkoy7"
+              class="mantine-UnstyledButton-root mantine-Button-root mantine-8oefeo"
               data-button="true"
               data-selected="false"
               data-testid="root"
@@ -382,7 +382,7 @@ exports[`Header matches snapshot 1`] = `
         </div>
         <div
           aria-expanded="false"
-          class="mantine-UnstyledButton-root mantine-Button-root mantine-1wyrseg"
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-2t623x"
           data-button="true"
           data-selected="false"
           data-testid="root"
@@ -408,7 +408,7 @@ exports[`Header matches snapshot 1`] = `
     </div>
     <div
       aria-expanded="false"
-      class="mantine-UnstyledButton-root mantine-Button-root mantine-1y9qs59"
+      class="mantine-UnstyledButton-root mantine-Button-root mantine-1rkmdf2"
       data-button="true"
       data-selected="false"
       data-testid="root"
@@ -421,7 +421,7 @@ exports[`Header matches snapshot 1`] = `
           class="mantine-Button-icon mantine-Button-leftIcon mantine-1jbrfp"
         >
           <div
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-ytdhdl"
+            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1oyh8s0"
           >
             <svg
               fill="currentColor"
@@ -451,7 +451,7 @@ exports[`Header matches snapshot 1`] = `
     </div>
     <div
       aria-expanded="false"
-      class="mantine-UnstyledButton-root mantine-Button-root mantine-q2kgt7"
+      class="mantine-UnstyledButton-root mantine-Button-root mantine-11gubhm"
       data-button="true"
       data-selected="false"
       data-testid="root"
@@ -464,7 +464,7 @@ exports[`Header matches snapshot 1`] = `
           class="mantine-Button-icon mantine-Button-leftIcon mantine-1jbrfp"
         >
           <div
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-ytdhdl"
+            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1oyh8s0"
           >
             <svg
               fill="currentColor"
@@ -494,7 +494,7 @@ exports[`Header matches snapshot 1`] = `
           class="mantine-Button-icon mantine-Button-rightIcon mantine-1ydydo3"
         >
           <button
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-ov71kq"
+            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
             data-testid="toggle"
             type="button"
           >
@@ -524,7 +524,7 @@ exports[`Header matches snapshot 1`] = `
       >
         <div
           aria-expanded="false"
-          class="mantine-UnstyledButton-root mantine-Button-root mantine-ay44ke"
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-1bv8mw8"
           data-button="true"
           data-selected="false"
           data-testid="root"
@@ -548,7 +548,7 @@ exports[`Header matches snapshot 1`] = `
               class="mantine-Button-icon mantine-Button-rightIcon mantine-1ydydo3"
             >
               <button
-                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-ov71kq"
+                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
                 data-testid="toggle"
                 type="button"
               >
@@ -578,7 +578,7 @@ exports[`Header matches snapshot 1`] = `
           >
             <div
               aria-expanded="false"
-              class="mantine-UnstyledButton-root mantine-Button-root mantine-10gkoy7"
+              class="mantine-UnstyledButton-root mantine-Button-root mantine-8oefeo"
               data-button="true"
               data-selected="false"
               data-testid="root"
@@ -602,7 +602,7 @@ exports[`Header matches snapshot 1`] = `
             </div>
             <div
               aria-expanded="false"
-              class="mantine-UnstyledButton-root mantine-Button-root mantine-10gkoy7"
+              class="mantine-UnstyledButton-root mantine-Button-root mantine-8oefeo"
               data-button="true"
               data-selected="false"
               data-testid="root"
@@ -628,7 +628,7 @@ exports[`Header matches snapshot 1`] = `
         </div>
         <div
           aria-expanded="false"
-          class="mantine-UnstyledButton-root mantine-Button-root mantine-1wyrseg"
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-2t623x"
           data-button="true"
           data-selected="false"
           data-testid="root"
