@@ -29,7 +29,7 @@ exports[`Pagination matches snapshot 1`] = `
             aria-invalid="false"
             aria-label="Number of results per page"
             autocomplete="off"
-            class="mantine-Input-input mantine-Select-input mantine-1kaqzie"
+            class="mantine-Input-input mantine-Select-input mantine-1bcy86t"
             data-mantine-stop-propagation="false"
             data-testid="pagination-rowsPerPage"
             id="mantine-f4bipx4bi"
@@ -63,33 +63,33 @@ exports[`Pagination matches snapshot 1`] = `
       data-testid="pagination-page"
     >
       <button
-        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-16h8s0u"
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-n6qhx9"
         type="button"
       >
         1
       </button>
       <button
         aria-current="page"
-        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-16h8s0u"
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-n6qhx9"
         data-active="true"
         type="button"
       >
         2
       </button>
       <button
-        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-16h8s0u"
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-n6qhx9"
         type="button"
       >
         3
       </button>
       <button
-        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-16h8s0u"
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-n6qhx9"
         type="button"
       >
         4
       </button>
       <button
-        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-16h8s0u"
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-n6qhx9"
         type="button"
       >
         5
@@ -109,7 +109,7 @@ exports[`Pagination matches snapshot 1`] = `
         </svg>
       </div>
       <button
-        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-16h8s0u"
+        class="mantine-UnstyledButton-root mantine-Pagination-control mantine-n6qhx9"
         type="button"
       >
         10

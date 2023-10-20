@@ -65,6 +65,7 @@ const useStyles = createStyles((theme) => ({
     flexDirection: 'row',
     flexWrap: 'nowrap',
     opacity: 0,
+    overflow: 'hidden',
     position: 'absolute',
     visibility: 'hidden',
     width: '100%',
@@ -153,7 +154,6 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
                 aria-label={dropdownButtonAriaLabel}
                 className={classes.button}
                 radius="sm"
-                role="tab"
               >
                 <CaretDoubleRight />
               </ActionIcon>

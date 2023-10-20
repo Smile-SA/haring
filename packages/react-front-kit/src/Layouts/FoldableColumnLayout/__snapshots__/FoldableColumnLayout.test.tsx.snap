@@ -33,7 +33,7 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
                     type="checkbox"
                   />
                   <label
-                    class="mantine-sxw4ip mantine-Switch-track"
+                    class="mantine-1i8ydp7 mantine-Switch-track"
                     for="sidebar-toggle"
                   >
                     <div
@@ -51,7 +51,7 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
                       for="sidebar-toggle"
                     >
                       <div
-                        class="mantine-Text-root mantine-awczux"
+                        class="mantine-Text-root mantine-1o8aepr"
                       >
                         Display sidebar
                       </div>

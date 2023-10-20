@@ -2,7 +2,7 @@
 
 import type { MantineThemeOverride } from '@mantine/core';
 
-import { DEFAULT_THEME } from '@mantine/core';
+import { DEFAULT_THEME, rem } from '@mantine/core';
 
 export const baseTheme: MantineThemeOverride = {
   activeStyles: {
@@ -17,6 +17,15 @@ export const baseTheme: MantineThemeOverride = {
   },
   cursorType: 'pointer',
   defaultRadius: '1.5rem',
+  focusRingStyles: {
+    // Default orange for focus-ring on all elements and Input-based components
+    inputStyles: (theme) => ({
+      outline: `${rem(2)} solid ${theme.colors.orange[5]}`,
+    }),
+    styles: (theme) => ({
+      outline: `${rem(2)} solid ${theme.colors.orange[5]}`,
+    }),
+  },
   fontFamily: 'var(--rfk-font, Open Sans)',
   fontSizes: {
     lg: '18px',
