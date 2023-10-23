@@ -63,8 +63,7 @@ export interface ISearchBarProps extends Omit<TextInputProps, 'onChange'> {
   value?: string;
 }
 
-/** Additional props will be forwarded to the [Mantine Box component](https://mantine.dev/core/box) */
-// eslint-disable-next-line react/no-multi-comp
+/** Additional props will be forwarded to the [Mantine TextInput component](https://mantine.dev/core/text-input/) */
 export function SearchBar(props: ISearchBarProps): ReactElement {
   const {
     clearButtonAriaLabel = 'Clear',
