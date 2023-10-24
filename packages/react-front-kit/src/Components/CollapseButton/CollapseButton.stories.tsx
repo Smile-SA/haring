@@ -31,9 +31,7 @@ const meta = {
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const CollapseButton: IStory = {
-  args: {
-    children: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+const children = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
 varius bibendum dui non imperdiet. Donec vehicula fringilla lorem
 vitae rutrum. Etiam malesuada ullamcorper aliquam. Vestibulum ante
 ipsum primis in faucibus orci luctus et ultrices posuere cubilia
@@ -44,9 +42,14 @@ rutrum, ultricies tellus. Integer diam nulla, vestibulum id enim
 quis, molestie luctus magna. Phasellus et rhoncus augue, id
 maximus mi. Vivamus consequat quam tristique ex laoreet, ut
 eleifend eros sodales. Cras bibendum enim dolor, id rutrum urna
-vestibulum non.`,
+vestibulum non.`;
+
+export const CollapseButton: IStory = {
+  args: {
+    children,
     fullWidth: true,
     id: '',
+    isOpenOnSelect: false,
     label: 'Home',
     leftIcon: iconsElements.HouseLine,
     level: 0,
@@ -77,11 +80,30 @@ export const Nested: IStory = {
     ),
     fullWidth: true,
     id: '',
+    isOpenOnSelect: false,
     label: 'Pull Requests',
     leftIcon: iconsElements.User,
     level: 0,
     line: true,
     radius: 0,
     selected: false,
+  },
+};
+
+export const WithLink: IStory = {
+  args: {
+    children,
+    component: 'a',
+    componentProps: { href: '#' },
+    fullWidth: true,
+    id: '',
+    isOpenOnSelect: true,
+    label: 'Home',
+    leftIcon: iconsElements.HouseLine,
+    level: 0,
+    line: false,
+    radius: 0,
+    selected: false,
+    variant: 'white',
   },
 };

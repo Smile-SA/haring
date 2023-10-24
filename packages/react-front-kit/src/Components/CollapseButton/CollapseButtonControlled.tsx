@@ -1,22 +1,25 @@
 'use client';
 
 import type { ICollapseButtonProps } from './CollapseButton';
-import type { MouseEvent, ReactElement } from 'react';
+import type { ElementType, MouseEvent, ReactElement } from 'react';
 
 import { ActionIcon, Button, Collapse, createStyles } from '@mantine/core';
 import { CaretDown, CaretRight } from '@phosphor-icons/react';
 
 const useStyles = createStyles((theme) => ({
   button: {
+    alignItems: 'center',
     background: 'transparent',
     border: 0,
     color: 'inherit',
     cursor: 'inherit',
+    display: 'flex',
     flex: 1,
     font: 'inherit',
     height: '100%',
     padding: 0,
     textAlign: 'left',
+    textDecoration: 'none',
   },
   iconSelected: {
     background:
@@ -61,19 +64,24 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export interface ICollapseButtonControlledProps<T extends number | string>
-  extends ICollapseButtonProps<T> {
+export interface ICollapseButtonControlledProps<
+  T extends number | string,
+  C extends ElementType,
+> extends ICollapseButtonProps<T, C> {
   /** Only in the Controlled version, use this prop to provide the setter function for the opened/collapsed state */
   onCollapseChange?: (isOpened: boolean) => void;
   /** Only in the Controlled version, use this prop to provide the opened/collapsed state */
   opened: boolean;
 }
 
-export function CollapseButtonControlled<T extends number | string>(
-  props: ICollapseButtonControlledProps<T>,
-): ReactElement {
+export function CollapseButtonControlled<
+  T extends number | string,
+  C extends ElementType = 'button',
+>(props: ICollapseButtonControlledProps<T, C>): ReactElement {
   const {
     children,
+    component: Component = 'button',
+    componentProps,
     fullWidth = true,
     id,
     isOpenOnSelect = false,
@@ -162,9 +170,14 @@ export function CollapseButtonControlled<T extends number | string>(
         variant={selected ? 'light' : 'white'}
         {...buttonProps}
       >
-        <button className={classes.button} data-testid="select" type="button">
+        <Component
+          className={classes.button}
+          data-testid="select"
+          type={Component === 'button' ? 'button' : undefined}
+          {...componentProps}
+        >
           {label}
-        </button>
+        </Component>
       </Button>
       {Boolean(children) && (
         <Collapse

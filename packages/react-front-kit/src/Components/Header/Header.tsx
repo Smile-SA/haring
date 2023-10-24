@@ -118,7 +118,7 @@ export function Header(props: IHeaderProps): ReactElement {
         <Flex className={classes.around}>{left}</Flex>
         <Flex
           className={classes.menu}
-          // @ts-expect-error wrong type for Flex component
+          // @ts-expect-error wrong type for polymorphic component
           component={childrenComponent}
         >
           {children}
