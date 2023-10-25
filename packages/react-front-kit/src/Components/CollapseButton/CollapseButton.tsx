@@ -1,16 +1,27 @@
 'use client';
 
 import type { ButtonProps } from '@mantine/core';
-import type { ReactElement, ReactNode } from 'react';
+import type {
+  ComponentPropsWithoutRef,
+  ElementType,
+  ReactElement,
+  ReactNode,
+} from 'react';
 
 import { useState } from 'react';
 
 import { CollapseButtonControlled } from './CollapseButtonControlled';
 
-export interface ICollapseButtonProps<T extends number | string>
-  extends ButtonProps {
+export interface ICollapseButtonProps<
+  T extends number | string,
+  C extends ElementType,
+> extends ButtonProps {
   /** Content either collapsed or opened under Button */
   children?: ReactNode;
+  /** Custom component to use around the label */
+  component?: C;
+  /** Additional props for the custom component */
+  componentProps?: ComponentPropsWithoutRef<C>;
   id?: T;
   isOpenOnSelect?: boolean;
   label?: ReactNode;
@@ -21,9 +32,10 @@ export interface ICollapseButtonProps<T extends number | string>
 }
 
 /** Additional props will be forwarded to the [Mantine Button component](https://mantine.dev/core/button) */
-export function CollapseButton<T extends number | string>(
-  props: ICollapseButtonProps<T>,
-): ReactElement {
+export function CollapseButton<
+  T extends number | string,
+  C extends ElementType = 'button',
+>(props: ICollapseButtonProps<T, C>): ReactElement {
   const [opened, setOpened] = useState(false);
   return (
     <CollapseButtonControlled

@@ -39,7 +39,7 @@ exports[`Header matches snapshot 1`] = `
           class="mantine-Button-label mantine-12tfho7"
         >
           <button
-            class="mantine-o4vq62"
+            class="mantine-pax7vz"
             data-testid="select"
             type="button"
           >
@@ -93,7 +93,7 @@ exports[`Header matches snapshot 1`] = `
               class="mantine-Button-label mantine-1nlid6w"
             >
               <button
-                class="mantine-o4vq62"
+                class="mantine-pax7vz"
                 data-testid="select"
                 type="button"
               >
@@ -138,7 +138,7 @@ exports[`Header matches snapshot 1`] = `
           class="mantine-Button-label mantine-12tfho7"
         >
           <button
-            class="mantine-o4vq62"
+            class="mantine-pax7vz"
             data-testid="select"
             type="button"
           >
@@ -192,7 +192,7 @@ exports[`Header matches snapshot 1`] = `
               class="mantine-Button-label mantine-1nlid6w"
             >
               <button
-                class="mantine-o4vq62"
+                class="mantine-pax7vz"
                 data-testid="select"
                 type="button"
               >
@@ -237,7 +237,7 @@ exports[`Header matches snapshot 1`] = `
           class="mantine-Button-label mantine-12tfho7"
         >
           <button
-            class="mantine-o4vq62"
+            class="mantine-pax7vz"
             data-testid="select"
             type="button"
           >
@@ -291,7 +291,7 @@ exports[`Header matches snapshot 1`] = `
               class="mantine-Button-label mantine-1nlid6w"
             >
               <button
-                class="mantine-o4vq62"
+                class="mantine-pax7vz"
                 data-testid="select"
                 type="button"
               >
@@ -315,7 +315,7 @@ exports[`Header matches snapshot 1`] = `
               class="mantine-Button-label mantine-1nlid6w"
             >
               <button
-                class="mantine-o4vq62"
+                class="mantine-pax7vz"
                 data-testid="select"
                 type="button"
               >
@@ -369,7 +369,7 @@ exports[`Header matches snapshot 1`] = `
                   class="mantine-Button-label mantine-ujfmhm"
                 >
                   <button
-                    class="mantine-o4vq62"
+                    class="mantine-pax7vz"
                     data-testid="select"
                     type="button"
                   >
@@ -395,7 +395,7 @@ exports[`Header matches snapshot 1`] = `
               class="mantine-Button-label mantine-1nlid6w"
             >
               <button
-                class="mantine-o4vq62"
+                class="mantine-pax7vz"
                 data-testid="select"
                 type="button"
               >
@@ -440,7 +440,7 @@ exports[`Header matches snapshot 1`] = `
           class="mantine-Button-label mantine-12tfho7"
         >
           <button
-            class="mantine-o4vq62"
+            class="mantine-pax7vz"
             data-testid="select"
             type="button"
           >
@@ -483,7 +483,7 @@ exports[`Header matches snapshot 1`] = `
           class="mantine-Button-label mantine-12tfho7"
         >
           <button
-            class="mantine-o4vq62"
+            class="mantine-pax7vz"
             data-testid="select"
             type="button"
           >
@@ -537,7 +537,7 @@ exports[`Header matches snapshot 1`] = `
               class="mantine-Button-label mantine-1nlid6w"
             >
               <button
-                class="mantine-o4vq62"
+                class="mantine-pax7vz"
                 data-testid="select"
                 type="button"
               >
@@ -591,7 +591,7 @@ exports[`Header matches snapshot 1`] = `
                   class="mantine-Button-label mantine-ujfmhm"
                 >
                   <button
-                    class="mantine-o4vq62"
+                    class="mantine-pax7vz"
                     data-testid="select"
                     type="button"
                   >
@@ -615,7 +615,7 @@ exports[`Header matches snapshot 1`] = `
                   class="mantine-Button-label mantine-ujfmhm"
                 >
                   <button
-                    class="mantine-o4vq62"
+                    class="mantine-pax7vz"
                     data-testid="select"
                     type="button"
                   >
@@ -641,7 +641,7 @@ exports[`Header matches snapshot 1`] = `
               class="mantine-Button-label mantine-1nlid6w"
             >
               <button
-                class="mantine-o4vq62"
+                class="mantine-pax7vz"
                 data-testid="select"
                 type="button"
               >

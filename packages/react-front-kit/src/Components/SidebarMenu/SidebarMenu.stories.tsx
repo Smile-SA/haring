@@ -40,3 +40,11 @@ export const OnlyOneOpenMenu: IStory = {
     openedMenuIds: [0, 2],
   },
 };
+
+export const DefaultSelectedId: IStory = {
+  args: {
+    component: 'nav',
+    defaultSelectedId: 5,
+    menu,
+  },
+};

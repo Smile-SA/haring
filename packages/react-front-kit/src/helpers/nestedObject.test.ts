@@ -1,6 +1,7 @@
 import {
   addPathAndDepth,
   flattenNestedObjects,
+  getClosestItemFromPath,
   setChildrenToTree,
 } from './nestedObject';
 
@@ -71,9 +72,9 @@ describe('nestedObject', () => {
   });
 
   describe('setChildrenToTree', () => {
-    it('should add path and deep property to nested object', () => {
+    it('should set the children to the tree', () => {
       expect(
-        setChildrenToTree(
+        setChildrenToTree<string>(
           [{ id: '311' }, { id: '312' }, { id: '313' }],
           ['3', '31'],
           [
@@ -100,6 +101,44 @@ describe('nestedObject', () => {
           id: '3',
         },
       ]);
+    });
+  });
+
+  describe('getClosestItemFromPath', () => {
+    it('should get existing item in tree', () => {
+      expect(
+        getClosestItemFromPath<string>(
+          [
+            { id: '1' },
+            { children: [{ id: '21' }], id: '2' },
+            {
+              children: [
+                { children: [{ id: '311' }, { id: '312' }], id: '31' },
+              ],
+              id: '3',
+            },
+          ],
+          ['3', '31', '311'],
+        ),
+      ).toEqual({ id: '311' });
+    });
+
+    it('should get closest item in tree', () => {
+      expect(
+        getClosestItemFromPath<string>(
+          [
+            { id: '1' },
+            { children: [{ id: '21' }], id: '2' },
+            {
+              children: [
+                { children: [{ id: '311' }, { id: '312' }], id: '31' },
+              ],
+              id: '3',
+            },
+          ],
+          ['3', '31', '314'],
+        ),
+      ).toEqual(expect.objectContaining({ id: '31' }));
     });
   });
 });
