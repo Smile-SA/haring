@@ -16,7 +16,7 @@ exports[`CollapseButton matches snapshot 1`] = `
         class="mantine-Button-label mantine-12tfho7"
       >
         <button
-          class="mantine-o4vq62"
+          class="mantine-pax7vz"
           data-testid="select"
           type="button"
         />
