@@ -74,6 +74,7 @@ export interface IHeaderProps
   onSearchChange?: (value: string) => void;
   onSearchSubmit?: (event: FormEvent) => void;
   right?: ReactNode;
+  searchAriaLabel?: string;
   searchTheme?: MantineThemeOverride;
   searchValue?: string;
 }
@@ -88,6 +89,7 @@ export function Header(props: IHeaderProps): ReactElement {
     onSearchChange,
     onSearchSubmit,
     right,
+    searchAriaLabel = 'Search',
     searchTheme,
     searchValue,
     withBorder = true,
@@ -125,6 +127,7 @@ export function Header(props: IHeaderProps): ReactElement {
         </Flex>
         <Flex className={classes.around}>
           <Button
+            aria-label={searchAriaLabel}
             className={buttonClasses.join(' ')}
             data-testid="search"
             h={height}

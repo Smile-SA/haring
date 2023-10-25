@@ -2,7 +2,7 @@
 import type { PaginationProps } from '@mantine/core';
 import type { FlexProps } from '@mantine/core/lib/Flex/Flex';
 import type { SelectProps } from '@mantine/core/lib/Select/Select';
-import type { IOptions } from '@smile/react-front-kit-shared';
+import type { IOptions } from '@smile/react-front-kit-shared/src/types/options';
 import type { ReactElement } from 'react';
 
 import {
@@ -20,7 +20,7 @@ const useStyles = createStyles(() => ({
 
 export interface IPaginationProps extends FlexProps {
   itemsPerPage: number;
-  itemsPerPageLabel?: string;
+  itemsPerPageAriaLabel?: string;
   itemsPerPageOptions?: IOptions<number>;
   onItemsPerPageChange?: (value: number) => void;
   onPageChange?: (value: number) => void;
@@ -34,7 +34,7 @@ export interface IPaginationProps extends FlexProps {
 export function Pagination(props: IPaginationProps): ReactElement {
   const {
     itemsPerPage,
-    itemsPerPageLabel,
+    itemsPerPageAriaLabel,
     itemsPerPageOptions = [],
     onItemsPerPageChange,
     onPageChange,
@@ -59,9 +59,9 @@ export function Pagination(props: IPaginationProps): ReactElement {
 
   return (
     <Flex className={classes.container} data-testid="pagination" {...flexProps}>
-      {itemsPerPageOptions.length > 0 && itemsPerPageLabel ? (
+      {itemsPerPageOptions.length > 0 && itemsPerPageAriaLabel ? (
         <Select
-          aria-label={itemsPerPageLabel}
+          aria-label={itemsPerPageAriaLabel}
           data={itemsPerPageOptions.map((option) => {
             return {
               label: option.label ?? option.value.toString(),

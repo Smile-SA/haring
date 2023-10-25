@@ -34,6 +34,7 @@ exports[`Header matches snapshot 1`] = `
         class="mantine-1dcfulj"
       >
         <button
+          aria-label="Search"
           class="mantine-UnstyledButton-root mantine-Button-root mantine-1ckwbd"
           data-button="true"
           data-testid="search"
