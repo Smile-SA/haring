@@ -9,8 +9,8 @@ const meta = {
   decorators: [
     function Component(Story, ctx) {
       const args = useStorybookArgsConnect(ctx.args, {
+        onItemsPerPageChange: 'itemsPerPage',
         onPageChange: 'page',
-        onRowsPerPageChange: 'rowsPerPage',
       });
       return <Story args={{ ...args }} />;
     },
@@ -24,15 +24,15 @@ type IStory = StoryObj<typeof meta>;
 
 export const Pagination: IStory = {
   args: {
-    page: 2,
-    rowsPerPage: 15,
-    rowsPerPageLabel: 'Number of results per page',
-    rowsPerPageOptions: [
+    itemsPerPage: 15,
+    itemsPerPageLabel: 'Number of results per page',
+    itemsPerPageOptions: [
       { label: 'Display 1 result', value: 1 },
       { label: 'Display 5 results', value: 5 },
       { label: 'Display 10 results', value: 10 },
       { label: 'Display 15 results', value: 15 },
     ],
+    page: 2,
     totalPages: 10,
   },
 };
