@@ -2,13 +2,14 @@
 
 import type { FormEvent, ReactElement } from 'react';
 
-import { Avatar, Button, Flex, Menu } from '@mantine/core';
-import { FolderPlus } from '@phosphor-icons/react';
-import { primaryTheme } from '@smile/react-front-kit-shared';
+import { Avatar, Button, Flex, MantineProvider, Menu } from '@mantine/core';
+import { Eye, FolderPlus, Suitcase, User } from '@phosphor-icons/react';
+import { primaryTheme, secondaryTheme } from '@smile/react-front-kit-shared';
 import { useState } from 'react';
 
 import { DropdownButton } from '../../Components/DropdownButton/DropdownButton';
 import { Header } from '../../Components/Header/Header';
+import { InfoCard } from '../../Components/InfoCard/InfoCard';
 import { SidebarMenu } from '../../Components/SidebarMenu/SidebarMenu';
 import { menu } from '../../Components/SidebarMenu/SidebarMenu.mock';
 import { FoldableColumnLayout } from '../../Layouts/FoldableColumnLayout/FoldableColumnLayout';
@@ -85,7 +86,41 @@ export function TestPage(): ReactElement {
       }
       sidebarToggleLabel="Voir l'arborescence"
     >
-      <span>Lorem Ipsum dolor sit amet</span>
+      <MantineProvider theme={secondaryTheme}>
+        <InfoCard
+          content={
+            <p
+              style={{
+                cursor: 'pointer',
+                display: 'flex',
+                fontWeight: 600,
+                margin: '0',
+                verticalAlign: 'center',
+              }}
+            >
+              <Eye
+                size={18}
+                style={{ margin: 'auto 10px auto 0' }}
+                weight="bold"
+              />
+              View the folder properties
+            </p>
+          }
+          contentItems={[
+            {
+              icon: <User />,
+              label: 'Individual contract',
+            },
+            {
+              icon: <Suitcase />,
+              label: '2 Lines text for example',
+            },
+          ]}
+          title={<h1>Jean-Michel DUPONT</h1>}
+        >
+          <p>Customizable content</p>
+        </InfoCard>
+      </MantineProvider>
       <p>
         Lorem <a href="#">ipsum</a> dolor sit amet, consectetur adipiscing elit.
         Sed varius bibendum dui non imperdiet. Donec vehicula fringilla lorem

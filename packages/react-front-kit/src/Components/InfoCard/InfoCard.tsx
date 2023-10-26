@@ -1,9 +1,9 @@
 'use client';
 
-import type { ActionIconProps, BoxProps } from '@mantine/core';
+import type { ActionIconProps, PaperProps } from '@mantine/core';
 import type { ReactElement } from 'react';
 
-import { ActionIcon, Box } from '@mantine/core';
+import { ActionIcon, Paper } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
 
 import Motif from './Motif';
@@ -15,7 +15,7 @@ interface IContentItem {
   onAction?: (item: IContentItem) => void;
 }
 
-interface IInfoCardProps extends BoxProps {
+interface IInfoCardProps extends PaperProps {
   children?: ReactElement;
   content?: ReactElement;
   contentItems?: IContentItem[];
@@ -40,6 +40,7 @@ const useStyles = createStyles(() => ({
     alignItems: 'center',
     cursor: 'pointer',
     display: 'flex',
+    fontSize: '20px',
     justifyContent: 'center',
     marginRight: '16px',
   },
@@ -98,6 +99,7 @@ const useStyles = createStyles(() => ({
   },
 }));
 
+/** Additional props will be forwarded to the [Mantine Paper component](https://mantine.dev/core/paper/) */
 export function InfoCard(props: IInfoCardProps): ReactElement {
   const {
     content,
@@ -105,11 +107,11 @@ export function InfoCard(props: IInfoCardProps): ReactElement {
     contentItems = [],
     motif = <Motif />,
     children,
-    ...BoxProps
+    ...PaperProps
   } = props;
   const { classes } = useStyles();
   return (
-    <Box className={classes.root} color="primary" {...BoxProps}>
+    <Paper className={classes.root} {...PaperProps}>
       <div className={classes.motif}>{motif}</div>
       <div className={classes.container}>
         <div className={classes.leftContainer}>
@@ -143,6 +145,6 @@ export function InfoCard(props: IInfoCardProps): ReactElement {
         </div>
         <div className={classes.rightContainer}>{children}</div>
       </div>
-    </Box>
+    </Paper>
   );
 }
