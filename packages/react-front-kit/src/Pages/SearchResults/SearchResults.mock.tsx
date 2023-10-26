@@ -1,9 +1,8 @@
-import { Avatar, Box, Flex, Menu, Paper, Select } from '@mantine/core';
-import { CaretDown } from '@phosphor-icons/react';
+import type { IOption, ISearchFilter, ITypeFilter } from './SearchResults';
+
+import { Avatar, Menu } from '@mantine/core';
 
 import { DropdownButton } from '../../Components/DropdownButton/DropdownButton';
-import { Pagination } from '../../Components/Pagination/Pagination';
-import { SearchBar } from '../../Components/SearchBar/SearchBar';
 
 export const headerContent = (
   <>
@@ -40,56 +39,42 @@ export const headerRight = (
   </>
 );
 
-export const sidebarContent = (
-  <Paper p={24} style={{ borderRadius: 16, height: '100%' }}>
-    [filters]
-  </Paper>
-);
+export const typeOptions = (numberOfResults: number): ITypeFilter[] => {
+  return [
+    {
+      label: `Tous (${numberOfResults})`,
+      results: numberOfResults,
+      value: 'all',
+    },
+    {
+      label: `Factures (${Math.ceil(numberOfResults / 2)})`,
+      results: Math.ceil(numberOfResults / 2),
+      value: 'invoice',
+    },
+    {
+      label: `Contrats (${Math.floor(numberOfResults / 2)})`,
+      results: Math.floor(numberOfResults / 2),
+      value: 'contract',
+    },
+  ];
+};
 
-const leftSearch = (
-  <Select
-    data={['Tous (135)']}
-    defaultValue="Tous (135)"
-    rightSection={<CaretDown size={14} />}
-    size="lg"
-    styles={() => ({
-      input: {
-        padding: '0 calc(3.125rem  / 3) 0 40px',
-      },
-    })}
-  />
-);
+export const filters: ISearchFilter[] = [
+  { id: 'clientName', label: 'Nom du client', value: 'Dupont' },
+  { id: 'contractType', label: 'Type de contrat', value: 'Particulier' },
+  {
+    id: 'timePeriod',
+    label: 'Période',
+    value: { timeEnd: '20230523T000000Z', timeStart: '20230105T000000Z' },
+  },
+  { id: 'contractDuration', label: 'Durée du contrat', value: undefined },
+];
 
-export const topBlock = (
-  <Box mb={24}>
-    <SearchBar leftSection={leftSearch} />
-  </Box>
-);
-
-export const topBarRight = (
-  <Flex style={{ justifyContent: 'flex-end' }}>
-    <Select
-      data={['Trier par pertinence']}
-      defaultValue="Trier par pertinence"
-    />
-  </Flex>
-);
-
-export const content = (
-  <>
-    <Paper mb={24} p={24} style={{ borderRadius: 16, height: 748 }}>
-      [results]
-    </Paper>
-    <Pagination
-      itemsPerPage={10}
-      itemsPerPageAriaLabel="Nombre de résultats"
-      itemsPerPageOptions={[
-        { label: 'Afficher 5 résultats', value: 5 },
-        { label: 'Afficher 10 résultats', value: 10 },
-        { label: 'Afficher 20résultats', value: 20 },
-      ]}
-      page={1}
-      totalPages={10}
-    />
-  </>
-);
+export const sortingOptions: IOption<string>[] = [
+  { label: 'Trier par pertinence', value: 'relevance' },
+  { label: 'Trier par titre', value: 'title' },
+  { label: 'Trier par date de publication', value: 'publicationDate' },
+  { label: 'Trier par auteur', value: 'author' },
+  { label: 'Trier par emplacement', value: 'location' },
+  { label: 'Trier par description', value: 'description' },
+];

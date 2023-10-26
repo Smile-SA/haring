@@ -69,6 +69,7 @@ const useStyles = createStyles((theme) => ({
 export interface IHeaderProps
   extends Omit<HeaderProps, 'height' | 'left' | 'right'> {
   childrenComponent?: ElementType;
+  hasSearch?: boolean;
   height?: number;
   left?: ReactNode;
   onSearchChange?: (value: string) => void;
@@ -84,6 +85,7 @@ export function Header(props: IHeaderProps): ReactElement {
   const {
     children,
     childrenComponent,
+    hasSearch = true,
     height = 90,
     left,
     onSearchChange,
@@ -126,23 +128,25 @@ export function Header(props: IHeaderProps): ReactElement {
           {children}
         </Flex>
         <Flex className={classes.around}>
-          <Button
-            aria-label={searchAriaLabel}
-            className={buttonClasses.join(' ')}
-            data-testid="search"
-            h={height}
-            onClick={handleClick}
-            variant="white"
-            w={height}
-          >
-            <MagnifyingGlass size={32} />
-          </Button>
+          {Boolean(hasSearch) && (
+            <Button
+              aria-label={searchAriaLabel}
+              className={buttonClasses.join(' ')}
+              data-testid="search"
+              h={height}
+              onClick={handleClick}
+              variant="white"
+              w={height}
+            >
+              <MagnifyingGlass size={32} />
+            </Button>
+          )}
           {Boolean(opened) && (
             <MantineProvider theme={searchTheme ?? defaultTheme}>
               <HeaderSearch
                 data-testid="searchBar"
                 onChange={onSearchChange}
-                onSubmit={onSearchSubmit}
+                onSearchSubmit={onSearchSubmit}
                 opened={opened}
                 value={searchValue}
               />

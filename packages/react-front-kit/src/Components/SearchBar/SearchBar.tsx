@@ -58,7 +58,8 @@ export interface ISearchBarProps extends Omit<TextInputProps, 'onChange'> {
   inputAriaLabel?: string;
   leftSection?: ReactNode;
   onChange?: (value: string) => void;
-  onSubmit?: (event: FormEvent) => void;
+  onSearchClear?: () => void;
+  onSearchSubmit?: (event: FormEvent) => void;
   opened?: boolean;
   value?: string;
 }
@@ -71,7 +72,8 @@ export function SearchBar(props: ISearchBarProps): ReactElement {
     leftSection,
     opened,
     onChange,
-    onSubmit,
+    onSearchClear,
+    onSearchSubmit,
     value,
     ...textInputProps
   } = props;
@@ -84,12 +86,17 @@ export function SearchBar(props: ISearchBarProps): ReactElement {
     }
   }, [opened]);
 
+  function handleSubmit(event: FormEvent): void {
+    onSearchSubmit?.(event);
+  }
+
   function handleSearchChange(event: ChangeEvent<HTMLInputElement>): void {
     onChange?.(event.target.value);
   }
 
   function handleSearchClear(): void {
     onChange?.('');
+    onSearchClear?.();
     if (inputRef.current && opened) {
       inputRef.current.focus();
     }
@@ -104,7 +111,7 @@ export function SearchBar(props: ISearchBarProps): ReactElement {
           <div className={classes.separator} />
         </>
       )}
-      <form className={classes.inputRoot} onSubmit={onSubmit}>
+      <form className={classes.inputRoot} onSubmit={handleSubmit}>
         <TextInput
           ref={inputRef}
           aria-label={inputAriaLabel}

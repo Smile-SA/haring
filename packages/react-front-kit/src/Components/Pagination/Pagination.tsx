@@ -12,9 +12,13 @@ import {
   createStyles,
 } from '@mantine/core';
 
-const useStyles = createStyles(() => ({
+const useStyles = createStyles((_, styleTransparent: boolean) => ({
   container: {
     justifyContent: 'space-between',
+  },
+  control: {
+    backgroundColor: styleTransparent ? 'transparent' : '',
+    borderColor: styleTransparent ? 'transparent' : '',
   },
 }));
 
@@ -27,6 +31,7 @@ export interface IPaginationProps extends FlexProps {
   page: number;
   paginationProps?: PaginationProps;
   selectProps?: SelectProps;
+  styleTransparent?: boolean;
   totalPages: number;
 }
 
@@ -41,10 +46,11 @@ export function Pagination(props: IPaginationProps): ReactElement {
     page,
     paginationProps,
     selectProps,
+    styleTransparent = false,
     totalPages,
     ...flexProps
   } = props;
-  const { classes } = useStyles();
+  const { classes } = useStyles(styleTransparent);
 
   /* methods */
   function handleChangeItemsPerPage(value: string): void {
@@ -76,6 +82,7 @@ export function Pagination(props: IPaginationProps): ReactElement {
         />
       ) : null}
       <MantinePagination
+        classNames={{ control: classes.control }}
         data-testid="pagination-page"
         onChange={handleChangePage}
         radius="sm"

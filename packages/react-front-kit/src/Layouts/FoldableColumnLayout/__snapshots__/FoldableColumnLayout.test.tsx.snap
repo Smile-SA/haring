@@ -12,14 +12,14 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
         class="mantine-we0muc mantine-AppShell-main"
       >
         <div
-          class="mantine-pd0q8l"
+          class="mantine-1n4vm8k"
           color="primary"
         >
           <div
             class="mantine-Grid-root mantine-16fdnqw"
           >
             <div
-              class="mantine-Grid-col mantine-c6e1wb"
+              class="mantine-Grid-col mantine-b6e2c5"
             >
               <div
                 class="mantine-Switch-root mantine-Switch-root mantine-1knyxmk"
@@ -62,7 +62,7 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
               </div>
             </div>
             <div
-              class="mantine-Grid-col mantine-mawx2x"
+              class="mantine-Grid-col mantine-1aonpsc"
             />
           </div>
         </div>
@@ -74,14 +74,14 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
           >
             <div
               aria-hidden="false"
-              class="mantine-Grid-col mantine-1slhqex"
+              class="mantine-Grid-col mantine-11w2beg"
             >
               <span>
                 sidebar content
               </span>
             </div>
             <div
-              class="mantine-Grid-col mantine-1o31iwp"
+              class="mantine-Grid-col mantine-kq3fkz"
             >
               <span>
                 main content
