@@ -184,12 +184,12 @@ export function SearchResults(props: ISearchResultsProps): ReactElement {
         &quot;, page {page}/{totalPages}, sorted by {activeSorting}]
       </Paper>
       <Pagination
+        itemsPerPage={rowsPerPage}
+        itemsPerPageAriaLabel="Nombre de résultats"
+        itemsPerPageOptions={rowsPerPageOptions}
+        onItemsPerPageChange={setRowsPerPage}
         onPageChange={setPage}
-        onRowsPerPageChange={setRowsPerPage}
         page={page}
-        rowsPerPage={rowsPerPage}
-        rowsPerPageAriaLabel="Nombre de résultats"
-        rowsPerPageOptions={rowsPerPageOptions}
         styleTransparent
         totalPages={totalPages}
       />
