@@ -2,7 +2,8 @@
 
 import type { FormEvent, ReactElement } from 'react';
 
-import { Box, Flex, Paper, Select } from '@mantine/core';
+import { Box, Flex, Paper, Select, createStyles, rem } from '@mantine/core';
+import { useUncontrolled } from '@mantine/hooks';
 import { CaretDown } from '@phosphor-icons/react';
 import {
   isNotNullNorEmpty,
@@ -16,18 +17,7 @@ import { Pagination } from '../../Components/Pagination/Pagination';
 import { SearchBar } from '../../Components/SearchBar/SearchBar';
 import { FoldableColumnLayout } from '../../Layouts/FoldableColumnLayout/FoldableColumnLayout';
 
-import {
-  headerContent,
-  headerLeft,
-  headerRight,
-  typeOptions,
-} from './SearchResults.mock';
-
-type IFilterTypes =
-  | 'clientName'
-  | 'contractDuration'
-  | 'contractType'
-  | 'timePeriod';
+import { headerContent, headerLeft, headerRight } from './SearchResults.mock';
 
 export interface IOption<T> {
   label: string;
@@ -39,30 +29,25 @@ export interface ITypeFilter extends IOption<string> {
 }
 
 export interface ISearchFilter extends IOption<unknown> {
-  id: IFilterTypes;
+  id: string;
 }
 
-interface ISearchResultsProps {
-  filters: ISearchFilter[];
-  initialSearch: string;
-  numberOfResults: number;
-  sortingOptions: IOption<string>[];
-  typeFilterOptions?: ITypeFilter[];
-}
+const useStyles = createStyles((theme) => ({
+  select: {
+    ':focus, :focus-within': {
+      outline: `${rem(2)} solid ${theme.colors.orange[5]}`,
+    },
+    borderRadius: '1.5rem',
+  },
+}));
 
 /**
- * Example Page of a search results page, actions and attributes in a `ResponsiveTabs` component
+ * Example Page of a search results page, using `FoldableColumnLayout`
  */
-export function SearchResults(props: ISearchResultsProps): ReactElement {
-  const {
-    filters = [],
-    initialSearch = '',
-    numberOfResults = 100,
-    sortingOptions = [],
-    typeFilterOptions = typeOptions(numberOfResults),
-  } = props;
+export function SearchResults(): ReactElement {
+  const numberOfResults = 135;
   // Search
-  const [search, setSearch] = useState<string>(initialSearch);
+  const [search, setSearch] = useState<string>('567890456');
   const [submittedSearch, setSubmittedSearch] = useState<string>(search);
   // Pagination
   const [page, setPage] = useState<number>(1);
@@ -73,12 +58,40 @@ export function SearchResults(props: ISearchResultsProps): ReactElement {
     { label: 'Afficher 20 résultats', value: 20 },
   ];
   // Search Type Filter
+  const typeFilterOptions: ITypeFilter[] = [
+    {
+      label: `Tous (${numberOfResults})`,
+      results: numberOfResults,
+      value: 'all',
+    },
+    {
+      label: `Factures (${Math.ceil(numberOfResults / 2)})`,
+      results: Math.ceil(numberOfResults / 2),
+      value: 'invoice',
+    },
+    {
+      label: `Contrats (${Math.floor(numberOfResults / 2)})`,
+      results: Math.floor(numberOfResults / 2),
+      value: 'contract',
+    },
+  ];
   const [activeType, setActiveType] = useState<ITypeFilter>(
     typeFilterOptions[0],
   );
   const typeFilteredResults = activeType.results;
   // Filters Column
-  const [isColumnVisible, setIsColumnVisible] = useState<boolean>(true);
+  const [isColumnVisible, handleChangeIsColumnVisible] =
+    useUncontrolled<boolean>({ defaultValue: true });
+  const filters: ISearchFilter[] = [
+    { id: 'clientName', label: 'Nom du client', value: 'Dupont' },
+    { id: 'contractType', label: 'Type de contrat', value: 'Particulier' },
+    {
+      id: 'timePeriod',
+      label: 'Période',
+      value: { timeEnd: '20230523T000000Z', timeStart: '20230105T000000Z' },
+    },
+    { id: 'contractDuration', label: 'Durée du contrat', value: undefined },
+  ];
   const activeFilters = filters.filter((filter) =>
     isNotNullNorEmpty(filter.value),
   );
@@ -86,11 +99,20 @@ export function SearchResults(props: ISearchResultsProps): ReactElement {
     ? `Filtres actifs (${activeFilters.length})`
     : `Voir les filtres actifs (${activeFilters.length})`;
   // Sorting
+  const sortingOptions: IOption<string>[] = [
+    { label: 'Trier par pertinence', value: 'relevance' },
+    { label: 'Trier par titre', value: 'title' },
+    { label: 'Trier par date de publication', value: 'publicationDate' },
+    { label: 'Trier par auteur', value: 'author' },
+    { label: 'Trier par emplacement', value: 'location' },
+    { label: 'Trier par description', value: 'description' },
+  ];
   const [activeSorting, setActiveSorting] = useState<string | null>(
     sortingOptions[0]?.value,
   );
 
   const totalPages = Math.ceil(typeFilteredResults / rowsPerPage);
+  const { classes } = useStyles();
 
   function handleSearchSubmit(event: FormEvent): void {
     event.preventDefault();
@@ -118,7 +140,7 @@ export function SearchResults(props: ISearchResultsProps): ReactElement {
       }}
       boxMotif={<Motif style={{ fill: '#868E96', opacity: 0.1 }} />}
       boxProps={{ p: '50px 64px' }}
-      onChangeIsColumnVisible={setIsColumnVisible}
+      onChangeIsColumnVisible={handleChangeIsColumnVisible}
       sidebarContent={
         <Paper
           p={24}
@@ -152,6 +174,7 @@ export function SearchResults(props: ISearchResultsProps): ReactElement {
           <SearchBar
             leftSection={
               <Select
+                className={classes.select}
                 data={typeFilterOptions}
                 defaultValue={activeType.value}
                 onChange={(v) =>
@@ -167,6 +190,7 @@ export function SearchResults(props: ISearchResultsProps): ReactElement {
                     padding: '0 calc(3.125rem  / 3) 0 40px',
                   },
                 })}
+                variant="unstyled"
               />
             }
             onChange={setSearch}
@@ -184,13 +208,13 @@ export function SearchResults(props: ISearchResultsProps): ReactElement {
         &quot;, page {page}/{totalPages}, sorted by {activeSorting}]
       </Paper>
       <Pagination
+        isTransparent
         itemsPerPage={rowsPerPage}
         itemsPerPageAriaLabel="Nombre de résultats"
         itemsPerPageOptions={rowsPerPageOptions}
         onItemsPerPageChange={setRowsPerPage}
         onPageChange={setPage}
         page={page}
-        styleTransparent
         totalPages={totalPages}
       />
     </FoldableColumnLayout>

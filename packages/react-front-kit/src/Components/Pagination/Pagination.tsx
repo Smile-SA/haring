@@ -2,7 +2,7 @@
 import type { PaginationProps } from '@mantine/core';
 import type { FlexProps } from '@mantine/core/lib/Flex/Flex';
 import type { SelectProps } from '@mantine/core/lib/Select/Select';
-import type { IOptions } from '@smile/react-front-kit-shared/src/types/options';
+import type { IOptions } from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';
 
 import {
@@ -23,6 +23,7 @@ const useStyles = createStyles((_, styleTransparent: boolean) => ({
 }));
 
 export interface IPaginationProps extends FlexProps {
+  isTransparent?: boolean;
   itemsPerPage: number;
   itemsPerPageAriaLabel?: string;
   itemsPerPageOptions?: IOptions<number>;
@@ -31,13 +32,13 @@ export interface IPaginationProps extends FlexProps {
   page: number;
   paginationProps?: PaginationProps;
   selectProps?: SelectProps;
-  styleTransparent?: boolean;
   totalPages: number;
 }
 
 /** Additional props will be forwarded to the [Mantine Flex component](https://mantine.dev/core/flex) */
 export function Pagination(props: IPaginationProps): ReactElement {
   const {
+    isTransparent = false,
     itemsPerPage,
     itemsPerPageAriaLabel,
     itemsPerPageOptions = [],
@@ -46,11 +47,10 @@ export function Pagination(props: IPaginationProps): ReactElement {
     page,
     paginationProps,
     selectProps,
-    styleTransparent = false,
     totalPages,
     ...flexProps
   } = props;
-  const { classes } = useStyles(styleTransparent);
+  const { classes } = useStyles(isTransparent);
 
   /* methods */
   function handleChangeItemsPerPage(value: string): void {

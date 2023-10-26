@@ -23,7 +23,8 @@ import { useState } from 'react';
 
 const useStyles = createStyles((_, boxTheme: MantineThemeOverride) => ({
   box: {
-    background: boxTheme.black,
+    background:
+      boxTheme.colorScheme === 'dark' ? boxTheme.black : boxTheme.white,
     position: 'relative',
     width: '100%',
   },

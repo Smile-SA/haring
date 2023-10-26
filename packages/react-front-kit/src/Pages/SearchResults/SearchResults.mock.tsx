@@ -1,5 +1,3 @@
-import type { IOption, ISearchFilter, ITypeFilter } from './SearchResults';
-
 import { Avatar, Menu } from '@mantine/core';
 
 import { DropdownButton } from '../../Components/DropdownButton/DropdownButton';
@@ -38,43 +36,3 @@ export const headerRight = (
     />
   </>
 );
-
-export const typeOptions = (numberOfResults: number): ITypeFilter[] => {
-  return [
-    {
-      label: `Tous (${numberOfResults})`,
-      results: numberOfResults,
-      value: 'all',
-    },
-    {
-      label: `Factures (${Math.ceil(numberOfResults / 2)})`,
-      results: Math.ceil(numberOfResults / 2),
-      value: 'invoice',
-    },
-    {
-      label: `Contrats (${Math.floor(numberOfResults / 2)})`,
-      results: Math.floor(numberOfResults / 2),
-      value: 'contract',
-    },
-  ];
-};
-
-export const filters: ISearchFilter[] = [
-  { id: 'clientName', label: 'Nom du client', value: 'Dupont' },
-  { id: 'contractType', label: 'Type de contrat', value: 'Particulier' },
-  {
-    id: 'timePeriod',
-    label: 'Période',
-    value: { timeEnd: '20230523T000000Z', timeStart: '20230105T000000Z' },
-  },
-  { id: 'contractDuration', label: 'Durée du contrat', value: undefined },
-];
-
-export const sortingOptions: IOption<string>[] = [
-  { label: 'Trier par pertinence', value: 'relevance' },
-  { label: 'Trier par titre', value: 'title' },
-  { label: 'Trier par date de publication', value: 'publicationDate' },
-  { label: 'Trier par auteur', value: 'author' },
-  { label: 'Trier par emplacement', value: 'location' },
-  { label: 'Trier par description', value: 'description' },
-];
