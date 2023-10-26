@@ -12,15 +12,15 @@ describe('Pagination', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
       <Pagination
-        page={2}
-        rowsPerPage={15}
-        rowsPerPageLabel="Number of results per page"
-        rowsPerPageOptions={[
+        itemsPerPage={15}
+        itemsPerPageLabel="Number of results per page"
+        itemsPerPageOptions={[
           { label: 'Display 1 result', value: 1 },
           { label: 'Display 5 results', value: 5 },
           { label: 'Display 10 results', value: 10 },
           { label: 'Display 15 results', value: 15 },
         ]}
+        page={2}
         totalPages={10}
       />,
     );
@@ -29,32 +29,32 @@ describe('Pagination', () => {
 
   it('renders with minimal props', () => {
     const { container } = renderWithProviders(
-      <Pagination page={2} rowsPerPage={15} totalPages={10} />,
+      <Pagination itemsPerPage={15} page={2} totalPages={10} />,
     );
     const canvas = within(container);
     expect(canvas.queryByTestId('pagination')).toBeVisible();
-    expect(canvas.queryByTestId('pagination-rowsPerPage')).toBeNull();
+    expect(canvas.queryByTestId('pagination-itemsPerPage')).toBeNull();
     expect(canvas.queryByTestId('pagination-page')).toBeVisible();
   });
 
   it('renders with full props', () => {
     const { container } = renderWithProviders(
       <Pagination
-        page={2}
-        rowsPerPage={15}
-        rowsPerPageLabel="Number of results per page"
-        rowsPerPageOptions={[
+        itemsPerPage={15}
+        itemsPerPageLabel="Number of results per page"
+        itemsPerPageOptions={[
           { value: 1 },
           { value: 5 },
           { value: 10 },
           { value: 15 },
         ]}
+        page={2}
         totalPages={10}
       />,
     );
     const canvas = within(container);
     expect(canvas.queryByTestId('pagination')).toBeVisible();
-    expect(canvas.queryByTestId('pagination-rowsPerPage')).toBeVisible();
+    expect(canvas.queryByTestId('pagination-itemsPerPage')).toBeVisible();
     expect(canvas.queryByTestId('pagination-page')).toBeVisible();
   });
 });

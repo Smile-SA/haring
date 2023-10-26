@@ -32,9 +32,6 @@ import {
 } from './DocumentDetails.mock';
 import { DocumentView } from './DocumentView';
 
-const theme = primaryTheme;
-theme.colorScheme = 'dark';
-
 const useStyles = createStyles((theme) => ({
   actionIcons: {
     display: 'flex',
@@ -163,7 +160,7 @@ export function DocumentDetails(): ReactElement {
           </Flex>
         </Grid.Col>
         <Grid.Col className={classes.colRight} span={4}>
-          <MantineProvider theme={theme}>
+          <MantineProvider theme={primaryTheme}>
             <ResponsiveTabs defaultValue="1" tabs={tabs}>
               <Space h="xl" />
               <Tabs.Panel value="1">

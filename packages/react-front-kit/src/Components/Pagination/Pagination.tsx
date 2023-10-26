@@ -2,6 +2,7 @@
 import type { PaginationProps } from '@mantine/core';
 import type { FlexProps } from '@mantine/core/lib/Flex/Flex';
 import type { SelectProps } from '@mantine/core/lib/Select/Select';
+import type { IOptions } from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';
 
 import {
@@ -17,19 +18,14 @@ const useStyles = createStyles(() => ({
   },
 }));
 
-export interface IRowsPerPageOption {
-  label?: string;
-  value: number;
-}
-
 export interface IPaginationProps extends FlexProps {
+  itemsPerPage: number;
+  itemsPerPageLabel?: string;
+  itemsPerPageOptions?: IOptions<number>;
+  onItemsPerPageChange?: (value: number) => void;
   onPageChange?: (value: number) => void;
-  onRowsPerPageChange?: (value: number) => void;
   page: number;
   paginationProps?: PaginationProps;
-  rowsPerPage: number;
-  rowsPerPageLabel?: string;
-  rowsPerPageOptions?: IRowsPerPageOption[];
   selectProps?: SelectProps;
   totalPages: number;
 }
@@ -37,13 +33,13 @@ export interface IPaginationProps extends FlexProps {
 /** Additional props will be forwarded to the [Mantine Flex component](https://mantine.dev/core/flex) */
 export function Pagination(props: IPaginationProps): ReactElement {
   const {
+    itemsPerPage,
+    itemsPerPageLabel,
+    itemsPerPageOptions = [],
+    onItemsPerPageChange,
     onPageChange,
-    onRowsPerPageChange,
     page,
     paginationProps,
-    rowsPerPage,
-    rowsPerPageLabel,
-    rowsPerPageOptions = [],
     selectProps,
     totalPages,
     ...flexProps
@@ -51,9 +47,9 @@ export function Pagination(props: IPaginationProps): ReactElement {
   const { classes } = useStyles();
 
   /* methods */
-  function handleChangeRowsPerPage(value: string): void {
+  function handleChangeItemsPerPage(value: string): void {
     if (value) {
-      onRowsPerPageChange?.(Number(value));
+      onItemsPerPageChange?.(Number(value));
     }
   }
 
@@ -63,19 +59,19 @@ export function Pagination(props: IPaginationProps): ReactElement {
 
   return (
     <Flex className={classes.container} data-testid="pagination" {...flexProps}>
-      {rowsPerPageOptions.length > 0 && rowsPerPageLabel ? (
+      {itemsPerPageOptions.length > 0 && itemsPerPageLabel ? (
         <Select
-          aria-label={rowsPerPageLabel}
-          data={rowsPerPageOptions.map((option) => {
+          aria-label={itemsPerPageLabel}
+          data={itemsPerPageOptions.map((option) => {
             return {
               label: option.label ?? option.value.toString(),
               value: option.value.toString(),
             };
           })}
-          data-testid="pagination-rowsPerPage"
-          onChange={handleChangeRowsPerPage}
+          data-testid="pagination-itemsPerPage"
+          onChange={handleChangeItemsPerPage}
           size="xs"
-          value={rowsPerPage.toString()}
+          value={itemsPerPage.toString()}
           {...selectProps}
         />
       ) : null}

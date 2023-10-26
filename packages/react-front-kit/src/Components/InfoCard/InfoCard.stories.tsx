@@ -33,12 +33,12 @@ export const InfoCard: IStory = {
     ),
     contentItems: [
       {
-        icon: <User size={20} />,
+        icon: <User />,
         label: 'Individual contract',
         onAction: action('onAction'),
       },
       {
-        icon: <Suitcase size={20} />,
+        icon: <Suitcase />,
         label: '2 Lines text for example',
         onAction: action('onAction'),
       },
