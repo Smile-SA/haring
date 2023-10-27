@@ -3,11 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/src/storybook-utils';
 
 import { FoldableColumnLayout as Cmp } from './FoldableColumnLayout';
-import {
-  header,
-  mainContent,
-  sidebarContent,
-} from './FoldableColumnLayout.mock';
+import { mainContent, sidebarContent } from './FoldableColumnLayout.mock';
 
 const meta = {
   component: Cmp,
@@ -30,10 +26,6 @@ type IStory = StoryObj<typeof meta>;
 
 export const FoldableColumnLayout: IStory = {
   args: {
-    appShellProps: {
-      header,
-      padding: 0,
-    },
     children: mainContent,
     containerProps: { p: '20px' },
     sidebarContent,

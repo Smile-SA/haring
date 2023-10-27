@@ -5,11 +5,9 @@ import type {
   ContainerProps,
   MantineThemeOverride,
 } from '@mantine/core';
-import type { AppShellProps } from '@mantine/core/lib/AppShell/AppShell';
 import type { ChangeEvent, ReactElement, ReactNode } from 'react';
 
 import {
-  AppShell,
   Box,
   Container,
   Grid,
@@ -45,7 +43,6 @@ const useStyles = createStyles((_, boxTheme: MantineThemeOverride) => ({
 }));
 
 export interface IFoldableColumnLayoutProps {
-  appShellProps?: Omit<AppShellProps, 'children'>;
   boxMotif?: ReactNode;
   boxProps?: BoxProps;
   children: ReactNode;
@@ -67,7 +64,6 @@ export function FoldableColumnLayout(
   props: IFoldableColumnLayoutProps,
 ): ReactElement {
   const {
-    appShellProps,
     boxMotif,
     boxProps,
     children,
@@ -95,7 +91,7 @@ export function FoldableColumnLayout(
   }
 
   return (
-    <AppShell padding={0} {...appShellProps}>
+    <>
       <MantineProvider theme={topBlockTheme}>
         <Box
           className={classes.box}
@@ -139,9 +135,9 @@ export function FoldableColumnLayout(
           >
             {sidebarContent}
           </Grid.Col>
-          <Grid.Col span="auto">{children}</Grid.Col>
+          <Grid.Col span={9}>{children}</Grid.Col>
         </Grid>
       </Container>
-    </AppShell>
+    </>
   );
 }
