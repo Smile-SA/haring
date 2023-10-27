@@ -17,9 +17,9 @@ import {
   Switch,
   Text,
 } from '@mantine/core';
+import { useUncontrolled } from '@mantine/hooks';
 import { createStyles } from '@mantine/styles';
 import { baseTheme } from '@smile/react-front-kit-shared';
-import { useState } from 'react';
 
 const useStyles = createStyles((_, boxTheme: MantineThemeOverride) => ({
   box: {
@@ -50,6 +50,8 @@ export interface IFoldableColumnLayoutProps {
   boxProps?: BoxProps;
   children: ReactNode;
   containerProps?: ContainerProps;
+  isColumnVisible?: boolean;
+  isColumnVisibleDefaultValue?: boolean;
   onChangeIsColumnVisible?: (isVisible: boolean) => void;
   sidebarContent: ReactNode;
   sidebarToggleLabel?: string;
@@ -70,6 +72,8 @@ export function FoldableColumnLayout(
     boxProps,
     children,
     containerProps,
+    isColumnVisible,
+    isColumnVisibleDefaultValue = true,
     onChangeIsColumnVisible,
     sidebarContent,
     sidebarToggleLabel = 'Display sidebar',
@@ -77,12 +81,17 @@ export function FoldableColumnLayout(
     topBlock,
     topBlockTheme = baseTheme,
   } = props;
-  const [isColumnVisible, setIsColumnVisible] = useState(true);
+  const [isColumnVisibleState, handleIsColumnVisibleChange] =
+    useUncontrolled<boolean>({
+      defaultValue: isColumnVisibleDefaultValue,
+      finalValue: true,
+      onChange: onChangeIsColumnVisible,
+      value: isColumnVisible,
+    });
   const { classes } = useStyles(topBlockTheme);
 
   function handleSidebarVisibleToggle(e: ChangeEvent<HTMLInputElement>): void {
-    setIsColumnVisible(Boolean(e.target.checked));
-    onChangeIsColumnVisible?.(Boolean(e.target.checked));
+    handleIsColumnVisibleChange(Boolean(e.target.checked));
   }
 
   return (
@@ -107,7 +116,7 @@ export function FoldableColumnLayout(
           <Grid>
             <Grid.Col span={3}>
               <Switch
-                checked={isColumnVisible}
+                checked={isColumnVisibleState}
                 id="sidebar-toggle"
                 label={
                   <Text fw={600} size="md">
@@ -124,8 +133,8 @@ export function FoldableColumnLayout(
       <Container fluid p="24px 64px 40px 64px" {...containerProps}>
         <Grid gutter="xl" pt={12}>
           <Grid.Col
-            aria-hidden={!isColumnVisible}
-            hidden={!isColumnVisible}
+            aria-hidden={!isColumnVisibleState}
+            hidden={!isColumnVisibleState}
             span={3}
           >
             {sidebarContent}

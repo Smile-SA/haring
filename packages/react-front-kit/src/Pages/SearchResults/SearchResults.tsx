@@ -3,7 +3,6 @@
 import type { FormEvent, ReactElement } from 'react';
 
 import { Box, Flex, Paper, Select, createStyles, rem } from '@mantine/core';
-import { useUncontrolled } from '@mantine/hooks';
 import { CaretDown } from '@phosphor-icons/react';
 import {
   isNotNullNorEmpty,
@@ -80,8 +79,7 @@ export function SearchResults(): ReactElement {
   );
   const typeFilteredResults = activeType.results;
   // Filters Column
-  const [isColumnVisible, handleChangeIsColumnVisible] =
-    useUncontrolled<boolean>({ defaultValue: true });
+  const [isColumnVisible, setIsColumnVisible] = useState(true);
   const filters: ISearchFilter[] = [
     { id: 'clientName', label: 'Nom du client', value: 'Dupont' },
     { id: 'contractType', label: 'Type de contrat', value: 'Particulier' },
@@ -140,7 +138,8 @@ export function SearchResults(): ReactElement {
       }}
       boxMotif={<Motif style={{ fill: '#868E96', opacity: 0.1 }} />}
       boxProps={{ p: '50px 64px' }}
-      onChangeIsColumnVisible={handleChangeIsColumnVisible}
+      isColumnVisible={isColumnVisible}
+      onChangeIsColumnVisible={setIsColumnVisible}
       sidebarContent={
         <Paper
           p={24}
