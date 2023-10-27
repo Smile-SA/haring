@@ -50,8 +50,8 @@ export interface IFoldableColumnLayoutProps {
   boxProps?: BoxProps;
   children: ReactNode;
   containerProps?: ContainerProps;
+  defaultIsColumnVisible?: boolean;
   isColumnVisible?: boolean;
-  isColumnVisibleDefaultValue?: boolean;
   onChangeIsColumnVisible?: (isVisible: boolean) => void;
   sidebarContent: ReactNode;
   sidebarToggleLabel?: string;
@@ -72,8 +72,8 @@ export function FoldableColumnLayout(
     boxProps,
     children,
     containerProps,
+    defaultIsColumnVisible = true,
     isColumnVisible,
-    isColumnVisibleDefaultValue = true,
     onChangeIsColumnVisible,
     sidebarContent,
     sidebarToggleLabel = 'Display sidebar',
@@ -83,7 +83,7 @@ export function FoldableColumnLayout(
   } = props;
   const [isColumnVisibleState, handleIsColumnVisibleChange] =
     useUncontrolled<boolean>({
-      defaultValue: isColumnVisibleDefaultValue,
+      defaultValue: defaultIsColumnVisible,
       finalValue: true,
       onChange: onChangeIsColumnVisible,
       value: isColumnVisible,
