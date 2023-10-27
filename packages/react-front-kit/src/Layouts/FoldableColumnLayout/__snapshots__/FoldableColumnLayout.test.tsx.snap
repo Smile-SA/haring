@@ -12,13 +12,14 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
         class="mantine-we0muc mantine-AppShell-main"
       >
         <div
-          class="mantine-Container-root mantine-1fosfnc"
+          class="mantine-1n4vm8k"
+          color="primary"
         >
           <div
             class="mantine-Grid-root mantine-16fdnqw"
           >
             <div
-              class="mantine-Grid-col mantine-c6e1wb"
+              class="mantine-Grid-col mantine-b6e2c5"
             >
               <div
                 class="mantine-Switch-root mantine-Switch-root mantine-1knyxmk"
@@ -33,7 +34,7 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
                     type="checkbox"
                   />
                   <label
-                    class="mantine-1i8ydp7 mantine-Switch-track"
+                    class="mantine-9eos18 mantine-Switch-track"
                     for="sidebar-toggle"
                   >
                     <div
@@ -44,7 +45,7 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
                     />
                   </label>
                   <div
-                    class="mantine-g88pth mantine-Switch-labelWrapper"
+                    class="mantine-18z23b8 mantine-Switch-labelWrapper"
                   >
                     <label
                       class="mantine-14fko7b mantine-Switch-label"
@@ -60,19 +61,27 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
                 </div>
               </div>
             </div>
+            <div
+              class="mantine-Grid-col mantine-1aonpsc"
+            />
           </div>
+        </div>
+        <div
+          class="mantine-Container-root mantine-r2yrer"
+        >
           <div
             class="mantine-Grid-root mantine-zodkxp"
           >
             <div
-              class="mantine-Grid-col mantine-1slhqex"
+              aria-hidden="false"
+              class="mantine-Grid-col mantine-11w2beg"
             >
               <span>
                 sidebar content
               </span>
             </div>
             <div
-              class="mantine-Grid-col mantine-1o31iwp"
+              class="mantine-Grid-col mantine-kq3fkz"
             >
               <span>
                 main content

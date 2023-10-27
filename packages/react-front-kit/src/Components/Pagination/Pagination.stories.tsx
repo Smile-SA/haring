@@ -25,7 +25,7 @@ type IStory = StoryObj<typeof meta>;
 export const Pagination: IStory = {
   args: {
     itemsPerPage: 15,
-    itemsPerPageLabel: 'Number of results per page',
+    itemsPerPageAriaLabel: 'Number of results per page',
     itemsPerPageOptions: [
       { label: 'Display 1 result', value: 1 },
       { label: 'Display 5 results', value: 5 },

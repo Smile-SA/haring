@@ -13,7 +13,7 @@ describe('Pagination', () => {
     const { container } = renderWithProviders(
       <Pagination
         itemsPerPage={15}
-        itemsPerPageLabel="Number of results per page"
+        itemsPerPageAriaLabel="Number of results per page"
         itemsPerPageOptions={[
           { label: 'Display 1 result', value: 1 },
           { label: 'Display 5 results', value: 5 },
@@ -41,7 +41,7 @@ describe('Pagination', () => {
     const { container } = renderWithProviders(
       <Pagination
         itemsPerPage={15}
-        itemsPerPageLabel="Number of results per page"
+        itemsPerPageAriaLabel="Number of results per page"
         itemsPerPageOptions={[
           { value: 1 },
           { value: 5 },

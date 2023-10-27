@@ -12,15 +12,20 @@ import {
   createStyles,
 } from '@mantine/core';
 
-const useStyles = createStyles(() => ({
+const useStyles = createStyles((_, styleTransparent: boolean) => ({
   container: {
     justifyContent: 'space-between',
+  },
+  control: {
+    backgroundColor: styleTransparent ? 'transparent' : '',
+    borderColor: styleTransparent ? 'transparent' : '',
   },
 }));
 
 export interface IPaginationProps extends FlexProps {
+  isTransparent?: boolean;
   itemsPerPage: number;
-  itemsPerPageLabel?: string;
+  itemsPerPageAriaLabel?: string;
   itemsPerPageOptions?: IOptions<number>;
   onItemsPerPageChange?: (value: number) => void;
   onPageChange?: (value: number) => void;
@@ -33,8 +38,9 @@ export interface IPaginationProps extends FlexProps {
 /** Additional props will be forwarded to the [Mantine Flex component](https://mantine.dev/core/flex) */
 export function Pagination(props: IPaginationProps): ReactElement {
   const {
+    isTransparent = false,
     itemsPerPage,
-    itemsPerPageLabel,
+    itemsPerPageAriaLabel,
     itemsPerPageOptions = [],
     onItemsPerPageChange,
     onPageChange,
@@ -44,7 +50,7 @@ export function Pagination(props: IPaginationProps): ReactElement {
     totalPages,
     ...flexProps
   } = props;
-  const { classes } = useStyles();
+  const { classes } = useStyles(isTransparent);
 
   /* methods */
   function handleChangeItemsPerPage(value: string): void {
@@ -59,9 +65,9 @@ export function Pagination(props: IPaginationProps): ReactElement {
 
   return (
     <Flex className={classes.container} data-testid="pagination" {...flexProps}>
-      {itemsPerPageOptions.length > 0 && itemsPerPageLabel ? (
+      {itemsPerPageOptions.length > 0 && itemsPerPageAriaLabel ? (
         <Select
-          aria-label={itemsPerPageLabel}
+          aria-label={itemsPerPageAriaLabel}
           data={itemsPerPageOptions.map((option) => {
             return {
               label: option.label ?? option.value.toString(),
@@ -76,6 +82,7 @@ export function Pagination(props: IPaginationProps): ReactElement {
         />
       ) : null}
       <MantinePagination
+        classNames={{ control: classes.control }}
         data-testid="pagination-page"
         onChange={handleChangePage}
         radius="sm"
