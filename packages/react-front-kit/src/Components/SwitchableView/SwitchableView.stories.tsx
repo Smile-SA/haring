@@ -15,6 +15,7 @@ type IStory = StoryObj<typeof meta>;
 export const SwitchableView: IStory = {
   args: {
     topBarLeft: <span>TopBarLeft...</span>,
+    topBarRight: <span>TopBarRight...</span>,
     views,
   },
 };

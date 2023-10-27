@@ -32,7 +32,11 @@ const useStyles = createStyles(() => ({
     margin: 'auto auto auto 0',
   },
   topBarRight: {
-    marginLeft: 'auto 0 auto auto',
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 16,
+    margin: 'auto 0 auto auto',
   },
 }));
 
@@ -45,6 +49,7 @@ interface ISwitchableViewProps extends Omit<SegmentedControlProps, 'data'> {
   defaultViewIndex?: number;
   onViewChange?: (index: number) => void;
   topBarLeft?: ReactNode;
+  topBarRight?: ReactNode;
   views: IDataView[];
 }
 
@@ -54,6 +59,7 @@ export function SwitchableView(props: ISwitchableViewProps): ReactElement {
     defaultViewIndex,
     onViewChange,
     topBarLeft,
+    topBarRight,
     views = [],
     ...segmentedControlProps
   } = props;
@@ -75,6 +81,7 @@ export function SwitchableView(props: ISwitchableViewProps): ReactElement {
           <span className={classes.topBarLeft}>{topBarLeft}</span>
         )}
         <span className={classes.topBarRight}>
+          {Boolean(topBarRight) && <span>{topBarRight}</span>}
           <SegmentedControl
             classNames={{ label: classes.switchButton }}
             data={views}
