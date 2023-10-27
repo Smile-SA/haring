@@ -110,6 +110,7 @@ export function InfoCard(props: IInfoCardProps): ReactElement {
     ...PaperProps
   } = props;
   const { classes } = useStyles();
+
   return (
     <Paper className={classes.root} {...PaperProps}>
       <div className={classes.motif}>{motif}</div>
