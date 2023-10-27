@@ -2,7 +2,15 @@
 
 import type { FormEvent, ReactElement } from 'react';
 
-import { Box, Flex, Paper, Select, createStyles, rem } from '@mantine/core';
+import {
+  AppShell,
+  Box,
+  Flex,
+  Paper,
+  Select,
+  createStyles,
+  rem,
+} from '@mantine/core';
 import { CaretDown } from '@phosphor-icons/react';
 import {
   isNotNullNorEmpty,
@@ -15,8 +23,7 @@ import Motif from '../../Components/InfoCard/Motif';
 import { Pagination } from '../../Components/Pagination/Pagination';
 import { SearchBar } from '../../Components/SearchBar/SearchBar';
 import { FoldableColumnLayout } from '../../Layouts/FoldableColumnLayout/FoldableColumnLayout';
-
-import { headerContent, headerLeft, headerRight } from './SearchResults.mock';
+import { headerContent, headerLeft, headerRight } from '../pages.mock';
 
 export interface IOption<T> {
   label: string;
@@ -122,100 +129,101 @@ export function SearchResults(): ReactElement {
   }
 
   return (
-    <FoldableColumnLayout
-      appShellProps={{
-        header: (
-          <Header
-            childrenComponent="nav"
-            hasSearch={false}
-            left={headerLeft}
-            right={headerRight}
-          >
-            {headerContent}
-          </Header>
-        ),
-        padding: 0,
-      }}
-      boxMotif={<Motif style={{ fill: '#868E96', opacity: 0.1 }} />}
-      boxProps={{ p: '50px 64px' }}
-      isColumnVisible={isColumnVisible}
-      onChangeIsColumnVisible={setIsColumnVisible}
-      sidebarContent={
-        <Paper
-          p={24}
-          style={{
-            borderRadius: 16,
-            height: '100%',
-            wordWrap: 'break-word',
-          }}
+    <AppShell
+      header={
+        <Header
+          childrenComponent="nav"
+          hasSearch={false}
+          left={headerLeft}
+          right={headerRight}
         >
-          [
-          {filters.map(
-            (filter) => `${filter.id}: ${JSON.stringify(filter.value)},
-            `,
-          )}
-          ]
-        </Paper>
+          {headerContent}
+        </Header>
       }
-      sidebarToggleLabel={toggleLabel}
-      topBarRight={
-        <Flex style={{ justifyContent: 'flex-end' }}>
-          <Select
-            data={sortingOptions}
-            defaultValue={activeSorting}
-            dropdownPosition="bottom"
-            onChange={setActiveSorting}
-          />
-        </Flex>
-      }
-      topBlock={
-        <Box mb={24}>
-          <SearchBar
-            leftSection={
-              <Select
-                className={classes.select}
-                data={typeFilterOptions}
-                defaultValue={activeType.value}
-                onChange={(v) =>
-                  setActiveType(
-                    typeFilterOptions.find((type) => type.value === v) ??
-                      typeFilterOptions[0],
-                  )
-                }
-                rightSection={<CaretDown size={14} />}
-                size="lg"
-                styles={() => ({
-                  input: {
-                    padding: '0 calc(3.125rem  / 3) 0 40px',
-                  },
-                })}
-                variant="unstyled"
-              />
-            }
-            onChange={setSearch}
-            onSearchClear={handleSearchClear}
-            onSearchSubmit={handleSearchSubmit}
-            value={search}
-          />
-        </Box>
-      }
-      topBlockTheme={{ ...secondaryTheme, colorScheme: 'dark' }}
+      padding={0}
     >
-      <Paper mb={24} p={24} style={{ borderRadius: 16, height: 748 }}>
-        [{rowsPerPage}/{typeFilteredResults} results of search &quot;
-        {submittedSearch}
-        &quot;, page {page}/{totalPages}, sorted by {activeSorting}]
-      </Paper>
-      <Pagination
-        isTransparent
-        itemsPerPage={rowsPerPage}
-        itemsPerPageAriaLabel="Nombre de résultats"
-        itemsPerPageOptions={rowsPerPageOptions}
-        onItemsPerPageChange={setRowsPerPage}
-        onPageChange={setPage}
-        page={page}
-        totalPages={totalPages}
-      />
-    </FoldableColumnLayout>
+      <FoldableColumnLayout
+        boxMotif={<Motif style={{ fill: '#868E96', opacity: 0.1 }} />}
+        boxProps={{ p: '50px 64px' }}
+        isColumnVisible={isColumnVisible}
+        onChangeIsColumnVisible={setIsColumnVisible}
+        sidebarContent={
+          <Paper
+            p={24}
+            style={{
+              borderRadius: 16,
+              height: '100%',
+              wordWrap: 'break-word',
+            }}
+          >
+            [
+            {filters.map(
+              (filter) => `${filter.id}: ${JSON.stringify(filter.value)},
+            `,
+            )}
+            ]
+          </Paper>
+        }
+        sidebarToggleLabel={toggleLabel}
+        topBarRight={
+          <Flex style={{ justifyContent: 'flex-end' }}>
+            <Select
+              data={sortingOptions}
+              defaultValue={activeSorting}
+              dropdownPosition="bottom"
+              onChange={setActiveSorting}
+            />
+          </Flex>
+        }
+        topBlock={
+          <Box mb={24}>
+            <SearchBar
+              leftSection={
+                <Select
+                  className={classes.select}
+                  data={typeFilterOptions}
+                  defaultValue={activeType.value}
+                  onChange={(v) =>
+                    setActiveType(
+                      typeFilterOptions.find((type) => type.value === v) ??
+                        typeFilterOptions[0],
+                    )
+                  }
+                  rightSection={<CaretDown size={14} />}
+                  size="lg"
+                  styles={() => ({
+                    input: {
+                      padding: '0 calc(3.125rem  / 3) 0 40px',
+                    },
+                  })}
+                  variant="unstyled"
+                />
+              }
+              onChange={setSearch}
+              onSearchClear={handleSearchClear}
+              onSearchSubmit={handleSearchSubmit}
+              value={search}
+            />
+          </Box>
+        }
+        topBlockTheme={{ ...secondaryTheme, colorScheme: 'dark' }}
+      >
+        <Paper mb={24} p={24} style={{ borderRadius: 16, height: 748 }}>
+          [{rowsPerPage}/{typeFilteredResults} results of search &quot;
+          {submittedSearch}
+          &quot;, page {page}/{totalPages}, sorted by {activeSorting}]
+        </Paper>
+        <Pagination
+          isTransparent
+          itemsPerPage={rowsPerPage}
+          itemsPerPageAriaLabel="Nombre de résultats"
+          itemsPerPageOptions={rowsPerPageOptions}
+          onItemsPerPageChange={setRowsPerPage}
+          onPageChange={setPage}
+          page={page}
+          totalPages={totalPages}
+        />
+      </FoldableColumnLayout>
+    </AppShell>
   );
 }

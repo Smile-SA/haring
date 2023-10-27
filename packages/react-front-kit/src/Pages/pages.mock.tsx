@@ -1,6 +1,6 @@
 import { Avatar, Menu } from '@mantine/core';
 
-import { DropdownButton } from '../../Components/DropdownButton/DropdownButton';
+import { DropdownButton } from '../Components/DropdownButton/DropdownButton';
 
 export const headerContent = (
   <>
