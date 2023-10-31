@@ -63,7 +63,7 @@ export const Vignette: IStory = {
       },
     ],
     iconType: 'PDF',
-    label: 'Document long and boring for a long exemple of ellipse',
+    label: 'Debit_Suivi_PREV',
     onClicked: action('onClick'),
     selected: false,
   },

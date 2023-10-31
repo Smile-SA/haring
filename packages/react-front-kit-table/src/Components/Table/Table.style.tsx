@@ -17,7 +17,7 @@ export const useStyles = createStyles((theme) => ({
   menuButton: {
     '&[aria-expanded=true]': {
       '& svg': {
-        filter: 'contrast(8) invert(1)',
+        filter: 'brightness(0) invert(1)',
       },
       backgroundColor: theme.colors.cyan[9],
       borderRadius: '4px',

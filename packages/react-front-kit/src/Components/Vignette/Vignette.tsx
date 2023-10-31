@@ -1,6 +1,6 @@
 'use client';
 
-import type { MantineColor } from '@mantine/core';
+import type { IFileExtendType } from './fileExtendType';
 import type { ReactElement, ReactNode } from 'react';
 
 import {
@@ -10,144 +10,13 @@ import {
   Image,
   Menu,
   Text,
-  createStyles,
   useMantineTheme,
 } from '@mantine/core';
-import {
-  DotsThreeVertical,
-  File,
-  FileCss,
-  FileCsv,
-  FileDoc,
-  FileHtml,
-  FileJpg,
-  FileJs,
-  FileJsx,
-  FilePdf,
-  FilePng,
-  FilePpt,
-  FileRs,
-  FileSql,
-  FileSvg,
-  FileTs,
-  FileTsx,
-  FileVue,
-  FileXls,
-  FileZip,
-} from '@phosphor-icons/react';
+import { DotsThreeVertical } from '@phosphor-icons/react';
 
+import { useStyles } from './Vignette.style';
 import defaultImage from './defaultImage.jpg';
-
-const useStyles = createStyles((theme) => ({
-  headerContainer: {
-    display: 'flex',
-    flexWrap: 'nowrap',
-    justifyContent: 'space-between',
-    marginBottom: '22px',
-    marginTop: '10px',
-  },
-  icon: {
-    height: 'fit-content',
-    margin: 'auto',
-  },
-  menuButton: {
-    '&[aria-expanded=true]': {
-      '& svg': {
-        filter: 'contrast(8) invert(1)',
-      },
-      backgroundColor: theme.colors.cyan[9],
-      borderRadius: '4px',
-      display: 'flex',
-      height: '28px',
-      width: '28px',
-    },
-  },
-  root: {
-    borderRadius: '16px',
-    heigh: 'auto',
-    padding: '16px',
-    width: 'auto',
-  },
-  rootSelected: { background: theme.primaryColor },
-  title: {
-    margin: '0 19px 0 0',
-    paddingLeft: '10px',
-  },
-  titleContainer: {
-    alignItems: 'center',
-    display: 'flex',
-    justifyContent: 'center',
-    overflow: 'hidden',
-  },
-}));
-
-export type IFileExtendType =
-  | 'CSS'
-  | 'CSV'
-  | 'DOC'
-  | 'HTML'
-  | 'JPG'
-  | 'JS'
-  | 'JSX'
-  | 'PDF'
-  | 'PNG'
-  | 'PPT'
-  | 'RS'
-  | 'SQL'
-  | 'SVG'
-  | 'TS'
-  | 'TSX'
-  | 'UNKNOWN'
-  | 'VUE'
-  | 'XLS'
-  | 'ZIP';
-
-const getIconByIconType = (
-  type: IFileExtendType,
-  color: MantineColor,
-): ReactElement => {
-  switch (type) {
-    case 'CSS':
-      return <FileCss color={color} size={20} weight="bold" />;
-    case 'DOC':
-      return <FileDoc color={color} size={20} weight="bold" />;
-    case 'PDF':
-      return <FilePdf color={color} size={20} weight="bold" />;
-    case 'CSV':
-      return <FileCsv color={color} size={20} weight="bold" />;
-    case 'HTML':
-      return <FileHtml color={color} size={20} weight="bold" />;
-    case 'JPG':
-      return <FileJpg color={color} size={20} weight="bold" />;
-    case 'JS':
-      return <FileJs color={color} size={20} weight="bold" />;
-    case 'JSX':
-      return <FileJsx color={color} size={20} weight="bold" />;
-    case 'PNG':
-      return <FilePng color={color} size={20} weight="bold" />;
-    case 'PPT':
-      return <FilePpt color={color} size={20} weight="bold" />;
-    case 'RS':
-      return <FileRs color={color} size={20} weight="bold" />;
-    case 'SQL':
-      return <FileSql color={color} size={20} weight="bold" />;
-    case 'SVG':
-      return <FileSvg color={color} size={20} weight="bold" />;
-    case 'TS':
-      return <FileTs color={color} size={20} weight="bold" />;
-    case 'TSX':
-      return <FileTsx color={color} size={20} weight="bold" />;
-    case 'VUE':
-      return <FileVue color={color} size={20} weight="bold" />;
-    case 'XLS':
-      return <FileXls color={color} size={20} weight="bold" />;
-    case 'ZIP':
-      return <FileZip color={color} size={20} weight="bold" />;
-    default: {
-      return <File color={color} size={20} weight="bold" />;
-    }
-  }
-};
+import { getIconByIconType } from './fileExtendType';
 
 export interface IVignetteProps {
   action?: {
@@ -160,7 +29,7 @@ export interface IVignetteProps {
   image?: ReactElement;
   label?: string;
   onClicked?: () => void;
-  selected: boolean;
+  selected?: boolean;
 }
 
 export function Vignette(props: IVignetteProps): ReactElement {
@@ -209,16 +78,17 @@ export function Vignette(props: IVignetteProps): ReactElement {
             <Menu radius={4} shadow="lg" width={200} withinPortal>
               <Menu.Target>
                 <ActionIcon
-                  className={classes.menuButton}
+                  className={
+                    selected ? classes.menuButtonSelected : classes.menuButton
+                  }
                   radius={4}
                   type="button"
                 >
                   <div>
                     <DotsThreeVertical
-                      color={
-                        selected ? theme.colors.gray[1] : theme.colors.cyan[9]
-                      }
+                      color={theme.colors.cyan[9]}
                       size={16}
+                      weight="bold"
                     />
                   </div>
                 </ActionIcon>

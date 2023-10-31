@@ -4,7 +4,7 @@ import { Vignette } from './Vignette';
 
 describe('Vignette', () => {
   it('matches snapshot', () => {
-    const { container } = renderWithProviders(<Vignette />);
+    const { container } = renderWithProviders(<Vignette selected={false} />);
     expect(container).toMatchSnapshot();
   });
 });

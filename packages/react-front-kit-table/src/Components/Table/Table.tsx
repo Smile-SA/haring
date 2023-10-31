@@ -222,7 +222,7 @@ export function Table<Data extends Record<string, unknown>>(
                 >
                   <Tooltip label={menuLabel} {...tooltipProps}>
                     <div className={classes.menuButtonWrapper}>
-                      <DotsThreeVertical size={16} />
+                      <DotsThreeVertical size={16} weight="bold" />
                     </div>
                   </Tooltip>
                 </ActionIcon>
