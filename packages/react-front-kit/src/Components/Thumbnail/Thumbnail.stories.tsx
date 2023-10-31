@@ -64,7 +64,7 @@ export const Thumbnail: IStory = {
     ],
     iconType: 'PDF',
     label: 'Debit_Suivi_PREV',
-    onClicked: action('onClick'),
+    onClick: action('onClick'),
     selected: false,
   },
 };

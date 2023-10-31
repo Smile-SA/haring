@@ -1,6 +1,5 @@
 'use client';
 
-import type { IFileExtendType } from './fileExtendType';
 import type { ReactElement, ReactNode } from 'react';
 
 import {
@@ -25,10 +24,10 @@ export interface IThumbnailProps {
     label: string;
     onAction: () => void;
   }[];
-  iconType?: IFileExtendType;
+  iconType?: string;
   image?: ReactElement;
   label?: string;
-  onClicked?: () => void;
+  onClick?: () => void;
   selected?: boolean;
 }
 
@@ -40,7 +39,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
     iconType = 'UNKNOWN',
     image = defaultImage,
     label,
-    onClicked,
+    onClick,
     selected = false,
   } = props;
   function getGoodTextColor(): string {
@@ -54,9 +53,14 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
     <Box
       bg={String(selected ? theme.primaryColor : theme.colors.gray[1])}
       className={classes.root}
-      onClick={onClicked}
+      onClick={onClick}
     >
-      <Group className={classes.headerContainer}>
+      <Group
+        className={classes.headerContainer}
+        style={{
+          color: selected ? getGoodTextColor() : undefined,
+        }}
+      >
         <div className={classes.titleContainer}>
           {getIconByIconType(
             iconType,
@@ -75,7 +79,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
         </div>
         <div>
           {action.length > 0 && (
-            <Menu radius={4} shadow="lg" width={200} withinPortal>
+            <Menu radius={4} shadow="lg" width={200}>
               <Menu.Target>
                 <ActionIcon
                   className={

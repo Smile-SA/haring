@@ -1,4 +1,5 @@
 import type { MantineColor } from '@mantine/core';
+import type { Icon } from '@phosphor-icons/react';
 import type { ReactElement } from 'react';
 
 import {
@@ -23,203 +24,75 @@ import {
   FileZip,
 } from '@phosphor-icons/react';
 
-export type IFileExtendType =
-  | 'CSS'
-  | 'CSV'
-  | 'DOC'
-  | 'HTML'
-  | 'JPG'
-  | 'JS'
-  | 'JSX'
-  | 'PDF'
-  | 'PNG'
-  | 'PPT'
-  | 'RS'
-  | 'SQL'
-  | 'SVG'
-  | 'TS'
-  | 'TSX'
-  | 'UNKNOWN'
-  | 'VUE'
-  | 'XLS'
-  | 'ZIP';
-
 export const getIconByIconType = (
-  type: IFileExtendType,
+  type: string,
   color: MantineColor,
 ): ReactElement => {
-  switch (type) {
+  let ComponentName: Icon = File;
+  switch (type.toUpperCase()) {
     case 'CSS':
-      return (
-        <FileCss
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FileCss;
+      break;
     case 'DOC':
-      return (
-        <FileDoc
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FileDoc;
+      break;
     case 'PDF':
-      return (
-        <FilePdf
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FilePdf;
+      break;
     case 'CSV':
-      return (
-        <FileCsv
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FileCsv;
+      break;
     case 'HTML':
-      return (
-        <FileHtml
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FileHtml;
+      break;
     case 'JPG':
-      return (
-        <FileJpg
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FileJpg;
+      break;
     case 'JS':
-      return (
-        <FileJs
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FileJs;
+      break;
     case 'JSX':
-      return (
-        <FileJsx
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FileJsx;
+      break;
     case 'PNG':
-      return (
-        <FilePng
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FilePng;
+      break;
     case 'PPT':
-      return (
-        <FilePpt
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FilePpt;
+      break;
     case 'RS':
-      return (
-        <FileRs
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FileRs;
+      break;
     case 'SQL':
-      return (
-        <FileSql
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FileSql;
+      break;
     case 'SVG':
-      return (
-        <FileSvg
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FileSvg;
+      break;
     case 'TS':
-      return (
-        <FileTs
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FileTs;
+      break;
     case 'TSX':
-      return (
-        <FileTsx
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FileTsx;
+      break;
     case 'VUE':
-      return (
-        <FileVue
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FileVue;
+      break;
     case 'XLS':
-      return (
-        <FileXls
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
+      ComponentName = FileXls;
+      break;
     case 'ZIP':
-      return (
-        <FileZip
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
-    default: {
-      return (
-        <File
-          color={color}
-          size={22}
-          style={{ minWidth: '28px' }}
-          weight="bold"
-        />
-      );
-    }
+      ComponentName = FileZip;
+      break;
   }
+
+  const component = (
+    <ComponentName
+      color={color}
+      size={22}
+      style={{ minWidth: '28px' }}
+      weight="bold"
+    />
+  );
+  return component;
 };
