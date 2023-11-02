@@ -13,9 +13,10 @@ import {
 } from '@mantine/core';
 import { DotsThreeVertical } from '@phosphor-icons/react';
 
+import { FileExtendType } from '../FileExtendType/FileExtendType';
+
 import { useStyles } from './Thumbnail.style';
 import defaultImage from './defaultImage.jpg';
-import { getIconByIconType } from './fileExtendType';
 
 export interface IThumbnailProps {
   action?: {
@@ -62,10 +63,14 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
         }}
       >
         <div className={classes.titleContainer}>
-          {getIconByIconType(
-            iconType,
-            String(selected ? theme.colors.gray[1] : theme.colors.cyan[9]),
-          )}
+          <FileExtendType
+            color={String(
+              selected ? theme.colors.gray[1] : theme.colors.cyan[9],
+            )}
+            size={22}
+            type={iconType}
+            weight="bold"
+          />
           <Text
             className={classes.title}
             component="h3"
