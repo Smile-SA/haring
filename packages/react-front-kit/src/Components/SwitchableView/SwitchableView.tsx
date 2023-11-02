@@ -1,3 +1,4 @@
+import type { PaperProps } from '@mantine/core';
 import type {
   SegmentedControlItem,
   SegmentedControlProps,
@@ -44,60 +45,71 @@ export interface IDataView extends SegmentedControlItem {
   dataView: ReactNode;
 }
 
-interface ISwitchableViewProps extends Omit<SegmentedControlProps, 'data'> {
-  activeViewIndex?: number;
-  defaultViewIndex?: number;
-  onViewChange?: (index: number) => void;
+interface ISwitchableViewProps extends PaperProps {
+  /** Default index of the active view */
+  defaultValue?: number;
+  /** Called when active view changes */
+  onChange?: (index: number) => void;
+  /** Extra Props, or function returning props for the SegmentedControl component, except 'data', 'defaultValue', 'onChange' and 'value' which are handled by this component */
+  segmentedControlProps?: Omit<
+    SegmentedControlProps,
+    'data' | 'defaultValue' | 'onChange' | 'value'
+  >;
+  /** ReactNode for the left section of the top bar */
   topBarLeft?: ReactNode;
+  /** ReactNode for the right section of the top bar, to the left of the SegmentedControl buttons */
   topBarRight?: ReactNode;
+  /** Index of the active view, when component is controlled */
+  value?: number;
+  /** Array of all views */
   views: IDataView[];
 }
 
+/** Additional props will be forwarded to the [Mantine Paper component](https://mantine.dev/core/paper) */
 export function SwitchableView(props: ISwitchableViewProps): ReactElement {
   const {
-    activeViewIndex,
-    defaultViewIndex,
-    onViewChange,
+    defaultValue,
+    onChange,
+    segmentedControlProps,
     topBarLeft,
     topBarRight,
+    value,
     views = [],
-    ...segmentedControlProps
+    ...paperProps
   } = props;
-  const [activeViewState, handleChangeActiveView] = useUncontrolled<IDataView>({
-    defaultValue: defaultViewIndex ? views[defaultViewIndex] : undefined,
-    finalValue: views[0],
-    onChange: (v) =>
-      onViewChange
-        ? onViewChange(views.findIndex((view) => view.value === v.value))
-        : undefined,
-    value: activeViewIndex ? views[activeViewIndex] : undefined,
+  const [activeViewIndex, setActiveViewIndex] = useUncontrolled<number>({
+    defaultValue,
+    finalValue: 0,
+    onChange,
+    value,
   });
+  const activeView = views[activeViewIndex];
   const { classes } = useStyles();
 
+  function handleViewChange(value: string): void {
+    setActiveViewIndex(views.findIndex((view) => view.value === value));
+  }
+
   return (
-    <Paper className={classes.container}>
+    <Paper className={classes.container} {...paperProps}>
       <div className={classes.topBar}>
         {Boolean(topBarLeft) && (
           <span className={classes.topBarLeft}>{topBarLeft}</span>
         )}
         <span className={classes.topBarRight}>
-          {Boolean(topBarRight) && <span>{topBarRight}</span>}
+          {Boolean(topBarRight) && topBarRight}
           <SegmentedControl
             classNames={{ label: classes.switchButton }}
             data={views}
-            onChange={(v) =>
-              handleChangeActiveView(
-                views.find((view) => view.value === v) ?? views[0],
-              )
-            }
+            onChange={handleViewChange}
             radius={4}
             size="md"
-            value={activeViewState.value}
+            value={activeView.value}
             {...segmentedControlProps}
           />
         </span>
       </div>
-      <div className={classes.content}>{activeViewState.dataView ?? ''}</div>
+      <div className={classes.content}>{activeView.dataView ?? ''}</div>
     </Paper>
   );
 }
