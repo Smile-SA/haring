@@ -1,5 +1,6 @@
 'use client';
 
+import type { IConfirmModalProps } from '../ConfirmModal/ConfirmModal';
 import type { ReactElement, ReactNode } from 'react';
 
 import {
@@ -17,6 +18,16 @@ import { FileExtendType } from '../FileExtendType/FileExtendType';
 
 import { useStyles } from './Thumbnail.style';
 import defaultImage from './defaultImage.jpg';
+
+export interface IActionConfirmModalProps
+  extends Omit<
+    IConfirmModalProps,
+    'onCancel' | 'onClose' | 'onConfirm' | 'opened'
+  > {
+  onCancel?: () => false | void;
+  onClose?: () => void;
+  onConfirm?: () => false | void;
+}
 
 export interface IThumbnailProps {
   action?: {
@@ -43,32 +54,21 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
     onClick,
     selected = false,
   } = props;
-  function getGoodTextColor(): string {
-    if (typeof theme.primaryShade === `number` && theme.primaryShade > 5) {
-      return 'white';
-    }
-    return 'black';
-  }
 
   const rootClasses = [classes.root];
-  const titleClasses = [classes.title];
   if (selected) {
     rootClasses.push(classes.rootSelected);
-    titleClasses.push(classes.titleRootSelected);
+    rootClasses.push(classes.titleContainerRootSelected);
+    console.log(rootClasses);
   }
 
   return (
     <Box
       bg={String(selected ? theme.primaryColor : theme.colors.gray[1])}
-      className={rootClasses[0]}
+      className={rootClasses.join(' ')}
       onClick={onClick}
     >
-      <Group
-        className={classes.headerContainer}
-        style={{
-          color: selected ? getGoodTextColor() : undefined,
-        }}
-      >
+      <Group className={classes.headerContainer}>
         <div className={classes.titleContainer}>
           <FileExtendType
             color={String(
@@ -78,7 +78,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
             type={iconType}
             weight="bold"
           />
-          <Text className={titleClasses[0]} component="h3" truncate>
+          <Text component="h3" truncate>
             {label}
           </Text>
         </div>
@@ -109,6 +109,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
                     key={index}
                     color={action.color}
                     icon={action.icon}
+                    onClick={() => action.onAction()}
                   >
                     {action.label}
                   </Menu.Item>

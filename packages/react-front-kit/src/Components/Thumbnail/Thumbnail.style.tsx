@@ -1,5 +1,4 @@
 import { createStyles } from '@mantine/styles';
-import { themes } from '@smile/react-front-kit-shared';
 
 export const useStyles = createStyles((theme) => ({
   dotsIcon: {
@@ -66,7 +65,7 @@ export const useStyles = createStyles((theme) => ({
     justifyContent: 'center',
     overflow: 'hidden',
   },
-  titleRootSelected: {
-    color: theme.white,
+  titleContainerRootSelected: {
+    color: 'white',
   },
 }));
