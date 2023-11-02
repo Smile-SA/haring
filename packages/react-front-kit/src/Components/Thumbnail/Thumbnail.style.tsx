@@ -1,6 +1,10 @@
 import { createStyles } from '@mantine/styles';
+import { themes } from '@smile/react-front-kit-shared';
 
 export const useStyles = createStyles((theme) => ({
+  dotsIcon: {
+    color: theme.colors.cyan[9],
+  },
   headerContainer: {
     display: 'flex',
     flexWrap: 'nowrap',
@@ -45,6 +49,7 @@ export const useStyles = createStyles((theme) => ({
     },
   },
   root: {
+    background: theme.colors.gray[1],
     borderRadius: '16px',
     heigh: 'auto',
     padding: '16px',
@@ -60,5 +65,8 @@ export const useStyles = createStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     overflow: 'hidden',
+  },
+  titleRootSelected: {
+    color: theme.white,
   },
 }));

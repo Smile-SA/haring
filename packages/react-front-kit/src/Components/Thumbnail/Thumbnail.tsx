@@ -50,10 +50,17 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
     return 'black';
   }
 
+  const rootClasses = [classes.root];
+  const titleClasses = [classes.title];
+  if (selected) {
+    rootClasses.push(classes.rootSelected);
+    titleClasses.push(classes.titleRootSelected);
+  }
+
   return (
     <Box
       bg={String(selected ? theme.primaryColor : theme.colors.gray[1])}
-      className={classes.root}
+      className={rootClasses[0]}
       onClick={onClick}
     >
       <Group
@@ -71,14 +78,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
             type={iconType}
             weight="bold"
           />
-          <Text
-            className={classes.title}
-            component="h3"
-            style={{
-              color: selected ? getGoodTextColor() : undefined,
-            }}
-            truncate
-          >
+          <Text className={titleClasses[0]} component="h3" truncate>
             {label}
           </Text>
         </div>
@@ -95,7 +95,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
                 >
                   <div>
                     <DotsThreeVertical
-                      color={theme.colors.cyan[9]}
+                      className={classes.dotsIcon}
                       size={16}
                       weight="bold"
                     />
