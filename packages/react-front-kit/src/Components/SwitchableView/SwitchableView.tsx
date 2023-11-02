@@ -97,7 +97,7 @@ export function SwitchableView(props: ISwitchableViewProps): ReactElement {
           <span className={classes.topBarLeft}>{topBarLeft}</span>
         )}
         <span className={classes.topBarRight}>
-          {Boolean(topBarRight) && topBarRight}
+          {topBarRight}
           <SegmentedControl
             classNames={{ label: classes.switchButton }}
             data={views}
