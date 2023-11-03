@@ -1,11 +1,11 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/src/test-utils';
 
-import { FileExtendType } from './FileExtendType';
+import { FileIcon } from './FileIcon';
 
-describe('FileExtendType', () => {
+describe('FileIcon', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <FileExtendType color="dark" size={45} type="PDF" />,
+      <FileIcon color="dark" size={45} type="PDF" />,
     );
     expect(container).toMatchSnapshot();
   });

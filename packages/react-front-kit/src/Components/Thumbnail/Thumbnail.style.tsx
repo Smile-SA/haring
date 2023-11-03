@@ -54,7 +54,7 @@ export const useStyles = createStyles((theme) => ({
     padding: '16px',
     width: 'auto',
   },
-  rootSelected: { background: theme.primaryColor },
+  rootSelected: { background: theme.primaryColor, color: 'white' },
   title: {
     margin: '0 19px 0 0',
     paddingLeft: '10px',
@@ -64,8 +64,5 @@ export const useStyles = createStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     overflow: 'hidden',
-  },
-  titleContainerRootSelected: {
-    color: 'white',
   },
 }));

@@ -16,7 +16,7 @@ import { DotsThreeVertical } from '@phosphor-icons/react';
 import { useEffect, useState } from 'react';
 
 import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
-import { FileExtendType } from '../FileExtendType/FileExtendType';
+import { FileIcon } from '../FileIcon/FileIcon';
 
 import { useStyles } from './Thumbnail.style';
 import defaultImage from './defaultImage.jpg';
@@ -50,6 +50,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
   const {
     action = [],
     iconType = 'UNKNOWN',
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     image = defaultImage,
     label,
     onClick,
@@ -71,8 +72,6 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
   const rootClasses = [classes.root];
   if (selected) {
     rootClasses.push(classes.rootSelected);
-    rootClasses.push(classes.titleContainerRootSelected);
-    console.log(rootClasses);
   }
 
   function setModal(action: IThumbnailAction): void {
@@ -113,7 +112,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
       >
         <Group className={classes.headerContainer}>
           <div className={classes.titleContainer}>
-            <FileExtendType
+            <FileIcon
               color={String(
                 selected ? theme.colors.gray[1] : theme.colors.cyan[9],
               )}

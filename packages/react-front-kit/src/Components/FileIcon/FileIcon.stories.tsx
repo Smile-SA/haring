@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { FileExtendType as Cmp } from './FileExtendType';
+import { FileIcon as Cmp } from './FileIcon';
 
 const meta = {
   argTypes: {
@@ -15,15 +15,15 @@ const meta = {
   component: Cmp,
 
   tags: ['autodocs'],
-  title: '3-custom/Components/FileExtendType',
+  title: '1-StyleGuide/Icons/FileIcon',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const FileExtendType: IStory = {
+export const FileIcon: IStory = {
   args: {
-    color: 'dark',
+    color: '#349f98',
     size: 45,
     type: 'PDF',
     weight: 'light',
