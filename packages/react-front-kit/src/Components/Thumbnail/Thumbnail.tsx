@@ -13,7 +13,7 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { DotsThreeVertical } from '@phosphor-icons/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
 import { FileIcon } from '../FileIcon/FileIcon';
@@ -21,10 +21,10 @@ import { FileIcon } from '../FileIcon/FileIcon';
 import { useStyles } from './Thumbnail.style';
 import defaultImage from './defaultImage.jpg';
 
-export interface IActionConfirmModalProps
-  extends Omit<IConfirmModalProps, 'content' | 'onClose' | 'opened'> {
-  content?: ReactElement;
-}
+export type IActionConfirmModalProps = Omit<
+  IConfirmModalProps,
+  'onClose' | 'opened'
+>;
 
 export interface IThumbnailAction {
   color?: string;
@@ -38,7 +38,7 @@ export interface IThumbnailAction {
 export interface IThumbnailProps {
   action?: IThumbnailAction[];
   iconType?: string;
-  image?: ReactElement;
+  image?: string;
   label?: string;
   onClick?: () => void;
   selected?: boolean;
@@ -50,24 +50,18 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
   const {
     action = [],
     iconType = 'UNKNOWN',
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     image = defaultImage,
     label,
     onClick,
     selected = false,
   } = props;
 
-  const [confirmModalContent, setConfirmModalContent] =
+  const [confirmAction, setConfirmAction] =
     useState<IActionConfirmModalProps | null>(null);
 
-  const [openModal, setOpenModal] = useState<boolean>(false);
-  function clearConfirmModalContent(): void {
-    setConfirmModalContent(null);
+  function clearconfirmAction(): void {
+    setConfirmAction(null);
   }
-
-  useEffect(() => {
-    !openModal && clearConfirmModalContent();
-  }, [openModal]);
 
   const rootClasses = [classes.root];
   if (selected) {
@@ -75,19 +69,18 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
   }
 
   function setModal(action: IThumbnailAction): void {
-    setConfirmModalContent({
+    setConfirmAction({
       cancelColor: action.confirmModalProps?.cancelColor,
       cancelLabel: action.confirmModalProps?.cancelLabel,
-      children: action.confirmModalProps?.content,
+      children: action.confirmModalProps?.children,
       confirmColor: action.confirmModalProps?.confirmColor,
       confirmLabel: action.confirmModalProps?.confirmLabel,
       onConfirm: action.onAction,
       title: action.confirmModalProps?.title,
     });
-    setOpenModal(true);
   }
 
-  function menuItemHandle(action: IThumbnailAction): void {
+  function handleMenuItem(action: IThumbnailAction): void {
     if (action.confirmation) {
       setModal(action);
     } else {
@@ -95,12 +88,12 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
     }
   }
 
-  function onCloseHandle(): void {
-    setOpenModal(false);
+  function handleClose(): void {
+    clearconfirmAction();
   }
-  function onClickModalButtonHandle(onAction?: () => void): void {
+  function handleModalButton(onAction?: () => void): void {
     onAction && onAction();
-    onCloseHandle();
+    handleClose();
   }
 
   return (
@@ -151,7 +144,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
                       key={index}
                       color={action.color}
                       icon={action.icon}
-                      onClick={() => menuItemHandle(action)}
+                      onClick={() => handleMenuItem(action)}
                     >
                       {action.label}
                     </Menu.Item>
@@ -164,25 +157,17 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
         <Image radius="16px" src={image} />
       </Box>
       <ConfirmModal
-        cancelColor={confirmModalContent?.cancelColor}
-        cancelLabel={confirmModalContent?.cancelLabel}
-        confirmColor={confirmModalContent?.confirmColor}
-        confirmLabel={confirmModalContent?.confirmLabel}
+        {...confirmAction}
         onCancel={() =>
-          onClickModalButtonHandle(
-            confirmModalContent?.onCancel && confirmModalContent.onCancel,
-          )
+          handleModalButton(confirmAction?.onCancel && confirmAction.onCancel)
         }
-        onClose={() => onCloseHandle()}
+        onClose={handleClose}
         onConfirm={() =>
-          onClickModalButtonHandle(
-            confirmModalContent?.onConfirm && confirmModalContent.onConfirm,
-          )
+          handleModalButton(confirmAction?.onConfirm && confirmAction.onConfirm)
         }
-        opened={openModal}
-        title={confirmModalContent?.title}
+        opened={Boolean(confirmAction)}
       >
-        {confirmModalContent?.children}
+        {confirmAction?.children}
       </ConfirmModal>
     </>
   );

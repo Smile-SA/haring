@@ -59,9 +59,9 @@ export const Thumbnail: IStory = {
         color: 'red',
         confirmModalProps: {
           cancelLabel: 'Abord',
+          children: <p>Are you sur ?</p>,
           confirmColor: 'red',
           confirmLabel: 'Remove',
-          content: <p>Are you sur ?</p>,
           title: 'Remove File',
         },
         confirmation: true,
