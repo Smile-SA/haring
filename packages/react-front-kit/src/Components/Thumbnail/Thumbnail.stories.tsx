@@ -57,6 +57,14 @@ export const Thumbnail: IStory = {
       },
       {
         color: 'red',
+        confirmModalProps: {
+          cancelLabel: 'Abord',
+          confirmColor: 'red',
+          confirmLabel: 'Remove',
+          content: <p>Are you sur ?</p>,
+          title: 'Remove File',
+        },
+        confirmation: true,
         icon: <Trash />,
         label: 'Delete',
         onAction: action('Delete'),
