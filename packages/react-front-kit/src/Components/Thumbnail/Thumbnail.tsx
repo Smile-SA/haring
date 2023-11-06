@@ -13,13 +13,13 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { DotsThreeVertical } from '@phosphor-icons/react';
+import { FileIcon } from '@smile/react-front-kit-shared';
 import { useState } from 'react';
 
+import defaultImage from '../../../assets/defaultImage.jpg';
 import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
-import { FileIcon } from '../FileIcon/FileIcon';
 
 import { useStyles } from './Thumbnail.style';
-import defaultImage from './defaultImage.jpg';
 
 export type IActionConfirmModalProps = Omit<
   IConfirmModalProps,
