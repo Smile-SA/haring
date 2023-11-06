@@ -6,12 +6,13 @@
 
 'use client';
 import type { FloatingPosition } from '@mantine/core/lib/Floating';
+import type { IPaginationProps } from '@smile/react-front-kit';
 import type {
-  IConfirmModalProps,
-  IPaginationProps,
-} from '@smile/react-front-kit';
+  IAction,
+  IConfirmAction,
+} from '@smile/react-front-kit-shared/src/types/actions';
 import type { MRT_Row, MRT_TableOptions } from 'mantine-react-table';
-import type { ReactElement, ReactNode } from 'react';
+import type { ReactElement } from 'react';
 
 import { ActionIcon, Button, Flex, Menu, Space, Tooltip } from '@mantine/core';
 import {
@@ -35,35 +36,17 @@ import { useState } from 'react';
 
 import { useStyles } from './Table.style';
 
-export interface IActionConfirmModalProps<Data extends Record<string, unknown>>
-  extends Omit<
-    IConfirmModalProps,
-    'onCancel' | 'onClose' | 'onConfirm' | 'opened'
-  > {
-  onCancel?: (row: MRT_Row<Data> | MRT_Row<Data>[]) => false | void;
-  onClose?: () => void;
-  onConfirm?: (row: MRT_Row<Data> | MRT_Row<Data>[]) => false | void;
-}
+type ITableAction<Data extends Record<string, unknown>> = IAction<
+  MRT_Row<Data> | MRT_Row<Data>[]
+>;
 
-export interface IAction<Data extends Record<string, unknown>> {
-  color?: string;
-  confirmModalProps?: IActionConfirmModalProps<Data>;
-  confirmation?: boolean;
-  icon: ReactNode;
-  isMassAction?: boolean;
-  isRowAction?: boolean;
-  label: string;
-  onAction?: (row: MRT_Row<Data> | MRT_Row<Data>[]) => void;
-}
-
-export interface IConfirmAction<Data extends Record<string, unknown>>
-  extends IAction<Data> {
-  row: MRT_Row<Data> | MRT_Row<Data>[];
-}
+type ITableConfirmAction<Data extends Record<string, unknown>> = IConfirmAction<
+  MRT_Row<Data> | MRT_Row<Data>[]
+>;
 
 export interface ITableProps<Data extends Record<string, unknown>>
   extends MRT_TableOptions<Data> {
-  actions?: IAction<Data>[];
+  actions?: ITableAction<Data>[];
   menuLabel?: string;
   paginationProps?: Partial<IPaginationProps>;
   rowActionNumber?: number;
@@ -94,14 +77,14 @@ export function Table<Data extends Record<string, unknown>>(
   const { enablePagination = true, manualPagination } = mantineTableProps;
   const { classes } = useStyles();
   const [confirmAction, setConfirmAction] =
-    useState<IConfirmAction<Data> | null>(null);
+    useState<ITableConfirmAction<Data> | null>(null);
   const [openedMenuRowIndex, setOpenedMenuRowIndex] = useState<number | null>(
     null,
   );
 
   // Calculated values
   const massActions = actions.filter(({ isMassAction }) => isMassAction);
-  const rowActions = actions.filter(({ isRowAction = true }) => isRowAction);
+  const rowActions = actions.filter(({ isItemAction = true }) => isItemAction);
   const visibleRowActions = rowActions.slice(0, rowActionNumber);
   const menuRowActions = rowActions.slice(rowActionNumber);
 
@@ -115,19 +98,19 @@ export function Table<Data extends Record<string, unknown>>(
   }
 
   function handleAction(
-    row: MRT_Row<Data> | MRT_Row<Data>[],
-    action: IAction<Data>,
+    item: MRT_Row<Data> | MRT_Row<Data>[],
+    action: ITableAction<Data>,
   ): void {
     if (action.confirmation) {
-      setConfirmAction({ ...action, row });
+      setConfirmAction({ ...action, item });
     } else {
-      action.onAction?.(row);
+      action.onAction?.(item);
     }
   }
 
   function handleCancel(): void {
     if (
-      confirmAction?.confirmModalProps?.onCancel?.(confirmAction.row) !== false
+      confirmAction?.confirmModalProps?.onCancel?.(confirmAction.item) !== false
     ) {
       setConfirmAction(null);
     }
@@ -140,10 +123,11 @@ export function Table<Data extends Record<string, unknown>>(
 
   function handleConfirm(): void {
     if (
-      confirmAction?.confirmModalProps?.onConfirm?.(confirmAction.row) !== false
+      confirmAction?.confirmModalProps?.onConfirm?.(confirmAction.item) !==
+      false
     ) {
       setConfirmAction(null);
-      confirmAction?.onAction?.(confirmAction.row);
+      confirmAction?.onAction?.(confirmAction.item);
     }
   }
 

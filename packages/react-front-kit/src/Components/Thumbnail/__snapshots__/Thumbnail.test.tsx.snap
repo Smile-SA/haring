@@ -3,6 +3,57 @@
 exports[`Thumbnail matches snapshot 1`] = `
 <div>
   <div
+    class="mantine-af86sk"
+    id="thumbnail-test"
+  >
+    <div
+      class="mantine-Group-root mantine-p1wipv"
+    >
+      <div
+        class="mantine-1r83wdq"
+      >
+        <svg
+          fill="#0b7285"
+          height="22"
+          viewBox="0 0 256 256"
+          width="22"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M216.49,79.52l-56-56A12,12,0,0,0,152,20H56A20,20,0,0,0,36,40V216a20,20,0,0,0,20,20H200a20,20,0,0,0,20-20V88A12,12,0,0,0,216.49,79.52ZM160,57l23,23H160ZM60,212V44h76V92a12,12,0,0,0,12,12h48V212Z"
+          />
+        </svg>
+        <h3
+          class="mantine-Text-root mantine-1oer4ck"
+        />
+      </div>
+      <div />
+    </div>
+    <div
+      class="mantine-Image-root mantine-yxmaw9"
+      style="width: 100%;"
+    >
+      <figure
+        class="mantine-qenwvq mantine-Image-figure"
+      >
+        <div
+          class="mantine-1iugybl mantine-Image-imageWrapper"
+        >
+          <img
+            class="mantine-1bi35m7 mantine-Image-image"
+            src=""
+            style="object-fit: cover; width: 100%; height: auto;"
+          />
+        </div>
+      </figure>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ThumbnailGrid matches snapshot 1`] = `
+<div>
+  <div
     class="mantine-1c8qzc3"
   >
     <div

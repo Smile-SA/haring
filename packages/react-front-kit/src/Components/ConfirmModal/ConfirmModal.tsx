@@ -1,21 +1,13 @@
 'use client';
 
-import type { MantineColor, ModalProps } from '@mantine/core';
+import type { IConfirmModal } from '@smile/react-front-kit-shared/src/types/actions';
 import type { ReactElement } from 'react';
 
 import { Button, Modal } from '@mantine/core';
 
 import { useStyles } from './ConfirmModal.style';
 
-export interface IConfirmModalProps extends ModalProps {
-  cancelColor?: MantineColor;
-  cancelLabel?: string;
-  confirmColor?: MantineColor;
-  confirmLabel?: string;
-  onCancel?: () => void;
-  onConfirm?: () => void;
-  title?: string;
-}
+type IConfirmModalProps = IConfirmModal;
 
 export function ConfirmModal(props: IConfirmModalProps): ReactElement {
   const {
