@@ -38,7 +38,8 @@
     "package.json",
     "README.md",
     "dist",
-    "src"
+    "src",
+    "assets"
   ],
   "scripts": {
     "build": "tsc --project tsconfig.build.json",

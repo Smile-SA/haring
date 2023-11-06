@@ -47,10 +47,10 @@ type IStory = StoryObj<typeof meta>;
 
 export const ConfirmModal: IStory = {
   args: {
-    cancelColor: 'gray',
+    cancelColor: 'black',
     cancelLabel: 'Cancel',
     children: 'Are you sure you want to delete this item?',
-    confirmColor: 'red',
+    confirmColor: 'black',
     confirmLabel: 'Remove',
     opened: false,
     title: 'Remove ?',

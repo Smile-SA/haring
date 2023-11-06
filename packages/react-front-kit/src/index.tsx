@@ -12,6 +12,7 @@ export * from './Components/Header/Header';
 export * from './Components/HeaderSearch/HeaderSearch';
 export * from './Components/Pagination/Pagination';
 export * from './Components/SidebarMenu/SidebarMenu';
+export * from './Components/Thumbnail/Thumbnail';
 // layout exports
 export * from './Layouts/FoldableColumnLayout/FoldableColumnLayout';
 // page exports

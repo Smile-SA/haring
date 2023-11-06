@@ -9,5 +9,5 @@
     "src/**/*.stories.tsx",
     "src/**/*.mock.tsx"
   ],
-  "include": ["src"]
+  "include": ["src", "../../global.d.ts"]
 }
