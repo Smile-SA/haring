@@ -49,7 +49,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
   const theme = useMantineTheme();
   const {
     action = [],
-    iconType = 'UNKNOWN',
+    iconType,
     image = defaultImage,
     label,
     onClick,
