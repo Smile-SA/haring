@@ -49,7 +49,6 @@ export const useStyles = createStyles((theme) => ({
   path: {
     color: theme.colors.dark[6],
   },
-  rightContainer: {},
   root: {
     cursor: 'pointer',
     display: 'flex',

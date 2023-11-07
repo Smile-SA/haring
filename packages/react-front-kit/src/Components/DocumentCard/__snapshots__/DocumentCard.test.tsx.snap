@@ -23,9 +23,7 @@ exports[`DocumentCard matches snapshot 1`] = `
         </div>
       </figure>
     </div>
-    <div
-      class="mantine-480qv8"
-    >
+    <div>
       <div>
         <div
           class="mantine-mdzvt7"

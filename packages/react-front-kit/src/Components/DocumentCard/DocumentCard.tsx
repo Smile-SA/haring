@@ -40,7 +40,7 @@ export function DocumentCard(props: IDocumentCardProps): ReactElement {
         radius={16}
         src={image}
       />
-      <div className={classes.rightContainer}>
+      <div>
         <div>
           <div className={classes.header}>
             <div className={classes.iconContainer}>
