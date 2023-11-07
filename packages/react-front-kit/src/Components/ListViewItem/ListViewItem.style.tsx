@@ -1,14 +1,29 @@
 import { createStyles } from '@mantine/styles';
 
 export const useStyles = createStyles((theme) => ({
+  author: {
+    fontWeight: 600,
+    marginLeft: '12px',
+  },
   children: {
     marginTop: '16px',
+  },
+  date: {
+    marginRight: '12px',
   },
   header: {
     display: 'flex',
     flexWrap: 'wrap',
   },
+  headerBottom: {
+    color: theme.colors.dark[3],
+    fontSize: '14px',
+    marginRight: '12px',
+  },
   headerTop: {
+    '@media (max-width: 882px)': {
+      flexDirection: 'column',
+    },
     display: 'flex',
     flexWrap: 'wrap',
   },
@@ -28,12 +43,16 @@ export const useStyles = createStyles((theme) => ({
     },
     marginRight: '32px',
   },
+  path: {
+    color: theme.colors.dark[6],
+  },
   rightContainer: {},
   root: {
     display: 'flex',
+    flexWrap: 'wrap',
     // eslint-disable-next-line sort-keys
     '@media (max-width: 1112px)': {
-      flexDirection: 'column',
+      // flexDirection: 'column',
     },
   },
   title: {

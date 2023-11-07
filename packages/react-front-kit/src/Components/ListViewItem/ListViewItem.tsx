@@ -55,9 +55,12 @@ export function ListViewItem(props: IListViewItemProps): ReactElement {
             <div>
               <div className={classes.headerTop}>
                 <div className={classes.title}>{title}</div>
-                <span>({path})</span>
+                <span className={classes.path}>({path})</span>
               </div>
-              <span>{date}</span> - <span>{author}</span>
+              <div className={classes.headerBottom}>
+                <span className={classes.date}>{date}</span> -
+                <span className={classes.author}>{author}</span>
+              </div>
             </div>
           </div>
         </div>
