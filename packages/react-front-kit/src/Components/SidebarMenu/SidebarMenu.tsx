@@ -26,7 +26,7 @@ export interface ISidebarMenuProps<
   C extends ElementType,
 > extends PaperProps {
   /** Props, or function returning props for the CollapseButton component */
-  collapseButtonProps?: ICollapseButtonProps<T, C>;
+  collapseButtonProps?: Omit<ICollapseButtonProps<T, C>, 'opened'>;
   component?: ElementType;
   /** Default selected menu id */
   defaultSelectedId?: T;
@@ -46,7 +46,7 @@ function getRecursiveMenu<T extends number | string, C extends ElementType>(
   openedMenuIds: T[],
   selectedId?: T,
   menu?: IMenuItem<T>[],
-  collapseButtonProps?: ICollapseButtonProps<T, C>,
+  collapseButtonProps?: Omit<ICollapseButtonProps<T, C>, 'opened'>,
   level = 0,
 ): ReactElement[] | null {
   if (!menu || menu.length === 0) {
