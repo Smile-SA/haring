@@ -1,16 +1,20 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/src/test-utils';
 
-import { ListViewItem } from './ListViewItem';
+import { DocumentCard } from './DocumentCard';
 
-describe('ListViewItem', () => {
+describe('DocumentCard', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <ListViewItem
-        author="Valentin"
-        date="24/12/1996"
+      <DocumentCard
+        author={<>Valentin</>}
+        date={<>24/12/1996</>}
         iconType="PDF"
         image="./thing.jpg"
-        path="Clients > 567890456 > Factures"
+        path={
+          <>
+            Customer {'>'} 567890456 {'>'} Invoices
+          </>
+        }
         title={<h1>A_thing.PDF</h1>}
       />,
     );

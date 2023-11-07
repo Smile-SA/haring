@@ -3,25 +3,25 @@ import { createStyles } from '@mantine/styles';
 export const useStyles = createStyles((theme) => ({
   author: {
     fontWeight: 600,
-    marginLeft: '12px',
   },
   children: {
     marginTop: '16px',
-  },
-  date: {
-    marginRight: '12px',
   },
   header: {
     display: 'flex',
     flexWrap: 'wrap',
   },
   headerBottom: {
+    '@media (max-width: 833px)': {
+      flexDirection: 'column',
+    },
     color: theme.colors.dark[3],
+    display: 'flex',
     fontSize: '14px',
     marginRight: '12px',
   },
   headerTop: {
-    '@media (max-width: 882px)': {
+    '@media (max-width: 833px)': {
       flexDirection: 'column',
     },
     display: 'flex',
@@ -34,32 +34,40 @@ export const useStyles = createStyles((theme) => ({
     border: `1px solid ${theme.colors.gray[2]}`,
     borderRadius: '16px',
     marginRight: '32px',
-    maxWidth: '165px',
   },
   imageRoot: {
-    '@media (max-width: 1112px)': {
+    '@media (max-width: 414px)': {
+      maxWidth: '100%',
+    },
+    '@media (max-width: 833px)': {
       flexDirection: 'column',
       marginBottom: '20px',
     },
     marginRight: '32px',
+    maxWidth: '165px',
   },
   path: {
     color: theme.colors.dark[6],
   },
   rightContainer: {},
   root: {
+    cursor: 'pointer',
     display: 'flex',
-    flexWrap: 'wrap',
     // eslint-disable-next-line sort-keys
-    '@media (max-width: 1112px)': {
-      // flexDirection: 'column',
+    '@media (max-width: 833px)': {
+      flexDirection: 'column',
     },
   },
-  title: {
-    'h1,h2,h3,h4,p': {
-      display: 'flex',
-      fontSize: '18px',
-      margin: '0 16px 0 0',
+  separator: {
+    '@media (max-width: 833px)': {
+      display: 'none',
     },
+    margin: '0 12px',
+  },
+  title: {
+    display: 'flex',
+    fontSize: '18px',
+    fontWeight: 'bold',
+    margin: '0 16px 0 0',
   },
 }));

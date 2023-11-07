@@ -7,19 +7,19 @@ import { FileIcon } from '@smile/react-front-kit-shared';
 
 import defaultImage from '../../../assets/defaultImage.jpg';
 
-import { useStyles } from './ListViewItem.style';
+import { useStyles } from './DocumentCard.style';
 
-export interface IListViewItemProps {
-  author: string;
+export interface IDocumentCardProps {
+  author: ReactElement;
   children?: ReactNode;
-  date?: string;
+  date?: ReactElement;
   iconType?: string;
   image?: string;
-  path?: string;
+  path?: ReactElement;
   title?: ReactElement;
 }
 
-export function ListViewItem(props: IListViewItemProps): ReactElement {
+export function DocumentCard(props: IDocumentCardProps): ReactElement {
   const {
     author,
     children,
@@ -39,7 +39,6 @@ export function ListViewItem(props: IListViewItemProps): ReactElement {
         classNames={{ image: classes.image, root: classes.imageRoot }}
         radius={16}
         src={image}
-        width={165}
       />
       <div className={classes.rightContainer}>
         <div>
@@ -54,12 +53,23 @@ export function ListViewItem(props: IListViewItemProps): ReactElement {
             </div>
             <div>
               <div className={classes.headerTop}>
-                <div className={classes.title}>{title}</div>
-                <span className={classes.path}>({path})</span>
+                {Boolean(title) && (
+                  <span className={classes.title}>{title}</span>
+                )}
+                {Boolean(path) && <span className={classes.path}>{path}</span>}
               </div>
               <div className={classes.headerBottom}>
-                <span className={classes.date}>{date}</span> -
-                <span className={classes.author}>{author}</span>
+                {Boolean(date) && (
+                  <>
+                    <span>{date}</span>
+                    {Boolean(author) && (
+                      <span className={classes.separator}>-</span>
+                    )}
+                  </>
+                )}
+                {Boolean(author) && (
+                  <span className={classes.author}>{author}</span>
+                )}
               </div>
             </div>
           </div>
