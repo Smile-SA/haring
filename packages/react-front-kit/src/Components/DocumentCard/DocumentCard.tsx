@@ -1,6 +1,6 @@
 'use client';
 
-import type { ReactElement, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { Box, Image, useMantineTheme } from '@mantine/core';
 import { FileIcon } from '@smile/react-front-kit-shared';
@@ -10,16 +10,16 @@ import defaultImage from '../../../assets/defaultImage.jpg';
 import { useStyles } from './DocumentCard.style';
 
 export interface IDocumentCardProps {
-  author: ReactElement;
+  author: ReactNode;
   children?: ReactNode;
-  date?: ReactElement;
+  date?: ReactNode;
   iconType?: string;
   image?: string;
-  path?: ReactElement;
-  title?: ReactElement;
+  path?: ReactNode;
+  title?: ReactNode;
 }
 
-export function DocumentCard(props: IDocumentCardProps): ReactElement {
+export function DocumentCard(props: IDocumentCardProps): ReactNode {
   const {
     author,
     children,

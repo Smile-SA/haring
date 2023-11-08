@@ -6,17 +6,14 @@ describe('DocumentCard', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
       <DocumentCard
-        author={<>Valentin</>}
-        date={<>24/12/1996</>}
+        author="Aline"
+        date="Published on December 24, 2023"
         iconType="PDF"
-        image="./thing.jpg"
-        path={
-          <>
-            Customer {'>'} 567890456 {'>'} Invoices
-          </>
-        }
-        title={<h1>A_thing.PDF</h1>}
-      />,
+        path="(Customer > 567890456 > Invoices)"
+        title="Random_File.PDF"
+      >
+        children
+      </DocumentCard>,
     );
     expect(container).toMatchSnapshot();
   });

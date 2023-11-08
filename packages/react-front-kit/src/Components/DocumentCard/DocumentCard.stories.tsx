@@ -13,15 +13,11 @@ type IStory = StoryObj<typeof meta>;
 
 export const DocumentCard: IStory = {
   args: {
-    author: <>Aline</>,
-    children: <>Children</>,
-    date: <>Published on December 24, 2023</>,
+    author: 'Aline',
+    children: 'Children',
+    date: 'Published on December 24, 2023',
     iconType: 'PDF',
-    path: (
-      <>
-        Customer {'>'} 567890456 {'>'} Invoices
-      </>
-    ),
-    title: <>Random_File.PDF</>,
+    path: '(Customer > 567890456 > Invoices)',
+    title: 'Random_File.PDF',
   },
 };

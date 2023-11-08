@@ -17,7 +17,7 @@ exports[`DocumentCard matches snapshot 1`] = `
         >
           <img
             class="mantine-Image-image mantine-dc8ibh"
-            src="./thing.jpg"
+            src=""
             style="object-fit: cover; width: 100%; height: auto;"
           />
         </div>
@@ -50,25 +50,19 @@ exports[`DocumentCard matches snapshot 1`] = `
               <span
                 class="mantine-fakv65"
               >
-                <h1>
-                  A_thing.PDF
-                </h1>
+                Random_File.PDF
               </span>
               <span
                 class="mantine-xrrpki"
               >
-                Customer 
-                &gt;
-                 567890456 
-                &gt;
-                 Invoices
+                (Customer &gt; 567890456 &gt; Invoices)
               </span>
             </div>
             <div
               class="mantine-1fna5yi"
             >
               <span>
-                24/12/1996
+                Published on December 24, 2023
               </span>
               <span
                 class="mantine-mj4lz4"
@@ -78,7 +72,7 @@ exports[`DocumentCard matches snapshot 1`] = `
               <span
                 class="mantine-l9up18"
               >
-                Valentin
+                Aline
               </span>
             </div>
           </div>
@@ -86,7 +80,9 @@ exports[`DocumentCard matches snapshot 1`] = `
       </div>
       <div
         class="mantine-j5huwo"
-      />
+      >
+        children
+      </div>
     </div>
   </div>
 </div>
