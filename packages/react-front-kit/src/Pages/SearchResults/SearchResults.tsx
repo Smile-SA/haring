@@ -5,19 +5,24 @@ import type { FormEvent, ReactElement } from 'react';
 import {
   AppShell,
   Box,
+  Button,
+  Divider,
   Flex,
   Paper,
   Select,
+  Space,
+  Stack,
   createStyles,
   rem,
 } from '@mantine/core';
-import { CaretDown } from '@phosphor-icons/react';
+import { CaretDown, DownloadSimple } from '@phosphor-icons/react';
 import {
   isNotNullNorEmpty,
   secondaryTheme,
 } from '@smile/react-front-kit-shared';
 import { useState } from 'react';
 
+import { DocumentCard } from '../../Components/DocumentCard/DocumentCard';
 import { Header } from '../../Components/Header/Header';
 import Motif from '../../Components/InfoCard/Motif';
 import { Pagination } from '../../Components/Pagination/Pagination';
@@ -208,10 +213,80 @@ export function SearchResults(): ReactElement {
         }
         topBlockTheme={{ ...secondaryTheme, colorScheme: 'dark' }}
       >
-        <Paper mb={24} p={24} style={{ borderRadius: 16, height: 748 }}>
+        <Paper mb={24} p={24} style={{ borderRadius: 16, padding: '8px 56px' }}>
           [{rowsPerPage}/{typeFilteredResults} results of search &quot;
           {submittedSearch}
           &quot;, page {page}/{totalPages}, sorted by {activeSorting}]
+          <Stack>
+            <Space h="40px" />
+            <DocumentCard
+              author="Aline"
+              date="Published on December 24, 2023"
+              iconType="PDF"
+              path="(Customer > 567890456 > Invoices)"
+              title="Random_File.PDF"
+            >
+              <>
+                <p>
+                  Ceci est une description faite pour cette facture et ajoutée
+                  par le créateur lors de l’import du document dans la GED, en
+                  l’absence de description cet espace est laissé vide...
+                </p>
+                <Button color="gray.8">
+                  <DownloadSimple width={12} />
+                  <Space w={8} />
+                  PDF, FR - 1Mo
+                </Button>
+              </>
+            </DocumentCard>
+            <Space h="28px" />
+            <Divider color="gray.2" my="sm" />
+            <Space h="28px" />
+            <DocumentCard
+              author="Aline"
+              date="Published on December 24, 2023"
+              iconType="PDF"
+              path="(Customer > 567890456 > Invoices)"
+              title="Random_File.PDF"
+            >
+              <>
+                <p>
+                  Ceci est une description faite pour cette facture et ajoutée
+                  par le créateur lors de l’import du document dans la GED, en
+                  l’absence de description cet espace est laissé vide...
+                </p>
+                <Button color="gray.8">
+                  <DownloadSimple width={12} />
+                  <Space w={8} />
+                  PDF, FR - 1Mo
+                </Button>
+              </>
+            </DocumentCard>
+            <Space h="28px" />
+            <Divider color="gray.2" my="sm" />
+            <Space h="28px" />
+            <DocumentCard
+              author="Aline"
+              date="Published on December 24, 2023"
+              iconType="PDF"
+              path="(Customer > 567890456 > Invoices)"
+              title="Random_File.PDF"
+            >
+              <>
+                <p>
+                  Ceci est une description faite pour cette facture et ajoutée
+                  par le créateur lors de l’import du document dans la GED, en
+                  l’absence de description cet espace est laissé vide...
+                </p>
+                <Button color="gray.8">
+                  <DownloadSimple width={12} />
+                  <Space w={8} />
+                  PDF, FR - 1Mo
+                </Button>
+              </>
+            </DocumentCard>
+            <Space h="40px" />
+          </Stack>
         </Paper>
         <Pagination
           isTransparent

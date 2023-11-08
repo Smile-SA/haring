@@ -34,6 +34,7 @@ export const useStyles = createStyles((theme) => ({
     border: `1px solid ${theme.colors.gray[2]}`,
     borderRadius: '16px',
     marginRight: '32px',
+    minHeight: '164px',
   },
   imageRoot: {
     '@media (max-width: 414px)': {
