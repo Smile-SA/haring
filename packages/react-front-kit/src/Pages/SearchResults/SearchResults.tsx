@@ -1,6 +1,6 @@
 'use client';
 
-import type { FormEvent, ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import {
   AppShell,
@@ -59,7 +59,6 @@ export function SearchResults(): ReactElement {
   const numberOfResults = 135;
   // Search
   const [search, setSearch] = useState<string>('567890456');
-  const [submittedSearch, setSubmittedSearch] = useState<string>(search);
   // Pagination
   const [page, setPage] = useState<number>(1);
   const [rowsPerPage, setRowsPerPage] = useState<number>(10);
@@ -123,15 +122,6 @@ export function SearchResults(): ReactElement {
 
   const totalPages = Math.ceil(typeFilteredResults / rowsPerPage);
   const { classes } = useStyles();
-
-  function handleSearchSubmit(event: FormEvent): void {
-    event.preventDefault();
-    setSubmittedSearch(search);
-  }
-
-  function handleSearchClear(): void {
-    setSubmittedSearch('');
-  }
 
   return (
     <AppShell
@@ -205,8 +195,6 @@ export function SearchResults(): ReactElement {
                 />
               }
               onChange={setSearch}
-              onSearchClear={handleSearchClear}
-              onSearchSubmit={handleSearchSubmit}
               value={search}
             />
           </Box>
@@ -214,13 +202,10 @@ export function SearchResults(): ReactElement {
         topBlockTheme={{ ...secondaryTheme, colorScheme: 'dark' }}
       >
         <Paper mb={24} p={24} style={{ borderRadius: 16, padding: '8px 56px' }}>
-          [{rowsPerPage}/{typeFilteredResults} results of search &quot;
-          {submittedSearch}
-          &quot;, page {page}/{totalPages}, sorted by {activeSorting}]
           <Stack>
             <Space h="40px" />
             <DocumentCard
-              author="Aline"
+              author="Aline Dupon"
               date="Published on December 24, 2023"
               iconType="PDF"
               path="(Customer > 567890456 > Invoices)"
@@ -243,11 +228,11 @@ export function SearchResults(): ReactElement {
             <Divider color="gray.2" my="sm" />
             <Space h="28px" />
             <DocumentCard
-              author="Aline"
+              author="Julien Dominique"
               date="Published on December 24, 2023"
-              iconType="PDF"
+              iconType="ppt"
               path="(Customer > 567890456 > Invoices)"
-              title="Random_File.PDF"
+              title="Presentation.PPT"
             >
               <>
                 <p>
@@ -258,7 +243,7 @@ export function SearchResults(): ReactElement {
                 <Button color="gray.8">
                   <DownloadSimple width={12} />
                   <Space w={8} />
-                  PDF, FR - 1Mo
+                  PTT, FR - 1Mo
                 </Button>
               </>
             </DocumentCard>
@@ -266,11 +251,11 @@ export function SearchResults(): ReactElement {
             <Divider color="gray.2" my="sm" />
             <Space h="28px" />
             <DocumentCard
-              author="Aline"
+              author="Mohamed Aldri"
               date="Published on December 24, 2023"
               iconType="PDF"
               path="(Customer > 567890456 > Invoices)"
-              title="Random_File.PDF"
+              title="Other_random_File.PDF"
             >
               <>
                 <p>

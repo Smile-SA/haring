@@ -135,7 +135,7 @@ export function FoldableColumnLayout(
           >
             {sidebarContent}
           </Grid.Col>
-          <Grid.Col span={9}>{children}</Grid.Col>
+          <Grid.Col span={!isColumnVisibleState ? 12 : 9}>{children}</Grid.Col>
         </Grid>
       </Container>
     </>

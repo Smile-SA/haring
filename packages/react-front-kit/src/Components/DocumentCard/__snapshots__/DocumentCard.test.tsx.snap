@@ -16,7 +16,7 @@ exports[`DocumentCard matches snapshot 1`] = `
           class="mantine-1iugybl mantine-Image-imageWrapper"
         >
           <img
-            class="mantine-Image-image mantine-dc8ibh"
+            class="mantine-Image-image mantine-1thijn1"
             src=""
             style="object-fit: cover; width: 100%; height: auto;"
           />
