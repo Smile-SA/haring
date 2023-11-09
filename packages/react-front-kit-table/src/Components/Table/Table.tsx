@@ -6,11 +6,14 @@
 
 'use client';
 import type { FloatingPosition } from '@mantine/core/lib/Floating';
-import type { IConfirmModalProps } from '@smile/react-front-kit';
+import type {
+  IConfirmModalProps,
+  IPaginationProps,
+} from '@smile/react-front-kit';
 import type { MRT_Row, MRT_TableOptions } from 'mantine-react-table';
 import type { ReactElement, ReactNode } from 'react';
 
-import { ActionIcon, Button, Flex, Menu, Tooltip } from '@mantine/core';
+import { ActionIcon, Button, Flex, Menu, Space, Tooltip } from '@mantine/core';
 import {
   CaretDown,
   CaretUp,
@@ -18,7 +21,7 @@ import {
   DotsThreeVertical,
   Funnel,
 } from '@phosphor-icons/react';
-import { ColumnPlus, ConfirmModal } from '@smile/react-front-kit';
+import { ColumnPlus, ConfirmModal, Pagination } from '@smile/react-front-kit';
 import {
   MantineReactTable,
   MRT_ShowHideColumnsButton as MrtShowHideColumnsButton,
@@ -62,6 +65,7 @@ export interface ITableProps<Data extends Record<string, unknown>>
   extends MRT_TableOptions<Data> {
   actions?: IAction<Data>[];
   menuLabel?: string;
+  paginationProps?: Partial<IPaginationProps>;
   rowActionNumber?: number;
 }
 
@@ -82,9 +86,12 @@ export function Table<Data extends Record<string, unknown>>(
     icons,
     initialState,
     menuLabel = 'Other actions',
+    paginationDisplayMode = 'custom',
+    paginationProps,
     rowActionNumber = 0,
-    ...mantineTable
+    ...mantineTableProps
   } = props;
+  const { enablePagination = true, data, manualPagination } = mantineTableProps;
   const { classes } = useStyles();
   const [confirmAction, setConfirmAction] =
     useState<IConfirmAction<Data> | null>(null);
@@ -150,7 +157,6 @@ export function Table<Data extends Record<string, unknown>>(
     enableDensityToggle: false,
     enableFullScreenToggle: false,
     enableGlobalFilter: false,
-    enablePagination: false,
     enableRowActions: true,
     enableRowSelection: true,
     icons: {
@@ -171,6 +177,9 @@ export function Table<Data extends Record<string, unknown>>(
       showColumnFilters: false,
       ...initialState,
     },
+    mantinePaginationProps: {
+      showRowsPerPage: false,
+    },
     mantinePaperProps: {
       className: classes.paper,
     },
@@ -183,6 +192,7 @@ export function Table<Data extends Record<string, unknown>>(
     manualFiltering: false,
     manualPagination: true,
     manualSorting: true,
+    paginationDisplayMode,
     positionActionsColumn: 'last',
     positionToolbarAlertBanner: 'top',
     renderRowActions: ({ row }) => {
@@ -307,12 +317,42 @@ export function Table<Data extends Record<string, unknown>>(
         </Flex>
       );
     },
-    ...mantineTable,
+    ...mantineTableProps,
   });
+  const { getState, setPageIndex, setPageSize } = table;
+  const { pagination } = getState();
+  const { pageIndex, pageSize } = pagination;
+
+  function handleItemsPerPageChange(value: number): void {
+    setPageSize(value);
+  }
+
+  function handlePageChange(value: number): void {
+    setPageIndex(value - 1);
+  }
 
   return (
     <>
       <MantineReactTable table={table} />
+      {Boolean(enablePagination && paginationDisplayMode === 'custom') && (
+        <>
+          <Space h="xl" />
+          {!manualPagination ? (
+            <Pagination
+              {...paginationProps}
+              itemsPerPage={pageSize}
+              onItemsPerPageChange={handleItemsPerPageChange}
+              onPageChange={handlePageChange}
+              page={pageIndex + 1}
+              totalPages={Math.ceil(data.length / pageSize)}
+            />
+          ) : (
+            paginationProps !== undefined && (
+              <Pagination {...(paginationProps as IPaginationProps)} />
+            )
+          )}
+        </>
+      )}
       <ConfirmModal
         {...confirmAction?.confirmModalProps}
         onCancel={handleCancel}
