@@ -1,6 +1,32 @@
 # @smile/react-front-kit
 
-## 0.0.3
+## 0.4.0
+
+### Minor Changes
+
+- [#51](https://github.com/Smile-SA/react-front-kit/pull/51) [`9e64dde`](https://github.com/Smile-SA/react-front-kit/commit/9e64dde39e037bee540207502e5a7dcb68c11925) Thanks [@tonai](https://github.com/tonai)! - Upsate `Sidebar` and `CollapseButton` to be compatible with routing links
+
+- [#50](https://github.com/Smile-SA/react-front-kit/pull/50) [`0941a7e`](https://github.com/Smile-SA/react-front-kit/commit/0941a7e175aba0575600fa53552b0edea3464c93) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Moved part of `HeaderSearch` into new `SearchBar` component, added leftSection to `SearchBar`
+
+- [#56](https://github.com/Smile-SA/react-front-kit/pull/56) [`2be34ea`](https://github.com/Smile-SA/react-front-kit/commit/2be34ea62b9128e6e451f2fc77a9bc05d2567210) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Added `SwitchableView` component with SegmentedControl
+
+- [#60](https://github.com/Smile-SA/react-front-kit/pull/60) [`5e00f26`](https://github.com/Smile-SA/react-front-kit/commit/5e00f2623115017f19cd4058310ac00fca5f3b17) Thanks [@vapersmile](https://github.com/vapersmile)! - Add DocumentCard Component
+
+- [#54](https://github.com/Smile-SA/react-front-kit/pull/54) [`0e4c83a`](https://github.com/Smile-SA/react-front-kit/commit/0e4c83a33bc17b0a0e28897076ee8dd78ed06368) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Added `SearchResults` example page, modified `Pagination`, `SearchBar`, `Header`
+  and `FoldableColumnLayout` components to accommodate needs of search page
+
+- [#58](https://github.com/Smile-SA/react-front-kit/pull/58) [`4df79a0`](https://github.com/Smile-SA/react-front-kit/commit/4df79a04be3a8a0fa00de3d3679989ca9112a035) Thanks [@vapersmile](https://github.com/vapersmile)! - Add thumbnail component and his defaultImage.jpg
+
+### Patch Changes
+
+- [#55](https://github.com/Smile-SA/react-front-kit/pull/55) [`0caaaf8`](https://github.com/Smile-SA/react-front-kit/commit/0caaaf86de2ef60a210541415ea32e2af103dad4) Thanks [@tonai](https://github.com/tonai)! - remove `AppShell` from `FoldableColumnLayout`
+
+- [#53](https://github.com/Smile-SA/react-front-kit/pull/53) [`01ee3ea`](https://github.com/Smile-SA/react-front-kit/commit/01ee3ea74827cb6e3d4041b50fbab959750135ff) Thanks [@tonai](https://github.com/tonai)! - Use `Paper` for `InfoCard`, update test page and refactor `Pagination` `itemsPerPage` prop
+
+- Updated dependencies [[`01ee3ea`](https://github.com/Smile-SA/react-front-kit/commit/01ee3ea74827cb6e3d4041b50fbab959750135ff)]:
+  - @smile/react-front-kit-shared@0.4.0
+
+## 0.3.0
 
 ### Minor Changes
 
@@ -19,7 +45,7 @@
 - [#38](https://github.com/Smile-SA/react-front-kit/pull/38) [`195cc64`](https://github.com/Smile-SA/react-front-kit/commit/195cc640d563e7630a7d99a4865c7bf97b847e09) Thanks [@vapersmile](https://github.com/vapersmile)! - Add BitConverter, TruncateString, Dropzone and DropzoneCard components
 
 - Updated dependencies []:
-  - @smile/react-front-kit-shared@0.0.3
+  - @smile/react-front-kit-shared@0.3.0
 
 ## 0.2.0
 
