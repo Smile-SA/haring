@@ -10,7 +10,7 @@ import defaultImage from '../../../assets/defaultImage.jpg';
 import { useStyles } from './DocumentCard.style';
 
 export interface IDocumentCardProps {
-  author: ReactNode;
+  author?: ReactNode;
   children?: ReactNode;
   date?: ReactNode;
   iconType?: string;
