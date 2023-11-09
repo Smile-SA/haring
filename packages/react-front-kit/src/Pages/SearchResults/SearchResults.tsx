@@ -1,23 +1,28 @@
 'use client';
 
-import type { FormEvent, ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import {
   AppShell,
   Box,
+  Button,
+  Divider,
   Flex,
   Paper,
   Select,
+  Space,
+  Stack,
   createStyles,
   rem,
 } from '@mantine/core';
-import { CaretDown } from '@phosphor-icons/react';
+import { CaretDown, DownloadSimple } from '@phosphor-icons/react';
 import {
   isNotNullNorEmpty,
   secondaryTheme,
 } from '@smile/react-front-kit-shared';
 import { useState } from 'react';
 
+import { DocumentCard } from '../../Components/DocumentCard/DocumentCard';
 import { Header } from '../../Components/Header/Header';
 import Motif from '../../Components/InfoCard/Motif';
 import { Pagination } from '../../Components/Pagination/Pagination';
@@ -54,7 +59,6 @@ export function SearchResults(): ReactElement {
   const numberOfResults = 135;
   // Search
   const [search, setSearch] = useState<string>('567890456');
-  const [submittedSearch, setSubmittedSearch] = useState<string>(search);
   // Pagination
   const [page, setPage] = useState<number>(1);
   const [rowsPerPage, setRowsPerPage] = useState<number>(10);
@@ -118,15 +122,6 @@ export function SearchResults(): ReactElement {
 
   const totalPages = Math.ceil(typeFilteredResults / rowsPerPage);
   const { classes } = useStyles();
-
-  function handleSearchSubmit(event: FormEvent): void {
-    event.preventDefault();
-    setSubmittedSearch(search);
-  }
-
-  function handleSearchClear(): void {
-    setSubmittedSearch('');
-  }
 
   return (
     <AppShell
@@ -200,18 +195,83 @@ export function SearchResults(): ReactElement {
                 />
               }
               onChange={setSearch}
-              onSearchClear={handleSearchClear}
-              onSearchSubmit={handleSearchSubmit}
               value={search}
             />
           </Box>
         }
         topBlockTheme={{ ...secondaryTheme, colorScheme: 'dark' }}
       >
-        <Paper mb={24} p={24} style={{ borderRadius: 16, height: 748 }}>
-          [{rowsPerPage}/{typeFilteredResults} results of search &quot;
-          {submittedSearch}
-          &quot;, page {page}/{totalPages}, sorted by {activeSorting}]
+        <Paper mb={24} p={24} style={{ borderRadius: 16, padding: '8px 56px' }}>
+          <Stack>
+            <Space h="40px" />
+            <DocumentCard
+              author="Aline Dupon"
+              date="Published on December 24, 2023"
+              iconType="PDF"
+              path="(Customer > 567890456 > Invoices)"
+              title="Random_File.PDF"
+            >
+              <>
+                <p>
+                  Ceci est une description faite pour cette facture et ajoutée
+                  par le créateur lors de l’import du document dans la GED, en
+                  l’absence de description cet espace est laissé vide...
+                </p>
+                <Button color="gray.8">
+                  <DownloadSimple width={12} />
+                  <Space w={8} />
+                  PDF, FR - 1Mo
+                </Button>
+              </>
+            </DocumentCard>
+            <Space h="28px" />
+            <Divider color="gray.2" my="sm" />
+            <Space h="28px" />
+            <DocumentCard
+              author="Julien Dominique"
+              date="Published on December 24, 2023"
+              iconType="ppt"
+              path="(Customer > 567890456 > Invoices)"
+              title="Presentation.PPT"
+            >
+              <>
+                <p>
+                  Ceci est une description faite pour cette facture et ajoutée
+                  par le créateur lors de l’import du document dans la GED, en
+                  l’absence de description cet espace est laissé vide...
+                </p>
+                <Button color="gray.8">
+                  <DownloadSimple width={12} />
+                  <Space w={8} />
+                  PTT, FR - 1Mo
+                </Button>
+              </>
+            </DocumentCard>
+            <Space h="28px" />
+            <Divider color="gray.2" my="sm" />
+            <Space h="28px" />
+            <DocumentCard
+              author="Mohamed Aldri"
+              date="Published on December 24, 2023"
+              iconType="PDF"
+              path="(Customer > 567890456 > Invoices)"
+              title="Other_random_File.PDF"
+            >
+              <>
+                <p>
+                  Ceci est une description faite pour cette facture et ajoutée
+                  par le créateur lors de l’import du document dans la GED, en
+                  l’absence de description cet espace est laissé vide...
+                </p>
+                <Button color="gray.8">
+                  <DownloadSimple width={12} />
+                  <Space w={8} />
+                  PDF, FR - 1Mo
+                </Button>
+              </>
+            </DocumentCard>
+            <Space h="40px" />
+          </Stack>
         </Paper>
         <Pagination
           isTransparent
