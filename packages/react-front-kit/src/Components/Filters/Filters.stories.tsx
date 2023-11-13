@@ -12,5 +12,15 @@ export default meta;
 type IStory = StoryObj<typeof meta>;
 
 export const Filters: IStory = {
-  args: {},
+  args: {
+    activeFilters: [
+      {
+        id: 1,
+        label: 'Dupont',
+        value: 'Dupont',
+      },
+    ],
+    deleteButtonLabel: 'Supprimer tout',
+    title: 'Filters actifs',
+  },
 };

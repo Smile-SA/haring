@@ -10,7 +10,7 @@ import { useStyles } from './Filters.style';
 export interface ISidebarFilter {
   id: number | string;
   label: string;
-  onRemove: (filter: ISidebarFilter) => void;
+  onRemove?: (filter: ISidebarFilter) => void;
   value: unknown;
 }
 
@@ -25,70 +25,6 @@ export function Filters(props: IFiltersProps): ReactElement {
     activeFilters = [
       {
         id: 1,
-        label: 'truck',
-        onRemove: (filter: ISidebarFilter) => {
-          console.log(filter);
-        },
-        value: 'truck',
-      },
-      {
-        id: 2,
-        label: 'truck',
-        onRemove: (filter: ISidebarFilter) => {
-          console.log(filter);
-        },
-        value: 'truck',
-      },
-      {
-        id: 2,
-        label: 'truck',
-        onRemove: (filter: ISidebarFilter) => {
-          console.log(filter);
-        },
-        value: 'truck',
-      },
-      {
-        id: 2,
-        label: 'truck',
-        onRemove: (filter: ISidebarFilter) => {
-          console.log(filter);
-        },
-        value: 'truck',
-      },
-      {
-        id: 2,
-        label: 'truck',
-        onRemove: (filter: ISidebarFilter) => {
-          console.log(filter);
-        },
-        value: 'truck',
-      },
-      {
-        id: 2,
-        label: 'truck',
-        onRemove: (filter: ISidebarFilter) => {
-          console.log(filter);
-        },
-        value: 'truck',
-      },
-      {
-        id: 2,
-        label: 'truck',
-        onRemove: (filter: ISidebarFilter) => {
-          console.log(filter);
-        },
-        value: 'truck',
-      },
-      {
-        id: 2,
-        label: 'truck',
-        onRemove: (filter: ISidebarFilter) => {
-          console.log(filter);
-        },
-        value: 'truck',
-      },
-      {
-        id: 2,
         label: 'truck',
         onRemove: (filter: ISidebarFilter) => {
           console.log(filter);
@@ -122,7 +58,7 @@ export function Filters(props: IFiltersProps): ReactElement {
               rightSection: classes.badgeRight,
               root: classes.badgeRoot,
             }}
-            onClick={() => filter.onRemove(filter)}
+            onClick={() => filter.onRemove && filter.onRemove(filter)}
             pr={3}
             rightSection={<X size={10} />}
             size="xl"
