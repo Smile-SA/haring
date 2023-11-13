@@ -91,7 +91,7 @@ export function Table<Data extends Record<string, unknown>>(
     rowActionNumber = 0,
     ...mantineTableProps
   } = props;
-  const { enablePagination = true, data, manualPagination } = mantineTableProps;
+  const { enablePagination = true, manualPagination } = mantineTableProps;
   const { classes } = useStyles();
   const [confirmAction, setConfirmAction] =
     useState<IConfirmAction<Data> | null>(null);
@@ -319,7 +319,7 @@ export function Table<Data extends Record<string, unknown>>(
     },
     ...mantineTableProps,
   });
-  const { getState, setPageIndex, setPageSize } = table;
+  const { getPageCount, getState, setPageIndex, setPageSize } = table;
   const { pagination } = getState();
   const { pageIndex, pageSize } = pagination;
 
@@ -344,7 +344,7 @@ export function Table<Data extends Record<string, unknown>>(
               onItemsPerPageChange={handleItemsPerPageChange}
               onPageChange={handlePageChange}
               page={pageIndex + 1}
-              totalPages={Math.ceil(data.length / pageSize)}
+              totalPages={getPageCount()}
             />
           ) : (
             paginationProps !== undefined && (
