@@ -2005,6 +2005,27 @@ exports[`TableGridView matches snapshot 1`] = `
           </table>
         </div>
       </div>
+      <div
+        class="mantine-1cw9ra3"
+      />
+      <div
+        class="mantine-z9baz5"
+        data-testid="pagination"
+      >
+        <div
+          class="mantine-Group-root mantine-11nlj0o"
+          data-testid="pagination-page"
+        >
+          <button
+            aria-current="page"
+            class="mantine-UnstyledButton-root mantine-Pagination-control mantine-v1qgro"
+            data-active="true"
+            type="button"
+          >
+            1
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
