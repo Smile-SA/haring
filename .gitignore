@@ -7,11 +7,13 @@ out
 build
 dist
 dist-ssr
+tsconfig.tsbuildinfo
 
 # dependencies
 node_modules
 .pnp
 .pnp.js
+.npm
 
 # Logs
 logs

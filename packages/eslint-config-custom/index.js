@@ -14,6 +14,7 @@ module.exports = {
     },
   ],
   rules: {
+    '@typescript-eslint/ban-types': ['error', { types: { Object: false } }],
     '@typescript-eslint/consistent-type-imports': [
       'error',
       { disallowTypeAnnotations: false },
