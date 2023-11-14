@@ -6,6 +6,9 @@ export const useStyles = createStyles((theme) => ({
     flexWrap: 'nowrap',
     marginTop: '16px',
   },
+  activeFiltersButtonRoot: {
+    minWidth: '100%',
+  },
   badgeInner: {
     fontWeight: 600,
     position: 'relative',
@@ -25,6 +28,9 @@ export const useStyles = createStyles((theme) => ({
     marginBottom: '8px',
     marginRight: '8px',
     textTransform: 'capitalize',
+  },
+  bottom: {
+    padding: '24px 24px 48px 24px',
   },
   buttonRemoveRoot: { color: 'white', fontSize: '14px', padding: '0' },
   root: {

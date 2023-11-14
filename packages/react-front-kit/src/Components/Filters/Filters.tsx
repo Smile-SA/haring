@@ -17,23 +17,18 @@ export interface ISidebarFilter {
 export interface IFiltersProps {
   activeFilters?: ISidebarFilter[] | [];
   deleteButtonLabel?: string;
+  filterLabelButton?: string;
+  onFilterButtonClick: (filters: ISidebarFilter[]) => void;
   title?: ReactNode;
 }
 
 export function Filters(props: IFiltersProps): ReactElement {
   const {
-    activeFilters = [
-      {
-        id: 1,
-        label: 'truck',
-        onRemove: (filter: ISidebarFilter) => {
-          console.log(filter);
-        },
-        value: 'truck',
-      },
-    ],
+    activeFilters = [],
     title = 'Active filters',
+    onFilterButtonClick,
     deleteButtonLabel = 'Remove all',
+    filterLabelButton = 'Filter',
   } = props;
   const { classes } = useStyles();
   return (
@@ -67,6 +62,16 @@ export function Filters(props: IFiltersProps): ReactElement {
             {filter.label}
           </Badge>
         ))}
+      </div>
+      <div className={classes.bottom}>
+        <Button
+          classNames={{ root: classes.activeFiltersButtonRoot }}
+          color="cyan.9"
+          onClick={() => onFilterButtonClick}
+          variant="filled"
+        >
+          {filterLabelButton} ({activeFilters.length})
+        </Button>
       </div>
     </Box>
   );
