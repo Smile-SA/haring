@@ -7,10 +7,7 @@
 'use client';
 import type { FloatingPosition } from '@mantine/core/lib/Floating';
 import type { IPaginationProps } from '@smile/react-front-kit';
-import type {
-  IAction,
-  IConfirmAction,
-} from '@smile/react-front-kit-shared/src/types/actions';
+import type { IAction, IConfirmAction } from '@smile/react-front-kit-shared';
 import type { MRT_Row, MRT_TableOptions } from 'mantine-react-table';
 import type { ReactElement } from 'react';
 

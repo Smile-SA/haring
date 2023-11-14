@@ -1,14 +1,18 @@
-import type { ITableGridViewProps } from './TableGridView';
-import type { IThumbnail } from '@smile/react-front-kit';
+import type { IThumbnail } from '../Thumbnail/Thumbnail';
 import type { HandlerFunction } from '@storybook/addon-actions';
 
 import { Trash } from '@phosphor-icons/react';
-import { FolderMove, baseThumbnail } from '@smile/react-front-kit';
+import { FolderMove } from '@smile/react-front-kit-shared';
 import { action } from '@storybook/addon-actions';
 
-import { tableMock } from '../Table/Table.mock';
+import { thumbnailActions } from '../Thumbnail/Thumbnail.mock';
 
-const thumbnailsMock: IThumbnail[] = [
+export const baseThumbnail: Omit<IThumbnail, 'id' | 'label'> = {
+  actions: thumbnailActions,
+  iconType: 'PDF',
+};
+
+export const thumbnails: IThumbnail[] = [
   {
     id: '1',
     label: 'Debit_Suivi_PREV',
@@ -27,7 +31,7 @@ const thumbnailsMock: IThumbnail[] = [
   },
 ];
 
-const thumbnailGridMock = {
+export const thumbnailGridMock = {
   cols: 5,
   gridActions: [
     {
@@ -54,16 +58,6 @@ const thumbnailGridMock = {
   ],
   onThumbnailClick: (): HandlerFunction => action('Thumbnail clicked'),
   spacing: 25,
-  thumbnails: thumbnailsMock,
+  thumbnails,
   verticalSpacing: 25,
 };
-
-const { data, ...tableProps } = tableMock;
-const { thumbnails, ...gridProps } = thumbnailGridMock;
-
-export const tableGridViewProps: ITableGridViewProps<Record<string, unknown>> =
-  {
-    data,
-    gridProps: { ...gridProps, idFieldName: 'id', labelFieldName: 'title' },
-    tableProps,
-  };
