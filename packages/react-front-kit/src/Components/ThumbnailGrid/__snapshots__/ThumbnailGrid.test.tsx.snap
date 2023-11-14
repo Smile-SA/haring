@@ -17,7 +17,6 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
     >
       <div
         class="mantine-af86sk"
-        id="thumbnail-1"
       >
         <div
           class="mantine-Group-root mantine-p1wipv"
@@ -89,7 +88,6 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
       </div>
       <div
         class="mantine-1qar87q"
-        id="thumbnail-2"
       >
         <div
           class="mantine-Group-root mantine-p1wipv"
@@ -161,7 +159,6 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
       </div>
       <div
         class="mantine-af86sk"
-        id="thumbnail-3"
       >
         <div
           class="mantine-Group-root mantine-p1wipv"

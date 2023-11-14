@@ -45,7 +45,6 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
   const {
     actions = [],
     iconType,
-    id,
     image = defaultImage,
     label,
     onClick,
@@ -98,7 +97,6 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
       <Box
         bg={String(selected ? theme.primaryColor : theme.colors.gray[1])}
         className={rootClasses.join(' ')}
-        id={`thumbnail-${id}`}
         onClick={onClick}
       >
         <Group className={classes.headerContainer}>

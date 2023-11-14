@@ -4,7 +4,6 @@ exports[`Thumbnail matches snapshot 1`] = `
 <div>
   <div
     class="mantine-af86sk"
-    id="thumbnail-test"
   >
     <div
       class="mantine-Group-root mantine-p1wipv"
