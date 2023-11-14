@@ -18,7 +18,8 @@ export interface IFiltersProps {
   activeFilters?: ISidebarFilter[] | [];
   deleteButtonLabel?: string;
   filterLabelButton?: string;
-  onFilterButtonClick: (filters: ISidebarFilter[]) => void;
+  onDeleteButtonClick?: (filters: ISidebarFilter[]) => void;
+  onFilterButtonClick?: (filters: ISidebarFilter[]) => void;
   title?: ReactNode;
 }
 
@@ -26,6 +27,7 @@ export function Filters(props: IFiltersProps): ReactElement {
   const {
     activeFilters = [],
     title = 'Active filters',
+    onDeleteButtonClick,
     onFilterButtonClick,
     deleteButtonLabel = 'Remove all',
     filterLabelButton = 'Filter',
@@ -39,6 +41,7 @@ export function Filters(props: IFiltersProps): ReactElement {
           <Button
             className={classes.buttonRemoveRoot}
             leftIcon={<TrashSimple size={12} />}
+            onClick={() => onDeleteButtonClick?.(activeFilters)}
             variant="transparent"
           >
             {deleteButtonLabel}
@@ -53,7 +56,7 @@ export function Filters(props: IFiltersProps): ReactElement {
               rightSection: classes.badgeRight,
               root: classes.badgeRoot,
             }}
-            onClick={() => filter.onRemove && filter.onRemove(filter)}
+            onClick={() => filter.onRemove?.(filter)}
             pr={3}
             rightSection={<X size={10} />}
             size="xl"
@@ -67,7 +70,7 @@ export function Filters(props: IFiltersProps): ReactElement {
         <Button
           classNames={{ root: classes.activeFiltersButtonRoot }}
           color="cyan.9"
-          onClick={() => onFilterButtonClick}
+          onClick={() => onFilterButtonClick?.(activeFilters)}
           variant="filled"
         >
           {filterLabelButton} ({activeFilters.length})

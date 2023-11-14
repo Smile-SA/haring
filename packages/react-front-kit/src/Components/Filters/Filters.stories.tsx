@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { action } from '@storybook/addon-actions';
+
 import { Filters as Cmp } from './Filters';
 
 const meta = {
@@ -17,10 +19,18 @@ export const Filters: IStory = {
       {
         id: 1,
         label: 'Dupont',
+        onRemove: action('remove'),
         value: 'Dupont',
+      },
+      {
+        id: 1,
+        label: 'Patate',
+        onRemove: action('remove'),
+        value: 'patate',
       },
     ],
     deleteButtonLabel: 'Supprimer tout',
+    filterLabelButton: 'Filtrer',
     title: 'Filters actifs',
   },
 };
