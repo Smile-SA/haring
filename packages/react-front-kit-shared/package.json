@@ -38,8 +38,12 @@
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
-      "storybook-utils": ["dist/storybook-utils/index.d.ts"],
-      "test-utils": ["dist/test-utils/index.d.ts"]
+      "storybook-utils": [
+        "dist/storybook-utils/index.d.ts"
+      ],
+      "test-utils": [
+        "dist/test-utils/index.d.ts"
+      ]
     }
   },
   "files": [
