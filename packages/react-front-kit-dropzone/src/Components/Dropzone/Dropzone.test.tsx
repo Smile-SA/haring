@@ -1,4 +1,4 @@
-import { renderWithProviders } from '@smile/react-front-kit-shared/src/test-utils';
+import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
 import { Dropzone } from './Dropzone';
 

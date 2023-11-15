@@ -30,8 +30,18 @@
     "url": "https://github.com/tonai"
   },
   "type": "module",
-  "exports": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./storybook-utils": "./dist/storybook-utils/index.js",
+    "./test-utils": "./dist/test-utils/index.js"
+  },
   "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "storybook-utils": ["dist/storybook-utils/index.d.ts"],
+      "test-utils": ["dist/test-utils/index.d.ts"]
+    }
+  },
   "files": [
     "CHANGELOG.md",
     "LICENSE",

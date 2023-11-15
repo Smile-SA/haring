@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/src/storybook-utils';
+import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/storybook-utils';
 
 import { FoldableColumnLayout as Cmp } from './FoldableColumnLayout';
 import { mainContent, sidebarContent } from './FoldableColumnLayout.mock';
