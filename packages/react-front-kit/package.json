@@ -29,8 +29,8 @@
     "email": "tonai59+github@gmail.com",
     "url": "https://github.com/tonai"
   },
-  "main": "./dist/index.js",
-  "module": "./src/index.tsx",
+  "type": "module",
+  "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "CHANGELOG.md",
@@ -45,7 +45,7 @@
     "build": "tsc --project tsconfig.build.json",
     "test": "jest",
     "generate": "turbo gen react-component",
-    "prepublishOnly": "npm run build && node ./scripts/prepublish.mjs"
+    "prepublishOnly": "npm run build && node ../../scripts/prepublish.mjs"
   },
   "dependencies": {
     "@mantine/dropzone": "^6.0.21",
@@ -80,5 +80,8 @@
     "@phosphor-icons/react": ">=2",
     "react": ">=18.0",
     "react-dom": ">=18.0"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }
