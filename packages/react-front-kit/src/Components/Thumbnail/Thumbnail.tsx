@@ -102,6 +102,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
         <Group className={classes.headerContainer}>
           <div className={classes.titleContainer}>
             <FileIcon
+              className={classes.fileIcon}
               color={String(
                 selected ? theme.colors.gray[1] : theme.colors.cyan[9],
               )}

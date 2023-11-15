@@ -1,5 +1,5 @@
 import type { ITableGridViewProps } from './TableGridView';
-import type { IThumbnail, IThumbnailAction } from '@smile/react-front-kit';
+import type { IThumbnailAction } from '@smile/react-front-kit';
 import type { HandlerFunction } from '@storybook/addon-actions';
 
 import {
@@ -69,31 +69,7 @@ const thumbnailActionsMock: IThumbnailAction[] = [
   },
 ];
 
-const baseThumbnailMock: Omit<IThumbnail, 'id' | 'label'> = {
-  actions: thumbnailActionsMock,
-  iconType: 'PDF',
-};
-
-const thumbnailsMock: IThumbnail[] = [
-  {
-    id: '1',
-    label: 'Debit_Suivi_PREV',
-    ...baseThumbnailMock,
-  },
-  {
-    id: '2',
-    label: 'Debit_Suivi_PREV_2',
-    ...baseThumbnailMock,
-    selected: true,
-  },
-  {
-    id: '3',
-    label: 'Debit_Suivi_PREV_3',
-    ...baseThumbnailMock,
-  },
-];
-
-const thumbnailGridMock = {
+const gridProps = {
   cols: 5,
   gridActions: [
     {
@@ -118,18 +94,19 @@ const thumbnailGridMock = {
       onAction: action('Delete selected'),
     },
   ],
+  idFieldName: 'id',
+  labelFieldName: 'title',
   onThumbnailClick: (): HandlerFunction => action('Thumbnail clicked'),
   spacing: 25,
-  thumbnails: thumbnailsMock,
+  thumbnailActions: thumbnailActionsMock,
   verticalSpacing: 25,
 };
 
 const { data, ...tableProps } = tableMock;
-const { thumbnails, ...gridProps } = thumbnailGridMock;
 
 export const tableGridViewProps: ITableGridViewProps<Record<string, unknown>> =
   {
     data,
-    gridProps: { ...gridProps, idFieldName: 'id', labelFieldName: 'title' },
+    gridProps,
     tableProps,
   };

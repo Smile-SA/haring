@@ -3,7 +3,7 @@
 exports[`InfoCard matches snapshot 1`] = `
 <div>
   <div
-    class="mantine-Paper-root mantine-f4ey7k"
+    class="mantine-Paper-root mantine-1o07cfm"
   >
     <div
       class="mantine-3ceds6"
@@ -83,13 +83,17 @@ exports[`InfoCard matches snapshot 1`] = `
       </svg>
     </div>
     <div
-      class="mantine-xmt904"
+      class="mantine-5lyz"
     >
       <div
-        class="mantine-17z4xwb"
-      />
+        class="mantine-17hmtow"
+      >
+        <div
+          class="mantine-fs5sma"
+        />
+      </div>
       <div
-        class="mantine-4lmzjk"
+        class="mantine-1mibec8"
       />
     </div>
   </div>

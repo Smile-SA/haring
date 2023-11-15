@@ -12,6 +12,7 @@ exports[`Thumbnail matches snapshot 1`] = `
         class="mantine-1r83wdq"
       >
         <svg
+          class="mantine-1qu33rh"
           fill="#0b7285"
           height="22"
           viewBox="0 0 256 256"

@@ -18,9 +18,6 @@ const useStyles = createStyles(() => ({
     gap: 42,
     padding: 24,
   },
-  content: {
-    marginBottom: 48,
-  },
   switchButton: {
     lineHeight: 0,
     padding: '0.5rem',
@@ -111,7 +108,7 @@ export function SwitchableView(props: ISwitchableViewProps): ReactElement {
           />
         </span>
       </div>
-      <div className={classes.content}>{activeView.dataView ?? ''}</div>
+      <div>{activeView.dataView ?? ''}</div>
     </Paper>
   );
 }
