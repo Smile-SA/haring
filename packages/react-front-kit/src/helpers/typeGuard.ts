@@ -13,8 +13,8 @@ export type IGuardedType<T extends IPrimitiveOrConstructor> = T extends new (
 ) => infer U
   ? U
   : T extends keyof ITypeMap
-  ? ITypeMap[T]
-  : never;
+    ? ITypeMap[T]
+    : never;
 
 export function typeGuard<T extends IPrimitiveOrConstructor>(
   o: unknown,

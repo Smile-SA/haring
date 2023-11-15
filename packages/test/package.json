@@ -6,8 +6,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "./dist/index.js",
-  "module": "./src/index.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./fileMock": "./dist/fileMock.js",
+    "./setupTests": "./dist/setupTests.js"
+  },
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc --project tsconfig.build.json"
