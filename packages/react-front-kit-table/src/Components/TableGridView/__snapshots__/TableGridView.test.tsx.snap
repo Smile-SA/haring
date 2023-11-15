@@ -1,0 +1,2032 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableGridView matches snapshot 1`] = `
+<div>
+  <div
+    class="mantine-Paper-root mantine-z9bo1e"
+    style="gap: 32px;"
+  >
+    <div
+      class="mantine-v9qkjz"
+    >
+      <span
+        class="mantine-qobh7"
+      >
+        <div
+          class="mantine-SegmentedControl-root mantine-np8w2m"
+        >
+          <span
+            class="mantine-SegmentedControl-indicator mantine-1dj3pci"
+          />
+          <div
+            class="___ref-control mantine-SegmentedControl-control mantine-SegmentedControl-controlActive mantine-92jry0"
+          >
+            <input
+              checked=""
+              class="mantine-1qq2b01 mantine-SegmentedControl-input"
+              id="mantine-f4bipx4bi-table"
+              name="mantine-f4bipx4bi"
+              type="radio"
+              value="table"
+            />
+            <label
+              class="___ref-label mantine-SegmentedControl-label mantine-1sk7jdh"
+              data-active="true"
+              for="mantine-f4bipx4bi-table"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                viewBox="0 0 256 256"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M80,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H88A8,8,0,0,1,80,64Zm136,56H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,64H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM44,52A12,12,0,1,0,56,64,12,12,0,0,0,44,52Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,116Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,180Z"
+                />
+              </svg>
+            </label>
+          </div>
+          <div
+            class="___ref-control mantine-1ryipl8 mantine-SegmentedControl-control"
+          >
+            <input
+              class="mantine-1qq2b01 mantine-SegmentedControl-input"
+              id="mantine-f4bipx4bi-grid"
+              name="mantine-f4bipx4bi"
+              type="radio"
+              value="grid"
+            />
+            <label
+              class="___ref-label mantine-SegmentedControl-label mantine-1sk7jdh"
+              for="mantine-f4bipx4bi-grid"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                viewBox="0 0 256 256"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"
+                />
+              </svg>
+            </label>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      class="mantine-l6ko5p"
+    >
+      <div
+        class="mantine-Paper-root mantine-n32i6g"
+        data-with-border="true"
+      >
+        <div
+          class="mantine-kq5u63"
+        >
+          <div
+            class="mantine-1bd5g77"
+          >
+            <span />
+            <div
+              class="mantine-24itsn"
+            >
+              <div
+                class="mantine-hiv720"
+              >
+                <div
+                  class="mantine-1inlmjw"
+                >
+                  <button
+                    aria-label="Show/Hide filters"
+                    class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1kdujgf"
+                    type="button"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="18"
+                      viewBox="0 0 256 256"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M230.6,49.53A15.81,15.81,0,0,0,216,40H40A16,16,0,0,0,28.19,66.76l.08.09L96,139.17V216a16,16,0,0,0,24.87,13.32l32-21.34A16,16,0,0,0,160,194.66V139.17l67.74-72.32.08-.09A15.8,15.8,0,0,0,230.6,49.53ZM40,56h0Zm108.34,72.28A15.92,15.92,0,0,0,144,139.17v55.49L112,216V139.17a15.92,15.92,0,0,0-4.32-10.94L40,56H216Z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    aria-controls="mantine-f4bipx4bi-dropdown"
+                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    aria-label="Show/Hide columns"
+                    class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1kdujgf"
+                    id="mantine-f4bipx4bi-target"
+                    type="button"
+                  >
+                    <svg
+                      fill="none"
+                      height="1em"
+                      stroke="currentColor"
+                      viewBox="0 0 12 12"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3 1.86005V10.11"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M5.99988 1.875V10.125"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M9.0083 1.88995V6.76495"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M8.9812 8.63989V10.8899"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M7.8562 9.76489H10.1062"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            class="mantine-11drpgf"
+            style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+          >
+            <div
+              style="opacity: 0; transition: opacity 200ms ease;"
+            >
+              <div
+                aria-busy="true"
+                class="mantine-Progress-root mantine-1yhs8s7"
+              >
+                <div
+                  aria-label="Loading"
+                  aria-valuemax="100"
+                  aria-valuemin="0"
+                  aria-valuenow="100"
+                  class="mantine-14727m2 mantine-Progress-bar"
+                  data-animate="true"
+                  data-striped="true"
+                  role="progressbar"
+                  style="width: 100%;"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mantine-1m3tpc2"
+        >
+          <table
+            class="mantine-Table-root mantine-ftlslj"
+            data-hover="true"
+            style="--header-mrt_row_select-size: 60; --col-mrt_row_select-size: 60; --header-id-size: 180; --col-id-size: 180; --header-format-size: 180; --col-format-size: 180; --header-title-size: 180; --col-title-size: 180; --header-creator-size: 180; --col-creator-size: 180; --header-date-size: 180; --col-date-size: 180; --header-mrt_row_actions-size: 124; --col-mrt_row_actions-size: 124;"
+          >
+            <thead
+              class="mantine-cnjrhp"
+            >
+              <tr
+                class="mantine-15ayjbz"
+              >
+                <th
+                  align="left"
+                  class="mantine-1hz932c"
+                  colspan="1"
+                >
+                  <div
+                    class="mantine-TableHeadCell-Content mantine-1g7noys"
+                  >
+                    <div
+                      class="mantine-TableHeadCell-Content-Labels mantine-v9lbua"
+                    >
+                      <div
+                        class="mantine-TableHeadCell-Content-Wrapper mantine-hnifc4"
+                      >
+                        <span
+                          class=""
+                        >
+                          <div
+                            class="mantine-Checkbox-root mantine-yxmaw9"
+                          >
+                            <div
+                              class="mantine-hqx0d1 mantine-Checkbox-body"
+                            >
+                              <div
+                                class="mantine-1uaka31 mantine-Checkbox-inner"
+                              >
+                                <input
+                                  aria-label="Toggle select all"
+                                  class="mantine-xl3ql4 mantine-Checkbox-input"
+                                  id="mantine-f4bipx4bi"
+                                  type="checkbox"
+                                />
+                                <svg
+                                  class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
+                                  fill="none"
+                                  viewBox="0 0 10 7"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    clip-rule="evenodd"
+                                    d="M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z"
+                                    fill="currentColor"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </div>
+                              <div
+                                class="mantine-1yohcga mantine-Checkbox-labelWrapper"
+                              />
+                            </div>
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="mantine-TableHeadCell-Content-Actions mantine-1tfj5gu"
+                    />
+                  </div>
+                </th>
+                <th
+                  align="left"
+                  class="mantine-ob5ro6"
+                  colspan="1"
+                >
+                  <div
+                    class="mantine-TableHeadCell-Content mantine-1g7noys"
+                  >
+                    <div
+                      class="mantine-TableHeadCell-Content-Labels mantine-1844cz"
+                    >
+                      <div
+                        class="mantine-TableHeadCell-Content-Wrapper mantine-1uskmy4"
+                        title="id"
+                      >
+                        id
+                      </div>
+                      <div
+                        class="mantine-Indicator-root mantine-1ru0l9l"
+                      >
+                        <button
+                          aria-label="Sort by id descending"
+                          class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1cs3vwn"
+                          type="button"
+                        >
+                          <svg
+                            fill="currentColor"
+                            height="1em"
+                            viewBox="0 0 256 256"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="mantine-TableHeadCell-Content-Actions mantine-1tfj5gu"
+                    >
+                      <button
+                        aria-controls="mantine-f4bipx4bi-dropdown"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        aria-label="Column Actions"
+                        class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1q2z0fp"
+                        id="mantine-f4bipx4bi-target"
+                        type="button"
+                      >
+                        <svg
+                          class="tabler-icon tabler-icon-dots-vertical"
+                          fill="none"
+                          height="24"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                          <path
+                            d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                          <path
+                            d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    class="mantine-1avyp1d"
+                    style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+                  >
+                    <div
+                      style="opacity: 0; transition: opacity 200ms ease;"
+                    >
+                      <div
+                        class="mantine-1fr50if"
+                      >
+                        <div
+                          class="mantine-374oww"
+                        >
+                          <div
+                            class="mantine-InputWrapper-root mantine-TextInput-root mantine-1xcks7r"
+                          >
+                            <div
+                              class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-1v7s5f8"
+                            >
+                              <input
+                                aria-invalid="false"
+                                class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
+                                id="mantine-f4bipx4bi"
+                                placeholder="Filter by id"
+                                title="Filter by id"
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </th>
+                <th
+                  align="left"
+                  class="mantine-rt9ixh"
+                  colspan="1"
+                >
+                  <div
+                    class="mantine-TableHeadCell-Content mantine-1g7noys"
+                  >
+                    <div
+                      class="mantine-TableHeadCell-Content-Labels mantine-1844cz"
+                    >
+                      <div
+                        class="mantine-TableHeadCell-Content-Wrapper mantine-1uskmy4"
+                        title="Format"
+                      >
+                        Format
+                      </div>
+                      <div
+                        class="mantine-Indicator-root mantine-1ru0l9l"
+                      >
+                        <button
+                          aria-label="Sort by Format ascending"
+                          class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1cs3vwn"
+                          type="button"
+                        >
+                          <svg
+                            fill="currentColor"
+                            height="1em"
+                            viewBox="0 0 256 256"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="mantine-TableHeadCell-Content-Actions mantine-1tfj5gu"
+                    >
+                      <button
+                        aria-controls="mantine-f4bipx4bi-dropdown"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        aria-label="Column Actions"
+                        class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1q2z0fp"
+                        id="mantine-f4bipx4bi-target"
+                        type="button"
+                      >
+                        <svg
+                          class="tabler-icon tabler-icon-dots-vertical"
+                          fill="none"
+                          height="24"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                          <path
+                            d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                          <path
+                            d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    class="mantine-1avyp1d"
+                    style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+                  >
+                    <div
+                      style="opacity: 0; transition: opacity 200ms ease;"
+                    >
+                      <div
+                        class="mantine-1fr50if"
+                      >
+                        <div
+                          class="mantine-374oww"
+                        >
+                          <div
+                            class="mantine-InputWrapper-root mantine-TextInput-root mantine-1xcks7r"
+                          >
+                            <div
+                              class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-1v7s5f8"
+                            >
+                              <input
+                                aria-invalid="false"
+                                class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
+                                id="mantine-f4bipx4bi"
+                                placeholder="Filter by Format"
+                                title="Filter by Format"
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </th>
+                <th
+                  align="left"
+                  class="mantine-l9sc9x"
+                  colspan="1"
+                >
+                  <div
+                    class="mantine-TableHeadCell-Content mantine-1g7noys"
+                  >
+                    <div
+                      class="mantine-TableHeadCell-Content-Labels mantine-1844cz"
+                    >
+                      <div
+                        class="mantine-TableHeadCell-Content-Wrapper mantine-1uskmy4"
+                        title="Titre"
+                      >
+                        Titre
+                      </div>
+                      <div
+                        class="mantine-Indicator-root mantine-1ru0l9l"
+                      >
+                        <button
+                          aria-label="Sort by Titre ascending"
+                          class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1cs3vwn"
+                          type="button"
+                        >
+                          <svg
+                            fill="currentColor"
+                            height="1em"
+                            viewBox="0 0 256 256"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="mantine-TableHeadCell-Content-Actions mantine-1tfj5gu"
+                    >
+                      <button
+                        aria-controls="mantine-f4bipx4bi-dropdown"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        aria-label="Column Actions"
+                        class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1q2z0fp"
+                        id="mantine-f4bipx4bi-target"
+                        type="button"
+                      >
+                        <svg
+                          class="tabler-icon tabler-icon-dots-vertical"
+                          fill="none"
+                          height="24"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                          <path
+                            d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                          <path
+                            d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    class="mantine-1avyp1d"
+                    style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+                  >
+                    <div
+                      style="opacity: 0; transition: opacity 200ms ease;"
+                    >
+                      <div
+                        class="mantine-1fr50if"
+                      >
+                        <div
+                          class="mantine-374oww"
+                        >
+                          <div
+                            class="mantine-InputWrapper-root mantine-TextInput-root mantine-1xcks7r"
+                          >
+                            <div
+                              class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-1v7s5f8"
+                            >
+                              <input
+                                aria-invalid="false"
+                                class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
+                                id="mantine-f4bipx4bi"
+                                placeholder="Filter by Titre"
+                                title="Filter by Titre"
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </th>
+                <th
+                  align="left"
+                  class="mantine-170rqft"
+                  colspan="1"
+                >
+                  <div
+                    class="mantine-TableHeadCell-Content mantine-1g7noys"
+                  >
+                    <div
+                      class="mantine-TableHeadCell-Content-Labels mantine-1844cz"
+                    >
+                      <div
+                        class="mantine-TableHeadCell-Content-Wrapper mantine-1uskmy4"
+                        title="Créateur"
+                      >
+                        Créateur
+                      </div>
+                      <div
+                        class="mantine-Indicator-root mantine-1ru0l9l"
+                      >
+                        <button
+                          aria-label="Sort by Créateur ascending"
+                          class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1cs3vwn"
+                          type="button"
+                        >
+                          <svg
+                            fill="currentColor"
+                            height="1em"
+                            viewBox="0 0 256 256"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="mantine-TableHeadCell-Content-Actions mantine-1tfj5gu"
+                    >
+                      <button
+                        aria-controls="mantine-f4bipx4bi-dropdown"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        aria-label="Column Actions"
+                        class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1q2z0fp"
+                        id="mantine-f4bipx4bi-target"
+                        type="button"
+                      >
+                        <svg
+                          class="tabler-icon tabler-icon-dots-vertical"
+                          fill="none"
+                          height="24"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                          <path
+                            d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                          <path
+                            d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    class="mantine-1avyp1d"
+                    style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+                  >
+                    <div
+                      style="opacity: 0; transition: opacity 200ms ease;"
+                    >
+                      <div
+                        class="mantine-1fr50if"
+                      >
+                        <div
+                          class="mantine-374oww"
+                        >
+                          <div
+                            class="mantine-InputWrapper-root mantine-TextInput-root mantine-1xcks7r"
+                          >
+                            <div
+                              class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-1v7s5f8"
+                            >
+                              <input
+                                aria-invalid="false"
+                                class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
+                                id="mantine-f4bipx4bi"
+                                placeholder="Filter by Créateur"
+                                title="Filter by Créateur"
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </th>
+                <th
+                  align="left"
+                  class="mantine-1adclxe"
+                  colspan="1"
+                >
+                  <div
+                    class="mantine-TableHeadCell-Content mantine-1g7noys"
+                  >
+                    <div
+                      class="mantine-TableHeadCell-Content-Labels mantine-1844cz"
+                    >
+                      <div
+                        class="mantine-TableHeadCell-Content-Wrapper mantine-1uskmy4"
+                        title="Date publication"
+                      >
+                        Date publication
+                      </div>
+                      <div
+                        class="mantine-Indicator-root mantine-1ru0l9l"
+                      >
+                        <button
+                          aria-label="Sort by Date publication ascending"
+                          class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1cs3vwn"
+                          type="button"
+                        >
+                          <svg
+                            fill="currentColor"
+                            height="1em"
+                            viewBox="0 0 256 256"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="mantine-TableHeadCell-Content-Actions mantine-1tfj5gu"
+                    >
+                      <button
+                        aria-controls="mantine-f4bipx4bi-dropdown"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        aria-label="Column Actions"
+                        class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1q2z0fp"
+                        id="mantine-f4bipx4bi-target"
+                        type="button"
+                      >
+                        <svg
+                          class="tabler-icon tabler-icon-dots-vertical"
+                          fill="none"
+                          height="24"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                          <path
+                            d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                          <path
+                            d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    class="mantine-1avyp1d"
+                    style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+                  >
+                    <div
+                      style="opacity: 0; transition: opacity 200ms ease;"
+                    >
+                      <div
+                        class="mantine-1fr50if"
+                      >
+                        <div
+                          class="mantine-374oww"
+                        >
+                          <div
+                            class="mantine-InputWrapper-root mantine-TextInput-root mantine-1xcks7r"
+                          >
+                            <div
+                              class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-1v7s5f8"
+                            >
+                              <input
+                                aria-invalid="false"
+                                class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
+                                id="mantine-f4bipx4bi"
+                                placeholder="Filter by Date publication"
+                                title="Filter by Date publication"
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </th>
+                <th
+                  align="left"
+                  class="mantine-1az7xvu"
+                  colspan="1"
+                >
+                  <div
+                    class="mantine-TableHeadCell-Content mantine-1g7noys"
+                  >
+                    <div
+                      class="mantine-TableHeadCell-Content-Labels mantine-v9lbua"
+                    >
+                      <div
+                        class="mantine-TableHeadCell-Content-Wrapper mantine-hnifc4"
+                      />
+                    </div>
+                    <div
+                      class="mantine-TableHeadCell-Content-Actions mantine-1tfj5gu"
+                    />
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class="mantine-yzu17x"
+            >
+              <tr
+                class="mantine-2kfh7k"
+              >
+                <td
+                  class="mantine-iz2iwx"
+                >
+                  <span
+                    class=""
+                  >
+                    <div
+                      class="mantine-Checkbox-root mantine-yxmaw9"
+                    >
+                      <div
+                        class="mantine-hqx0d1 mantine-Checkbox-body"
+                      >
+                        <div
+                          class="mantine-1uaka31 mantine-Checkbox-inner"
+                        >
+                          <input
+                            aria-label="Toggle select row"
+                            class="mantine-xl3ql4 mantine-Checkbox-input"
+                            id="mantine-f4bipx4bi"
+                            type="checkbox"
+                          />
+                          <svg
+                            class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
+                            fill="none"
+                            viewBox="0 0 10 7"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z"
+                              fill="currentColor"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                        <div
+                          class="mantine-1yohcga mantine-Checkbox-labelWrapper"
+                        />
+                      </div>
+                    </div>
+                  </span>
+                </td>
+                <td
+                  class="mantine-cmnkbf"
+                >
+                  1
+                </td>
+                <td
+                  class="mantine-1aycf16"
+                >
+                  SVG
+                </td>
+                <td
+                  class="mantine-1iml2fb"
+                >
+                  Doc test 1
+                </td>
+                <td
+                  class="mantine-o5n4lc"
+                >
+                  Valentin Perello
+                </td>
+                <td
+                  class="mantine-emurma"
+                >
+                  16/05/2022
+                </td>
+                <td
+                  class="mantine-vej1ag"
+                >
+                  <div
+                    class="___ref-rowActions mantine-1idxz77"
+                  >
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        viewBox="0 0 12 12"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.58333 10H1.41667C1.30616 10 1.20018 9.95564 1.12204 9.87668C1.0439 9.79771 1 9.69062 1 9.57895V2.42105C1 2.30938 1.0439 2.20229 1.12204 2.12332C1.20018 2.04436 1.30616 2 1.41667 2H4.19271C4.2828 2.00037 4.37041 2.02988 4.44271 2.08421L5.89062 3.17895C5.96292 3.23327 6.05053 3.26278 6.14062 3.26316H10.5833C10.6938 3.26316 10.7998 3.30752 10.878 3.38648C10.9561 3.46544 11 3.57254 11 3.68421V5.36842"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M6 9H11"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9 7L11 9L9 11"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        viewBox="0 0 256 256"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        viewBox="0 0 256 256"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      aria-controls="mantine-f4bipx4bi-dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-elystm"
+                      id="mantine-f4bipx4bi-target"
+                      type="button"
+                    >
+                      <div
+                        class="mantine-jm9ogu"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="16"
+                          viewBox="0 0 256 256"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM128,72a12,12,0,1,0-12-12A12,12,0,0,0,128,72Zm0,112a12,12,0,1,0,12,12A12,12,0,0,0,128,184Z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="mantine-2kfh7k"
+              >
+                <td
+                  class="mantine-iz2iwx"
+                >
+                  <span
+                    class=""
+                  >
+                    <div
+                      class="mantine-Checkbox-root mantine-yxmaw9"
+                    >
+                      <div
+                        class="mantine-hqx0d1 mantine-Checkbox-body"
+                      >
+                        <div
+                          class="mantine-1uaka31 mantine-Checkbox-inner"
+                        >
+                          <input
+                            aria-label="Toggle select row"
+                            class="mantine-xl3ql4 mantine-Checkbox-input"
+                            id="mantine-f4bipx4bi"
+                            type="checkbox"
+                          />
+                          <svg
+                            class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
+                            fill="none"
+                            viewBox="0 0 10 7"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z"
+                              fill="currentColor"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                        <div
+                          class="mantine-1yohcga mantine-Checkbox-labelWrapper"
+                        />
+                      </div>
+                    </div>
+                  </span>
+                </td>
+                <td
+                  class="mantine-cmnkbf"
+                >
+                  2
+                </td>
+                <td
+                  class="mantine-1aycf16"
+                >
+                  PDF
+                </td>
+                <td
+                  class="mantine-1iml2fb"
+                >
+                  Doc test 2
+                </td>
+                <td
+                  class="mantine-o5n4lc"
+                >
+                  Valentin Perello
+                </td>
+                <td
+                  class="mantine-emurma"
+                >
+                  17/05/2022
+                </td>
+                <td
+                  class="mantine-vej1ag"
+                >
+                  <div
+                    class="___ref-rowActions mantine-1idxz77"
+                  >
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        viewBox="0 0 12 12"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.58333 10H1.41667C1.30616 10 1.20018 9.95564 1.12204 9.87668C1.0439 9.79771 1 9.69062 1 9.57895V2.42105C1 2.30938 1.0439 2.20229 1.12204 2.12332C1.20018 2.04436 1.30616 2 1.41667 2H4.19271C4.2828 2.00037 4.37041 2.02988 4.44271 2.08421L5.89062 3.17895C5.96292 3.23327 6.05053 3.26278 6.14062 3.26316H10.5833C10.6938 3.26316 10.7998 3.30752 10.878 3.38648C10.9561 3.46544 11 3.57254 11 3.68421V5.36842"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M6 9H11"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9 7L11 9L9 11"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        viewBox="0 0 256 256"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        viewBox="0 0 256 256"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      aria-controls="mantine-f4bipx4bi-dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-elystm"
+                      id="mantine-f4bipx4bi-target"
+                      type="button"
+                    >
+                      <div
+                        class="mantine-jm9ogu"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="16"
+                          viewBox="0 0 256 256"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM128,72a12,12,0,1,0-12-12A12,12,0,0,0,128,72Zm0,112a12,12,0,1,0,12,12A12,12,0,0,0,128,184Z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="mantine-2kfh7k"
+              >
+                <td
+                  class="mantine-iz2iwx"
+                >
+                  <span
+                    class=""
+                  >
+                    <div
+                      class="mantine-Checkbox-root mantine-yxmaw9"
+                    >
+                      <div
+                        class="mantine-hqx0d1 mantine-Checkbox-body"
+                      >
+                        <div
+                          class="mantine-1uaka31 mantine-Checkbox-inner"
+                        >
+                          <input
+                            aria-label="Toggle select row"
+                            class="mantine-xl3ql4 mantine-Checkbox-input"
+                            id="mantine-f4bipx4bi"
+                            type="checkbox"
+                          />
+                          <svg
+                            class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
+                            fill="none"
+                            viewBox="0 0 10 7"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z"
+                              fill="currentColor"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                        <div
+                          class="mantine-1yohcga mantine-Checkbox-labelWrapper"
+                        />
+                      </div>
+                    </div>
+                  </span>
+                </td>
+                <td
+                  class="mantine-cmnkbf"
+                >
+                  3
+                </td>
+                <td
+                  class="mantine-1aycf16"
+                >
+                  PDF
+                </td>
+                <td
+                  class="mantine-1iml2fb"
+                >
+                  Doc test 3
+                </td>
+                <td
+                  class="mantine-o5n4lc"
+                >
+                  Valentin Perello
+                </td>
+                <td
+                  class="mantine-emurma"
+                >
+                  18/05/2022
+                </td>
+                <td
+                  class="mantine-vej1ag"
+                >
+                  <div
+                    class="___ref-rowActions mantine-1idxz77"
+                  >
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        viewBox="0 0 12 12"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.58333 10H1.41667C1.30616 10 1.20018 9.95564 1.12204 9.87668C1.0439 9.79771 1 9.69062 1 9.57895V2.42105C1 2.30938 1.0439 2.20229 1.12204 2.12332C1.20018 2.04436 1.30616 2 1.41667 2H4.19271C4.2828 2.00037 4.37041 2.02988 4.44271 2.08421L5.89062 3.17895C5.96292 3.23327 6.05053 3.26278 6.14062 3.26316H10.5833C10.6938 3.26316 10.7998 3.30752 10.878 3.38648C10.9561 3.46544 11 3.57254 11 3.68421V5.36842"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M6 9H11"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9 7L11 9L9 11"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        viewBox="0 0 256 256"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        viewBox="0 0 256 256"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      aria-controls="mantine-f4bipx4bi-dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-elystm"
+                      id="mantine-f4bipx4bi-target"
+                      type="button"
+                    >
+                      <div
+                        class="mantine-jm9ogu"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="16"
+                          viewBox="0 0 256 256"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM128,72a12,12,0,1,0-12-12A12,12,0,0,0,128,72Zm0,112a12,12,0,1,0,12,12A12,12,0,0,0,128,184Z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="mantine-2kfh7k"
+              >
+                <td
+                  class="mantine-iz2iwx"
+                >
+                  <span
+                    class=""
+                  >
+                    <div
+                      class="mantine-Checkbox-root mantine-yxmaw9"
+                    >
+                      <div
+                        class="mantine-hqx0d1 mantine-Checkbox-body"
+                      >
+                        <div
+                          class="mantine-1uaka31 mantine-Checkbox-inner"
+                        >
+                          <input
+                            aria-label="Toggle select row"
+                            class="mantine-xl3ql4 mantine-Checkbox-input"
+                            id="mantine-f4bipx4bi"
+                            type="checkbox"
+                          />
+                          <svg
+                            class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
+                            fill="none"
+                            viewBox="0 0 10 7"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z"
+                              fill="currentColor"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                        <div
+                          class="mantine-1yohcga mantine-Checkbox-labelWrapper"
+                        />
+                      </div>
+                    </div>
+                  </span>
+                </td>
+                <td
+                  class="mantine-cmnkbf"
+                >
+                  4
+                </td>
+                <td
+                  class="mantine-1aycf16"
+                >
+                  PDF
+                </td>
+                <td
+                  class="mantine-1iml2fb"
+                >
+                  Doc test 4
+                </td>
+                <td
+                  class="mantine-o5n4lc"
+                >
+                  Valentin Perello
+                </td>
+                <td
+                  class="mantine-emurma"
+                >
+                  19/05/2022
+                </td>
+                <td
+                  class="mantine-vej1ag"
+                >
+                  <div
+                    class="___ref-rowActions mantine-1idxz77"
+                  >
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        viewBox="0 0 12 12"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.58333 10H1.41667C1.30616 10 1.20018 9.95564 1.12204 9.87668C1.0439 9.79771 1 9.69062 1 9.57895V2.42105C1 2.30938 1.0439 2.20229 1.12204 2.12332C1.20018 2.04436 1.30616 2 1.41667 2H4.19271C4.2828 2.00037 4.37041 2.02988 4.44271 2.08421L5.89062 3.17895C5.96292 3.23327 6.05053 3.26278 6.14062 3.26316H10.5833C10.6938 3.26316 10.7998 3.30752 10.878 3.38648C10.9561 3.46544 11 3.57254 11 3.68421V5.36842"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M6 9H11"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9 7L11 9L9 11"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        viewBox="0 0 256 256"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        viewBox="0 0 256 256"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      aria-controls="mantine-f4bipx4bi-dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-elystm"
+                      id="mantine-f4bipx4bi-target"
+                      type="button"
+                    >
+                      <div
+                        class="mantine-jm9ogu"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="16"
+                          viewBox="0 0 256 256"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM128,72a12,12,0,1,0-12-12A12,12,0,0,0,128,72Zm0,112a12,12,0,1,0,12,12A12,12,0,0,0,128,184Z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="mantine-2kfh7k"
+              >
+                <td
+                  class="mantine-iz2iwx"
+                >
+                  <span
+                    class=""
+                  >
+                    <div
+                      class="mantine-Checkbox-root mantine-yxmaw9"
+                    >
+                      <div
+                        class="mantine-hqx0d1 mantine-Checkbox-body"
+                      >
+                        <div
+                          class="mantine-1uaka31 mantine-Checkbox-inner"
+                        >
+                          <input
+                            aria-label="Toggle select row"
+                            class="mantine-xl3ql4 mantine-Checkbox-input"
+                            id="mantine-f4bipx4bi"
+                            type="checkbox"
+                          />
+                          <svg
+                            class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
+                            fill="none"
+                            viewBox="0 0 10 7"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z"
+                              fill="currentColor"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                        <div
+                          class="mantine-1yohcga mantine-Checkbox-labelWrapper"
+                        />
+                      </div>
+                    </div>
+                  </span>
+                </td>
+                <td
+                  class="mantine-cmnkbf"
+                >
+                  5
+                </td>
+                <td
+                  class="mantine-1aycf16"
+                >
+                  PDF
+                </td>
+                <td
+                  class="mantine-1iml2fb"
+                >
+                  Doc test 5
+                </td>
+                <td
+                  class="mantine-o5n4lc"
+                >
+                  Valentin Perello
+                </td>
+                <td
+                  class="mantine-emurma"
+                >
+                  20/05/2022
+                </td>
+                <td
+                  class="mantine-vej1ag"
+                >
+                  <div
+                    class="___ref-rowActions mantine-1idxz77"
+                  >
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        viewBox="0 0 12 12"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.58333 10H1.41667C1.30616 10 1.20018 9.95564 1.12204 9.87668C1.0439 9.79771 1 9.69062 1 9.57895V2.42105C1 2.30938 1.0439 2.20229 1.12204 2.12332C1.20018 2.04436 1.30616 2 1.41667 2H4.19271C4.2828 2.00037 4.37041 2.02988 4.44271 2.08421L5.89062 3.17895C5.96292 3.23327 6.05053 3.26278 6.14062 3.26316H10.5833C10.6938 3.26316 10.7998 3.30752 10.878 3.38648C10.9561 3.46544 11 3.57254 11 3.68421V5.36842"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M6 9H11"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9 7L11 9L9 11"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        viewBox="0 0 256 256"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        viewBox="0 0 256 256"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      aria-controls="mantine-f4bipx4bi-dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-elystm"
+                      id="mantine-f4bipx4bi-target"
+                      type="button"
+                    >
+                      <div
+                        class="mantine-jm9ogu"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="16"
+                          viewBox="0 0 256 256"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM128,72a12,12,0,1,0-12-12A12,12,0,0,0,128,72Zm0,112a12,12,0,1,0,12,12A12,12,0,0,0,128,184Z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="mantine-2kfh7k"
+              >
+                <td
+                  class="mantine-iz2iwx"
+                >
+                  <span
+                    class=""
+                  >
+                    <div
+                      class="mantine-Checkbox-root mantine-yxmaw9"
+                    >
+                      <div
+                        class="mantine-hqx0d1 mantine-Checkbox-body"
+                      >
+                        <div
+                          class="mantine-1uaka31 mantine-Checkbox-inner"
+                        >
+                          <input
+                            aria-label="Toggle select row"
+                            class="mantine-xl3ql4 mantine-Checkbox-input"
+                            id="mantine-f4bipx4bi"
+                            type="checkbox"
+                          />
+                          <svg
+                            class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
+                            fill="none"
+                            viewBox="0 0 10 7"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z"
+                              fill="currentColor"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                        <div
+                          class="mantine-1yohcga mantine-Checkbox-labelWrapper"
+                        />
+                      </div>
+                    </div>
+                  </span>
+                </td>
+                <td
+                  class="mantine-cmnkbf"
+                >
+                  6
+                </td>
+                <td
+                  class="mantine-1aycf16"
+                >
+                  PDF
+                </td>
+                <td
+                  class="mantine-1iml2fb"
+                >
+                  Doc test 6
+                </td>
+                <td
+                  class="mantine-o5n4lc"
+                >
+                  Valentin Perello
+                </td>
+                <td
+                  class="mantine-emurma"
+                >
+                  21/05/2022
+                </td>
+                <td
+                  class="mantine-vej1ag"
+                >
+                  <div
+                    class="___ref-rowActions mantine-1idxz77"
+                  >
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        viewBox="0 0 12 12"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.58333 10H1.41667C1.30616 10 1.20018 9.95564 1.12204 9.87668C1.0439 9.79771 1 9.69062 1 9.57895V2.42105C1 2.30938 1.0439 2.20229 1.12204 2.12332C1.20018 2.04436 1.30616 2 1.41667 2H4.19271C4.2828 2.00037 4.37041 2.02988 4.44271 2.08421L5.89062 3.17895C5.96292 3.23327 6.05053 3.26278 6.14062 3.26316H10.5833C10.6938 3.26316 10.7998 3.30752 10.878 3.38648C10.9561 3.46544 11 3.57254 11 3.68421V5.36842"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M6 9H11"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9 7L11 9L9 11"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        viewBox="0 0 256 256"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        viewBox="0 0 256 256"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      aria-controls="mantine-f4bipx4bi-dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-elystm"
+                      id="mantine-f4bipx4bi-target"
+                      type="button"
+                    >
+                      <div
+                        class="mantine-jm9ogu"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="16"
+                          viewBox="0 0 256 256"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM128,72a12,12,0,1,0-12-12A12,12,0,0,0,128,72Zm0,112a12,12,0,1,0,12,12A12,12,0,0,0,128,184Z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="mantine-2kfh7k"
+              >
+                <td
+                  class="mantine-iz2iwx"
+                >
+                  <span
+                    class=""
+                  >
+                    <div
+                      class="mantine-Checkbox-root mantine-yxmaw9"
+                    >
+                      <div
+                        class="mantine-hqx0d1 mantine-Checkbox-body"
+                      >
+                        <div
+                          class="mantine-1uaka31 mantine-Checkbox-inner"
+                        >
+                          <input
+                            aria-label="Toggle select row"
+                            class="mantine-xl3ql4 mantine-Checkbox-input"
+                            id="mantine-f4bipx4bi"
+                            type="checkbox"
+                          />
+                          <svg
+                            class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
+                            fill="none"
+                            viewBox="0 0 10 7"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z"
+                              fill="currentColor"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                        <div
+                          class="mantine-1yohcga mantine-Checkbox-labelWrapper"
+                        />
+                      </div>
+                    </div>
+                  </span>
+                </td>
+                <td
+                  class="mantine-cmnkbf"
+                >
+                  7
+                </td>
+                <td
+                  class="mantine-1aycf16"
+                >
+                  PDF
+                </td>
+                <td
+                  class="mantine-1iml2fb"
+                >
+                  Doc test 7
+                </td>
+                <td
+                  class="mantine-o5n4lc"
+                >
+                  Valentin Perello
+                </td>
+                <td
+                  class="mantine-emurma"
+                >
+                  22/05/2022
+                </td>
+                <td
+                  class="mantine-vej1ag"
+                >
+                  <div
+                    class="___ref-rowActions mantine-1idxz77"
+                  >
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        viewBox="0 0 12 12"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.58333 10H1.41667C1.30616 10 1.20018 9.95564 1.12204 9.87668C1.0439 9.79771 1 9.69062 1 9.57895V2.42105C1 2.30938 1.0439 2.20229 1.12204 2.12332C1.20018 2.04436 1.30616 2 1.41667 2H4.19271C4.2828 2.00037 4.37041 2.02988 4.44271 2.08421L5.89062 3.17895C5.96292 3.23327 6.05053 3.26278 6.14062 3.26316H10.5833C10.6938 3.26316 10.7998 3.30752 10.878 3.38648C10.9561 3.46544 11 3.57254 11 3.68421V5.36842"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M6 9H11"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9 7L11 9L9 11"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        viewBox="0 0 256 256"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-qf5o1f"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        viewBox="0 0 256 256"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      aria-controls="mantine-f4bipx4bi-dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
+                      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-elystm"
+                      id="mantine-f4bipx4bi-target"
+                      type="button"
+                    >
+                      <div
+                        class="mantine-jm9ogu"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="16"
+                          viewBox="0 0 256 256"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM128,72a12,12,0,1,0-12-12A12,12,0,0,0,128,72Zm0,112a12,12,0,1,0,12,12A12,12,0,0,0,128,184Z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot
+              class="mantine-1fbon9v"
+            />
+          </table>
+        </div>
+      </div>
+      <div
+        class="mantine-1cw9ra3"
+      />
+      <div
+        class="mantine-z9baz5"
+        data-testid="pagination"
+      >
+        <div
+          class="mantine-Group-root mantine-11nlj0o"
+          data-testid="pagination-page"
+        >
+          <button
+            aria-current="page"
+            class="mantine-UnstyledButton-root mantine-Pagination-control mantine-v1qgro"
+            data-active="true"
+            type="button"
+          >
+            1
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

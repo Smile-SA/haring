@@ -1,7 +1,10 @@
 'use client';
 
-import type { IConfirmModalProps } from '../ConfirmModal/ConfirmModal';
-import type { ReactElement, ReactNode } from 'react';
+import type {
+  IAction,
+  IActionConfirmModalProps,
+} from '@smile/react-front-kit-shared/src/types/actions';
+import type { ReactElement } from 'react';
 
 import {
   ActionIcon,
@@ -21,34 +24,26 @@ import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
 
 import { useStyles } from './Thumbnail.style';
 
-export type IActionConfirmModalProps = Omit<
-  IConfirmModalProps,
-  'onClose' | 'opened'
->;
-
-export interface IThumbnailAction {
-  color?: string;
-  confirmModalProps?: IActionConfirmModalProps;
-  confirmation?: boolean;
-  icon: ReactNode;
-  label: string;
-  onAction: () => void;
-}
-
-export interface IThumbnailProps {
-  action?: IThumbnailAction[];
+export interface IThumbnail extends Record<string, unknown> {
   iconType?: string;
+  id: number | string;
   image?: string;
   label?: string;
   onClick?: () => void;
   selected?: boolean;
 }
 
+export type IThumbnailAction = IAction<IThumbnail>;
+
+export interface IThumbnailProps extends IThumbnail {
+  actions?: IThumbnailAction[];
+}
+
 export function Thumbnail(props: IThumbnailProps): ReactElement {
   const { classes } = useStyles();
   const theme = useMantineTheme();
   const {
-    action = [],
+    actions = [],
     iconType,
     image = defaultImage,
     label,
@@ -57,9 +52,9 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
   } = props;
 
   const [confirmAction, setConfirmAction] =
-    useState<IActionConfirmModalProps | null>(null);
+    useState<IActionConfirmModalProps<IThumbnail> | null>(null);
 
-  function clearconfirmAction(): void {
+  function clearConfirmAction(): void {
     setConfirmAction(null);
   }
 
@@ -75,7 +70,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
       children: action.confirmModalProps?.children,
       confirmColor: action.confirmModalProps?.confirmColor,
       confirmLabel: action.confirmModalProps?.confirmLabel,
-      onConfirm: action.onAction,
+      onConfirm: () => action.onAction?.(props),
       title: action.confirmModalProps?.title,
     });
   }
@@ -84,15 +79,16 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
     if (action.confirmation) {
       setModal(action);
     } else {
-      action.onAction();
+      action.onAction?.(props);
     }
   }
 
   function handleClose(): void {
-    clearconfirmAction();
+    clearConfirmAction();
   }
-  function handleModalButton(onAction?: () => void): void {
-    onAction && onAction();
+
+  function handleModalButton(onAction?: (item: IThumbnail) => void): void {
+    onAction && onAction(props);
     handleClose();
   }
 
@@ -118,13 +114,14 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
             </Text>
           </div>
           <div>
-            {action.length > 0 && (
+            {actions.length > 0 && (
               <Menu radius={4} shadow="lg" width={200}>
                 <Menu.Target>
                   <ActionIcon
                     className={
                       selected ? classes.menuButtonSelected : classes.menuButton
                     }
+                    onClick={(e) => e.stopPropagation()}
                     radius={4}
                     type="button"
                   >
@@ -137,8 +134,8 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
                     </div>
                   </ActionIcon>
                 </Menu.Target>
-                <Menu.Dropdown>
-                  {action.map((action, index) => (
+                <Menu.Dropdown onClick={(e) => e.stopPropagation()}>
+                  {actions.map((action, index) => (
                     <Menu.Item
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}

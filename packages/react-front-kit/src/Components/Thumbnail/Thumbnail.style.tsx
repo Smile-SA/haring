@@ -50,7 +50,8 @@ export const useStyles = createStyles((theme) => ({
   root: {
     background: theme.colors.gray[1],
     borderRadius: '16px',
-    heigh: 'auto',
+    cursor: 'pointer',
+    height: 'auto',
     padding: '16px',
     width: 'auto',
   },
