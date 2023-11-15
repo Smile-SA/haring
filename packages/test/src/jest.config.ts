@@ -2,12 +2,12 @@ import type { Config } from 'jest';
 
 const config: Config = {
   moduleNameMapper: {
-    '\\.(css|less)$': 'test/src/fileMock.ts',
+    '\\.(css|less)$': 'test/fileMock',
     '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-      'test/src/fileMock.ts',
+      'test/fileMock',
   },
   roots: ['src'],
-  setupFilesAfterEnv: ['test/setupTests.ts'],
+  setupFilesAfterEnv: ['test/setupTests'],
   testEnvironment: 'jsdom',
   transformIgnorePatterns: ['/node_modules/(?!(pretty-bytes)/)'],
 };
