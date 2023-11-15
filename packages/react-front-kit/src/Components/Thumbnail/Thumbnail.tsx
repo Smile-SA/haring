@@ -3,7 +3,7 @@
 import type {
   IAction,
   IActionConfirmModalProps,
-} from '@smile/react-front-kit-shared/src/types/actions';
+} from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';
 
 import {
