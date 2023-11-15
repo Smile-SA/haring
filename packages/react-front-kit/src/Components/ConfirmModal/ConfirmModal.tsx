@@ -1,6 +1,6 @@
 'use client';
 
-import type { IConfirmModal } from '@smile/react-front-kit-shared/src/types/actions';
+import type { IConfirmModal } from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';
 
 import { Button, Modal } from '@mantine/core';

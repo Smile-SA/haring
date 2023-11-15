@@ -1,6 +1,5 @@
 import type { ITableGridViewProps } from './TableGridView';
-import type { IThumbnail } from '@smile/react-front-kit';
-import type { IThumbnailAction } from '@smile/react-front-kit/src';
+import type { IThumbnail, IThumbnailAction } from '@smile/react-front-kit';
 import type { HandlerFunction } from '@storybook/addon-actions';
 
 import {

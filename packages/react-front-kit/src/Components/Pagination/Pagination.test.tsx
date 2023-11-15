@@ -1,4 +1,4 @@
-import { renderWithProviders } from '@smile/react-front-kit-shared/src/test-utils';
+import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 import { within } from '@testing-library/react';
 
 import { Pagination } from './Pagination';

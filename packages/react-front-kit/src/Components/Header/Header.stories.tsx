@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar, Menu } from '@mantine/core';
 import { primaryTheme } from '@smile/react-front-kit-shared';
-import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/src/storybook-utils';
+import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/storybook-utils';
 import { expect } from '@storybook/jest';
 import { userEvent, within } from '@storybook/testing-library';
 
