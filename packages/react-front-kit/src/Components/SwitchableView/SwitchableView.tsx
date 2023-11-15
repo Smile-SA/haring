@@ -1,3 +1,5 @@
+'use client';
+
 import type { PaperProps } from '@mantine/core';
 import type {
   SegmentedControlItem,
