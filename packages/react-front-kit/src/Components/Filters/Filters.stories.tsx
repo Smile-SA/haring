@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
 
+import { menu } from '../SidebarFilterMenu/SidebarFilterMenu.mock';
+
 import { Filters as Cmp } from './Filters';
 
 const meta = {
@@ -31,6 +33,7 @@ export const Filters: IStory = {
     ],
     deleteButtonLabel: 'Supprimer tout',
     filterLabelButton: 'Filtrer',
+    sideBarFiltersMenu: menu,
     title: 'Filters actifs',
   },
 };

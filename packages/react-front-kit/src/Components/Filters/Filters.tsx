@@ -1,9 +1,12 @@
 'use client';
 
-import type { ReactElement, ReactNode } from 'react';
+import type { ISidebarFilterMenuProps } from '../SidebarFilterMenu/SidebarFilterMenu';
+import type { ElementType, ReactElement, ReactNode } from 'react';
 
 import { Badge, Box, Button, Group } from '@mantine/core';
 import { TrashSimple, X } from '@phosphor-icons/react';
+
+import { SidebarFilterMenu } from '../SidebarFilterMenu/SidebarFilterMenu';
 
 import { useStyles } from './Filters.style';
 
@@ -14,19 +17,24 @@ export interface ISidebarFilter {
   value: unknown;
 }
 
-export interface IFiltersProps {
+export interface IFiltersProps<
+  T extends number | string,
+  C extends ElementType,
+> {
   activeFilters?: ISidebarFilter[] | [];
   deleteButtonLabel?: string;
   filterLabelButton?: string;
   onDeleteButtonClick?: (filters: ISidebarFilter[]) => void;
   onFilterButtonClick?: (filters: ISidebarFilter[]) => void;
+  sideBarFiltersMenu?: ISidebarFilterMenuProps<T, C>;
   title?: ReactNode;
 }
 
-export function Filters(props: IFiltersProps): ReactElement {
+export function Filters(props: IFiltersProps<T, C>): ReactElement {
   const {
     activeFilters = [],
     title = 'Active filters',
+    sideBarFiltersMenu = [],
     onDeleteButtonClick,
     onFilterButtonClick,
     deleteButtonLabel = 'Remove all',
@@ -65,6 +73,9 @@ export function Filters(props: IFiltersProps): ReactElement {
             {filter.label}
           </Badge>
         ))}
+      </div>
+      <div className={classes.middle}>
+        <SidebarFilterMenu menu={sideBarFiltersMenu} />
       </div>
       <div className={classes.bottom}>
         <Button

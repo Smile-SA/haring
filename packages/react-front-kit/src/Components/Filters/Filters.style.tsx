@@ -33,6 +33,9 @@ export const useStyles = createStyles((theme) => ({
     padding: '24px 24px 48px 24px',
   },
   buttonRemoveRoot: { color: 'white', fontSize: '14px', padding: '0' },
+  middle: {
+    margin: '0px 24px',
+  },
   root: {
     backgroundColor: 'white',
     borderRadius: '16px',
@@ -45,6 +48,7 @@ export const useStyles = createStyles((theme) => ({
     border: '8px solid white',
     borderRadius: '16px 16px 0px 0px',
     color: 'white',
+    marginBottom: '24px',
     padding: '24px',
   },
 }));
