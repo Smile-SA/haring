@@ -1,4 +1,3 @@
-import type { IThumbnailAction } from '@smile/react-front-kit/src';
 import type { ITableProps } from '@smile/react-front-kit-table';
 import type { ITableGridViewGridProps } from '@smile/react-front-kit-table/src';
 
@@ -10,7 +9,7 @@ import {
   Star,
   Trash,
 } from '@phosphor-icons/react';
-import { FolderMove } from '@smile/react-front-kit';
+import { FolderMove, thumbnailActionsMock } from '@smile/react-front-kit';
 
 interface IExampleDataType extends Record<string, unknown> {
   creator: string;
@@ -157,45 +156,6 @@ export const tableProps: Omit<ITableProps<IExampleDataType>, 'data'> = {
   rowActionNumber: 3,
   rowCount: 6,
 };
-
-const thumbnailActionsMock: IThumbnailAction[] = [
-  {
-    icon: <FolderMove />,
-    id: 'move',
-    label: 'Move in tree',
-  },
-  {
-    icon: <Eye />,
-    id: 'open',
-    label: 'Open document',
-  },
-  {
-    icon: <PencilSimple />,
-    id: 'edit',
-    label: 'Edit document',
-  },
-  {
-    icon: <Star />,
-    id: 'favorite',
-    label: 'Add to favorites',
-  },
-  {
-    icon: <ShareNetwork />,
-    id: 'share',
-    label: 'Share',
-  },
-  {
-    icon: <DownloadSimple />,
-    id: 'download',
-    label: 'Download',
-  },
-  {
-    color: 'red',
-    icon: <Trash />,
-    id: 'delete',
-    label: 'Delete',
-  },
-];
 
 export const gridProps: ITableGridViewGridProps = {
   cols: 5,

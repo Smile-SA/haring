@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Thumbnail as Cmp } from './Thumbnail';
-import { thumbnailActions } from './Thumbnail.mock';
+import { thumbnailActionsMock } from './Thumbnail.mock';
 
 const meta = {
   component: Cmp,
@@ -14,7 +14,7 @@ type IStory = StoryObj<typeof meta>;
 
 export const Thumbnail: IStory = {
   args: {
-    actions: thumbnailActions,
+    actions: thumbnailActionsMock,
     iconType: 'PDF',
     id: '1',
     label: 'Debit_Suivi_PREV',

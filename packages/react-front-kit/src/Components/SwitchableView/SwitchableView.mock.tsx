@@ -1,7 +1,7 @@
 import { Center } from '@mantine/core';
 import { ListBullets, SquaresFour, Star } from '@phosphor-icons/react';
 
-export const viewA = (
+export const viewMockA = (
   <Center
     style={{
       backgroundColor: 'lightgray',
@@ -12,7 +12,7 @@ export const viewA = (
   </Center>
 );
 
-export const viewB = (
+export const viewMockB = (
   <Center
     style={{
       backgroundColor: 'lightblue',
@@ -23,7 +23,7 @@ export const viewB = (
   </Center>
 );
 
-export const viewC = (
+export const viewMockC = (
   <Center
     style={{
       backgroundColor: 'lightpink',
@@ -34,19 +34,19 @@ export const viewC = (
   </Center>
 );
 
-export const views = [
+export const viewsMock = [
   {
-    dataView: viewA,
+    dataView: viewMockA,
     label: <ListBullets />,
     value: 'a',
   },
   {
-    dataView: viewB,
+    dataView: viewMockB,
     label: <SquaresFour />,
     value: 'b',
   },
   {
-    dataView: viewC,
+    dataView: viewMockC,
     label: <Star />,
     value: 'c',
   },

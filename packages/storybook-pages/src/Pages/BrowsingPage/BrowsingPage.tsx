@@ -18,8 +18,8 @@ import {
   InfoCard,
   SidebarMenu,
   flattenNestedObjects,
+  menuMock,
 } from '@smile/react-front-kit';
-import { menu } from '@smile/react-front-kit/src/Components/SidebarMenu/SidebarMenu.mock';
 import { Dropzone } from '@smile/react-front-kit-dropzone';
 import { primaryTheme, secondaryTheme } from '@smile/react-front-kit-shared';
 import { TableGridView } from '@smile/react-front-kit-table';
@@ -34,7 +34,7 @@ import { data, gridProps, tableProps } from './BrowsingPage.mock';
  */
 export function BrowsingPage(): ReactElement {
   const [search, setSearch] = useState('');
-  const [sidebarMenu, setSidebarMenu] = useState(menu);
+  const [sidebarMenu, setSidebarMenu] = useState(menuMock);
   const [files, setFiles] = useState<IFile[]>([]);
   const [gridCols, setGridCols] = useState(4);
 
