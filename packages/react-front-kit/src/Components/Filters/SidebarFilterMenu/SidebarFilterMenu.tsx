@@ -1,14 +1,17 @@
 'use client';
 
-import type { ICollapseButtonProps } from '../CollapseButton/CollapseButton';
-import type { IMenuItem, ISidebarMenuProps } from '../SidebarMenu/SidebarMenu';
+import type { ICollapseButtonProps } from '../../CollapseButton/CollapseButton';
+import type {
+  IMenuItem,
+  ISidebarMenuProps,
+} from '../../SidebarMenu/SidebarMenu';
 import type { PaperProps } from '@mantine/core';
 import type { ElementType, ReactElement, ReactNode } from 'react';
 
 import { useMemo, useState } from 'react';
 
-import { addPathAndDepth, flattenNestedObjects } from '../../helpers';
-import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonControlled';
+import { addPathAndDepth, flattenNestedObjects } from '../../../helpers';
+import { CollapseButtonControlled } from '../../CollapseButton/CollapseButtonControlled';
 
 export interface IFiltersItem<T extends number | string> extends IMenuItem<T> {
   content?: ReactNode;
@@ -19,7 +22,7 @@ export interface ISidebarFilterMenuProps<
   C extends ElementType,
 > extends Omit<ISidebarMenuProps<T, C>, 'menu'>,
     PaperProps {
-  menu: IFiltersItem<T>;
+  menu?: IFiltersItem<T>;
 }
 
 export function getRecursiveMenu<
@@ -47,7 +50,6 @@ export function getRecursiveMenu<
         label={label}
         leftIcon={leftIcon}
         level={level}
-        line={level === 0}
         onCollapseChange={(isOpened) => onMenuOpen(id, isOpened)}
         onSelect={setSelectedId}
         opened={openedMenuIds.includes(id)}

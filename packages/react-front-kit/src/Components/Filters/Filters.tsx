@@ -1,14 +1,13 @@
 'use client';
 
-import type { ISidebarFilterMenuProps } from '../SidebarFilterMenu/SidebarFilterMenu';
+import type { ISidebarFilterMenuProps } from './SidebarFilterMenu/SidebarFilterMenu';
 import type { ElementType, ReactElement, ReactNode } from 'react';
 
 import { Badge, Box, Button, Group } from '@mantine/core';
 import { TrashSimple, X } from '@phosphor-icons/react';
 
-import { SidebarFilterMenu } from '../SidebarFilterMenu/SidebarFilterMenu';
-
 import { useStyles } from './Filters.style';
+import { SidebarFilterMenu } from './SidebarFilterMenu/SidebarFilterMenu';
 
 export interface ISidebarFilter {
   id: number | string;

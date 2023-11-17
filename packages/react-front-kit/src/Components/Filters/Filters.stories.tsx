@@ -2,9 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
 
-import { menu } from '../SidebarFilterMenu/SidebarFilterMenu.mock';
-
 import { Filters as Cmp } from './Filters';
+import { menu } from './SidebarFilterMenu/SidebarFilterMenu.mock';
 
 const meta = {
   component: Cmp,
