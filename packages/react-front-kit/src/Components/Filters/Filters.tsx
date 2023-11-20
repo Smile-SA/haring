@@ -1,7 +1,7 @@
 'use client';
 
-import type { ISidebarFilterMenuProps } from './SidebarFilterMenu/SidebarFilterMenu';
-import type { ElementType, ReactElement, ReactNode } from 'react';
+import type { IFiltersItem } from './SidebarFilterMenu/SidebarFilterMenu';
+import type { ReactElement, ReactNode } from 'react';
 
 import { Badge, Box, Button, Group } from '@mantine/core';
 import { TrashSimple, X } from '@phosphor-icons/react';
@@ -16,20 +16,17 @@ export interface ISidebarFilter {
   value: unknown;
 }
 
-export interface IFiltersProps<
-  T extends number | string,
-  C extends ElementType,
-> {
+export interface IFiltersProps {
   activeFilters?: ISidebarFilter[] | [];
   deleteButtonLabel?: string;
   filterLabelButton?: string;
   onDeleteButtonClick?: (filters: ISidebarFilter[]) => void;
   onFilterButtonClick?: (filters: ISidebarFilter[]) => void;
-  sideBarFiltersMenu?: ISidebarFilterMenuProps<T, C>;
+  sideBarFiltersMenu?: IFiltersItem<number | string>[] | undefined;
   title?: ReactNode;
 }
 
-export function Filters(props: IFiltersProps<T, C>): ReactElement {
+export function Filters(props: IFiltersProps): ReactElement {
   const {
     activeFilters = [],
     title = 'Active filters',

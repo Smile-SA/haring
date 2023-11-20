@@ -13,18 +13,20 @@ import { useMemo, useState } from 'react';
 import { addPathAndDepth, flattenNestedObjects } from '../../../helpers';
 import { CollapseButtonControlled } from '../../CollapseButton/CollapseButtonControlled';
 
-export interface IFiltersItem<T extends number | string> extends IMenuItem<T> {
+export interface IFiltersItem<T extends number | string>
+  extends Omit<IMenuItem<T>, 'children'> {
+  children?: IFiltersItem<T>[];
   content?: ReactNode;
 }
-
 export interface ISidebarFilterMenuProps<
   T extends number | string,
   C extends ElementType,
 > extends Omit<ISidebarMenuProps<T, C>, 'menu'>,
     PaperProps {
-  menu?: IFiltersItem<T>;
+  menu?: IFiltersItem<T>[];
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function getRecursiveMenu<
   T extends number | string,
   C extends ElementType,
@@ -34,7 +36,10 @@ export function getRecursiveMenu<
   openedMenuIds: T[],
   selectedId?: T,
   menu?: IFiltersItem<T>[],
-  collapseButtonProps?: Omit<ICollapseButtonProps<T, C>, 'opened'>,
+  collapseButtonProps?:
+    | Omit<ICollapseButtonProps<T, C>, 'opened'>
+    | ((item: IFiltersItem<T>) => Omit<ICollapseButtonProps<T, C>, 'opened'>)
+    | undefined,
   level = 0,
 ): ReactElement[] | null {
   if (!menu || menu.length === 0) {
@@ -85,7 +90,6 @@ export function SidebarFilterMenu<
     onMenuOpen,
     openedMenuIds,
   } = props;
-
   const flatMenu = useMemo(
     () => flattenNestedObjects(addPathAndDepth(menu)),
     [menu],

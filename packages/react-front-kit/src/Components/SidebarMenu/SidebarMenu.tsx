@@ -17,10 +17,7 @@ export interface IMenuItem<T extends number | string> {
   leftIcon?: ReactNode;
 }
 
-export type ICollapseButtonProps<
-  T extends number | string,
-  C extends ElementType,
-> =
+type ICollapseButtonProps<T extends number | string, C extends ElementType> =
   | ICollapseButtonControlledProps<T, C>
   | ((item: IMenuItem<T>) => ICollapseButtonControlledProps<T, C>);
 
