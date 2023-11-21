@@ -40,6 +40,7 @@ export interface ISidebarMenuProps<
   openedMenuIds?: T[];
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function getRecursiveMenu<
   T extends number | string,
   C extends ElementType,
