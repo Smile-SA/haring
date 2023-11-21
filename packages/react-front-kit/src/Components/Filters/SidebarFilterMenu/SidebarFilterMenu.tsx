@@ -46,8 +46,7 @@ export function getRecursiveMenu<
   menu?: IFiltersItem<T>[],
   collapseButtonProps?:
     | Omit<ICollapseButtonProps<T, C>, 'opened'>
-    | ((item: IFiltersItem<T>) => Omit<ICollapseButtonProps<T, C>, 'opened'>)
-    | undefined,
+    | ((item: IFiltersItem<T>) => Omit<ICollapseButtonProps<T, C>, 'opened'>),
   level = 0,
 ): ReactElement[] | null {
   if (!menu || menu.length === 0) {

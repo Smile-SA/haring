@@ -31,7 +31,7 @@ export const Filters: IStory = {
       },
     ],
     deleteButtonLabel: 'Supprimer tout',
-    filterLabelButton: 'Filtrer',
+    filterButtonLabel: 'Filtrer',
     sideBarFiltersMenu: menu,
     title: 'Filters actifs',
   },

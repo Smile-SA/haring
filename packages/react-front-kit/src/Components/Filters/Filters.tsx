@@ -19,7 +19,7 @@ export interface ISidebarFilter {
 export interface IFiltersProps {
   activeFilters?: ISidebarFilter[] | [];
   deleteButtonLabel?: string;
-  filterLabelButton?: string;
+  filterButtonLabel?: string;
   onDeleteButtonClick?: (filters: ISidebarFilter[]) => void;
   onFilterButtonClick?: (filters: ISidebarFilter[]) => void;
   sideBarFiltersMenu?: IFiltersItem<number | string>[] | undefined;
@@ -34,7 +34,7 @@ export function Filters(props: IFiltersProps): ReactElement {
     onDeleteButtonClick,
     onFilterButtonClick,
     deleteButtonLabel = 'Remove all',
-    filterLabelButton = 'Filter',
+    filterButtonLabel = 'Filter',
   } = props;
   const { classes } = useStyles();
   return (
@@ -80,7 +80,7 @@ export function Filters(props: IFiltersProps): ReactElement {
           onClick={() => onFilterButtonClick?.(activeFilters)}
           variant="filled"
         >
-          {filterLabelButton} ({activeFilters.length})
+          {filterButtonLabel} ({activeFilters.length})
         </Button>
       </div>
     </Box>

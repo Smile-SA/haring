@@ -1,7 +1,12 @@
 'use client';
 
 import type { ICollapseButtonProps } from './CollapseButton';
-import type { ElementType, MouseEvent, ReactElement } from 'react';
+import type {
+  CSSProperties,
+  ElementType,
+  MouseEvent,
+  ReactElement,
+} from 'react';
 
 import { ActionIcon, Button, Collapse, createStyles } from '@mantine/core';
 import { _BackgroundImage } from '@mantine/core/lib/BackgroundImage/BackgroundImage';
@@ -69,7 +74,7 @@ export interface ICollapseButtonControlledProps<
   T extends number | string,
   C extends ElementType,
 > extends ICollapseButtonProps<T, C> {
-  collapseStyle?: Record<string, number | string>;
+  collapseStyle?: CSSProperties;
   /** Only in the Controlled version, use this prop to provide the setter function for the opened/collapsed state */
   onCollapseChange?: (isOpened: boolean) => void;
   /** Only in the Controlled version, use this prop to provide the opened/collapsed state */
