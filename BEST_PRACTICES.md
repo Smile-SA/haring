@@ -78,5 +78,157 @@ same naming patterns. A few notable examples :
   a `onChange` event or other interactions, should start with "handle" such
   as `handleChange`, `handleSelectInput`, `handleSubmit`, `handleToggleSidebar`.
 
+For components :
+
+- Components are contained in in the `src/Components/` folder.
+- Component folders and Component files should be written in `PascalCase`.
+- Component test files are suffixed by `.test.tsx`.
+- Component Storybook files are suffixed `.stories.tsx`.
+- If the test or storybook file contains testing data or a lot of declarations
+  for props, these can be put into a separate mock file suffixed `.mock.tsx`.
+- Components are always declared as exported functions with typescript typing
+  and a return type such
+  as `export function MyComponent(): ReactElement {...}` .
+- If a Component has any props, a typed interface for the props has to be
+  declared.
+- Whenever you add a new Component, it must be added to the export `index.tsx`
+  file at the root of `/src`.
+
+For interfaces and types :
+
+- Interfaces and Types are always prefixed with `I`, such as `IMyInterface`.
+- Component props interfaces are always suffixed with `Props` such
+  as `IMyComponentProps`.
+
+## Code Structure
+
+The code in Components is structured in this way :
+
+```ts
+import {ReactNode} from "react";
+
+// 1. Styles
+const useStyles = createStyles((theme) => ({
+  myClass: {
+    width: '120px'
+  }
+}));
+
+// 2. Types and Interfaces (alphabetically ordered)
+export interface IMyComponentProps {
+  children?: ReactNode;
+  propA?: boolean;
+  propB?: boolean;
+}
+
+export function MyComponent(props: IMyComponentProps): ReactNode {
+  // 3. Props extraction
+  const {propsA, propsB, ...rest} = props;
+
+  // 4. Component data: Constants and variables (such as data calculated or derived from props),
+  // useStates, etc..
+  const isBothTrue = propA && propB;
+  const [isVisible, setIsVisible] = useState(false);
+
+  // 5. Classes extraction and styles/themes
+  const {classes} = useStyles();
+  const defaultTheme = useMantineTheme();
+
+  // 5. Functions (such as parsing or handle functions, handleChange, handleInput)
+  function handleClick(): number {
+    return 0
+  }
+
+  // 6. The return, typically a JSX/TSX fragment.
+  return (
+    // ...
+  )
+}
+```
+
+## Comments
+
+In general, the recommended approach is to avoid unnecessary comments. Naming
+conventions for Components, functions and constants should make the code easy to
+understand.
+
+When a particular piece of code could be confusing and cannot be written in a
+clearer way, short and concise comments are recommended.
+
+## Storybook documentation
+
+For the autodoc that will be displayed on Storybook, each Component should have
+a comment above the Component declaration :
+
+```ts
+/** This comment will be displayed on the Storybook page of this component, under the title */
+export function MyComponent(props: IMyComponentProps): void {
+  return null;
+}
+```
+
+Component props can also be documented in this way :
+
+```ts
+export interface MyComponentProps {
+  /** This comment will be displayed as the description of this prop on the Storybook page */
+  children?: ReactNode;
+  /** This comment will be displayed as the description of this prop on the Storybook page */
+  isVisible?: boolean;
+}
+```
+
 WIP: common comments on function declaration and above prop declarations (for
 storybook),
+
+## General Conventions
+
+This project has a few linters configured : ESLint with a custom configuration
+in the `eslint-config-custom` package, and Prettier
+
+ESLint's custom configuration is stricter than standard configurations contains
+plugins (react, ts, jest) and adds these specific rules :
+
+```
+{
+  '@typescript-eslint/ban-types': ['error', { types: { Object: false } }],
+  '@typescript-eslint/consistent-type-imports': [
+    'error',
+    { disallowTypeAnnotations: false },
+  ],
+  '@typescript-eslint/no-invalid-void-type': 'off',
+  '@typescript-eslint/prefer-nullish-coalescing': 'off',
+  'jsx-a11y/anchor-is-valid': 'off',
+  'react/jsx-handler-names': ['error', { checkLocalVariables: false }],
+  'testing-library/no-node-access': 'off',
+}
+```
+
+For anything else, follow these guidelines :
+
+1. Create helper functions and reusable code for common or repeated tasks,
+   modular classes and functions (one function = one task), components splits
+   into sub-components if
+   necessary. [SOLID](https://en.wikipedia.org/wiki/SOLID) principles.
+
+1. Allow for configuration and translation. Anticipate and integrate future
+   extensions and configurations of your code. Anticipate translation or easy
+   modification of static content or text content.
+
+1. Use shortened syntaxes (arrow function, ternary notation, etc.) with care and
+   make sure they are readable and clear in how they work. If it stays readable,
+   a shorter block or line of code is preferred.
+
+1. Avoid heavy nesting, especially in loops.
+
+1. Optimize your loops.
+
+1. Do not trust data. Always assume that every user input (or even data from
+   APIs) can be incorrect or empty/null/undefined, and might require
+   sanitizing/validating or error handling.
+
+1. Do not reinvent the wheel, don't hesitate to use tried-and-trusted existing
+   solutions.
+
+As well as
+the [Typescript Do's and Don'ts](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html).
