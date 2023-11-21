@@ -80,12 +80,17 @@ same naming patterns. A few notable examples :
 
 For components :
 
-- Components are contained in in the `src/Components/` folder.
+- When possible, components should be created using the `npm run generate`
+  command which automates a lot of the creation (
+  see [Creating a new component in react-front-kit](./CONTRIBUTING.md#creating-a-new-component-in-react-front-kit)).
+- Components are contained in the `src/Components/` folder.
 - Component folders and Component files should be written in `PascalCase`.
 - Component test files are suffixed by `.test.tsx`.
 - Component Storybook files are suffixed `.stories.tsx`.
 - If the test or storybook file contains testing data or a lot of declarations
   for props, these can be put into a separate mock file suffixed `.mock.tsx`.
+- Optionally, styles created with createStyles can be declared in a separate
+  style file suffixed with `.style.tsx`.
 - Components are always declared as exported functions with typescript typing
   and a return type such
   as `export function MyComponent(): ReactElement {...}` .
@@ -104,14 +109,14 @@ For interfaces and types :
 
 The code in Components is structured in this way :
 
-```ts
-import {ReactNode} from "react";
+```tsx
+import { ReactNode } from 'react';
 
-// 1. Styles
+// 1. Styles (here or in a separate style file)
 const useStyles = createStyles((theme) => ({
   myClass: {
-    width: '120px'
-  }
+    width: '120px',
+  },
 }));
 
 // 2. Types and Interfaces (alphabetically ordered)
@@ -123,7 +128,7 @@ export interface IMyComponentProps {
 
 export function MyComponent(props: IMyComponentProps): ReactNode {
   // 3. Props extraction
-  const {propsA, propsB, ...rest} = props;
+  const { propsA, propsB, ...rest } = props;
 
   // 4. Component data: Constants and variables (such as data calculated or derived from props),
   // useStates, etc..
@@ -131,18 +136,16 @@ export function MyComponent(props: IMyComponentProps): ReactNode {
   const [isVisible, setIsVisible] = useState(false);
 
   // 5. Classes extraction and styles/themes
-  const {classes} = useStyles();
+  const { classes } = useStyles();
   const defaultTheme = useMantineTheme();
 
   // 5. Functions (such as parsing or handle functions, handleChange, handleInput)
   function handleClick(): number {
-    return 0
+    return 0;
   }
 
   // 6. The return, typically a JSX/TSX fragment.
-  return (
-    // ...
-  )
+  return <div>...</div>;
 }
 ```
 
@@ -178,31 +181,13 @@ export interface MyComponentProps {
 }
 ```
 
-WIP: common comments on function declaration and above prop declarations (for
-storybook),
-
 ## General Conventions
 
 This project has a few linters configured : ESLint with a custom configuration
-in the `eslint-config-custom` package, and Prettier
+in the `eslint-config-custom` package, and Prettier.
 
-ESLint's custom configuration is stricter than standard configurations contains
-plugins (react, ts, jest) and adds these specific rules :
-
-```
-{
-  '@typescript-eslint/ban-types': ['error', { types: { Object: false } }],
-  '@typescript-eslint/consistent-type-imports': [
-    'error',
-    { disallowTypeAnnotations: false },
-  ],
-  '@typescript-eslint/no-invalid-void-type': 'off',
-  '@typescript-eslint/prefer-nullish-coalescing': 'off',
-  'jsx-a11y/anchor-is-valid': 'off',
-  'react/jsx-handler-names': ['error', { checkLocalVariables: false }],
-  'testing-library/no-node-access': 'off',
-}
-```
+You must follow all of ESLint's custom configuration (errors and warnings),
+which can be stricter than the standard configurations.
 
 For anything else, follow these guidelines :
 
