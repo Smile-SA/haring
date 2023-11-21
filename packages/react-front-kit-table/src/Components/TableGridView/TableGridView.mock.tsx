@@ -2,7 +2,8 @@ import type { ITableGridViewProps } from './TableGridView';
 import type { HandlerFunction } from '@storybook/addon-actions';
 
 import { Trash } from '@phosphor-icons/react';
-import { FolderMove, thumbnailActionsMock } from '@smile/react-front-kit';
+import { FolderMove } from '@smile/react-front-kit';
+import { thumbnailActionsMock } from '@smile/react-front-kit/mock';
 import { action } from '@storybook/addon-actions';
 
 import { tableMock } from '../Table/Table.mock';

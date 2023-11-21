@@ -2,3 +2,4 @@
 // page exports
 export * from './Pages/BrowsingPage/BrowsingPage';
 export * from './Pages/DocumentDetails/DocumentDetails';
+export * from './Pages/SearchResults/SearchResults';

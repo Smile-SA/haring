@@ -1,6 +1,6 @@
 'use client';
 
-import type { IFile } from '@smile/react-front-kit-dropzone/src';
+import type { IFile } from '@smile/react-front-kit-dropzone';
 import type { FormEvent, ReactElement } from 'react';
 
 import {
@@ -18,8 +18,8 @@ import {
   InfoCard,
   SidebarMenu,
   flattenNestedObjects,
-  menuMock,
 } from '@smile/react-front-kit';
+import { menuMock } from '@smile/react-front-kit/mock';
 import { Dropzone } from '@smile/react-front-kit-dropzone';
 import { primaryTheme, secondaryTheme } from '@smile/react-front-kit-shared';
 import { TableGridView } from '@smile/react-front-kit-table';
