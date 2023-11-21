@@ -8,10 +8,13 @@ import type {
 import type { PaperProps } from '@mantine/core';
 import type { ElementType, ReactElement, ReactNode } from 'react';
 
+import { useMantineTheme } from '@mantine/core';
 import { useMemo, useState } from 'react';
 
 import { addPathAndDepth, flattenNestedObjects } from '../../../helpers';
 import { CollapseButtonControlled } from '../../CollapseButton/CollapseButtonControlled';
+
+import { useStyles } from './SidebarFilterMenu.style';
 
 export interface IFiltersItem<T extends number | string>
   extends Omit<IMenuItem<T>, 'children'> {
@@ -31,6 +34,11 @@ export function getRecursiveMenu<
   T extends number | string,
   C extends ElementType,
 >(
+  classes: {
+    buttonInner: string;
+    buttonLabel: string;
+    buttonRoot: string | undefined;
+  },
   setSelectedId: (id?: T) => void,
   onMenuOpen: (id: T, isOpened: boolean) => void,
   openedMenuIds: T[],
@@ -47,9 +55,27 @@ export function getRecursiveMenu<
   }
   return menu.map((item) => {
     const { content, children, id, label, leftIcon } = item;
+    const theme = useMantineTheme();
     return (
       <CollapseButtonControlled
         key={id}
+        classNames={{
+          inner: classes.buttonInner,
+          label: classes.buttonLabel,
+          root: classes.buttonRoot,
+        }}
+        collapseStyle={
+          openedMenuIds.includes(id) && selectedId === id
+            ? {
+                backgroundColor: theme.colors.cyan[0],
+                borderTop: `1px solid ${theme.colors.cyan[2]}`,
+              }
+            : openedMenuIds.includes(id)
+            ? {
+                borderTop: `1px solid ${theme.colors.gray[3]}`,
+              }
+            : {}
+        }
         id={id}
         isOpenOnSelect
         label={label}
@@ -64,6 +90,7 @@ export function getRecursiveMenu<
           : collapseButtonProps)}
       >
         {getRecursiveMenu(
+          classes,
           setSelectedId,
           onMenuOpen,
           openedMenuIds,
@@ -90,6 +117,8 @@ export function SidebarFilterMenu<
     onMenuOpen,
     openedMenuIds,
   } = props;
+
+  const { classes } = useStyles();
   const flatMenu = useMemo(
     () => flattenNestedObjects(addPathAndDepth(menu)),
     [menu],
@@ -132,6 +161,7 @@ export function SidebarFilterMenu<
   return (
     <div>
       {getRecursiveMenu(
+        classes,
         setSelectedId,
         handleOpenChange,
         openedIds,

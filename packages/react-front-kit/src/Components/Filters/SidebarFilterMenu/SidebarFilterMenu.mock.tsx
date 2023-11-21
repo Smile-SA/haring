@@ -5,7 +5,7 @@ import { Checkbox, Group } from '@mantine/core';
 export const menu: IFiltersItem<number>[] = [
   {
     content: (
-      <div style={{ padding: '10px 0' }}>
+      <div style={{ padding: '10px 0 10px 10px' }}>
         <Group>
           <Checkbox value="Dupont" /> Dupont
         </Group>
@@ -26,7 +26,7 @@ export const menu: IFiltersItem<number>[] = [
     children: [
       {
         content: (
-          <div style={{ padding: '10px 0' }}>
+          <div style={{ padding: '10px 0 10px 10px' }}>
             <Group>
               <Checkbox value="CDI" /> CDI
             </Group>
@@ -41,10 +41,8 @@ export const menu: IFiltersItem<number>[] = [
       },
       {
         content: (
-          <Group style={{ padding: '10px 0' }}>
-            <span>
-              <Checkbox value="FREELANCE" /> Freelance
-            </span>
+          <Group style={{ padding: '10px 0 10px 10px' }}>
+            <Checkbox value="FREELANCE" /> Freelance
           </Group>
         ),
         id: 11,
