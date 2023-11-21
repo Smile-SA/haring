@@ -64,6 +64,7 @@ export function getRecursiveMenu<
           label: classes.buttonLabel,
           root: classes.buttonRoot,
         }}
+        // prettier-ignore
         collapseStyle={
           openedMenuIds.includes(id) && selectedId === id
             ? {
@@ -76,6 +77,7 @@ export function getRecursiveMenu<
               }
             : {}
         }
+        // prettier-ignore
         id={id}
         isOpenOnSelect
         label={label}

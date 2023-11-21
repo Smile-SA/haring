@@ -17,7 +17,6 @@ export * from './Components/SidebarMenu/SidebarMenu';
 export * from './Components/SwitchableView/SwitchableView';
 export * from './Components/Thumbnail/Thumbnail';
 export * from './Components/ThumbnailGrid/ThumbnailGrid';
-  
 // layout exports
 export * from './Layouts/FoldableColumnLayout/FoldableColumnLayout';
 // page exports

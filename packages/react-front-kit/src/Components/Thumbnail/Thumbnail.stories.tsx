@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-
 import { Thumbnail as Cmp } from './Thumbnail';
 import { thumbnailActions } from './Thumbnail.mock';
 
