@@ -29,9 +29,23 @@
     "email": "tonai59+github@gmail.com",
     "url": "https://github.com/tonai"
   },
-  "main": "./dist/index.js",
-  "module": "./src/index.tsx",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./storybook-utils": "./dist/storybook-utils/index.js",
+    "./test-utils": "./dist/test-utils/index.js"
+  },
   "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "storybook-utils": [
+        "dist/storybook-utils/index.d.ts"
+      ],
+      "test-utils": [
+        "dist/test-utils/index.d.ts"
+      ]
+    }
+  },
   "files": [
     "CHANGELOG.md",
     "LICENSE",
@@ -43,7 +57,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
     "test": "jest",
-    "prepublishOnly": "npm run build && node ./scripts/prepublish.mjs"
+    "prepublishOnly": "npm run build && node ../../scripts/prepublish.mjs"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.20",
@@ -70,5 +84,8 @@
     "@phosphor-icons/react": ">=2",
     "react": ">=18.0",
     "react-dom": ">=18.0"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }

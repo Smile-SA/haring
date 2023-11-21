@@ -30,8 +30,8 @@
     "email": "tonai59+github@gmail.com",
     "url": "https://github.com/tonai"
   },
-  "main": "./dist/index.js",
-  "module": "./src/index.tsx",
+  "type": "module",
+  "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "CHANGELOG.md",
@@ -44,7 +44,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
     "test": "jest",
-    "prepublishOnly": "npm run build && node ./scripts/prepublish.mjs"
+    "prepublishOnly": "npm run build && node ../../scripts/prepublish.mjs"
   },
   "dependencies": {
     "@smile/react-front-kit": "*",
@@ -80,5 +80,8 @@
     "mantine-react-table": ">=1",
     "react": ">=18.0",
     "react-dom": ">=18.0"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }

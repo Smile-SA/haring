@@ -1,3 +1,5 @@
+'use client';
+
 import type { PaperProps } from '@mantine/core';
 import type {
   SegmentedControlItem,
@@ -45,7 +47,7 @@ export interface IDataView extends SegmentedControlItem {
   dataView: ReactNode;
 }
 
-interface ISwitchableViewProps extends PaperProps {
+export interface ISwitchableViewProps extends PaperProps {
   /** Default index of the active view */
   defaultValue?: number;
   /** Called when active view changes */

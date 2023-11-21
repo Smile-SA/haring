@@ -1,17 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import {
-  DownloadSimple,
-  Eye,
-  PencilSimple,
-  ShareNetwork,
-  Star,
-  Trash,
-} from '@phosphor-icons/react';
-import { FolderMove } from '@smile/react-front-kit-shared';
-import { action } from '@storybook/addon-actions';
 
 import { Thumbnail as Cmp } from './Thumbnail';
+import { thumbnailActions } from './Thumbnail.mock';
 
 const meta = {
   component: Cmp,
@@ -24,53 +15,9 @@ type IStory = StoryObj<typeof meta>;
 
 export const Thumbnail: IStory = {
   args: {
-    action: [
-      {
-        icon: <FolderMove />,
-        label: 'Move in tree',
-        onAction: action('Move in tree'),
-      },
-      {
-        icon: <Eye />,
-        label: 'Open document',
-        onAction: action('Open document'),
-      },
-      {
-        icon: <PencilSimple />,
-        label: 'Edit document',
-        onAction: action('Edit document'),
-      },
-      {
-        icon: <Star />,
-        label: 'Add to favorites',
-        onAction: action('Add to favorites'),
-      },
-      {
-        icon: <ShareNetwork />,
-        label: 'Share',
-        onAction: action('Share'),
-      },
-      {
-        icon: <DownloadSimple />,
-        label: 'Download',
-        onAction: action('Download'),
-      },
-      {
-        color: 'red',
-        confirmModalProps: {
-          cancelLabel: 'Abord',
-          children: <p>Are you sur ?</p>,
-          confirmColor: 'red',
-          confirmLabel: 'Remove',
-          title: 'Remove File',
-        },
-        confirmation: true,
-        icon: <Trash />,
-        label: 'Delete',
-        onAction: action('Delete'),
-      },
-    ],
+    actions: thumbnailActions,
     iconType: 'PDF',
+    id: '1',
     label: 'Debit_Suivi_PREV',
     selected: false,
   },
