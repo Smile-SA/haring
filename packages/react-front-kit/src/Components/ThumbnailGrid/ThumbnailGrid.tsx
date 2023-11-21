@@ -1,6 +1,6 @@
 'use client';
 
-import type { IThumbnail } from '../Thumbnail/Thumbnail';
+import type { IThumbnail, IThumbnailAction } from '../Thumbnail/Thumbnail';
 import type { SimpleGridProps } from '@mantine/core';
 import type {
   IAction,
@@ -43,6 +43,7 @@ export interface IThumbnailGridProps extends SimpleGridProps {
   gridActions?: IGridAction[];
   onThumbnailClick?: (item: IThumbnail, index: number) => void;
   selectedElementsText?: (numberOfSelectedElements: number) => string;
+  thumbnailActions?: IThumbnailAction[];
   thumbnails: IThumbnail[];
 }
 
@@ -52,6 +53,7 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
     gridActions = [],
     onThumbnailClick,
     selectedElementsText = defaultSelectedElementsText,
+    thumbnailActions,
     thumbnails,
     ...simpleGridProps
   } = props;
@@ -127,6 +129,7 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
           {thumbnails.map((thumbnail, index) => (
             <Thumbnail
               key={thumbnail.id}
+              actions={thumbnailActions}
               onClick={() => handleSelect(index)}
               {...thumbnail}
             />

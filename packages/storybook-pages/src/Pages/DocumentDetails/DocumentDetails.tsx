@@ -17,11 +17,8 @@ import {
 } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
 import { CaretLeft, Plus, Star } from '@phosphor-icons/react';
+import { DropdownButton, Header, ResponsiveTabs } from '@smile/react-front-kit';
 import { FolderMove, primaryTheme } from '@smile/react-front-kit-shared';
-
-import { DropdownButton } from '../../Components/DropdownButton/DropdownButton';
-import { Header } from '../../Components/Header/Header';
-import { ResponsiveTabs } from '../../Components/ResponsiveTabs/ResponsiveTabs';
 
 import {
   CardAction,

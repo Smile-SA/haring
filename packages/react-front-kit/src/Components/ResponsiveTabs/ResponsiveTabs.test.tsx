@@ -1,13 +1,13 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
 import { ResponsiveTabs } from './ResponsiveTabs';
-import { contents, tabs } from './ResponsiveTabs.mock';
+import { contentsMock, tabsMock } from './ResponsiveTabs.mock';
 
 describe('ResponsiveTabs', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <ResponsiveTabs id="responsive-tabs" tabs={tabs}>
-        {contents}
+      <ResponsiveTabs id="responsive-tabs" tabs={tabsMock}>
+        {contentsMock}
       </ResponsiveTabs>,
     );
     expect(container).toMatchSnapshot();

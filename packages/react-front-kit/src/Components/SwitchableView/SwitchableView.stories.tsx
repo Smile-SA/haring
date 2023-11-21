@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { SwitchableView as Cmp } from './SwitchableView';
-import { views } from './SwitchableView.mock';
+import { viewsMock } from './SwitchableView.mock';
 
 const meta = {
   component: Cmp,
@@ -16,6 +16,6 @@ export const SwitchableView: IStory = {
   args: {
     topBarLeft: <span>TopBarLeft...</span>,
     topBarRight: <span>TopBarRight...</span>,
-    views,
+    views: viewsMock,
   },
 };
