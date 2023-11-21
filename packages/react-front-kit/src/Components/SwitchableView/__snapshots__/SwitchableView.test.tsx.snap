@@ -103,9 +103,7 @@ exports[`SwitchableView matches snapshot 1`] = `
         </div>
       </span>
     </div>
-    <div
-      class="mantine-l6ko5p"
-    >
+    <div>
       <div
         class="mantine-Center-root mantine-ojrz4j"
         style="background-color: lightgray; height: 200px;"

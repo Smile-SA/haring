@@ -77,9 +77,7 @@ exports[`TableGridView matches snapshot 1`] = `
         </div>
       </span>
     </div>
-    <div
-      class="mantine-l6ko5p"
-    >
+    <div>
       <div
         class="mantine-Paper-root mantine-n32i6g"
         data-with-border="true"

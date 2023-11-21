@@ -8,7 +8,7 @@ interface IProps extends ComponentPropsWithoutRef<'svg'> {
   style?: CSSProperties;
 }
 
-function Motif(props: IProps): ReactElement {
+export function Motif(props: IProps): ReactElement {
   const { style = { fill: 'white', opacity: 0.1 }, ...svgProps } = props;
   return (
     <svg
@@ -57,5 +57,3 @@ function Motif(props: IProps): ReactElement {
     </svg>
   );
 }
-
-export default Motif;

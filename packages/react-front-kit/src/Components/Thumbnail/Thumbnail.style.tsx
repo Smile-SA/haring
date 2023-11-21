@@ -4,6 +4,9 @@ export const useStyles = createStyles((theme) => ({
   dotsIcon: {
     color: theme.colors.cyan[9],
   },
+  fileIcon: {
+    minWidth: 22,
+  },
   headerContainer: {
     display: 'flex',
     flexWrap: 'nowrap',

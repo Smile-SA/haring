@@ -5,10 +5,10 @@ import { Trash } from '@phosphor-icons/react';
 import { FolderMove } from '@smile/react-front-kit-shared';
 import { action } from '@storybook/addon-actions';
 
-import { thumbnailActions } from '../Thumbnail/Thumbnail.mock';
+import { thumbnailActionsMock } from '../Thumbnail/Thumbnail.mock';
 
-export const baseThumbnail: Omit<IThumbnail, 'id' | 'label'> = {
-  actions: thumbnailActions,
+export const baseThumbnailMock: Omit<IThumbnail, 'id' | 'label'> = {
+  actions: thumbnailActionsMock,
   iconType: 'PDF',
 };
 
@@ -16,18 +16,18 @@ export const thumbnails: IThumbnail[] = [
   {
     id: '1',
     label: 'Debit_Suivi_PREV',
-    ...baseThumbnail,
+    ...baseThumbnailMock,
   },
   {
     id: '2',
     label: 'Debit_Suivi_PREV_2',
-    ...baseThumbnail,
+    ...baseThumbnailMock,
     selected: true,
   },
   {
     id: '3',
     label: 'Debit_Suivi_PREV_3',
-    ...baseThumbnail,
+    ...baseThumbnailMock,
   },
 ];
 

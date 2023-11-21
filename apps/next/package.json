@@ -16,7 +16,8 @@
     "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@smile/react-front-kit": "*"
+    "@smile/react-front-kit": "*",
+    "storybook-pages": "*"
   },
   "devDependencies": {
     "@types/node": "^20.6.0",
