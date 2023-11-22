@@ -7,7 +7,6 @@
 'use client';
 import type { FloatingPosition } from '@mantine/core/lib/Floating';
 import type { IPaginationProps } from '@smile/react-front-kit';
-import type { IAction, IConfirmAction } from '@smile/react-front-kit-shared';
 import type { MRT_Row, MRT_TableOptions } from 'mantine-react-table';
 import type { ReactElement } from 'react';
 
@@ -33,13 +32,8 @@ import { useState } from 'react';
 
 import { useStyles } from './Table.style';
 
-type ITableAction<Data extends Record<string, unknown>> = IAction<
-  MRT_Row<Data> | MRT_Row<Data>[]
->;
-
-type ITableConfirmAction<Data extends Record<string, unknown>> = IConfirmAction<
-  MRT_Row<Data> | MRT_Row<Data>[]
->;
+import { getActionIcon, getActionLabel } from '../../helpers';
+import { ITableAction, ITableConfirmAction } from '../../types';
 
 export interface ITableProps<Data extends Record<string, unknown>>
   extends MRT_TableOptions<Data> {
@@ -185,13 +179,13 @@ export function Table<Data extends Record<string, unknown>>(
         <div className={rowActionClasses.join(' ')}>
           {visibleRowActions.map((action, index) => (
             // eslint-disable-next-line react/no-array-index-key
-            <Tooltip key={index} label={action.label} {...tooltipProps}>
+            <Tooltip key={index} label={getActionLabel(action, row)} {...tooltipProps}>
               <ActionIcon
                 onClick={() => handleAction(row, action)}
                 radius={4}
                 type="button"
               >
-                {action.icon}
+                {getActionIcon(action, row)}
               </ActionIcon>
             </Tooltip>
           ))}
@@ -224,10 +218,10 @@ export function Table<Data extends Record<string, unknown>>(
                     // eslint-disable-next-line react/no-array-index-key
                     key={index}
                     color={action.color}
-                    icon={action.icon}
+                    icon={getActionIcon(action, row)}
                     onClick={() => handleAction(row, action)}
                   >
-                    {action.label}
+                    {getActionLabel(action, row)}
                   </Menu.Item>
                 ))}
               </Menu.Dropdown>
@@ -251,11 +245,11 @@ export function Table<Data extends Record<string, unknown>>(
                 // eslint-disable-next-line react/no-array-index-key
                 key={index}
                 color={action.color}
-                leftIcon={action.icon}
+                leftIcon={getActionIcon(action, rows)}
                 onClick={() => handleAction(rows, action)}
                 variant="default"
               >
-                {action.label}
+                {getActionLabel(action, rows)}
               </Button>
             ))}
 
@@ -340,7 +334,10 @@ export function Table<Data extends Record<string, unknown>>(
         onClose={handleClose}
         onConfirm={handleConfirm}
         opened={Boolean(confirmAction)}
-        title={confirmAction?.confirmModalProps?.title ?? confirmAction?.label}
+        title={
+          confirmAction?.confirmModalProps?.title ??
+          getActionLabel(confirmAction)
+        }
       />
     </>
   );

@@ -114,11 +114,11 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
                   <Button
                     key={action.id}
                     color={action.color}
-                    leftIcon={action.icon}
+                    leftIcon={typeof action.icon === 'function' ? action.icon(selectedElements) : action.icon}
                     onClick={() => handleGridAction(action)}
                     variant={action.color ? 'filled' : 'default'}
                   >
-                    {action.label}
+                    {typeof action.label === 'function' ? action.label(selectedElements) : action.label}
                   </Button>
                 ))}
               </Group>

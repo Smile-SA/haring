@@ -141,10 +141,10 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}
                       color={action.color}
-                      icon={action.icon}
+                      icon={typeof action.icon === 'function' ? action.icon(props) : action.icon}
                       onClick={() => handleMenuItem(action)}
                     >
-                      {action.label}
+                      {typeof action.label === 'function' ? action.label(props) : action.label}
                     </Menu.Item>
                   ))}
                 </Menu.Dropdown>
