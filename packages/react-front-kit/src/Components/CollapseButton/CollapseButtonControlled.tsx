@@ -1,12 +1,8 @@
 'use client';
 
 import type { ICollapseButtonProps } from './CollapseButton';
-import type {
-  CSSProperties,
-  ElementType,
-  MouseEvent,
-  ReactElement,
-} from 'react';
+import type { CollapseProps } from '@mantine/core';
+import type { ElementType, MouseEvent, ReactElement } from 'react';
 
 import { ActionIcon, Button, Collapse, createStyles } from '@mantine/core';
 import { _BackgroundImage } from '@mantine/core/lib/BackgroundImage/BackgroundImage';
@@ -74,7 +70,7 @@ export interface ICollapseButtonControlledProps<
   T extends number | string,
   C extends ElementType,
 > extends ICollapseButtonProps<T, C> {
-  collapseStyle?: CSSProperties;
+  collapseProps?: Omit<CollapseProps, 'in'>;
   /** Only in the Controlled version, use this prop to provide the setter function for the opened/collapsed state */
   onCollapseChange?: (isOpened: boolean) => void;
   /** Only in the Controlled version, use this prop to provide the opened/collapsed state */
@@ -86,8 +82,8 @@ export function CollapseButtonControlled<
   C extends ElementType = 'button',
 >(props: ICollapseButtonControlledProps<T, C>): ReactElement {
   const {
-    collapseStyle,
     children,
+    collapseProps,
     component: Component = 'button',
     componentProps,
     fullWidth = true,
@@ -133,7 +129,6 @@ export function CollapseButtonControlled<
     rootClasses.push(classes.rootDeepLevel);
     labelClasses.push(classes.labelDeepLevel);
   }
-
   return (
     <>
       <Button
@@ -192,7 +187,7 @@ export function CollapseButtonControlled<
           className={line ? classes.line : ''}
           data-testid="content"
           in={opened}
-          style={collapseStyle}
+          {...collapseProps}
         >
           {children}
         </Collapse>
