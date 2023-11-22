@@ -63,7 +63,7 @@
     "prettier": "3.1.0",
     "storybook": "^7.4.1",
     "turbo": "^1.10.13",
-    "typescript": "^5.2.2",
+    "typescript": "~5.2.0",
     "wait-on": "^7.0.1"
   },
   "dependencies": {

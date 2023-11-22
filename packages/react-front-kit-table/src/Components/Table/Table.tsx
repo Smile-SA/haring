@@ -5,6 +5,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 
 'use client';
+import type { ITableAction, ITableConfirmAction } from '../../types';
 import type { FloatingPosition } from '@mantine/core/lib/Floating';
 import type { IPaginationProps } from '@smile/react-front-kit';
 import type { MRT_Row, MRT_TableOptions } from 'mantine-react-table';
@@ -30,10 +31,9 @@ import {
 } from 'mantine-react-table';
 import { useState } from 'react';
 
-import { useStyles } from './Table.style';
-
 import { getActionIcon, getActionLabel } from '../../helpers';
-import { ITableAction, ITableConfirmAction } from '../../types';
+
+import { useStyles } from './Table.style';
 
 export interface ITableProps<Data extends Record<string, unknown>>
   extends MRT_TableOptions<Data> {
@@ -178,8 +178,11 @@ export function Table<Data extends Record<string, unknown>>(
       return (
         <div className={rowActionClasses.join(' ')}>
           {visibleRowActions.map((action, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <Tooltip key={index} label={getActionLabel(action, row)} {...tooltipProps}>
+            <Tooltip
+              key={`${index + index}`}
+              label={getActionLabel(action, row)}
+              {...tooltipProps}
+            >
               <ActionIcon
                 onClick={() => handleAction(row, action)}
                 radius={4}

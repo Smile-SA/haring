@@ -1,6 +1,6 @@
-import type { MRT_Row } from "mantine-react-table";
-import type { ITableAction, ITableConfirmAction } from "../types";
-import type { ReactNode } from "react";
+import type { ITableAction, ITableConfirmAction } from '../types';
+import type { MRT_Row } from 'mantine-react-table';
+import type { ReactNode } from 'react';
 
 export function isConfirmAction<Data extends Record<string, unknown>>(
   action: ITableAction<Data>,
