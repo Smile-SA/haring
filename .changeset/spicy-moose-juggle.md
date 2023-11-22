@@ -2,4 +2,4 @@
 '@smile/react-front-kit': minor
 ---
 
-Add filters componant
+Add filters component
