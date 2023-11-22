@@ -30,7 +30,7 @@ export const Filters: IStory = {
         value: 'MARTIN',
       },
     ],
-    deleteButtonLabel: 'Supprimer tout',
+    deleteButtonLabel: 'Remove all',
     filterButtonLabel: 'Filtrer',
     sideBarFiltersMenu: menu,
     title: 'Filters actifs',

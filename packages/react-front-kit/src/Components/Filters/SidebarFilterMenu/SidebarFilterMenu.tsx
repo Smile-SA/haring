@@ -38,6 +38,7 @@ export function getRecursiveMenu<
     buttonInner: string;
     buttonLabel: string;
     buttonRoot: string | undefined;
+    contentContainer: string;
   },
   setSelectedId: (id?: T) => void,
   onMenuOpen: (id: T, isOpened: boolean) => void,
@@ -55,6 +56,19 @@ export function getRecursiveMenu<
   return menu.map((item) => {
     const { content, children, id, label, leftIcon } = item;
     const theme = useMantineTheme();
+    const collapseStyle =
+      // prettier-ignore
+      openedMenuIds.includes(id) && selectedId === id
+        ? {
+            backgroundColor: theme.colors.cyan[0],
+            borderTop: `1px solid ${theme.colors.cyan[2]}`,
+          }
+        : openedMenuIds.includes(id)
+        ? {
+            borderTop: `1px solid ${theme.colors.gray[3]}`,
+          }
+        : {};
+    // prettier-ignore
     return (
       <CollapseButtonControlled
         key={id}
@@ -63,20 +77,7 @@ export function getRecursiveMenu<
           label: classes.buttonLabel,
           root: classes.buttonRoot,
         }}
-        // prettier-ignore
-        collapseStyle={
-          openedMenuIds.includes(id) && selectedId === id
-            ? {
-                backgroundColor: theme.colors.cyan[0],
-                borderTop: `1px solid ${theme.colors.cyan[2]}`,
-              }
-            : openedMenuIds.includes(id)
-            ? {
-                borderTop: `1px solid ${theme.colors.gray[3]}`,
-              }
-            : {}
-        }
-        // prettier-ignore
+        collapseStyle={collapseStyle}
         id={id}
         isOpenOnSelect
         label={label}
@@ -100,7 +101,7 @@ export function getRecursiveMenu<
           collapseButtonProps,
           level + 1,
         )}
-        {content}
+        {Boolean(content) && <div className={classes.contentContainer}>{content}</div>}
       </CollapseButtonControlled>
     );
   });

@@ -14,4 +14,7 @@ export const useStyles = createStyles((theme) => ({
     },
     background: theme.colors.cyan[0],
   },
+  contentContainer: {
+    padding: '10px',
+  },
 }));
