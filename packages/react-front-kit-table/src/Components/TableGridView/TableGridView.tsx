@@ -29,6 +29,7 @@ const useStyles = createStyles(() => ({
 
 export interface ITableGridViewGridProps
   extends Omit<IThumbnailGridProps, 'thumbnails'> {
+  iconTypeFieldName?: string;
   idFieldName: string;
   imageFieldName?: string;
   labelFieldName: string;
@@ -52,8 +53,13 @@ export function TableGridView<Data extends Record<string, unknown>>(
     tableProps,
     ...switchableViewProps
   } = props;
-  const { idFieldName, labelFieldName, imageFieldName, ...otherGridProps } =
-    gridProps;
+  const {
+    iconTypeFieldName,
+    idFieldName,
+    labelFieldName,
+    imageFieldName,
+    ...otherGridProps
+  } = gridProps;
   const [rowSelection, setRowSelection] = useState<MRT_RowSelectionState>({});
   const selectedIndexes = Object.entries(rowSelection).map((entry) =>
     entry[1] ? entry[0] : null,
@@ -80,6 +86,10 @@ export function TableGridView<Data extends Record<string, unknown>>(
         gridProps.imageFieldName !== undefined
           ? (item[gridProps.imageFieldName] as string)
           : undefined;
+      const iconType =
+        gridProps.iconTypeFieldName !== undefined
+          ? (item[gridProps.iconTypeFieldName] as string)
+          : undefined;
       const isSelected = selectedIndexes.includes(index.toString());
 
       if (
@@ -88,6 +98,7 @@ export function TableGridView<Data extends Record<string, unknown>>(
       ) {
         const thumbnail: IThumbnail = {
           ...item,
+          iconType,
           id,
           image,
           label,
@@ -126,9 +137,9 @@ export function TableGridView<Data extends Record<string, unknown>>(
 
   return (
     <SwitchableView
+      style={{ gap: 32 }}
       {...switchableViewProps}
       defaultValue={defaultView === 'table' ? 0 : 1}
-      style={{ gap: 32 }}
       views={views}
     />
   );

@@ -2,7 +2,7 @@ import type { IMenuItem } from './SidebarMenu';
 
 import { Chat, HouseLine, Star, User } from '@phosphor-icons/react';
 
-export const menu: IMenuItem<number>[] = [
+export const menuMock: IMenuItem<number>[] = [
   {
     children: [{ id: 0, label: 'Home' }],
     id: 1,
@@ -44,7 +44,7 @@ export const menu: IMenuItem<number>[] = [
   },
 ];
 
-export const deeplyNestedMenu: IMenuItem<number>[] = [
+export const deeplyNestedMenuMock: IMenuItem<number>[] = [
   {
     children: [
       {

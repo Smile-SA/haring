@@ -6,7 +6,7 @@ import { expect } from '@storybook/jest';
 import { userEvent, within } from '@storybook/testing-library';
 
 import { ResponsiveTabs as Cmp } from './ResponsiveTabs';
-import { contents, tabs } from './ResponsiveTabs.mock';
+import { contentsMock, tabsMock } from './ResponsiveTabs.mock';
 
 const meta = {
   component: Cmp,
@@ -38,9 +38,9 @@ function Wrapper({ children }: { children: ReactNode }): ReactNode {
 
 export const ResponsiveTabs: IStory = {
   args: {
-    children: contents,
+    children: contentsMock,
     defaultValue: '1',
-    tabs,
+    tabs: tabsMock,
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

@@ -17,17 +17,19 @@ import {
 } from '@mantine/core';
 import { CaretDown, DownloadSimple } from '@phosphor-icons/react';
 import {
+  DocumentCard,
+  FoldableColumnLayout,
+  Header,
+  Motif,
+  Pagination,
+  SearchBar,
+} from '@smile/react-front-kit';
+import {
   isNotNullNorEmpty,
   secondaryTheme,
 } from '@smile/react-front-kit-shared';
 import { useState } from 'react';
 
-import { DocumentCard } from '../../Components/DocumentCard/DocumentCard';
-import { Header } from '../../Components/Header/Header';
-import Motif from '../../Components/InfoCard/Motif';
-import { Pagination } from '../../Components/Pagination/Pagination';
-import { SearchBar } from '../../Components/SearchBar/SearchBar';
-import { FoldableColumnLayout } from '../../Layouts/FoldableColumnLayout/FoldableColumnLayout';
 import { headerContent, headerLeft, headerRight } from '../pages.mock';
 
 export interface IOption<T> {

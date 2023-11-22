@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 
-import { TestPage } from '@smile/react-front-kit';
+import { BrowsingPage } from 'storybook-pages/src';
 
 export default function Page(): ReactElement {
-  return <TestPage />;
+  return <BrowsingPage />;
 }

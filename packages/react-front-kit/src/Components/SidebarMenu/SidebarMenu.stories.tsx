@@ -4,7 +4,7 @@ import { expect } from '@storybook/jest';
 import { userEvent, within } from '@storybook/testing-library';
 
 import { SidebarMenu as Cmp } from './SidebarMenu';
-import { deeplyNestedMenu, menu } from './SidebarMenu.mock';
+import { deeplyNestedMenuMock, menuMock } from './SidebarMenu.mock';
 
 const meta = {
   component: Cmp,
@@ -18,7 +18,7 @@ type IStory = StoryObj<typeof meta>;
 export const SidebarMenu: IStory = {
   args: {
     component: 'nav',
-    menu,
+    menu: menuMock,
     openedMenuIds: [],
   },
   play: async ({ canvasElement }) => {
@@ -36,7 +36,7 @@ export const SidebarMenu: IStory = {
 export const OnlyOneOpenMenu: IStory = {
   args: {
     hasOnlyOneOpenMenu: true,
-    menu: deeplyNestedMenu,
+    menu: deeplyNestedMenuMock,
     openedMenuIds: [0, 2],
   },
 };
@@ -45,6 +45,6 @@ export const DefaultSelectedId: IStory = {
   args: {
     component: 'nav',
     defaultSelectedId: 5,
-    menu,
+    menu: menuMock,
   },
 };

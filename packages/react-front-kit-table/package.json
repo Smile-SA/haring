@@ -31,8 +31,18 @@
     "url": "https://github.com/tonai"
   },
   "type": "module",
-  "exports": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./mock": "./dist/mock.js"
+  },
   "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "mock": [
+        "./dist/mock.d.ts"
+      ]
+    }
+  },
   "files": [
     "CHANGELOG.md",
     "LICENSE",

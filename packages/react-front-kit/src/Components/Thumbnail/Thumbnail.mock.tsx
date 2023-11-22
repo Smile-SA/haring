@@ -11,7 +11,7 @@ import {
 import { FolderMove } from '@smile/react-front-kit-shared';
 import { action } from '@storybook/addon-actions';
 
-export const thumbnailActions: IThumbnailAction[] = [
+export const thumbnailActionsMock: IThumbnailAction[] = [
   {
     icon: <FolderMove />,
     id: 'move',

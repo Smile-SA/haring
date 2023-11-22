@@ -4,7 +4,7 @@ import { primaryTheme } from '@smile/react-front-kit-shared';
 
 import { Header } from '../../Components/Header/Header';
 import { SidebarMenu } from '../../Components/SidebarMenu/SidebarMenu';
-import { menu } from '../../Components/SidebarMenu/SidebarMenu.mock';
+import { menuMock } from '../../Components/SidebarMenu/SidebarMenu.mock';
 
 export const header: ReactElement = (
   <Header
@@ -21,7 +21,7 @@ export const header: ReactElement = (
 export const sidebarContent: ReactElement = (
   <>
     <span>Example Sidebar Content...</span>
-    <SidebarMenu menu={menu} />
+    <SidebarMenu menu={menuMock} />
   </>
 );
 

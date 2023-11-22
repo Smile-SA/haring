@@ -1,6 +1,6 @@
 import { Tabs } from '@mantine/core';
 
-export const contents = (
+export const contentsMock = (
   <>
     <Tabs.Panel value="1">First Content</Tabs.Panel>
     <Tabs.Panel value="2">Second Content</Tabs.Panel>
@@ -11,7 +11,7 @@ export const contents = (
   </>
 );
 
-export const tabs = [
+export const tabsMock = [
   <Tabs.Tab key={1} id="tab-1" value="1">
     First
   </Tabs.Tab>,
