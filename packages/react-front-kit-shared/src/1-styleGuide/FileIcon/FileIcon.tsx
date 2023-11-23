@@ -46,7 +46,7 @@ const iconMap = new Map([
   ['ZIP', FileZip],
 ]);
 
-function getIconByType(type: string | undefined): Icon {
+function getIconByType(type?: string): Icon {
   return type ? iconMap.get(type.toUpperCase()) ?? File : File;
 }
 
