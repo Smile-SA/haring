@@ -284,6 +284,7 @@ exports[`Table matches snapshot 1`] = `
                         >
                           <input
                             aria-invalid="false"
+                            aria-label="Filter by id"
                             class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
                             placeholder="Filter by id"
                             title="Filter by id"
@@ -395,6 +396,7 @@ exports[`Table matches snapshot 1`] = `
                         >
                           <input
                             aria-invalid="false"
+                            aria-label="Filter by Format"
                             class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
                             placeholder="Filter by Format"
                             title="Filter by Format"
@@ -506,6 +508,7 @@ exports[`Table matches snapshot 1`] = `
                         >
                           <input
                             aria-invalid="false"
+                            aria-label="Filter by Titre"
                             class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
                             placeholder="Filter by Titre"
                             title="Filter by Titre"
@@ -617,6 +620,7 @@ exports[`Table matches snapshot 1`] = `
                         >
                           <input
                             aria-invalid="false"
+                            aria-label="Filter by Créateur"
                             class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
                             placeholder="Filter by Créateur"
                             title="Filter by Créateur"
@@ -728,6 +732,7 @@ exports[`Table matches snapshot 1`] = `
                         >
                           <input
                             aria-invalid="false"
+                            aria-label="Filter by Date publication"
                             class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
                             placeholder="Filter by Date publication"
                             title="Filter by Date publication"

@@ -22,11 +22,11 @@ export interface IAction<Item> {
   color?: string;
   confirmModalProps?: IActionConfirmModalProps<Item>;
   confirmation?: boolean;
-  icon: ReactNode;
+  icon: ReactNode | ((item: Item) => ReactNode);
   id: number | string;
   isItemAction?: boolean;
   isMassAction?: boolean;
-  label: string;
+  label: string | ((item: Item) => string);
   onAction?: (item: Item) => void;
 }
 

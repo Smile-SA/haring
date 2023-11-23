@@ -25,7 +25,7 @@ export const FileIcon: IStory = {
   args: {
     color: '#349f98',
     size: 45,
-    type: 'PDF',
+    type: 'pdf',
     weight: 'light',
   },
 };

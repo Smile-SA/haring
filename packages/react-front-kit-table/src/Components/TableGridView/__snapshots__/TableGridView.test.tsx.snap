@@ -361,6 +361,7 @@ exports[`TableGridView matches snapshot 1`] = `
                             >
                               <input
                                 aria-invalid="false"
+                                aria-label="Filter by id"
                                 class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
                                 id="mantine-f4bipx4bi"
                                 placeholder="Filter by id"
@@ -473,6 +474,7 @@ exports[`TableGridView matches snapshot 1`] = `
                             >
                               <input
                                 aria-invalid="false"
+                                aria-label="Filter by Format"
                                 class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
                                 id="mantine-f4bipx4bi"
                                 placeholder="Filter by Format"
@@ -585,6 +587,7 @@ exports[`TableGridView matches snapshot 1`] = `
                             >
                               <input
                                 aria-invalid="false"
+                                aria-label="Filter by Titre"
                                 class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
                                 id="mantine-f4bipx4bi"
                                 placeholder="Filter by Titre"
@@ -697,6 +700,7 @@ exports[`TableGridView matches snapshot 1`] = `
                             >
                               <input
                                 aria-invalid="false"
+                                aria-label="Filter by Créateur"
                                 class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
                                 id="mantine-f4bipx4bi"
                                 placeholder="Filter by Créateur"
@@ -809,6 +813,7 @@ exports[`TableGridView matches snapshot 1`] = `
                             >
                               <input
                                 aria-invalid="false"
+                                aria-label="Filter by Date publication"
                                 class="mantine-Input-input mantine-TextInput-input mantine-8fuq20"
                                 id="mantine-f4bipx4bi"
                                 placeholder="Filter by Date publication"

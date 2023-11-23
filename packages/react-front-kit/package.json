@@ -80,7 +80,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "test": "*",
     "tsconfig": "*",
-    "typescript": "^5.2.2"
+    "typescript": "~5.2.0"
   },
   "peerDependencies": {
     "@emotion/react": ">=11",
