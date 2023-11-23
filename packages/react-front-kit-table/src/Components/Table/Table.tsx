@@ -31,11 +31,7 @@ import {
 } from 'mantine-react-table';
 import { useState } from 'react';
 
-import {
-  getActionChildren,
-  getActionIcon,
-  getActionLabel,
-} from '../../helpers';
+import { getActionComponentProps, getActionIcon, getActionLabel } from '../../helpers';
 
 import { useStyles } from './Table.style';
 
@@ -187,15 +183,16 @@ export function Table<Data extends Record<string, unknown>>(
               label={getActionLabel(action, row)}
               {...tooltipProps}
             >
-              {getActionChildren(action, row) ?? (
+              {
                 <ActionIcon
                   onClick={() => handleAction(row, action)}
                   radius={4}
                   type="button"
+                  {...getActionComponentProps(action, row)}
                 >
                   {getActionIcon(action, row)}
                 </ActionIcon>
-              )}
+              }
             </Tooltip>
           ))}
           {menuRowActions.length > 0 && (
@@ -224,13 +221,14 @@ export function Table<Data extends Record<string, unknown>>(
               <Menu.Dropdown>
                 {menuRowActions.map(
                   (action, index) =>
-                    getActionChildren(action, row) ?? (
+                    (
                       <Menu.Item
                         // eslint-disable-next-line react/no-array-index-key
                         key={index}
                         color={action.color}
                         icon={getActionIcon(action, row)}
                         onClick={() => handleAction(row, action)}
+                        {...getActionComponentProps(action, row)}
                       >
                         {getActionLabel(action, row)}
                       </Menu.Item>

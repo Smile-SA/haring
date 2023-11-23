@@ -44,20 +44,20 @@ export function getActionIcon<Data extends Record<string, unknown>>(
   return action.icon;
 }
 
-export function getActionChildren<Data extends Record<string, unknown>>(
+export function getActionComponentProps<Data extends Record<string, unknown>>(
   action?: ITableAction<Data> | null,
   rows?: MRT_Row<Data> | MRT_Row<Data>[],
-): ReactNode {
+): Object | undefined {
   if (!action) {
-    return null;
+    return undefined;
   }
   if (isConfirmAction(action)) {
-    return typeof action.children === 'function'
-      ? action.children(action.item)
-      : action.children;
+    return typeof action.componentProps === 'function'
+      ? action.componentProps(action.item)
+      : action.componentProps;
   }
-  if (typeof action.children === 'function') {
-    return rows ? action.children(rows) : null;
+  if (typeof action.componentProps === 'function') {
+    return rows ? action.componentProps(rows) : undefined;
   }
-  return action.children;
+  return action.componentProps;
 }

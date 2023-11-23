@@ -136,27 +136,26 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
                   </ActionIcon>
                 </Menu.Target>
                 <Menu.Dropdown onClick={(e) => e.stopPropagation()}>
-                  {actions.map((action, index) =>
-                    typeof action.children === 'function'
-                      ? action.children(props)
-                      : action.children ?? (
-                          <Menu.Item
-                            // eslint-disable-next-line react/no-array-index-key
-                            key={index}
-                            color={action.color}
-                            icon={
-                              typeof action.icon === 'function'
-                                ? action.icon(props)
-                                : action.icon
-                            }
-                            onClick={() => handleMenuItem(action)}
-                          >
-                            {typeof action.label === 'function'
-                              ? action.label(props)
-                              : action.label}
-                          </Menu.Item>
-                        ),
-                  )}
+                  {actions.map((action, index) => (
+                    <Menu.Item
+                      // eslint-disable-next-line react/no-array-index-key
+                      key={index}
+                      color={action.color}
+                      icon={
+                        typeof action.icon === 'function'
+                          ? action.icon(props)
+                          : action.icon
+                      }
+                      onClick={() => handleMenuItem(action)}
+                      {...(typeof action.componentProps === 'function'
+                        ? action.componentProps(props)
+                        : action.componentProps)}
+                    >
+                      {typeof action.label === 'function'
+                        ? action.label(props)
+                        : action.label}
+                    </Menu.Item>
+                  ))}
                 </Menu.Dropdown>
               </Menu>
             )}
