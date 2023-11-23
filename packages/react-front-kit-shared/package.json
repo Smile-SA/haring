@@ -32,12 +32,16 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
+    "./server": "./dist/server.js",
     "./storybook-utils": "./dist/storybook-utils/index.js",
     "./test-utils": "./dist/test-utils/index.js"
   },
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
+      "server": [
+        "dist/server.d.ts"
+      ],
       "storybook-utils": [
         "dist/storybook-utils/index.d.ts"
       ],
