@@ -31,7 +31,7 @@ export function getActionIcon<Data extends Record<string, unknown>>(
   rows?: MRT_Row<Data> | MRT_Row<Data>[],
 ): ReactNode {
   if (!action) {
-    return '';
+    return null;
   }
   if (isConfirmAction(action)) {
     return typeof action.icon === 'function'
@@ -39,7 +39,25 @@ export function getActionIcon<Data extends Record<string, unknown>>(
       : action.icon;
   }
   if (typeof action.icon === 'function') {
-    return rows ? action.icon(rows) : '';
+    return rows ? action.icon(rows) : null;
   }
   return action.icon;
+}
+
+export function getActionChildren<Data extends Record<string, unknown>>(
+  action?: ITableAction<Data> | null,
+  rows?: MRT_Row<Data> | MRT_Row<Data>[],
+): ReactNode {
+  if (!action) {;
+    return null;
+  }
+  if (isConfirmAction(action)) {
+    return typeof action.children === 'function'
+      ? action.children(action.item)
+      : action.children;
+  }
+  if (typeof action.children === 'function') {
+    return rows ? action.children(rows) : null;
+  }
+  return action.children;
 }

@@ -47,6 +47,15 @@ export const useStyles = createStyles((theme) => ({
     marginRight: '16px',
     opacity: 0,
     ref: getStylesRef('rowActions'),
+    '& > *': {
+      height: '1.75rem',
+      minHeight: '1.75rem',
+      width: '1.75rem',
+      minWidth: '1.75rem',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
   },
   rowActionsMenuOpened: {
     ref: getStylesRef('rowActionsMenuOpened'),
