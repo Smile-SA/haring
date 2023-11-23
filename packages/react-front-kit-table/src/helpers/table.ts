@@ -48,7 +48,7 @@ export function getActionChildren<Data extends Record<string, unknown>>(
   action?: ITableAction<Data> | null,
   rows?: MRT_Row<Data> | MRT_Row<Data>[],
 ): ReactNode {
-  if (!action) {;
+  if (!action) {
     return null;
   }
   if (isConfirmAction(action)) {

@@ -19,8 +19,8 @@ export interface IActionConfirmModalProps<Item>
 }
 
 export interface IAction<Item> {
-  color?: string;
   children?: ReactNode | ((item: Item) => ReactNode);
+  color?: string;
   confirmModalProps?: IActionConfirmModalProps<Item>;
   confirmation?: boolean;
   icon?: ReactNode | ((item: Item) => ReactNode);

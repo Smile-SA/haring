@@ -31,7 +31,11 @@ import {
 } from 'mantine-react-table';
 import { useState } from 'react';
 
-import { getActionChildren, getActionIcon, getActionLabel } from '../../helpers';
+import {
+  getActionChildren,
+  getActionIcon,
+  getActionLabel,
+} from '../../helpers';
 
 import { useStyles } from './Table.style';
 
@@ -218,18 +222,19 @@ export function Table<Data extends Record<string, unknown>>(
                 </ActionIcon>
               </Menu.Target>
               <Menu.Dropdown>
-                {menuRowActions.map((action, index) =>
-                  getActionChildren(action, row) ?? (
-                    <Menu.Item
-                      // eslint-disable-next-line react/no-array-index-key
-                      key={index}
-                      color={action.color}
-                      icon={getActionIcon(action, row)}
-                      onClick={() => handleAction(row, action)}
-                    >
-                      {getActionLabel(action, row)}
-                    </Menu.Item>
-                  ),
+                {menuRowActions.map(
+                  (action, index) =>
+                    getActionChildren(action, row) ?? (
+                      <Menu.Item
+                        // eslint-disable-next-line react/no-array-index-key
+                        key={index}
+                        color={action.color}
+                        icon={getActionIcon(action, row)}
+                        onClick={() => handleAction(row, action)}
+                      >
+                        {getActionLabel(action, row)}
+                      </Menu.Item>
+                    ),
                 )}
               </Menu.Dropdown>
             </Menu>
