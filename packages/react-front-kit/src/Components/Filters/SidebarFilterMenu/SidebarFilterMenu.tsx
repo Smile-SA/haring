@@ -87,7 +87,7 @@ export function getRecursiveMenu<
         {...(typeof collapseButtonProps === 'function'
           ? collapseButtonProps(item)
           : collapseButtonProps)}
-        collapseProps={{ children: undefined, style: collapseStyle }}
+        collapseProps={{ style: collapseStyle }}
       >
         {getRecursiveMenu(
           classes,

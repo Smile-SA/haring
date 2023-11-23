@@ -33,6 +33,6 @@ export const Filters: IStory = {
     deleteButtonLabel: 'Remove all',
     filterButtonLabel: 'Filtrer',
     sideBarFiltersMenu: menu,
-    title: 'Filters actifs',
+    title: 'Active filters',
   },
 };

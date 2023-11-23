@@ -70,7 +70,7 @@ export interface ICollapseButtonControlledProps<
   T extends number | string,
   C extends ElementType,
 > extends ICollapseButtonProps<T, C> {
-  collapseProps?: Omit<CollapseProps, 'in'>;
+  collapseProps?: Partial<CollapseProps>;
   /** Only in the Controlled version, use this prop to provide the setter function for the opened/collapsed state */
   onCollapseChange?: (isOpened: boolean) => void;
   /** Only in the Controlled version, use this prop to provide the opened/collapsed state */
