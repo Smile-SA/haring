@@ -19,8 +19,10 @@ export interface IActionConfirmModalProps<Item>
 }
 
 export interface IAction<Item> {
-  componentProps?: Object | ((item: Item) => Object);
   color?: string;
+  componentProps?:
+    | Record<string, unknown>
+    | ((item: Item) => Record<string, unknown>);
   confirmModalProps?: IActionConfirmModalProps<Item>;
   confirmation?: boolean;
   icon?: ReactNode | ((item: Item) => ReactNode);

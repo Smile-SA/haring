@@ -31,7 +31,11 @@ import {
 } from 'mantine-react-table';
 import { useState } from 'react';
 
-import { getActionComponentProps, getActionIcon, getActionLabel } from '../../helpers';
+import {
+  getActionComponentProps,
+  getActionIcon,
+  getActionLabel,
+} from '../../helpers';
 
 import { useStyles } from './Table.style';
 
@@ -183,16 +187,14 @@ export function Table<Data extends Record<string, unknown>>(
               label={getActionLabel(action, row)}
               {...tooltipProps}
             >
-              {
-                <ActionIcon
-                  onClick={() => handleAction(row, action)}
-                  radius={4}
-                  type="button"
-                  {...getActionComponentProps(action, row)}
-                >
-                  {getActionIcon(action, row)}
-                </ActionIcon>
-              }
+              <ActionIcon
+                onClick={() => handleAction(row, action)}
+                radius={4}
+                type="button"
+                {...getActionComponentProps(action, row)}
+              >
+                {getActionIcon(action, row)}
+              </ActionIcon>
             </Tooltip>
           ))}
           {menuRowActions.length > 0 && (
@@ -219,21 +221,18 @@ export function Table<Data extends Record<string, unknown>>(
                 </ActionIcon>
               </Menu.Target>
               <Menu.Dropdown>
-                {menuRowActions.map(
-                  (action, index) =>
-                    (
-                      <Menu.Item
-                        // eslint-disable-next-line react/no-array-index-key
-                        key={index}
-                        color={action.color}
-                        icon={getActionIcon(action, row)}
-                        onClick={() => handleAction(row, action)}
-                        {...getActionComponentProps(action, row)}
-                      >
-                        {getActionLabel(action, row)}
-                      </Menu.Item>
-                    ),
-                )}
+                {menuRowActions.map((action, index) => (
+                  <Menu.Item
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={index}
+                    color={action.color}
+                    icon={getActionIcon(action, row)}
+                    onClick={() => handleAction(row, action)}
+                    {...getActionComponentProps(action, row)}
+                  >
+                    {getActionLabel(action, row)}
+                  </Menu.Item>
+                ))}
               </Menu.Dropdown>
             </Menu>
           )}

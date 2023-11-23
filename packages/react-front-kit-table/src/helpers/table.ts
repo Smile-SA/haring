@@ -47,7 +47,7 @@ export function getActionIcon<Data extends Record<string, unknown>>(
 export function getActionComponentProps<Data extends Record<string, unknown>>(
   action?: ITableAction<Data> | null,
   rows?: MRT_Row<Data> | MRT_Row<Data>[],
-): Object | undefined {
+): Record<string, unknown> | undefined {
   if (!action) {
     return undefined;
   }
