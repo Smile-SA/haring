@@ -34,6 +34,7 @@ const useStyles = createStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     gap: 10,
+    marginLeft: 'auto',
   },
   colLeftBar: {
     alignItems: 'center',
@@ -59,14 +60,6 @@ const useStyles = createStyles((theme) => ({
   grid: {
     height: '100%',
   },
-  spacer: {
-    flex: 1,
-    height: 0,
-  },
-  tab: {
-    fontSize: 18,
-    fontWeight: 600,
-  },
 }));
 
 /**
@@ -76,25 +69,19 @@ export function DocumentDetails(): ReactElement {
   const { classes } = useStyles();
 
   const tabs = [
-    <Tabs.Tab key={1} className={classes.tab} id="tab-1" value="1">
+    <Tabs.Tab key={1} id="tab-1" value="1">
       Actions
     </Tabs.Tab>,
-    <Tabs.Tab
-      key={2}
-      className={classes.tab}
-      data-testid="test-tab"
-      id="tab-1"
-      value="2"
-    >
+    <Tabs.Tab key={2} id="tab-1" value="2">
       Métadonnées
     </Tabs.Tab>,
-    <Tabs.Tab key={3} className={classes.tab} value="3">
+    <Tabs.Tab key={3} value="3">
       Historique
     </Tabs.Tab>,
-    <Tabs.Tab key={4} className={classes.tab} value="4">
+    <Tabs.Tab key={4} value="4">
       Droits
     </Tabs.Tab>,
-    <Tabs.Tab key={5} className={classes.tab} value="5">
+    <Tabs.Tab key={5} value="5">
       Cycle de vie
     </Tabs.Tab>,
   ];
@@ -134,13 +121,12 @@ export function DocumentDetails(): ReactElement {
       padding={0}
     >
       <Grid className={classes.grid} grow m={0}>
-        <Grid.Col span={6}>
+        <Grid.Col span={7}>
           <Flex align="flex-start" direction="column" p="26px 64px">
             <div className={classes.colLeftBar}>
               <Button leftIcon={<CaretLeft />} p={0} variant="transparent">
                 <span style={{ fontSize: 14 }}>Retour à la liste</span>
               </Button>
-              <div className={classes.spacer} />
               <div className={classes.actionIcons}>
                 <ActionIcon radius={4} size={40} variant="light">
                   <Star size={17} />
@@ -156,7 +142,7 @@ export function DocumentDetails(): ReactElement {
             </div>
           </Flex>
         </Grid.Col>
-        <Grid.Col className={classes.colRight} span={4}>
+        <Grid.Col className={classes.colRight} span={5}>
           <MantineProvider theme={primaryTheme}>
             <ResponsiveTabs defaultValue="1" tabs={tabs}>
               <Space h="xl" />

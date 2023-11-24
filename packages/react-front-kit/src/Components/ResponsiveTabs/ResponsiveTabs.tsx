@@ -1,3 +1,5 @@
+'use client';
+
 import type { IDropdownButtonProps } from '../DropdownButton/DropdownButton';
 import type { TabsListProps, TabsProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
@@ -61,12 +63,17 @@ const useStyles = createStyles((theme) => ({
     flexDirection: 'column',
   },
   hidden: {
+    '& .mantine-Tabs-tabLabel': {
+      fontSize: 18,
+      fontWeight: 600,
+    },
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'nowrap',
     opacity: 0,
     overflow: 'hidden',
     position: 'absolute',
+    top: 0,
     visibility: 'hidden',
     width: '100%',
   },
@@ -77,7 +84,14 @@ const useStyles = createStyles((theme) => ({
     paddingBottom: 16,
   },
   tabs: {
+    '& .mantine-Tabs-tabLabel': {
+      fontSize: 18,
+      fontWeight: 600,
+    },
     flexWrap: 'nowrap',
+    position: 'absolute',
+    top: 0,
+    width: '100%',
   },
 }));
 
@@ -100,7 +114,7 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
     tabsListProps,
     ...tabsProps
   } = props;
-  const { ref, width } = useElementSize<HTMLDivElement>();
+  const { height, ref, width } = useElementSize<HTMLDivElement>();
   const generatedId = useId();
   const overflowButtonId = tabsProps.id
     ? `${tabsProps.id}-overflow-button`
@@ -140,6 +154,7 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
       classNames={{ tab: classes.tab }}
       onTabChange={handleTabChange}
       radius="sm"
+      style={{ paddingTop: height }}
       {...tabsProps}
     >
       <div ref={ref} aria-hidden className={classes.hidden} hidden>

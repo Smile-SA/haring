@@ -147,6 +147,9 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
                           : action.icon
                       }
                       onClick={() => handleMenuItem(action)}
+                      {...(typeof action.componentProps === 'function'
+                        ? action.componentProps(props)
+                        : action.componentProps)}
                     >
                       {typeof action.label === 'function'
                         ? action.label(props)
