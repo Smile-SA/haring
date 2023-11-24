@@ -1,4 +1,4 @@
-import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
+import { renderWithProviders } from '../../test-utils';
 
 import { FileIcon } from './FileIcon';
 
