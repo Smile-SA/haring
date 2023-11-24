@@ -27,7 +27,7 @@ import { useState } from 'react';
 
 import { headerContent, headerLeft, headerRight } from '../pages.mock';
 
-import { data, gridProps, tableProps } from './BrowsingPage.mock';
+import { actions, data, gridProps, tableProps } from './BrowsingPage.mock';
 
 /**
  * Primary UI component for user interaction
@@ -135,6 +135,7 @@ export function BrowsingPage(): ReactElement {
           </InfoCard>
         </MantineProvider>
         <TableGridView
+          actions={actions}
           data={data}
           gridProps={{ ...gridProps, cols: gridCols }}
           mt={24}

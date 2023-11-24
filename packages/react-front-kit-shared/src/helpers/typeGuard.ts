@@ -16,6 +16,7 @@ export type IGuardedType<T extends IPrimitiveOrConstructor> = T extends new (
     ? ITypeMap[T]
     : never;
 
+/* Check if value is primitive or class constructor */
 export function typeGuard<T extends IPrimitiveOrConstructor>(
   o: unknown,
   className: T,
@@ -25,4 +26,19 @@ export function typeGuard<T extends IPrimitiveOrConstructor>(
     return typeof o === localPrimitiveOrConstructor;
   }
   return o instanceof localPrimitiveOrConstructor;
+}
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export type ITypeGenericInterface = Record<string, any>;
+
+/* Validate interface typing of given object by verifying if key exist */
+export function typeGuardInterface<Type extends ITypeGenericInterface>(
+  object: ITypeGenericInterface,
+  uniqueKey: number | string,
+  keyType?: unknown,
+): object is Type {
+  return (
+    uniqueKey in object &&
+    (keyType ? typeof object[uniqueKey] === keyType : true)
+  );
 }

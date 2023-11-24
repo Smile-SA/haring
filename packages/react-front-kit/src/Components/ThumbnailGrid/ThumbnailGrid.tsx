@@ -40,20 +40,18 @@ type IGridAction = IAction<IThumbnail[]>;
 type IGridActionConfirmModalProps = IActionConfirmModalProps<IThumbnail[]>;
 
 export interface IThumbnailGridProps extends SimpleGridProps {
-  gridActions?: IGridAction[];
+  actions?: IThumbnailAction[];
   onThumbnailClick?: (item: IThumbnail, index: number) => void;
   selectedElementsText?: (numberOfSelectedElements: number) => string;
-  thumbnailActions?: IThumbnailAction[];
   thumbnails: IThumbnail[];
 }
 
 /** Additional props will be forwarded to the [Mantine SimpleGrid component](https://mantine.dev/core/simple-grid) */
 export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
   const {
-    gridActions = [],
+    actions = [],
     onThumbnailClick,
     selectedElementsText = defaultSelectedElementsText,
-    thumbnailActions,
     thumbnails,
     ...simpleGridProps
   } = props;
@@ -62,6 +60,8 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
   const numberOfSelectedElements = selectedElements.length;
   const [confirmAction, setConfirmAction] =
     useState<IGridActionConfirmModalProps | null>(null);
+  const massActions = actions.filter(({ isMassAction }) => isMassAction);
+  const itemActions = actions.filter(({ isItemAction = true }) => isItemAction);
 
   const { classes } = useStyles();
 
@@ -108,9 +108,9 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
         {numberOfSelectedElements > 0 && (
           <div className={classes.topBar}>
             <span>{selectedElementsText(numberOfSelectedElements)}</span>
-            {gridActions.length > 0 && (
+            {massActions.length > 0 && (
               <Group>
-                {gridActions.map((action) => (
+                {massActions.map((action) => (
                   <Button
                     key={action.id}
                     color={action.color}
@@ -135,7 +135,7 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
           {thumbnails.map((thumbnail, index) => (
             <Thumbnail
               key={thumbnail.id}
-              actions={thumbnailActions}
+              actions={itemActions}
               onClick={() => handleSelect(index)}
               {...thumbnail}
             />

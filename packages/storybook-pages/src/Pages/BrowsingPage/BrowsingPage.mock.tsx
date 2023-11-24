@@ -1,7 +1,5 @@
-import type {
-  ITableGridViewGridProps,
-  ITableProps,
-} from '@smile/react-front-kit-table';
+import type { ITableGridViewGridProps } from '@smile/react-front-kit-table';
+import type { ITableGridViewTableProps } from '@smile/react-front-kit-table/src';
 
 import {
   DownloadSimple,
@@ -12,7 +10,6 @@ import {
   Trash,
 } from '@phosphor-icons/react';
 import { FolderMove } from '@smile/react-front-kit';
-import { thumbnailActionsMock } from '@smile/react-front-kit/mock';
 
 interface IExampleDataType extends Record<string, unknown> {
   creator: string;
@@ -21,6 +18,47 @@ interface IExampleDataType extends Record<string, unknown> {
   id: number | string;
   title: string;
 }
+
+export const actions = [
+  {
+    icon: <FolderMove />,
+    id: 'move',
+    isMassAction: true,
+    label: "Déplacer dans l'arborescence",
+  },
+  {
+    icon: <Eye />,
+    id: 'open',
+    label: 'Ouvrir',
+  },
+  {
+    icon: <PencilSimple />,
+    id: 'edit',
+    label: 'Modifier',
+  },
+  {
+    icon: <Star />,
+    id: 'favorite',
+    label: 'Ajouter aux favoris',
+  },
+  {
+    confirmation: true,
+    icon: <ShareNetwork />,
+    id: 'share',
+    label: 'Partager',
+  },
+  {
+    icon: <DownloadSimple />,
+    id: 'download',
+    label: 'Télécharger',
+  },
+  {
+    icon: <Trash />,
+    id: 'delete',
+    isMassAction: true,
+    label: 'Supprimer',
+  },
+];
 
 export const data: IExampleDataType[] = [
   {
@@ -74,47 +112,7 @@ export const data: IExampleDataType[] = [
   },
 ];
 
-export const tableProps: Omit<ITableProps<IExampleDataType>, 'data'> = {
-  actions: [
-    {
-      icon: <FolderMove />,
-      id: 'move',
-      isMassAction: true,
-      label: "Déplacer dans l'arborescence",
-    },
-    {
-      icon: <Eye />,
-      id: 'open',
-      label: 'Ouvrir',
-    },
-    {
-      icon: <PencilSimple />,
-      id: 'edit',
-      label: 'Modifier',
-    },
-    {
-      icon: <Star />,
-      id: 'favorite',
-      label: 'Ajouter aux favoris',
-    },
-    {
-      confirmation: true,
-      icon: <ShareNetwork />,
-      id: 'share',
-      label: 'Partager',
-    },
-    {
-      icon: <DownloadSimple />,
-      id: 'download',
-      label: 'Télécharger',
-    },
-    {
-      icon: <Trash />,
-      id: 'delete',
-      isMassAction: true,
-      label: 'Supprimer',
-    },
-  ],
+export const tableProps: ITableGridViewTableProps<IExampleDataType> = {
   columns: [
     {
       accessorKey: 'format',
@@ -162,23 +160,10 @@ export const tableProps: Omit<ITableProps<IExampleDataType>, 'data'> = {
 
 export const gridProps: ITableGridViewGridProps = {
   cols: 5,
-  gridActions: [
-    {
-      icon: <FolderMove size={16} />,
-      id: 'move',
-      label: "Déplacer dans l'arborescence",
-    },
-    {
-      icon: <Trash size={16} />,
-      id: 'delete',
-      label: 'Supprimer',
-    },
-  ],
   iconTypeFieldName: 'format',
   idFieldName: 'id',
   labelFieldName: 'title',
   selectedElementsText: (n) => `${n} fichier(s) sélectionnés`,
   spacing: 25,
-  thumbnailActions: thumbnailActionsMock,
   verticalSpacing: 25,
 };

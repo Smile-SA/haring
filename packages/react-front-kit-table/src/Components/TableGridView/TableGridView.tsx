@@ -1,3 +1,4 @@
+import type { ITableAction } from '../../types';
 import type { ITableProps } from '../Table/Table';
 import type {
   IDataView,
@@ -5,17 +6,14 @@ import type {
   IThumbnail,
   IThumbnailGridProps,
 } from '@smile/react-front-kit';
+import type { IThumbnailAction } from '@smile/react-front-kit/src';
 import type { MRT_RowSelectionState } from 'mantine-react-table';
-import type { ReactElement } from 'react';
+import type { ReactElement, SetStateAction } from 'react';
 
 import { createStyles } from '@mantine/styles';
 import { ListBullets, SquaresFour } from '@phosphor-icons/react';
-import {
-  SwitchableView,
-  ThumbnailGrid,
-  isNotNullNorEmpty,
-  typeGuard,
-} from '@smile/react-front-kit';
+import { SwitchableView, ThumbnailGrid } from '@smile/react-front-kit';
+import { isNotNullNorEmpty, typeGuard } from '@smile/react-front-kit-shared';
 import { useState } from 'react';
 
 import { Table } from '../Table/Table';
@@ -28,25 +26,33 @@ const useStyles = createStyles(() => ({
 }));
 
 export interface ITableGridViewGridProps
-  extends Omit<IThumbnailGridProps, 'thumbnails'> {
+  extends Omit<
+    IThumbnailGridProps,
+    'actions' | 'onThumbnailClick' | 'thumbnails'
+  > {
   iconTypeFieldName?: string;
   idFieldName: string;
   imageFieldName?: string;
   labelFieldName: string;
 }
 
+export type ITableGridViewTableProps<Data extends Record<string, unknown>> =
+  Omit<ITableProps<Data>, 'actions' | 'data'>;
+
 export interface ITableGridViewProps<Data extends Record<string, unknown>>
   extends Omit<ISwitchableViewProps, 'views'> {
+  actions?: ITableAction<Data>[] | IThumbnailAction[];
   data: Data[];
   defaultView?: 'grid' | 'table';
   gridProps: ITableGridViewGridProps;
-  tableProps: Omit<ITableProps<Data>, 'data'>;
+  tableProps: ITableGridViewTableProps<Data>;
 }
 
 export function TableGridView<Data extends Record<string, unknown>>(
   props: ITableGridViewProps<Data>,
 ): ReactElement {
   const {
+    actions = [],
     data,
     defaultView = 'table',
     gridProps,
@@ -64,20 +70,6 @@ export function TableGridView<Data extends Record<string, unknown>>(
   const selectedIndexes = Object.entries(rowSelection).map((entry) =>
     entry[1] ? entry[0] : null,
   );
-  const { classes } = useStyles();
-
-  const extendedTableProps: ITableProps<Data> = {
-    data,
-    enableBottomToolbar: false,
-    enableRowSelection: true,
-    mantinePaperProps: {
-      className: classes.tablePaper,
-    },
-    onRowSelectionChange: setRowSelection,
-    state: { rowSelection },
-    ...tableProps,
-  };
-
   const thumbnails: IThumbnail[] = data
     .map((item, index) => {
       const id = item[gridProps.idFieldName];
@@ -109,6 +101,13 @@ export function TableGridView<Data extends Record<string, unknown>>(
       return null;
     })
     .filter(isNotNullNorEmpty);
+  const thumbnailActions = actions as IThumbnailAction[];
+
+  const { classes } = useStyles();
+
+  function handleTableSelect(row: SetStateAction<MRT_RowSelectionState>): void {
+    setRowSelection(row);
+  }
 
   function handleThumbnailSelect(index: number): void {
     const newRowSelection = { ...rowSelection };
@@ -116,15 +115,28 @@ export function TableGridView<Data extends Record<string, unknown>>(
     setRowSelection(newRowSelection);
   }
 
+  const extendedTableProps: ITableProps<Data> = {
+    data,
+    enableBottomToolbar: false,
+    enableRowSelection: true,
+    mantinePaperProps: {
+      className: classes.tablePaper,
+    },
+    onRowSelectionChange: handleTableSelect,
+    state: { rowSelection },
+    ...tableProps,
+  };
+
   const views: IDataView[] = [
     {
-      dataView: <Table {...extendedTableProps} />,
+      dataView: <Table actions={actions} {...extendedTableProps} />,
       label: <ListBullets />,
       value: 'table',
     },
     {
       dataView: (
         <ThumbnailGrid
+          actions={thumbnailActions}
           thumbnails={thumbnails}
           {...otherGridProps}
           onThumbnailClick={(_, i) => handleThumbnailSelect(i)}

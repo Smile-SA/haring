@@ -33,7 +33,7 @@ export interface IThumbnail extends Record<string, unknown> {
   selected?: boolean;
 }
 
-export type IThumbnailAction = IAction<IThumbnail>;
+export type IThumbnailAction = IAction<IThumbnail | IThumbnail[]>;
 
 export interface IThumbnailProps extends IThumbnail {
   actions?: IThumbnailAction[];
