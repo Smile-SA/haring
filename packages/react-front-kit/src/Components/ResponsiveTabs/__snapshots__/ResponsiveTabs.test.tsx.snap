@@ -5,10 +5,11 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
   <div
     class="mantine-Tabs-root mantine-1w1w6vj"
     id="responsive-tabs"
+    style="padding-top: 0px;"
   >
     <div
       aria-hidden="true"
-      class="mantine-18k7ubd"
+      class="mantine-38kat9"
       hidden=""
     >
       <button
@@ -93,7 +94,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
     </div>
     <div
       aria-orientation="horizontal"
-      class="mantine-Tabs-tabsList mantine-1c0ih2u"
+      class="mantine-Tabs-tabsList mantine-1h6xllx"
       role="tablist"
     >
       <button

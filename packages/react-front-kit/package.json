@@ -32,11 +32,15 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
+    "./server": "./dist/server.js",
     "./mock": "./dist/mock.js"
   },
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
+      "server": [
+        "./dist/server.d.ts"
+      ],
       "mock": [
         "./dist/mock.d.ts"
       ]

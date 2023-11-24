@@ -31,7 +31,11 @@ import {
 } from 'mantine-react-table';
 import { useState } from 'react';
 
-import { getActionIcon, getActionLabel } from '../../helpers';
+import {
+  getActionComponentProps,
+  getActionIcon,
+  getActionLabel,
+} from '../../helpers';
 
 import { useStyles } from './Table.style';
 
@@ -187,6 +191,7 @@ export function Table<Data extends Record<string, unknown>>(
                 onClick={() => handleAction(row, action)}
                 radius={4}
                 type="button"
+                {...getActionComponentProps(action, row)}
               >
                 {getActionIcon(action, row)}
               </ActionIcon>
@@ -223,6 +228,7 @@ export function Table<Data extends Record<string, unknown>>(
                     color={action.color}
                     icon={getActionIcon(action, row)}
                     onClick={() => handleAction(row, action)}
+                    {...getActionComponentProps(action, row)}
                   >
                     {getActionLabel(action, row)}
                   </Menu.Item>
