@@ -1,5 +1,6 @@
 import type { ITableAction } from '../../types';
 import type { ITableProps } from '../Table/Table';
+import type { Record } from '@phosphor-icons/react';
 import type {
   IDataView,
   ISwitchableViewProps,
@@ -7,13 +8,15 @@ import type {
   IThumbnailGridProps,
 } from '@smile/react-front-kit';
 import type { IThumbnailAction } from '@smile/react-front-kit/src';
-import type { MRT_RowSelectionState } from 'mantine-react-table';
+import type { IAction } from '@smile/react-front-kit-shared/src';
+import type { MRT_Row, MRT_RowSelectionState } from 'mantine-react-table';
 import type { ReactElement, SetStateAction } from 'react';
 
 import { createStyles } from '@mantine/styles';
 import { ListBullets, SquaresFour } from '@phosphor-icons/react';
 import { SwitchableView, ThumbnailGrid } from '@smile/react-front-kit';
 import { isNotNullNorEmpty, typeGuard } from '@smile/react-front-kit-shared';
+import { isCallback } from '@smile/react-front-kit-shared/src';
 import { useState } from 'react';
 
 import { Table } from '../Table/Table';
@@ -24,6 +27,14 @@ const useStyles = createStyles(() => ({
     borderRadius: '4px',
   },
 }));
+
+export type ITableGridAction<Data extends Record<string, unknown>> = IAction<
+  Data | Data[]
+>;
+
+type IComponentPropCallback<Data extends Record<string, unknown>> = (
+  Item: Data,
+) => Record<string, unknown>;
 
 export interface ITableGridViewGridProps
   extends Omit<
@@ -41,7 +52,7 @@ export type ITableGridViewTableProps<Data extends Record<string, unknown>> =
 
 export interface ITableGridViewProps<Data extends Record<string, unknown>>
   extends Omit<ISwitchableViewProps, 'views'> {
-  actions?: ITableAction<Data>[] | IThumbnailAction[];
+  actions?: ITableGridAction<Data>[];
   data: Data[];
   defaultView?: 'grid' | 'table';
   gridProps: ITableGridViewGridProps;
@@ -70,6 +81,9 @@ export function TableGridView<Data extends Record<string, unknown>>(
   const selectedIndexes = Object.entries(rowSelection).map((entry) =>
     entry[1] ? entry[0] : null,
   );
+
+  const { classes } = useStyles();
+
   const thumbnails: IThumbnail[] = data
     .map((item, index) => {
       const id = item[gridProps.idFieldName];
@@ -101,9 +115,49 @@ export function TableGridView<Data extends Record<string, unknown>>(
       return null;
     })
     .filter(isNotNullNorEmpty);
-  const thumbnailActions = actions as IThumbnailAction[];
 
-  const { classes } = useStyles();
+  function convertTableItemToOriginal(
+    tableItem: MRT_Row<Data> | MRT_Row<Data>[],
+  ): Data | Data[] {
+    console.log(tableItem);
+    return data[0];
+  }
+
+  function convertGridItemToOriginal(
+    gridItem: IThumbnail | IThumbnail[],
+  ): Data | Data[] {
+    console.log(gridItem);
+    return data[0];
+  }
+
+  const tableActions: ITableAction<Data>[] = actions.map(
+    (action: ITableGridAction<Data>) => ({
+      ...action,
+      ...(action.componentProps &&
+      isCallback(action.componentProps) &&
+      typeof action.componentProps === 'function'
+        ? {
+            componentProps: (item) =>
+              action.componentProps?.(convertTableItemToOriginal(item)),
+          }
+        : undefined),
+      ...(action.onAction
+        ? {
+            onAction: (item) =>
+              action.onAction?.(convertTableItemToOriginal(item)),
+          }
+        : undefined),
+    }),
+  );
+  const gridActions: IThumbnailAction[] = actions.map((action) => ({
+    ...action,
+    ...(action.onAction
+      ? {
+          onAction: (item) =>
+            action.onAction?.(convertGridItemToOriginal(item)),
+        }
+      : undefined),
+  }));
 
   function handleTableSelect(row: SetStateAction<MRT_RowSelectionState>): void {
     setRowSelection(row);
@@ -127,16 +181,20 @@ export function TableGridView<Data extends Record<string, unknown>>(
     ...tableProps,
   };
 
+  // TODO: idea: make new action arrays for table and grid, mapped from the original array of actions. For each prop that has a potential item
+  //  callback, in the declaration of your mapped actions, grab the item sent by the mapped action, convert it/map it to the original item, and call
+  //  the original action's props/callback with the original item.
+
   const views: IDataView[] = [
     {
-      dataView: <Table actions={actions} {...extendedTableProps} />,
+      dataView: <Table actions={tableActions} {...extendedTableProps} />,
       label: <ListBullets />,
       value: 'table',
     },
     {
       dataView: (
         <ThumbnailGrid
-          actions={thumbnailActions}
+          actions={gridActions}
           thumbnails={thumbnails}
           {...otherGridProps}
           onThumbnailClick={(_, i) => handleThumbnailSelect(i)}

@@ -62,6 +62,7 @@ export const thumbnails: IThumbnail[] = [
 export const thumbnailGridMock = {
   actions: thumbnailGridActionsMock,
   cols: 5,
+  onActionOverride: undefined,
   onThumbnailClick: (): HandlerFunction => action('Thumbnail clicked'),
   spacing: 25,
   thumbnails,

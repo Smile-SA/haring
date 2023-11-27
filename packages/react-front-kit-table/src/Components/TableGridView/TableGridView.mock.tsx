@@ -1,4 +1,5 @@
 import type {
+  ITableGridAction,
   ITableGridViewGridProps,
   ITableGridViewProps,
 } from './TableGridView';
@@ -17,7 +18,7 @@ const { actions, data, ...tableProps } = tableMock;
 
 export const tableGridViewProps: ITableGridViewProps<Record<string, unknown>> =
   {
-    actions,
+    actions: actions as ITableGridAction<Record<string, unknown>>[],
     data,
     gridProps,
     tableProps,

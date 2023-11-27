@@ -40,7 +40,6 @@ export interface IThumbnailProps extends IThumbnail {
 }
 
 export function Thumbnail(props: IThumbnailProps): ReactElement {
-  const { classes } = useStyles();
   const theme = useMantineTheme();
   const {
     actions = [],
@@ -50,9 +49,10 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
     onClick,
     selected = false,
   } = props;
-
   const [confirmAction, setConfirmAction] =
     useState<IActionConfirmModalProps<IThumbnail> | null>(null);
+
+  const { classes } = useStyles();
 
   function clearConfirmAction(): void {
     setConfirmAction(null);
@@ -87,8 +87,8 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
     clearConfirmAction();
   }
 
-  function handleModalButton(onAction?: (item: IThumbnail) => void): void {
-    onAction && onAction(props);
+  function handleModalButton(onModalAction?: (item: IThumbnail) => void): void {
+    onModalAction?.(props);
     handleClose();
   }
 
@@ -165,13 +165,9 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
       </Box>
       <ConfirmModal
         {...confirmAction}
-        onCancel={() =>
-          handleModalButton(confirmAction?.onCancel && confirmAction.onCancel)
-        }
+        onCancel={() => handleModalButton(confirmAction?.onCancel)}
         onClose={handleClose}
-        onConfirm={() =>
-          handleModalButton(confirmAction?.onConfirm && confirmAction.onConfirm)
-        }
+        onConfirm={() => handleModalButton(confirmAction?.onConfirm)}
         opened={Boolean(confirmAction)}
       >
         {confirmAction?.children}

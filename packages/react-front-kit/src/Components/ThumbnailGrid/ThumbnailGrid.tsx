@@ -2,10 +2,7 @@
 
 import type { IThumbnail, IThumbnailAction } from '../Thumbnail/Thumbnail';
 import type { SimpleGridProps } from '@mantine/core';
-import type {
-  IAction,
-  IActionConfirmModalProps,
-} from '@smile/react-front-kit-shared';
+import type { IActionConfirmModalProps } from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';
 
 import { Button, Group, SimpleGrid } from '@mantine/core';
@@ -36,7 +33,6 @@ function defaultSelectedElementsText(n: number): string {
   return `${n} selected file${n > 1 ? 's' : ''}`;
 }
 
-type IGridAction = IAction<IThumbnail[]>;
 type IGridActionConfirmModalProps = IActionConfirmModalProps<IThumbnail[]>;
 
 export interface IThumbnailGridProps extends SimpleGridProps {
@@ -69,7 +65,7 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
     onThumbnailClick?.(thumbnails[index], index);
   }
 
-  function setModal(action: IGridAction): void {
+  function setModal(action: IThumbnailAction): void {
     setConfirmAction({
       cancelColor: action.confirmModalProps?.cancelColor,
       cancelLabel: action.confirmModalProps?.cancelLabel,
@@ -81,7 +77,7 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
     });
   }
 
-  function handleGridAction(action: IGridAction): void {
+  function handleGridAction(action: IThumbnailAction): void {
     if (action.confirmation) {
       setModal(action);
     } else {
