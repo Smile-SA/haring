@@ -6,28 +6,34 @@ import {
   AppShell,
   Box,
   Button,
+  Checkbox,
   Divider,
   Flex,
+  Group,
   Paper,
   Select,
   Space,
   Stack,
   createStyles,
   rem,
+  useMantineTheme,
 } from '@mantine/core';
-import { CaretDown, DownloadSimple } from '@phosphor-icons/react';
+import { DateInput } from '@mantine/dates';
+import {
+  CalendarBlank,
+  CaretDown,
+  DownloadSimple,
+} from '@phosphor-icons/react';
 import {
   DocumentCard,
+  Filters,
   FoldableColumnLayout,
   Header,
   Motif,
   Pagination,
   SearchBar,
 } from '@smile/react-front-kit';
-import {
-  isNotNullNorEmpty,
-  secondaryTheme,
-} from '@smile/react-front-kit-shared';
+import { secondaryTheme } from '@smile/react-front-kit-shared';
 import { useState } from 'react';
 
 import { headerContent, headerLeft, headerRight } from '../pages.mock';
@@ -46,6 +52,18 @@ export interface ISearchFilter extends IOption<unknown> {
 }
 
 const useStyles = createStyles((theme) => ({
+  dataInput: {
+    border: `1px solid ${theme.colors.gray[2]}`,
+    color: theme.colors.dark,
+  },
+  dataInputLabel: {
+    color: theme.colors.dark,
+    fontWeight: 600,
+    marginBottom: '4px',
+  },
+  periodContainer: {
+    padding: '6px 0',
+  },
   select: {
     ':focus, :focus-within': {
       outline: `${rem(2)} solid ${theme.colors.orange[5]}`,
@@ -58,6 +76,8 @@ const useStyles = createStyles((theme) => ({
  * Example Page of a search results page, using `FoldableColumnLayout`
  */
 export function SearchResults(): ReactElement {
+  // style
+  const theme = useMantineTheme();
   const numberOfResults = 135;
   // Search
   const [search, setSearch] = useState<string>('567890456');
@@ -93,22 +113,9 @@ export function SearchResults(): ReactElement {
   const typeFilteredResults = activeType.results;
   // Filters Column
   const [isColumnVisible, setIsColumnVisible] = useState(true);
-  const filters: ISearchFilter[] = [
-    { id: 'clientName', label: 'Nom du client', value: 'Dupont' },
-    { id: 'contractType', label: 'Type de contrat', value: 'Particulier' },
-    {
-      id: 'timePeriod',
-      label: 'Période',
-      value: { timeEnd: '20230523T000000Z', timeStart: '20230105T000000Z' },
-    },
-    { id: 'contractDuration', label: 'Durée du contrat', value: undefined },
-  ];
-  const activeFilters = filters.filter((filter) =>
-    isNotNullNorEmpty(filter.value),
-  );
   const toggleLabel = isColumnVisible
-    ? `Filtres actifs (${activeFilters.length})`
-    : `Voir les filtres actifs (${activeFilters.length})`;
+    ? `Filtres actifs (2)`
+    : `Voir les filtres actifs (2)`;
   // Sorting
   const sortingOptions: IOption<string>[] = [
     { label: 'Trier par pertinence', value: 'relevance' },
@@ -124,6 +131,110 @@ export function SearchResults(): ReactElement {
 
   const totalPages = Math.ceil(typeFilteredResults / rowsPerPage);
   const { classes } = useStyles();
+  const menu = [
+    {
+      content: (
+        <div>
+          <Group>
+            <Checkbox value="Dupont" /> Dupont
+          </Group>
+          <br />
+          <Group>
+            <Checkbox checked value="Martin" /> Martin
+          </Group>
+          <br />
+          <Group>
+            <Checkbox value="André" /> Andrée
+          </Group>
+        </div>
+      ),
+      id: 1,
+      label: `Nom du client (1)`,
+    },
+    {
+      children: [
+        {
+          content: (
+            <>
+              <Group>
+                <Checkbox value="CDI" /> CDI
+              </Group>
+              <br />
+              <Group>
+                <Checkbox value="CDD" /> CDD
+              </Group>
+            </>
+          ),
+          id: 10,
+          label: 'Contrat classique',
+        },
+        {
+          content: (
+            <>
+              <Group>
+                <Checkbox value="FREELANCE" /> Freelance
+              </Group>
+              <br />
+              <Group>
+                <Checkbox checked value="PARTICULIER" /> Particulié
+              </Group>
+            </>
+          ),
+          id: 11,
+          label: 'Contrat special (1)',
+        },
+      ],
+      id: 3,
+      label: 'Type de contrat (1)',
+    },
+    {
+      content: (
+        <div className={classes.periodContainer}>
+          <DateInput
+            classNames={{
+              input: classes.dataInput,
+              label: classes.dataInputLabel,
+            }}
+            label="Entre le"
+            placeholder="JJ /MM/ AAAA"
+            rightSection={
+              <CalendarBlank
+                color={theme.colors.cyan[9]}
+                size={20}
+                weight="bold"
+              />
+            }
+            value={new Date('01/05/12')}
+            valueFormat="DD/MM/YYYY"
+          />
+          <Space h="6px" />
+          <DateInput
+            classNames={{
+              input: classes.dataInput,
+              label: classes.dataInputLabel,
+            }}
+            label="Et le"
+            placeholder="JJ /MM/ AAAA"
+            rightSection={
+              <CalendarBlank
+                color={theme.colors.cyan[9]}
+                size={20}
+                weight="bold"
+              />
+            }
+            value={new Date('05/23/12')}
+            valueFormat="DD/MM/YYYY"
+          />
+        </div>
+      ),
+      id: 8,
+      label: 'Période (1)',
+    },
+    { id: 9, label: 'Durée du contrat' },
+    { id: 10, label: 'Nom du filtre' },
+    { id: 11, label: 'Nom du filtre' },
+    { id: 12, label: 'Nom du filtre' },
+  ];
 
   return (
     <AppShell
@@ -145,21 +256,30 @@ export function SearchResults(): ReactElement {
         isColumnVisible={isColumnVisible}
         onChangeIsColumnVisible={setIsColumnVisible}
         sidebarContent={
-          <Paper
-            p={24}
-            style={{
-              borderRadius: 16,
-              height: '100%',
-              wordWrap: 'break-word',
-            }}
-          >
-            [
-            {filters.map(
-              (filter) => `${filter.id}: ${JSON.stringify(filter.value)},
-            `,
-            )}
-            ]
-          </Paper>
+          <Filters
+            activeFilters={[
+              {
+                id: 1,
+                label: 'dupont',
+                value: 'DUPONT',
+              },
+              {
+                id: 2,
+                label: 'particulier',
+                value: 'PARTICULAR',
+              },
+              {
+                id: 3,
+                label: '3 ans',
+                value: '3 YEARS',
+              },
+            ]}
+            deleteButtonLabel="Supprimer tout"
+            filterButtonLabel="Filtrer"
+            openedMenuIds={[8]}
+            sideBarFiltersMenu={menu}
+            title="Filtres actifs"
+          />
         }
         sidebarToggleLabel={toggleLabel}
         topBarRight={

@@ -22,6 +22,7 @@ export interface IFiltersProps {
   filterButtonLabel?: string;
   onDeleteButtonClick?: (filters: ISidebarFilter[]) => void;
   onFilterButtonClick?: (filters: ISidebarFilter[]) => void;
+  openedMenuIds?: (number | string)[] | undefined;
   sideBarFiltersMenu?: IFiltersItem<number | string>[] | undefined;
   title?: ReactNode;
 }
@@ -33,6 +34,7 @@ export function Filters(props: IFiltersProps): ReactElement {
     sideBarFiltersMenu = [],
     onDeleteButtonClick,
     onFilterButtonClick,
+    openedMenuIds = undefined,
     deleteButtonLabel = 'Remove all',
     filterButtonLabel = 'Filter',
   } = props;
@@ -71,7 +73,10 @@ export function Filters(props: IFiltersProps): ReactElement {
         ))}
       </div>
       <div className={classes.middle}>
-        <SidebarFilterMenu menu={sideBarFiltersMenu} />
+        <SidebarFilterMenu
+          menu={sideBarFiltersMenu}
+          openedMenuIds={openedMenuIds}
+        />
       </div>
       <div className={classes.bottom}>
         <Button
