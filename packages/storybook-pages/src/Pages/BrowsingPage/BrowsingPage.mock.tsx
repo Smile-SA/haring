@@ -1,5 +1,8 @@
-import type { ITableGridViewGridProps } from '@smile/react-front-kit-table';
-import type { ITableGridViewTableProps } from '@smile/react-front-kit-table/src';
+import type {
+  ITableGridViewGridProps,
+  ITableGridViewTableProps,
+} from '@smile/react-front-kit-table';
+import type { IExampleDataType } from '@smile/react-front-kit-table/mock';
 
 import {
   DownloadSimple,
@@ -10,14 +13,6 @@ import {
   Trash,
 } from '@phosphor-icons/react';
 import { FolderMove } from '@smile/react-front-kit';
-
-interface IExampleDataType extends Record<string, unknown> {
-  creator: string;
-  date: string;
-  format: string;
-  id: number | string;
-  title: string;
-}
 
 export const actions = [
   {

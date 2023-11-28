@@ -1,6 +1,6 @@
 'use client';
 
-import type { IThumbnail, IThumbnailAction } from '../Thumbnail/Thumbnail';
+import type { IThumbnail, IThumbnailAction } from '../../types';
 import type { SimpleGridProps } from '@mantine/core';
 import type { IActionConfirmModalProps } from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';

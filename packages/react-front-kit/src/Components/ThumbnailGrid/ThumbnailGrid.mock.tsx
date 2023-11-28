@@ -1,4 +1,4 @@
-import type { IThumbnail, IThumbnailAction } from '../Thumbnail/Thumbnail';
+import type { IThumbnail, IThumbnailAction } from '../../types';
 import type { HandlerFunction } from '@storybook/addon-actions';
 
 import { Trash } from '@phosphor-icons/react';

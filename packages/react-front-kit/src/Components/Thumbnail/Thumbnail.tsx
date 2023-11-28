@@ -1,9 +1,7 @@
 'use client';
 
-import type {
-  IAction,
-  IActionConfirmModalProps,
-} from '@smile/react-front-kit-shared';
+import type { IThumbnail, IThumbnailAction } from '../../types';
+import type { IActionConfirmModalProps } from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';
 
 import {
@@ -23,17 +21,6 @@ import defaultImage from '../../../assets/defaultImage.jpg';
 import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
 
 import { useStyles } from './Thumbnail.style';
-
-export interface IThumbnail extends Record<string, unknown> {
-  iconType?: string;
-  id: number | string;
-  image?: string;
-  label?: string;
-  onClick?: () => void;
-  selected?: boolean;
-}
-
-export type IThumbnailAction = IAction<IThumbnail | IThumbnail[]>;
 
 export interface IThumbnailProps extends IThumbnail {
   actions?: IThumbnailAction[];

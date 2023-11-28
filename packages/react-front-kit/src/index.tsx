@@ -24,3 +24,4 @@ export * from './Components/ThumbnailGrid/ThumbnailGrid';
 export * from './Layouts/FoldableColumnLayout/FoldableColumnLayout';
 // other exports
 export * from './helpers';
+export * from './types';
