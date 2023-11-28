@@ -10,9 +10,13 @@ export const useStyles = createStyles((theme) => ({
     minWidth: '100%',
   },
   badgeInner: {
+    '&::first-letter': {
+      textTransform: 'uppercase',
+    },
     fontWeight: 600,
     position: 'relative',
     right: '4px',
+    textTransform: 'initial',
   },
   badgeRight: {
     position: 'relative',
@@ -27,7 +31,6 @@ export const useStyles = createStyles((theme) => ({
     fontWeight: 'normal',
     marginBottom: '8px',
     marginRight: '8px',
-    textTransform: 'capitalize',
   },
   bottom: {
     padding: '24px 24px 48px 24px',

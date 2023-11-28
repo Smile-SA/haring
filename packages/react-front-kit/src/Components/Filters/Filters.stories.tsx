@@ -32,6 +32,7 @@ export const Filters: IStory = {
     ],
     deleteButtonLabel: 'Remove all',
     filterButtonLabel: 'Filtrer',
+    openedMenuIds: [1],
     sideBarFiltersMenu: menu,
     title: 'Active filters',
   },

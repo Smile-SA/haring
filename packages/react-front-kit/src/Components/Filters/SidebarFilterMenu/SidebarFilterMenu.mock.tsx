@@ -7,11 +7,11 @@ export const menu: IFiltersItem<number>[] = [
     content: (
       <>
         <Group>
-          <Checkbox value="Dupont" /> Dupont
+          <Checkbox checked value="Dupont" /> Dupont
         </Group>
         <br />
         <Group>
-          <Checkbox value="Martin" /> Martin
+          <Checkbox checked value="Martin" /> Martin
         </Group>
         <br />
         <Group>
