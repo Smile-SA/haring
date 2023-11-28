@@ -10,6 +10,7 @@ import { useStyles } from './Filters.style';
 import { SidebarFilterMenu } from './SidebarFilterMenu/SidebarFilterMenu';
 
 export interface ISidebarFilter {
+  categoryId: [number | string];
   id: number | string;
   label: string;
   onRemove?: (filter: ISidebarFilter) => void;
@@ -39,6 +40,57 @@ export function Filters(props: IFiltersProps): ReactElement {
     filterButtonLabel = 'Filter',
   } = props;
   const { classes } = useStyles();
+
+  function countOccurrences(
+    tableau: (number | string)[],
+  ): Record<string, number> {
+    const occurrences: Record<string, number> = {};
+
+    tableau.forEach((element) => {
+      occurrences[element] = (occurrences[element] || 0) + 1;
+    });
+
+    const result: Record<string, number> = {};
+    for (const element in occurrences) {
+      result[element] = occurrences[element];
+    }
+
+    return result;
+  }
+
+  function replaceLabelValue(
+    occurrencesArray: Record<string, number>,
+    sideBarFiltersMenu: IFiltersItem<number | string>[],
+  ): IFiltersItem<number | string>[] {
+    return sideBarFiltersMenu.map((element) => {
+      if (Object.hasOwn(occurrencesArray, element.id)) {
+        element.label = `${String(element.label).replace(/\([^)]*\)/g, '')} (${
+          occurrencesArray[element.id]
+        })`;
+      }
+
+      return element;
+    });
+  }
+
+  function addActiveFiltersNumber(
+    sideBarFiltersMenu: IFiltersItem<number | string>[],
+    activeFilters: ISidebarFilter[],
+  ): IFiltersItem<number | string>[] {
+    const categoryArray = [];
+
+    for (const i of activeFilters) {
+      for (const a of i.categoryId) {
+        categoryArray.push(a);
+      }
+    }
+
+    const occurrencesArray = countOccurrences(categoryArray);
+    console.log(occurrencesArray);
+
+    replaceLabelValue(occurrencesArray, sideBarFiltersMenu);
+    return sideBarFiltersMenu;
+  }
   return (
     <Box className={classes.root}>
       <div className={classes.top}>
@@ -74,7 +126,11 @@ export function Filters(props: IFiltersProps): ReactElement {
       </div>
       <div className={classes.middle}>
         <SidebarFilterMenu
-          menu={sideBarFiltersMenu}
+          menu={
+            sideBarFiltersMenu.length > 0
+              ? addActiveFiltersNumber(sideBarFiltersMenu, activeFilters)
+              : undefined
+          }
           openedMenuIds={openedMenuIds}
         />
       </div>

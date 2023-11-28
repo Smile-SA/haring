@@ -18,13 +18,15 @@ export const Filters: IStory = {
   args: {
     activeFilters: [
       {
+        categoryId: [1],
         id: 1,
         label: 'Dupont',
         onRemove: action('remove'),
         value: 'DUPONT',
       },
       {
-        id: 1,
+        categoryId: [1],
+        id: 2,
         label: 'Martin',
         onRemove: action('remove'),
         value: 'MARTIN',

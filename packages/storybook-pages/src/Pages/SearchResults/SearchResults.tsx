@@ -136,11 +136,11 @@ export function SearchResults(): ReactElement {
       content: (
         <div>
           <Group>
-            <Checkbox value="Dupont" /> Dupont
+            <Checkbox checked value="Dupont" /> Dupont
           </Group>
           <br />
           <Group>
-            <Checkbox checked value="Martin" /> Martin
+            <Checkbox value="Martin" /> Martin
           </Group>
           <br />
           <Group>
@@ -149,7 +149,7 @@ export function SearchResults(): ReactElement {
         </div>
       ),
       id: 1,
-      label: `Nom du client (1)`,
+      label: `Nom du client`,
     },
     {
       children: [
@@ -181,11 +181,11 @@ export function SearchResults(): ReactElement {
             </>
           ),
           id: 11,
-          label: 'Contrat special (1)',
+          label: 'Contrat special',
         },
       ],
       id: 3,
-      label: 'Type de contrat (1)',
+      label: 'Type de contrat',
     },
     {
       content: (
@@ -228,12 +228,12 @@ export function SearchResults(): ReactElement {
         </div>
       ),
       id: 8,
-      label: 'Période (1)',
+      label: 'Période',
     },
     { id: 9, label: 'Durée du contrat' },
     { id: 10, label: 'Nom du filtre' },
-    { id: 11, label: 'Nom du filtre' },
-    { id: 12, label: 'Nom du filtre' },
+    { id: 23, label: 'Nom du filtre' },
+    { id: 143, label: 'Nom du filtre' },
   ];
 
   return (
@@ -259,16 +259,19 @@ export function SearchResults(): ReactElement {
           <Filters
             activeFilters={[
               {
+                categoryId: [1],
                 id: 1,
                 label: 'dupont',
                 value: 'DUPONT',
               },
               {
+                categoryId: [3, 11],
                 id: 2,
                 label: 'particulier',
                 value: 'PARTICULAR',
               },
               {
+                categoryId: [8],
                 id: 3,
                 label: '3 ans',
                 value: '3 YEARS',
