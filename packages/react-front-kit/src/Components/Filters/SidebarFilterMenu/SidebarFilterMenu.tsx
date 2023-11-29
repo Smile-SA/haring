@@ -76,6 +76,7 @@ export function getRecursiveMenu<
           root: classes.buttonRoot,
         }}
         id={id}
+        indentation="simple"
         isOpenOnSelect
         label={label}
         leftIcon={leftIcon}

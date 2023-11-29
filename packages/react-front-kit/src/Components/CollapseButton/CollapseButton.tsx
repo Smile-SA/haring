@@ -23,10 +23,10 @@ export interface ICollapseButtonProps<
   /** Additional props for the custom component */
   componentProps?: ComponentPropsWithoutRef<C>;
   id?: T;
+  indentation?: 'line' | 'simple';
   isOpenOnSelect?: boolean;
   label?: ReactNode;
   level?: number;
-  line?: boolean;
   onSelect?: (id?: T) => void;
   selected?: boolean;
 }

@@ -10,7 +10,7 @@ import { useStyles } from './Filters.style';
 import { SidebarFilterMenu } from './SidebarFilterMenu/SidebarFilterMenu';
 
 export interface ISidebarFilter {
-  categoryId: [number | string];
+  categoryId: (number | string)[];
   id: number | string;
   label: string;
   onRemove?: (filter: ISidebarFilter) => void;
@@ -60,17 +60,25 @@ export function Filters(props: IFiltersProps): ReactElement {
 
   function replaceLabelValue(
     occurrencesArray: Record<string, number>,
-    sideBarFiltersMenu: IFiltersItem<number | string>[],
+    sideBarFiltersMenu: IFiltersItem<number | string>[] | undefined,
   ): IFiltersItem<number | string>[] {
-    return sideBarFiltersMenu.map((element) => {
+    const newSidebareFiltersMenu = sideBarFiltersMenu?.map((element) => {
       if (Object.hasOwn(occurrencesArray, element.id)) {
         element.label = `${String(element.label).replace(/\([^)]*\)/g, '')} (${
           occurrencesArray[element.id]
         })`;
+        element.children = replaceLabelValue(
+          occurrencesArray,
+          element.children,
+        );
       }
-
       return element;
     });
+
+    if (newSidebareFiltersMenu !== undefined) {
+      return newSidebareFiltersMenu;
+    }
+    return [];
   }
 
   function addActiveFiltersNumber(
@@ -86,7 +94,6 @@ export function Filters(props: IFiltersProps): ReactElement {
     }
 
     const occurrencesArray = countOccurrences(categoryArray);
-    console.log(occurrencesArray);
 
     replaceLabelValue(occurrencesArray, sideBarFiltersMenu);
     return sideBarFiltersMenu;
