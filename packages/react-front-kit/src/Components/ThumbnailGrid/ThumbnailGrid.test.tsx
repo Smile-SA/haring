@@ -1,7 +1,7 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
 import { ThumbnailGrid } from './ThumbnailGrid';
-import { thumbnails } from './ThumbnailGrid.mock';
+import { thumbnailGridActionsMock, thumbnails } from './ThumbnailGrid.mock';
 
 describe('ThumbnailGrid', () => {
   beforeEach(() => {
@@ -10,7 +10,10 @@ describe('ThumbnailGrid', () => {
   });
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <ThumbnailGrid thumbnails={thumbnails} />,
+      <ThumbnailGrid
+        actions={thumbnailGridActionsMock}
+        thumbnails={thumbnails}
+      />,
     );
     expect(container).toMatchSnapshot();
   });

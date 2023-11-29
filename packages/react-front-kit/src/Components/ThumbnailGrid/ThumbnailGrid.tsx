@@ -1,11 +1,8 @@
 'use client';
 
-import type { IThumbnail, IThumbnailAction } from '../Thumbnail/Thumbnail';
+import type { IThumbnail, IThumbnailAction } from '../../types';
 import type { SimpleGridProps } from '@mantine/core';
-import type {
-  IAction,
-  IActionConfirmModalProps,
-} from '@smile/react-front-kit-shared';
+import type { IActionConfirmModalProps } from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';
 
 import { Button, Group, SimpleGrid } from '@mantine/core';
@@ -36,24 +33,21 @@ function defaultSelectedElementsText(n: number): string {
   return `${n} selected file${n > 1 ? 's' : ''}`;
 }
 
-type IGridAction = IAction<IThumbnail[]>;
 type IGridActionConfirmModalProps = IActionConfirmModalProps<IThumbnail[]>;
 
 export interface IThumbnailGridProps extends SimpleGridProps {
-  gridActions?: IGridAction[];
+  actions?: IThumbnailAction[];
   onThumbnailClick?: (item: IThumbnail, index: number) => void;
   selectedElementsText?: (numberOfSelectedElements: number) => string;
-  thumbnailActions?: IThumbnailAction[];
   thumbnails: IThumbnail[];
 }
 
 /** Additional props will be forwarded to the [Mantine SimpleGrid component](https://mantine.dev/core/simple-grid) */
 export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
   const {
-    gridActions = [],
+    actions = [],
     onThumbnailClick,
     selectedElementsText = defaultSelectedElementsText,
-    thumbnailActions,
     thumbnails,
     ...simpleGridProps
   } = props;
@@ -62,6 +56,8 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
   const numberOfSelectedElements = selectedElements.length;
   const [confirmAction, setConfirmAction] =
     useState<IGridActionConfirmModalProps | null>(null);
+  const massActions = actions.filter(({ isMassAction }) => isMassAction);
+  const itemActions = actions.filter(({ isItemAction = true }) => isItemAction);
 
   const { classes } = useStyles();
 
@@ -69,7 +65,7 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
     onThumbnailClick?.(thumbnails[index], index);
   }
 
-  function setModal(action: IGridAction): void {
+  function setModal(action: IThumbnailAction): void {
     setConfirmAction({
       cancelColor: action.confirmModalProps?.cancelColor,
       cancelLabel: action.confirmModalProps?.cancelLabel,
@@ -81,7 +77,7 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
     });
   }
 
-  function handleGridAction(action: IGridAction): void {
+  function handleGridAction(action: IThumbnailAction): void {
     if (action.confirmation) {
       setModal(action);
     } else {
@@ -108,9 +104,9 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
         {numberOfSelectedElements > 0 && (
           <div className={classes.topBar}>
             <span>{selectedElementsText(numberOfSelectedElements)}</span>
-            {gridActions.length > 0 && (
+            {massActions.length > 0 && (
               <Group>
-                {gridActions.map((action) => (
+                {massActions.map((action) => (
                   <Button
                     key={action.id}
                     color={action.color}
@@ -135,7 +131,7 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
           {thumbnails.map((thumbnail, index) => (
             <Thumbnail
               key={thumbnail.id}
-              actions={thumbnailActions}
+              actions={itemActions}
               onClick={() => handleSelect(index)}
               {...thumbnail}
             />

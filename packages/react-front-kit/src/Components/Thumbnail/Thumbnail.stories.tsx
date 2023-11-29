@@ -18,6 +18,7 @@ export const Thumbnail: IStory = {
     iconType: 'PDF',
     id: '1',
     label: 'Debit_Suivi_PREV',
+    onActionOverride: undefined,
     selected: false,
   },
 };

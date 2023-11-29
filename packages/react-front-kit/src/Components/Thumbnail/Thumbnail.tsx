@@ -1,9 +1,7 @@
 'use client';
 
-import type {
-  IAction,
-  IActionConfirmModalProps,
-} from '@smile/react-front-kit-shared';
+import type { IThumbnail, IThumbnailAction } from '../../types';
+import type { IActionConfirmModalProps } from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';
 
 import {
@@ -24,23 +22,11 @@ import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
 
 import { useStyles } from './Thumbnail.style';
 
-export interface IThumbnail extends Record<string, unknown> {
-  iconType?: string;
-  id: number | string;
-  image?: string;
-  label?: string;
-  onClick?: () => void;
-  selected?: boolean;
-}
-
-export type IThumbnailAction = IAction<IThumbnail>;
-
 export interface IThumbnailProps extends IThumbnail {
   actions?: IThumbnailAction[];
 }
 
 export function Thumbnail(props: IThumbnailProps): ReactElement {
-  const { classes } = useStyles();
   const theme = useMantineTheme();
   const {
     actions = [],
@@ -50,9 +36,10 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
     onClick,
     selected = false,
   } = props;
-
   const [confirmAction, setConfirmAction] =
     useState<IActionConfirmModalProps<IThumbnail> | null>(null);
+
+  const { classes } = useStyles();
 
   function clearConfirmAction(): void {
     setConfirmAction(null);
@@ -87,8 +74,8 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
     clearConfirmAction();
   }
 
-  function handleModalButton(onAction?: (item: IThumbnail) => void): void {
-    onAction && onAction(props);
+  function handleModalButton(onModalAction?: (item: IThumbnail) => void): void {
+    onModalAction?.(props);
     handleClose();
   }
 
@@ -165,13 +152,9 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
       </Box>
       <ConfirmModal
         {...confirmAction}
-        onCancel={() =>
-          handleModalButton(confirmAction?.onCancel && confirmAction.onCancel)
-        }
+        onCancel={() => handleModalButton(confirmAction?.onCancel)}
         onClose={handleClose}
-        onConfirm={() =>
-          handleModalButton(confirmAction?.onConfirm && confirmAction.onConfirm)
-        }
+        onConfirm={() => handleModalButton(confirmAction?.onConfirm)}
         opened={Boolean(confirmAction)}
       >
         {confirmAction?.children}
