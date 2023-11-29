@@ -61,8 +61,8 @@
     "prepublishOnly": "npm run build && node ../../scripts/prepublish.mjs"
   },
   "dependencies": {
-    "@smile/react-front-kit": "*",
-    "@smile/react-front-kit-shared": "*"
+    "@smile/react-front-kit": "0.5.0",
+    "@smile/react-front-kit-shared": "0.5.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.20",

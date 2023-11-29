@@ -7,7 +7,7 @@
     }
   ],
   "commit": false,
-  "fixed": [["@smile/react-front-kit*"]],
+  "fixed": [["@smile/react-front-kit*", "storybook-pages"]],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
