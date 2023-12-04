@@ -48,7 +48,16 @@ export const useStyles = createStyles((theme) => ({
   bottom: {
     padding: '24px 24px 48px 24px',
   },
+  buttonMenuController: {
+    cursor: 'pointer',
+  },
   buttonRemoveRoot: { color: 'white', fontSize: '14px', padding: '0' },
+  menuController: {
+    borderBottom: `${theme.colors.gray[3]} 1px solid`,
+    color: theme.colors.dark[3],
+    fontWeight: 600,
+    paddingBottom: '10px',
+  },
   middle: {
     margin: '0px 24px',
   },

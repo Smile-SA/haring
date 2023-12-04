@@ -3,7 +3,7 @@
 import type { IFiltersItem } from './SidebarFilterMenu/SidebarFilterMenu';
 import type { ReactElement, ReactNode } from 'react';
 
-import { ActionIcon, Badge, Box, Button } from '@mantine/core';
+import { ActionIcon, Badge, Box, Button, Group } from '@mantine/core';
 import { CaretDown, CaretUp, TrashSimple, X } from '@phosphor-icons/react';
 import { useState } from 'react';
 
@@ -22,11 +22,15 @@ export interface ISidebarFilter {
 
 export interface IFiltersProps {
   activeFilters?: ISidebarFilter[] | [];
+  closeAllFiltersLabel?: string;
   deleteButtonLabel?: string;
   filterButtonLabel?: string;
+  onCloseAllFilters: () => void;
   onDeleteButtonClick?: (filters: ISidebarFilter[]) => void;
   onFilterButtonClick?: (filters: ISidebarFilter[]) => void;
-  openedMenuIds?: (number | string)[] | undefined;
+  onOpenAllFilters: () => void;
+  openAllFiltersLabel?: string;
+  openedMenuIds?: (number | string)[];
   sideBarFiltersMenu?: IFiltersItem<number | string>[] | undefined;
   title?: ReactNode;
 }
@@ -34,17 +38,50 @@ export interface IFiltersProps {
 export function Filters(props: IFiltersProps): ReactElement {
   const {
     activeFilters = [],
+    closeAllFiltersLabel = 'Close all',
     title = 'Active filters',
     sideBarFiltersMenu = [],
+    onCloseAllFilters,
     onDeleteButtonClick,
     onFilterButtonClick,
-    openedMenuIds = undefined,
+    onOpenAllFilters,
+    openAllFiltersLabel = 'Open all',
     deleteButtonLabel = 'Remove all',
     filterButtonLabel = 'Filter',
+    openedMenuIds = [],
   } = props;
   const { classes } = useStyles();
   const [activeFiltersCollapseOpened, setActiveFiltersCollapseOpened] =
     useState(true);
+
+  function getFiltersMenuId(
+    filtersMenu: IFiltersItem<number | string>[],
+  ): (number | string)[] {
+    let allFiltersMenuId: (number | string)[] = [];
+    for (const element of filtersMenu) {
+      allFiltersMenuId.push(element.id);
+      if (element.children) {
+        allFiltersMenuId = allFiltersMenuId.concat(
+          getFiltersMenuId(element.children),
+        );
+      }
+    }
+    return allFiltersMenuId;
+  }
+
+  function areEqualArrays(
+    arr1: (number | string)[],
+    arr2: (number | string)[],
+  ): boolean {
+    if (arr1.length !== arr2.length) {
+      return false;
+    }
+
+    const sortedArr1: string[] = arr1.map((element) => String(element)).sort();
+    const sortedArr2: string[] = arr2.map((element) => String(element)).sort();
+
+    return JSON.stringify(sortedArr1) === JSON.stringify(sortedArr2);
+  }
 
   function countOccurrences(
     tableau: (number | string)[],
@@ -162,6 +199,29 @@ export function Filters(props: IFiltersProps): ReactElement {
         </CollapseButtonControlled>
       </div>
       <div className={classes.middle}>
+        <Group className={classes.menuController}>
+          {openedMenuIds.length > 0 && (
+            <span
+              aria-hidden="true"
+              className={classes.buttonMenuController}
+              onClick={() => onCloseAllFilters()}
+            >
+              - {closeAllFiltersLabel}
+            </span>
+          )}
+          {!areEqualArrays(
+            openedMenuIds,
+            getFiltersMenuId(sideBarFiltersMenu),
+          ) && (
+            <span
+              aria-hidden="true"
+              className={classes.buttonMenuController}
+              onClick={() => onOpenAllFilters()}
+            >
+              + {openAllFiltersLabel}
+            </span>
+          )}
+        </Group>
         <SidebarFilterMenu
           menu={
             sideBarFiltersMenu.length > 0
