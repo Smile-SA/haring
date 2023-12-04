@@ -8,6 +8,19 @@ export const useStyles = createStyles((theme) => ({
   },
   activeFiltersButtonRoot: {
     minWidth: '100%',
+    paddingRight: '0',
+  },
+  activeFiltersCollapseInner: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  activeFiltersCollapseLabel: {
+    color: theme.colors.gray[0],
+    textAlign: 'left',
+  },
+  activeFiltersCollapseRoot: {
+    background: 'inherit',
+    padding: '0px',
   },
   badgeInner: {
     '&::first-letter': {
@@ -39,6 +52,10 @@ export const useStyles = createStyles((theme) => ({
   middle: {
     margin: '0px 24px',
   },
+  removeAllFiltersButtonRoot: {
+    marginTop: '8px',
+    width: '100%',
+  },
   root: {
     backgroundColor: 'white',
     borderRadius: '16px',
@@ -52,6 +69,6 @@ export const useStyles = createStyles((theme) => ({
     borderRadius: '16px 16px 0px 0px',
     color: 'white',
     marginBottom: '24px',
-    padding: '24px',
+    padding: '24px 44px',
   },
 }));

@@ -3,8 +3,11 @@
 import type { IFiltersItem } from './SidebarFilterMenu/SidebarFilterMenu';
 import type { ReactElement, ReactNode } from 'react';
 
-import { Badge, Box, Button, Group } from '@mantine/core';
-import { TrashSimple, X } from '@phosphor-icons/react';
+import { ActionIcon, Badge, Box, Button } from '@mantine/core';
+import { CaretDown, CaretUp, TrashSimple, X } from '@phosphor-icons/react';
+import { useState } from 'react';
+
+import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonControlled';
 
 import { useStyles } from './Filters.style';
 import { SidebarFilterMenu } from './SidebarFilterMenu/SidebarFilterMenu';
@@ -40,6 +43,8 @@ export function Filters(props: IFiltersProps): ReactElement {
     filterButtonLabel = 'Filter',
   } = props;
   const { classes } = useStyles();
+  const [activeFiltersCollapseOpened, setActiveFiltersCollapseOpened] =
+    useState(true);
 
   function countOccurrences(
     tableau: (number | string)[],
@@ -101,35 +106,60 @@ export function Filters(props: IFiltersProps): ReactElement {
   return (
     <Box className={classes.root}>
       <div className={classes.top}>
-        <Group position="apart">
-          <span className={classes.title}>{title}</span>
-          <Button
-            className={classes.buttonRemoveRoot}
-            leftIcon={<TrashSimple size={12} />}
-            onClick={() => onDeleteButtonClick?.(activeFilters)}
-            variant="transparent"
-          >
-            {deleteButtonLabel}
-          </Button>
-        </Group>
-        <div className={classes.activeFilters} />
-        {activeFilters.map((filter) => (
-          <Badge
-            key={filter.id}
-            classNames={{
-              inner: classes.badgeInner,
-              rightSection: classes.badgeRight,
-              root: classes.badgeRoot,
-            }}
-            onClick={() => filter.onRemove?.(filter)}
-            pr={3}
-            rightSection={<X size={10} />}
-            size="xl"
-            variant="outline"
-          >
-            {filter.label}
-          </Badge>
-        ))}
+        <CollapseButtonControlled
+          classNames={{
+            inner: classes.activeFiltersCollapseInner,
+            label: classes.activeFiltersCollapseLabel,
+            root: classes.activeFiltersCollapseRoot,
+          }}
+          fullWidth
+          isOpenOnSelect
+          label={
+            <span className={classes.title}>
+              {title} ({activeFilters.length})
+            </span>
+          }
+          onSelect={() => {
+            setActiveFiltersCollapseOpened(!activeFiltersCollapseOpened);
+          }}
+          opened={activeFiltersCollapseOpened}
+          rightIcon={
+            <ActionIcon
+              data-testid="toggle"
+              onClick={() => {
+                setActiveFiltersCollapseOpened(!activeFiltersCollapseOpened);
+              }}
+              radius="sm"
+              variant="transparent"
+            >
+              {activeFiltersCollapseOpened ? (
+                <CaretUp color="white" />
+              ) : (
+                <CaretDown color="white" />
+              )}
+            </ActionIcon>
+          }
+        >
+          <div className={classes.activeFilters}>
+            {activeFilters.map((filter) => (
+              <Badge
+                key={filter.id}
+                classNames={{
+                  inner: classes.badgeInner,
+                  rightSection: classes.badgeRight,
+                  root: classes.badgeRoot,
+                }}
+                onClick={() => filter.onRemove?.(filter)}
+                pr={3}
+                rightSection={<X size={10} />}
+                size="xl"
+                variant="outline"
+              >
+                {filter.label}
+              </Badge>
+            ))}
+          </div>
+        </CollapseButtonControlled>
       </div>
       <div className={classes.middle}>
         <SidebarFilterMenu
@@ -149,6 +179,15 @@ export function Filters(props: IFiltersProps): ReactElement {
           variant="filled"
         >
           {filterButtonLabel} ({activeFilters.length})
+        </Button>
+        <Button
+          classNames={{ root: classes.removeAllFiltersButtonRoot }}
+          color="dark"
+          leftIcon={<TrashSimple size={12} />}
+          onClick={() => onDeleteButtonClick?.(activeFilters)}
+          variant="outline"
+        >
+          {deleteButtonLabel} ({activeFilters.length})
         </Button>
       </div>
     </Box>
