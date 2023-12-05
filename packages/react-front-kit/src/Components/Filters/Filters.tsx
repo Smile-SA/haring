@@ -5,141 +5,111 @@ import type { ReactElement, ReactNode } from 'react';
 
 import { ActionIcon, Badge, Box, Button, Group } from '@mantine/core';
 import { CaretDown, CaretUp, TrashSimple, X } from '@phosphor-icons/react';
-import { useState } from 'react';
+import { r } from '@storybook/preview-api/dist/sortStories-7312444d';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
+import { addPathAndDepth, flattenNestedObjects } from '../../helpers';
 import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonControlled';
 
 import { useStyles } from './Filters.style';
 import { SidebarFilterMenu } from './SidebarFilterMenu/SidebarFilterMenu';
 
 export interface ISidebarFilter {
-  categoryId: (number | string)[];
-  id: number | string;
+  categoryId: IId[];
+  id: IId;
   label: string;
   onRemove?: (filter: ISidebarFilter) => void;
   value: unknown;
 }
 
+type IId = number | string;
+
 export interface IFiltersProps {
   activeFilters?: ISidebarFilter[] | [];
   closeAllFiltersLabel?: string;
+  defaultOpenedMenuIds?: IId[];
   deleteButtonLabel?: string;
   filterButtonLabel?: string;
-  onCloseAllFilters: () => void;
   onDeleteButtonClick?: (filters: ISidebarFilter[]) => void;
   onFilterButtonClick?: (filters: ISidebarFilter[]) => void;
-  onOpenAllFilters: () => void;
   openAllFiltersLabel?: string;
-  openedMenuIds?: (number | string)[];
-  sideBarFiltersMenu?: IFiltersItem<number | string>[] | undefined;
+  sideBarFiltersMenu?: IFiltersItem<IId>[] | undefined;
   title?: ReactNode;
 }
 
+// rename to FiltersBar
 export function Filters(props: IFiltersProps): ReactElement {
   const {
     activeFilters = [],
     closeAllFiltersLabel = 'Close all',
     title = 'Active filters',
-    sideBarFiltersMenu = [],
-    onCloseAllFilters,
+    sideBarFiltersMenu = [], // rename to menus
     onDeleteButtonClick,
     onFilterButtonClick,
-    onOpenAllFilters,
     openAllFiltersLabel = 'Open all',
     deleteButtonLabel = 'Remove all',
     filterButtonLabel = 'Filter',
-    openedMenuIds = [],
+    defaultOpenedMenuIds = [],
   } = props;
+  const initialRender = useRef(true);
+
+  useEffect(() => {
+    initialRender.current = false;
+  }, []);
   const { classes } = useStyles();
   const [activeFiltersCollapseOpened, setActiveFiltersCollapseOpened] =
     useState(true);
 
-  function getFiltersMenuId(
-    filtersMenu: IFiltersItem<number | string>[],
-  ): (number | string)[] {
-    let allFiltersMenuId: (number | string)[] = [];
-    for (const element of filtersMenu) {
-      allFiltersMenuId.push(element.id);
-      if (element.children) {
-        allFiltersMenuId = allFiltersMenuId.concat(
-          getFiltersMenuId(element.children),
-        );
-      }
-    }
-    return allFiltersMenuId;
+  const [openedIds, setOpenedIds] = useState<IId[]>(defaultOpenedMenuIds);
+
+  const flatFilters = useMemo(
+    () => flattenNestedObjects(addPathAndDepth(sideBarFiltersMenu)),
+    [sideBarFiltersMenu],
+  );
+
+  function addActiveNumberToLabel(
+    menus?: IFiltersItem<IId>[],
+  ): IFiltersItem<IId>[] | undefined {
+    return menus?.map((menu) => ({
+      ...menu,
+      children: addActiveNumberToLabel(menu.children),
+      label: `${menu.label}${
+        activeFilters
+          .map((activeFilter) => activeFilter.categoryId)
+          .flat()
+          .includes(menu.id)
+          ? ` (${
+              activeFilters.filter((activeFilter) =>
+                activeFilter.categoryId.includes(menu.id),
+              ).length
+            })`
+          : ''
+      }`,
+    }));
   }
 
-  function areEqualArrays(
-    arr1: (number | string)[],
-    arr2: (number | string)[],
-  ): boolean {
-    if (arr1.length !== arr2.length) {
-      return false;
-    }
-
-    const sortedArr1: string[] = arr1.map((element) => String(element)).sort();
-    const sortedArr2: string[] = arr2.map((element) => String(element)).sort();
-
-    return JSON.stringify(sortedArr1) === JSON.stringify(sortedArr2);
+  const filtersWithActiveLabel = addActiveNumberToLabel(sideBarFiltersMenu);
+  // handler
+  function handleOpenAllButton(): void {
+    setOpenedIds(
+      flattenNestedObjects(sideBarFiltersMenu).map((menu) => menu.id),
+    );
   }
 
-  function countOccurrences(
-    tableau: (number | string)[],
-  ): Record<string, number> {
-    const occurrences: Record<string, number> = {};
-
-    tableau.forEach((element) => {
-      occurrences[element] = (occurrences[element] || 0) + 1;
-    });
-
-    const result: Record<string, number> = {};
-    for (const element in occurrences) {
-      result[element] = occurrences[element];
-    }
-
-    return result;
+  function handleCloseAllButton(): void {
+    setOpenedIds([]);
   }
 
-  function replaceLabelValue(
-    occurrencesArray: Record<string, number>,
-    sideBarFiltersMenu: IFiltersItem<number | string>[] | undefined,
-  ): IFiltersItem<number | string>[] {
-    const newSidebareFiltersMenu = sideBarFiltersMenu?.map((element) => {
-      if (Object.hasOwn(occurrencesArray, element.id)) {
-        element.label = `${String(element.label).replace(/\([^)]*\)/g, '')} (${
-          occurrencesArray[element.id]
-        })`;
-        element.children = replaceLabelValue(
-          occurrencesArray,
-          element.children,
-        );
-      }
-      return element;
-    });
-
-    if (newSidebareFiltersMenu !== undefined) {
-      return newSidebareFiltersMenu;
+  function handlerOnMenuOpen(id: IId): void {
+    const menuIds = openedIds;
+    if (menuIds.includes(id)) {
+      menuIds.splice(menuIds.indexOf(id), 1);
+    } else {
+      menuIds.push(id);
     }
-    return [];
+    setOpenedIds(menuIds);
   }
 
-  function addActiveFiltersNumber(
-    sideBarFiltersMenu: IFiltersItem<number | string>[],
-    activeFilters: ISidebarFilter[],
-  ): IFiltersItem<number | string>[] {
-    const categoryArray = [];
-
-    for (const i of activeFilters) {
-      for (const a of i.categoryId) {
-        categoryArray.push(a);
-      }
-    }
-
-    const occurrencesArray = countOccurrences(categoryArray);
-
-    replaceLabelValue(occurrencesArray, sideBarFiltersMenu);
-    return sideBarFiltersMenu;
-  }
   return (
     <Box className={classes.root}>
       <div className={classes.top}>
@@ -200,36 +170,30 @@ export function Filters(props: IFiltersProps): ReactElement {
       </div>
       <div className={classes.middle}>
         <Group className={classes.controlledMenu}>
-          {openedMenuIds.length > 0 && (
+          {openedIds.length > 0 && (
             <span
               aria-hidden="true"
               className={classes.controlledMenuButton}
-              onClick={() => onCloseAllFilters()}
+              onClick={() => handleCloseAllButton()}
             >
               - {closeAllFiltersLabel}
             </span>
           )}
           <span className={classes.controlledMenuLine} />
-          {!areEqualArrays(
-            openedMenuIds,
-            getFiltersMenuId(sideBarFiltersMenu),
-          ) && (
+          {!flatFilters.every((filter) => openedIds.includes(filter.id)) && (
             <span
               aria-hidden="true"
               className={classes.controlledMenuButton}
-              onClick={() => onOpenAllFilters()}
+              onClick={() => handleOpenAllButton()}
             >
               + {openAllFiltersLabel}
             </span>
           )}
         </Group>
         <SidebarFilterMenu
-          menu={
-            sideBarFiltersMenu.length > 0
-              ? addActiveFiltersNumber(sideBarFiltersMenu, activeFilters)
-              : undefined
-          }
-          openedMenuIds={openedMenuIds}
+          menu={filtersWithActiveLabel}
+          onMenuOpen={(id) => handlerOnMenuOpen(id)}
+          openedMenuIds={openedIds}
         />
       </div>
       <div className={classes.bottom}>

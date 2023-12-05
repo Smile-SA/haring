@@ -28,7 +28,7 @@ export const menu: IFiltersItem<number>[] = [
         content: (
           <>
             <Group>
-              <Checkbox value="CDI" /> CDI
+              <Checkbox checked value="CDI" /> CDI
             </Group>
             <br />
             <Group>
@@ -42,7 +42,7 @@ export const menu: IFiltersItem<number>[] = [
       {
         content: (
           <Group style={{ padding: '10px 0 10px 10px' }}>
-            <Checkbox value="FREELANCE" /> Freelance
+            <Checkbox checked value="FREELANCE" /> Freelance
           </Group>
         ),
         id: 11,

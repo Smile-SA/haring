@@ -50,11 +50,13 @@ export function getRecursiveMenu<
     | ((item: IFiltersItem<T>) => Omit<ICollapseButtonProps<T, C>, 'opened'>),
   level = 0,
 ): ReactElement[] | null {
+  console.log(openedMenuIds);
   if (!menu || menu.length === 0) {
     return null;
   }
   return menu.map((item) => {
     const { content, children, id, label, leftIcon } = item;
+
     const theme = useMantineTheme();
     const collapseStyle =
       openedMenuIds.includes(id) && selectedId === id
@@ -118,9 +120,8 @@ export function SidebarFilterMenu<
     hasOnlyOneOpenMenu = false,
     menu,
     onMenuOpen,
-    openedMenuIds,
+    openedMenuIds = [],
   } = props;
-
   const { classes } = useStyles();
   const flatMenu = useMemo(
     () => flattenNestedObjects(addPathAndDepth(menu)),
@@ -131,33 +132,24 @@ export function SidebarFilterMenu<
     defaultSelectedId,
   );
 
-  const [openedIds, setOpenedIds] = useState<T[]>(() => {
-    if (defaultSelectedId && !openedMenuIds) {
-      const path = flatMenu.find((menu) => menu.id === defaultSelectedId)
-        ?.path as T[] | undefined;
-      if (path) {
-        return path;
-      }
-    }
-    return openedMenuIds ?? [];
-  });
+  // callback when menu is opened/closed, tell parent to modify openedIds
 
   function handleOpenChange(menuId: T, isOpened: boolean): void {
     const openedMenuPath = (flatMenu.find((menu) => menu.id === menuId)?.path ??
       []) as T[];
     onMenuOpen?.(menuId, isOpened, openedMenuPath);
     if (hasOnlyOneOpenMenu && isOpened) {
-      setOpenedIds(openedMenuPath);
+      // setOpenedIds(openedMenuPath);
     } else {
       /** Add or remove id being clicked **/
-      const exists = openedIds.includes(menuId);
-      let newOpenedIds;
-      if (exists) {
-        newOpenedIds = openedIds.filter((id) => id !== menuId);
-      } else {
-        newOpenedIds = openedIds.concat(menuId);
-      }
-      setOpenedIds(newOpenedIds);
+      // const exists = openedIds.includes(menuId);
+      // let newOpenedIds;
+      // if (exists) {
+      // newOpenedIds = openedIds.filter((id) => id !== menuId);
+      // } else {
+      // newOpenedIds = openedIds.concat(menuId);
+      // }
+      // setOpenedIds(newOpenedIds);
     }
   }
 
@@ -167,7 +159,7 @@ export function SidebarFilterMenu<
         classes,
         setSelectedId,
         handleOpenChange,
-        openedIds,
+        openedMenuIds,
         selectedId,
         menu,
         collapseButtonProps,
