@@ -199,23 +199,24 @@ export function Filters(props: IFiltersProps): ReactElement {
         </CollapseButtonControlled>
       </div>
       <div className={classes.middle}>
-        <Group className={classes.menuController}>
+        <Group className={classes.controlledMenu}>
           {openedMenuIds.length > 0 && (
             <span
               aria-hidden="true"
-              className={classes.buttonMenuController}
+              className={classes.controlledMenuButton}
               onClick={() => onCloseAllFilters()}
             >
               - {closeAllFiltersLabel}
             </span>
           )}
+          <span className={classes.controlledMenuLine} />
           {!areEqualArrays(
             openedMenuIds,
             getFiltersMenuId(sideBarFiltersMenu),
           ) && (
             <span
               aria-hidden="true"
-              className={classes.buttonMenuController}
+              className={classes.controlledMenuButton}
               onClick={() => onOpenAllFilters()}
             >
               + {openAllFiltersLabel}
