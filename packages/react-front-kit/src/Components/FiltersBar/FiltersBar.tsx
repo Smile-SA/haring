@@ -5,13 +5,12 @@ import type { ReactElement, ReactNode } from 'react';
 
 import { ActionIcon, Badge, Box, Button, Group } from '@mantine/core';
 import { CaretDown, CaretUp, TrashSimple, X } from '@phosphor-icons/react';
-import { r } from '@storybook/preview-api/dist/sortStories-7312444d';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { addPathAndDepth, flattenNestedObjects } from '../../helpers';
 import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonControlled';
 
-import { useStyles } from './Filters.style';
+import { useStyles } from './FiltersBar.style';
 import { SidebarFilterMenu } from './SidebarFilterMenu/SidebarFilterMenu';
 
 export interface ISidebarFilter {
@@ -30,20 +29,19 @@ export interface IFiltersProps {
   defaultOpenedMenuIds?: IId[];
   deleteButtonLabel?: string;
   filterButtonLabel?: string;
+  menus?: IFiltersItem<IId>[] | undefined;
   onDeleteButtonClick?: (filters: ISidebarFilter[]) => void;
   onFilterButtonClick?: (filters: ISidebarFilter[]) => void;
   openAllFiltersLabel?: string;
-  sideBarFiltersMenu?: IFiltersItem<IId>[] | undefined;
   title?: ReactNode;
 }
 
-// rename to FiltersBar
-export function Filters(props: IFiltersProps): ReactElement {
+export function FiltersBar(props: IFiltersProps): ReactElement {
   const {
     activeFilters = [],
     closeAllFiltersLabel = 'Close all',
     title = 'Active filters',
-    sideBarFiltersMenu = [], // rename to menus
+    menus = [], // rename to menus
     onDeleteButtonClick,
     onFilterButtonClick,
     openAllFiltersLabel = 'Open all',
@@ -63,8 +61,8 @@ export function Filters(props: IFiltersProps): ReactElement {
   const [openedIds, setOpenedIds] = useState<IId[]>(defaultOpenedMenuIds);
 
   const flatFilters = useMemo(
-    () => flattenNestedObjects(addPathAndDepth(sideBarFiltersMenu)),
-    [sideBarFiltersMenu],
+    () => flattenNestedObjects(addPathAndDepth(menus)),
+    [menus],
   );
 
   function addActiveNumberToLabel(
@@ -88,12 +86,10 @@ export function Filters(props: IFiltersProps): ReactElement {
     }));
   }
 
-  const filtersWithActiveLabel = addActiveNumberToLabel(sideBarFiltersMenu);
+  const filtersWithActiveLabel = addActiveNumberToLabel(menus);
   // handler
   function handleOpenAllButton(): void {
-    setOpenedIds(
-      flattenNestedObjects(sideBarFiltersMenu).map((menu) => menu.id),
-    );
+    setOpenedIds(flattenNestedObjects(menus).map((menu) => menu.id));
   }
 
   function handleCloseAllButton(): void {
@@ -107,9 +103,8 @@ export function Filters(props: IFiltersProps): ReactElement {
     } else {
       menuIds.push(id);
     }
-    setOpenedIds(menuIds);
+    setOpenedIds([...menuIds]);
   }
-
   return (
     <Box className={classes.root}>
       <div className={classes.top}>
@@ -179,7 +174,10 @@ export function Filters(props: IFiltersProps): ReactElement {
               - {closeAllFiltersLabel}
             </span>
           )}
-          <span className={classes.controlledMenuLine} />
+          {!flatFilters.every((filter) => openedIds.includes(filter.id)) &&
+            openedIds.length > 0 && (
+              <span className={classes.controlledMenuLine} />
+            )}
           {!flatFilters.every((filter) => openedIds.includes(filter.id)) && (
             <span
               aria-hidden="true"

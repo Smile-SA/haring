@@ -50,7 +50,6 @@ export function getRecursiveMenu<
     | ((item: IFiltersItem<T>) => Omit<ICollapseButtonProps<T, C>, 'opened'>),
   level = 0,
 ): ReactElement[] | null {
-  console.log(openedMenuIds);
   if (!menu || menu.length === 0) {
     return null;
   }
@@ -117,7 +116,6 @@ export function SidebarFilterMenu<
   const {
     collapseButtonProps,
     defaultSelectedId,
-    hasOnlyOneOpenMenu = false,
     menu,
     onMenuOpen,
     openedMenuIds = [],
@@ -132,27 +130,11 @@ export function SidebarFilterMenu<
     defaultSelectedId,
   );
 
-  // callback when menu is opened/closed, tell parent to modify openedIds
-
   function handleOpenChange(menuId: T, isOpened: boolean): void {
     const openedMenuPath = (flatMenu.find((menu) => menu.id === menuId)?.path ??
       []) as T[];
     onMenuOpen?.(menuId, isOpened, openedMenuPath);
-    if (hasOnlyOneOpenMenu && isOpened) {
-      // setOpenedIds(openedMenuPath);
-    } else {
-      /** Add or remove id being clicked **/
-      // const exists = openedIds.includes(menuId);
-      // let newOpenedIds;
-      // if (exists) {
-      // newOpenedIds = openedIds.filter((id) => id !== menuId);
-      // } else {
-      // newOpenedIds = openedIds.concat(menuId);
-      // }
-      // setOpenedIds(newOpenedIds);
-    }
   }
-
   return (
     <div>
       {getRecursiveMenu(
