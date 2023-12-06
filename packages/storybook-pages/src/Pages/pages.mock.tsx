@@ -1,5 +1,9 @@
-import { Avatar, Menu } from '@mantine/core';
+import type { IActionBarAction, IDocument } from '@smile/react-front-kit';
+
+import { Avatar, Button, Menu, Space } from '@mantine/core';
+import { DownloadSimple } from '@phosphor-icons/react';
 import { DropdownButton } from '@smile/react-front-kit';
+import { action } from '@storybook/addon-actions';
 
 export const headerContent = (
   <>
@@ -35,3 +39,83 @@ export const headerRight = (
     />
   </>
 );
+
+export const searchDocuments: IDocument[] = [
+  {
+    author: 'Aline Dupon',
+    content: (
+      <>
+        <p>
+          Ceci est une description faite pour cette facture et ajoutée par le
+          créateur lors de l’import du document dans la GED, en l’absence de
+          description cet espace est laissé vide...
+        </p>
+        <Button color="gray.8" onClick={action('Download file')}>
+          <DownloadSimple width={12} />
+          <Space w={8} />
+          PDF, FR - 1Mo
+        </Button>
+      </>
+    ),
+    date: 'Published on December 24, 2023',
+    iconType: 'PDF',
+    id: 1,
+    path: '(Customer > 567890456 > Invoices)',
+    title: 'Random_File.PDF',
+  },
+  {
+    author: 'Julien Dominique',
+    content: (
+      <>
+        <p>
+          Ceci est une description faite pour cette facture et ajoutée par le
+          créateur lors de l’import du document dans la GED, en l’absence de
+          description cet espace est laissé vide...
+        </p>
+        <Button color="gray.8">
+          <DownloadSimple width={12} />
+          <Space w={8} />
+          PPT, FR - 1Mo
+        </Button>
+      </>
+    ),
+    date: 'Published on December 24, 2023',
+    iconType: 'PPT',
+    id: 2,
+    path: '(Customer > 567890456 > Invoices)',
+    title: 'Presentation.PPT',
+  },
+  {
+    author: 'Mohamed Aldri',
+    content: (
+      <>
+        <p>
+          Ceci est une description faite pour cette facture et ajoutée par le
+          créateur lors de l’import du document dans la GED, en l’absence de
+          description cet espace est laissé vide...
+        </p>
+        <Button color="gray.8">
+          <DownloadSimple width={12} />
+          <Space w={8} />
+          PDF, FR - 1Mo
+        </Button>
+      </>
+    ),
+    date: 'Published on December 24, 2023',
+    iconType: 'PDF',
+    id: 3,
+    path: '(Customer > 567890456 > Invoices)',
+    title: 'Other_random_File.PDF',
+  },
+];
+
+export const searchActions: IActionBarAction<IDocument>[] = [
+  {
+    icon: <DownloadSimple size={16} />,
+    id: 'download',
+    isItemAction: false,
+    isMassAction: true,
+    label: 'Télécharger',
+    onAction: action('Download files'),
+  },
+];

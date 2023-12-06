@@ -12,6 +12,9 @@
     "@smile/react-front-kit-shared": "*",
     "@smile/react-front-kit-table": "*"
   },
+  "devDependencies": {
+    "@storybook/addon-actions": "^7.4.1"
+  },
   "peerDependencies": {
     "@emotion/react": ">=11",
     "@mantine/core": "6",
