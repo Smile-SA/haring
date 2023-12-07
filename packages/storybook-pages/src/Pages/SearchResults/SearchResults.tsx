@@ -82,26 +82,18 @@ export function SearchResults(): ReactElement {
   const numberOfResults = 135;
   // Search
   const [search, setSearch] = useState<string>('567890456');
+  const [numberOfFiltersActive, setNumberOfFiltersActive] = useState(0);
   // Pagination
   const [page, setPage] = useState<number>(1);
   const [rowsPerPage, setRowsPerPage] = useState<number>(10);
   // FilterBar
   const [activeFilters, setActiveFilters] = useState([
     {
-      categoryId: [1],
-      id: 1,
-      label: 'dupont',
-      onRemove: () => {
-        setActiveFilters(activeFilters.filter((filter) => filter.id !== 1));
-      },
-      value: 'dupont',
-    },
-    {
       categoryId: [2, 4],
-      id: 2,
-      label: 'particulier',
+      id: 7,
+      label: 'Particulié',
       onRemove: () => {
-        setActiveFilters(activeFilters.filter((filter) => filter.id !== 2));
+        removeAllFilters();
       },
       value: 'particular',
     },
@@ -120,34 +112,34 @@ export function SearchResults(): ReactElement {
           <Group>
             <Checkbox
               checked={dupontFilter}
+              label="Dupont"
               onChange={(event) => {
-                setActiveFiltersManager(1, event.target);
+                setActiveFiltersManager(1, event.target, 'Dupont');
               }}
               value="dupont"
             />{' '}
-            Dupont
           </Group>
           <br />
           <Group>
             <Checkbox
               checked={martinFilter}
+              label="Martin"
               onChange={(event) => {
-                setActiveFiltersManager(2, event.target);
+                setActiveFiltersManager(2, event.target, 'Martin');
               }}
               value="martin"
             />{' '}
-            Martin
           </Group>
           <br />
           <Group>
             <Checkbox
               checked={andreeFilter}
+              label="Andrée"
               onChange={(event) => {
-                setActiveFiltersManager(3, event.target);
+                setActiveFiltersManager(3, event.target, 'Andrée');
               }}
-              value="andré"
+              value="andrée"
             />{' '}
-            Andrée
           </Group>
         </div>
       ),
@@ -162,23 +154,23 @@ export function SearchResults(): ReactElement {
               <Group>
                 <Checkbox
                   checked={cdiFilter}
+                  label="CDI"
                   onChange={(event) => {
-                    setActiveFiltersManager(4, event.target);
+                    setActiveFiltersManager(4, event.target, 'CDI');
                   }}
                   value="CDI"
                 />{' '}
-                CDI
               </Group>
               <br />
               <Group>
                 <Checkbox
                   checked={cddFilter}
+                  label="CDD"
                   onChange={(event) => {
-                    setActiveFiltersManager(5, event.target);
+                    setActiveFiltersManager(5, event.target, 'CDD');
                   }}
                   value="CDD"
                 />{' '}
-                CDD
               </Group>
             </>
           ),
@@ -191,23 +183,23 @@ export function SearchResults(): ReactElement {
               <Group>
                 <Checkbox
                   checked={freelanceFilter}
+                  label="Freelance"
                   onChange={(event) => {
-                    setActiveFiltersManager(6, event.target);
+                    setActiveFiltersManager(6, event.target, 'Freelance');
                   }}
                   value="freelance"
                 />{' '}
-                Freelance
               </Group>
               <br />
               <Group>
                 <Checkbox
                   checked={particularFilter}
+                  label="Particulié"
                   onChange={(event) => {
-                    setActiveFiltersManager(7, event.target);
+                    setActiveFiltersManager(7, event.target, 'Particular');
                   }}
                   value="particular"
                 />{' '}
-                Particulié
               </Group>
             </>
           ),
@@ -235,7 +227,7 @@ export function SearchResults(): ReactElement {
                 weight="bold"
               />
             }
-            value={new Date('01/05/12')}
+            value={undefined}
             valueFormat="DD/MM/YYYY"
           />
           <Space h="6px" />
@@ -253,7 +245,7 @@ export function SearchResults(): ReactElement {
                 weight="bold"
               />
             }
-            value={new Date('05/23/12')}
+            value={undefined}
             valueFormat="DD/MM/YYYY"
           />
         </div>
@@ -267,6 +259,7 @@ export function SearchResults(): ReactElement {
     { id: 9, label: 'Nom du filtre' },
   ];
 
+  // pagination row per page
   const rowsPerPageOptions = [
     { label: 'Afficher 5 résultats', value: 5 },
     { label: 'Afficher 10 résultats', value: 10 },
@@ -296,9 +289,12 @@ export function SearchResults(): ReactElement {
   const typeFilteredResults = activeType.results;
   // Filters Column
   const [isColumnVisible, setIsColumnVisible] = useState(true);
-  const toggleLabel = isColumnVisible
-    ? `Filtres actifs (2)`
-    : `Voir les filtres actifs (2)`;
+  const toggleLabel =
+    !isColumnVisible && numberOfFiltersActive === 0
+      ? `Voir les filtres`
+      : isColumnVisible
+        ? `Filtres actifs ${numberOfFiltersActive}`
+        : `Voir les filtres actifs ${numberOfFiltersActive}`;
   // Sorting
   const sortingOptions: IOption<string>[] = [
     { label: 'Trier par pertinence', value: 'relevance' },
@@ -314,7 +310,8 @@ export function SearchResults(): ReactElement {
 
   const totalPages = Math.ceil(typeFilteredResults / rowsPerPage);
 
-  function removeAllFilters(): void {
+  // Remove All filters on FiltersBar
+  const removeAllFilters = (): void => {
     setActiveFilters([]);
     setDupontFilter(false);
     setMartinFilter(false);
@@ -323,45 +320,44 @@ export function SearchResults(): ReactElement {
     setCddFilter(false);
     setFreelanceFilter(false);
     setParticularFilter(false);
-  }
+  };
 
   const setActiveFiltersManager = (
     id: number,
     element: EventTarget & HTMLInputElement,
+    label: string,
   ): void => {
     let categoryId: number[] = [];
-    let currentSetFilter: (() => void) | undefined = undefined;
     switch (id) {
       case 1:
-        currentSetFilter = () => setDupontFilter(element.checked);
+        setDupontFilter(element.checked);
         categoryId = [1];
         break;
       case 2:
-        currentSetFilter = () => setMartinFilter(element.checked);
+        setMartinFilter(element.checked);
         categoryId = [1];
         break;
       case 3:
-        currentSetFilter = () => setAndreeFilter(element.checked);
+        setAndreeFilter(element.checked);
         categoryId = [1];
         break;
       case 4:
-        currentSetFilter = () => setCdiFilter(element.checked);
+        setCdiFilter(element.checked);
         categoryId = [2, 3];
         break;
       case 5:
-        currentSetFilter = () => setCddFilter(element.checked);
+        setCddFilter(element.checked);
         categoryId = [2, 3];
         break;
       case 6:
-        currentSetFilter = () => setFreelanceFilter(element.checked);
+        setFreelanceFilter(element.checked);
         categoryId = [2, 4];
         break;
       case 7:
-        currentSetFilter = () => setParticularFilter(element.checked);
+        setParticularFilter(element.checked);
         categoryId = [2, 4];
         break;
     }
-    currentSetFilter?.();
 
     if (id >= 0 && id <= 7) {
       const filtersId = activeFilters.map((filter) => filter.id);
@@ -374,12 +370,9 @@ export function SearchResults(): ReactElement {
           {
             categoryId,
             id,
-            label: element.value,
+            label,
             onRemove: () => {
-              currentSetFilter?.();
-              setActiveFilters(
-                activeFilters.filter((filter) => filter.id !== id),
-              );
+              element.click();
             },
             value: element.value,
           },
@@ -410,11 +403,17 @@ export function SearchResults(): ReactElement {
         sidebarContent={
           <FiltersBar
             activeFilters={activeFilters}
-            defaultOpenedMenuIds={[8]}
+            defaultOpenedMenuIds={[2, 4]}
             deleteButtonLabel="Supprimer tout"
             filterButtonLabel="Filtrer"
             menus={menus}
-            onDeleteButtonClick={removeAllFilters}
+            onDeleteButtonClick={() => {
+              removeAllFilters();
+              setNumberOfFiltersActive(0);
+            }}
+            onFilterButtonClick={() => {
+              setNumberOfFiltersActive(activeFilters.length);
+            }}
             title="Filtres actifs"
           />
         }

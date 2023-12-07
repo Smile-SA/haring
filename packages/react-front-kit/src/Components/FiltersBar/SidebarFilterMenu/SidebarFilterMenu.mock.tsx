@@ -60,3 +60,30 @@ export function getMenu(checked: boolean): IFiltersItem<number>[] {
     { id: 9, label: 'Durée du contrat' },
   ];
 }
+
+// Because, the random mantine ids to make fail test
+export const menuWithoutContent = [
+  {
+    id: 1,
+    label: 'Nom du client',
+  },
+  {
+    children: [
+      {
+        id: 10,
+        label: 'Contrat classique',
+      },
+      {
+        id: 11,
+        label: 'Contrat special',
+      },
+    ],
+    id: 3,
+    label: 'Type de contrat',
+  },
+  {
+    id: 8,
+    label: 'Période',
+  },
+  { id: 9, label: 'Durée du contrat' },
+];

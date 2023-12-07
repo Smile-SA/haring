@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Filters matches snapshot 1`] = `
+exports[`FiltersBar matches snapshot 1`] = `
 <div>
   <div
     class="mantine-i5l1wq"
@@ -249,133 +249,7 @@ exports[`Filters matches snapshot 1`] = `
         >
           <div
             style="opacity: 1; transition: opacity 200ms ease;"
-          >
-            <div
-              class="mantine-kz5t98"
-            >
-              <div
-                class="mantine-Group-root mantine-k3ov3c"
-              >
-                <div
-                  class="mantine-Checkbox-root mantine-yxmaw9"
-                >
-                  <div
-                    class="mantine-hqx0d1 mantine-Checkbox-body"
-                  >
-                    <div
-                      class="mantine-1vf457v mantine-Checkbox-inner"
-                    >
-                      <input
-                        checked=""
-                        class="mantine-1mibt2f mantine-Checkbox-input"
-                        id="mantine-bw5zfqwab"
-                        type="checkbox"
-                        value="Dupont"
-                      />
-                      <svg
-                        class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
-                        fill="none"
-                        viewBox="0 0 10 7"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z"
-                          fill="currentColor"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      class="mantine-g88pth mantine-Checkbox-labelWrapper"
-                    />
-                  </div>
-                </div>
-                 Dupont
-              </div>
-              <br />
-              <div
-                class="mantine-Group-root mantine-k3ov3c"
-              >
-                <div
-                  class="mantine-Checkbox-root mantine-yxmaw9"
-                >
-                  <div
-                    class="mantine-hqx0d1 mantine-Checkbox-body"
-                  >
-                    <div
-                      class="mantine-1vf457v mantine-Checkbox-inner"
-                    >
-                      <input
-                        checked=""
-                        class="mantine-1mibt2f mantine-Checkbox-input"
-                        id="mantine-mhbvoi8so"
-                        type="checkbox"
-                        value="Martin"
-                      />
-                      <svg
-                        class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
-                        fill="none"
-                        viewBox="0 0 10 7"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z"
-                          fill="currentColor"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      class="mantine-g88pth mantine-Checkbox-labelWrapper"
-                    />
-                  </div>
-                </div>
-                 Martin
-              </div>
-              <br />
-              <div
-                class="mantine-Group-root mantine-k3ov3c"
-              >
-                <div
-                  class="mantine-Checkbox-root mantine-yxmaw9"
-                >
-                  <div
-                    class="mantine-hqx0d1 mantine-Checkbox-body"
-                  >
-                    <div
-                      class="mantine-1vf457v mantine-Checkbox-inner"
-                    >
-                      <input
-                        class="mantine-1mibt2f mantine-Checkbox-input"
-                        id="mantine-crmvz5dnu"
-                        type="checkbox"
-                        value="André"
-                      />
-                      <svg
-                        class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
-                        fill="none"
-                        viewBox="0 0 10 7"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z"
-                          fill="currentColor"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      class="mantine-g88pth mantine-Checkbox-labelWrapper"
-                    />
-                  </div>
-                </div>
-                 Andrée
-              </div>
-            </div>
-          </div>
+          />
         </div>
         <div
           aria-expanded="true"
@@ -484,92 +358,7 @@ exports[`Filters matches snapshot 1`] = `
             >
               <div
                 style="opacity: 1; transition: opacity 200ms ease;"
-              >
-                <div
-                  class="mantine-kz5t98"
-                >
-                  <div
-                    class="mantine-Group-root mantine-k3ov3c"
-                  >
-                    <div
-                      class="mantine-Checkbox-root mantine-yxmaw9"
-                    >
-                      <div
-                        class="mantine-hqx0d1 mantine-Checkbox-body"
-                      >
-                        <div
-                          class="mantine-1vf457v mantine-Checkbox-inner"
-                        >
-                          <input
-                            checked=""
-                            class="mantine-1mibt2f mantine-Checkbox-input"
-                            id="mantine-lb38cagqb"
-                            type="checkbox"
-                            value="CDI"
-                          />
-                          <svg
-                            class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
-                            fill="none"
-                            viewBox="0 0 10 7"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              clip-rule="evenodd"
-                              d="M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z"
-                              fill="currentColor"
-                              fill-rule="evenodd"
-                            />
-                          </svg>
-                        </div>
-                        <div
-                          class="mantine-g88pth mantine-Checkbox-labelWrapper"
-                        />
-                      </div>
-                    </div>
-                     CDI
-                  </div>
-                  <br />
-                  <div
-                    class="mantine-Group-root mantine-k3ov3c"
-                  >
-                    <div
-                      class="mantine-Checkbox-root mantine-yxmaw9"
-                    >
-                      <div
-                        class="mantine-hqx0d1 mantine-Checkbox-body"
-                      >
-                        <div
-                          class="mantine-1vf457v mantine-Checkbox-inner"
-                        >
-                          <input
-                            class="mantine-1mibt2f mantine-Checkbox-input"
-                            id="mantine-32ual7wzy"
-                            type="checkbox"
-                            value="CDD"
-                          />
-                          <svg
-                            class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
-                            fill="none"
-                            viewBox="0 0 10 7"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              clip-rule="evenodd"
-                              d="M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z"
-                              fill="currentColor"
-                              fill-rule="evenodd"
-                            />
-                          </svg>
-                        </div>
-                        <div
-                          class="mantine-g88pth mantine-Checkbox-labelWrapper"
-                        />
-                      </div>
-                    </div>
-                     CDD
-                  </div>
-                </div>
-              </div>
+              />
             </div>
             <div
               aria-expanded="true"
@@ -624,53 +413,7 @@ exports[`Filters matches snapshot 1`] = `
             >
               <div
                 style="opacity: 1; transition: opacity 200ms ease;"
-              >
-                <div
-                  class="mantine-kz5t98"
-                >
-                  <div
-                    class="mantine-Group-root mantine-k3ov3c"
-                    style="padding: 10px 0px 10px 10px;"
-                  >
-                    <div
-                      class="mantine-Checkbox-root mantine-yxmaw9"
-                    >
-                      <div
-                        class="mantine-hqx0d1 mantine-Checkbox-body"
-                      >
-                        <div
-                          class="mantine-1vf457v mantine-Checkbox-inner"
-                        >
-                          <input
-                            checked=""
-                            class="mantine-1mibt2f mantine-Checkbox-input"
-                            id="mantine-9x178mk79"
-                            type="checkbox"
-                            value="FREELANCE"
-                          />
-                          <svg
-                            class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
-                            fill="none"
-                            viewBox="0 0 10 7"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              clip-rule="evenodd"
-                              d="M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z"
-                              fill="currentColor"
-                              fill-rule="evenodd"
-                            />
-                          </svg>
-                        </div>
-                        <div
-                          class="mantine-g88pth mantine-Checkbox-labelWrapper"
-                        />
-                      </div>
-                    </div>
-                     Freelance
-                  </div>
-                </div>
-              </div>
+              />
             </div>
           </div>
         </div>
