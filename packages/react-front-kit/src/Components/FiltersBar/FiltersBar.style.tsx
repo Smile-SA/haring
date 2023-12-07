@@ -2,8 +2,7 @@ import { createStyles } from '@mantine/styles';
 
 export const useStyles = createStyles((theme) => ({
   activeFilters: {
-    display: 'flex',
-    flexWrap: 'nowrap',
+    flexWrap: 'wrap',
     marginTop: '16px',
   },
   activeFiltersButtonRoot: {
@@ -44,6 +43,7 @@ export const useStyles = createStyles((theme) => ({
     fontWeight: 'normal',
     marginBottom: '8px',
     marginRight: '8px',
+    minWidth: '60px',
   },
   bottom: {
     padding: '24px 24px 48px 24px',

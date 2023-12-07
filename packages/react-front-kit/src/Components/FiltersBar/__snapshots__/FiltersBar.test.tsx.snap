@@ -268,7 +268,7 @@ exports[`Filters matches snapshot 1`] = `
                       <input
                         checked=""
                         class="mantine-1mibt2f mantine-Checkbox-input"
-                        id="mantine-w0odf5saq"
+                        id="mantine-yow1tvhkn"
                         type="checkbox"
                         value="Dupont"
                       />
@@ -309,7 +309,7 @@ exports[`Filters matches snapshot 1`] = `
                       <input
                         checked=""
                         class="mantine-1mibt2f mantine-Checkbox-input"
-                        id="mantine-0xqsqxzrh"
+                        id="mantine-eb0lq2l1i"
                         type="checkbox"
                         value="Martin"
                       />
@@ -349,7 +349,7 @@ exports[`Filters matches snapshot 1`] = `
                     >
                       <input
                         class="mantine-1mibt2f mantine-Checkbox-input"
-                        id="mantine-igucp774a"
+                        id="mantine-0p03grqt0"
                         type="checkbox"
                         value="André"
                       />
@@ -503,7 +503,7 @@ exports[`Filters matches snapshot 1`] = `
                           <input
                             checked=""
                             class="mantine-1mibt2f mantine-Checkbox-input"
-                            id="mantine-v5i175r35"
+                            id="mantine-2onrdoiwv"
                             type="checkbox"
                             value="CDI"
                           />
@@ -543,7 +543,7 @@ exports[`Filters matches snapshot 1`] = `
                         >
                           <input
                             class="mantine-1mibt2f mantine-Checkbox-input"
-                            id="mantine-5qxqz8g6p"
+                            id="mantine-c3jywwtao"
                             type="checkbox"
                             value="CDD"
                           />
@@ -644,7 +644,7 @@ exports[`Filters matches snapshot 1`] = `
                           <input
                             checked=""
                             class="mantine-1mibt2f mantine-Checkbox-input"
-                            id="mantine-sa1njxwmq"
+                            id="mantine-ivv7j79ys"
                             type="checkbox"
                             value="FREELANCE"
                           />
