@@ -5,7 +5,7 @@ import type { ReactElement, ReactNode } from 'react';
 
 import { ActionIcon, Badge, Box, Button, Group } from '@mantine/core';
 import { CaretDown, CaretUp, TrashSimple, X } from '@phosphor-icons/react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { addPathAndDepth, flattenNestedObjects } from '../../helpers';
 import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonControlled';
@@ -26,6 +26,7 @@ type IId = number | string;
 export interface IFiltersProps {
   activeFilters?: ISidebarFilter[] | [];
   closeAllFiltersLabel?: string;
+  defaultOpenedActiveFilters?: boolean;
   defaultOpenedMenuIds?: IId[];
   deleteButtonLabel?: string;
   filterButtonLabel?: string;
@@ -48,15 +49,11 @@ export function FiltersBar(props: IFiltersProps): ReactElement {
     deleteButtonLabel = 'Remove all',
     filterButtonLabel = 'Filter',
     defaultOpenedMenuIds = [],
+    defaultOpenedActiveFilters = true,
   } = props;
-  const initialRender = useRef(true);
-
-  useEffect(() => {
-    initialRender.current = false;
-  }, []);
   const { classes } = useStyles();
   const [activeFiltersCollapseOpened, setActiveFiltersCollapseOpened] =
-    useState(true);
+    useState(defaultOpenedActiveFilters);
 
   const [openedIds, setOpenedIds] = useState<IId[]>(defaultOpenedMenuIds);
 

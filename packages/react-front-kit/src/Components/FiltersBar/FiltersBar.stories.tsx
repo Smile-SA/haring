@@ -46,6 +46,7 @@ export const WithActiveFilters: IStory = {
         value: 'CDI',
       },
     ],
+    defaultOpenedActiveFilters: true,
     defaultOpenedMenuIds: [1, 3, 10, 11],
     deleteButtonLabel: 'Remove all',
     filterButtonLabel: 'Filtrer',
@@ -57,6 +58,7 @@ export const WithActiveFilters: IStory = {
 export const WithoutActiveFilters: IStory = {
   args: {
     activeFilters: [],
+    defaultOpenedActiveFilters: false,
     defaultOpenedMenuIds: [1, 3, 10, 11],
     deleteButtonLabel: 'Remove all',
     filterButtonLabel: 'Filtrer',

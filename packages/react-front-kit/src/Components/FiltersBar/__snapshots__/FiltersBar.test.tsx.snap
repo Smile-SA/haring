@@ -69,10 +69,10 @@ exports[`Filters matches snapshot 1`] = `
           style="opacity: 1; transition: opacity 200ms ease;"
         >
           <div
-            class="mantine-bwi36g"
+            class="mantine-fi6uov"
           >
             <div
-              class="mantine-Badge-root mantine-1ecsitd"
+              class="mantine-Badge-root mantine-8kvgmk"
             >
               <span
                 class="mantine-Badge-inner mantine-ucd2eg"
@@ -96,7 +96,7 @@ exports[`Filters matches snapshot 1`] = `
               </span>
             </div>
             <div
-              class="mantine-Badge-root mantine-1ecsitd"
+              class="mantine-Badge-root mantine-8kvgmk"
             >
               <span
                 class="mantine-Badge-inner mantine-ucd2eg"
@@ -120,7 +120,7 @@ exports[`Filters matches snapshot 1`] = `
               </span>
             </div>
             <div
-              class="mantine-Badge-root mantine-1ecsitd"
+              class="mantine-Badge-root mantine-8kvgmk"
             >
               <span
                 class="mantine-Badge-inner mantine-ucd2eg"
@@ -144,7 +144,7 @@ exports[`Filters matches snapshot 1`] = `
               </span>
             </div>
             <div
-              class="mantine-Badge-root mantine-1ecsitd"
+              class="mantine-Badge-root mantine-8kvgmk"
             >
               <span
                 class="mantine-Badge-inner mantine-ucd2eg"
@@ -268,7 +268,7 @@ exports[`Filters matches snapshot 1`] = `
                       <input
                         checked=""
                         class="mantine-1mibt2f mantine-Checkbox-input"
-                        id="mantine-yow1tvhkn"
+                        id="mantine-bw5zfqwab"
                         type="checkbox"
                         value="Dupont"
                       />
@@ -309,7 +309,7 @@ exports[`Filters matches snapshot 1`] = `
                       <input
                         checked=""
                         class="mantine-1mibt2f mantine-Checkbox-input"
-                        id="mantine-eb0lq2l1i"
+                        id="mantine-mhbvoi8so"
                         type="checkbox"
                         value="Martin"
                       />
@@ -349,7 +349,7 @@ exports[`Filters matches snapshot 1`] = `
                     >
                       <input
                         class="mantine-1mibt2f mantine-Checkbox-input"
-                        id="mantine-0p03grqt0"
+                        id="mantine-crmvz5dnu"
                         type="checkbox"
                         value="André"
                       />
@@ -503,7 +503,7 @@ exports[`Filters matches snapshot 1`] = `
                           <input
                             checked=""
                             class="mantine-1mibt2f mantine-Checkbox-input"
-                            id="mantine-2onrdoiwv"
+                            id="mantine-lb38cagqb"
                             type="checkbox"
                             value="CDI"
                           />
@@ -543,7 +543,7 @@ exports[`Filters matches snapshot 1`] = `
                         >
                           <input
                             class="mantine-1mibt2f mantine-Checkbox-input"
-                            id="mantine-c3jywwtao"
+                            id="mantine-32ual7wzy"
                             type="checkbox"
                             value="CDD"
                           />
@@ -644,7 +644,7 @@ exports[`Filters matches snapshot 1`] = `
                           <input
                             checked=""
                             class="mantine-1mibt2f mantine-Checkbox-input"
-                            id="mantine-ivv7j79ys"
+                            id="mantine-9x178mk79"
                             type="checkbox"
                             value="FREELANCE"
                           />
