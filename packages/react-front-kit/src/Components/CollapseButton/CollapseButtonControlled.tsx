@@ -27,6 +27,16 @@ const useStyles = createStyles((theme) => ({
     background:
       theme.colorScheme === 'light' ? theme.white : theme.colors.dark[7],
   },
+  indentationLine: {
+    borderLeft:
+      theme.colorScheme === 'light'
+        ? `1px solid ${theme.colors.gray[1]}`
+        : `1px solid ${theme.colors.gray[8]}`,
+    marginLeft: 30,
+  },
+  indentationSimple: {
+    paddingLeft: 30,
+  },
   label: {
     color:
       theme.colorScheme === 'light'
@@ -40,13 +50,6 @@ const useStyles = createStyles((theme) => ({
   },
   labelLevel1: {
     fontSize: theme.fontSizes.md,
-  },
-  line: {
-    borderLeft:
-      theme.colorScheme === 'light'
-        ? `1px solid ${theme.colors.gray[1]}`
-        : `1px solid ${theme.colors.gray[8]}`,
-    marginLeft: 30,
   },
   rightIcon: {
     color:
@@ -89,10 +92,10 @@ export function CollapseButtonControlled<
     fullWidth = true,
     id,
     isOpenOnSelect = false,
+    indentation,
     label,
     leftIcon,
     level = 0,
-    line,
     onCollapseChange,
     onSelect,
     opened = false,
@@ -129,6 +132,14 @@ export function CollapseButtonControlled<
     rootClasses.push(classes.rootDeepLevel);
     labelClasses.push(classes.labelDeepLevel);
   }
+
+  const indentationStyle =
+    indentation === 'simple'
+      ? classes.indentationSimple
+      : indentation === 'line'
+        ? classes.indentationLine
+        : '';
+
   return (
     <>
       <Button
@@ -184,7 +195,7 @@ export function CollapseButtonControlled<
       </Button>
       {Boolean(children) && (
         <Collapse
-          className={line ? classes.line : ''}
+          className={indentationStyle}
           data-testid="content"
           in={opened}
           {...collapseProps}

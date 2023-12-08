@@ -6,15 +6,19 @@ import type { ReactElement } from 'react';
 import {
   AppShell,
   Box,
+  Checkbox,
   Flex,
+  Group,
   Paper,
   Select,
-  createStyles,
-  rem,
+  Space,
+  useMantineTheme,
 } from '@mantine/core';
-import { CaretDown } from '@phosphor-icons/react';
+import { DateInput } from '@mantine/dates';
+import { CalendarBlank, CaretDown } from '@phosphor-icons/react';
 import {
   DocumentList,
+  FiltersBar,
   FoldableColumnLayout,
   Header,
   Motif,
@@ -35,6 +39,8 @@ import {
   searchDocuments,
 } from '../pages.mock';
 
+import { useStyles } from './SearchResults.style';
+
 export interface IOption<T> {
   label: string;
   value: T;
@@ -48,25 +54,194 @@ export interface ISearchFilter extends IOption<unknown> {
   id: string;
 }
 
-const useStyles = createStyles((theme) => ({
-  select: {
-    ':focus, :focus-within': {
-      outline: `${rem(2)} solid ${theme.colors.orange[5]}`,
-    },
-    borderRadius: '1.5rem',
-  },
-}));
-
 /**
  * Example Page of a search results page, using `FoldableColumnLayout`
  */
 export function SearchResults(): ReactElement {
+  // style
+  const theme = useMantineTheme();
+  const { classes } = useStyles();
   const numberOfResults = 135;
   // Search
   const [search, setSearch] = useState<string>('567890456');
+  const [numberOfFiltersActive, setNumberOfFiltersActive] = useState(0);
   // Pagination
   const [page, setPage] = useState<number>(1);
   const [rowsPerPage, setRowsPerPage] = useState<number>(10);
+  // FilterBar
+  const [activeFilters, setActiveFilters] = useState([
+    {
+      categoryId: [2, 4],
+      id: 7,
+      label: 'Particulié',
+      onRemove: () => {
+        removeAllFilters();
+      },
+      value: 'particular',
+    },
+  ]);
+  const [dupontFilter, setDupontFilter] = useState(false);
+  const [martinFilter, setMartinFilter] = useState(false);
+  const [andreeFilter, setAndreeFilter] = useState(false);
+  const [cdiFilter, setCdiFilter] = useState(false);
+  const [cddFilter, setCddFilter] = useState(false);
+  const [freelanceFilter, setFreelanceFilter] = useState(false);
+  const [particularFilter, setParticularFilter] = useState(true);
+  const menus = [
+    {
+      content: (
+        <div>
+          <Group>
+            <Checkbox
+              checked={dupontFilter}
+              label="Dupont"
+              onChange={(event) => {
+                setActiveFiltersManager(1, event.target, 'Dupont');
+              }}
+              value="dupont"
+            />
+          </Group>
+          <br />
+          <Group>
+            <Checkbox
+              checked={martinFilter}
+              label="Martin"
+              onChange={(event) => {
+                setActiveFiltersManager(2, event.target, 'Martin');
+              }}
+              value="martin"
+            />
+          </Group>
+          <br />
+          <Group>
+            <Checkbox
+              checked={andreeFilter}
+              label="Andrée"
+              onChange={(event) => {
+                setActiveFiltersManager(3, event.target, 'Andrée');
+              }}
+              value="andrée"
+            />
+          </Group>
+        </div>
+      ),
+      id: 1,
+      label: `Nom du client`,
+    },
+    {
+      children: [
+        {
+          content: (
+            <>
+              <Group>
+                <Checkbox
+                  checked={cdiFilter}
+                  label="CDI"
+                  onChange={(event) => {
+                    setActiveFiltersManager(4, event.target, 'CDI');
+                  }}
+                  value="CDI"
+                />
+              </Group>
+              <br />
+              <Group>
+                <Checkbox
+                  checked={cddFilter}
+                  label="CDD"
+                  onChange={(event) => {
+                    setActiveFiltersManager(5, event.target, 'CDD');
+                  }}
+                  value="CDD"
+                />
+              </Group>
+            </>
+          ),
+          id: 3,
+          label: 'Contrat classique',
+        },
+        {
+          content: (
+            <>
+              <Group>
+                <Checkbox
+                  checked={freelanceFilter}
+                  label="Freelance"
+                  onChange={(event) => {
+                    setActiveFiltersManager(6, event.target, 'Freelance');
+                  }}
+                  value="freelance"
+                />
+              </Group>
+              <br />
+              <Group>
+                <Checkbox
+                  checked={particularFilter}
+                  label="Particulié"
+                  onChange={(event) => {
+                    setActiveFiltersManager(7, event.target, 'Particular');
+                  }}
+                  value="particular"
+                />
+              </Group>
+            </>
+          ),
+          id: 4,
+          label: 'Contrat special',
+        },
+      ],
+      id: 2,
+      label: 'Type de contrat',
+    },
+    {
+      content: (
+        <div className={classes.periodContainer}>
+          <DateInput
+            classNames={{
+              input: classes.dataInput,
+              label: classes.dataInputLabel,
+            }}
+            label="Entre le"
+            placeholder="JJ /MM/ AAAA"
+            rightSection={
+              <CalendarBlank
+                color={theme.colors.cyan[9]}
+                size={20}
+                weight="bold"
+              />
+            }
+            value={undefined}
+            valueFormat="DD/MM/YYYY"
+          />
+          <Space h="6px" />
+          <DateInput
+            classNames={{
+              input: classes.dataInput,
+              label: classes.dataInputLabel,
+            }}
+            label="Et le"
+            placeholder="JJ /MM/ AAAA"
+            rightSection={
+              <CalendarBlank
+                color={theme.colors.cyan[9]}
+                size={20}
+                weight="bold"
+              />
+            }
+            value={undefined}
+            valueFormat="DD/MM/YYYY"
+          />
+        </div>
+      ),
+      id: 5,
+      label: 'Période',
+    },
+    { id: 6, label: 'Durée du contrat' },
+    { id: 7, label: 'Nom du filtre' },
+    { id: 8, label: 'Nom du filtre' },
+    { id: 9, label: 'Nom du filtre' },
+  ];
+
+  // pagination row per page
   const rowsPerPageOptions = [
     { label: 'Afficher 5 résultats', value: 5 },
     { label: 'Afficher 10 résultats', value: 10 },
@@ -96,22 +271,12 @@ export function SearchResults(): ReactElement {
   const typeFilteredResults = activeType.results;
   // Filters Column
   const [isColumnVisible, setIsColumnVisible] = useState(true);
-  const filters: ISearchFilter[] = [
-    { id: 'clientName', label: 'Nom du client', value: 'Dupont' },
-    { id: 'contractType', label: 'Type de contrat', value: 'Particulier' },
-    {
-      id: 'timePeriod',
-      label: 'Période',
-      value: { timeEnd: '20230523T000000Z', timeStart: '20230105T000000Z' },
-    },
-    { id: 'contractDuration', label: 'Durée du contrat', value: undefined },
-  ];
-  const activeFilters = filters.filter((filter) =>
-    isNotNullNorEmpty(filter.value),
-  );
-  const toggleLabel = isColumnVisible
-    ? `Filtres actifs (${activeFilters.length})`
-    : `Voir les filtres actifs (${activeFilters.length})`;
+  const toggleLabel =
+    !isColumnVisible && numberOfFiltersActive === 0
+      ? `Voir les filtres`
+      : isColumnVisible
+        ? `Filtres actifs ${numberOfFiltersActive}`
+        : `Voir les filtres actifs ${numberOfFiltersActive}`;
   // Sorting
   const sortingOptions: IOption<string>[] = [
     { label: 'Trier par pertinence', value: 'relevance' },
@@ -125,6 +290,77 @@ export function SearchResults(): ReactElement {
     sortingOptions[0]?.value,
   );
   const totalPages = Math.ceil(typeFilteredResults / rowsPerPage);
+
+  // Remove All filters on FiltersBar
+  const removeAllFilters = (): void => {
+    setActiveFilters([]);
+    setDupontFilter(false);
+    setMartinFilter(false);
+    setAndreeFilter(false);
+    setCdiFilter(false);
+    setCddFilter(false);
+    setFreelanceFilter(false);
+    setParticularFilter(false);
+  };
+
+  const setActiveFiltersManager = (
+    id: number,
+    element: EventTarget & HTMLInputElement,
+    label: string,
+  ): void => {
+    let categoryId: number[] = [];
+    switch (id) {
+      case 1:
+        setDupontFilter(element.checked);
+        categoryId = [1];
+        break;
+      case 2:
+        setMartinFilter(element.checked);
+        categoryId = [1];
+        break;
+      case 3:
+        setAndreeFilter(element.checked);
+        categoryId = [1];
+        break;
+      case 4:
+        setCdiFilter(element.checked);
+        categoryId = [2, 3];
+        break;
+      case 5:
+        setCddFilter(element.checked);
+        categoryId = [2, 3];
+        break;
+      case 6:
+        setFreelanceFilter(element.checked);
+        categoryId = [2, 4];
+        break;
+      case 7:
+        setParticularFilter(element.checked);
+        categoryId = [2, 4];
+        break;
+    }
+
+    if (id >= 0 && id <= 7) {
+      const filtersId = activeFilters.map((filter) => filter.id);
+
+      if (filtersId.includes(id)) {
+        setActiveFilters(activeFilters.filter((element) => element.id !== id));
+      } else {
+        setActiveFilters([
+          ...activeFilters,
+          {
+            categoryId,
+            id,
+            label,
+            onRemove: () => {
+              element.click();
+            },
+            value: element.value,
+          },
+        ]);
+      }
+    }
+  };
   // Documents
   const [selectedDocuments, setSelectedDocuments] = useState<IDocument[]>([]);
 
@@ -150,8 +386,6 @@ export function SearchResults(): ReactElement {
     setSelectedDocuments(newSelectedDocuments.filter(isNotNullNorEmpty));
   }
 
-  const { classes } = useStyles();
-
   return (
     <AppShell
       header={
@@ -172,21 +406,21 @@ export function SearchResults(): ReactElement {
         isColumnVisible={isColumnVisible}
         onChangeIsColumnVisible={setIsColumnVisible}
         sidebarContent={
-          <Paper
-            p={24}
-            style={{
-              borderRadius: 16,
-              height: '100%',
-              wordWrap: 'break-word',
+          <FiltersBar
+            activeFilters={activeFilters}
+            defaultOpenedMenuIds={[2, 4]}
+            deleteButtonLabel="Supprimer tout"
+            filterButtonLabel="Filtrer"
+            menus={menus}
+            onDeleteButtonClick={() => {
+              removeAllFilters();
+              setNumberOfFiltersActive(0);
             }}
-          >
-            [
-            {filters.map(
-              (filter) => `${filter.id}: ${JSON.stringify(filter.value)},
-            `,
-            )}
-            ]
-          </Paper>
+            onFilterButtonClick={() => {
+              setNumberOfFiltersActive(activeFilters.length);
+            }}
+            title="Filtres actifs"
+          />
         }
         sidebarToggleLabel={toggleLabel}
         topBarRight={

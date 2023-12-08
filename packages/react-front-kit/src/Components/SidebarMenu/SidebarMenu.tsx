@@ -62,11 +62,11 @@ export function getRecursiveMenu<
       <CollapseButtonControlled
         key={id}
         id={id}
+        indentation="line"
         isOpenOnSelect
         label={label}
         leftIcon={leftIcon}
         level={level}
-        line={level === 0}
         onCollapseChange={(isOpened) => onMenuOpen(id, isOpened)}
         onSelect={setSelectedId}
         opened={openedMenuIds.includes(id)}
