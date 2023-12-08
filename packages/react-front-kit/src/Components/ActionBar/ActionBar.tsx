@@ -44,7 +44,8 @@ export function ActionBar<Data extends Record<string, unknown>>(
     actions,
     modalProps,
     selectedElements,
-    selectedElementsLabel = (n) => `${n} file(s) selected`,
+    selectedElementsLabel = (selectedElements: number) =>
+      `${selectedElements} file(s) selected`,
     ...groupProps
   } = props;
   const [confirmAction, setConfirmAction] = useState<IActionConfirmModalProps<
