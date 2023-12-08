@@ -1,0 +1,587 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FiltersBar matches snapshot 1`] = `
+<div>
+  <div
+    class="mantine-i5l1wq"
+  >
+    <div
+      class="mantine-8l18fb"
+    >
+      <div
+        aria-expanded="true"
+        class="mantine-UnstyledButton-root mantine-Button-root mantine-1fajwen"
+        data-button="true"
+        data-testid="root"
+        type="button"
+      >
+        <div
+          class="mantine-Button-inner mantine-uf8iid"
+        >
+          <span
+            class="mantine-Button-label mantine-28zsh7"
+          >
+            <button
+              class="mantine-pax7vz"
+              data-testid="select"
+              type="button"
+            >
+              <span
+                class="mantine-l9up18"
+              >
+                Active filters
+                 (
+                4
+                )
+              </span>
+            </button>
+          </span>
+          <span
+            class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+          >
+            <button
+              class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
+              data-testid="toggle"
+              type="button"
+            >
+              <svg
+                fill="white"
+                height="1em"
+                viewBox="0 0 256 256"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"
+                />
+              </svg>
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        aria-hidden="false"
+        class="mantine-1avyp1d"
+        data-testid="content"
+        style="box-sizing: border-box;"
+      >
+        <div
+          style="opacity: 1; transition: opacity 200ms ease;"
+        >
+          <div
+            class="mantine-fi6uov"
+          >
+            <div
+              class="mantine-Badge-root mantine-8kvgmk"
+            >
+              <span
+                class="mantine-Badge-inner mantine-ucd2eg"
+              >
+                Dupont
+              </span>
+              <span
+                class="mantine-Badge-rightSection mantine-4aag21"
+              >
+                <svg
+                  fill="currentColor"
+                  height="10"
+                  viewBox="0 0 256 256"
+                  width="10"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="mantine-Badge-root mantine-8kvgmk"
+            >
+              <span
+                class="mantine-Badge-inner mantine-ucd2eg"
+              >
+                Martin
+              </span>
+              <span
+                class="mantine-Badge-rightSection mantine-4aag21"
+              >
+                <svg
+                  fill="currentColor"
+                  height="10"
+                  viewBox="0 0 256 256"
+                  width="10"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="mantine-Badge-root mantine-8kvgmk"
+            >
+              <span
+                class="mantine-Badge-inner mantine-ucd2eg"
+              >
+                Freelance
+              </span>
+              <span
+                class="mantine-Badge-rightSection mantine-4aag21"
+              >
+                <svg
+                  fill="currentColor"
+                  height="10"
+                  viewBox="0 0 256 256"
+                  width="10"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="mantine-Badge-root mantine-8kvgmk"
+            >
+              <span
+                class="mantine-Badge-inner mantine-ucd2eg"
+              >
+                CDI
+              </span>
+              <span
+                class="mantine-Badge-rightSection mantine-4aag21"
+              >
+                <svg
+                  fill="currentColor"
+                  height="10"
+                  viewBox="0 0 256 256"
+                  width="10"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mantine-17q7vz3"
+    >
+      <div
+        class="mantine-Group-root mantine-16g550v"
+      >
+        <span
+          aria-hidden="true"
+          class="mantine-134spwq"
+        >
+          - Close all
+        </span>
+        <span
+          class="mantine-5hbfsj"
+        />
+        <span
+          aria-hidden="true"
+          class="mantine-134spwq"
+        >
+          + Open all
+        </span>
+      </div>
+      <div>
+        <div
+          aria-expanded="true"
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-6dql8f"
+          data-button="true"
+          data-selected="false"
+          data-testid="root"
+          type="button"
+        >
+          <div
+            class="mantine-Button-inner mantine-1b27hci"
+          >
+            <span
+              class="mantine-Button-label mantine-m141sh"
+            >
+              <button
+                class="mantine-pax7vz"
+                data-testid="select"
+                type="button"
+              >
+                Nom du client (2)
+              </button>
+            </span>
+            <span
+              class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+            >
+              <button
+                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
+                data-testid="toggle"
+                type="button"
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  viewBox="0 0 256 256"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                  />
+                </svg>
+              </button>
+            </span>
+          </div>
+        </div>
+        <div
+          aria-hidden="false"
+          class="mantine-16d64p7"
+          data-testid="content"
+          style="box-sizing: border-box; border-top: 1px solid #dee2e6;"
+        >
+          <div
+            style="opacity: 1; transition: opacity 200ms ease;"
+          />
+        </div>
+        <div
+          aria-expanded="true"
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-6dql8f"
+          data-button="true"
+          data-selected="false"
+          data-testid="root"
+          type="button"
+        >
+          <div
+            class="mantine-Button-inner mantine-1b27hci"
+          >
+            <span
+              class="mantine-Button-label mantine-m141sh"
+            >
+              <button
+                class="mantine-pax7vz"
+                data-testid="select"
+                type="button"
+              >
+                Type de contrat (2)
+              </button>
+            </span>
+            <span
+              class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+            >
+              <button
+                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
+                data-testid="toggle"
+                type="button"
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  viewBox="0 0 256 256"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                  />
+                </svg>
+              </button>
+            </span>
+          </div>
+        </div>
+        <div
+          aria-hidden="false"
+          class="mantine-16d64p7"
+          data-testid="content"
+          style="box-sizing: border-box; border-top: 1px solid #dee2e6;"
+        >
+          <div
+            style="opacity: 1; transition: opacity 200ms ease;"
+          >
+            <div
+              aria-expanded="true"
+              class="mantine-UnstyledButton-root mantine-Button-root mantine-6dql8f"
+              data-button="true"
+              data-selected="false"
+              data-testid="root"
+              type="button"
+            >
+              <div
+                class="mantine-Button-inner mantine-1b27hci"
+              >
+                <span
+                  class="mantine-Button-label mantine-m141sh"
+                >
+                  <button
+                    class="mantine-pax7vz"
+                    data-testid="select"
+                    type="button"
+                  >
+                    Contrat classique (1)
+                  </button>
+                </span>
+                <span
+                  class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+                >
+                  <button
+                    class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
+                    data-testid="toggle"
+                    type="button"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="1em"
+                      viewBox="0 0 256 256"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                      />
+                    </svg>
+                  </button>
+                </span>
+              </div>
+            </div>
+            <div
+              aria-hidden="false"
+              class="mantine-16d64p7"
+              data-testid="content"
+              style="box-sizing: border-box; border-top: 1px solid #dee2e6;"
+            >
+              <div
+                style="opacity: 1; transition: opacity 200ms ease;"
+              />
+            </div>
+            <div
+              aria-expanded="true"
+              class="mantine-UnstyledButton-root mantine-Button-root mantine-6dql8f"
+              data-button="true"
+              data-selected="false"
+              data-testid="root"
+              type="button"
+            >
+              <div
+                class="mantine-Button-inner mantine-1b27hci"
+              >
+                <span
+                  class="mantine-Button-label mantine-m141sh"
+                >
+                  <button
+                    class="mantine-pax7vz"
+                    data-testid="select"
+                    type="button"
+                  >
+                    Contrat special (1)
+                  </button>
+                </span>
+                <span
+                  class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+                >
+                  <button
+                    class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
+                    data-testid="toggle"
+                    type="button"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="1em"
+                      viewBox="0 0 256 256"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                      />
+                    </svg>
+                  </button>
+                </span>
+              </div>
+            </div>
+            <div
+              aria-hidden="false"
+              class="mantine-16d64p7"
+              data-testid="content"
+              style="box-sizing: border-box; border-top: 1px solid #dee2e6;"
+            >
+              <div
+                style="opacity: 1; transition: opacity 200ms ease;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-6dql8f"
+          data-button="true"
+          data-selected="false"
+          data-testid="root"
+          type="button"
+        >
+          <div
+            class="mantine-Button-inner mantine-1b27hci"
+          >
+            <span
+              class="mantine-Button-label mantine-m141sh"
+            >
+              <button
+                class="mantine-pax7vz"
+                data-testid="select"
+                type="button"
+              >
+                Période
+              </button>
+            </span>
+            <span
+              class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+            >
+              <button
+                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
+                data-testid="toggle"
+                type="button"
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  viewBox="0 0 256 256"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
+                  />
+                </svg>
+              </button>
+            </span>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          class="mantine-16d64p7"
+          data-testid="content"
+          style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+        >
+          <div
+            style="opacity: 0; transition: opacity 200ms ease;"
+          />
+        </div>
+        <div
+          aria-expanded="false"
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-6dql8f"
+          data-button="true"
+          data-selected="false"
+          data-testid="root"
+          type="button"
+        >
+          <div
+            class="mantine-Button-inner mantine-1b27hci"
+          >
+            <span
+              class="mantine-Button-label mantine-m141sh"
+            >
+              <button
+                class="mantine-pax7vz"
+                data-testid="select"
+                type="button"
+              >
+                Durée du contrat
+              </button>
+            </span>
+            <span
+              class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+            >
+              <button
+                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
+                data-testid="toggle"
+                type="button"
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  viewBox="0 0 256 256"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
+                  />
+                </svg>
+              </button>
+            </span>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          class="mantine-16d64p7"
+          data-testid="content"
+          style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+        >
+          <div
+            style="opacity: 0; transition: opacity 200ms ease;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="mantine-njwlxd"
+    >
+      <button
+        class="mantine-UnstyledButton-root mantine-Button-root mantine-13zc0zg"
+        data-button="true"
+        type="button"
+      >
+        <div
+          class="mantine-1wpc1xj mantine-Button-inner"
+        >
+          <span
+            class="mantine-1ryt1ht mantine-Button-label"
+          >
+            Filtrer
+             (
+            4
+            )
+          </span>
+        </div>
+      </button>
+      <button
+        class="mantine-UnstyledButton-root mantine-Button-root mantine-1nlhzt"
+        data-button="true"
+        type="button"
+      >
+        <div
+          class="mantine-1wpc1xj mantine-Button-inner"
+        >
+          <span
+            class="mantine-Button-icon mantine-Button-leftIcon mantine-1jbrfp"
+          >
+            <svg
+              fill="currentColor"
+              height="12"
+              viewBox="0 0 256 256"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M216,48H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM192,208H64V64H192ZM80,24a8,8,0,0,1,8-8h80a8,8,0,0,1,0,16H88A8,8,0,0,1,80,24Z"
+              />
+            </svg>
+          </span>
+          <span
+            class="mantine-1ryt1ht mantine-Button-label"
+          >
+            Remove all
+             (
+            4
+            )
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;

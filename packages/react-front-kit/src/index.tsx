@@ -1,6 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 export * from '@smile/react-front-kit-shared';
 // component exports
+export * from './Components/FiltersBar/FiltersBar';
 export * from './Components/ActionBar/ActionBar';
 export * from './Components/BitConverter/BitConverter';
 export * from './Components/Breadcrumbs/Breadcrumbs';
@@ -10,7 +11,6 @@ export * from './Components/ConfirmModal/ConfirmModal';
 export * from './Components/DocumentCard/DocumentCard';
 export * from './Components/DocumentList/DocumentList';
 export * from './Components/DropdownButton/DropdownButton';
-export * from './Components/Filters/Filters';
 export * from './Components/Header/Header';
 export * from './Components/HeaderSearch/HeaderSearch';
 export * from './Components/InfoCard/InfoCard';
