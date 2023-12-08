@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionBar matches snapshot 1`] = `
+<div>
+  <div
+    class="mantine-zzdfuz"
+  >
+    <span>
+      3 selected
+    </span>
+    <div
+      class="mantine-Group-root mantine-k3ov3c"
+    >
+      <button
+        class="mantine-UnstyledButton-root mantine-Button-root mantine-1q6w75n"
+        data-button="true"
+        type="button"
+      >
+        <div
+          class="mantine-1wpc1xj mantine-Button-inner"
+        >
+          <span
+            class="mantine-Button-icon mantine-Button-leftIcon mantine-1jbrfp"
+          >
+            <svg
+              fill="none"
+              height="16"
+              stroke="currentColor"
+              viewBox="0 0 12 12"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.58333 10H1.41667C1.30616 10 1.20018 9.95564 1.12204 9.87668C1.0439 9.79771 1 9.69062 1 9.57895V2.42105C1 2.30938 1.0439 2.20229 1.12204 2.12332C1.20018 2.04436 1.30616 2 1.41667 2H4.19271C4.2828 2.00037 4.37041 2.02988 4.44271 2.08421L5.89062 3.17895C5.96292 3.23327 6.05053 3.26278 6.14062 3.26316H10.5833C10.6938 3.26316 10.7998 3.30752 10.878 3.38648C10.9561 3.46544 11 3.57254 11 3.68421V5.36842"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6 9H11"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9 7L11 9L9 11"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <span
+            class="mantine-1ryt1ht mantine-Button-label"
+          >
+            Move in tree
+          </span>
+        </div>
+      </button>
+      <button
+        class="mantine-UnstyledButton-root mantine-Button-root mantine-3agwv"
+        data-button="true"
+        type="button"
+      >
+        <div
+          class="mantine-1wpc1xj mantine-Button-inner"
+        >
+          <span
+            class="mantine-Button-icon mantine-Button-leftIcon mantine-1jbrfp"
+          >
+            <svg
+              fill="currentColor"
+              height="16"
+              viewBox="0 0 256 256"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+              />
+            </svg>
+          </span>
+          <span
+            class="mantine-1ryt1ht mantine-Button-label"
+          >
+            Delete
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
