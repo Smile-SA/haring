@@ -181,8 +181,7 @@ exports[`FiltersBar matches snapshot 1`] = `
           aria-hidden="true"
           class="mantine-134spwq"
         >
-          - 
-          Close all
+          - Close all
         </span>
         <span
           class="mantine-5hbfsj"
@@ -191,8 +190,7 @@ exports[`FiltersBar matches snapshot 1`] = `
           aria-hidden="true"
           class="mantine-134spwq"
         >
-          + 
-          Open all
+          + Open all
         </span>
       </div>
       <div>

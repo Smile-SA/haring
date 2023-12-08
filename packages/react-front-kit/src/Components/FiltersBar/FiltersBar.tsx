@@ -52,15 +52,15 @@ export function FiltersBar(props: IFiltersProps): ReactElement {
     defaultOpenedActiveFilters = true,
   } = props;
   const { classes } = useStyles();
-  const [activeFiltersCollapseOpened, setActiveFiltersCollapseOpened] =
-    useState(defaultOpenedActiveFilters);
-
-  const [openedIds, setOpenedIds] = useState<IId[]>(defaultOpenedMenuIds);
 
   const flatFilters = useMemo(
     () => flattenNestedObjects(addPathAndDepth(menus)),
     [menus],
   );
+
+  const [activeFiltersCollapseOpened, setActiveFiltersCollapseOpened] =
+    useState(defaultOpenedActiveFilters);
+  const [openedIds, setOpenedIds] = useState<IId[]>(defaultOpenedMenuIds);
 
   function addActiveNumberToLabel(
     menus?: IFiltersItem<IId>[],
@@ -84,7 +84,7 @@ export function FiltersBar(props: IFiltersProps): ReactElement {
   }
 
   const filtersWithActiveLabel = addActiveNumberToLabel(menus);
-  // handler
+
   function handleOpenAllButton(): void {
     setOpenedIds(flattenNestedObjects(menus).map((menu) => menu.id));
   }
@@ -102,6 +102,11 @@ export function FiltersBar(props: IFiltersProps): ReactElement {
     }
     setOpenedIds([...menuIds]);
   }
+
+  const currentIdisNotInOpenIds = !flatFilters.every((filter) =>
+    openedIds.includes(filter.id),
+  );
+
   return (
     <Box className={classes.root}>
       <div className={classes.top}>
@@ -168,22 +173,21 @@ export function FiltersBar(props: IFiltersProps): ReactElement {
               className={classes.controlledMenuButton}
               onClick={() => handleCloseAllButton()}
             >
-              - {closeAllFiltersLabel}
+              {`- ${closeAllFiltersLabel}`}
             </span>
           )}
-          {!flatFilters.every((filter) => openedIds.includes(filter.id)) &&
-            openedIds.length > 0 && (
-              <span className={classes.controlledMenuLine} />
-            )}
-          {!flatFilters.every((filter) => openedIds.includes(filter.id)) && (
+          {currentIdisNotInOpenIds && openedIds.length > 0 ? (
+            <span className={classes.controlledMenuLine} />
+          ) : null}
+          {currentIdisNotInOpenIds ? (
             <span
               aria-hidden="true"
               className={classes.controlledMenuButton}
               onClick={() => handleOpenAllButton()}
             >
-              + {openAllFiltersLabel}
+              {`+ ${openAllFiltersLabel}`}
             </span>
-          )}
+          ) : null}
         </Group>
         <SidebarFilterMenu
           menu={filtersWithActiveLabel}

@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { action } from '@storybook/addon-actions';
-
 import { FiltersBar as Cmp } from './FiltersBar';
+import { activeFilters } from './FitlersBar.mock';
 import { getMenu } from './SidebarFilterMenu/SidebarFilterMenu.mock';
 
 const meta = {
@@ -16,36 +15,7 @@ type IStory = StoryObj<typeof meta>;
 
 export const WithActiveFilters: IStory = {
   args: {
-    activeFilters: [
-      {
-        categoryId: [1],
-        id: 1,
-        label: 'Dupont',
-        onRemove: action('remove'),
-        value: 'DUPONT',
-      },
-      {
-        categoryId: [1],
-        id: 2,
-        label: 'Martin',
-        onRemove: action('remove'),
-        value: 'MARTIN',
-      },
-      {
-        categoryId: [3, 10],
-        id: 3,
-        label: 'Freelance',
-        onRemove: action('remove'),
-        value: 'Freelance',
-      },
-      {
-        categoryId: [3, 11],
-        id: 4,
-        label: 'CDI',
-        onRemove: action('remove'),
-        value: 'CDI',
-      },
-    ],
+    activeFilters,
     defaultOpenedActiveFilters: true,
     defaultOpenedMenuIds: [1, 3, 10, 11],
     deleteButtonLabel: 'Remove all',
