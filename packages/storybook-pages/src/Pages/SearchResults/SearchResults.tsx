@@ -14,8 +14,6 @@ import {
   Select,
   Space,
   Stack,
-  createStyles,
-  rem,
   useMantineTheme,
 } from '@mantine/core';
 import { DateInput } from '@mantine/dates';
@@ -38,6 +36,8 @@ import { useState } from 'react';
 
 import { headerContent, headerLeft, headerRight } from '../pages.mock';
 
+import { useStyles } from './SearchResults.style';
+
 export interface IOption<T> {
   label: string;
   value: T;
@@ -50,27 +50,6 @@ export interface ITypeFilter extends IOption<string> {
 export interface ISearchFilter extends IOption<unknown> {
   id: string;
 }
-
-const useStyles = createStyles((theme) => ({
-  dataInput: {
-    border: `1px solid ${theme.colors.gray[2]}`,
-    color: theme.colors.dark,
-  },
-  dataInputLabel: {
-    color: theme.colors.dark,
-    fontWeight: 600,
-    marginBottom: '4px',
-  },
-  periodContainer: {
-    padding: '6px 0',
-  },
-  select: {
-    ':focus, :focus-within': {
-      outline: `${rem(2)} solid ${theme.colors.orange[5]}`,
-    },
-    borderRadius: '1.5rem',
-  },
-}));
 
 /**
  * Example Page of a search results page, using `FoldableColumnLayout`
