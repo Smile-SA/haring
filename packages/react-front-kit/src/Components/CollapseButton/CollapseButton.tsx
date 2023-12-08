@@ -22,6 +22,7 @@ export interface ICollapseButtonProps<
   component?: C;
   /** Additional props for the custom component */
   componentProps?: ComponentPropsWithoutRef<C>;
+  defaultOpened?: boolean;
   id?: T;
   indentation?: 'line' | 'simple';
   isOpenOnSelect?: boolean;
@@ -36,10 +37,11 @@ export function CollapseButton<
   T extends number | string,
   C extends ElementType = 'button',
 >(props: ICollapseButtonProps<T, C>): ReactElement {
-  const [opened, setOpened] = useState(false);
+  const { defaultOpened = false, ...rest } = props;
+  const [opened, setOpened] = useState(defaultOpened);
   return (
     <CollapseButtonControlled
-      {...props}
+      {...rest}
       onCollapseChange={() => setOpened(!opened)}
       opened={opened}
     />

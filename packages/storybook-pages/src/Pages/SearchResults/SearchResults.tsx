@@ -1,5 +1,6 @@
 'use client';
 
+import type { IDocument } from '@smile/react-front-kit';
 import type { ReactElement } from 'react';
 
 import {
@@ -15,6 +16,8 @@ import {
   Space,
   Stack,
   useMantineTheme,
+  createStyles,
+  rem,
 } from '@mantine/core';
 import { DateInput } from '@mantine/dates';
 import {
@@ -25,6 +28,7 @@ import {
 import {
   DocumentCard,
   FiltersBar,
+  DocumentList,
   FoldableColumnLayout,
   Header,
   Motif,
@@ -34,7 +38,13 @@ import {
 import { secondaryTheme } from '@smile/react-front-kit-shared';
 import { useState } from 'react';
 
-import { headerContent, headerLeft, headerRight } from '../pages.mock';
+import {
+  headerContent,
+  headerLeft,
+  headerRight,
+  searchActions,
+  searchDocuments,
+} from '../pages.mock';
 
 import { useStyles } from './SearchResults.style';
 
@@ -286,7 +296,6 @@ export function SearchResults(): ReactElement {
   const [activeSorting, setActiveSorting] = useState<string | null>(
     sortingOptions[0]?.value,
   );
-
   const totalPages = Math.ceil(typeFilteredResults / rowsPerPage);
 
   // Remove All filters on FiltersBar
@@ -359,6 +368,33 @@ export function SearchResults(): ReactElement {
       }
     }
   };
+  // Documents
+  const [selectedDocuments, setSelectedDocuments] = useState<IDocument[]>([]);
+
+  function handleDocumentSelected(
+    selectedDocument: IDocument,
+    isSelected: boolean,
+  ): void {
+    const newSelectedDocuments = [...selectedDocuments];
+    if (
+      newSelectedDocuments
+        .map((document) => document.id)
+        .includes(selectedDocument.id) &&
+      !isSelected
+    ) {
+      delete newSelectedDocuments[
+        newSelectedDocuments.findIndex(
+          (document) => document.id === selectedDocument.id,
+        )
+      ];
+    } else {
+      newSelectedDocuments.push(selectedDocument);
+    }
+    setSelectedDocuments(newSelectedDocuments.filter(isNotNullNorEmpty));
+  }
+
+  const { classes } = useStyles();
+
 
   return (
     <AppShell
@@ -438,77 +474,19 @@ export function SearchResults(): ReactElement {
         }
         topBlockTheme={{ ...secondaryTheme, colorScheme: 'dark' }}
       >
-        <Paper mb={24} p={24} style={{ borderRadius: 16, padding: '8px 56px' }}>
-          <Stack>
-            <Space h="40px" />
-            <DocumentCard
-              author="Aline Dupon"
-              date="Published on December 24, 2023"
-              iconType="PDF"
-              path="(Customer > 567890456 > Invoices)"
-              title="Random_File.PDF"
-            >
-              <>
-                <p>
-                  Ceci est une description faite pour cette facture et ajoutée
-                  par le créateur lors de l’import du document dans la GED, en
-                  l’absence de description cet espace est laissé vide...
-                </p>
-                <Button color="gray.8">
-                  <DownloadSimple width={12} />
-                  <Space w={8} />
-                  PDF, FR - 1Mo
-                </Button>
-              </>
-            </DocumentCard>
-            <Space h="28px" />
-            <Divider color="gray.2" my="sm" />
-            <Space h="28px" />
-            <DocumentCard
-              author="Julien Dominique"
-              date="Published on December 24, 2023"
-              iconType="ppt"
-              path="(Customer > 567890456 > Invoices)"
-              title="Presentation.PPT"
-            >
-              <>
-                <p>
-                  Ceci est une description faite pour cette facture et ajoutée
-                  par le créateur lors de l’import du document dans la GED, en
-                  l’absence de description cet espace est laissé vide...
-                </p>
-                <Button color="gray.8">
-                  <DownloadSimple width={12} />
-                  <Space w={8} />
-                  PTT, FR - 1Mo
-                </Button>
-              </>
-            </DocumentCard>
-            <Space h="28px" />
-            <Divider color="gray.2" my="sm" />
-            <Space h="28px" />
-            <DocumentCard
-              author="Mohamed Aldri"
-              date="Published on December 24, 2023"
-              iconType="PDF"
-              path="(Customer > 567890456 > Invoices)"
-              title="Other_random_File.PDF"
-            >
-              <>
-                <p>
-                  Ceci est une description faite pour cette facture et ajoutée
-                  par le créateur lors de l’import du document dans la GED, en
-                  l’absence de description cet espace est laissé vide...
-                </p>
-                <Button color="gray.8">
-                  <DownloadSimple width={12} />
-                  <Space w={8} />
-                  PDF, FR - 1Mo
-                </Button>
-              </>
-            </DocumentCard>
-            <Space h="40px" />
-          </Stack>
+        <Paper mb={24} style={{ borderRadius: 16, padding: '48px 56px' }}>
+          <DocumentList
+            actionBarProps={{
+              selectedElementsLabel: (n) =>
+                `${n} fichier${n > 1 ? 's' : ''} sélectionné${
+                  n > 1 ? 's' : ''
+                }`,
+            }}
+            actions={searchActions}
+            documents={searchDocuments}
+            onDocumentSelected={handleDocumentSelected}
+            selectedDocuments={selectedDocuments}
+          />
         </Paper>
         <Pagination
           isTransparent

@@ -1,13 +1,11 @@
+import type { IActionBarProps } from './ActionBar';
 import type { IThumbnail, IThumbnailAction } from '../../types';
-import type { HandlerFunction } from '@storybook/addon-actions';
 
 import { Trash } from '@phosphor-icons/react';
 import { FolderMove } from '@smile/react-front-kit-shared';
 import { action } from '@storybook/addon-actions';
 
-import { thumbnailActionsMock } from '../Thumbnail/Thumbnail.mock';
-
-export const thumbnailGridActionsMock: IThumbnailAction[] = [
+export const actionBarActionsMock: IThumbnailAction[] = [
   {
     icon: <FolderMove size={16} />,
     id: 'move',
@@ -23,7 +21,7 @@ export const thumbnailGridActionsMock: IThumbnailAction[] = [
       children: <p>Are you sure ?</p>,
       confirmColor: 'red',
       confirmLabel: 'Remove',
-      title: 'remove x files ?',
+      title: 'remove files ?',
     },
     confirmation: true,
     icon: <Trash size={16} />,
@@ -33,38 +31,28 @@ export const thumbnailGridActionsMock: IThumbnailAction[] = [
     label: 'Delete',
     onAction: action('Delete selected'),
   },
-  ...thumbnailActionsMock,
 ];
 
-export const baseThumbnailMock: Omit<IThumbnail, 'id' | 'label'> = {
-  iconType: 'PDF',
-};
-
-export const thumbnails: IThumbnail[] = [
+export const actionBarSelectedMock: IThumbnail[] = [
   {
     id: '1',
-    label: 'Debit_Suivi_PREV',
-    ...baseThumbnailMock,
+    label: 'Label A',
   },
   {
     id: '2',
-    label: 'Debit_Suivi_PREV_2',
-    ...baseThumbnailMock,
-    selected: true,
+    label: 'Label B',
   },
   {
     id: '3',
-    label: 'Debit_Suivi_PREV_3',
-    ...baseThumbnailMock,
+    label: 'Label C',
   },
 ];
 
-export const thumbnailGridMock = {
-  actions: thumbnailGridActionsMock,
-  cols: 5,
-  onActionOverride: undefined,
-  onThumbnailClick: (): HandlerFunction => action('Thumbnail clicked'),
-  spacing: 25,
-  thumbnails,
-  verticalSpacing: 25,
+export const actionBarLabelMock = (elements: number): string =>
+  `${elements} selected`;
+
+export const actionBarMock: IActionBarProps<IThumbnail> = {
+  actions: actionBarActionsMock,
+  selectedElements: actionBarSelectedMock,
+  selectedElementsLabel: actionBarLabelMock,
 };

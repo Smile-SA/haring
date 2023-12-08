@@ -30,7 +30,7 @@ export interface IAction<Item> {
   isItemAction?: boolean;
   isMassAction?: boolean;
   label: string | ((item: Item) => string);
-  onAction?: (item: Item) => void;
+  onAction?: (item: Item | Item[]) => void;
 }
 
 export interface IConfirmAction<Item> extends IAction<Item> {

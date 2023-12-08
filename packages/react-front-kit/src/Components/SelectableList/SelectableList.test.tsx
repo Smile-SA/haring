@@ -1,19 +1,18 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
-import { ThumbnailGrid } from './ThumbnailGrid';
-import { thumbnailGridActionsMock, thumbnails } from './ThumbnailGrid.mock';
+import { SelectableList } from './SelectableList';
+import { selectableListElementsMock } from './SelectableList.mock';
 
-describe('ThumbnailGrid', () => {
+describe('SelectableList', () => {
   beforeEach(() => {
     // Prevent mantine random ID
     Math.random = () => 0.42;
   });
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <ThumbnailGrid
-        actions={thumbnailGridActionsMock}
-        thumbnails={thumbnails}
-      />,
+      <SelectableList selectedIndexes={[1]}>
+        {selectableListElementsMock}
+      </SelectableList>,
     );
     expect(container).toMatchSnapshot();
   });

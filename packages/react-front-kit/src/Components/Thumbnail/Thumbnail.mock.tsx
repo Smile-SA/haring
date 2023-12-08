@@ -1,4 +1,4 @@
-import type { IThumbnailAction } from './Thumbnail';
+import type { IThumbnailAction } from '../../types';
 
 import {
   DownloadSimple,
