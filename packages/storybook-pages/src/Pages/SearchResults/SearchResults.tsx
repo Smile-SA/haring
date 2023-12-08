@@ -6,36 +6,29 @@ import type { ReactElement } from 'react';
 import {
   AppShell,
   Box,
-  Button,
   Checkbox,
-  Divider,
   Flex,
   Group,
   Paper,
   Select,
   Space,
-  Stack,
   useMantineTheme,
-  createStyles,
-  rem,
 } from '@mantine/core';
 import { DateInput } from '@mantine/dates';
+import { CalendarBlank, CaretDown } from '@phosphor-icons/react';
 import {
-  CalendarBlank,
-  CaretDown,
-  DownloadSimple,
-} from '@phosphor-icons/react';
-import {
-  DocumentCard,
-  FiltersBar,
   DocumentList,
+  FiltersBar,
   FoldableColumnLayout,
   Header,
   Motif,
   Pagination,
   SearchBar,
 } from '@smile/react-front-kit';
-import { secondaryTheme } from '@smile/react-front-kit-shared';
+import {
+  isNotNullNorEmpty,
+  secondaryTheme,
+} from '@smile/react-front-kit-shared';
 import { useState } from 'react';
 
 import {
@@ -106,7 +99,7 @@ export function SearchResults(): ReactElement {
                 setActiveFiltersManager(1, event.target, 'Dupont');
               }}
               value="dupont"
-            />{' '}
+            />
           </Group>
           <br />
           <Group>
@@ -117,7 +110,7 @@ export function SearchResults(): ReactElement {
                 setActiveFiltersManager(2, event.target, 'Martin');
               }}
               value="martin"
-            />{' '}
+            />
           </Group>
           <br />
           <Group>
@@ -128,7 +121,7 @@ export function SearchResults(): ReactElement {
                 setActiveFiltersManager(3, event.target, 'Andrée');
               }}
               value="andrée"
-            />{' '}
+            />
           </Group>
         </div>
       ),
@@ -148,7 +141,7 @@ export function SearchResults(): ReactElement {
                     setActiveFiltersManager(4, event.target, 'CDI');
                   }}
                   value="CDI"
-                />{' '}
+                />
               </Group>
               <br />
               <Group>
@@ -159,7 +152,7 @@ export function SearchResults(): ReactElement {
                     setActiveFiltersManager(5, event.target, 'CDD');
                   }}
                   value="CDD"
-                />{' '}
+                />
               </Group>
             </>
           ),
@@ -177,7 +170,7 @@ export function SearchResults(): ReactElement {
                     setActiveFiltersManager(6, event.target, 'Freelance');
                   }}
                   value="freelance"
-                />{' '}
+                />
               </Group>
               <br />
               <Group>
@@ -188,7 +181,7 @@ export function SearchResults(): ReactElement {
                     setActiveFiltersManager(7, event.target, 'Particular');
                   }}
                   value="particular"
-                />{' '}
+                />
               </Group>
             </>
           ),
@@ -392,9 +385,6 @@ export function SearchResults(): ReactElement {
     }
     setSelectedDocuments(newSelectedDocuments.filter(isNotNullNorEmpty));
   }
-
-  const { classes } = useStyles();
-
 
   return (
     <AppShell
