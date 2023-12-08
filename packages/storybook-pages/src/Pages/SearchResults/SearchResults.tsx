@@ -98,7 +98,7 @@ export function SearchResults(): ReactElement {
       value: 'particular',
     },
   ]);
-  const [dupontFilter, setDupontFilter] = useState(true);
+  const [dupontFilter, setDupontFilter] = useState(false);
   const [martinFilter, setMartinFilter] = useState(false);
   const [andreeFilter, setAndreeFilter] = useState(false);
   const [cdiFilter, setCdiFilter] = useState(false);

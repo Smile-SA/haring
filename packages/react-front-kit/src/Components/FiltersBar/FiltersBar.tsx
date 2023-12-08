@@ -42,7 +42,7 @@ export function FiltersBar(props: IFiltersProps): ReactElement {
     activeFilters = [],
     closeAllFiltersLabel = 'Close all',
     title = 'Active filters',
-    menus = [], // rename to menus
+    menus = [],
     onDeleteButtonClick,
     onFilterButtonClick,
     openAllFiltersLabel = 'Open all',
