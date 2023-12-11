@@ -1,5 +1,11 @@
 # @smile/react-front-kit-shared
 
+## 0.6.0
+
+### Minor Changes
+
+- [#74](https://github.com/Smile-SA/react-front-kit/pull/74) [`0ad5377`](https://github.com/Smile-SA/react-front-kit/commit/0ad5377535e7c19941da301e8a2ee7298ab70f91) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Refactored actions in `ThumbnailGrid` and `TableGridView` components, moved `typeGuard` helper to shared package, added `typeGuardInterface` function, added tests
+
 ## 0.5.0
 
 ### Minor Changes

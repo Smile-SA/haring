@@ -1,5 +1,24 @@
 # @smile/react-front-kit
 
+## 0.6.0
+
+### Minor Changes
+
+- [#80](https://github.com/Smile-SA/react-front-kit/pull/80) [`0e819ee`](https://github.com/Smile-SA/react-front-kit/commit/0e819eebaa3b8feeb9ce1d1ae1ac37358c383d2e) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Extracted action bar from `ThumbnailGrid` into new component.
+  Added `ActionBar`, `SelectableList` and `DocumentList` components.
+  Updated `SearchPage` example page.
+
+- [#81](https://github.com/Smile-SA/react-front-kit/pull/81) [`7f276b2`](https://github.com/Smile-SA/react-front-kit/commit/7f276b27e9c2ca2b746ad0f39deaee49cbf8bb90) Thanks [@vapersmile](https://github.com/vapersmile)! - Add the filtersBar component and add it to the searchResult page
+
+- [#79](https://github.com/Smile-SA/react-front-kit/pull/79) [`a0aa52b`](https://github.com/Smile-SA/react-front-kit/commit/a0aa52b8f10f264600704ec4aeee8a146d17cc9d) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Added `defaultOpened` prop to `CollapseButton`
+
+- [#74](https://github.com/Smile-SA/react-front-kit/pull/74) [`0ad5377`](https://github.com/Smile-SA/react-front-kit/commit/0ad5377535e7c19941da301e8a2ee7298ab70f91) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Refactored actions in `ThumbnailGrid` and `TableGridView` components, moved `typeGuard` helper to shared package, added `typeGuardInterface` function, added tests
+
+### Patch Changes
+
+- Updated dependencies [[`0ad5377`](https://github.com/Smile-SA/react-front-kit/commit/0ad5377535e7c19941da301e8a2ee7298ab70f91)]:
+  - @smile/react-front-kit-shared@0.6.0
+
 ## 0.5.0
 
 ### Minor Changes
