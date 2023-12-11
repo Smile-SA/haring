@@ -1,3 +1,5 @@
+'use client';
+
 import type { GroupProps, ModalProps } from '@mantine/core';
 import type { Record } from '@phosphor-icons/react';
 import type {
