@@ -24,11 +24,7 @@ import {
 } from '@smile/react-front-kit';
 import { menuMock } from '@smile/react-front-kit/mock';
 import { Dropzone } from '@smile/react-front-kit-dropzone';
-import {
-  mainTheme,
-  primaryTheme,
-  secondaryTheme,
-} from '@smile/react-front-kit-shared';
+import { primaryTheme, secondaryTheme } from '@smile/react-front-kit-shared';
 import { TableGridView } from '@smile/react-front-kit-table';
 import { useState } from 'react';
 
@@ -148,42 +144,24 @@ export function BrowsingPage(): ReactElement {
         <MantineProvider theme={secondaryTheme}>
           <InfoCard
             content={
-              <>
-                <p
-                  aria-hidden="true"
-                  onClick={open}
-                  style={{
-                    cursor: 'pointer',
-                    display: 'flex',
-                    fontWeight: 600,
-                    margin: '0',
-                    verticalAlign: 'center',
-                  }}
-                >
-                  <Eye
-                    size={18}
-                    style={{ margin: 'auto 10px auto 0' }}
-                    weight="bold"
-                  />
-                  Voir les propriétés du dossier
-                </p>
-                <MantineProvider theme={mainTheme}>
-                  <Modal
-                    classNames={{
-                      body: classes.modalBody,
-                      close: classes.modalClose,
-                    }}
-                    onClose={close}
-                    opened={seeMoreModal}
-                    size="xl"
-                  >
-                    <h3 className={classes.modalTitle}>
-                      Propriétés du dossier
-                    </h3>
-                    {getAccordionItems()}
-                  </Modal>
-                </MantineProvider>
-              </>
+              <p
+                aria-hidden="true"
+                onClick={open}
+                style={{
+                  cursor: 'pointer',
+                  display: 'flex',
+                  fontWeight: 600,
+                  margin: '0',
+                  verticalAlign: 'center',
+                }}
+              >
+                <Eye
+                  size={18}
+                  style={{ margin: 'auto 10px auto 0' }}
+                  weight="bold"
+                />
+                Voir les propriétés du dossier
+              </p>
             }
             contentItems={[
               {
@@ -216,6 +194,18 @@ export function BrowsingPage(): ReactElement {
           tableProps={tableProps}
         />
       </FoldableColumnLayout>
+      <Modal
+        classNames={{
+          body: classes.modalBody,
+          close: classes.modalClose,
+        }}
+        onClose={close}
+        opened={seeMoreModal}
+        size="xl"
+      >
+        <h3 className={classes.modalTitle}>Propriétés du dossier</h3>
+        {getAccordionItems()}
+      </Modal>
     </AppShell>
   );
 }
