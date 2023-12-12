@@ -11,7 +11,6 @@ export * from './Components/ConfirmModal/ConfirmModal';
 export * from './Components/DocumentCard/DocumentCard';
 export * from './Components/DocumentList/DocumentList';
 export * from './Components/DropdownButton/DropdownButton';
-export * from './Components/Filters/Filters';
 export * from './Components/Header/Header';
 export * from './Components/HeaderSearch/HeaderSearch';
 export * from './Components/InfoCard/InfoCard';
