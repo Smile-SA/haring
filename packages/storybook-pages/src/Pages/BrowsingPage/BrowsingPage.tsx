@@ -4,12 +4,15 @@ import type { IFile } from '@smile/react-front-kit-dropzone';
 import type { FormEvent, ReactElement } from 'react';
 
 import {
+  Accordion,
   AppShell,
   Button,
   Flex,
   MantineProvider,
+  Modal,
   useMantineTheme,
 } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import { Eye, FolderPlus, Suitcase, User } from '@phosphor-icons/react';
 import {
   Breadcrumbs,
@@ -25,9 +28,19 @@ import { primaryTheme, secondaryTheme } from '@smile/react-front-kit-shared';
 import { TableGridView } from '@smile/react-front-kit-table';
 import { useState } from 'react';
 
-import { headerContent, headerLeft, headerRight } from '../pages.mock';
+import {
+  CardAction,
+  CardIdentity,
+  CardNative,
+  CardPermissions,
+  CardsMetadata,
+  headerContent,
+  headerLeft,
+  headerRight,
+} from '../pages.mock';
 
 import { actions, data, gridProps, tableProps } from './BrowsingPage.mock';
+import { useStyles } from './BrowsingPage.style';
 
 /**
  * Primary UI component for user interaction
@@ -37,8 +50,18 @@ export function BrowsingPage(): ReactElement {
   const [sidebarMenu, setSidebarMenu] = useState(menuMock);
   const [files, setFiles] = useState<IFile[]>([]);
   const [gridCols, setGridCols] = useState(4);
+  const [seeMoreModal, { open, close }] = useDisclosure(false);
 
+  const { classes } = useStyles();
   const theme = useMantineTheme();
+
+  const accordionItems = [
+    { content: CardAction, key: 1, title: 'Action' },
+    { content: CardsMetadata, key: 2, title: 'Métadonnées' },
+    { content: CardNative, key: 3, title: 'Historique' },
+    { content: CardPermissions, key: 4, title: 'Droits' },
+    { content: CardIdentity, key: 5, title: 'Cycle de vie' },
+  ];
 
   function handleSearchSubmit(event: FormEvent): void {
     event.preventDefault();
@@ -53,6 +76,32 @@ export function BrowsingPage(): ReactElement {
           leftIcon: <FolderPlus />,
         },
       ]),
+    );
+  }
+
+  function getAccordionItems(): ReactElement {
+    const items = accordionItems.map((item) => (
+      <Accordion.Item key={item.title} value={item.title}>
+        <Accordion.Control>{item.title}</Accordion.Control>
+        <Accordion.Panel>{item.content}</Accordion.Panel>
+      </Accordion.Item>
+    ));
+
+    return (
+      <MantineProvider theme={primaryTheme}>
+        <Accordion
+          classNames={{
+            chevron: classes.accordionChevron,
+            content: classes.accordionContent,
+            control: classes.accordionControl,
+            item: classes.accordionItem,
+          }}
+          defaultValue="Métadonnées"
+          variant="filled"
+        >
+          {items}
+        </Accordion>
+      </MantineProvider>
     );
   }
 
@@ -96,6 +145,8 @@ export function BrowsingPage(): ReactElement {
           <InfoCard
             content={
               <p
+                aria-hidden="true"
+                onClick={open}
                 style={{
                   cursor: 'pointer',
                   display: 'flex',
@@ -143,6 +194,18 @@ export function BrowsingPage(): ReactElement {
           tableProps={tableProps}
         />
       </FoldableColumnLayout>
+      <Modal
+        classNames={{
+          body: classes.modalBody,
+          close: classes.modalClose,
+        }}
+        onClose={close}
+        opened={seeMoreModal}
+        size="xl"
+      >
+        <h3 className={classes.modalTitle}>Propriétés du dossier</h3>
+        {getAccordionItems()}
+      </Modal>
     </AppShell>
   );
 }

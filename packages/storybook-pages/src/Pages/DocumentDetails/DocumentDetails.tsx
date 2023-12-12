@@ -9,14 +9,13 @@ import {
   Button,
   Flex,
   Grid,
-  Group,
   MantineProvider,
   Menu,
   Space,
   Tabs,
 } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
-import { CaretLeft, Plus, Star } from '@phosphor-icons/react';
+import { CaretLeft, Star } from '@phosphor-icons/react';
 import { DropdownButton, Header, ResponsiveTabs } from '@smile/react-front-kit';
 import { FolderMove, primaryTheme } from '@smile/react-front-kit-shared';
 
@@ -26,7 +25,9 @@ import {
   CardMetadata,
   CardNative,
   CardPermissions,
-} from './DocumentDetails.mock';
+  CardsMetadata,
+} from '../pages.mock';
+
 import { DocumentView } from './DocumentView';
 
 const useStyles = createStyles((theme) => ({
@@ -153,15 +154,7 @@ export function DocumentDetails(): ReactElement {
                 <Space h="xl" />
                 <>{CardPermissions}</>
               </Tabs.Panel>
-              <Tabs.Panel value="2">
-                <>{CardNative}</>
-                <Space h="xl" />
-                <>{CardIdentity}</>
-                <Space h="xl" />
-                <Group grow>
-                  <Button leftIcon={<Plus />}>Nouvelle métadonnées</Button>
-                </Group>
-              </Tabs.Panel>
+              <Tabs.Panel value="2">{CardsMetadata}</Tabs.Panel>
               <Tabs.Panel value="3">{CardNative}</Tabs.Panel>
               <Tabs.Panel value="4">{CardPermissions}</Tabs.Panel>
               <Tabs.Panel value="5">{CardIdentity}</Tabs.Panel>
