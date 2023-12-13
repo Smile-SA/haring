@@ -1,0 +1,404 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderNav matches snapshot in desktop mode 1`] = `
+<div>
+  <button
+    aria-controls="mantine-f4bipx4bi-dropdown"
+    aria-expanded="false"
+    aria-haspopup="menu"
+    class="mantine-UnstyledButton-root mantine-NavLink-root mantine-10zo3oc"
+    id="mantine-f4bipx4bi-target"
+    type="button"
+  >
+    <span
+      class="mantine-dstkpx mantine-NavLink-body"
+    >
+      <span
+        class="mantine-Text-root mantine-NavLink-label mantine-dk6d29"
+      >
+        Espace documentaire
+      </span>
+      <span
+        class="mantine-Text-root mantine-NavLink-description mantine-1ntxncw"
+      />
+    </span>
+    <span
+      class="mantine-1e9q82i mantine-NavLink-rightSection"
+    >
+      <svg
+        fill="#0b7285"
+        height="16"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+        />
+      </svg>
+    </span>
+  </button>
+  <div
+    aria-hidden="true"
+    class="mantine-1avyp1d"
+    style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+  >
+    <div
+      style="opacity: 0; transition: opacity 200ms ease;"
+    >
+      <div
+        class="mantine-1c04k7q mantine-NavLink-children"
+      />
+    </div>
+  </div>
+  <a
+    class="mantine-UnstyledButton-root mantine-NavLink-root mantine-10zo3oc"
+    href="#"
+  >
+    <span
+      class="mantine-dstkpx mantine-NavLink-body"
+    >
+      <span
+        class="mantine-Text-root mantine-NavLink-label mantine-31kg0t"
+      >
+        Espace workflow
+      </span>
+      <span
+        class="mantine-Text-root mantine-NavLink-description mantine-1ntxncw"
+      />
+    </span>
+  </a>
+  <div
+    aria-hidden="true"
+    class="mantine-1avyp1d"
+    style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+  >
+    <div
+      style="opacity: 0; transition: opacity 200ms ease;"
+    >
+      <div
+        class="mantine-1c04k7q mantine-NavLink-children"
+      />
+    </div>
+  </div>
+  <a
+    class="mantine-UnstyledButton-root mantine-NavLink-root mantine-10zo3oc"
+    href="#"
+  >
+    <span
+      class="mantine-dstkpx mantine-NavLink-body"
+    >
+      <span
+        class="mantine-Text-root mantine-NavLink-label mantine-31kg0t"
+      >
+        Archives
+      </span>
+      <span
+        class="mantine-Text-root mantine-NavLink-description mantine-1ntxncw"
+      />
+    </span>
+  </a>
+  <div
+    aria-hidden="true"
+    class="mantine-1avyp1d"
+    style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+  >
+    <div
+      style="opacity: 0; transition: opacity 200ms ease;"
+    >
+      <div
+        class="mantine-1c04k7q mantine-NavLink-children"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`HeaderNav matches snapshot in mobile mode 1`] = `
+<div>
+  <div
+    class="mantine-Paper-root mantine-1lnkm2l"
+  >
+    <div
+      aria-expanded="false"
+      class="mantine-UnstyledButton-root mantine-Button-root  mantine-9do3ox"
+      data-button="true"
+      data-selected="false"
+      data-testid="root"
+      type="button"
+    >
+      <div
+        class="mantine-1wpc1xj mantine-Button-inner"
+      >
+        <span
+          class="mantine-Button-label mantine-12tfho7"
+        >
+          <button
+            class="mantine-pax7vz "
+            data-testid="select"
+            type="button"
+          >
+            Espace documentaire
+          </button>
+        </span>
+        <span
+          class="mantine-Button-icon mantine-Button-rightIcon mantine-1ydydo3"
+        >
+          <button
+            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
+            data-testid="toggle"
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 256 256"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
+              />
+            </svg>
+          </button>
+        </span>
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      class="mantine-19nldqr"
+      data-testid="content"
+      style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+    >
+      <div
+        style="opacity: 0; transition: opacity 200ms ease;"
+      >
+        <div
+          aria-expanded="false"
+          class="mantine-UnstyledButton-root mantine-Button-root   mantine-18clhq5"
+          data-button="true"
+          data-selected="false"
+          data-testid="root"
+          type="button"
+        >
+          <div
+            class="mantine-1wpc1xj mantine-Button-inner"
+          >
+            <span
+              class="mantine-Button-label mantine-1nlid6w"
+            >
+              <button
+                class="mantine-pax7vz "
+                data-testid="select"
+                type="button"
+              >
+                Releases
+              </button>
+            </span>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="mantine-UnstyledButton-root mantine-Button-root   mantine-18clhq5"
+          data-button="true"
+          data-selected="false"
+          data-testid="root"
+          type="button"
+        >
+          <div
+            class="mantine-1wpc1xj mantine-Button-inner"
+          >
+            <span
+              class="mantine-Button-label mantine-1nlid6w"
+            >
+              <button
+                class="mantine-pax7vz "
+                data-testid="select"
+                type="button"
+              >
+                Account
+              </button>
+            </span>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="mantine-UnstyledButton-root mantine-Button-root   mantine-ge3r2k"
+          data-button="true"
+          data-selected="false"
+          data-testid="root"
+          type="button"
+        >
+          <div
+            class="mantine-1wpc1xj mantine-Button-inner"
+          >
+            <span
+              class="mantine-Button-label mantine-1nlid6w"
+            >
+              <button
+                class="mantine-pax7vz "
+                data-testid="select"
+                type="button"
+              >
+                Upcoming releases
+              </button>
+            </span>
+            <span
+              class="mantine-Button-icon mantine-Button-rightIcon mantine-1ydydo3"
+            >
+              <button
+                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-gj6ulq"
+                data-testid="toggle"
+                type="button"
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  viewBox="0 0 256 256"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
+                  />
+                </svg>
+              </button>
+            </span>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          class="mantine-1avyp1d"
+          data-testid="content"
+          style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+        >
+          <div
+            style="opacity: 0; transition: opacity 200ms ease;"
+          >
+            <div
+              aria-expanded="false"
+              class="mantine-UnstyledButton-root mantine-Button-root   mantine-8jdtd4"
+              data-button="true"
+              data-selected="false"
+              data-testid="root"
+              type="button"
+            >
+              <div
+                class="mantine-1wpc1xj mantine-Button-inner"
+              >
+                <span
+                  class="mantine-Button-label mantine-ujfmhm"
+                >
+                  <button
+                    class="mantine-pax7vz "
+                    data-testid="select"
+                    type="button"
+                  >
+                    Wiki pages
+                  </button>
+                </span>
+              </div>
+            </div>
+            <div
+              aria-expanded="false"
+              class="mantine-UnstyledButton-root mantine-Button-root   mantine-8jdtd4"
+              data-button="true"
+              data-selected="false"
+              data-testid="root"
+              type="button"
+            >
+              <div
+                class="mantine-1wpc1xj mantine-Button-inner"
+              >
+                <span
+                  class="mantine-Button-label mantine-ujfmhm"
+                >
+                  <button
+                    class="mantine-pax7vz "
+                    data-testid="select"
+                    type="button"
+                  >
+                    Settings
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="mantine-UnstyledButton-root mantine-Button-root   mantine-18clhq5"
+          data-button="true"
+          data-selected="false"
+          data-testid="root"
+          type="button"
+        >
+          <div
+            class="mantine-1wpc1xj mantine-Button-inner"
+          >
+            <span
+              class="mantine-Button-label mantine-1nlid6w"
+            >
+              <button
+                class="mantine-pax7vz "
+                data-testid="select"
+                type="button"
+              >
+                Lorem ipsum dolor
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-expanded="false"
+      class="mantine-UnstyledButton-root mantine-Button-root  mantine-1u2v0e"
+      data-button="true"
+      data-selected="false"
+      data-testid="root"
+      type="button"
+    >
+      <div
+        class="mantine-1wpc1xj mantine-Button-inner"
+      >
+        <span
+          class="mantine-Button-label mantine-12tfho7"
+        >
+          <button
+            class="mantine-pax7vz "
+            data-testid="select"
+            type="button"
+          >
+            Espace workflow
+          </button>
+        </span>
+      </div>
+    </div>
+    <div
+      aria-expanded="false"
+      class="mantine-UnstyledButton-root mantine-Button-root  mantine-1u2v0e"
+      data-button="true"
+      data-selected="false"
+      data-testid="root"
+      type="button"
+    >
+      <div
+        class="mantine-1wpc1xj mantine-Button-inner"
+      >
+        <span
+          class="mantine-Button-label mantine-12tfho7"
+        >
+          <button
+            class="mantine-pax7vz "
+            data-testid="select"
+            type="button"
+          >
+            Archives
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

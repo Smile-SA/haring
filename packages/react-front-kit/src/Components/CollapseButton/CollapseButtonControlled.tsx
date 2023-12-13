@@ -185,7 +185,7 @@ export function CollapseButtonControlled<
         {...buttonProps}
       >
         <Component
-          className={classes.button}
+          className={[classes.button, componentProps?.className].join(' ')}
           data-testid="select"
           type={Component === 'button' ? 'button' : undefined}
           {...componentProps}
