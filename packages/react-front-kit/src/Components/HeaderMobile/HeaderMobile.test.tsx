@@ -1,15 +1,15 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
-import { Header } from './Header';
+import { HeaderMobile } from './HeaderMobile';
 
-describe('Header', () => {
+describe('HeaderMobile', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <Header hasResponsiveMode={false} searchInputProps={{ id: 'test' }}>
+      <HeaderMobile searchInputProps={{ id: 'test' }}>
         <a href="#">Espace documentaire</a>
         <a href="#">Espace workflow</a>
         <a href="#">Archives</a>
-      </Header>,
+      </HeaderMobile>,
     );
     expect(container).toMatchSnapshot();
   });

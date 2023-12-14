@@ -1,6 +1,11 @@
 'use client';
 
-import type { HeaderProps, MantineThemeOverride } from '@mantine/core';
+import type { IHeaderMobileProps } from '../HeaderMobile/HeaderMobile';
+import type {
+  HeaderProps,
+  MantineThemeOverride,
+  TextInputProps,
+} from '@mantine/core';
 import type { ElementType, FormEvent, ReactElement, ReactNode } from 'react';
 
 import {
@@ -8,74 +13,30 @@ import {
   Flex,
   Header as MantineHeader,
   MantineProvider,
-  createStyles,
   useMantineTheme,
 } from '@mantine/core';
 import { useClickOutside } from '@mantine/hooks';
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import { useState } from 'react';
 
+import { HeaderMobile } from '../HeaderMobile/HeaderMobile';
 import { HeaderSearch } from '../HeaderSearch/HeaderSearch';
 
-const useStyles = createStyles((theme) => ({
-  around: {
-    alignItems: 'center',
-    gap: theme.spacing.xs,
-  },
-  button: {
-    '&::after': {
-      background:
-        theme.colorScheme === 'light'
-          ? theme.colors.gray[3]
-          : theme.colors.gray[8],
-      content: '""',
-      display: 'block',
-      height: 36,
-      position: 'absolute',
-      right: 0,
-      top: '50%',
-      translate: '0 -50%',
-      width: 1,
-    },
-    background: 'transparent',
-    borderRadius: 0,
-    position: 'relative',
-  },
-  buttonOpened: {
-    '&::after': {
-      display: 'none',
-    },
-    background: theme.fn.primaryColor(),
-    color: theme.white,
-  },
-  container: {
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: '16px 64px',
-    position: 'relative',
-    width: '100%',
-  },
-  menu: {
-    alignItems: 'center',
-    gap: theme.spacing.xl,
-    left: '50%',
-    margin: 'auto',
-    position: 'absolute',
-    top: '50%',
-    translate: '-50% -50%',
-  },
-}));
+import { useStyles } from './Header.style';
 
 export interface IHeaderProps
   extends Omit<HeaderProps, 'height' | 'left' | 'right'> {
+  children: ReactNode;
   childrenComponent?: ElementType;
+  hasResponsiveMode?: boolean;
   hasSearch?: boolean;
   height?: number;
   left?: ReactNode;
+  mobileProps?: IHeaderMobileProps;
   onSearchChange?: (value: string) => void;
   onSearchSubmit?: (event: FormEvent) => void;
   right?: ReactNode;
-  searchAriaLabel?: string;
+  searchInputProps?: Omit<TextInputProps, 'onChange' | 'value'>;
   searchTheme?: MantineThemeOverride;
   searchValue?: string;
 }
@@ -85,76 +46,108 @@ export function Header(props: IHeaderProps): ReactElement {
   const {
     children,
     childrenComponent,
+    hasResponsiveMode = true,
     hasSearch = true,
     height = 90,
     left,
     onSearchChange,
     onSearchSubmit,
     right,
-    searchAriaLabel = 'Search',
+    mobileProps,
+    searchInputProps,
     searchTheme,
     searchValue,
     withBorder = true,
     ...headerProps
   } = props;
-  const { classes } = useStyles();
-  const [opened, setOpened] = useState(false);
-  const header = useClickOutside(() => setOpened(false));
+  const defaultMobileProps = {
+    children,
+    left,
+    right,
+    searchInputProps,
+    ...mobileProps,
+  };
+
+  const [searchOpened, setSearchOpened] = useState(false);
+  const searchButtonRef = useClickOutside(() => setSearchOpened(false));
+
   const defaultTheme = useMantineTheme();
+  const { classes } = useStyles();
 
   function handleClick(): void {
-    setOpened(!opened);
+    setSearchOpened(!searchOpened);
   }
 
   const buttonClasses = [classes.button];
-  if (opened) {
+  if (searchOpened) {
     buttonClasses.push(classes.buttonOpened);
   }
 
   return (
-    <MantineHeader
-      ref={header}
-      height={opened ? height + 110 : height}
-      withBorder={withBorder}
-      {...headerProps}
-    >
-      <Flex className={classes.container} h={height}>
-        <Flex className={classes.around}>{left}</Flex>
-        <Flex
-          className={classes.menu}
-          // @ts-expect-error wrong type for polymorphic component
-          component={childrenComponent}
+    <>
+      {/* Desktop Header */}
+      <div className={hasResponsiveMode ? classes.sizeDesktop : undefined}>
+        <MantineHeader
+          height={searchOpened ? height + 110 : height}
+          withBorder={withBorder}
+          {...headerProps}
         >
-          {children}
-        </Flex>
-        <Flex className={classes.around}>
-          {Boolean(hasSearch) && (
-            <Button
-              aria-label={searchAriaLabel}
-              className={buttonClasses.join(' ')}
-              data-testid="search"
-              h={height}
-              onClick={handleClick}
-              variant="white"
-              w={height}
+          <Flex className={classes.container} h={height}>
+            <Flex className={classes.around}>{left}</Flex>
+            <Flex
+              className={classes.menu}
+              // @ts-expect-error wrong type for polymorphic component
+              component={childrenComponent}
             >
-              <MagnifyingGlass size={32} />
-            </Button>
-          )}
-          {Boolean(opened) && (
-            <MantineProvider theme={searchTheme ?? defaultTheme}>
-              <HeaderSearch
-                data-testid="searchBar"
-                onChange={onSearchChange}
-                onSearchSubmit={onSearchSubmit}
-                opened={opened}
-                value={searchValue}
-              />
-            </MantineProvider>
-          )}
-          {right}
-        </Flex>
-      </Flex>
-    </MantineHeader>
+              {children}
+            </Flex>
+            <Flex className={classes.around}>
+              <div ref={searchButtonRef}>
+                {Boolean(hasSearch) && (
+                  <Button
+                    aria-label={searchInputProps?.title ?? 'Search'}
+                    className={buttonClasses.join(' ')}
+                    data-testid="search"
+                    h={height}
+                    onClick={handleClick}
+                    variant="white"
+                    w={height}
+                  >
+                    <MagnifyingGlass size={32} />
+                  </Button>
+                )}
+                {Boolean(searchOpened) && (
+                  <MantineProvider theme={searchTheme ?? defaultTheme}>
+                    <HeaderSearch
+                      data-testid="searchBar"
+                      inputAriaLabel={searchInputProps?.title ?? 'Search'}
+                      inputPlaceholder={searchInputProps?.placeholder}
+                      onChange={onSearchChange}
+                      onSearchSubmit={onSearchSubmit}
+                      opened={searchOpened}
+                      value={searchValue}
+                      {...searchInputProps}
+                    />
+                  </MantineProvider>
+                )}
+              </div>
+              {right}
+            </Flex>
+          </Flex>
+        </MantineHeader>
+      </div>
+      {/* Mobile Header */}
+      <div className={hasResponsiveMode ? classes.sizeMobile : classes.none}>
+        <HeaderMobile
+          {...defaultMobileProps}
+          hasSearch={hasSearch}
+          onSearchChange={onSearchChange}
+          onSearchSubmit={onSearchSubmit}
+          searchValue={searchValue}
+          withBorder={withBorder}
+          {...headerProps}
+        />
+      </div>
+    </>
   );
 }
