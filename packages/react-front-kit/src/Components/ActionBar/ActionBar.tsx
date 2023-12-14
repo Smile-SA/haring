@@ -28,7 +28,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export type IActionBarAction<Data extends Record<string, unknown>> = IAction<
-  Data | Data[]
+  Data[]
 >;
 
 export interface IActionBarProps<Data extends Record<string, unknown>>
@@ -57,7 +57,7 @@ export function ActionBar<Data extends Record<string, unknown>>(
 
   const { classes } = useStyles();
 
-  function setModal(action: IAction<Data>): void {
+  function setModal(action: IActionBarAction<Data>): void {
     setConfirmAction({
       cancelColor: action.confirmModalProps?.cancelColor,
       cancelLabel: action.confirmModalProps?.cancelLabel,
@@ -82,7 +82,7 @@ export function ActionBar<Data extends Record<string, unknown>>(
     handleClose();
   }
 
-  function handleGridAction(action: IAction<Data>): void {
+  function handleGridAction(action: IActionBarAction<Data>): void {
     if (action.confirmation) {
       setModal(action);
     } else {
