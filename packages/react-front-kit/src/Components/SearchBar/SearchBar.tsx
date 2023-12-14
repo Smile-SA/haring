@@ -56,6 +56,7 @@ const useStyles = createStyles((theme) => ({
 export interface ISearchBarProps extends Omit<TextInputProps, 'onChange'> {
   clearButtonAriaLabel?: string;
   inputAriaLabel?: string;
+  inputPlaceholder?: string;
   leftSection?: ReactNode;
   onChange?: (value: string) => void;
   onSearchClear?: () => void;
@@ -69,6 +70,7 @@ export function SearchBar(props: ISearchBarProps): ReactElement {
   const {
     clearButtonAriaLabel = 'Clear',
     inputAriaLabel = 'Search',
+    inputPlaceholder,
     leftSection,
     opened,
     onChange,
@@ -117,6 +119,7 @@ export function SearchBar(props: ISearchBarProps): ReactElement {
           aria-label={inputAriaLabel}
           className={classes.input}
           onChange={handleSearchChange}
+          placeholder={inputPlaceholder}
           rightSection={
             <CloseButton
               aria-label={clearButtonAriaLabel}

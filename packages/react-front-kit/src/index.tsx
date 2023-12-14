@@ -12,6 +12,8 @@ export * from './Components/DocumentCard/DocumentCard';
 export * from './Components/DocumentList/DocumentList';
 export * from './Components/DropdownButton/DropdownButton';
 export * from './Components/Header/Header';
+export * from './Components/HeaderMobile/HeaderMobile';
+export * from './Components/HeaderNav/HeaderNav';
 export * from './Components/HeaderSearch/HeaderSearch';
 export * from './Components/InfoCard/InfoCard';
 export * from './Components/InfoCard/Motif';

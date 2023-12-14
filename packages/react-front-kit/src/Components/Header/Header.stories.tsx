@@ -1,14 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Avatar, Menu } from '@mantine/core';
 import { primaryTheme } from '@smile/react-front-kit-shared';
 import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/storybook-utils';
+import { action } from '@storybook/addon-actions';
 import { expect } from '@storybook/jest';
 import { userEvent, within } from '@storybook/testing-library';
 
-import { DropdownButton } from '../DropdownButton/DropdownButton';
-
 import { Header as Cmp } from './Header';
+import {
+  childrenMock,
+  leftContentMock,
+  rightContentMobileMock,
+  rightContentMock,
+} from './Header.mock';
 
 const meta = {
   argTypes: {
@@ -46,35 +50,17 @@ type IStory = StoryObj<typeof meta>;
 
 export const Header: IStory = {
   args: {
-    children: (
-      <>
-        <a href="#">Espace documentaire</a>
-        <a href="#">Espace workflow</a>
-        <a href="#">Archives</a>
-      </>
-    ),
+    children: childrenMock(false),
     childrenComponent: 'nav',
+    hasResponsiveMode: true,
     height: 90,
-    left: <img alt="logo" height="58" src="./logo.svg" width="128" />,
-    right: (
-      <>
-        <DropdownButton label="Mon espace">
-          <Menu.Item component="a" href="#">
-            Calico
-          </Menu.Item>
-          <Menu.Item component="a" href="#">
-            Espace RH
-          </Menu.Item>
-          <Menu.Item component="a" href="#">
-            Aventure IA
-          </Menu.Item>
-          <Menu.Item component="a" href="#">
-            Lunette & CO
-          </Menu.Item>
-        </DropdownButton>
-        <Avatar src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80" />
-      </>
-    ),
+    left: leftContentMock,
+    mobileProps: {
+      children: childrenMock(true),
+      right: rightContentMobileMock,
+    },
+    onSearchSubmit: action('search input submitted'),
+    right: rightContentMock,
     searchTheme: primaryTheme,
     searchValue: '',
     withBorder: false,

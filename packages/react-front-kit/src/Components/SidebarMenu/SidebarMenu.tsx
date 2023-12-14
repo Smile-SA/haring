@@ -19,7 +19,12 @@ export interface IMenuItem<T extends number | string> {
 
 type ICollapseButtonProps<T extends number | string, C extends ElementType> =
   | ICollapseButtonControlledProps<T, C>
-  | ((item: IMenuItem<T>) => ICollapseButtonControlledProps<T, C>);
+  | ((
+      item: IMenuItem<T>,
+      level?: number,
+      isSelected?: boolean,
+      opened?: boolean,
+    ) => ICollapseButtonControlledProps<T, C>);
 
 export interface ISidebarMenuProps<
   T extends number | string,
@@ -72,7 +77,12 @@ export function getRecursiveMenu<
         opened={openedMenuIds.includes(id)}
         selected={selectedId === id}
         {...(typeof collapseButtonProps === 'function'
-          ? collapseButtonProps(item)
+          ? collapseButtonProps(
+              item,
+              level,
+              selectedId === id,
+              openedMenuIds.includes(id),
+            )
           : collapseButtonProps)}
       >
         {getRecursiveMenu(

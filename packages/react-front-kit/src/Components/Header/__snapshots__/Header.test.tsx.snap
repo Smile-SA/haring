@@ -2,66 +2,170 @@
 
 exports[`Header matches snapshot 1`] = `
 <div>
-  <header
-    class="mantine-Header-root mantine-1qb6iub"
-  >
-    <div
-      class="mantine-o19s04"
+  <div>
+    <header
+      class="mantine-Header-root mantine-1qb6iub"
     >
       <div
-        class="mantine-1dcfulj"
-      />
-      <div
-        class="mantine-jlqgta"
+        class="mantine-o19s04"
       >
-        <a
-          href="#"
+        <div
+          class="mantine-1dcfulj"
+        />
+        <div
+          class="mantine-jlqgta"
         >
-          Espace documentaire
-        </a>
-        <a
-          href="#"
+          <a
+            href="#"
+          >
+            Espace documentaire
+          </a>
+          <a
+            href="#"
+          >
+            Espace workflow
+          </a>
+          <a
+            href="#"
+          >
+            Archives
+          </a>
+        </div>
+        <div
+          class="mantine-1dcfulj"
         >
-          Espace workflow
-        </a>
-        <a
-          href="#"
+          <div>
+            <button
+              aria-label="Search"
+              class="mantine-UnstyledButton-root mantine-Button-root mantine-1ckwbd"
+              data-button="true"
+              data-testid="search"
+              type="button"
+            >
+              <div
+                class="mantine-1wpc1xj mantine-Button-inner"
+              >
+                <span
+                  class="mantine-1ryt1ht mantine-Button-label"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="32"
+                    viewBox="0 0 256 256"
+                    width="32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <div
+    class="mantine-163yspf"
+  >
+    <header
+      class="mantine-Header-root mantine-1k6wqr4"
+    >
+      <div
+        class="mantine-bs5kw9"
+      >
+        <div
+          class="mantine-l3a1ir"
         >
-          Archives
-        </a>
+          <button
+            class="mantine-UnstyledButton-root mantine-Burger-root mantine-lm35ey"
+            title="Open navigation"
+            type="button"
+          >
+            <div
+              class="mantine-d9qq40 mantine-Burger-burger"
+            />
+          </button>
+          <div
+            class="mantine-Divider-root mantine-Divider-vertical mantine-1f0rfy6"
+            role="separator"
+          />
+        </div>
+        <div
+          class="mantine-1dcfulj"
+        />
+        <div
+          class="mantine-1dcfulj"
+        />
       </div>
       <div
-        class="mantine-1dcfulj"
+        aria-hidden="true"
+        class="mantine-1avyp1d"
+        style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
       >
-        <button
-          aria-label="Search"
-          class="mantine-UnstyledButton-root mantine-Button-root mantine-1ckwbd"
-          data-button="true"
-          data-testid="search"
-          type="button"
+        <div
+          style="opacity: 0; transition: opacity 200ms ease;"
         >
           <div
-            class="mantine-1wpc1xj mantine-Button-inner"
+            class="mantine-Stack-root mantine-ipqib1"
           >
-            <span
-              class="mantine-1ryt1ht mantine-Button-label"
+            <a
+              href="#"
             >
-              <svg
-                fill="currentColor"
-                height="32"
-                viewBox="0 0 256 256"
-                width="32"
-                xmlns="http://www.w3.org/2000/svg"
+              Espace documentaire
+            </a>
+            <a
+              href="#"
+            >
+              Espace workflow
+            </a>
+            <a
+              href="#"
+            >
+              Archives
+            </a>
+            <form
+              class="mantine-1cd8ioy"
+            >
+              <div
+                class="mantine-InputWrapper-root mantine-TextInput-root mantine-q6oiko"
               >
-                <path
-                  d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
-                />
-              </svg>
-            </span>
+                <div
+                  class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-1v7s5f8"
+                >
+                  <input
+                    aria-invalid="false"
+                    aria-label="Search"
+                    class="mantine-Input-input mantine-TextInput-input mantine-1d7dy6g"
+                    id="test"
+                    placeholder="Search on the site"
+                    type="text"
+                  />
+                  <div
+                    class="mantine-1swk166 mantine-Input-rightSection mantine-TextInput-rightSection"
+                  >
+                    <svg
+                      class="mantine-127k9gt"
+                      fill="#0b7285"
+                      height="20"
+                      viewBox="0 0 256 256"
+                      width="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
-        </button>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
+  </div>
 </div>
 `;
