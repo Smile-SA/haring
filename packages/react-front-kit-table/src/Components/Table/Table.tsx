@@ -19,7 +19,8 @@ import {
   DotsThreeVertical,
   Funnel,
 } from '@phosphor-icons/react';
-import { ColumnPlus, ConfirmModal, Pagination } from '@smile/react-front-kit';
+import { ConfirmModal, Pagination } from '@smile/react-front-kit';
+import { ColumnPlus } from '@smile/react-front-kit-shared';
 import {
   MantineReactTable,
   MRT_ShowHideColumnsButton as MrtShowHideColumnsButton,

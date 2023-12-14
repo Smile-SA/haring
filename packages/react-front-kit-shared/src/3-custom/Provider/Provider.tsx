@@ -1,27 +1,32 @@
 'use client';
 
-import type { MantineThemeOverride } from '@mantine/core';
+import type { IThemeOverride } from '../../types';
 import type { ReactElement, ReactNode } from 'react';
 
 import { MantineProvider } from '@mantine/core';
 
-import { mainTheme } from '../../theme';
+import { themeContext } from '../../contexts';
+import { createThemes } from '../../helpers';
 
 export interface IProviderProps {
   children?: ReactNode;
   colorScheme?: 'dark' | 'light';
-  theme?: MantineThemeOverride;
+  themeConfig?: IThemeOverride;
 }
 export function Provider(props: IProviderProps): ReactElement {
-  const { children, colorScheme = 'light', theme = mainTheme } = props;
+  const { children, colorScheme = 'light', themeConfig } = props;
+  const themes = createThemes(themeConfig);
+  const { main } = themes;
 
   return (
-    <MantineProvider
-      theme={{ ...theme, colorScheme }}
-      withGlobalStyles
-      withNormalizeCSS
-    >
-      {children}
-    </MantineProvider>
+    <themeContext.Provider value={themes}>
+      <MantineProvider
+        theme={{ ...main, colorScheme }}
+        withGlobalStyles
+        withNormalizeCSS
+      >
+        {children}
+      </MantineProvider>
+    </themeContext.Provider>
   );
 }

@@ -4,11 +4,11 @@ import type {
   ReactElement,
 } from 'react';
 
-interface IProps extends ComponentPropsWithoutRef<'svg'> {
+export interface IMotifProps extends ComponentPropsWithoutRef<'svg'> {
   style?: CSSProperties;
 }
 
-export function Motif(props: IProps): ReactElement {
+export function Motif(props: IMotifProps): ReactElement {
   const { style = { fill: 'white', opacity: 0.1 }, ...svgProps } = props;
   return (
     <svg

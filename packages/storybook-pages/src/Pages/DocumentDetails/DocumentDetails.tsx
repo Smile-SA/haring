@@ -17,7 +17,7 @@ import {
 import { createStyles } from '@mantine/styles';
 import { CaretLeft, Star } from '@phosphor-icons/react';
 import { DropdownButton, Header, ResponsiveTabs } from '@smile/react-front-kit';
-import { FolderMove, primaryTheme } from '@smile/react-front-kit-shared';
+import { FolderMove, usePrimaryTheme } from '@smile/react-front-kit-shared';
 
 import {
   CardAction,
@@ -68,6 +68,7 @@ const useStyles = createStyles((theme) => ({
  */
 export function DocumentDetails(): ReactElement {
   const { classes } = useStyles();
+  const primary = usePrimaryTheme();
 
   const tabs = [
     <Tabs.Tab key={1} id="tab-1" value="1">
@@ -112,7 +113,7 @@ export function DocumentDetails(): ReactElement {
               <Avatar src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80" />
             </>
           }
-          searchTheme={primaryTheme}
+          searchTheme={primary}
         >
           <a href="#">Espace documentaire</a>
           <a href="#">Espace workflow</a>
@@ -144,7 +145,7 @@ export function DocumentDetails(): ReactElement {
           </Flex>
         </Grid.Col>
         <Grid.Col className={classes.colRight} span={5}>
-          <MantineProvider theme={primaryTheme}>
+          <MantineProvider theme={primary}>
             <ResponsiveTabs defaultValue="1" tabs={tabs}>
               <Space h="xl" />
               <Tabs.Panel value="1">

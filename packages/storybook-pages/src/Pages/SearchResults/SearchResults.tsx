@@ -1,6 +1,7 @@
 'use client';
 
 import type { IDocument } from '@smile/react-front-kit';
+import type { IOption } from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';
 
 import {
@@ -27,7 +28,7 @@ import {
 } from '@smile/react-front-kit';
 import {
   isNotNullNorEmpty,
-  secondaryTheme,
+  useSecondaryTheme,
 } from '@smile/react-front-kit-shared';
 import { useState } from 'react';
 
@@ -41,17 +42,8 @@ import {
 
 import { useStyles } from './SearchResults.style';
 
-export interface IOption<T> {
-  label: string;
-  value: T;
-}
-
-export interface ITypeFilter extends IOption<string> {
+interface ITypeFilter extends IOption<string> {
   results: number;
-}
-
-export interface ISearchFilter extends IOption<unknown> {
-  id: string;
 }
 
 /**
@@ -87,6 +79,8 @@ export function SearchResults(): ReactElement {
   const [cddFilter, setCddFilter] = useState(false);
   const [freelanceFilter, setFreelanceFilter] = useState(false);
   const [particularFilter, setParticularFilter] = useState(true);
+  const secondary = useSecondaryTheme();
+
   const menus = [
     {
       content: (
@@ -462,7 +456,7 @@ export function SearchResults(): ReactElement {
             />
           </Box>
         }
-        topBlockTheme={{ ...secondaryTheme, colorScheme: 'dark' }}
+        topBlockTheme={secondary}
       >
         <Paper mb={24} style={{ borderRadius: 16, padding: '48px 56px' }}>
           <DocumentList

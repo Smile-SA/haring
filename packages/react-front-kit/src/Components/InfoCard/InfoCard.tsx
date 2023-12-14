@@ -86,14 +86,14 @@ const useStyles = createStyles(() => ({
   },
 }));
 
-interface IContentItem {
+export interface IContentItem {
   icon?: ReactElement;
   iconProps?: Partial<ActionIconProps>;
   label?: string;
   onAction?: (item: IContentItem) => void;
 }
 
-interface IInfoCardProps extends PaperProps {
+export interface IInfoCardProps extends PaperProps {
   children?: ReactElement;
   content?: ReactElement;
   contentItems?: IContentItem[];

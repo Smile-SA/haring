@@ -43,7 +43,15 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
           path: 'src/index.tsx',
           pattern: /(\/\/ component exports)/g,
           template:
-            "export * from './{{path}}/{{pascalCase name}}/{{pascalCase name}}';",
+            "export { {{pascalCase name}} } from './{{path}}/{{pascalCase name}}/{{pascalCase name}}';",
+          type: 'append',
+        });
+
+        actions.push({
+          path: 'src/index.tsx',
+          pattern: /(\/\/ component exports)/g,
+          template:
+            "export type { I{{pascalCase name}}Props } from './{{path}}/{{pascalCase name}}/{{pascalCase name}}';",
           type: 'append',
         });
       }
