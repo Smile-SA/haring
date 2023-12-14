@@ -1,18 +1,23 @@
 import type { Preview, StoryContext, StoryFn } from '@storybook/react';
 import type { ReactElement } from 'react';
 
-import { Provider, themes } from '@smile/react-front-kit-shared';
+import { MantineProvider } from '@mantine/core';
+
+import { themes } from '@smile/react-front-kit-shared';
 
 function withProvider(Story: StoryFn, context: StoryContext): ReactElement {
   return (
-    <Provider
-      colorScheme={context.globals.colorScheme as 'dark' | 'light'}
-      theme={
-        themes[context.globals.theme as 'main' | 'primary' | 'secondary'].theme
-      }
+    <MantineProvider
+      theme={{
+        ...themes[context.globals.theme as 'main' | 'primary' | 'secondary']
+          .theme,
+        colorScheme: context.globals.colorScheme as 'dark' | 'light',
+      }}
+      withGlobalStyles
+      withNormalizeCSS
     >
       <Story />
-    </Provider>
+    </MantineProvider>
   );
 }
 

@@ -24,7 +24,7 @@ import {
 } from '@smile/react-front-kit';
 import { menuMock } from '@smile/react-front-kit/mock';
 import { Dropzone } from '@smile/react-front-kit-dropzone';
-import { primaryTheme, secondaryTheme } from '@smile/react-front-kit-shared';
+import { useThemes } from '@smile/react-front-kit-shared';
 import { TableGridView } from '@smile/react-front-kit-table';
 import { useState } from 'react';
 
@@ -51,6 +51,7 @@ export function BrowsingPage(): ReactElement {
   const [files, setFiles] = useState<IFile[]>([]);
   const [gridCols, setGridCols] = useState(4);
   const [seeMoreModal, { open, close }] = useDisclosure(false);
+  const { primary, secondary } = useThemes();
 
   const { classes } = useStyles();
   const theme = useMantineTheme();
@@ -88,7 +89,7 @@ export function BrowsingPage(): ReactElement {
     ));
 
     return (
-      <MantineProvider theme={primaryTheme}>
+      <MantineProvider theme={primary}>
         <Accordion
           classNames={{
             chevron: classes.accordionChevron,
@@ -114,7 +115,7 @@ export function BrowsingPage(): ReactElement {
           onSearchChange={setSearch}
           onSearchSubmit={handleSearchSubmit}
           right={headerRight}
-          searchTheme={primaryTheme}
+          searchTheme={primary}
           searchValue={search}
         >
           {headerContent}
@@ -141,7 +142,7 @@ export function BrowsingPage(): ReactElement {
           </Breadcrumbs>
         }
       >
-        <MantineProvider theme={secondaryTheme}>
+        <MantineProvider theme={secondary}>
           <InfoCard
             content={
               <p

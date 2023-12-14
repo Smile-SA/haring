@@ -7,7 +7,7 @@ import { Button, Modal } from '@mantine/core';
 
 import { useStyles } from './ConfirmModal.style';
 
-type IConfirmModalProps = IConfirmModal;
+export type IConfirmModalProps = IConfirmModal;
 
 export function ConfirmModal(props: IConfirmModalProps): ReactElement {
   const {
