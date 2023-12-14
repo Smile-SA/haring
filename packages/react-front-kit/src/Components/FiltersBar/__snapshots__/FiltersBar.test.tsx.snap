@@ -22,7 +22,7 @@ exports[`FiltersBar matches snapshot 1`] = `
             class="mantine-Button-label mantine-28zsh7"
           >
             <button
-              class="mantine-pax7vz"
+              class="mantine-pax7vz "
               data-testid="select"
               type="button"
             >
@@ -209,7 +209,7 @@ exports[`FiltersBar matches snapshot 1`] = `
               class="mantine-Button-label mantine-m141sh"
             >
               <button
-                class="mantine-pax7vz"
+                class="mantine-pax7vz "
                 data-testid="select"
                 type="button"
               >
@@ -264,7 +264,7 @@ exports[`FiltersBar matches snapshot 1`] = `
               class="mantine-Button-label mantine-m141sh"
             >
               <button
-                class="mantine-pax7vz"
+                class="mantine-pax7vz "
                 data-testid="select"
                 type="button"
               >
@@ -318,7 +318,7 @@ exports[`FiltersBar matches snapshot 1`] = `
                   class="mantine-Button-label mantine-m141sh"
                 >
                   <button
-                    class="mantine-pax7vz"
+                    class="mantine-pax7vz "
                     data-testid="select"
                     type="button"
                   >
@@ -373,7 +373,7 @@ exports[`FiltersBar matches snapshot 1`] = `
                   class="mantine-Button-label mantine-m141sh"
                 >
                   <button
-                    class="mantine-pax7vz"
+                    class="mantine-pax7vz "
                     data-testid="select"
                     type="button"
                   >
@@ -430,7 +430,7 @@ exports[`FiltersBar matches snapshot 1`] = `
               class="mantine-Button-label mantine-m141sh"
             >
               <button
-                class="mantine-pax7vz"
+                class="mantine-pax7vz "
                 data-testid="select"
                 type="button"
               >
@@ -485,7 +485,7 @@ exports[`FiltersBar matches snapshot 1`] = `
               class="mantine-Button-label mantine-m141sh"
             >
               <button
-                class="mantine-pax7vz"
+                class="mantine-pax7vz "
                 data-testid="select"
                 type="button"
               >

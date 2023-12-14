@@ -1,6 +1,11 @@
 'use client';
 
-import type { HeaderProps, MantineThemeOverride } from '@mantine/core';
+import type { IHeaderMobileProps } from '../HeaderMobile/HeaderMobile';
+import type {
+  HeaderProps,
+  MantineThemeOverride,
+  TextInputProps,
+} from '@mantine/core';
 import type { ElementType, FormEvent, ReactElement, ReactNode } from 'react';
 
 import {
@@ -27,19 +32,11 @@ export interface IHeaderProps
   hasSearch?: boolean;
   height?: number;
   left?: ReactNode;
-  mobileProps?: {
-    children?: ReactNode;
-    height?: number;
-    left?: ReactNode;
-    menuAriaLabel?: string;
-    right?: ReactNode;
-    searchPlaceholder?: string;
-  };
+  mobileProps?: IHeaderMobileProps;
   onSearchChange?: (value: string) => void;
   onSearchSubmit?: (event: FormEvent) => void;
   right?: ReactNode;
-  searchAriaLabel?: string;
-  searchPlaceholder?: string;
+  searchInputProps?: Omit<TextInputProps, 'onChange' | 'value'>;
   searchTheme?: MantineThemeOverride;
   searchValue?: string;
 }
@@ -57,8 +54,7 @@ export function Header(props: IHeaderProps): ReactElement {
     onSearchSubmit,
     right,
     mobileProps,
-    searchAriaLabel = 'Search',
-    searchPlaceholder,
+    searchInputProps,
     searchTheme,
     searchValue,
     withBorder = true,
@@ -68,6 +64,7 @@ export function Header(props: IHeaderProps): ReactElement {
     children,
     left,
     right,
+    searchInputProps,
     ...mobileProps,
   };
 
@@ -108,7 +105,7 @@ export function Header(props: IHeaderProps): ReactElement {
               <div ref={searchButtonRef}>
                 {Boolean(hasSearch) && (
                   <Button
-                    aria-label={searchAriaLabel}
+                    aria-label={searchInputProps?.title ?? 'Search'}
                     className={buttonClasses.join(' ')}
                     data-testid="search"
                     h={height}
@@ -123,12 +120,13 @@ export function Header(props: IHeaderProps): ReactElement {
                   <MantineProvider theme={searchTheme ?? defaultTheme}>
                     <HeaderSearch
                       data-testid="searchBar"
-                      inputAriaLabel={searchAriaLabel}
-                      inputPlaceholder={searchPlaceholder}
+                      inputAriaLabel={searchInputProps?.title ?? 'Search'}
+                      inputPlaceholder={searchInputProps?.placeholder}
                       onChange={onSearchChange}
                       onSearchSubmit={onSearchSubmit}
                       opened={searchOpened}
                       value={searchValue}
+                      {...searchInputProps}
                     />
                   </MantineProvider>
                 )}
@@ -145,10 +143,6 @@ export function Header(props: IHeaderProps): ReactElement {
           hasSearch={hasSearch}
           onSearchChange={onSearchChange}
           onSearchSubmit={onSearchSubmit}
-          searchInputProps={{
-            placeholder: searchPlaceholder,
-            title: searchAriaLabel,
-          }}
           searchValue={searchValue}
           withBorder={withBorder}
           {...headerProps}

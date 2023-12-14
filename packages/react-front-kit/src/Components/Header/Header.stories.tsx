@@ -52,18 +52,18 @@ export const Header: IStory = {
   args: {
     children: childrenMock(false),
     childrenComponent: 'nav',
+    hasResponsiveMode: true,
     height: 90,
     left: leftContentMock,
     mobileProps: {
       children: childrenMock(true),
       right: rightContentMobileMock,
     },
+    onSearchSubmit: action('search input submitted'),
     right: rightContentMock,
     searchTheme: primaryTheme,
     searchValue: '',
     withBorder: false,
-    hasResponsiveMode: true,
-    onSearchSubmit: action('search input submitted'),
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
