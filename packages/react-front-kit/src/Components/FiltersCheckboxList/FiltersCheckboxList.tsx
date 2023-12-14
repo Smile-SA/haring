@@ -59,14 +59,6 @@ export function FiltersCheckboxList(
     );
   }
 
-  function compareByName(filter1: IFilter, filter2: IFilter): number {
-    return filter1.label.localeCompare(filter2.label);
-  }
-
-  function getFiltersByAlphabeticalOrder(filters: IFilter[]): IFilter[] {
-    return filters.sort(compareByName);
-  }
-
   function filterIncludeSearchInput(label: string): boolean {
     return label.includes(searchInput.toLocaleLowerCase());
   }
@@ -86,7 +78,7 @@ export function FiltersCheckboxList(
         }
       />
       <div className={classes.checkboxsTop}>
-        {getFiltersByAlphabeticalOrder(filters).map((item) => {
+        {filters.map((item) => {
           if (!item.active && filterIncludeSearchInput(item.label)) {
             return (
               <Checkbox
@@ -103,7 +95,7 @@ export function FiltersCheckboxList(
       </div>
       <Divider color="gray.2" />
       <div className={classes.checkboxsBottom}>
-        {getFiltersByAlphabeticalOrder(filters).map((item) => {
+        {filters.map((item) => {
           if (item.active && filterIncludeSearchInput(item.label)) {
             return (
               <Checkbox
