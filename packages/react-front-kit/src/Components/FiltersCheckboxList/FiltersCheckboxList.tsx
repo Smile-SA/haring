@@ -24,7 +24,7 @@ export interface IFilter {
 export interface IFiltersCheckboxListProps {
   buttonLabel?: string;
   filters?: IFilter[];
-  onclickButton?: (newFilters: IFilter[]) => void;
+  onClickButton?: (newFilters: IFilter[]) => void;
   placeholder?: string;
 }
 
@@ -35,7 +35,7 @@ export function FiltersCheckboxList(
     buttonLabel = 'Validate changes',
     placeholder = 'Search in filters',
     filters = [],
-    onclickButton,
+    onClickButton,
   } = props;
   const [visibleFilters, setVisibleFilters] = useState('');
   const [newFilters, setNewFilters] = useState(filters);
@@ -118,7 +118,7 @@ export function FiltersCheckboxList(
           return '';
         })}
       </div>
-      <Button fullWidth onClick={() => onclickButton?.(newFilters)} size="md">
+      <Button fullWidth onClick={() => onClickButton?.(newFilters)} size="md">
         {buttonLabel}
       </Button>
     </>

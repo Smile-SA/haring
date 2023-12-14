@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { action } from '@storybook/addon-actions';
-
 import { FiltersCheckboxList as Cmp } from './FiltersCheckboxList';
 import { filters } from './FiltersCheckboxList.mock';
 
@@ -17,6 +15,5 @@ type IStory = StoryObj<typeof meta>;
 export const FiltersCheckboxList: IStory = {
   args: {
     filters,
-    onclickButton: action('onclickButton'),
   },
 };
