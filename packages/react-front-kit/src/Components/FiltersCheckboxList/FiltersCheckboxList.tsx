@@ -37,14 +37,14 @@ export function FiltersCheckboxList(
     filters = [],
     onClickButton,
   } = props;
-  const [visibleFilters, setVisibleFilters] = useState('');
+  const [searchInput, setSearchInput] = useState('');
   const [newFilters, setNewFilters] = useState(filters);
 
   const theme = useMantineTheme();
   const { classes } = useStyles();
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>): void {
-    setVisibleFilters(event.target.value);
+    setSearchInput(event.target.value);
   }
 
   function handleCheckboxChange(item: IFilter): void {
@@ -67,8 +67,8 @@ export function FiltersCheckboxList(
     return filters.sort(compareByName);
   }
 
-  function filterIncludesVisibleFilters(label: string): boolean {
-    return label.includes(visibleFilters.toLocaleLowerCase());
+  function filterIncludeSearchInput(label: string): boolean {
+    return label.includes(searchInput.toLocaleLowerCase());
   }
 
   return (
@@ -80,14 +80,14 @@ export function FiltersCheckboxList(
           <MagnifyingGlass
             color={theme.colors.cyan[9]}
             size={20}
-            values={visibleFilters}
+            values={searchInput}
             weight="bold"
           />
         }
       />
       <div className={classes.checkboxsTop}>
         {getFiltersByAlphabeticalOrder(filters).map((item) => {
-          if (!item.active && filterIncludesVisibleFilters(item.label)) {
+          if (!item.active && filterIncludeSearchInput(item.label)) {
             return (
               <Checkbox
                 key={item.id}
@@ -104,7 +104,7 @@ export function FiltersCheckboxList(
       <Divider color="gray.2" />
       <div className={classes.checkboxsBottom}>
         {getFiltersByAlphabeticalOrder(filters).map((item) => {
-          if (item.active && filterIncludesVisibleFilters(item.label)) {
+          if (item.active && filterIncludeSearchInput(item.label)) {
             return (
               <Checkbox
                 key={item.id}
