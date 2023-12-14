@@ -60,7 +60,7 @@ export function FiltersCheckboxList(
   }
 
   function filterIncludeSearchInput(label: string): boolean {
-    return label.includes(searchInput.toLocaleLowerCase());
+    return label.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase());
   }
 
   return (
