@@ -18,11 +18,7 @@ export default function RootLayout(props: IRootLayoutProps): ReactElement {
   return (
     <html className={openSans.variable} lang="en">
       <body>
-        <Provider
-          themeConfig={{ primaryColor: 'grape', secondaryColor: 'orange' }}
-        >
-          {children}
-        </Provider>
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
