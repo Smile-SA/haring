@@ -70,7 +70,7 @@ export function FiltersCheckboxList(
         placeholder={placeholder}
         rightSection={
           <MagnifyingGlass
-            color={theme.colors.cyan[9]}
+            color={theme.primaryColor[9]}
             size={20}
             values={searchInput}
             weight="bold"
