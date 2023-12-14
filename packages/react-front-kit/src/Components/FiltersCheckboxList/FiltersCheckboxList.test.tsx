@@ -1,12 +1,12 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
-import { FilterCheckboxList } from './FilterCheckboxList';
-import { filters } from './FilterCheckboxList.mock';
+import { FiltersCheckboxList } from './FiltersCheckboxList';
+import { filters } from './FiltersCheckboxList.mock';
 
-describe('FilterCheckboxList', () => {
+describe('FiltersCheckboxList', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <FilterCheckboxList
+      <FiltersCheckboxList
         buttonLabel="Test"
         filters={filters}
         placeholder="Test"

@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 export * from '@smile/react-front-kit-shared';
 // component exports
-export * from './Components/FilterCheckboxList/FilterCheckboxList';
+export * from './Components/FiltersCheckboxList/FiltersCheckboxList';
 export * from './Components/FiltersBar/FiltersBar';
 export * from './Components/ActionBar/ActionBar';
 export * from './Components/BitConverter/BitConverter';

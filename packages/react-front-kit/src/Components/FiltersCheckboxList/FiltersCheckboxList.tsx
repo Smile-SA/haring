@@ -12,7 +12,7 @@ import {
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import { useState } from 'react';
 
-import { useStyles } from './FilterCheckboxList.style';
+import { useStyles } from './FiltersCheckboxList.style';
 
 export interface IFilter {
   active: boolean;
@@ -21,15 +21,15 @@ export interface IFilter {
   value: string;
 }
 
-export interface IFilterCheckboxListProps {
+export interface IFiltersCheckboxListProps {
   buttonLabel?: string;
   filters?: IFilter[];
   onclickButton?: (newFilters: IFilter[]) => void;
   placeholder?: string;
 }
 
-export function FilterCheckboxList(
-  props: IFilterCheckboxListProps,
+export function FiltersCheckboxList(
+  props: IFiltersCheckboxListProps,
 ): ReactElement {
   const {
     buttonLabel = 'Validate changes',

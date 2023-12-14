@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FilterCheckboxList matches snapshot 1`] = `
+exports[`FiltersCheckboxList matches snapshot 1`] = `
 <div>
   <div
     class="mantine-Input-wrapper mantine-1v7s5f8"
@@ -41,7 +41,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
         >
           <input
             class="mantine-1mibt2f mantine-Checkbox-input"
-            id="mantine-4jqjs80ac"
+            id="mantine-0oa5edjef"
             type="checkbox"
           />
           <svg
@@ -63,7 +63,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
         >
           <label
             class="mantine-14fko7b mantine-Checkbox-label"
-            for="mantine-4jqjs80ac"
+            for="mantine-0oa5edjef"
           >
             Banana
           </label>
@@ -81,7 +81,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
         >
           <input
             class="mantine-1mibt2f mantine-Checkbox-input"
-            id="mantine-qrqhorpjo"
+            id="mantine-bl70unaqe"
             type="checkbox"
           />
           <svg
@@ -103,7 +103,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
         >
           <label
             class="mantine-14fko7b mantine-Checkbox-label"
-            for="mantine-qrqhorpjo"
+            for="mantine-bl70unaqe"
           >
             Tomato
           </label>
@@ -130,7 +130,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
           <input
             checked=""
             class="mantine-1mibt2f mantine-Checkbox-input"
-            id="mantine-lpk10yen8"
+            id="mantine-ics11lqvj"
             type="checkbox"
           />
           <svg
@@ -152,7 +152,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
         >
           <label
             class="mantine-14fko7b mantine-Checkbox-label"
-            for="mantine-lpk10yen8"
+            for="mantine-ics11lqvj"
           >
             apple
           </label>
@@ -171,7 +171,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
           <input
             checked=""
             class="mantine-1mibt2f mantine-Checkbox-input"
-            id="mantine-l1xetnk2u"
+            id="mantine-7bwnxtry5"
             type="checkbox"
           />
           <svg
@@ -193,7 +193,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
         >
           <label
             class="mantine-14fko7b mantine-Checkbox-label"
-            for="mantine-l1xetnk2u"
+            for="mantine-7bwnxtry5"
           >
             Orange 
           </label>
