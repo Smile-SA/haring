@@ -13,9 +13,16 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { Eye, FolderPlus, Suitcase, User } from '@phosphor-icons/react';
+import {
+  CaretRight,
+  Eye,
+  FolderPlus,
+  Suitcase,
+  User,
+} from '@phosphor-icons/react';
 import {
   Breadcrumbs,
+  FiltersCheckboxList,
   FoldableColumnLayout,
   Header,
   InfoCard,
@@ -39,7 +46,13 @@ import {
   headerRight,
 } from '../pages.mock';
 
-import { actions, data, gridProps, tableProps } from './BrowsingPage.mock';
+import {
+  actions,
+  data,
+  filtersCheckboxListProps,
+  gridProps,
+  tableProps,
+} from './BrowsingPage.mock';
 import { useStyles } from './BrowsingPage.style';
 
 /**
@@ -51,6 +64,8 @@ export function BrowsingPage(): ReactElement {
   const [files, setFiles] = useState<IFile[]>([]);
   const [gridCols, setGridCols] = useState(4);
   const [seeMoreModal, { open, close }] = useDisclosure(false);
+  const [filtersManagerModal, handleFiltersManagerModal] = useDisclosure(false);
+  const [globalFilters, setGlobalFilters] = useState(filtersCheckboxListProps);
 
   const { classes } = useStyles();
   const theme = useMantineTheme();
@@ -192,6 +207,16 @@ export function BrowsingPage(): ReactElement {
           mt={24}
           style={{ gap: 20, paddingTop: 12 }}
           tableProps={tableProps}
+          topBarLeft={
+            <span
+              aria-hidden="true"
+              className={classes.buttonFiltersManager}
+              onClick={handleFiltersManagerModal.open}
+            >
+              Gérer les filtres
+              <CaretRight className={classes.arrowFiltersManager} size={12} />
+            </span>
+          }
         />
       </FoldableColumnLayout>
       <Modal
@@ -205,6 +230,21 @@ export function BrowsingPage(): ReactElement {
       >
         <h3 className={classes.modalTitle}>Propriétés du dossier</h3>
         {getAccordionItems()}
+      </Modal>
+      <Modal
+        centered
+        classNames={{ title: classes.filtersManagerModalTitle }}
+        onClose={handleFiltersManagerModal.close}
+        opened={filtersManagerModal}
+        size="md"
+        title="Gérer les filtres"
+      >
+        <FiltersCheckboxList
+          buttonLabel="Valider les modifications"
+          filters={globalFilters}
+          onClickButton={handleFiltersManagerModal.close}
+          placeholder="Chercher dans les filtres"
+        />
       </Modal>
     </AppShell>
   );
