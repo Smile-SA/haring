@@ -2,13 +2,13 @@ import type { ITableData } from '../../types';
 import type { ITableProps } from '../Table/Table';
 import type { Record } from '@phosphor-icons/react';
 import type {
-  IAction,
   IDataView,
   ISwitchableViewProps,
   IThumbnail,
   IThumbnailData,
   IThumbnailGridProps,
 } from '@smile/react-front-kit';
+import type { IAction } from '@smile/react-front-kit-shared';
 import type { MRT_RowSelectionState } from 'mantine-react-table';
 import type { ReactElement, SetStateAction } from 'react';
 

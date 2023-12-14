@@ -17,12 +17,10 @@ import {
 } from '@mantine/core';
 import { useUncontrolled } from '@mantine/hooks';
 import { createStyles } from '@mantine/styles';
-import { baseTheme } from '@smile/react-front-kit-shared';
+import { useMainTheme } from '@smile/react-front-kit-shared';
 
-const useStyles = createStyles((_, boxTheme: MantineThemeOverride) => ({
+const useStyles = createStyles({
   box: {
-    background:
-      boxTheme.colorScheme === 'dark' ? boxTheme.black : boxTheme.white,
     position: 'relative',
     width: '100%',
   },
@@ -40,7 +38,7 @@ const useStyles = createStyles((_, boxTheme: MantineThemeOverride) => ({
     top: 0,
     width: '100%',
   },
-}));
+});
 
 export interface IFoldableColumnLayoutProps {
   boxMotif?: ReactNode;
@@ -75,7 +73,7 @@ export function FoldableColumnLayout(
     sidebarToggleLabel = 'Display sidebar',
     topBarRight,
     topBlock,
-    topBlockTheme = baseTheme,
+    topBlockTheme,
   } = props;
   const [isColumnVisibleState, handleIsColumnVisibleChange] =
     useUncontrolled<boolean>({
@@ -84,7 +82,9 @@ export function FoldableColumnLayout(
       onChange: onChangeIsColumnVisible,
       value: isColumnVisible,
     });
-  const { classes } = useStyles(topBlockTheme);
+  const main = useMainTheme();
+  const theme = topBlockTheme ?? main;
+  const { classes } = useStyles();
 
   function handleSidebarVisibleToggle(e: ChangeEvent<HTMLInputElement>): void {
     handleIsColumnVisibleChange(Boolean(e.target.checked));
@@ -92,7 +92,7 @@ export function FoldableColumnLayout(
 
   return (
     <>
-      <MantineProvider theme={topBlockTheme}>
+      <MantineProvider theme={theme}>
         <Box
           className={classes.box}
           color="primary"

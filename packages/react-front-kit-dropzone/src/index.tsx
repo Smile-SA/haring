@@ -1,2 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
-export * from './Components/Dropzone/Dropzone';
+
+'use client';
+
+// component exports
+export { Dropzone } from './Components/Dropzone/Dropzone';
+export type { IDropzoneProps, IFile } from './Components/Dropzone/Dropzone';

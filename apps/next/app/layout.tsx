@@ -1,6 +1,6 @@
 import type { ReactElement, ReactNode } from 'react';
 
-import { Provider, mainTheme } from '@smile/react-front-kit';
+import { Provider } from '@smile/react-front-kit-shared';
 import { Open_Sans } from 'next/font/google';
 
 const openSans = Open_Sans({
@@ -18,9 +18,7 @@ export default function RootLayout(props: IRootLayoutProps): ReactElement {
   return (
     <html className={openSans.variable} lang="en">
       <body>
-        <Provider colorScheme="light" theme={mainTheme}>
-          {children}
-        </Provider>
+        <Provider>{children}</Provider>
       </body>
     </html>
   );

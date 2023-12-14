@@ -25,7 +25,7 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="mantine-9eos18 mantine-Switch-track"
+              class="mantine-1i8ydp7 mantine-Switch-track"
               for="sidebar-toggle"
             >
               <div
@@ -36,7 +36,7 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
               />
             </label>
             <div
-              class="mantine-18z23b8 mantine-Switch-labelWrapper"
+              class="mantine-g88pth mantine-Switch-labelWrapper"
             >
               <label
                 class="mantine-14fko7b mantine-Switch-label"
