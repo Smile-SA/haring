@@ -41,7 +41,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
         >
           <input
             class="mantine-1mibt2f mantine-Checkbox-input"
-            id="mantine-eym5fvm8f"
+            id="mantine-4jqjs80ac"
             type="checkbox"
           />
           <svg
@@ -63,7 +63,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
         >
           <label
             class="mantine-14fko7b mantine-Checkbox-label"
-            for="mantine-eym5fvm8f"
+            for="mantine-4jqjs80ac"
           >
             Banana
           </label>
@@ -81,7 +81,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
         >
           <input
             class="mantine-1mibt2f mantine-Checkbox-input"
-            id="mantine-o5exs62rp"
+            id="mantine-qrqhorpjo"
             type="checkbox"
           />
           <svg
@@ -103,7 +103,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
         >
           <label
             class="mantine-14fko7b mantine-Checkbox-label"
-            for="mantine-o5exs62rp"
+            for="mantine-qrqhorpjo"
           >
             Tomato
           </label>
@@ -130,7 +130,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
           <input
             checked=""
             class="mantine-1mibt2f mantine-Checkbox-input"
-            id="mantine-r9cngw697"
+            id="mantine-lpk10yen8"
             type="checkbox"
           />
           <svg
@@ -152,7 +152,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
         >
           <label
             class="mantine-14fko7b mantine-Checkbox-label"
-            for="mantine-r9cngw697"
+            for="mantine-lpk10yen8"
           >
             apple
           </label>
@@ -171,7 +171,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
           <input
             checked=""
             class="mantine-1mibt2f mantine-Checkbox-input"
-            id="mantine-52lpz7a19"
+            id="mantine-l1xetnk2u"
             type="checkbox"
           />
           <svg
@@ -193,7 +193,7 @@ exports[`FilterCheckboxList matches snapshot 1`] = `
         >
           <label
             class="mantine-14fko7b mantine-Checkbox-label"
-            for="mantine-52lpz7a19"
+            for="mantine-l1xetnk2u"
           >
             Orange 
           </label>
