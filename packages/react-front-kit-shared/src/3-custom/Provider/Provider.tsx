@@ -8,13 +8,12 @@ import { MantineProvider } from '@mantine/core';
 import { themeContext } from '../../contexts';
 import { createThemes } from '../../helpers';
 
-export interface IProviderProps {
+export interface IProviderProps extends IThemeOverride {
   children?: ReactNode;
   colorScheme?: 'dark' | 'light';
-  themeConfig?: IThemeOverride;
 }
 export function Provider(props: IProviderProps): ReactElement {
-  const { children, colorScheme = 'light', themeConfig } = props;
+  const { children, colorScheme = 'light', ...themeConfig } = props;
   const themes = createThemes(themeConfig);
   const { main } = themes;
 
