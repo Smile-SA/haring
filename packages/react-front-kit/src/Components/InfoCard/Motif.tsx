@@ -4,12 +4,24 @@ import type {
   ReactElement,
 } from 'react';
 
+import { useMantineTheme } from '@mantine/core';
+
 export interface IMotifProps extends ComponentPropsWithoutRef<'svg'> {
   style?: CSSProperties;
 }
 
 export function Motif(props: IMotifProps): ReactElement {
-  const { style = { fill: 'white', opacity: 0.1 }, ...svgProps } = props;
+  const theme = useMantineTheme();
+  const {
+    style = {
+      fill:
+        theme.colorScheme === 'light'
+          ? theme.colors.dark[9]
+          : theme.colors.gray[0],
+      opacity: 0.1,
+    },
+    ...svgProps
+  } = props;
   return (
     <svg
       height="407"
