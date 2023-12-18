@@ -3,7 +3,7 @@
 import type { ActionIconProps, PaperProps } from '@mantine/core';
 import type { CSSProperties, ReactElement } from 'react';
 
-import { ActionIcon, Paper } from '@mantine/core';
+import { ActionIcon, Paper, useMantineTheme } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
 
 import { Motif } from './Motif';
@@ -105,6 +105,7 @@ export interface IInfoCardProps extends PaperProps {
 
 /** Additional props will be forwarded to the [Mantine Paper component](https://mantine.dev/core/paper/) */
 export function InfoCard(props: IInfoCardProps): ReactElement {
+  const theme = useMantineTheme();
   const {
     children,
     content,
@@ -139,8 +140,9 @@ export function InfoCard(props: IInfoCardProps): ReactElement {
                   >
                     {Boolean(item.icon) && (
                       <ActionIcon
-                        className={classes.contentItem}
-                        color="cyan"
+                        // className={classes.contentItem}
+                        classNames={{ root: classes.contentItem }}
+                        color={theme.primaryColor}
                         onClick={() => item.onAction?.(item)}
                         radius="sm"
                         size={40}

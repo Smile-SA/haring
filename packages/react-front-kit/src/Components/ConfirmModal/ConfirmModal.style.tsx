@@ -1,7 +1,11 @@
 import { createStyles } from '@mantine/styles';
 
-export const useStyles = createStyles(() => ({
-  buttonFilters: { background: 'white', height: '34px', marginRight: '10px' },
+export const useStyles = createStyles((theme) => ({
+  buttonFilters: {
+    background: theme.white,
+    height: '34px',
+    marginRight: '10px',
+  },
   buttonGrey: {
     padding: '0.667em 3.333em',
   },

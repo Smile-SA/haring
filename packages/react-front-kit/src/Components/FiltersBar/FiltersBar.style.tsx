@@ -36,8 +36,8 @@ export const useStyles = createStyles((theme) => ({
     top: '1px',
   },
   badgeRoot: {
-    border: '2px solid white',
-    color: 'white',
+    border: `2px solid ${theme.white}`,
+    color: theme.white,
     cursor: 'pointer',
     fontSize: '12px',
     fontWeight: 'normal',
@@ -48,7 +48,7 @@ export const useStyles = createStyles((theme) => ({
   bottom: {
     padding: '24px 24px 48px 24px',
   },
-  buttonRemoveRoot: { color: 'white', fontSize: '14px', padding: '0' },
+  buttonRemoveRoot: { color: theme.white, fontSize: '14px', padding: '0' },
   controlledMenu: {
     borderBottom: `${theme.colors.gray[3]} 1px solid`,
     color: theme.colors.dark[3],
@@ -71,17 +71,17 @@ export const useStyles = createStyles((theme) => ({
     width: '100%',
   },
   root: {
-    backgroundColor: 'white',
+    backgroundColor: theme.white,
     borderRadius: '16px',
   },
   title: {
     fontWeight: 600,
   },
   top: {
-    background: theme.colors.cyan[9],
-    border: '8px solid white',
+    background: theme.colors[`${theme.primaryColor}`][9],
+    border: `8px solid ${theme.white}`,
     borderRadius: '16px 16px 0px 0px',
-    color: 'white',
+    color: theme.white,
     marginBottom: '24px',
     padding: '24px 44px',
   },
