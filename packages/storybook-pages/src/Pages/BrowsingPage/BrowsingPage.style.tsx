@@ -33,6 +33,22 @@ export const useStyles = createStyles((theme) => ({
   accordionItem: {
     borderBottom: 'none',
   },
+  arrowFiltersManager: {
+    color: theme.colors.dark[6],
+    marginLeft: '6px',
+    position: 'relative',
+    top: '2px',
+  },
+  buttonFiltersManager: {
+    color: theme.colors.dark[6],
+    cursor: 'pointer',
+    fontWeight: 700,
+    verticalAlign: 'middle',
+  },
+  filtersManagerModalTitle: {
+    fontSize: '18px',
+    fontWeight: 700,
+  },
   modalBody: {
     padding: '0px 48px 50px 48px',
   },
