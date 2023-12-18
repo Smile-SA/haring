@@ -3,21 +3,21 @@ import type { ReactElement } from 'react';
 
 import { MantineProvider } from '@mantine/core';
 
-import { themes } from '@smile/react-front-kit-shared';
+import { Provider, themes } from '@smile/react-front-kit-shared';
 
 function withProvider(Story: StoryFn, context: StoryContext): ReactElement {
   return (
-    <MantineProvider
-      theme={{
-        ...themes[context.globals.theme as 'main' | 'primary' | 'secondary']
-          .theme,
-        colorScheme: context.globals.colorScheme as 'dark' | 'light',
-      }}
-      withGlobalStyles
-      withNormalizeCSS
-    >
-      <Story />
-    </MantineProvider>
+    <Provider>
+      <MantineProvider
+        theme={{
+          ...themes[context.globals.theme as 'main' | 'primary' | 'secondary']
+            .theme,
+          colorScheme: context.globals.colorScheme as 'dark' | 'light',
+        }}
+      >
+        <Story />
+      </MantineProvider>
+    </Provider>
   );
 }
 
