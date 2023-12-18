@@ -227,7 +227,7 @@ export function BrowsingPage(): ReactElement {
                 {globalFilters.map(
                   (element) => element.active && `${element.label}, `,
                 )}
-                ]{' '}
+                ]
               </div>
               Gérer les filtres
               <CaretRight className={classes.arrowFiltersManager} size={12} />
