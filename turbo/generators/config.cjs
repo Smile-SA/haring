@@ -1,22 +1,44 @@
-/* eslint @typescript-eslint/no-unsafe-assignment: 0 */
-import type { PlopTypes } from '@turbo/gen';
-import type { Answers, Inquirer } from 'inquirer';
-import type { ActionType } from 'node-plop';
+/* eslint-disable no-await-in-loop */
+const { readdir, readFile } = require('node:fs/promises');
+const { join } = require('node:path');
+
+async function getPackages() {
+  const packages = [];
+  const src = './packages';
+  const dirs = await readdir(src);
+  for (const dir of dirs) {
+    const filepath = join(src, dir, 'package.json');
+    const file = await readFile(filepath, { encoding: 'utf-8' });
+    if (file) {
+      try {
+        const json = JSON.parse(file);
+        if (!json.private) {
+          packages.push(dir);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
+  return packages;
+}
 
 // Learn more about Turborepo Generators at https://turbo.build/repo/docs/core-concepts/monorepos/code-generation
 
-export default function generator(plop: PlopTypes.NodePlopAPI): void {
+/** @param plop {import('@turbo/gen').PlopTypes.NodePlopAPI} */
+module.exports = (plop) => {
   // A simple generator to add a new React component to the internal UI library
   plop.setGenerator('react-component', {
-    actions: (data: Answers | undefined): ActionType[] => {
-      const actions: ActionType[] = [
+    /** @param data {import('inquirer').Answers} */
+    actions: (data) => {
+      const actions = [
         {
-          path: 'src/{{path}}/{{pascalCase name}}/{{pascalCase name}}.tsx',
+          path: 'packages/{{dir}}/src/{{path}}/{{pascalCase name}}/{{pascalCase name}}.tsx',
           templateFile: 'templates/component.hbs',
           type: 'add',
         },
         {
-          path: 'src/{{path}}/{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
+          path: 'packages/{{dir}}/src/{{path}}/{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
           templateFile:
             data?.type === 'pages'
               ? 'templates/pageStory.hbs'
@@ -26,21 +48,21 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       ];
       if (data?.type !== 'pages') {
         actions.push({
-          path: 'src/{{path}}/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
+          path: 'packages/{{dir}}/src/{{path}}/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
           templateFile: 'templates/test.hbs',
           type: 'add',
         });
       }
       if (data?.type === 'pages') {
         actions.push({
-          path: 'src/{{path}}/{{pascalCase name}}/Code.mdx',
+          path: 'packages/{{dir}}/src/{{path}}/{{pascalCase name}}/Code.mdx{{dir}}',
           templateFile: 'templates/pageCode.hbs',
           type: 'add',
         });
       }
       if (data?.index) {
         actions.push({
-          path: 'src/index.tsx',
+          path: 'packages/{{dir}}/src/index.tsx',
           pattern: /(\/\/ component exports)/g,
           template:
             "export { {{pascalCase name}} } from './{{path}}/{{pascalCase name}}/{{pascalCase name}}';",
@@ -48,7 +70,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         });
 
         actions.push({
-          path: 'src/index.tsx',
+          path: 'packages/{{dir}}/src/index.tsx',
           pattern: /(\/\/ component exports)/g,
           template:
             "export type { I{{pascalCase name}}Props } from './{{path}}/{{pascalCase name}}/{{pascalCase name}}';",
@@ -58,8 +80,15 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       return actions;
     },
     description: 'Adds a new react component',
-    prompts: async (inquirer: Inquirer): Promise<Answers> => {
-      const { type }: { type: string } = await inquirer.prompt({
+    /** @param inquirer {import('inquirer').Inquirer} */
+    prompts: async (inquirer) => {
+      const { dir } = await inquirer.prompt({
+        choices: await getPackages(),
+        message: 'For what package ?',
+        name: 'dir',
+        type: 'list',
+      });
+      const { type } = await inquirer.prompt({
         choices: [
           {
             name: 'Component',
@@ -96,7 +125,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         name: 'index',
         type: 'confirm',
       });
-      return { index, name, path, type };
+      return { dir, index, name, path, type };
     },
   });
-}
+};
