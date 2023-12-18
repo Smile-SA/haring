@@ -162,3 +162,58 @@ export const gridProps: ITableGridViewGridProps = {
   spacing: 25,
   verticalSpacing: 25,
 };
+
+export const filtersCheckboxListProps = [
+  { active: false, id: 1, label: 'Nom du filtre', value: 'FILTER_NAME' },
+  {
+    active: false,
+    id: 2,
+    label: 'Blandit mollis nisi curabitur',
+    value: 'BLANDI',
+  },
+  {
+    active: false,
+    id: 3,
+    label: 'Ultricies dui ut non massa eget',
+    value: 'ULTRICIES',
+  },
+  {
+    active: false,
+    id: 4,
+    label: 'Lorem ipsum dolor ',
+    value: 'LOREM',
+  },
+  { active: true, id: 5, label: 'Dernière modification', value: 'LAST_UPDATE' },
+  { active: true, id: 6, label: 'Type de document', value: 'DOCUMENT_TYPE' },
+  { active: true, id: 7, label: 'Période', value: 'PERIOD' },
+  {
+    active: false,
+    id: 8,
+    label: 'Lorem ipsum dolor ',
+    value: 'LOREM2',
+  },
+  {
+    active: false,
+    id: 9,
+    label: 'Blandit mollis nisi curabitur',
+    value: 'BLANDI2',
+  },
+  {
+    active: false,
+    id: 10,
+    label: 'Lorem ipsum dolor ',
+    value: 'LOREM3',
+  },
+  {
+    active: false,
+    id: 11,
+    label: 'Ultricies dui ut non massa eget',
+    value: 'ULTRICIES2',
+  },
+  {
+    active: false,
+    id: 12,
+    label: 'Blandit mollis nisi curabitur',
+    value: 'BLANDI3',
+  },
+];

@@ -1,5 +1,6 @@
 'use client';
 
+import type { IFilter } from '@smile/react-front-kit';
 import type { IFile } from '@smile/react-front-kit-dropzone';
 import type { FormEvent, ReactElement } from 'react';
 
@@ -13,9 +14,16 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { Eye, FolderPlus, Suitcase, User } from '@phosphor-icons/react';
+import {
+  CaretRight,
+  Eye,
+  FolderPlus,
+  Suitcase,
+  User,
+} from '@phosphor-icons/react';
 import {
   Breadcrumbs,
+  FiltersCheckboxList,
   FoldableColumnLayout,
   Header,
   InfoCard,
@@ -39,7 +47,13 @@ import {
   headerRight,
 } from '../pages.mock';
 
-import { actions, data, gridProps, tableProps } from './BrowsingPage.mock';
+import {
+  actions,
+  data,
+  filtersCheckboxListProps,
+  gridProps,
+  tableProps,
+} from './BrowsingPage.mock';
 import { useStyles } from './BrowsingPage.style';
 
 /**
@@ -52,6 +66,10 @@ export function BrowsingPage(): ReactElement {
   const [gridCols, setGridCols] = useState(4);
   const [seeMoreModal, { open, close }] = useDisclosure(false);
   const { primary, secondary } = useThemes();
+  const [filtersManagerModal, handleFiltersManagerModal] = useDisclosure(false);
+  const [globalFilters, setGlobalFilters] = useState<IFilter[]>(
+    filtersCheckboxListProps,
+  );
 
   const { classes } = useStyles();
   const theme = useMantineTheme();
@@ -78,6 +96,11 @@ export function BrowsingPage(): ReactElement {
         },
       ]),
     );
+  }
+
+  function handleFiltersManagerSubmit(filters: IFilter[]): void {
+    handleFiltersManagerModal.close();
+    setGlobalFilters(filters);
   }
 
   function getAccordionItems(): ReactElement {
@@ -193,6 +216,23 @@ export function BrowsingPage(): ReactElement {
           mt={24}
           style={{ gap: 20, paddingTop: 12 }}
           tableProps={tableProps}
+          topBarLeft={
+            <span
+              aria-hidden="true"
+              className={classes.buttonFiltersManager}
+              onClick={handleFiltersManagerModal.open}
+            >
+              <div style={{ fontWeight: 200 }}>
+                [
+                {globalFilters.map(
+                  (element) => element.active && `${element.label}, `,
+                )}
+                ]
+              </div>
+              Gérer les filtres
+              <CaretRight className={classes.arrowFiltersManager} size={12} />
+            </span>
+          }
         />
       </FoldableColumnLayout>
       <Modal
@@ -206,6 +246,21 @@ export function BrowsingPage(): ReactElement {
       >
         <h3 className={classes.modalTitle}>Propriétés du dossier</h3>
         {getAccordionItems()}
+      </Modal>
+      <Modal
+        centered
+        classNames={{ title: classes.filtersManagerModalTitle }}
+        onClose={handleFiltersManagerModal.close}
+        opened={filtersManagerModal}
+        size="md"
+        title="Gérer les filtres"
+      >
+        <FiltersCheckboxList
+          buttonLabel="Valider les modifications"
+          filters={globalFilters}
+          onClickButton={handleFiltersManagerSubmit}
+          placeholder="Chercher dans les filtres"
+        />
       </Modal>
     </AppShell>
   );
