@@ -31,10 +31,10 @@ export function FilterList(props: IFilterListProps): ReactElement {
   const {
     direction = 'row',
     filters,
-    filtersManageLabel = 'Manager filters',
+    filtersManageLabel = 'Manage filters',
     manageFilterModalSearchPlaceholder = 'Search in filters',
     manageFilterModalSearchSubmit = 'Confirm changes',
-    manageFilterModalTitle = 'Manager filters',
+    manageFilterModalTitle = 'Manage filters',
     modalProps,
     onActiveFiltersChange,
     onSubmit,
