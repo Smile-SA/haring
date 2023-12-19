@@ -58,6 +58,8 @@ export interface ISwitchableViewProps extends PaperProps {
   topBarLeft?: ReactNode;
   /** ReactNode for the right section of the top bar, to the left of the SegmentedControl buttons */
   topBarRight?: ReactNode;
+  /** ReactNode for the content below the top bar */
+  topContent?: ReactNode;
   /** Index of the active view, when component is controlled */
   value?: number;
   /** Array of all views */
@@ -72,6 +74,7 @@ export function SwitchableView(props: ISwitchableViewProps): ReactElement {
     segmentedControlProps,
     topBarLeft,
     topBarRight,
+    topContent,
     value,
     views = [],
     ...paperProps
@@ -108,6 +111,7 @@ export function SwitchableView(props: ISwitchableViewProps): ReactElement {
           />
         </span>
       </div>
+      {topContent ? <div>topContent</div> : null}
       <div>{activeView.dataView ?? ''}</div>
     </Paper>
   );

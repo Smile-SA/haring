@@ -17,8 +17,8 @@ import { useMemo, useState } from 'react';
 import { addPathAndDepth, flattenNestedObjects } from '../../helpers';
 import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonControlled';
 
-import { useStyles } from './FiltersBar.style';
 import { SidebarFilterMenu } from './SidebarFilterMenu/SidebarFilterMenu';
+import { useStyles } from './SidebarFilters.style';
 
 export interface ISidebarFilter {
   categoryId: IId[];
@@ -30,7 +30,7 @@ export interface ISidebarFilter {
 
 type IId = number | string;
 
-export interface IFiltersProps {
+export interface ISidebarFiltersProps {
   activeFilters?: ISidebarFilter[] | [];
   closeAllFiltersLabel?: string;
   defaultOpenedActiveFilters?: boolean;
@@ -44,7 +44,7 @@ export interface IFiltersProps {
   title?: ReactNode;
 }
 
-export function FiltersBar(props: IFiltersProps): ReactElement {
+export function SidebarFilters(props: ISidebarFiltersProps): ReactElement {
   const {
     activeFilters = [],
     closeAllFiltersLabel = 'Close all',
