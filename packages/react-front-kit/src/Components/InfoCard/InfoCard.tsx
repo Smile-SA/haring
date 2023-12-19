@@ -140,8 +140,7 @@ export function InfoCard(props: IInfoCardProps): ReactElement {
                   >
                     {Boolean(item.icon) && (
                       <ActionIcon
-                        // className={classes.contentItem}
-                        classNames={{ root: classes.contentItem }}
+                        className={classes.contentItem}
                         color={theme.primaryColor}
                         onClick={() => item.onAction?.(item)}
                         radius="sm"

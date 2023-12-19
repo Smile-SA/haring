@@ -70,7 +70,6 @@ export function BrowsingPage(): ReactElement {
   const [globalFilters, setGlobalFilters] = useState<IFilter[]>(
     filtersCheckboxListProps,
   );
-
   const { classes } = useStyles();
   const theme = useMantineTheme();
 
@@ -190,10 +189,12 @@ export function BrowsingPage(): ReactElement {
             contentItems={[
               {
                 icon: <User color={theme.fn.primaryColor()} />,
+                iconProps: { color: 'cyan' },
                 label: 'N°6754389',
               },
               {
                 icon: <Suitcase color={theme.fn.primaryColor()} />,
+                iconProps: { color: 'cyan' },
                 label: 'Contrat Individuel',
               },
             ]}
