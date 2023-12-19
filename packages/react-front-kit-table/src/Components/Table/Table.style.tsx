@@ -2,7 +2,7 @@ import { createStyles, getStylesRef } from '@mantine/styles';
 
 export const useStyles = createStyles((theme) => ({
   alertBanner: {
-    background: theme.colors[theme.primaryColor][9],
+    background: theme.fn.primaryColor(),
     border: 0,
     borderRadius: 0,
     height: '56px',
@@ -19,7 +19,7 @@ export const useStyles = createStyles((theme) => ({
       '& svg': {
         filter: 'contrast(8) invert(1)',
       },
-      backgroundColor: theme.colors[theme.primaryColor][9],
+      backgroundColor: theme.fn.primaryColor(),
       borderRadius: '4px',
       display: 'flex',
       height: '28px',

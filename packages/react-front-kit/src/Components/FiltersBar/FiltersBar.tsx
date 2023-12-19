@@ -206,7 +206,7 @@ export function FiltersBar(props: IFiltersProps): ReactElement {
       <div className={classes.bottom}>
         <Button
           classNames={{ root: classes.activeFiltersButtonRoot }}
-          color={theme.colors[theme.primaryColor][9]}
+          color={theme.fn.primaryColor()}
           onClick={() => onFilterButtonClick?.(activeFilters)}
           variant="filled"
         >

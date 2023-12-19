@@ -78,7 +78,7 @@ export const useStyles = createStyles((theme) => ({
     fontWeight: 600,
   },
   top: {
-    background: theme.colors[`${theme.primaryColor}`][9],
+    background: theme.fn.primaryColor(),
     border: `8px solid ${theme.white}`,
     borderRadius: '16px 16px 0px 0px',
     color: theme.white,

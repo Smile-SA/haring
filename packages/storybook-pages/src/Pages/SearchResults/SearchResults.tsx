@@ -198,7 +198,7 @@ export function SearchResults(): ReactElement {
             placeholder="JJ /MM/ AAAA"
             rightSection={
               <CalendarBlank
-                color={theme.colors[theme.primaryColor][9]}
+                color={theme.fn.primaryColor()}
                 size={20}
                 weight="bold"
               />
@@ -216,7 +216,7 @@ export function SearchResults(): ReactElement {
             placeholder="JJ /MM/ AAAA"
             rightSection={
               <CalendarBlank
-                color={theme.colors[theme.primaryColor][9]}
+                color={theme.fn.primaryColor()}
                 size={20}
                 weight="bold"
               />
