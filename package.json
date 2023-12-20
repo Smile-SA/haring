@@ -26,6 +26,7 @@
     "lint:fix": "DEBUG=eslint:cli-engine eslint --fix --max-warnings=0 --ignore-path <(cat .gitignore .eslintignore) . && tsc --noEmit",
     "test": "turbo run test",
     "format": "prettier --write --ignore-unknown --ignore-path .prettierignore --ignore-path .gitignore .",
+    "generate": "turbo gen react-component",
     "changeset": "changeset",
     "version": "turbo run build lint test && changeset version",
     "publish": "turbo run build lint test && changeset publish",
