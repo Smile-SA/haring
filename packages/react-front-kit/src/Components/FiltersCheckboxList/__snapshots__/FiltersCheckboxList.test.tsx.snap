@@ -14,7 +14,7 @@ exports[`FiltersCheckboxList matches snapshot 1`] = `
       class="mantine-1nmvwx4 mantine-Input-rightSection"
     >
       <svg
-        fill="currentColor"
+        fill="#0b7285"
         height="20"
         values=""
         viewBox="0 0 256 256"

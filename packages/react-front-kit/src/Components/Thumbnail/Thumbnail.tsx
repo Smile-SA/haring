@@ -82,7 +82,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
   return (
     <>
       <Box
-        bg={String(selected ? theme.primaryColor : theme.colors.gray[1])}
+        bg={String(selected ? theme.fn.primaryColor() : theme.colors.gray[1])}
         className={rootClasses.join(' ')}
         onClick={onClick}
       >
@@ -91,7 +91,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
             <FileIcon
               className={classes.fileIcon}
               color={String(
-                selected ? theme.colors.gray[1] : theme.colors.cyan[9],
+                selected ? theme.colors.gray[1] : theme.fn.primaryColor(),
               )}
               size={22}
               type={iconType}

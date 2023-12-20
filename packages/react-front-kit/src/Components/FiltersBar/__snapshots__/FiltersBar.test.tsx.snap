@@ -3,10 +3,10 @@
 exports[`FiltersBar matches snapshot 1`] = `
 <div>
   <div
-    class="mantine-i5l1wq"
+    class="mantine-1qn0wrz"
   >
     <div
-      class="mantine-8l18fb"
+      class="mantine-1e5ukvi"
     >
       <div
         aria-expanded="true"
@@ -72,7 +72,7 @@ exports[`FiltersBar matches snapshot 1`] = `
             class="mantine-fi6uov"
           >
             <div
-              class="mantine-Badge-root mantine-8kvgmk"
+              class="mantine-Badge-root mantine-ogj4ps"
             >
               <span
                 class="mantine-Badge-inner mantine-ucd2eg"
@@ -96,7 +96,7 @@ exports[`FiltersBar matches snapshot 1`] = `
               </span>
             </div>
             <div
-              class="mantine-Badge-root mantine-8kvgmk"
+              class="mantine-Badge-root mantine-ogj4ps"
             >
               <span
                 class="mantine-Badge-inner mantine-ucd2eg"
@@ -120,7 +120,7 @@ exports[`FiltersBar matches snapshot 1`] = `
               </span>
             </div>
             <div
-              class="mantine-Badge-root mantine-8kvgmk"
+              class="mantine-Badge-root mantine-ogj4ps"
             >
               <span
                 class="mantine-Badge-inner mantine-ucd2eg"
@@ -144,7 +144,7 @@ exports[`FiltersBar matches snapshot 1`] = `
               </span>
             </div>
             <div
-              class="mantine-Badge-root mantine-8kvgmk"
+              class="mantine-Badge-root mantine-ogj4ps"
             >
               <span
                 class="mantine-Badge-inner mantine-ucd2eg"

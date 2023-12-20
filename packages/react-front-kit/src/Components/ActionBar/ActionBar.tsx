@@ -19,7 +19,7 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'center',
     background: theme.fn.primaryColor(),
     borderRadius: 4,
-    color: 'white',
+    color: theme.white,
     display: 'inline-flex',
     justifyContent: 'space-between',
     padding: '16px 24px',

@@ -60,8 +60,8 @@ export function getRecursiveMenu<
     const collapseStyle =
       openedMenuIds.includes(id) && selectedId === id
         ? {
-            backgroundColor: theme.colors.cyan[0],
-            borderTop: `1px solid ${theme.colors.cyan[2]}`,
+            backgroundColor: theme.colors[theme.primaryColor][0],
+            borderTop: `1px solid ${theme.colors[theme.primaryColor][2]}`,
           }
         : openedMenuIds.includes(id)
           ? {

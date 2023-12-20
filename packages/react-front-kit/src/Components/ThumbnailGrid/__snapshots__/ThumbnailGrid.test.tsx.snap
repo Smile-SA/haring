@@ -6,7 +6,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
     class="mantine-1skbp38"
   >
     <div
-      class="mantine-zzdfuz"
+      class="mantine-15edn1r"
     >
       <span>
         1 selected file
@@ -165,7 +165,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="mantine-1qar87q"
+        class="mantine-1ygkvb0"
       >
         <div
           class="mantine-Group-root mantine-p1wipv"
