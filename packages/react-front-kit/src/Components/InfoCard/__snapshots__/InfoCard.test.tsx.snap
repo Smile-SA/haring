@@ -3,7 +3,7 @@
 exports[`InfoCard matches snapshot 1`] = `
 <div>
   <div
-    class="mantine-Paper-root mantine-1o07cfm"
+    class="mantine-Paper-root mantine-1c9cez"
   >
     <div
       class="mantine-3ceds6"
@@ -86,15 +86,51 @@ exports[`InfoCard matches snapshot 1`] = `
       class="mantine-5lyz"
     >
       <div
-        class="mantine-17hmtow"
+        class="mantine-p1q310"
       >
         <div
           class="mantine-fs5sma"
-        />
+        >
+          <div
+            aria-hidden="false"
+            class="mantine-1avyp1d"
+            style="box-sizing: border-box;"
+          >
+            <div
+              style="opacity: 1; transition: opacity 200ms ease;"
+            />
+          </div>
+        </div>
       </div>
       <div
-        class="mantine-1mibec8"
-      />
+        aria-hidden="false"
+        class="mantine-1avyp1d"
+        style="box-sizing: border-box;"
+      >
+        <div
+          style="opacity: 1; transition: opacity 200ms ease;"
+        >
+          <div
+            class="mantine-1mibec8"
+          />
+        </div>
+      </div>
+      <button
+        class="mantine-UnstyledButton-root mantine-ActionIcon-root false mantine-gku84g"
+        type="button"
+      >
+        <svg
+          fill="currentColor"
+          height="28"
+          viewBox="0 0 256 256"
+          width="28"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M216.49,168.49a12,12,0,0,1-17,0L128,97,56.49,168.49a12,12,0,0,1-17-17l80-80a12,12,0,0,1,17,0l80,80A12,12,0,0,1,216.49,168.49Z"
+          />
+        </svg>
+      </button>
     </div>
   </div>
 </div>

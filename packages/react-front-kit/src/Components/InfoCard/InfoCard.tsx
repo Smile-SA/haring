@@ -3,88 +3,13 @@
 import type { ActionIconProps, PaperProps } from '@mantine/core';
 import type { CSSProperties, ReactElement } from 'react';
 
-import { ActionIcon, Paper, useMantineTheme } from '@mantine/core';
-import { createStyles } from '@mantine/styles';
+import { ActionIcon, Collapse, Paper, useMantineTheme } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { CaretDown, CaretUp } from '@phosphor-icons/react';
+import { useEffect, useRef } from 'react';
 
+import { useStyles } from './InfoCard.style';
 import { Motif } from './Motif';
-
-const useStyles = createStyles(() => ({
-  container: {
-    '@media (max-width: 834px)': {
-      flexDirection: 'column',
-      margin: 'auto',
-      width: 'fit-content',
-    },
-    display: 'flex',
-    flexWarp: 'wrap',
-    gap: 10,
-    justifyContent: 'space-between',
-    position: 'relative',
-    zIndex: 1,
-  },
-  content: {
-    // marginTop: 10,
-  },
-  contentItem: {
-    alignItems: 'center',
-    cursor: 'pointer',
-    display: 'flex',
-    fontSize: '20px',
-    justifyContent: 'center',
-  },
-  contentItemGroup: {
-    alignItems: 'center',
-    display: 'flex',
-    gap: 16,
-    justifyContent: 'left',
-    maxWidth: 175,
-  },
-  contentItems: {
-    '@media (max-width: 834px)': {
-      minWidth: '0px',
-    },
-    columnGap: 40,
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'left',
-    rowGap: 10,
-  },
-  leftContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 28,
-    justifyContent: 'space-between',
-  },
-  motif: {
-    left: -40,
-    position: 'absolute',
-    top: -60,
-    zIndex: 0,
-  },
-  rightContainer: {
-    '@media (min-width: 834px)': {
-      maxWidth: 440,
-    },
-    display: 'flex',
-    width: '100%',
-  },
-  root: {
-    overflow: 'hidden',
-    position: 'relative',
-    width: '100%',
-  },
-  title: {
-    'h1, h2, h3, h4 h5, p': {
-      fontSize: '26px',
-      fontWeight: 700,
-    },
-  },
-  topContent: {
-    display: 'flex',
-    flexDirection: 'column',
-    rowGap: 24,
-  },
-}));
 
 export interface IContentItem {
   icon?: ReactElement;
@@ -95,6 +20,7 @@ export interface IContentItem {
 
 export interface IInfoCardProps extends PaperProps {
   children?: ReactElement;
+  collapse?: boolean;
   content?: ReactElement;
   contentItems?: IContentItem[];
   leftContainerStyle?: CSSProperties;
@@ -108,6 +34,7 @@ export function InfoCard(props: IInfoCardProps): ReactElement {
   const theme = useMantineTheme();
   const {
     children,
+    collapse = true,
     content,
     contentItems = [],
     leftContainerStyle,
@@ -117,51 +44,86 @@ export function InfoCard(props: IInfoCardProps): ReactElement {
     ...PaperProps
   } = props;
   const { classes } = useStyles();
+  const ref = useRef<HTMLInputElement | null>(null);
+
+  const [opened, { toggle, open }] = useDisclosure(true);
+
+  const displayCollapseContentForMobile = setInterval(function () {
+    if (
+      ref.current &&
+      ref.current.offsetWidth &&
+      ref.current.offsetWidth < 834
+    ) {
+      open();
+      clearInterval(displayCollapseContentForMobile);
+    }
+  }, 500);
+
+  useEffect(() => {
+    if (!opened) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+      displayCollapseContentForMobile;
+    } else {
+      clearInterval(displayCollapseContentForMobile);
+    }
+  }, [displayCollapseContentForMobile, opened]);
 
   return (
-    <Paper
-      className={classes.root}
-      mih={219}
-      p={20}
-      radius={16}
-      {...PaperProps}
-    >
+    <Paper ref={ref} className={classes.root} radius={16} {...PaperProps}>
       <div className={classes.motif}>{motif}</div>
       <div className={classes.container}>
         <div className={classes.leftContainer} style={leftContainerStyle}>
           <div className={classes.topContent}>
             {Boolean(title) && <div className={classes.title}>{title}</div>}
-            {Boolean(contentItems.length > 0) && (
-              <div className={classes.contentItems}>
-                {contentItems.map((item, key) => (
-                  <div
-                    key={`ContentItem-${key + key}`}
-                    className={classes.contentItemGroup}
-                  >
-                    {Boolean(item.icon) && (
-                      <ActionIcon
-                        className={classes.contentItem}
-                        color={theme.primaryColor}
-                        onClick={() => item.onAction?.(item)}
-                        radius="sm"
-                        size={40}
-                        variant="filled"
-                        {...item.iconProps}
-                      >
-                        {item.icon}
-                      </ActionIcon>
-                    )}
-                    {Boolean(item.label) && <span>{item.label}</span>}
-                  </div>
-                ))}
-              </div>
-            )}
+            <Collapse in={opened}>
+              {Boolean(contentItems.length > 0) && (
+                <div className={classes.contentItems}>
+                  {contentItems.map((item, key) => (
+                    <div
+                      key={`ContentItem-${key + key}`}
+                      className={classes.contentItemGroup}
+                    >
+                      {Boolean(item.icon) && (
+                        <ActionIcon
+                          className={classes.contentItem}
+                          color={theme.primaryColor}
+                          onClick={() => item.onAction?.(item)}
+                          radius="sm"
+                          size={40}
+                          variant="filled"
+                          {...item.iconProps}
+                        >
+                          {item.icon}
+                        </ActionIcon>
+                      )}
+                      {Boolean(item.label) && <span>{item.label}</span>}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </Collapse>
           </div>
-          {Boolean(content) && <div className={classes.content}>{content}</div>}
+          {Boolean(content) && <div>{content}</div>}
         </div>
-        <div className={classes.rightContainer} style={rightContainerStyle}>
-          {children}
-        </div>
+        <Collapse in={opened}>
+          <div className={classes.rightContainer} style={rightContainerStyle}>
+            {children}
+          </div>
+        </Collapse>
+        {Boolean(collapse) && (
+          <ActionIcon
+            className={`${classes.collapseButton} ${
+              !opened && classes.collapseButtonCenter
+            }`}
+            onClick={toggle}
+          >
+            {opened ? (
+              <CaretUp size={28} weight="bold" />
+            ) : (
+              <CaretDown size={28} weight="bold" />
+            )}
+          </ActionIcon>
+        )}
       </div>
     </Paper>
   );
