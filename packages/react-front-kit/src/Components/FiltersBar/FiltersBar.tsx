@@ -3,7 +3,14 @@
 import type { IFiltersItem } from './SidebarFilterMenu/SidebarFilterMenu';
 import type { ReactElement, ReactNode } from 'react';
 
-import { ActionIcon, Badge, Box, Button, Group } from '@mantine/core';
+import {
+  ActionIcon,
+  Badge,
+  Box,
+  Button,
+  Group,
+  useMantineTheme,
+} from '@mantine/core';
 import { CaretDown, CaretUp, TrashSimple, X } from '@phosphor-icons/react';
 import { useMemo, useState } from 'react';
 
@@ -52,6 +59,7 @@ export function FiltersBar(props: IFiltersProps): ReactElement {
     defaultOpenedActiveFilters = true,
   } = props;
   const { classes } = useStyles();
+  const theme = useMantineTheme();
 
   const flatFilters = useMemo(
     () => flattenNestedObjects(addPathAndDepth(menus)),
@@ -198,7 +206,7 @@ export function FiltersBar(props: IFiltersProps): ReactElement {
       <div className={classes.bottom}>
         <Button
           classNames={{ root: classes.activeFiltersButtonRoot }}
-          color="cyan.9"
+          color={theme.fn.primaryColor()}
           onClick={() => onFilterButtonClick?.(activeFilters)}
           variant="filled"
         >

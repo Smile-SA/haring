@@ -5,10 +5,10 @@ export const useStyles = createStyles((theme) => ({
     '&[data-rotate=true]': {
       color: theme.colors.gray[0],
     },
-    color: theme.colors.cyan[9],
+    color: theme.fn.primaryColor(),
   },
   accordionContent: {
-    background: theme.colors.cyan[9],
+    background: theme.fn.primaryColor(),
     borderRadius: '0px 0px 8px 8px',
     marginBottom: '8px',
     padding: '24px',
@@ -18,7 +18,7 @@ export const useStyles = createStyles((theme) => ({
       background: theme.colors.gray[2],
     },
     '&[aria-expanded=true]': {
-      background: theme.colors.cyan[9],
+      background: theme.fn.primaryColor(),
       borderRadius: '8px 8px 0px 0px',
       color: theme.colors.gray[0],
       fontWeight: 700,

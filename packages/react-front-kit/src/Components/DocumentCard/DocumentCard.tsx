@@ -45,7 +45,7 @@ export function DocumentCard(props: IDocumentCardProps): ReactNode {
           <div className={classes.header}>
             <div className={classes.iconContainer}>
               <FileIcon
-                color={theme.colors.cyan[9]}
+                color={theme.fn.primaryColor()}
                 size={38}
                 type={iconType}
                 weight="light"

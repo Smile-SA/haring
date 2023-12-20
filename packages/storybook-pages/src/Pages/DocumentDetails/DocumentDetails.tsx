@@ -49,7 +49,7 @@ const useStyles = createStyles((theme) => ({
   },
   document: {
     aspectRatio: '3/4',
-    background: 'white',
+    background: theme.white,
     boxShadow:
       '0px 3.4348926544189453px 2.7479140758514404px 0px rgba(0, 0, 0, 0.0155),' +
       '0px 8.687101364135742px 6.949680805206299px 0px rgba(0, 0, 0, 0.0222),' +

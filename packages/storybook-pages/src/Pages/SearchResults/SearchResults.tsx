@@ -198,7 +198,7 @@ export function SearchResults(): ReactElement {
             placeholder="JJ /MM/ AAAA"
             rightSection={
               <CalendarBlank
-                color={theme.colors.cyan[9]}
+                color={theme.fn.primaryColor()}
                 size={20}
                 weight="bold"
               />
@@ -216,7 +216,7 @@ export function SearchResults(): ReactElement {
             placeholder="JJ /MM/ AAAA"
             rightSection={
               <CalendarBlank
-                color={theme.colors.cyan[9]}
+                color={theme.fn.primaryColor()}
                 size={20}
                 weight="bold"
               />
@@ -396,7 +396,10 @@ export function SearchResults(): ReactElement {
     >
       <FoldableColumnLayout
         boxMotif={<Motif style={{ fill: '#868E96', opacity: 0.1 }} />}
-        boxProps={{ p: '50px 64px' }}
+        boxProps={{
+          p: '50px 64px',
+          style: { background: theme.colors.gray[8] },
+        }}
         isColumnVisible={isColumnVisible}
         onChangeIsColumnVisible={setIsColumnVisible}
         sidebarContent={

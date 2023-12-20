@@ -2,7 +2,7 @@ import { createStyles } from '@mantine/styles';
 
 export const useStyles = createStyles((theme) => ({
   dotsIcon: {
-    color: theme.colors.cyan[9],
+    color: theme.fn.primaryColor(),
   },
   fileIcon: {
     minWidth: 22,
@@ -26,7 +26,7 @@ export const useStyles = createStyles((theme) => ({
       '& svg': {
         filter: 'brightness(0) invert(1)',
       },
-      backgroundColor: theme.colors.cyan[9],
+      backgroundColor: theme.fn.primaryColor(),
       borderRadius: '4px',
       display: 'flex',
       height: '28px',
@@ -41,13 +41,13 @@ export const useStyles = createStyles((theme) => ({
       '& svg': {
         filter: 'none',
       },
-      backgroundColor: theme.colors.cyan[0],
+      backgroundColor: theme.colors[theme.primaryColor][0],
     },
     ':hover': {
       '& svg': {
         filter: 'none',
       },
-      backgroundColor: theme.colors.cyan[1],
+      backgroundColor: theme.colors[theme.primaryColor][1],
     },
   },
   root: {
@@ -58,7 +58,10 @@ export const useStyles = createStyles((theme) => ({
     padding: '16px',
     width: 'auto',
   },
-  rootSelected: { background: theme.primaryColor, color: 'white' },
+  rootSelected: {
+    background: theme.fn.primaryColor(),
+    color: theme.white,
+  },
   title: {
     margin: '0 19px 0 0',
     paddingLeft: '10px',

@@ -12,7 +12,7 @@ export const useStyles = createStyles((theme) => ({
     '&[data-selected="false"]': {
       background: 'inherit',
     },
-    background: theme.colors.cyan[0],
+    background: theme.colors[theme.primaryColor][0],
   },
   contentContainer: {
     padding: '10px',

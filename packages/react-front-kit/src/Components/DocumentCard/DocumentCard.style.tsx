@@ -27,6 +27,9 @@ export const useStyles = createStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
   },
+  icon: {
+    color: theme.fn.primaryColor(),
+  },
   iconContainer: {
     marginRight: '16px',
   },
