@@ -6,7 +6,6 @@ import type { CSSProperties, ReactElement } from 'react';
 import { ActionIcon, Collapse, Paper, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
-import { useEffect, useRef, useState } from 'react';
 
 import { useStyles } from './InfoCard.style';
 import { Motif } from './Motif';
@@ -27,6 +26,7 @@ export interface IInfoCardProps extends PaperProps {
   motif?: ReactElement;
   rightContainerStyle?: CSSProperties;
   title?: ReactElement;
+  responsiveBreakpoint?: string;
 }
 
 /** Additional props will be forwarded to the [Mantine Paper component](https://mantine.dev/core/paper/) */
@@ -40,61 +40,25 @@ export function InfoCard(props: IInfoCardProps): ReactElement {
     leftContainerStyle,
     motif = <Motif />,
     rightContainerStyle,
+    responsiveBreakpoint = theme.breakpoints.md,
     title,
     ...PaperProps
   } = props;
   const { classes } = useStyles();
-  const ref = useRef<HTMLInputElement | null>(null);
+  const [opened, { toggle }] = useDisclosure(true);
 
-  const [opened, { toggle, open }] = useDisclosure(true);
-  const [displayCollapse, setDisplayCollapse] = useState(collapse);
-  const [itsMobileSize, setItsMobileSize] = useState(false);
-
-  const displayCollapseContentForMobile = setInterval(function () {
-    if (
-      ref.current &&
-      ref.current.offsetWidth &&
-      ref.current.offsetWidth < 834
-    ) {
-      open();
-      setDisplayCollapse(false);
-      setItsMobileSize(true);
-    } else {
-      close();
-      setDisplayCollapse(true);
-      setItsMobileSize(false);
-    }
-  }, 500);
-
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    displayCollapseContentForMobile;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  console.log(theme.breakpoints.md);
 
   return (
-    <Paper ref={ref} className={classes.root} radius={16} {...PaperProps}>
+    <Paper className={classes.root} radius={16} {...PaperProps}>
       <div className={classes.motif}>{motif}</div>
-      <div
-        className={`${classes.container} ${
-          itsMobileSize ? classes.containerMobile : ''
-        }`}
-      >
-        <div
-          className={`${itsMobileSize ? classes.leftContainerMobile : ''} ${
-            classes.leftContainer
-          }`}
-          style={leftContainerStyle}
-        >
+      <div className={classes.container}>
+        <div className={classes.leftContainer} style={leftContainerStyle}>
           <div className={classes.topContent}>
             {Boolean(title) && <div className={classes.title}>{title}</div>}
             <Collapse in={opened}>
               {Boolean(contentItems.length > 0) && (
-                <div
-                  className={`${classes.contentItems} ${
-                    itsMobileSize ? classes.contentItemsMobile : ''
-                  }`}
-                >
+                <div className={classes.contentItems}>
                   {contentItems.map((item, key) => (
                     <div
                       key={`ContentItem-${key + key}`}
@@ -123,16 +87,11 @@ export function InfoCard(props: IInfoCardProps): ReactElement {
           {Boolean(content) && <div>{content}</div>}
         </div>
         <Collapse className={classes.collapseRight} in={opened}>
-          <div
-            className={`${classes.rightContainer} ${
-              itsMobileSize ? classes.rightContainerMobile : ''
-            }`}
-            style={rightContainerStyle}
-          >
+          <div className={classes.rightContainer} style={rightContainerStyle}>
             {children}
           </div>
         </Collapse>
-        {Boolean(displayCollapse) && (
+        {Boolean(collapse) && (
           <ActionIcon
             className={`${classes.collapseButton} ${
               !opened && classes.collapseButtonCenter

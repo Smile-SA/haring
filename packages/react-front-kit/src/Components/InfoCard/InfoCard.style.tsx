@@ -1,7 +1,10 @@
 import { createStyles } from '@mantine/styles';
 
-export const useStyles = createStyles(() => ({
+export const useStyles = createStyles((theme) => ({
   collapseButton: {
+    [`@media screen and (max-width: ${theme.breakpoints.sm})`]: {
+      margin: 'auto',
+    },
     margin: '12px',
   },
   collapseButtonCenter: {
@@ -13,17 +16,17 @@ export const useStyles = createStyles(() => ({
     width: '100%',
   },
   container: {
+    [`@media screen and (max-width: ${theme.breakpoints.sm})`]: {
+      flexDirection: 'column',
+      margin: 'auto',
+      width: 'fit-content',
+    },
     display: 'flex',
     flexWarp: 'wrap',
     gap: 10,
     justifyContent: 'space-between',
     position: 'relative',
     zIndex: 1,
-  },
-  containerMobile: {
-    flexDirection: 'column',
-    margin: 'auto',
-    width: 'fit-content',
   },
   contentItem: {
     alignItems: 'center',
@@ -40,6 +43,9 @@ export const useStyles = createStyles(() => ({
     maxWidth: 175,
   },
   contentItems: {
+    [`@media screen and (max-width: ${theme.breakpoints.sm})`]: {
+      minWidth: '0px',
+    },
     columnGap: 40,
     display: 'flex',
     flexWrap: 'wrap',
@@ -47,17 +53,14 @@ export const useStyles = createStyles(() => ({
     marginBottom: '28px',
     rowGap: 10,
   },
-  contentItemsMobile: {
-    minWidth: '0px',
-  },
   leftContainer: {
+    [`@media screen and (max-width: ${theme.breakpoints.sm})`]: {
+      minWidth: '0px !important',
+    },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     minWidth: '390px',
-  },
-  leftContainerMobile: {
-    minWidth: '0px !important',
   },
   motif: {
     left: -40,
@@ -66,12 +69,12 @@ export const useStyles = createStyles(() => ({
     zIndex: 0,
   },
   rightContainer: {
+    [`@media screen and (max-width: ${theme.breakpoints.sm})`]: {
+      maxWidth: 440,
+    },
     display: 'flex',
     height: '100%',
     width: '100%',
-  },
-  rightContainerMobile: {
-    maxWidth: 440,
   },
   root: {
     overflow: 'hidden',
