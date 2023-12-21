@@ -6,7 +6,7 @@ import type { CSSProperties, ReactElement } from 'react';
 import { ActionIcon, Collapse, Paper, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useStyles } from './InfoCard.style';
 import { Motif } from './Motif';
@@ -47,6 +47,8 @@ export function InfoCard(props: IInfoCardProps): ReactElement {
   const ref = useRef<HTMLInputElement | null>(null);
 
   const [opened, { toggle, open }] = useDisclosure(true);
+  const [displayCollapse, setDisplayCollapse] = useState(collapse);
+  const [itsMobileSize, setItsMobileSize] = useState(false);
 
   const displayCollapseContentForMobile = setInterval(function () {
     if (
@@ -55,29 +57,44 @@ export function InfoCard(props: IInfoCardProps): ReactElement {
       ref.current.offsetWidth < 834
     ) {
       open();
-      clearInterval(displayCollapseContentForMobile);
+      setDisplayCollapse(false);
+      setItsMobileSize(true);
+    } else {
+      close();
+      setDisplayCollapse(true);
+      setItsMobileSize(false);
     }
   }, 500);
 
   useEffect(() => {
-    if (!opened) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      displayCollapseContentForMobile;
-    } else {
-      clearInterval(displayCollapseContentForMobile);
-    }
-  }, [displayCollapseContentForMobile, opened]);
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    displayCollapseContentForMobile;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Paper ref={ref} className={classes.root} radius={16} {...PaperProps}>
       <div className={classes.motif}>{motif}</div>
-      <div className={classes.container}>
-        <div className={classes.leftContainer} style={leftContainerStyle}>
+      <div
+        className={`${classes.container} ${
+          itsMobileSize ? classes.containerMobile : ''
+        }`}
+      >
+        <div
+          className={`${itsMobileSize ? classes.leftContainerMobile : ''} ${
+            classes.leftContainer
+          }`}
+          style={leftContainerStyle}
+        >
           <div className={classes.topContent}>
             {Boolean(title) && <div className={classes.title}>{title}</div>}
             <Collapse in={opened}>
               {Boolean(contentItems.length > 0) && (
-                <div className={classes.contentItems}>
+                <div
+                  className={`${classes.contentItems} ${
+                    itsMobileSize ? classes.contentItemsMobile : ''
+                  }`}
+                >
                   {contentItems.map((item, key) => (
                     <div
                       key={`ContentItem-${key + key}`}
@@ -105,12 +122,17 @@ export function InfoCard(props: IInfoCardProps): ReactElement {
           </div>
           {Boolean(content) && <div>{content}</div>}
         </div>
-        <Collapse in={opened}>
-          <div className={classes.rightContainer} style={rightContainerStyle}>
+        <Collapse className={classes.collapseRight} in={opened}>
+          <div
+            className={`${classes.rightContainer} ${
+              itsMobileSize ? classes.rightContainerMobile : ''
+            }`}
+            style={rightContainerStyle}
+          >
             {children}
           </div>
         </Collapse>
-        {Boolean(collapse) && (
+        {Boolean(displayCollapse) && (
           <ActionIcon
             className={`${classes.collapseButton} ${
               !opened && classes.collapseButtonCenter

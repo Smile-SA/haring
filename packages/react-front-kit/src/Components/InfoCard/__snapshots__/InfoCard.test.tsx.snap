@@ -83,10 +83,10 @@ exports[`InfoCard matches snapshot 1`] = `
       </svg>
     </div>
     <div
-      class="mantine-5lyz"
+      class="mantine-ru0pyp "
     >
       <div
-        class="mantine-p1q310"
+        class=" mantine-1r497pk"
       >
         <div
           class="mantine-fs5sma"
@@ -104,19 +104,19 @@ exports[`InfoCard matches snapshot 1`] = `
       </div>
       <div
         aria-hidden="false"
-        class="mantine-1avyp1d"
+        class="mantine-15w1456"
         style="box-sizing: border-box;"
       >
         <div
           style="opacity: 1; transition: opacity 200ms ease;"
         >
           <div
-            class="mantine-1mibec8"
+            class="mantine-lwnrrv "
           />
         </div>
       </div>
       <button
-        class="mantine-UnstyledButton-root mantine-ActionIcon-root false mantine-gku84g"
+        class="mantine-UnstyledButton-root mantine-ActionIcon-root false mantine-jhyjkg"
         type="button"
       >
         <svg

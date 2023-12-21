@@ -2,27 +2,28 @@ import { createStyles } from '@mantine/styles';
 
 export const useStyles = createStyles(() => ({
   collapseButton: {
-    '@media (max-width: 834px)': {
-      display: 'none',
-    },
     margin: '12px',
   },
   collapseButtonCenter: {
     marginBottom: 'auto',
     marginTop: 'auto',
   },
+  collapseRight: {
+    height: '100%',
+    width: '100%',
+  },
   container: {
-    '@media (max-width: 834px)': {
-      flexDirection: 'column',
-      margin: 'auto',
-      width: 'fit-content',
-    },
     display: 'flex',
     flexWarp: 'wrap',
     gap: 10,
     justifyContent: 'space-between',
     position: 'relative',
     zIndex: 1,
+  },
+  containerMobile: {
+    flexDirection: 'column',
+    margin: 'auto',
+    width: 'fit-content',
   },
   contentItem: {
     alignItems: 'center',
@@ -39,9 +40,6 @@ export const useStyles = createStyles(() => ({
     maxWidth: 175,
   },
   contentItems: {
-    '@media (max-width: 834px)': {
-      minWidth: '0px',
-    },
     columnGap: 40,
     display: 'flex',
     flexWrap: 'wrap',
@@ -49,10 +47,17 @@ export const useStyles = createStyles(() => ({
     marginBottom: '28px',
     rowGap: 10,
   },
+  contentItemsMobile: {
+    minWidth: '0px',
+  },
   leftContainer: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    minWidth: '390px',
+  },
+  leftContainerMobile: {
+    minWidth: '0px !important',
   },
   motif: {
     left: -40,
@@ -61,11 +66,12 @@ export const useStyles = createStyles(() => ({
     zIndex: 0,
   },
   rightContainer: {
-    '@media (min-width: 834px)': {
-      maxWidth: 440,
-    },
     display: 'flex',
+    height: '100%',
     width: '100%',
+  },
+  rightContainerMobile: {
+    maxWidth: 440,
   },
   root: {
     overflow: 'hidden',
