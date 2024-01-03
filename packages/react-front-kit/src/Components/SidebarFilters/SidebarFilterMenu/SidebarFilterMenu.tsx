@@ -21,6 +21,7 @@ export interface IFiltersItem<T extends number | string>
   children?: IFiltersItem<T>[];
   content?: ReactNode;
 }
+
 export interface ISidebarFilterMenuProps<
   T extends number | string,
   C extends ElementType,
@@ -109,6 +110,8 @@ export function getRecursiveMenu<
   });
 }
 
+// eslint-disable-next-line no-warning-comments
+// TODO: use (and modify) SidebarMenu instead of a copy
 export function SidebarFilterMenu<
   T extends number | string,
   C extends ElementType = 'button',
@@ -135,6 +138,7 @@ export function SidebarFilterMenu<
       []) as T[];
     onMenuOpen?.(menuId, isOpened, openedMenuPath);
   }
+
   return (
     <div>
       {getRecursiveMenu(

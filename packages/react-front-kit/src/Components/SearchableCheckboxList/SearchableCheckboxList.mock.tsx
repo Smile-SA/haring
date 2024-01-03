@@ -1,4 +1,4 @@
-export const filters = [
+export const checkboxesMock = [
   { active: false, id: 1, label: 'Tomato', value: 'tomato' },
   { active: false, id: 2, label: 'Banana', value: 'banana' },
   { active: true, id: 3, label: 'apple', value: 'apple' },
