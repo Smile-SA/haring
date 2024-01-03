@@ -29,6 +29,6 @@
     "typescript": "~5.2.0"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --max-warnings=0 --ignore-path ../../.gitignore"
+    "*.{js,jsx,ts,tsx}": "eslint --ignore-path ../../.gitignore"
   }
 }

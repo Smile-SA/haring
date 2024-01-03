@@ -2,6 +2,8 @@
 'use client';
 
 // component exports
+export type { IPreviewProps } from './Components/Preview/Preview';
+export { Preview } from './Components/Preview/Preview';
 export { FiltersCheckboxList } from './Components/FiltersCheckboxList/FiltersCheckboxList';
 export type {
   IFilter,

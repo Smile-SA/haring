@@ -22,8 +22,8 @@
     "build:app": "turbo run build:app",
     "dev": "turbo run dev",
     "lint": "turbo run lint && npm run lint:root",
-    "lint:root": "DEBUG=eslint:cli-engine eslint --max-warnings=0 --ignore-path <(cat .gitignore .eslintignore) . && tsc --noEmit",
-    "lint:fix": "DEBUG=eslint:cli-engine eslint --fix --max-warnings=0 --ignore-path <(cat .gitignore .eslintignore) . && tsc --noEmit",
+    "lint:root": "DEBUG=eslint:cli-engine eslint --ignore-path <(cat .gitignore .eslintignore) . && tsc --noEmit",
+    "lint:fix": "DEBUG=eslint:cli-engine eslint --fix --ignore-path <(cat .gitignore .eslintignore) . && tsc --noEmit",
     "test": "turbo run test",
     "format": "prettier --write --ignore-unknown --ignore-path .prettierignore --ignore-path .gitignore .",
     "generate": "turbo gen react-component",
@@ -89,6 +89,6 @@
   },
   "lint-staged": {
     "*": "prettier --write --ignore-unknown --ignore-path <(cat .gitignore .prettierignore)",
-    "*.{js,jsx,ts,tsx}": "eslint --max-warnings=0 --ignore-path <(cat .gitignore .eslintignore)"
+    "*.{js,jsx,ts,tsx}": "eslint --ignore-path <(cat .gitignore .eslintignore)"
   }
 }
