@@ -19,12 +19,12 @@ import { DateInput } from '@mantine/dates';
 import { CalendarBlank, CaretDown } from '@phosphor-icons/react';
 import {
   DocumentList,
-  FiltersBar,
   FoldableColumnLayout,
   Header,
   Motif,
   Pagination,
   SearchBar,
+  SidebarFilters,
 } from '@smile/react-front-kit';
 import {
   isNotNullNorEmpty,
@@ -285,7 +285,7 @@ export function SearchResults(): ReactElement {
   );
   const totalPages = Math.ceil(typeFilteredResults / rowsPerPage);
 
-  // Remove All filters on FiltersBar
+  // Remove All filters on SidebarFilters
   const removeAllFilters = (): void => {
     setActiveFilters([]);
     setDupontFilter(false);
@@ -403,7 +403,7 @@ export function SearchResults(): ReactElement {
         isColumnVisible={isColumnVisible}
         onChangeIsColumnVisible={setIsColumnVisible}
         sidebarContent={
-          <FiltersBar
+          <SidebarFilters
             activeFilters={activeFilters}
             defaultOpenedMenuIds={[2, 4]}
             deleteButtonLabel="Supprimer tout"

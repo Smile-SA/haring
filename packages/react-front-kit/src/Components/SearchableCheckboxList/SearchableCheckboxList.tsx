@@ -1,6 +1,6 @@
 'use client';
 
-import type { ReactElement } from 'react';
+import type { ChangeEvent, ReactElement } from 'react';
 
 import {
   Button,
@@ -12,44 +12,43 @@ import {
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import { useState } from 'react';
 
-import { useStyles } from './FiltersCheckboxList.style';
+import { useStyles } from './SearchableCheckboxList.style';
 
-export interface IFilter {
-  active: boolean;
+export interface ICheckbox {
+  active?: boolean;
   id: number | string;
   label: string;
-  value: string;
 }
 
-export interface IFiltersCheckboxListProps {
+export interface ISearchableCheckboxListProps<T extends ICheckbox> {
   buttonLabel?: string;
-  filters?: IFilter[];
-  onClickButton?: (newFilters: IFilter[]) => void;
+  checkboxes?: T[];
+  onClickButton?: (checkboxes: T[]) => void;
   placeholder?: string;
 }
 
-export function FiltersCheckboxList(
-  props: IFiltersCheckboxListProps,
+export function SearchableCheckboxList<T extends ICheckbox>(
+  props: ISearchableCheckboxListProps<T>,
 ): ReactElement {
   const {
     buttonLabel = 'Validate changes',
-    placeholder = 'Search in filters',
-    filters = [],
+    placeholder = 'Search in options',
+    checkboxes = [],
     onClickButton,
   } = props;
   const [searchInput, setSearchInput] = useState('');
-  const [newFilters, setNewFilters] = useState(filters);
+  const [newCheckboxes, setNewCheckboxes] = useState(checkboxes);
 
   const theme = useMantineTheme();
   const { classes } = useStyles();
 
-  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>): void {
+  function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
     setSearchInput(event.target.value);
   }
 
-  function handleCheckboxChange(item: IFilter): void {
-    setNewFilters(
-      newFilters.map((element) => {
+  function handleCheckboxChange(item: ICheckbox): void {
+    setNewCheckboxes(
+      newCheckboxes.map((element) => {
         if (element.id !== item.id) {
           return element;
         }
@@ -59,7 +58,7 @@ export function FiltersCheckboxList(
     );
   }
 
-  function filterIncludeSearchInput(label: string): boolean {
+  function checkboxIncludesSearchInput(label: string): boolean {
     return label.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase());
   }
 
@@ -78,8 +77,8 @@ export function FiltersCheckboxList(
         }
       />
       <div className={classes.checkboxsTop}>
-        {filters.map((item) => {
-          if (!item.active && filterIncludeSearchInput(item.label)) {
+        {checkboxes.map((item) => {
+          if (!item.active && checkboxIncludesSearchInput(item.label)) {
             return (
               <Checkbox
                 key={item.id}
@@ -95,8 +94,8 @@ export function FiltersCheckboxList(
       </div>
       <Divider color="gray.2" />
       <div className={classes.checkboxsBottom}>
-        {filters.map((item) => {
-          if (item.active && filterIncludeSearchInput(item.label)) {
+        {checkboxes.map((item) => {
+          if (item.active && checkboxIncludesSearchInput(item.label)) {
             return (
               <Checkbox
                 key={item.id}
@@ -110,7 +109,11 @@ export function FiltersCheckboxList(
           return '';
         })}
       </div>
-      <Button fullWidth onClick={() => onClickButton?.(newFilters)} size="md">
+      <Button
+        fullWidth
+        onClick={() => onClickButton?.(newCheckboxes)}
+        size="md"
+      >
         {buttonLabel}
       </Button>
     </>

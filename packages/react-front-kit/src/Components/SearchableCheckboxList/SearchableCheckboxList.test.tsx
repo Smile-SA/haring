@@ -1,18 +1,18 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
-import { FiltersCheckboxList } from './FiltersCheckboxList';
-import { filters } from './FiltersCheckboxList.mock';
+import { SearchableCheckboxList } from './SearchableCheckboxList';
+import { checkboxesMock } from './SearchableCheckboxList.mock';
 
-describe('FiltersCheckboxList', () => {
+describe('SearchableCheckboxList', () => {
   beforeEach(() => {
     // Prevent mantine random ID
     Math.random = () => 0.42;
   });
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <FiltersCheckboxList
+      <SearchableCheckboxList
         buttonLabel="Test"
-        filters={filters}
+        checkboxes={checkboxesMock}
         placeholder="Test"
       />,
     );

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FiltersCheckboxList matches snapshot 1`] = `
+exports[`SearchableCheckboxList matches snapshot 1`] = `
 <div>
   <div
     class="mantine-Input-wrapper mantine-1v7s5f8"

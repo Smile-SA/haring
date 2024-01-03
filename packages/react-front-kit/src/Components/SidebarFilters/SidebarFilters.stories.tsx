@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { FiltersBar as Cmp } from './FiltersBar';
-import { activeFilters } from './FitlersBar.mock';
 import { getMenu } from './SidebarFilterMenu/SidebarFilterMenu.mock';
+import { SidebarFilters as Cmp } from './SidebarFilters';
+import { activeFilters } from './SidebarFilters.mock';
 
 const meta = {
   component: Cmp,
   tags: ['autodocs'],
-  title: '3-custom/Components/FiltersBar',
+  title: '3-custom/Components/SidebarFilters',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;
