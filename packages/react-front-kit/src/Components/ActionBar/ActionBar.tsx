@@ -26,6 +26,26 @@ const useStyles = createStyles((theme) => ({
     padding: '16px 24px',
     width: '100%',
   },
+  buttonIcon: {
+    [`@media  (max-width: ${theme.breakpoints.sm})`]: {
+      marginRight: 0,
+    },
+  },
+  buttonLabel: {
+    [`@media  (max-width: ${theme.breakpoints.sm})`]: {
+      display: 'none',
+    },
+  },
+  buttonRoot: {
+    [`@media  (max-width: ${theme.breakpoints.sm})`]: {
+      height: '32px',
+      padding: '0',
+      width: '32px',
+    },
+  },
+  groupRoot: {
+    gap: '8px',
+  },
 }));
 
 export type IActionBarAction<Data extends Record<string, unknown>> = IAction<
@@ -35,6 +55,7 @@ export type IActionBarAction<Data extends Record<string, unknown>> = IAction<
 export interface IActionBarProps<Data extends Record<string, unknown>>
   extends GroupProps {
   actions?: IActionBarAction<Data>[];
+  actionsOutsideMenu?: number;
   modalProps?: Omit<ModalProps, 'title'>;
   selectedElements: Data[];
   selectedElementsLabel?: (selectedElements: number) => string;
@@ -45,6 +66,7 @@ export function ActionBar<Data extends Record<string, unknown>>(
 ): ReactElement {
   const {
     actions,
+    actionsOutsideMenu = 1,
     modalProps,
     selectedElements,
     selectedElementsLabel = (selectedElements: number) =>
@@ -104,67 +126,77 @@ export function ActionBar<Data extends Record<string, unknown>>(
       <div className={classes.actionBar}>
         <span>{selectedElementsLabel(numberOfSelectedElements)}</span>
         {actions && actions.length > 0 ? (
-          <Group {...groupProps}>
-            {actions.map((action) => (
-              <Button
-                key={action.id}
-                color={action.color}
-                leftIcon={
-                  typeof action.icon === 'function'
-                    ? action.icon(selectedElements)
-                    : action.icon
-                }
-                onClick={() => handleGridAction(action)}
-                variant={action.color ? 'filled' : 'default'}
-              >
-                {typeof action.label === 'function'
-                  ? action.label(selectedElements)
-                  : action.label}
-              </Button>
-            ))}
-            <div>
-              {actions.length > 0 && (
+          <Group className={classes.groupRoot} {...groupProps}>
+            {actions.map(
+              (action, index) =>
+                index + 1 <= actionsOutsideMenu && (
+                  <Button
+                    key={action.id}
+                    classNames={{
+                      icon: classes.buttonIcon,
+                      label: classes.buttonLabel,
+                      root: classes.buttonRoot,
+                    }}
+                    color={action.color}
+                    leftIcon={
+                      typeof action.icon === 'function'
+                        ? action.icon(selectedElements)
+                        : action.icon
+                    }
+                    onClick={() => handleGridAction(action)}
+                    variant={action.color ? 'filled' : 'default'}
+                  >
+                    {typeof action.label === 'function'
+                      ? action.label(selectedElements)
+                      : action.label}
+                  </Button>
+                ),
+            )}
+            {actions.length > 0 && actionsOutsideMenu < actions.length && (
+              <div>
                 <Menu radius={4} shadow="lg" width={200}>
                   <Menu.Target>
                     <ActionIcon
+                      h={32}
                       onClick={(e) => e.stopPropagation()}
-                      radius={4}
+                      radius={30}
                       type="button"
+                      variant="light"
+                      w={32}
                     >
                       <div>
-                        <DotsThreeVertical
-                          // className={classes.dotsIcon}
-                          size={16}
-                          weight="bold"
-                        />
+                        <DotsThreeVertical size={16} weight="bold" />
                       </div>
                     </ActionIcon>
                   </Menu.Target>
                   <Menu.Dropdown onClick={(e) => e.stopPropagation()}>
-                    {actions.map((action, index) => (
-                      <Menu.Item
-                        // eslint-disable-next-line react/no-array-index-key
-                        key={index}
-                        color={action.color}
-                        icon={
-                          typeof action.icon === 'function'
-                            ? action.icon(props)
-                            : action.icon
-                        }
-                        onClick={() => handleMenuItem(action)}
-                        {...(typeof action.componentProps === 'function'
-                          ? action.componentProps(props)
-                          : action.componentProps)}
-                      >
-                        {typeof action.label === 'function'
-                          ? action.label(props)
-                          : action.label}
-                      </Menu.Item>
-                    ))}
+                    {actions.map(
+                      (action, index) =>
+                        index + 1 > actionsOutsideMenu && (
+                          <Menu.Item
+                            // eslint-disable-next-line react/no-array-index-key
+                            key={index}
+                            color={action.color}
+                            icon={
+                              typeof action.icon === 'function'
+                                ? action.icon(props)
+                                : action.icon
+                            }
+                            onClick={() => handleMenuItem(action)}
+                            {...(typeof action.componentProps === 'function'
+                              ? action.componentProps(props)
+                              : action.componentProps)}
+                          >
+                            {typeof action.label === 'function'
+                              ? action.label(props)
+                              : action.label}
+                          </Menu.Item>
+                        ),
+                    )}
                   </Menu.Dropdown>
                 </Menu>
-              )}
-            </div>
+              </div>
+            )}
           </Group>
         ) : null}
       </div>
