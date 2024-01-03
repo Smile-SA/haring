@@ -8,8 +8,9 @@ import type {
 } from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';
 
-import { Button, Group } from '@mantine/core';
+import { ActionIcon, Button, Group, Menu } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
+import { DotsThreeVertical } from '@phosphor-icons/react';
 import { useState } from 'react';
 
 import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
@@ -90,6 +91,14 @@ export function ActionBar<Data extends Record<string, unknown>>(
     }
   }
 
+  function handleMenuItem(action: IActionBarAction<Data>): void {
+    if (action.confirmation) {
+      setModal(action);
+    } else {
+      action.onAction?.(props);
+    }
+  }
+
   return (
     <>
       <div className={classes.actionBar}>
@@ -113,6 +122,49 @@ export function ActionBar<Data extends Record<string, unknown>>(
                   : action.label}
               </Button>
             ))}
+            <div>
+              {actions.length > 0 && (
+                <Menu radius={4} shadow="lg" width={200}>
+                  <Menu.Target>
+                    <ActionIcon
+                      onClick={(e) => e.stopPropagation()}
+                      radius={4}
+                      type="button"
+                    >
+                      <div>
+                        <DotsThreeVertical
+                          // className={classes.dotsIcon}
+                          size={16}
+                          weight="bold"
+                        />
+                      </div>
+                    </ActionIcon>
+                  </Menu.Target>
+                  <Menu.Dropdown onClick={(e) => e.stopPropagation()}>
+                    {actions.map((action, index) => (
+                      <Menu.Item
+                        // eslint-disable-next-line react/no-array-index-key
+                        key={index}
+                        color={action.color}
+                        icon={
+                          typeof action.icon === 'function'
+                            ? action.icon(props)
+                            : action.icon
+                        }
+                        onClick={() => handleMenuItem(action)}
+                        {...(typeof action.componentProps === 'function'
+                          ? action.componentProps(props)
+                          : action.componentProps)}
+                      >
+                        {typeof action.label === 'function'
+                          ? action.label(props)
+                          : action.label}
+                      </Menu.Item>
+                    ))}
+                  </Menu.Dropdown>
+                </Menu>
+              )}
+            </div>
           </Group>
         ) : null}
       </div>
