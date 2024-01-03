@@ -1,5 +1,30 @@
 # @smile/react-front-kit
 
+## 0.7.0
+
+### Minor Changes
+
+- [#87](https://github.com/Smile-SA/react-front-kit/pull/87) [`dbc06ca`](https://github.com/Smile-SA/react-front-kit/commit/dbc06ca55961b69663ab7fdc02609c6525ae361d) Thanks [@tonai](https://github.com/tonai)! - Add theme provider and update barrel file for better next.js compatibility
+
+- [#93](https://github.com/Smile-SA/react-front-kit/pull/93) [`7415d9b`](https://github.com/Smile-SA/react-front-kit/commit/7415d9b9d119abfc850dda2ab6fa94845e72aee6) Thanks [@tonai](https://github.com/tonai)! - Add Preview component
+
+- [#95](https://github.com/Smile-SA/react-front-kit/pull/95) [`5696400`](https://github.com/Smile-SA/react-front-kit/commit/5696400e6f703da52db5f7199b50f8251fa76726) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Added `FilterList` component, renamed `FiltersBar` in `SidebarFilters`
+  and `FiltersCheckboxList` in `SearchableCheckboxList`,
+  refactored `SearchableCheckboxList`, added common `IFilter` type in shared
+  package, added topContent prop to `SwitchableView`, fixed `BrowsingPage` with
+  name changes.
+
+- [#86](https://github.com/Smile-SA/react-front-kit/pull/86) [`eede698`](https://github.com/Smile-SA/react-front-kit/commit/eede698ce172e20eb1de4c70e3d59b7510afb9df) Thanks [@vapersmile](https://github.com/vapersmile)! - Add FitlersCheckboxList Component
+
+- [#88](https://github.com/Smile-SA/react-front-kit/pull/88) [`480af11`](https://github.com/Smile-SA/react-front-kit/commit/480af1122b41e28d938bd665c1aa998272c99d9a) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Added `HeaderMobile` and `HeaderNav` components, reworked `Header` with mobile mode, added optional placeholder to `SearchBar`, improved info returned by collapseButtonProps in `SidebarMenu`
+
+- [#94](https://github.com/Smile-SA/react-front-kit/pull/94) [`70b674f`](https://github.com/Smile-SA/react-front-kit/commit/70b674f3513b4bf996e8f83a46c8a132ca3712ac) Thanks [@vapersmile](https://github.com/vapersmile)! - Add collapse function for infoCard component
+
+### Patch Changes
+
+- Updated dependencies [[`dbc06ca`](https://github.com/Smile-SA/react-front-kit/commit/dbc06ca55961b69663ab7fdc02609c6525ae361d), [`5696400`](https://github.com/Smile-SA/react-front-kit/commit/5696400e6f703da52db5f7199b50f8251fa76726)]:
+  - @smile/react-front-kit-shared@0.7.0
+
 ## 0.6.0
 
 ### Minor Changes
