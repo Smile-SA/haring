@@ -117,7 +117,7 @@ export function ActionBar<Data extends Record<string, unknown>>(
     if (action.confirmation) {
       setModal(action);
     } else {
-      action.onAction?.(props);
+      action.onAction?.(selectedElements);
     }
   }
 
@@ -179,16 +179,16 @@ export function ActionBar<Data extends Record<string, unknown>>(
                             color={action.color}
                             icon={
                               typeof action.icon === 'function'
-                                ? action.icon(props)
+                                ? action.icon(selectedElements)
                                 : action.icon
                             }
                             onClick={() => handleMenuItem(action)}
                             {...(typeof action.componentProps === 'function'
-                              ? action.componentProps(props)
+                              ? action.componentProps(selectedElements)
                               : action.componentProps)}
                           >
                             {typeof action.label === 'function'
-                              ? action.label(props)
+                              ? action.label(selectedElements)
                               : action.label}
                           </Menu.Item>
                         ),

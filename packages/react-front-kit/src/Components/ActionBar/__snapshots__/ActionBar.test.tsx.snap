@@ -9,10 +9,10 @@ exports[`ActionBar matches snapshot 1`] = `
       3 selected
     </span>
     <div
-      class="mantine-Group-root mantine-k3ov3c"
+      class="mantine-Group-root mantine-19vjl6i"
     >
       <button
-        class="mantine-UnstyledButton-root mantine-Button-root mantine-1q6w75n"
+        class="mantine-UnstyledButton-root mantine-Button-root mantine-16xpn0"
         data-button="true"
         type="button"
       >
@@ -20,7 +20,7 @@ exports[`ActionBar matches snapshot 1`] = `
           class="mantine-1wpc1xj mantine-Button-inner"
         >
           <span
-            class="mantine-Button-icon mantine-Button-leftIcon mantine-1jbrfp"
+            class="mantine-Button-icon mantine-Button-leftIcon mantine-vuhtny"
           >
             <svg
               fill="none"
@@ -48,23 +48,22 @@ exports[`ActionBar matches snapshot 1`] = `
             </svg>
           </span>
           <span
-            class="mantine-1ryt1ht mantine-Button-label"
+            class="mantine-Button-label mantine-yz13z6"
           >
             Move in tree
           </span>
         </div>
       </button>
-      <button
-        class="mantine-UnstyledButton-root mantine-Button-root mantine-3agwv"
-        data-button="true"
-        type="button"
-      >
-        <div
-          class="mantine-1wpc1xj mantine-Button-inner"
+      <div>
+        <button
+          aria-controls="mantine-f4bipx4bi-dropdown"
+          aria-expanded="false"
+          aria-haspopup="menu"
+          class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-7q1ih8"
+          id="mantine-f4bipx4bi-target"
+          type="button"
         >
-          <span
-            class="mantine-Button-icon mantine-Button-leftIcon mantine-1jbrfp"
-          >
+          <div>
             <svg
               fill="currentColor"
               height="16"
@@ -73,17 +72,12 @@ exports[`ActionBar matches snapshot 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+                d="M112,60a16,16,0,1,1,16,16A16,16,0,0,1,112,60Zm16,52a16,16,0,1,0,16,16A16,16,0,0,0,128,112Zm0,68a16,16,0,1,0,16,16A16,16,0,0,0,128,180Z"
               />
             </svg>
-          </span>
-          <span
-            class="mantine-1ryt1ht mantine-Button-label"
-          >
-            Delete
-          </span>
-        </div>
-      </button>
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 </div>
