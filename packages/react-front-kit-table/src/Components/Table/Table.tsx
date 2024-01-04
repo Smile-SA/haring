@@ -137,7 +137,6 @@ export function Table<Data extends Record<string, unknown>>(
     enableDensityToggle: false,
     enableFullScreenToggle: false,
     enableGlobalFilter: false,
-    enablePinning: false,
     enableRowActions: true,
     enableRowSelection: true,
     icons: {
