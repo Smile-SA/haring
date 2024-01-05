@@ -1,5 +1,16 @@
 # @smile/react-front-kit
 
+## 0.8.0
+
+### Minor Changes
+
+- [#100](https://github.com/Smile-SA/react-front-kit/pull/100) [`f157421`](https://github.com/Smile-SA/react-front-kit/commit/f1574217dbadfb55a9338064f94fa8c848ebf0dd) Thanks [@vapersmile](https://github.com/vapersmile)! - Reduce margin for actives filters section for mobile display
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @smile/react-front-kit-shared@0.8.0
+
 ## 0.7.0
 
 ### Minor Changes

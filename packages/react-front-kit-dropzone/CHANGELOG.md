@@ -1,5 +1,13 @@
 # @smile/react-front-kit-dropzone
 
+## 0.8.0
+
+### Patch Changes
+
+- Updated dependencies [[`f157421`](https://github.com/Smile-SA/react-front-kit/commit/f1574217dbadfb55a9338064f94fa8c848ebf0dd)]:
+  - @smile/react-front-kit@0.8.0
+  - @smile/react-front-kit-shared@0.8.0
+
 ## 0.7.0
 
 ### Minor Changes
