@@ -78,6 +78,9 @@ export const useStyles = createStyles((theme) => ({
     fontWeight: 600,
   },
   top: {
+    [`@media (max-width: ${theme.breakpoints.sm})`]: {
+      padding: '24px 16px',
+    },
     background: theme.fn.primaryColor(),
     border: `8px solid ${theme.white}`,
     borderRadius: '16px 16px 0px 0px',
