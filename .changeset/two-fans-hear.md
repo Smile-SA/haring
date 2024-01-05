@@ -2,4 +2,4 @@
 '@smile/react-front-kit': minor
 ---
 
-Add accordion menu for ActionBar componement
+Add accordion menu for ActionBar component
