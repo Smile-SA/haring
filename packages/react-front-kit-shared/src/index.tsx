@@ -39,6 +39,7 @@ export type {
   IOptions,
   IThemeOverride,
   IThemes,
+  IFilter,
 } from './types';
 // type exports
 export { mainTheme, primaryTheme, secondaryTheme, themes } from './theme';

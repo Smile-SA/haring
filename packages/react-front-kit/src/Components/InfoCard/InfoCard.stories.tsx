@@ -17,6 +17,7 @@ type IStory = StoryObj<typeof meta>;
 export const InfoCard: IStory = {
   args: {
     children: <p>Customizable content</p>,
+    collapse: true,
     content: (
       <p
         style={{
@@ -44,6 +45,6 @@ export const InfoCard: IStory = {
       },
     ],
     motif: undefined,
-    title: <h1>Jean-Michel DUPONT</h1>,
+    title: <h1 style={{ marginTop: 0 }}>Jean-Michel DUPONT</h1>,
   },
 };

@@ -16,7 +16,12 @@ import {
 } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
 import { CaretLeft, Star } from '@phosphor-icons/react';
-import { DropdownButton, Header, ResponsiveTabs } from '@smile/react-front-kit';
+import {
+  DropdownButton,
+  Header,
+  Preview,
+  ResponsiveTabs,
+} from '@smile/react-front-kit';
 import { FolderMove, usePrimaryTheme } from '@smile/react-front-kit-shared';
 
 import {
@@ -27,8 +32,6 @@ import {
   CardPermissions,
   CardsMetadata,
 } from '../pages.mock';
-
-import { DocumentView } from './DocumentView';
 
 const useStyles = createStyles((theme) => ({
   actionIcons: {
@@ -46,17 +49,6 @@ const useStyles = createStyles((theme) => ({
   colRight: {
     background: theme.fn.primaryColor(),
     padding: '40px 64px',
-  },
-  document: {
-    aspectRatio: '3/4',
-    background: theme.white,
-    boxShadow:
-      '0px 3.4348926544189453px 2.7479140758514404px 0px rgba(0, 0, 0, 0.0155),' +
-      '0px 8.687101364135742px 6.949680805206299px 0px rgba(0, 0, 0, 0.0222),' +
-      '0px 17.720870971679688px 14.176697731018066px 0px rgba(0, 0, 0, 0.0278),' +
-      '0px 36.501644134521484px 29.201316833496094px 0px rgba(0, 0, 0, 0.0345),' +
-      '0px 100px 80px 0px rgba(0, 0, 0, 0.05)',
-    width: '100%',
   },
   grid: {
     height: '100%',
@@ -139,9 +131,7 @@ export function DocumentDetails(): ReactElement {
               </div>
             </div>
             <Space h="xl" />
-            <div className={classes.document}>
-              <DocumentView url="./example.pdf" />
-            </div>
+            <Preview url="./example.pdf" />
           </Flex>
         </Grid.Col>
         <Grid.Col className={classes.colRight} span={5}>

@@ -1,7 +1,7 @@
 'use client';
 
-import type { IFilter } from '@smile/react-front-kit';
 import type { IFile } from '@smile/react-front-kit-dropzone';
+import type { IFilter } from '@smile/react-front-kit-shared';
 import type { FormEvent, ReactElement } from 'react';
 
 import {
@@ -23,10 +23,10 @@ import {
 } from '@phosphor-icons/react';
 import {
   Breadcrumbs,
-  FiltersCheckboxList,
   FoldableColumnLayout,
   Header,
   InfoCard,
+  SearchableCheckboxList,
   SidebarMenu,
   flattenNestedObjects,
 } from '@smile/react-front-kit';
@@ -48,9 +48,9 @@ import {
 } from '../pages.mock';
 
 import {
+  SearchableCheckboxListProps,
   actions,
   data,
-  filtersCheckboxListProps,
   gridProps,
   tableProps,
 } from './BrowsingPage.mock';
@@ -68,7 +68,7 @@ export function BrowsingPage(): ReactElement {
   const { primary, secondary } = useThemes();
   const [filtersManagerModal, handleFiltersManagerModal] = useDisclosure(false);
   const [globalFilters, setGlobalFilters] = useState<IFilter[]>(
-    filtersCheckboxListProps,
+    SearchableCheckboxListProps,
   );
   const { classes } = useStyles();
   const theme = useMantineTheme();
@@ -226,7 +226,7 @@ export function BrowsingPage(): ReactElement {
               <div style={{ fontWeight: 200 }}>
                 [
                 {globalFilters.map(
-                  (element) => element.active && `${element.label}, `,
+                  (filter) => filter.active && `${filter.label}, `,
                 )}
                 ]
               </div>
@@ -256,9 +256,9 @@ export function BrowsingPage(): ReactElement {
         size="md"
         title="Gérer les filtres"
       >
-        <FiltersCheckboxList
+        <SearchableCheckboxList<IFilter>
           buttonLabel="Valider les modifications"
-          filters={globalFilters}
+          checkboxes={globalFilters}
           onClickButton={handleFiltersManagerSubmit}
           placeholder="Chercher dans les filtres"
         />

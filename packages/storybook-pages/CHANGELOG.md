@@ -1,5 +1,29 @@
 # storybook-pages
 
+## 0.7.0
+
+### Minor Changes
+
+- [#87](https://github.com/Smile-SA/react-front-kit/pull/87) [`dbc06ca`](https://github.com/Smile-SA/react-front-kit/commit/dbc06ca55961b69663ab7fdc02609c6525ae361d) Thanks [@tonai](https://github.com/tonai)! - Add theme provider and update barrel file for better next.js compatibility
+
+- [#95](https://github.com/Smile-SA/react-front-kit/pull/95) [`5696400`](https://github.com/Smile-SA/react-front-kit/commit/5696400e6f703da52db5f7199b50f8251fa76726) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Added `FilterList` component, renamed `FiltersBar` in `SidebarFilters`
+  and `FiltersCheckboxList` in `SearchableCheckboxList`,
+  refactored `SearchableCheckboxList`, added common `IFilter` type in shared
+  package, added topContent prop to `SwitchableView`, fixed `BrowsingPage` with
+  name changes.
+
+- [#84](https://github.com/Smile-SA/react-front-kit/pull/84) [`25be4ad`](https://github.com/Smile-SA/react-front-kit/commit/25be4adff210302259a18d52909a623e20397f87) Thanks [@vapersmile](https://github.com/vapersmile)! - add modal for label see details in browsingPage
+
+- [#89](https://github.com/Smile-SA/react-front-kit/pull/89) [`8997d43`](https://github.com/Smile-SA/react-front-kit/commit/8997d4319744b8c7bebdb622d44e609964e1c37c) Thanks [@vapersmile](https://github.com/vapersmile)! - Add FiltersCheckboxList in BrowsingPage
+
+### Patch Changes
+
+- Updated dependencies [[`dbc06ca`](https://github.com/Smile-SA/react-front-kit/commit/dbc06ca55961b69663ab7fdc02609c6525ae361d), [`7415d9b`](https://github.com/Smile-SA/react-front-kit/commit/7415d9b9d119abfc850dda2ab6fa94845e72aee6), [`5696400`](https://github.com/Smile-SA/react-front-kit/commit/5696400e6f703da52db5f7199b50f8251fa76726), [`eede698`](https://github.com/Smile-SA/react-front-kit/commit/eede698ce172e20eb1de4c70e3d59b7510afb9df), [`480af11`](https://github.com/Smile-SA/react-front-kit/commit/480af1122b41e28d938bd665c1aa998272c99d9a), [`70b674f`](https://github.com/Smile-SA/react-front-kit/commit/70b674f3513b4bf996e8f83a46c8a132ca3712ac)]:
+  - @smile/react-front-kit-dropzone@0.7.0
+  - @smile/react-front-kit-shared@0.7.0
+  - @smile/react-front-kit-table@0.7.0
+  - @smile/react-front-kit@0.7.0
+
 ## 0.6.0
 
 ### Minor Changes

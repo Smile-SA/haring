@@ -2,16 +2,18 @@
 'use client';
 
 // component exports
-export { FiltersCheckboxList } from './Components/FiltersCheckboxList/FiltersCheckboxList';
+export type { IPreviewProps } from './Components/Preview/Preview';
+export { Preview } from './Components/Preview/Preview';
+export { SearchableCheckboxList } from './Components/SearchableCheckboxList/SearchableCheckboxList';
 export type {
-  IFilter,
-  IFiltersCheckboxListProps,
-} from './Components/FiltersCheckboxList/FiltersCheckboxList';
-export { FiltersBar } from './Components/FiltersBar/FiltersBar';
+  ICheckbox,
+  ISearchableCheckboxListProps,
+} from './Components/SearchableCheckboxList/SearchableCheckboxList';
+export { SidebarFilters } from './Components/SidebarFilters/SidebarFilters';
 export type {
-  IFiltersProps,
+  ISidebarFiltersProps,
   ISidebarFilter,
-} from './Components/FiltersBar/FiltersBar';
+} from './Components/SidebarFilters/SidebarFilters';
 export { ActionBar } from './Components/ActionBar/ActionBar';
 export type {
   IActionBarAction,

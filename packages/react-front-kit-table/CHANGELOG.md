@@ -1,5 +1,17 @@
 # @smile/react-front-kit-table
 
+## 0.7.0
+
+### Minor Changes
+
+- [#87](https://github.com/Smile-SA/react-front-kit/pull/87) [`dbc06ca`](https://github.com/Smile-SA/react-front-kit/commit/dbc06ca55961b69663ab7fdc02609c6525ae361d) Thanks [@tonai](https://github.com/tonai)! - Add theme provider and update barrel file for better next.js compatibility
+
+### Patch Changes
+
+- Updated dependencies [[`dbc06ca`](https://github.com/Smile-SA/react-front-kit/commit/dbc06ca55961b69663ab7fdc02609c6525ae361d), [`7415d9b`](https://github.com/Smile-SA/react-front-kit/commit/7415d9b9d119abfc850dda2ab6fa94845e72aee6), [`5696400`](https://github.com/Smile-SA/react-front-kit/commit/5696400e6f703da52db5f7199b50f8251fa76726), [`eede698`](https://github.com/Smile-SA/react-front-kit/commit/eede698ce172e20eb1de4c70e3d59b7510afb9df), [`480af11`](https://github.com/Smile-SA/react-front-kit/commit/480af1122b41e28d938bd665c1aa998272c99d9a), [`70b674f`](https://github.com/Smile-SA/react-front-kit/commit/70b674f3513b4bf996e8f83a46c8a132ca3712ac)]:
+  - @smile/react-front-kit-shared@0.7.0
+  - @smile/react-front-kit@0.7.0
+
 ## 0.6.0
 
 ### Minor Changes

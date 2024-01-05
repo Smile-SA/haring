@@ -1,5 +1,17 @@
 # @smile/react-front-kit-shared
 
+## 0.7.0
+
+### Minor Changes
+
+- [#87](https://github.com/Smile-SA/react-front-kit/pull/87) [`dbc06ca`](https://github.com/Smile-SA/react-front-kit/commit/dbc06ca55961b69663ab7fdc02609c6525ae361d) Thanks [@tonai](https://github.com/tonai)! - Add theme provider and update barrel file for better next.js compatibility
+
+- [#95](https://github.com/Smile-SA/react-front-kit/pull/95) [`5696400`](https://github.com/Smile-SA/react-front-kit/commit/5696400e6f703da52db5f7199b50f8251fa76726) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Added `FilterList` component, renamed `FiltersBar` in `SidebarFilters`
+  and `FiltersCheckboxList` in `SearchableCheckboxList`,
+  refactored `SearchableCheckboxList`, added common `IFilter` type in shared
+  package, added topContent prop to `SwitchableView`, fixed `BrowsingPage` with
+  name changes.
+
 ## 0.6.0
 
 ### Minor Changes
