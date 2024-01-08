@@ -389,6 +389,7 @@ export function SearchResults(): ReactElement {
           left={headerLeft}
           right={headerRight}
         >
+          yyy
           {headerContent}
         </Header>
       }
