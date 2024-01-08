@@ -22,6 +22,7 @@ export const ActionBar: IStory = {
     actions: actionBarActionsMock as IActionBarAction<
       Record<string, unknown>
     >[],
+    rowActionNumber: 1,
     selectedElements: actionBarSelectedMock,
     selectedElementsLabel: actionBarLabelMock,
   },
