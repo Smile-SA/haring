@@ -164,6 +164,11 @@ export function Table<Data extends Record<string, unknown>>(
     mantinePaperProps: {
       className: classes.paper,
     },
+    mantineTableBodyRowProps: ({ row }) => {
+      return {
+        className: row.getIsSelected() ? classes.rowSelected : '',
+      };
+    },
     mantineTableProps: {
       className: classes.table,
     },

@@ -66,6 +66,13 @@ export const useStyles = createStyles((theme) => ({
   rowActionsMenuOpened: {
     ref: getStylesRef('rowActionsMenuOpened'),
   },
+  rowSelected: {
+    [`& td:has(.${getStylesRef('rowActions')}), & td:has(.${getStylesRef(
+      'rowActionsMenuOpened',
+    )})`]: {
+      background: `${theme.colors.gray[1]} !important`,
+    },
+  },
   table: {
     [`& tr:hover .${getStylesRef('rowActions')}, & tr .${getStylesRef(
       'rowActionsMenuOpened',
