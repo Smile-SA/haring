@@ -40,6 +40,10 @@ export const useStyles = createStyles((theme) => ({
       '0px 3.43489px 2.74791px 0px rgba(0, 0, 0, 0.02), 0px 8.6871px 6.94968px 0px rgba(0, 0, 0, 0.02), 0px 17.72087px 14.1767px 0px rgba(0, 0, 0, 0.03), 0px 36.50164px 29.20132px 0px rgba(0, 0, 0, 0.03), 0px 100px 80px 0px rgba(0, 0, 0, 0.05)',
   },
   rowActions: {
+    [theme.fn.smallerThan('sm')]: {
+      marginLeft: '0px',
+      marginRight: '0px',
+    },
     '& > *': {
       alignItems: 'center',
       display: 'flex',
@@ -49,6 +53,8 @@ export const useStyles = createStyles((theme) => ({
       minWidth: '1.75rem',
       width: '1.75rem',
     },
+    background: theme.colors.gray[1],
+    borderRadius: '4px',
     boxShadow: 'none',
     display: 'flex',
     justifyContent: 'space-between',
@@ -59,6 +65,13 @@ export const useStyles = createStyles((theme) => ({
   },
   rowActionsMenuOpened: {
     ref: getStylesRef('rowActionsMenuOpened'),
+  },
+  rowSelected: {
+    [`& td:has(.${getStylesRef('rowActions')}), & td:has(.${getStylesRef(
+      'rowActionsMenuOpened',
+    )})`]: {
+      background: `${theme.colors.gray[1]} !important`,
+    },
   },
   table: {
     [`& tr:hover .${getStylesRef('rowActions')}, & tr .${getStylesRef(

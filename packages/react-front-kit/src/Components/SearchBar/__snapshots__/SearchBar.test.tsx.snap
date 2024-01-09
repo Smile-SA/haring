@@ -7,13 +7,13 @@ exports[`SearchBar matches snapshot 1`] = `
   >
     <div
       aria-invalid="false"
-      class="mantine-Input-input mantine-1j30gvy"
+      class="mantine-Input-input mantine-htzl2s"
     >
       <form
         class="mantine-1r7r49a"
       >
         <div
-          class="mantine-InputWrapper-root mantine-TextInput-root mantine-1dta65q"
+          class="mantine-InputWrapper-root mantine-TextInput-root mantine-1gq3695"
         >
           <div
             class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-1v7s5f8"
@@ -21,16 +21,16 @@ exports[`SearchBar matches snapshot 1`] = `
             <input
               aria-invalid="false"
               aria-label="Search"
-              class="mantine-Input-input mantine-TextInput-input mantine-nio31h"
+              class="mantine-Input-input mantine-TextInput-input mantine-moncl8"
               id="search-bar-test"
               type="text"
             />
             <div
-              class="mantine-ihurxy mantine-Input-rightSection mantine-TextInput-rightSection"
+              class="mantine-1nmvwx4 mantine-Input-rightSection mantine-TextInput-rightSection"
             >
               <button
                 aria-label="Clear"
-                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-CloseButton-root mantine-sbtbot"
+                class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-CloseButton-root mantine-ozrqr9"
                 type="button"
               >
                 <svg
