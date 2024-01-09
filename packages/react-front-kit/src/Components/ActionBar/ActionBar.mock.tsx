@@ -21,7 +21,7 @@ export const actionBarActionsMock: IThumbnailAction[] = [
       children: <p>Are you sure ?</p>,
       confirmColor: 'red',
       confirmLabel: 'Remove',
-      title: 'remove files ?',
+      title: 'Remove files ?',
     },
     confirmation: true,
     icon: <Trash size={16} />,
