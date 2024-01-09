@@ -12,9 +12,13 @@ export const useStyles = createStyles((theme) => ({
     width: '100%',
   },
   collapseButton: {
+    [theme.fn.smallerThan('md')]: {
+      '> *': {
+        justifyContent: 'space-between',
+      },
+    },
     [theme.fn.largerThan('md')]: {
       display: 'none',
-      justifyContent: 'space-between',
     },
   },
   container: {
