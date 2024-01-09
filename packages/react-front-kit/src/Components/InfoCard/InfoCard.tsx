@@ -10,7 +10,7 @@ import { CaretDown, CaretUp } from '@phosphor-icons/react';
 import { useStyles } from './InfoCard.style';
 import { Motif } from './Motif';
 
-export type IMantineBreakpoint = 'lg' | 'md' | 'sm' | 'xs';
+export type IMantineBreakpoint = 'lg' | 'md' | 'sm' | 'xl' | 'xs';
 
 export interface IContentItem {
   icon?: ReactElement;
