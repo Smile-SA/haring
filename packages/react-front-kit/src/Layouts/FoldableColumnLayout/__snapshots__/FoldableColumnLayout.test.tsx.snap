@@ -3,14 +3,14 @@
 exports[`FoldableColumnLayout matches snapshot 1`] = `
 <div>
   <div
-    class="mantine-1n4vm8k"
+    class="mantine-k5t78"
     color="primary"
   >
     <div
-      class="mantine-Grid-root mantine-16fdnqw"
+      class="mantine-Grid-root mantine-18hdle4"
     >
       <div
-        class="mantine-Grid-col mantine-b6e2c5"
+        class="mantine-Grid-col mantine-psscdt"
       >
         <div
           class="mantine-Switch-root mantine-Switch-root mantine-1knyxmk"
@@ -52,27 +52,54 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="mantine-Grid-col mantine-1aonpsc"
-      />
     </div>
+    <button
+      class="mantine-UnstyledButton-root mantine-Button-root mantine-t9oyb8"
+      data-button="true"
+      type="button"
+    >
+      <div
+        class="mantine-1wpc1xj mantine-Button-inner"
+      >
+        <span
+          class="mantine-1ryt1ht mantine-Button-label"
+        >
+          Display sidebar
+        </span>
+        <span
+          class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            viewBox="0 0 256 256"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
   </div>
   <div
-    class="mantine-Container-root mantine-r2yrer"
+    class="mantine-Container-root mantine-1tcnuk"
   >
     <div
-      class="mantine-Grid-root mantine-zodkxp"
+      class="mantine-Grid-root mantine-dgp6xz"
     >
       <div
         aria-hidden="false"
-        class="mantine-Grid-col mantine-11w2beg"
+        class="mantine-Grid-col mantine-1psi0ra"
       >
         <span>
           sidebar content
         </span>
       </div>
       <div
-        class="mantine-Grid-col mantine-cr9bz"
+        class="mantine-Grid-col mantine-18kcs1a"
       >
         <span>
           main content

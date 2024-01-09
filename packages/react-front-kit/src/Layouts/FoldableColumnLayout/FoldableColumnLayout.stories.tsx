@@ -27,8 +27,9 @@ type IStory = StoryObj<typeof meta>;
 export const FoldableColumnLayout: IStory = {
   args: {
     children: mainContent,
-    containerProps: { p: '20px' },
     sidebarContent,
     sidebarToggleLabel: 'View sidebar',
+    topBarRight: 'topBarRight...',
+    topBlock: 'topBlock...',
   },
 };
