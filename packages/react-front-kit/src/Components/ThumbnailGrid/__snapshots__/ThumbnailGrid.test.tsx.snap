@@ -15,7 +15,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
         class="mantine-Group-root mantine-19vjl6i"
       >
         <button
-          class="mantine-UnstyledButton-root mantine-Button-root mantine-16xpn0"
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-1fg4bc4"
           data-button="true"
           type="button"
         >
@@ -23,7 +23,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
             class="mantine-1wpc1xj mantine-Button-inner"
           >
             <span
-              class="mantine-Button-icon mantine-Button-leftIcon mantine-vuhtny"
+              class="mantine-Button-icon mantine-Button-leftIcon mantine-1696ey6"
             >
               <svg
                 fill="none"
@@ -51,7 +51,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
               </svg>
             </span>
             <span
-              class="mantine-Button-label mantine-yz13z6"
+              class="mantine-Button-label mantine-1e30p2e"
             >
               Move in tree
             </span>

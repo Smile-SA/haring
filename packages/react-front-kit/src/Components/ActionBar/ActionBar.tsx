@@ -32,17 +32,17 @@ const useStyles = createStyles((theme) => ({
     width: '32px',
   },
   buttonIcon: {
-    [`@media  (max-width: ${theme.breakpoints.sm})`]: {
+    [theme.fn.smallerThan('md')]: {
       marginRight: 0,
     },
   },
   buttonLabel: {
-    [`@media  (max-width: ${theme.breakpoints.sm})`]: {
+    [theme.fn.smallerThan('md')]: {
       display: 'none',
     },
   },
   buttonRoot: {
-    [`@media  (max-width: ${theme.breakpoints.sm})`]: {
+    [theme.fn.smallerThan('md')]: {
       height: '32px',
       padding: '0',
       width: '32px',
