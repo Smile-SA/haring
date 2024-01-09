@@ -8,8 +8,9 @@ import type {
 } from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';
 
-import { Button, Group } from '@mantine/core';
+import { ActionIcon, Button, Group, Menu } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
+import { DotsThreeVertical } from '@phosphor-icons/react';
 import { useState } from 'react';
 
 import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
@@ -25,6 +26,35 @@ const useStyles = createStyles((theme) => ({
     padding: '16px 24px',
     width: '100%',
   },
+  actionIconRoot: {
+    borderRadius: '32px',
+    height: '32px',
+    width: '32px',
+  },
+  buttonIcon: {
+    [`@media  (max-width: ${theme.breakpoints.sm})`]: {
+      marginRight: 0,
+    },
+  },
+  buttonLabel: {
+    [`@media  (max-width: ${theme.breakpoints.sm})`]: {
+      display: 'none',
+    },
+  },
+  buttonRoot: {
+    [`@media  (max-width: ${theme.breakpoints.sm})`]: {
+      height: '32px',
+      padding: '0',
+      width: '32px',
+    },
+  },
+  groupRoot: {
+    gap: '8px',
+  },
+  menuDropdown: {
+    borderRadius: '4px',
+    minWidth: '200px',
+  },
 }));
 
 export type IActionBarAction<Data extends Record<string, unknown>> = IAction<
@@ -35,6 +65,7 @@ export interface IActionBarProps<Data extends Record<string, unknown>>
   extends GroupProps {
   actions?: IActionBarAction<Data>[];
   modalProps?: Omit<ModalProps, 'title'>;
+  rowActionNumber?: number;
   selectedElements: Data[];
   selectedElementsLabel?: (selectedElements: number) => string;
 }
@@ -44,6 +75,7 @@ export function ActionBar<Data extends Record<string, unknown>>(
 ): ReactElement {
   const {
     actions,
+    rowActionNumber = 1,
     modalProps,
     selectedElements,
     selectedElementsLabel = (selectedElements: number) =>
@@ -53,6 +85,8 @@ export function ActionBar<Data extends Record<string, unknown>>(
   const [confirmAction, setConfirmAction] = useState<IActionConfirmModalProps<
     Data | Data[]
   > | null>(null);
+  const visibleRowActions = actions?.slice(0, rowActionNumber);
+  const menuRowActions = actions?.slice(rowActionNumber);
   const numberOfSelectedElements = selectedElements.length;
 
   const { classes } = useStyles();
@@ -90,15 +124,28 @@ export function ActionBar<Data extends Record<string, unknown>>(
     }
   }
 
+  function handleMenuItem(action: IActionBarAction<Data>): void {
+    if (action.confirmation) {
+      setModal(action);
+    } else {
+      action.onAction?.(selectedElements);
+    }
+  }
+
   return (
     <>
       <div className={classes.actionBar}>
         <span>{selectedElementsLabel(numberOfSelectedElements)}</span>
         {actions && actions.length > 0 ? (
-          <Group {...groupProps}>
-            {actions.map((action) => (
+          <Group className={classes.groupRoot} {...groupProps}>
+            {visibleRowActions?.map((action) => (
               <Button
                 key={action.id}
+                classNames={{
+                  icon: classes.buttonIcon,
+                  label: classes.buttonLabel,
+                  root: classes.buttonRoot,
+                }}
                 color={action.color}
                 leftIcon={
                   typeof action.icon === 'function'
@@ -113,6 +160,50 @@ export function ActionBar<Data extends Record<string, unknown>>(
                   : action.label}
               </Button>
             ))}
+            {menuRowActions?.length !== undefined &&
+            menuRowActions.length > 0 ? (
+              <div>
+                <Menu
+                  classNames={{ dropdown: classes.menuDropdown }}
+                  shadow="lg"
+                >
+                  <Menu.Target>
+                    <ActionIcon
+                      className={classes.actionIconRoot}
+                      onClick={(e) => e.stopPropagation()}
+                      type="button"
+                      variant="light"
+                    >
+                      <div>
+                        <DotsThreeVertical size={16} weight="bold" />
+                      </div>
+                    </ActionIcon>
+                  </Menu.Target>
+                  <Menu.Dropdown onClick={(e) => e.stopPropagation()}>
+                    {menuRowActions.map((action, index) => (
+                      <Menu.Item
+                        // eslint-disable-next-line react/no-array-index-key
+                        key={index}
+                        color={action.color}
+                        icon={
+                          typeof action.icon === 'function'
+                            ? action.icon(selectedElements)
+                            : action.icon
+                        }
+                        onClick={() => handleMenuItem(action)}
+                        {...(typeof action.componentProps === 'function'
+                          ? action.componentProps(selectedElements)
+                          : action.componentProps)}
+                      >
+                        {typeof action.label === 'function'
+                          ? action.label(selectedElements)
+                          : action.label}
+                      </Menu.Item>
+                    ))}
+                  </Menu.Dropdown>
+                </Menu>
+              </div>
+            ) : null}
           </Group>
         ) : null}
       </div>
