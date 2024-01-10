@@ -7,18 +7,32 @@ export const useStyles = createStyles((theme) => ({
     [theme.fn.smallerThan('md')]: {
       display: 'flex',
       flexDirection: 'column',
-      padding: '16px 24px 0 24px',
+      padding: '16px',
     },
     width: '100%',
   },
+  boxWithMotif: {
+    [theme.fn.smallerThan('md')]: {
+      padding: '24px',
+    },
+  },
   collapseButton: {
     [theme.fn.smallerThan('md')]: {
-      '> *': {
-        justifyContent: 'space-between',
+      '> button': {
+        '> *': {
+          justifyContent: 'space-between',
+        },
+        width: '100%',
       },
+      padding: '0 24px',
     },
     [theme.fn.largerThan('md')]: {
       display: 'none',
+    },
+  },
+  collapseButtonWithMotif: {
+    [theme.fn.smallerThan('md')]: {
+      paddingTop: '24px',
     },
   },
   container: {
@@ -42,8 +56,10 @@ export const useStyles = createStyles((theme) => ({
   },
   motif: {
     left: -40,
+    pointerEvents: 'none',
     position: 'absolute',
     top: -60,
+    userSelect: 'none',
     zIndex: 0,
   },
   motifContainer: {
@@ -86,7 +102,7 @@ export const useStyles = createStyles((theme) => ({
     [theme.fn.smallerThan('md')]: {
       flexBasis: '100%',
       maxWidth: '100%',
-      padding: '0 0 16px 0',
+      padding: 0,
     },
   },
 }));

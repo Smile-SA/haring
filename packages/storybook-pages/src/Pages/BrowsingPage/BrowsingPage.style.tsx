@@ -45,9 +45,21 @@ export const useStyles = createStyles((theme) => ({
     fontWeight: 700,
     verticalAlign: 'middle',
   },
+  filtersCollapse: {
+    flexDirection: 'column',
+  },
+  filtersDesktop: {
+    display: 'initial',
+  },
   filtersManagerModalTitle: {
     fontSize: '18px',
     fontWeight: 700,
+  },
+  filtersMobile: {
+    display: 'none',
+  },
+  filtersMobileButton: {
+    marginRight: 20,
   },
   modalBody: {
     padding: '0px 48px 50px 48px',
@@ -61,5 +73,17 @@ export const useStyles = createStyles((theme) => ({
     fontSize: '26px',
     fontWeight: 700,
     marginTop: 0,
+  },
+  sizeDesktop: {
+    display: 'flex',
+    [theme.fn.smallerThan('md')]: {
+      display: 'none',
+    },
+  },
+  sizeMobile: {
+    display: 'none',
+    [theme.fn.smallerThan('md')]: {
+      display: 'flex',
+    },
   },
 }));

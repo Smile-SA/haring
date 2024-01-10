@@ -8,6 +8,7 @@ import {
   Accordion,
   AppShell,
   Button,
+  Collapse,
   Flex,
   MantineProvider,
   Modal,
@@ -15,7 +16,8 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
-  CaretRight,
+  CaretDown,
+  CaretUp,
   Eye,
   FolderPlus,
   Suitcase,
@@ -23,6 +25,7 @@ import {
 } from '@phosphor-icons/react';
 import {
   Breadcrumbs,
+  FilterList,
   FoldableColumnLayout,
   Header,
   InfoCard,
@@ -34,6 +37,7 @@ import { menuMock } from '@smile/react-front-kit/mock';
 import { Dropzone } from '@smile/react-front-kit-dropzone';
 import { useThemes } from '@smile/react-front-kit-shared';
 import { TableGridView } from '@smile/react-front-kit-table';
+import { action } from '@storybook/addon-actions';
 import { useState } from 'react';
 
 import {
@@ -66,6 +70,7 @@ export function BrowsingPage(): ReactElement {
   const [gridCols, setGridCols] = useState(4);
   const [seeMoreModal, { open, close }] = useDisclosure(false);
   const { primary, secondary } = useThemes();
+  const [filtersOpened, { toggle }] = useDisclosure(false);
   const [filtersManagerModal, handleFiltersManagerModal] = useDisclosure(false);
   const [globalFilters, setGlobalFilters] = useState<IFilter[]>(
     SearchableCheckboxListProps,
@@ -218,21 +223,42 @@ export function BrowsingPage(): ReactElement {
           style={{ gap: 20, paddingTop: 12 }}
           tableProps={tableProps}
           topBarLeft={
-            <span
-              aria-hidden="true"
-              className={classes.buttonFiltersManager}
-              onClick={handleFiltersManagerModal.open}
-            >
-              <div style={{ fontWeight: 200 }}>
-                [
-                {globalFilters.map(
-                  (filter) => filter.active && `${filter.label}, `,
-                )}
-                ]
+            <>
+              <FilterList
+                className={classes.sizeDesktop}
+                filters={globalFilters}
+                filtersManageLabel="Gérer les filtres"
+                onSubmit={action('Filters submitted')}
+                submitLabel="Filtrer"
+              />
+              <div
+                className={`${classes.sizeMobile} ${classes.filtersMobileButton}`}
+              >
+                <Button
+                  fullWidth
+                  onClick={toggle}
+                  rightIcon={filtersOpened ? <CaretUp /> : <CaretDown />}
+                >
+                  {filtersOpened
+                    ? 'Masquer les filtres'
+                    : 'Afficher les filtres'}
+                </Button>
               </div>
-              Gérer les filtres
-              <CaretRight className={classes.arrowFiltersManager} size={12} />
-            </span>
+            </>
+          }
+          topContent={
+            <Collapse
+              className={`${classes.sizeMobile} ${classes.filtersCollapse}`}
+              in={filtersOpened}
+            >
+              <FilterList
+                direction="column"
+                filters={globalFilters}
+                filtersManageLabel="Gérer les filtres"
+                onSubmit={action('Filters submitted')}
+                submitLabel="Filtrer"
+              />
+            </Collapse>
           }
         />
       </FoldableColumnLayout>
