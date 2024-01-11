@@ -56,6 +56,8 @@ const tooltipProps = {
   withinPortal: true,
 };
 
+// TODO: remove select from table in mobile (How does it work then? how do you select lines?)
+
 /** Additional props will be forwarded to the [Mantine React Table useMantineReactTable hook](https://www.mantine-react-table.com/docs/api/table-options) */
 export function Table<Data extends Record<string, unknown>>(
   props: ITableProps<Data>,

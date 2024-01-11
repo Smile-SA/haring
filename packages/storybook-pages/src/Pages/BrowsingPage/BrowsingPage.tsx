@@ -48,7 +48,9 @@ import {
   CardsMetadata,
   headerContent,
   headerLeft,
+  headerLeftMobile,
   headerRight,
+  headerRightMobile,
 } from '../pages.mock';
 
 import {
@@ -139,6 +141,7 @@ export function BrowsingPage(): ReactElement {
         <Header
           childrenComponent="nav"
           left={headerLeft}
+          mobileProps={{ left: headerLeftMobile, right: headerRightMobile }}
           onSearchChange={setSearch}
           onSearchSubmit={handleSearchSubmit}
           right={headerRight}

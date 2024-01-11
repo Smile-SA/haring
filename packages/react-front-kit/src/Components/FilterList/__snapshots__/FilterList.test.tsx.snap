@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterList matches snapshot 1`] = `
+<div>
+  <div
+    class="mantine-Group-root mantine-8k3bl3"
+  >
+    <span
+      class="mantine-1eieff6"
+    >
+      <div
+        class="mantine-InputWrapper-root mantine-TextInput-root mantine-q6oiko"
+      >
+        <div
+          class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-1v7s5f8"
+        >
+          <input
+            aria-invalid="false"
+            class="mantine-Input-input mantine-TextInput-input mantine-1qswl1p"
+            id="mantine-f4bipx4bi"
+            placeholder="some value"
+            type="text"
+          />
+        </div>
+      </div>
+    </span>
+    <span
+      class="mantine-1eieff6"
+    >
+      <div
+        class="mantine-InputWrapper-root mantine-Select-root mantine-q6oiko"
+      >
+        <div
+          aria-controls="mantine-f4bipx4bi"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          class=""
+          role="combobox"
+          tabindex="-1"
+        >
+          <input
+            type="hidden"
+            value="another value"
+          />
+          <div
+            class="mantine-Input-wrapper mantine-Select-wrapper mantine-1v7s5f8"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-invalid="false"
+              autocomplete="off"
+              class="mantine-Input-input mantine-Select-input mantine-kkodi1"
+              data-mantine-stop-propagation="false"
+              id="mantine-f4bipx4bi"
+              readonly=""
+              type="search"
+              value="Another value"
+            />
+            <div
+              class="mantine-1qj7q0z mantine-Input-rightSection mantine-Select-rightSection"
+            >
+              <svg
+                data-chevron="true"
+                fill="none"
+                style="color: rgb(134, 142, 150); width: 1.125rem; height: 1.125rem;"
+                viewBox="0 0 15 15"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M4.93179 5.43179C4.75605 5.60753 4.75605 5.89245 4.93179 6.06819C5.10753 6.24392 5.39245 6.24392 5.56819 6.06819L7.49999 4.13638L9.43179 6.06819C9.60753 6.24392 9.89245 6.24392 10.0682 6.06819C10.2439 5.89245 10.2439 5.60753 10.0682 5.43179L7.81819 3.18179C7.73379 3.0974 7.61933 3.04999 7.49999 3.04999C7.38064 3.04999 7.26618 3.0974 7.18179 3.18179L4.93179 5.43179ZM10.0682 9.56819C10.2439 9.39245 10.2439 9.10753 10.0682 8.93179C9.89245 8.75606 9.60753 8.75606 9.43179 8.93179L7.49999 10.8636L5.56819 8.93179C5.39245 8.75606 5.10753 8.75606 4.93179 8.93179C4.75605 9.10753 4.75605 9.39245 4.93179 9.56819L7.18179 11.8182C7.35753 11.9939 7.64245 11.9939 7.81819 11.8182L10.0682 9.56819Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </span>
+    <button
+      class="mantine-UnstyledButton-root mantine-Button-root mantine-13kxxue"
+      data-button="true"
+      type="button"
+    >
+      <div
+        class="mantine-1wpc1xj mantine-Button-inner"
+      >
+        <span
+          class="mantine-Button-label mantine-1bj6mez"
+        >
+          <svg
+            fill="#25262b"
+            height="12"
+            viewBox="0 0 256 256"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"
+            />
+          </svg>
+          Manage filters
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;

@@ -73,6 +73,10 @@ export function SearchBar(props: ISearchBarProps): ReactElement {
           ref={inputRef}
           aria-label={inputAriaLabel}
           className={classes.input}
+          classNames={{
+            input: classes.inputInner,
+            wrapper: classes.inputInnerRoot,
+          }}
           onChange={handleSearchChange}
           placeholder={inputPlaceholder}
           rightSection={

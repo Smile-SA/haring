@@ -3,7 +3,7 @@
 exports[`Pagination matches snapshot 1`] = `
 <div>
   <div
-    class="mantine-z9baz5"
+    class="mantine-brykyr"
     data-testid="pagination"
   >
     <div
@@ -59,7 +59,7 @@ exports[`Pagination matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="mantine-Group-root mantine-11nlj0o"
+      class="mantine-Group-root mantine-uxw5g5"
       data-testid="pagination-page"
     >
       <button
