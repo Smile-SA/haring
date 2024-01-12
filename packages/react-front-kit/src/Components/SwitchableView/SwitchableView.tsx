@@ -30,6 +30,7 @@ const useStyles = createStyles(() => ({
   },
   topBarLeft: {
     margin: 'auto auto auto 0',
+    width: '100%',
   },
   topBarRight: {
     alignItems: 'center',
@@ -111,7 +112,7 @@ export function SwitchableView(props: ISwitchableViewProps): ReactElement {
           />
         </span>
       </div>
-      {topContent ? <div>topContent</div> : null}
+      {topContent ? <>{topContent}</> : null}
       <div>{activeView.dataView ?? ''}</div>
     </Paper>
   );

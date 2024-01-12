@@ -7,21 +7,21 @@ exports[`SearchBar matches snapshot 1`] = `
   >
     <div
       aria-invalid="false"
-      class="mantine-Input-input mantine-htzl2s"
+      class="mantine-Input-input mantine-1dmg58i"
     >
       <form
-        class="mantine-1r7r49a"
+        class="mantine-whzeux"
       >
         <div
-          class="mantine-InputWrapper-root mantine-TextInput-root mantine-1gq3695"
+          class="mantine-InputWrapper-root mantine-TextInput-root mantine-12ka740"
         >
           <div
-            class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-1v7s5f8"
+            class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-8qx5cx"
           >
             <input
               aria-invalid="false"
               aria-label="Search"
-              class="mantine-Input-input mantine-TextInput-input mantine-moncl8"
+              class="mantine-Input-input mantine-TextInput-input mantine-oxqjuq"
               id="search-bar-test"
               type="text"
             />

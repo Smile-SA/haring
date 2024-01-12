@@ -3,11 +3,11 @@
 exports[`Breadcrumbs matches snapshot 1`] = `
 <div>
   <div
-    class="mantine-Breadcrumbs-root mantine-1ujbd2v"
+    class="mantine-Breadcrumbs-root mantine-1f07axn"
     data-testid="Breadcrumbs"
   >
     <a
-      class="mantine-Breadcrumbs-breadcrumb mantine-eg71k5"
+      class="mantine-Breadcrumbs-breadcrumb mantine-1tn4w6e"
       href="test"
     >
       test
@@ -31,7 +31,7 @@ exports[`Breadcrumbs matches snapshot 1`] = `
       </svg>
     </div>
     <a
-      class="mantine-Breadcrumbs-breadcrumb mantine-eg71k5"
+      class="mantine-Breadcrumbs-breadcrumb mantine-1tn4w6e"
       href="test"
     >
       test

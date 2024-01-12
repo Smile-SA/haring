@@ -436,6 +436,10 @@ export function SearchResults(): ReactElement {
               leftSection={
                 <Select
                   className={classes.select}
+                  classNames={{
+                    dropdown: classes.selectDropdown,
+                    rightSection: classes.selectRight,
+                  }}
                   data={typeFilterOptions}
                   defaultValue={activeType.value}
                   onChange={(v) =>
@@ -461,7 +465,7 @@ export function SearchResults(): ReactElement {
         }
         topBlockTheme={secondary}
       >
-        <Paper mb={24} style={{ borderRadius: 16, padding: '48px 56px' }}>
+        <Paper className={classes.documentListContainer} mb={24}>
           <DocumentList
             actionBarProps={{
               selectedElementsLabel: (n) =>
