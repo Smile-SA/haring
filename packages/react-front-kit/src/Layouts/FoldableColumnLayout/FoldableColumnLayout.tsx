@@ -75,7 +75,11 @@ export function FoldableColumnLayout(
   return (
     <>
       <MantineProvider theme={theme}>
-        <Box className={classes.box} color="primary" {...boxProps}>
+        <Box
+          className={`${classes.box} ${boxMotif ? classes.boxWithMotif : ''}`}
+          color="primary"
+          {...boxProps}
+        >
           {Boolean(boxMotif) && (
             <div className={classes.motifContainer}>
               <div className={classes.motif}>{boxMotif}</div>
@@ -109,15 +113,20 @@ export function FoldableColumnLayout(
               </Grid.Col>
             )}
           </Grid>
-          <Button
-            className={classes.collapseButton}
-            onClick={() => handleSidebarVisibleToggle(!isColumnVisibleState)}
-            rightIcon={isColumnVisibleState ? <CaretUp /> : <CaretDown />}
-          >
-            {sidebarToggleLabel}
-          </Button>
         </Box>
       </MantineProvider>
+      <div
+        className={`${classes.collapseButton} ${
+          boxMotif ? classes.collapseButtonWithMotif : ''
+        }`}
+      >
+        <Button
+          onClick={() => handleSidebarVisibleToggle(!isColumnVisibleState)}
+          rightIcon={isColumnVisibleState ? <CaretUp /> : <CaretDown />}
+        >
+          {sidebarToggleLabel}
+        </Button>
+      </div>
       <Container className={classes.container} fluid {...containerProps}>
         <Grid className={classes.contentGrid} gutter="xl" pt={12}>
           <Grid.Col

@@ -5,6 +5,7 @@ import type {
 } from '@smile/react-front-kit-table';
 import type { IExampleDataType } from '@smile/react-front-kit-table/mock';
 
+import { TextInput } from '@mantine/core';
 import {
   DownloadSimple,
   Eye,
@@ -165,47 +166,75 @@ export const gridProps: ITableGridViewGridProps = {
 };
 
 export const SearchableCheckboxListProps: IFilter[] = [
-  { active: false, id: 1, label: 'Nom du filtre' },
   {
     active: false,
+    component: <TextInput placeholder="Nom du filtre" />,
+    id: 1,
+    label: 'Nom du filtre',
+  },
+  {
+    active: false,
+    component: <TextInput placeholder="Blandit mollis nisi curabitur" />,
     id: 2,
     label: 'Blandit mollis nisi curabitur',
   },
   {
     active: false,
+    component: <TextInput placeholder="Ultricies dui ut non massa eget" />,
     id: 3,
     label: 'Ultricies dui ut non massa eget',
   },
   {
     active: false,
+    component: <TextInput placeholder="Lorem ipsum dolor" />,
     id: 4,
-    label: 'Lorem ipsum dolor ',
+    label: 'Lorem ipsum dolor',
   },
-  { active: true, id: 5, label: 'Dernière modification' },
-  { active: true, id: 6, label: 'Type de document' },
-  { active: true, id: 7, label: 'Période' },
+  {
+    active: true,
+    component: <TextInput placeholder="Dernière modification" />,
+    id: 5,
+    label: 'Dernière modification',
+  },
+  {
+    active: true,
+    component: <TextInput placeholder="Type de document" />,
+    id: 6,
+    label: 'Type de document',
+  },
+  {
+    active: true,
+    component: <TextInput placeholder="Période" />,
+    id: 7,
+    label: 'Période',
+  },
   {
     active: false,
+    component: <TextInput placeholder="Lorem ipsum dolor" />,
     id: 8,
-    label: 'Lorem ipsum dolor ',
+    label: 'Lorem ipsum dolor',
   },
   {
     active: false,
+    component: <TextInput placeholder="Blandit mollis nisi curabitur" />,
     id: 9,
     label: 'Blandit mollis nisi curabitur',
   },
   {
     active: false,
+    component: <TextInput placeholder="Lorem ipsum dolor" />,
     id: 10,
-    label: 'Lorem ipsum dolor ',
+    label: 'Lorem ipsum dolor',
   },
   {
     active: false,
+    component: <TextInput placeholder="Ultricies dui ut non massa eget" />,
     id: 11,
     label: 'Ultricies dui ut non massa eget',
   },
   {
     active: false,
+    component: <TextInput placeholder="Blandit mollis nisi curabitur" />,
     id: 12,
     label: 'Blandit mollis nisi curabitur',
   },

@@ -3,7 +3,7 @@
 exports[`FoldableColumnLayout matches snapshot 1`] = `
 <div>
   <div
-    class="mantine-k5t78"
+    class=" mantine-1echu65"
     color="primary"
   >
     <div
@@ -53,8 +53,12 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="mantine-16nq4t3 "
+  >
     <button
-      class="mantine-UnstyledButton-root mantine-Button-root mantine-t9oyb8"
+      class="mantine-UnstyledButton-root mantine-Button-root mantine-s27q6v"
       data-button="true"
       type="button"
     >
