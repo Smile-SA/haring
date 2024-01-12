@@ -111,6 +111,7 @@ export function getRecursiveMenu<
 }
 
 // eslint-disable-next-line no-warning-comments
+// TODO: use (and modify) SidebarMenu instead of a copy
 export function SidebarFilterMenu<
   T extends number | string,
   C extends ElementType = 'button',
