@@ -96,6 +96,7 @@ export function createThemes(themeConfig: IThemeOverride = {}): IThemes {
       },
       '.mantine-Carousel-root': {
         borderRadius: '8px',
+        overflow: 'hidden',
       },
       a: {
         color: 'inherit',
