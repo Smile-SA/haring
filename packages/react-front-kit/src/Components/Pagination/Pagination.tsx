@@ -12,13 +12,22 @@ import {
   createStyles,
 } from '@mantine/core';
 
-const useStyles = createStyles((_, styleTransparent: boolean) => ({
+const useStyles = createStyles((theme, styleTransparent: boolean) => ({
   container: {
     justifyContent: 'space-between',
+    [theme.fn.smallerThan('sm')]: {
+      flexDirection: 'column',
+      rowGap: '16px',
+    },
   },
   control: {
     backgroundColor: styleTransparent ? 'transparent' : '',
     borderColor: styleTransparent ? 'transparent' : '',
+  },
+  pagination: {
+    [theme.fn.smallerThan('sm')]: {
+      justifyContent: 'center',
+    },
   },
 }));
 
@@ -82,6 +91,7 @@ export function Pagination(props: IPaginationProps): ReactElement {
         />
       ) : null}
       <MantinePagination
+        className={classes.pagination}
         classNames={{ control: classes.control }}
         data-testid="pagination-page"
         onChange={handleChangePage}

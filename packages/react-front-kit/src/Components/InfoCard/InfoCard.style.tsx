@@ -5,10 +5,9 @@ import { createStyles } from '@mantine/core';
 export const useStyles = createStyles(
   (theme, responsiveBreakpoint: IMantineBreakpoint) => ({
     collapseButton: {
-      [`@media screen and (max-width: ${theme.breakpoints[responsiveBreakpoint]})`]:
-        {
-          margin: 'auto',
-        },
+      [theme.fn.smallerThan(responsiveBreakpoint)]: {
+        margin: 'auto',
+      },
       margin: '12px',
     },
     collapseButtonCenter: {
@@ -20,12 +19,11 @@ export const useStyles = createStyles(
       width: '100%',
     },
     container: {
-      [`@media screen and (max-width: ${theme.breakpoints[responsiveBreakpoint]})`]:
-        {
-          flexDirection: 'column',
-          margin: 'auto',
-          width: 'fit-content',
-        },
+      [theme.fn.smallerThan(responsiveBreakpoint)]: {
+        flexDirection: 'column',
+        margin: 'auto',
+        width: 'fit-content',
+      },
       display: 'flex',
       flexWarp: 'wrap',
       gap: 10,
@@ -48,10 +46,10 @@ export const useStyles = createStyles(
       maxWidth: 175,
     },
     contentItems: {
-      [`@media screen and (max-width: ${theme.breakpoints[responsiveBreakpoint]})`]:
-        {
-          minWidth: '0px',
-        },
+      [theme.fn.smallerThan(responsiveBreakpoint)]: {
+        marginBottom: '16px',
+        minWidth: '0px',
+      },
       columnGap: 40,
       display: 'flex',
       flexWrap: 'wrap',
@@ -60,10 +58,9 @@ export const useStyles = createStyles(
       rowGap: 10,
     },
     leftContainer: {
-      [`@media screen and (max-width: ${theme.breakpoints[responsiveBreakpoint]})`]:
-        {
-          minWidth: '0px !important',
-        },
+      [theme.fn.smallerThan(responsiveBreakpoint)]: {
+        minWidth: '0px !important',
+      },
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
@@ -76,15 +73,17 @@ export const useStyles = createStyles(
       zIndex: 0,
     },
     rightContainer: {
-      [`@media screen and (max-width: ${theme.breakpoints[responsiveBreakpoint]})`]:
-        {
-          maxWidth: 440,
-        },
+      [theme.fn.smallerThan(responsiveBreakpoint)]: {
+        maxWidth: 440,
+      },
       display: 'flex',
       height: '100%',
       width: '100%',
     },
     root: {
+      [theme.fn.smallerThan(responsiveBreakpoint)]: {
+        padding: '20px 16px',
+      },
       overflow: 'hidden',
       padding: '24px 48px',
       position: 'relative',
@@ -94,9 +93,16 @@ export const useStyles = createStyles(
       'h1, h2, h3, h4 h5, p': {
         fontSize: '26px',
         fontWeight: 700,
+        margin: 0,
+        [theme.fn.smallerThan(responsiveBreakpoint)]: {
+          fontSize: '18px',
+        },
       },
     },
     topContent: {
+      [theme.fn.smallerThan(responsiveBreakpoint)]: {
+        rowGap: '8px',
+      },
       display: 'flex',
       flexDirection: 'column',
       rowGap: 24,

@@ -44,6 +44,14 @@ export function Breadcrumbs(props: IBreadcrumbsProps): ReactElement {
       marginRight: '1em',
       textDecoration: 'none',
       textTransform: 'capitalize',
+      [theme.fn.smallerThan('md')]: {
+        marginLeft: '0',
+        marginRight: '0',
+      },
+    },
+    container: {
+      flexWrap: 'wrap',
+      rowGap: '5px',
     },
   }));
 
@@ -51,6 +59,7 @@ export function Breadcrumbs(props: IBreadcrumbsProps): ReactElement {
 
   return (
     <MantineBreadcrumbs
+      className={classes.container}
       classNames={{
         breadcrumb: classes.breadcrumb,
       }}
