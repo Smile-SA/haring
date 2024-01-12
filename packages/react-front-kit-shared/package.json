@@ -91,9 +91,5 @@
   },
   "engines": {
     "node": ">=16"
-  },
-  "dependencies": {
-    "@mantine/carousel": "^6.0.21",
-    "embla-carousel-react": "^7.1.0"
   }
 }

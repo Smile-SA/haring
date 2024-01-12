@@ -7,10 +7,12 @@
     "access": "public"
   },
   "dependencies": {
+    "@mantine/carousel": "^6.0.21",
     "@smile/react-front-kit": "*",
     "@smile/react-front-kit-dropzone": "*",
     "@smile/react-front-kit-shared": "*",
-    "@smile/react-front-kit-table": "*"
+    "@smile/react-front-kit-table": "*",
+    "embla-carousel-react": "^7.1.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^7.4.1"
@@ -18,9 +20,9 @@
   "peerDependencies": {
     "@emotion/react": ">=11",
     "@mantine/core": "6",
+    "@mantine/dates": "6",
     "@mantine/hooks": "6",
     "@mantine/styles": "6",
-    "@mantine/dates": "6",
     "@phosphor-icons/react": ">=2",
     "react": ">=18.0",
     "react-dom": ">=18.0"
