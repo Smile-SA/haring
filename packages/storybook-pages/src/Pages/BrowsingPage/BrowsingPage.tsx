@@ -218,25 +218,24 @@ export function BrowsingPage(): ReactElement {
             />
           </InfoCard>
         </MantineProvider>
-        <TableGridView
-          actions={actions}
-          data={data}
-          gridProps={{ ...gridProps, cols: gridCols }}
-          mt={24}
-          style={{ gap: 20, paddingTop: 12 }}
-          tableProps={tableProps}
-          topBarLeft={
-            <>
-              <FilterList
-                className={classes.sizeDesktop}
-                filters={globalFilters}
-                filtersManageLabel="Gérer les filtres"
-                onSubmit={action('Filters submitted')}
-                submitLabel="Filtrer"
-              />
-              <div
-                className={`${classes.sizeMobile} ${classes.filtersMobileButton}`}
-              >
+        <div className={classes.sizeMobile}>
+          <TableGridView
+            actions={actions}
+            data={data}
+            gridProps={{ ...gridProps, cols: gridCols }}
+            mt={24}
+            style={{ gap: 20, padding: 16 }}
+            tableProps={{
+              ...tableProps,
+              enableRowSelection: false,
+              enableSelectAll: false,
+              initialState: {
+                ...tableProps.initialState,
+                columnPinning: { right: undefined },
+              },
+            }}
+            topBarLeft={
+              <div className={classes.filtersMobileButton}>
                 <Button
                   fullWidth
                   onClick={toggle}
@@ -247,23 +246,49 @@ export function BrowsingPage(): ReactElement {
                     : 'Afficher les filtres'}
                 </Button>
               </div>
-            </>
-          }
-          topContent={
-            <Collapse
-              className={`${classes.sizeMobile} ${classes.filtersCollapse}`}
-              in={filtersOpened}
-            >
+            }
+            topContent={
+              <Collapse className={classes.filtersCollapse} in={filtersOpened}>
+                <FilterList
+                  direction="column"
+                  filters={globalFilters}
+                  filtersManageLabel="Gérer les filtres"
+                  onSubmit={action('Filters submitted')}
+                  submitLabel="Filtrer"
+                />
+              </Collapse>
+            }
+          />
+        </div>
+        <div className={classes.sizeDesktop}>
+          <TableGridView
+            actions={actions}
+            data={data}
+            gridProps={{ ...gridProps, cols: gridCols }}
+            mt={24}
+            style={{ gap: 20, padding: 16 }}
+            tableProps={tableProps}
+            topBarLeft={
               <FilterList
-                direction="column"
                 filters={globalFilters}
                 filtersManageLabel="Gérer les filtres"
                 onSubmit={action('Filters submitted')}
                 submitLabel="Filtrer"
               />
-            </Collapse>
-          }
-        />
+            }
+            topContent={
+              <Collapse className={classes.filtersCollapse} in={filtersOpened}>
+                <FilterList
+                  direction="column"
+                  filters={globalFilters}
+                  filtersManageLabel="Gérer les filtres"
+                  onSubmit={action('Filters submitted')}
+                  submitLabel="Filtrer"
+                />
+              </Collapse>
+            }
+          />
+        </div>
       </FoldableColumnLayout>
       <Modal
         classNames={{

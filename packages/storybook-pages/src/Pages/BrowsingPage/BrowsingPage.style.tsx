@@ -59,7 +59,11 @@ export const useStyles = createStyles((theme) => ({
     display: 'none',
   },
   filtersMobileButton: {
-    marginRight: 20,
+    button: {
+      fontSize: '10px',
+    },
+    display: 'flex',
+    marginRight: 10,
   },
   modalBody: {
     padding: '0px 48px 50px 48px',
@@ -75,15 +79,15 @@ export const useStyles = createStyles((theme) => ({
     marginTop: 0,
   },
   sizeDesktop: {
-    display: 'flex',
+    display: 'initial',
     [theme.fn.smallerThan('md')]: {
       display: 'none',
     },
   },
   sizeMobile: {
-    display: 'none',
-    [theme.fn.smallerThan('md')]: {
-      display: 'flex',
+    display: 'initial',
+    [theme.fn.largerThan('md')]: {
+      display: 'none',
     },
   },
 }));
