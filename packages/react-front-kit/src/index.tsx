@@ -4,16 +4,6 @@
 // component exports
 export type { IPreviewProps } from './Components/Preview/Preview';
 export { Preview } from './Components/Preview/Preview';
-export { SearchableCheckboxList } from './Components/SearchableCheckboxList/SearchableCheckboxList';
-export type {
-  ICheckbox,
-  ISearchableCheckboxListProps,
-} from './Components/SearchableCheckboxList/SearchableCheckboxList';
-export { SidebarFilters } from './Components/SidebarFilters/SidebarFilters';
-export type {
-  ISidebarFiltersProps,
-  ISidebarFilter,
-} from './Components/SidebarFilters/SidebarFilters';
 export { ActionBar } from './Components/ActionBar/ActionBar';
 export type {
   IActionBarAction,
@@ -38,6 +28,8 @@ export type {
 } from './Components/DocumentList/DocumentList';
 export { DropdownButton } from './Components/DropdownButton/DropdownButton';
 export type { IDropdownButtonProps } from './Components/DropdownButton/DropdownButton';
+export { FilterList } from './Components/FilterList/FilterList';
+export type { IFilterListProps } from './Components/FilterList/FilterList';
 export { Header } from './Components/Header/Header';
 export type { IHeaderProps } from './Components/Header/Header';
 export { HeaderMobile } from './Components/HeaderMobile/HeaderMobile';
@@ -72,6 +64,16 @@ export type {
   IMenuItem,
   ISidebarMenuProps,
 } from './Components/SidebarMenu/SidebarMenu';
+export { SearchableCheckboxList } from './Components/SearchableCheckboxList/SearchableCheckboxList';
+export type {
+  ICheckbox,
+  ISearchableCheckboxListProps,
+} from './Components/SearchableCheckboxList/SearchableCheckboxList';
+export { SidebarFilters } from './Components/SidebarFilters/SidebarFilters';
+export type {
+  ISidebarFiltersProps,
+  ISidebarFilter,
+} from './Components/SidebarFilters/SidebarFilters';
 export { SwitchableView } from './Components/SwitchableView/SwitchableView';
 export type {
   IDataView,

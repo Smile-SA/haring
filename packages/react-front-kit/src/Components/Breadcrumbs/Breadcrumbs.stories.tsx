@@ -20,13 +20,13 @@ export const Breadcrumbs: IStory = {
   args: {
     children: [
       <a key={1} data-testid="Breadcrumbs-first-element" href="test">
-        test
+        test string
       </a>,
       <a key={2} data-testid="Breadcrumbs-second-element" href="test">
-        test
+        another string
       </a>,
       <a key={3} data-testid="Breadcrumbs-last-element" href="test">
-        test
+        a slightly longer string
       </a>,
     ],
   },
