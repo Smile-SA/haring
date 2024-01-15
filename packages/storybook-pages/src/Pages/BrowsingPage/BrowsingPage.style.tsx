@@ -65,6 +65,10 @@ export const useStyles = createStyles((theme) => ({
     display: 'flex',
     marginRight: 10,
   },
+  main: {
+    overflowX: 'hidden',
+    width: '100%',
+  },
   modalBody: {
     padding: '0px 48px 50px 48px',
   },

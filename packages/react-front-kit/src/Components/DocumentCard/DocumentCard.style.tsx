@@ -12,7 +12,7 @@ export const useStyles = createStyles((theme) => ({
     flexWrap: 'wrap',
   },
   headerBottom: {
-    '@media (max-width: 833px)': {
+    [theme.fn.smallerThan('sm')]: {
       flexDirection: 'column',
     },
     color: theme.colors.dark[3],
@@ -21,7 +21,7 @@ export const useStyles = createStyles((theme) => ({
     marginRight: '12px',
   },
   headerTop: {
-    '@media (max-width: 833px)': {
+    [theme.fn.smallerThan('sm')]: {
       flexDirection: 'column',
     },
     display: 'flex',
@@ -40,10 +40,11 @@ export const useStyles = createStyles((theme) => ({
     minHeight: '164px',
   },
   imageRoot: {
+    // TODO: redo a lot of this, bad css (static max-width, etc), make mobile mode of Card
     '@media (max-width: 414px)': {
       maxWidth: '100%',
     },
-    '@media (max-width: 833px)': {
+    [theme.fn.smallerThan('sm')]: {
       flexDirection: 'column',
       marginBottom: '20px',
     },
@@ -54,15 +55,14 @@ export const useStyles = createStyles((theme) => ({
     color: theme.colors.dark[6],
   },
   root: {
-    cursor: 'pointer',
-    display: 'flex',
-    // eslint-disable-next-line sort-keys
-    '@media (max-width: 833px)': {
+    [theme.fn.smallerThan('sm')]: {
       flexDirection: 'column',
     },
+    cursor: 'pointer',
+    display: 'flex',
   },
   separator: {
-    '@media (max-width: 833px)': {
+    [theme.fn.smallerThan('sm')]: {
       display: 'none',
     },
     margin: '0 12px',

@@ -14,7 +14,6 @@ import {
   Space,
   Tabs,
 } from '@mantine/core';
-import { createStyles } from '@mantine/styles';
 import { CaretLeft, Star } from '@phosphor-icons/react';
 import {
   DropdownButton,
@@ -33,27 +32,7 @@ import {
   CardsMetadata,
 } from '../pages.mock';
 
-const useStyles = createStyles((theme) => ({
-  actionIcons: {
-    display: 'flex',
-    flexDirection: 'row',
-    gap: 10,
-    marginLeft: 'auto',
-  },
-  colLeftBar: {
-    alignItems: 'center',
-    display: 'flex',
-    flexDirection: 'row',
-    width: '100%',
-  },
-  colRight: {
-    background: theme.fn.primaryColor(),
-    padding: '40px 64px',
-  },
-  grid: {
-    height: '100%',
-  },
-}));
+import { useStyles } from './DocumentDetails.style';
 
 /**
  * Example Page of a document preview, actions and attributes in a `ResponsiveTabs` component
@@ -82,6 +61,7 @@ export function DocumentDetails(): ReactElement {
 
   return (
     <AppShell
+      classNames={{ main: classes.main }}
       header={
         <Header
           childrenComponent="nav"
