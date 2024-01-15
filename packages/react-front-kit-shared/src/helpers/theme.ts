@@ -71,6 +71,33 @@ export function createThemes(themeConfig: IThemeOverride = {}): IThemes {
     black: DEFAULT_THEME.colors.dark[6],
     colorScheme: 'light',
     globalStyles: (theme) => ({
+      '.mantine-Carousel-control': {
+        height: '42px',
+        svg: {
+          color: theme.colors[theme.primaryColor][9],
+        },
+        width: '42px',
+      },
+      '.mantine-Carousel-controls': {
+        padding: '0 5%',
+      },
+      '.mantine-Carousel-indicator': {
+        '&[data-active="true"]': {
+          transitionDuration: '500ms',
+          width: '32px',
+        },
+        height: '4px',
+        transitionDuration: '500ms',
+        width: '12px',
+      },
+      '.mantine-Carousel-indicators': {
+        justifyContent: 'flex-end',
+        padding: '3% 5%',
+      },
+      '.mantine-Carousel-root': {
+        borderRadius: '8px',
+        overflow: 'hidden',
+      },
       a: {
         color: 'inherit',
       },
