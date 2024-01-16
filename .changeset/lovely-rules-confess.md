@@ -2,4 +2,4 @@
 '@smile/react-front-kit': minor
 ---
 
-add langMenu component
+add ButtonsListOrDropdown component
