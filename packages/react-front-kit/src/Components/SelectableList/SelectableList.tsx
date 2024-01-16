@@ -26,6 +26,7 @@ const useStyles = createStyles((theme) => ({
       gap: 48,
     },
     gap: 80,
+    ref: getStylesRef('selectableList'),
   },
 }));
 

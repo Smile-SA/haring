@@ -9,7 +9,7 @@ import type {
 import type { ReactElement } from 'react';
 
 import { ActionIcon, Button, Group, Menu } from '@mantine/core';
-import { createStyles } from '@mantine/styles';
+import { createStyles, getStylesRef } from '@mantine/styles';
 import { DotsThreeVertical } from '@phosphor-icons/react';
 import { useState } from 'react';
 
@@ -24,6 +24,7 @@ const useStyles = createStyles((theme) => ({
     display: 'inline-flex',
     justifyContent: 'space-between',
     padding: '16px 24px',
+    ref: getStylesRef('actionBar'),
     width: '100%',
   },
   actionIconRoot: {
