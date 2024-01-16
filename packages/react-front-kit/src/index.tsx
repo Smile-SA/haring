@@ -2,8 +2,8 @@
 'use client';
 
 // component exports
-export type { ILangMenuProps } from './Components/LangMenu/LangMenu';
-export { LangMenu } from './Components/LangMenu/LangMenu';
+export type { IButtonsListOrDropdownProps } from './Components/ButtonsListOrDropdown/ButtonsListOrDropdown';
+export { ButtonsListOrDropdown } from './Components/ButtonsListOrDropdown/ButtonsListOrDropdown';
 export type { IPreviewProps } from './Components/Preview/Preview';
 export { Preview } from './Components/Preview/Preview';
 export { ActionBar } from './Components/ActionBar/ActionBar';

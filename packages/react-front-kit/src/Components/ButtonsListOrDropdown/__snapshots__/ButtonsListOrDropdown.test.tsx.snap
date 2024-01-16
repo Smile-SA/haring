@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonsListOrDropdown matches snapshot 1`] = `
+<div>
+  <button
+    aria-controls="mantine-sjcm6o6cb-dropdown"
+    aria-expanded="false"
+    aria-haspopup="menu"
+    class="mantine-UnstyledButton-root mantine-Button-root mantine-1w0871i"
+    data-button="true"
+    id="mantine-sjcm6o6cb-target"
+    type="button"
+  >
+    <div
+      class="mantine-1wpc1xj mantine-Button-inner"
+    >
+      <span
+        class="mantine-1ryt1ht mantine-Button-label"
+      />
+    </div>
+  </button>
+</div>
+`;
