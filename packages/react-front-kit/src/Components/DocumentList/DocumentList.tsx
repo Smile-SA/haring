@@ -9,12 +9,16 @@ import { ActionBar } from '../ActionBar/ActionBar';
 import { DocumentCard } from '../DocumentCard/DocumentCard';
 import { SelectableList } from '../SelectableList/SelectableList';
 
+import { useStyles } from './DocumentList.style';
+
 export interface IDocument extends Record<string, unknown> {
   author?: string;
   content?: ReactNode;
   date?: string;
   iconType?: string;
   id: number | string;
+  image?: string;
+  mobilePreviewLabel?: string;
   path?: string;
   title?: string;
 }
@@ -30,6 +34,8 @@ export interface IDocumentListProps
   >;
   actions?: IActionBarAction<IDocument>[];
   documents: IDocument[];
+  isClickCardToSelect?: boolean;
+  mobileImageButtonLabel?: string;
   onDocumentSelected?: (document: IDocument, isSelected: boolean) => void;
   selectedDocuments: IDocument[];
 }
@@ -39,8 +45,10 @@ export function DocumentList(props: IDocumentListProps): ReactElement {
     actionBarProps,
     actions,
     documents,
-    selectedDocuments,
+    isClickCardToSelect = false,
+    mobileImageButtonLabel,
     onDocumentSelected,
+    selectedDocuments,
     ...selectableListProps
   } = props;
   const selectedIndexes = useMemo(
@@ -54,13 +62,14 @@ export function DocumentList(props: IDocumentListProps): ReactElement {
         .filter(isNotNullNorEmpty),
     [documents, selectedDocuments],
   );
+  const { classes } = useStyles();
 
   function handleSelectChange(index: number, isSelected: boolean): void {
     onDocumentSelected?.(documents[index], isSelected);
   }
 
   return (
-    <div>
+    <div className={classes.list}>
       {selectedDocuments.length > 0 && (
         <ActionBar<IDocument>
           actions={actions}
@@ -74,12 +83,21 @@ export function DocumentList(props: IDocumentListProps): ReactElement {
         selectedIndexes={selectedIndexes}
         {...selectableListProps}
       >
-        {documents.map((document) => (
+        {documents.map((document, i) => (
           <DocumentCard
             key={document.id}
             author={document.author}
             date={document.date}
             iconType={document.iconType}
+            image={document.image}
+            mobileImageButtonLabel={
+              document.mobilePreviewLabel ?? mobileImageButtonLabel
+            }
+            onCardClick={
+              isClickCardToSelect
+                ? () => handleSelectChange(i, !selectedIndexes.includes(i))
+                : undefined
+            }
             path={document.path}
             title={document.title}
           >

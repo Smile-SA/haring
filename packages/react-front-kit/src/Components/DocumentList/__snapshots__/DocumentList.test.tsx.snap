@@ -2,7 +2,9 @@
 
 exports[`DocumentList matches snapshot 1`] = `
 <div>
-  <div>
+  <div
+    class="mantine-t4aq4j"
+  >
     <div
       class="mantine-15edn1r"
     >
@@ -82,13 +84,13 @@ exports[`DocumentList matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="mantine-Stack-root mantine-1uvvkp8"
+      class="mantine-Stack-root mantine-1goa0l9"
     >
       <div
-        class="mantine-Group-root mantine-1bxm023"
+        class="mantine-Group-root mantine-w88wg2"
       >
         <div
-          class="mantine-Checkbox-root mantine-yxmaw9"
+          class="mantine-Checkbox-root ___ref-selectableListCheckbox mantine-1p7nzyj"
         >
           <div
             class="mantine-hqx0d1 mantine-Checkbox-body"
@@ -121,10 +123,10 @@ exports[`DocumentList matches snapshot 1`] = `
           </div>
         </div>
         <div
-          class="mantine-1feahhc"
+          class="___ref-documentCard  mantine-1hsxp14"
         >
           <div
-            class="mantine-Image-root mantine-1hgbf0p"
+            class=" mantine-Image-root mantine-d3it6h"
             style="width: 100%;"
           >
             <figure
@@ -134,7 +136,7 @@ exports[`DocumentList matches snapshot 1`] = `
                 class="mantine-1iugybl mantine-Image-imageWrapper"
               >
                 <img
-                  class="mantine-Image-image mantine-1thijn1"
+                  class="mantine-Image-image mantine-10vaayr"
                   src=""
                   style="object-fit: cover; width: 100%; height: auto;"
                 />
@@ -144,16 +146,17 @@ exports[`DocumentList matches snapshot 1`] = `
           <div>
             <div>
               <div
-                class="mantine-mdzvt7"
+                class="mantine-14n9mxy"
               >
                 <div
-                  class="mantine-qu0qb1"
+                  class="___ref-documentCardIcon mantine-cznryd"
                 >
                   <svg
+                    class="mantine-wvylvx"
                     fill="#0b7285"
-                    height="38"
+                    height="1em"
                     viewBox="0 0 256 256"
-                    width="38"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -161,29 +164,31 @@ exports[`DocumentList matches snapshot 1`] = `
                     />
                   </svg>
                 </div>
-                <div>
+                <div
+                  class="mantine-1x591ah"
+                >
                   <div
-                    class="mantine-dxs7ne"
+                    class="___ref-documentCardHeaderTop mantine-hxvu3z"
                   >
                     <span
-                      class="mantine-fakv65"
+                      class="mantine-4yvscz"
                     >
                       Random_File.PDF
                     </span>
                     <span
-                      class="mantine-xrrpki"
+                      class="mantine-1g71ejr"
                     >
                       (Customer &gt; 567890456 &gt; Invoices)
                     </span>
                   </div>
                   <div
-                    class="mantine-1fna5yi"
+                    class="mantine-11bkg4o"
                   >
                     <span>
                       Published on December 24, 2023
                     </span>
                     <span
-                      class="mantine-mj4lz4"
+                      class="mantine-1g4onuo"
                     >
                       -
                     </span>
@@ -197,7 +202,7 @@ exports[`DocumentList matches snapshot 1`] = `
               </div>
             </div>
             <div
-              class="mantine-j5huwo"
+              class="mantine-1yhpcgp"
             >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -232,14 +237,44 @@ exports[`DocumentList matches snapshot 1`] = `
                 </div>
               </button>
             </div>
+            <button
+              class="mantine-UnstyledButton-root mantine-Button-root mantine-7bznx3"
+              data-button="true"
+              type="button"
+            >
+              <div
+                class="mantine-1wpc1xj mantine-Button-inner"
+              >
+                <span
+                  class="mantine-1ryt1ht mantine-Button-label"
+                >
+                  Display preview
+                </span>
+                <span
+                  class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    viewBox="0 0 256 256"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </button>
           </div>
         </div>
       </div>
       <div
-        class="mantine-Group-root mantine-1bxm023"
+        class="mantine-Group-root mantine-w88wg2"
       >
         <div
-          class="mantine-Checkbox-root mantine-yxmaw9"
+          class="mantine-Checkbox-root ___ref-selectableListCheckbox mantine-1p7nzyj"
         >
           <div
             class="mantine-hqx0d1 mantine-Checkbox-body"
@@ -273,10 +308,10 @@ exports[`DocumentList matches snapshot 1`] = `
           </div>
         </div>
         <div
-          class="mantine-1feahhc"
+          class="___ref-documentCard  mantine-1hsxp14"
         >
           <div
-            class="mantine-Image-root mantine-1hgbf0p"
+            class=" mantine-Image-root mantine-d3it6h"
             style="width: 100%;"
           >
             <figure
@@ -286,7 +321,7 @@ exports[`DocumentList matches snapshot 1`] = `
                 class="mantine-1iugybl mantine-Image-imageWrapper"
               >
                 <img
-                  class="mantine-Image-image mantine-1thijn1"
+                  class="mantine-Image-image mantine-10vaayr"
                   src=""
                   style="object-fit: cover; width: 100%; height: auto;"
                 />
@@ -296,16 +331,17 @@ exports[`DocumentList matches snapshot 1`] = `
           <div>
             <div>
               <div
-                class="mantine-mdzvt7"
+                class="mantine-14n9mxy"
               >
                 <div
-                  class="mantine-qu0qb1"
+                  class="___ref-documentCardIcon mantine-cznryd"
                 >
                   <svg
+                    class="mantine-wvylvx"
                     fill="#0b7285"
-                    height="38"
+                    height="1em"
                     viewBox="0 0 256 256"
-                    width="38"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -313,29 +349,31 @@ exports[`DocumentList matches snapshot 1`] = `
                     />
                   </svg>
                 </div>
-                <div>
+                <div
+                  class="mantine-1x591ah"
+                >
                   <div
-                    class="mantine-dxs7ne"
+                    class="___ref-documentCardHeaderTop mantine-hxvu3z"
                   >
                     <span
-                      class="mantine-fakv65"
+                      class="mantine-4yvscz"
                     >
                       Presentation.PPT
                     </span>
                     <span
-                      class="mantine-xrrpki"
+                      class="mantine-1g71ejr"
                     >
                       (Customer &gt; 567890456 &gt; Invoices)
                     </span>
                   </div>
                   <div
-                    class="mantine-1fna5yi"
+                    class="mantine-11bkg4o"
                   >
                     <span>
                       Published on December 24, 2023
                     </span>
                     <span
-                      class="mantine-mj4lz4"
+                      class="mantine-1g4onuo"
                     >
                       -
                     </span>
@@ -349,7 +387,7 @@ exports[`DocumentList matches snapshot 1`] = `
               </div>
             </div>
             <div
-              class="mantine-j5huwo"
+              class="mantine-1yhpcgp"
             >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -384,14 +422,44 @@ exports[`DocumentList matches snapshot 1`] = `
                 </div>
               </button>
             </div>
+            <button
+              class="mantine-UnstyledButton-root mantine-Button-root mantine-7bznx3"
+              data-button="true"
+              type="button"
+            >
+              <div
+                class="mantine-1wpc1xj mantine-Button-inner"
+              >
+                <span
+                  class="mantine-1ryt1ht mantine-Button-label"
+                >
+                  Display preview
+                </span>
+                <span
+                  class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    viewBox="0 0 256 256"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </button>
           </div>
         </div>
       </div>
       <div
-        class="mantine-Group-root mantine-1bxm023"
+        class="mantine-Group-root mantine-w88wg2"
       >
         <div
-          class="mantine-Checkbox-root mantine-yxmaw9"
+          class="mantine-Checkbox-root ___ref-selectableListCheckbox mantine-1p7nzyj"
         >
           <div
             class="mantine-hqx0d1 mantine-Checkbox-body"
@@ -424,10 +492,10 @@ exports[`DocumentList matches snapshot 1`] = `
           </div>
         </div>
         <div
-          class="mantine-1feahhc"
+          class="___ref-documentCard  mantine-1hsxp14"
         >
           <div
-            class="mantine-Image-root mantine-1hgbf0p"
+            class=" mantine-Image-root mantine-d3it6h"
             style="width: 100%;"
           >
             <figure
@@ -437,7 +505,7 @@ exports[`DocumentList matches snapshot 1`] = `
                 class="mantine-1iugybl mantine-Image-imageWrapper"
               >
                 <img
-                  class="mantine-Image-image mantine-1thijn1"
+                  class="mantine-Image-image mantine-10vaayr"
                   src=""
                   style="object-fit: cover; width: 100%; height: auto;"
                 />
@@ -447,16 +515,17 @@ exports[`DocumentList matches snapshot 1`] = `
           <div>
             <div>
               <div
-                class="mantine-mdzvt7"
+                class="mantine-14n9mxy"
               >
                 <div
-                  class="mantine-qu0qb1"
+                  class="___ref-documentCardIcon mantine-cznryd"
                 >
                   <svg
+                    class="mantine-wvylvx"
                     fill="#0b7285"
-                    height="38"
+                    height="1em"
                     viewBox="0 0 256 256"
-                    width="38"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -464,29 +533,31 @@ exports[`DocumentList matches snapshot 1`] = `
                     />
                   </svg>
                 </div>
-                <div>
+                <div
+                  class="mantine-1x591ah"
+                >
                   <div
-                    class="mantine-dxs7ne"
+                    class="___ref-documentCardHeaderTop mantine-hxvu3z"
                   >
                     <span
-                      class="mantine-fakv65"
+                      class="mantine-4yvscz"
                     >
                       Other_random_File.PDF
                     </span>
                     <span
-                      class="mantine-xrrpki"
+                      class="mantine-1g71ejr"
                     >
                       (Customer &gt; 567890456 &gt; Invoices)
                     </span>
                   </div>
                   <div
-                    class="mantine-1fna5yi"
+                    class="mantine-11bkg4o"
                   >
                     <span>
                       Published on December 24, 2023
                     </span>
                     <span
-                      class="mantine-mj4lz4"
+                      class="mantine-1g4onuo"
                     >
                       -
                     </span>
@@ -500,7 +571,7 @@ exports[`DocumentList matches snapshot 1`] = `
               </div>
             </div>
             <div
-              class="mantine-j5huwo"
+              class="mantine-1yhpcgp"
             >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -535,6 +606,36 @@ exports[`DocumentList matches snapshot 1`] = `
                 </div>
               </button>
             </div>
+            <button
+              class="mantine-UnstyledButton-root mantine-Button-root mantine-7bznx3"
+              data-button="true"
+              type="button"
+            >
+              <div
+                class="mantine-1wpc1xj mantine-Button-inner"
+              >
+                <span
+                  class="mantine-1ryt1ht mantine-Button-label"
+                >
+                  Display preview
+                </span>
+                <span
+                  class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    viewBox="0 0 256 256"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </button>
           </div>
         </div>
       </div>
