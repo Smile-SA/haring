@@ -3,12 +3,12 @@
 exports[`ButtonsListOrDropdown matches snapshot 1`] = `
 <div>
   <button
-    aria-controls="mantine-sjcm6o6cb-dropdown"
+    aria-controls="mantine-oqv3r3k7h-dropdown"
     aria-expanded="false"
     aria-haspopup="menu"
     class="mantine-UnstyledButton-root mantine-Button-root mantine-1w0871i"
     data-button="true"
-    id="mantine-sjcm6o6cb-target"
+    id="mantine-oqv3r3k7h-target"
     type="button"
   >
     <div
