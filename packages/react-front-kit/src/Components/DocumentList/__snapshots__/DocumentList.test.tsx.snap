@@ -3,10 +3,10 @@
 exports[`DocumentList matches snapshot 1`] = `
 <div>
   <div
-    class="mantine-t4aq4j"
+    class="mantine-z0pqny"
   >
     <div
-      class="mantine-15edn1r"
+      class="___ref-actionBar mantine-15edn1r"
     >
       <span>
         1 file(s) selected
@@ -84,7 +84,7 @@ exports[`DocumentList matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="mantine-Stack-root mantine-1goa0l9"
+      class="mantine-Stack-root ___ref-selectableList mantine-1goa0l9"
     >
       <div
         class="mantine-Group-root mantine-w88wg2"
