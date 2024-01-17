@@ -17,6 +17,10 @@ export const useStyles = createStyles((theme) => ({
     borderRadius: 16,
     padding: '48px 56px',
   },
+  main: {
+    overflowX: 'hidden',
+    width: '100%',
+  },
   periodContainer: {
     padding: '6px 0',
   },

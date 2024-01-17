@@ -20,6 +20,7 @@ export const DocumentList: IStory = {
   args: {
     actions: actionBarActionsMock,
     documents: documentsMock,
+    isClickCardToSelect: true,
     onDocumentSelected: action('Document selected'),
     selectedDocuments: [documentsMock[1]],
   },
