@@ -3,10 +3,10 @@
 exports[`DocumentCard matches snapshot 1`] = `
 <div>
   <div
-    class="mantine-1feahhc"
+    class="___ref-documentCard  mantine-1hsxp14"
   >
     <div
-      class="mantine-Image-root mantine-1hgbf0p"
+      class=" mantine-Image-root mantine-d3it6h"
       style="width: 100%;"
     >
       <figure
@@ -16,7 +16,7 @@ exports[`DocumentCard matches snapshot 1`] = `
           class="mantine-1iugybl mantine-Image-imageWrapper"
         >
           <img
-            class="mantine-Image-image mantine-1thijn1"
+            class="mantine-Image-image mantine-10vaayr"
             src=""
             style="object-fit: cover; width: 100%; height: auto;"
           />
@@ -26,16 +26,17 @@ exports[`DocumentCard matches snapshot 1`] = `
     <div>
       <div>
         <div
-          class="mantine-mdzvt7"
+          class="mantine-14n9mxy"
         >
           <div
-            class="mantine-qu0qb1"
+            class="___ref-documentCardIcon mantine-cznryd"
           >
             <svg
+              class="mantine-wvylvx"
               fill="#0b7285"
-              height="38"
+              height="1em"
               viewBox="0 0 256 256"
-              width="38"
+              width="1em"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -43,29 +44,31 @@ exports[`DocumentCard matches snapshot 1`] = `
               />
             </svg>
           </div>
-          <div>
+          <div
+            class="mantine-1x591ah"
+          >
             <div
-              class="mantine-dxs7ne"
+              class="___ref-documentCardHeaderTop mantine-hxvu3z"
             >
               <span
-                class="mantine-fakv65"
+                class="mantine-4yvscz"
               >
                 Random_File.PDF
               </span>
               <span
-                class="mantine-xrrpki"
+                class="mantine-1g71ejr"
               >
                 (Customer &gt; 567890456 &gt; Invoices)
               </span>
             </div>
             <div
-              class="mantine-1fna5yi"
+              class="mantine-11bkg4o"
             >
               <span>
                 Published on December 24, 2023
               </span>
               <span
-                class="mantine-mj4lz4"
+                class="mantine-1g4onuo"
               >
                 -
               </span>
@@ -79,10 +82,40 @@ exports[`DocumentCard matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="mantine-j5huwo"
+        class="mantine-1yhpcgp"
       >
         children
       </div>
+      <button
+        class="mantine-UnstyledButton-root mantine-Button-root mantine-7bznx3"
+        data-button="true"
+        type="button"
+      >
+        <div
+          class="mantine-1wpc1xj mantine-Button-inner"
+        >
+          <span
+            class="mantine-1ryt1ht mantine-Button-label"
+          >
+            Display preview
+          </span>
+          <span
+            class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 256 256"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </button>
     </div>
   </div>
 </div>

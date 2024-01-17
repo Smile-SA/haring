@@ -137,6 +137,7 @@ export function BrowsingPage(): ReactElement {
 
   return (
     <AppShell
+      classNames={{ main: classes.main }}
       header={
         <Header
           childrenComponent="nav"
