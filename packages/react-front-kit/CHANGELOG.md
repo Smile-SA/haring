@@ -1,5 +1,26 @@
 # @smile/react-front-kit
 
+## 0.8.0
+
+### Minor Changes
+
+- [#103](https://github.com/Smile-SA/react-front-kit/pull/103) [`8de409b`](https://github.com/Smile-SA/react-front-kit/commit/8de409beb7b786671121911ec2a2d015bec23038) Thanks [@github-actions](https://github.com/apps/github-actions)! - Reduce margin for actives filters section for mobile display
+
+- [#104](https://github.com/Smile-SA/react-front-kit/pull/104) [`094821a`](https://github.com/Smile-SA/react-front-kit/commit/094821a12e813d1b554d2df4a26c7a66d523ed69) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Added responsive style to FoldableColumnLayout
+
+- [#105](https://github.com/Smile-SA/react-front-kit/pull/105) [`4915a4b`](https://github.com/Smile-SA/react-front-kit/commit/4915a4bfc8c6fdf23116fbb578d3550868ecb0f8) Thanks [@vapersmile](https://github.com/vapersmile)! - add mobile display and add fix table background actions
+
+- [#106](https://github.com/Smile-SA/react-front-kit/pull/106) [`a5294aa`](https://github.com/Smile-SA/react-front-kit/commit/a5294aa59a52282465e91f92893393f4d63544ff) Thanks [@vapersmile](https://github.com/vapersmile)! - Add accordion menu for ActionBar component
+
+- [#109](https://github.com/Smile-SA/react-front-kit/pull/109) [`bba3962`](https://github.com/Smile-SA/react-front-kit/commit/bba3962ddadb0e5a41b32259536899a7677c4b27) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Added mobile style for DocumentCard and DocumentList, various fixes on DocumentCard, SelectableList and DocumentList, updated example of DocumentList in SearchResults page, added '\*.png' module to global.d.ts
+
+- [#107](https://github.com/Smile-SA/react-front-kit/pull/107) [`ce44552`](https://github.com/Smile-SA/react-front-kit/commit/ce44552ca95bdc7b18934a0ea222af63a72e2f79) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Fixed and adjusted mobile styles for Breadcrumbs, Pagination, SearchBar, FoldableColumnLayout, InfoCard, Table. Modified example pages. Added test file to FilterList.
+
+### Patch Changes
+
+- Updated dependencies [[`320634d`](https://github.com/Smile-SA/react-front-kit/commit/320634d7ec2048a328cfda1dbcff5d1b70a32563)]:
+  - @smile/react-front-kit-shared@0.8.0
+
 ## 0.7.0
 
 ### Minor Changes

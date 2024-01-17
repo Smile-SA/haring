@@ -1,5 +1,11 @@
 # @smile/react-front-kit-shared
 
+## 0.8.0
+
+### Minor Changes
+
+- [#108](https://github.com/Smile-SA/react-front-kit/pull/108) [`320634d`](https://github.com/Smile-SA/react-front-kit/commit/320634d7ec2048a328cfda1dbcff5d1b70a32563) Thanks [@vapersmile](https://github.com/vapersmile)! - Add custom default style for carousel mantine composent and add 2-Mantine/carousel page
+
 ## 0.7.0
 
 ### Minor Changes
