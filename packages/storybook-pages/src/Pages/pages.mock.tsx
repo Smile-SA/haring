@@ -26,6 +26,8 @@ import { DropdownButton } from '@smile/react-front-kit';
 import { FolderMove } from '@smile/react-front-kit-shared';
 import { action } from '@storybook/addon-actions';
 
+import idCard from '../../assets/example_id_card.png';
+
 export const headerContent = (
   <>
     <a href="#">Espace documentaire</a>
@@ -89,6 +91,8 @@ export const searchDocuments: IDocument[] = [
     date: 'Published on December 24, 2023',
     iconType: 'PDF',
     id: 1,
+    image: idCard,
+    mobilePreviewLabel: 'Afficher le PDF',
     path: '(Customer > 567890456 > Invoices)',
     title: 'Random_File.PDF',
   },
@@ -101,7 +105,7 @@ export const searchDocuments: IDocument[] = [
           créateur lors de l’import du document dans la GED, en l’absence de
           description cet espace est laissé vide...
         </p>
-        <Button color="gray.8">
+        <Button color="gray.8" onClick={action('Download file')}>
           <DownloadSimple width={12} />
           <Space w={8} />
           PPT, FR - 1Mo
@@ -111,6 +115,7 @@ export const searchDocuments: IDocument[] = [
     date: 'Published on December 24, 2023',
     iconType: 'PPT',
     id: 2,
+    mobilePreviewLabel: 'Afficher le Powerpoint',
     path: '(Customer > 567890456 > Invoices)',
     title: 'Presentation.PPT',
   },
@@ -123,7 +128,7 @@ export const searchDocuments: IDocument[] = [
           créateur lors de l’import du document dans la GED, en l’absence de
           description cet espace est laissé vide...
         </p>
-        <Button color="gray.8">
+        <Button color="gray.8" onClick={action('Download file')}>
           <DownloadSimple width={12} />
           <Space w={8} />
           PDF, FR - 1Mo
@@ -133,6 +138,7 @@ export const searchDocuments: IDocument[] = [
     date: 'Published on December 24, 2023',
     iconType: 'PDF',
     id: 3,
+    mobilePreviewLabel: 'Afficher le PDF',
     path: '(Customer > 567890456 > Invoices)',
     title: 'Other_random_File.PDF',
   },
