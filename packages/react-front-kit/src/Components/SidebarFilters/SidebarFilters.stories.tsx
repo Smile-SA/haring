@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { getMenu } from './SidebarFilterMenu/SidebarFilterMenu.mock';
 import { SidebarFilters as Cmp } from './SidebarFilters';
-import { activeFilters } from './SidebarFilters.mock';
+import { activeFilters, getMenu } from './SidebarFilters.mock';
 
 const meta = {
   component: Cmp,

@@ -1,10 +1,13 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
-import { menuWithoutContent } from './SidebarFilterMenu/SidebarFilterMenu.mock';
 import { SidebarFilters } from './SidebarFilters';
-import { activeFilters } from './SidebarFilters.mock';
+import { activeFilters, getMenu } from './SidebarFilters.mock';
 
-describe('FiltersBar', () => {
+describe('SidebarFilters', () => {
+  beforeEach(() => {
+    // Prevent mantine random ID
+    Math.random = () => 0.42;
+  });
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
       <SidebarFilters
@@ -12,7 +15,7 @@ describe('FiltersBar', () => {
         defaultOpenedMenuIds={[1, 3, 10, 11]}
         deleteButtonLabel="Remove all"
         filterButtonLabel="Filtrer"
-        menus={menuWithoutContent}
+        menus={getMenu(true)}
         title="Active filters"
       />,
     );
