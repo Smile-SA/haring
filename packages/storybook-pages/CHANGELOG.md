@@ -1,5 +1,15 @@
 # storybook-pages
 
+## 0.8.1
+
+### Patch Changes
+
+- Updated dependencies [[`99c4ab4`](https://github.com/Smile-SA/react-front-kit/commit/99c4ab4617b011cfb0a3231f8c29a9e3da0d3d1e)]:
+  - @smile/react-front-kit@0.8.1
+  - @smile/react-front-kit-dropzone@0.8.1
+  - @smile/react-front-kit-table@0.8.1
+  - @smile/react-front-kit-shared@0.8.1
+
 ## 0.8.0
 
 ### Minor Changes
