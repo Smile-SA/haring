@@ -15,7 +15,7 @@ type IStory = StoryObj<typeof meta>;
 export const ButtonsListOrDropdown: IStory = {
   args: {
     defaultCurrent: 'FR',
-    displayAll: true,
     items,
+    menuIfValueGreaterThan: 1000,
   },
 };
