@@ -1,6 +1,6 @@
 'use client';
 
-import type { IFiltersItem } from './SidebarFilterMenu/SidebarFilterMenu';
+import type { IMenuItem } from '../SidebarMenu/SidebarMenu';
 import type { ReactElement, ReactNode } from 'react';
 
 import {
@@ -16,8 +16,8 @@ import { useMemo, useState } from 'react';
 
 import { addPathAndDepth, flattenNestedObjects } from '../../helpers';
 import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonControlled';
+import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 
-import { SidebarFilterMenu } from './SidebarFilterMenu/SidebarFilterMenu';
 import { useStyles } from './SidebarFilters.style';
 
 export interface ISidebarFilter {
@@ -37,7 +37,7 @@ export interface ISidebarFiltersProps {
   defaultOpenedMenuIds?: IId[];
   deleteButtonLabel?: string;
   filterButtonLabel?: string;
-  menus?: IFiltersItem<IId>[] | undefined;
+  menus?: IMenuItem<IId>[] | undefined;
   onDeleteButtonClick?: (filters: ISidebarFilter[]) => void;
   onFilterButtonClick?: (filters: ISidebarFilter[]) => void;
   openAllFiltersLabel?: string;
@@ -70,12 +70,19 @@ export function SidebarFilters(props: ISidebarFiltersProps): ReactElement {
     useState(defaultOpenedActiveFilters);
   const [openedIds, setOpenedIds] = useState<IId[]>(defaultOpenedMenuIds);
 
-  function addActiveNumberToLabel(
-    menus?: IFiltersItem<IId>[],
-  ): IFiltersItem<IId>[] | undefined {
+  function addActiveLabelAndStyle(
+    menus?: IMenuItem<IId>[],
+  ): IMenuItem<IId>[] | undefined {
     return menus?.map((menu) => ({
       ...menu,
-      children: addActiveNumberToLabel(menu.children),
+      children: addActiveLabelAndStyle(menu.children),
+      ...(menu.content && {
+        content: (
+          <div className={classes.sidebarMenuContentContainer}>
+            {menu.content}
+          </div>
+        ),
+      }),
       label: `${menu.label}${
         activeFilters
           .map((activeFilter) => activeFilter.categoryId)
@@ -91,7 +98,7 @@ export function SidebarFilters(props: ISidebarFiltersProps): ReactElement {
     }));
   }
 
-  const filtersWithActiveLabel = addActiveNumberToLabel(menus);
+  const filtersWithActiveLabelAndStyle = addActiveLabelAndStyle(menus);
 
   function handleOpenAllButton(): void {
     setOpenedIds(flattenNestedObjects(menus).map((menu) => menu.id));
@@ -101,17 +108,7 @@ export function SidebarFilters(props: ISidebarFiltersProps): ReactElement {
     setOpenedIds([]);
   }
 
-  function handlerOnMenuOpen(id: IId): void {
-    const menuIds = openedIds;
-    if (menuIds.includes(id)) {
-      menuIds.splice(menuIds.indexOf(id), 1);
-    } else {
-      menuIds.push(id);
-    }
-    setOpenedIds([...menuIds]);
-  }
-
-  const currentIdisNotInOpenIds = !flatFilters.every((filter) =>
+  const currentIdIsNotInOpenIds = !flatFilters.every((filter) =>
     openedIds.includes(filter.id),
   );
 
@@ -184,10 +181,10 @@ export function SidebarFilters(props: ISidebarFiltersProps): ReactElement {
               {`- ${closeAllFiltersLabel}`}
             </span>
           )}
-          {currentIdisNotInOpenIds && openedIds.length > 0 ? (
+          {currentIdIsNotInOpenIds && openedIds.length > 0 ? (
             <span className={classes.controlledMenuLine} />
           ) : null}
-          {currentIdisNotInOpenIds ? (
+          {currentIdIsNotInOpenIds ? (
             <span
               aria-hidden="true"
               className={classes.controlledMenuButton}
@@ -197,10 +194,40 @@ export function SidebarFilters(props: ISidebarFiltersProps): ReactElement {
             </span>
           ) : null}
         </Group>
-        <SidebarFilterMenu
-          menu={filtersWithActiveLabel}
-          onMenuOpen={(id) => handlerOnMenuOpen(id)}
-          openedMenuIds={openedIds}
+        <SidebarMenu
+          collapseButtonProps={(
+            _item: unknown,
+            _level: number,
+            isSelected: boolean,
+            opened: boolean,
+          ) => ({
+            classNames: {
+              inner: classes.sidebarMenuButtonInner,
+              label: classes.sidebarMenuButtonLabel,
+              root: classes.sidebarMenuButtonRoot,
+            },
+            collapseProps: {
+              style:
+                opened && isSelected
+                  ? {
+                      backgroundColor: theme.colors[theme.primaryColor][0],
+                      borderTop: `1px solid ${
+                        theme.colors[theme.primaryColor][2]
+                      }`,
+                    }
+                  : opened
+                    ? {
+                        borderTop: `1px solid ${theme.colors.gray[3]}`,
+                      }
+                    : {},
+            },
+            indentation: 'simple',
+          })}
+          component="div"
+          menu={filtersWithActiveLabelAndStyle}
+          menuOpenValue={openedIds}
+          onMenuOpenChange={setOpenedIds}
+          p={0}
         />
       </div>
       <div className={classes.bottom}>

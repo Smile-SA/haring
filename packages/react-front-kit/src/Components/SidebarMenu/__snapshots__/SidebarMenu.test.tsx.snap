@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header matches snapshot 1`] = `
+exports[`SidebarMenu matches snapshot 1`] = `
 <div>
   <div
     class="mantine-Paper-root mantine-fybk5m"

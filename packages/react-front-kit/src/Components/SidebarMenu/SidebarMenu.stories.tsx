@@ -18,8 +18,8 @@ type IStory = StoryObj<typeof meta>;
 export const SidebarMenu: IStory = {
   args: {
     component: 'nav',
+    defaultOpenedIds: [],
     menu: menuMock,
-    openedMenuIds: [],
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -35,9 +35,9 @@ export const SidebarMenu: IStory = {
 
 export const OnlyOneOpenMenu: IStory = {
   args: {
+    defaultOpenedIds: [0, 2],
     hasOnlyOneOpenMenu: true,
     menu: deeplyNestedMenuMock,
-    openedMenuIds: [0, 2],
   },
 };
 
