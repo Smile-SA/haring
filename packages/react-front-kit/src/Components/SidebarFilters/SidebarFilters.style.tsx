@@ -48,7 +48,6 @@ export const useStyles = createStyles((theme) => ({
   bottom: {
     padding: '24px 24px 48px 24px',
   },
-  buttonRemoveRoot: { color: theme.white, fontSize: '14px', padding: '0' },
   controlledMenu: {
     borderBottom: `${theme.colors.gray[3]} 1px solid`,
     color: theme.colors.dark[3],
@@ -73,6 +72,22 @@ export const useStyles = createStyles((theme) => ({
   root: {
     backgroundColor: theme.white,
     borderRadius: '16px',
+  },
+  sidebarMenuButtonInner: {
+    justifyContent: 'Left',
+  },
+  sidebarMenuButtonLabel: {
+    color: theme.colors.dark,
+    textAlign: 'left',
+  },
+  sidebarMenuButtonRoot: {
+    '&[data-selected="false"]': {
+      background: 'inherit',
+    },
+    background: theme.colors[theme.primaryColor][0],
+  },
+  sidebarMenuContentContainer: {
+    padding: '10px',
   },
   title: {
     fontWeight: 600,

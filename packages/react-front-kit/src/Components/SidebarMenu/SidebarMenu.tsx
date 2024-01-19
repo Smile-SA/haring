@@ -5,6 +5,7 @@ import type { PaperProps } from '@mantine/core';
 import type { ElementType, ReactElement, ReactNode } from 'react';
 
 import { Paper } from '@mantine/core';
+import { useUncontrolled } from '@mantine/hooks';
 import { useMemo, useState } from 'react';
 
 import { addPathAndDepth, flattenNestedObjects } from '../../helpers';
@@ -12,6 +13,7 @@ import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonContro
 
 export interface IMenuItem<T extends number | string> {
   children?: IMenuItem<T>[];
+  content?: ReactNode;
   id: T;
   label: number | string;
   leftIcon?: ReactNode;
@@ -25,25 +27,6 @@ type ICollapseButtonProps<T extends number | string, C extends ElementType> =
       isSelected?: boolean,
       opened?: boolean,
     ) => ICollapseButtonControlledProps<T, C>);
-
-export interface ISidebarMenuProps<
-  T extends number | string,
-  C extends ElementType,
-> extends PaperProps {
-  /** Props, or function returning props for the CollapseButton component */
-  collapseButtonProps?: Omit<ICollapseButtonProps<T, C>, 'opened'>;
-  component?: ElementType;
-  /** Default selected menu id */
-  defaultSelectedId?: T;
-  /** Keeps only one menu per level open at once */
-  hasOnlyOneOpenMenu?: boolean;
-  /** Menu hierarchy */
-  menu: IMenuItem<T>[];
-  /** Callback fired when menu is opened or closed */
-  onMenuOpen?: (id: T, isOpened: boolean, path: T[]) => void;
-  /** Controlled state of which menus are currently open, using `id` field of `IMenuItem` */
-  openedMenuIds?: T[];
-}
 
 // eslint-disable-next-line react-refresh/only-export-components
 export function getRecursiveMenu<
@@ -62,7 +45,7 @@ export function getRecursiveMenu<
     return null;
   }
   return menu.map((item) => {
-    const { children, id, label, leftIcon } = item;
+    const { children, content, id, label, leftIcon } = item;
     return (
       <CollapseButtonControlled
         key={id}
@@ -85,18 +68,46 @@ export function getRecursiveMenu<
             )
           : collapseButtonProps)}
       >
-        {getRecursiveMenu(
-          setSelectedId,
-          onMenuOpen,
-          openedMenuIds,
-          selectedId,
-          children,
-          collapseButtonProps,
-          level + 1,
-        )}
+        {(children && children.length > 0) || Boolean(content) ? (
+          <>
+            {getRecursiveMenu(
+              setSelectedId,
+              onMenuOpen,
+              openedMenuIds,
+              selectedId,
+              children,
+              collapseButtonProps,
+              level + 1,
+            )}
+            {Boolean(content) && content}
+          </>
+        ) : null}
       </CollapseButtonControlled>
     );
   });
+}
+
+export interface ISidebarMenuProps<
+  T extends number | string,
+  C extends ElementType,
+> extends PaperProps {
+  /** Props, or function returning props for the CollapseButton component */
+  collapseButtonProps?: Omit<ICollapseButtonProps<T, C>, 'opened'>;
+  component?: ElementType;
+  /** Default opened menus, using `id` field of `IMenuItem` */
+  defaultOpenedIds?: T[];
+  /** Default selected menu id */
+  defaultSelectedId?: T;
+  /** Keeps only one menu per level open at once */
+  hasOnlyOneOpenMenu?: boolean;
+  /** Menu hierarchy */
+  menu?: IMenuItem<T>[];
+  /** Controlled state of which menus are currently open, using `id` field of `IMenuItem` */
+  menuOpenValue?: T[];
+  /** Callback fired when menu is opened or closed */
+  onMenuOpen?: (id: T, isOpened: boolean, path: T[]) => void;
+  /** Controlled callback called when the value of menus open/closed changes */
+  onMenuOpenChange?: (value: T[]) => void;
 }
 
 /** Additional props will be forwarded to the [Mantine Paper component](https://mantine.dev/core/paper) */
@@ -111,7 +122,9 @@ export function SidebarMenu<
     hasOnlyOneOpenMenu = false,
     menu,
     onMenuOpen,
-    openedMenuIds,
+    onMenuOpenChange,
+    menuOpenValue,
+    defaultOpenedIds,
     ...paperProps
   } = props;
 
@@ -123,15 +136,21 @@ export function SidebarMenu<
   const [selectedId, setSelectedId] = useState<T | undefined>(
     defaultSelectedId,
   );
-  const [openedIds, setOpenedIds] = useState<T[]>(() => {
-    if (defaultSelectedId && !openedMenuIds) {
+  const defaultOpenedMenuIds = (): T[] => {
+    if (defaultSelectedId && !defaultOpenedIds) {
       const path = flatMenu.find((menu) => menu.id === defaultSelectedId)
         ?.path as T[] | undefined;
       if (path) {
         return path;
       }
     }
-    return openedMenuIds ?? [];
+    return defaultOpenedIds ?? [];
+  };
+  const [openedIds, setOpenedIds] = useUncontrolled<T[]>({
+    defaultValue: defaultOpenedMenuIds(),
+    finalValue: [],
+    onChange: onMenuOpenChange,
+    value: menuOpenValue,
   });
 
   function handleOpenChange(menuId: T, isOpened: boolean): void {
