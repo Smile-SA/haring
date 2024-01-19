@@ -5,31 +5,19 @@ import type { ReactElement, ReactNode } from 'react';
 import { Button, Menu, createStyles } from '@mantine/core';
 import { useUncontrolled } from '@mantine/hooks';
 
-const useStyles = createStyles(() => ({
-  list: {
-    display: 'flex',
-    gap: '10px',
-    listStyle: 'none',
-  },
-  listItem: {
-    cursor: 'pointer',
-  },
-  listItemActive: {
-    fontWeight: 600,
+const useStyles = createStyles((theme) => ({
+  buttonActive: {
+    backgroundColor: theme.colors[theme.primaryColor][8],
+    fontWeight: 700,
   },
 }));
 
-export interface IItem {
-  label: ReactNode;
-  value: string;
-}
-
 export interface IButtonsListOrDropdownProps extends MenuProps {
-  buttonMenuProps?: ButtonProps;
+  buttonProps?: ButtonProps;
   current?: string;
   defaultCurrent: string;
-  displayAll?: boolean;
-  items: IItem[];
+  items: { label: ReactNode; value: string }[];
+  menuIfValueGreaterThan?: number;
   onAction?: () => void;
 }
 
@@ -37,9 +25,9 @@ export function ButtonsListOrDropdown(
   props: IButtonsListOrDropdownProps,
 ): ReactElement {
   const {
-    buttonMenuProps,
+    buttonProps,
     current,
-    displayAll = false,
+    menuIfValueGreaterThan = 0,
     defaultCurrent,
     items = [],
     onAction,
@@ -65,28 +53,26 @@ export function ButtonsListOrDropdown(
 
   return (
     <>
-      {displayAll ? (
-        <ul className={classes.list}>
+      {items.length < menuIfValueGreaterThan ? (
+        <Button.Group>
           {items.map((item) => {
             return (
               // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-              <li
-                key={`${item.value}`}
-                className={[
-                  classes.listItem,
-                  item.value === _current && classes.listItemActive,
-                ].join(' ')}
+              <Button
+                className={item.value === _current ? classes.buttonActive : ''}
+                {...buttonProps}
+                key={item.value}
                 onClick={() => handleChange(item.value)}
               >
                 {item.label}
-              </li>
+              </Button>
             );
           })}
-        </ul>
+        </Button.Group>
       ) : (
         <Menu {...MenuProps}>
           <Menu.Target>
-            <Button {...buttonMenuProps}>{getCurrentItem(_current)}</Button>
+            <Button {...buttonProps}>{getCurrentItem(_current)}</Button>
           </Menu.Target>
           <Menu.Dropdown>
             {items.map((item) => {
