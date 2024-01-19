@@ -1,6 +1,6 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
-import { actionBarActionsMock } from '../ActionBar/ActionBar.mock';
+import { actionRowOverflowActionsMock } from '../ActionRowOverflow/ActionRowOverflow.mock';
 
 import { DocumentList } from './DocumentList';
 import { documentsMock } from './DocumentList.mock';
@@ -13,7 +13,7 @@ describe('DocumentList', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
       <DocumentList
-        actions={actionBarActionsMock}
+        actions={actionRowOverflowActionsMock}
         documents={documentsMock}
         selectedDocuments={[documentsMock[1]]}
       />,
