@@ -1,5 +1,8 @@
 /* eslint-disable react-refresh/only-export-components */
-import type { IActionBarAction, IDocument } from '@smile/react-front-kit';
+import type {
+  IActionRowOverflowAction,
+  IDocument,
+} from '@smile/react-front-kit';
 
 import {
   Avatar,
@@ -144,7 +147,7 @@ export const searchDocuments: IDocument[] = [
   },
 ];
 
-export const searchActions: IActionBarAction<IDocument>[] = [
+export const searchActions: IActionRowOverflowAction<IDocument>[] = [
   {
     icon: <DownloadSimple size={16} />,
     id: 'download',

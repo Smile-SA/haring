@@ -57,16 +57,17 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
             </span>
           </div>
         </button>
-        <div>
-          <button
-            aria-controls="mantine-f4bipx4bi-dropdown"
-            aria-expanded="false"
-            aria-haspopup="menu"
-            class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1x9pd3r"
-            id="mantine-f4bipx4bi-target"
-            type="button"
+        <button
+          class="mantine-UnstyledButton-root mantine-Button-root mantine-3a0nxt"
+          data-button="true"
+          type="button"
+        >
+          <div
+            class="mantine-1wpc1xj mantine-Button-inner"
           >
-            <div>
+            <span
+              class="mantine-Button-icon mantine-Button-leftIcon mantine-1696ey6"
+            >
               <svg
                 fill="currentColor"
                 height="16"
@@ -75,12 +76,39 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M112,60a16,16,0,1,1,16,16A16,16,0,0,1,112,60Zm16,52a16,16,0,1,0,16,16A16,16,0,0,0,128,112Zm0,68a16,16,0,1,0,16,16A16,16,0,0,0,128,180Z"
+                  d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
                 />
               </svg>
-            </div>
-          </button>
-        </div>
+            </span>
+            <span
+              class="mantine-Button-label mantine-1e30p2e"
+            >
+              Delete
+            </span>
+          </div>
+        </button>
+        <button
+          aria-controls="mantine-f4bipx4bi-dropdown"
+          aria-expanded="false"
+          aria-haspopup="menu"
+          class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1x9pd3r"
+          id="mantine-f4bipx4bi-target"
+          type="button"
+        >
+          <div>
+            <svg
+              fill="currentColor"
+              height="16"
+              viewBox="0 0 256 256"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M112,60a16,16,0,1,1,16,16A16,16,0,0,1,112,60Zm16,52a16,16,0,1,0,16,16A16,16,0,0,0,128,112Zm0,68a16,16,0,1,0,16,16A16,16,0,0,0,128,180Z"
+              />
+            </svg>
+          </div>
+        </button>
       </div>
     </div>
     <div
