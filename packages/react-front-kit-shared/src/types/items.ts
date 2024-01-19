@@ -1,8 +1,8 @@
+import type { IOption } from '../../dist';
 import type { ReactNode } from 'react';
 
-export interface IItem<T> {
-  label: ReactNode;
-  value: T;
+export interface IItem<T> extends IOption<T> {
+  content?: ReactNode;
 }
 
-export type IItems<T> = IItems<T>[];
+export type IItems<T> = IItem<T>[];

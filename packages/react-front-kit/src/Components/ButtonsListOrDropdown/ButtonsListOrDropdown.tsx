@@ -1,6 +1,7 @@
 'use client';
 import type { ButtonProps, MenuProps } from '@mantine/core';
-import type { ReactElement, ReactNode } from 'react';
+import type { IItems } from '@smile/react-front-kit-shared';
+import type { ReactElement } from 'react';
 
 import { Button, Menu, createStyles } from '@mantine/core';
 import { useUncontrolled } from '@mantine/hooks';
@@ -16,7 +17,7 @@ export interface IButtonsListOrDropdownProps extends MenuProps {
   buttonProps?: ButtonProps;
   current?: string;
   defaultCurrent: string;
-  items: { label: ReactNode; value: string }[];
+  items: IItems<string>;
   menuIfValueGreaterThan?: number;
   onAction?: () => void;
 }
