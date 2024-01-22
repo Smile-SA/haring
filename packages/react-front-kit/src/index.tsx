@@ -2,6 +2,8 @@
 'use client';
 
 // component exports
+export type { IButtonListOrDropdownProps } from './Components/ButtonListOrDropdown/ButtonListOrDropdown';
+export { ButtonListOrDropdown } from './Components/ButtonListOrDropdown/ButtonListOrDropdown';
 export { ActionBar } from './Components/ActionBar/ActionBar';
 export type { IActionBarProps } from './Components/ActionBar/ActionBar';
 export { ActionRowOverflow } from './Components/ActionRowOverflow/ActionRowOverflow';
