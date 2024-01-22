@@ -1,4 +1,5 @@
-import type { IActionBarAction, IActionBarProps } from '../ActionBar/ActionBar';
+import type { IActionBarProps } from '../ActionBar/ActionBar';
+import type { IActionRowOverflowAction } from '../ActionRowOverflow/ActionRowOverflow';
 import type { ISelectableListProps } from '../SelectableList/SelectableList';
 import type { ReactElement, ReactNode } from 'react';
 
@@ -32,7 +33,7 @@ export interface IDocumentListProps
     IActionBarProps<IDocument>,
     'actions' | 'selectedElements'
   >;
-  actions?: IActionBarAction<IDocument>[];
+  actions?: IActionRowOverflowAction<IDocument>[];
   documents: IDocument[];
   isClickCardToSelect?: boolean;
   mobileImageButtonLabel?: string;
