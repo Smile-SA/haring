@@ -1,16 +1,16 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
-import { ButtonsListOrDropdown } from './ButtonsListOrDropdown';
-import { items } from './ButtonsListOrDropdown.mock';
+import { ButtonListOrDropdown } from './ButtonListOrDropdown';
+import { items } from './ButtonListOrDropdown.mock';
 
-describe('ButtonsListOrDropdown', () => {
+describe('ButtonListOrDropdown', () => {
   beforeEach(() => {
     // Prevent mantine random ID
     Math.random = () => 0.42;
   });
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <ButtonsListOrDropdown defaultCurrent="FR" items={items} />,
+      <ButtonListOrDropdown defaultCurrent="FR" items={items} />,
     );
     expect(container).toMatchSnapshot();
   });

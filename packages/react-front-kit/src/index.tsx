@@ -2,8 +2,8 @@
 'use client';
 
 // component exports
-export type { IButtonsListOrDropdownProps } from './Components/ButtonsListOrDropDown/ButtonsListOrDropdown';
-export { ButtonsListOrDropdown } from './Components/ButtonsListOrDropDown/ButtonsListOrDropdown';
+export type { IButtonListOrDropdownProps } from './Components/ButtonListOrDropdown/ButtonListOrDropdown';
+export { ButtonListOrDropdown } from './Components/ButtonListOrDropdown/ButtonListOrDropdown';
 export type { IPreviewProps } from './Components/Preview/Preview';
 export { Preview } from './Components/Preview/Preview';
 export { ActionBar } from './Components/ActionBar/ActionBar';

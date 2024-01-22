@@ -13,22 +13,22 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export interface IButtonsListOrDropdownProps extends MenuProps {
+export interface IButtonListOrDropdownProps extends MenuProps {
   buttonProps?: ButtonProps;
   current?: string;
   defaultCurrent: string;
   items: IItems<string>;
-  menuIfValueGreaterThan?: number;
+  maxButtonItems?: number;
   onAction?: () => void;
 }
 
-export function ButtonsListOrDropdown(
-  props: IButtonsListOrDropdownProps,
+export function ButtonListOrDropdown(
+  props: IButtonListOrDropdownProps,
 ): ReactElement {
   const {
     buttonProps,
     current,
-    menuIfValueGreaterThan = 0,
+    maxButtonItems = 0,
     defaultCurrent,
     items = [],
     onAction,
@@ -54,7 +54,7 @@ export function ButtonsListOrDropdown(
 
   return (
     <>
-      {items.length < menuIfValueGreaterThan ? (
+      {items.length < maxButtonItems ? (
         <Button.Group>
           {items.map((item) => {
             return (
@@ -79,7 +79,7 @@ export function ButtonsListOrDropdown(
               if (item.value !== _current) {
                 return (
                   <Menu.Item
-                    key={`${item.value}`}
+                    key={item.value}
                     onClick={() => handleChange(item.value)}
                   >
                     {item.content ? item.content : item.label}
