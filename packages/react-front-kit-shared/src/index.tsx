@@ -35,6 +35,8 @@ export type {
   IActionConfirmModalProps,
   IConfirmAction,
   IConfirmModal,
+  IItem,
+  IItems,
   IOption,
   IOptions,
   IThemeOverride,
