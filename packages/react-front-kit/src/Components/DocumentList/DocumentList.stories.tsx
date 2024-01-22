@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
 
-import { actionBarActionsMock } from '../ActionBar/ActionBar.mock';
+import { actionRowOverflowActionsMock } from '../ActionRowOverflow/ActionRowOverflow.mock';
 
 import { DocumentList as Cmp } from './DocumentList';
 import { documentsMock } from './DocumentList.mock';
@@ -18,7 +18,7 @@ type IStory = StoryObj<typeof meta>;
 
 export const DocumentList: IStory = {
   args: {
-    actions: actionBarActionsMock,
+    actions: actionRowOverflowActionsMock,
     documents: documentsMock,
     isClickCardToSelect: true,
     onDocumentSelected: action('Document selected'),
