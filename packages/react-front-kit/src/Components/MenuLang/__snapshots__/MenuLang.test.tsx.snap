@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuLang matches snapshot 1`] = `
+<div>
+  <div>
+    <button
+      aria-controls="mantine-f4bipx4bi-dropdown"
+      aria-expanded="false"
+      aria-haspopup="menu"
+      class="mantine-UnstyledButton-root mantine-Button-root mantine-1w0871i"
+      data-button="true"
+      id="mantine-f4bipx4bi-target"
+      type="button"
+    >
+      <div
+        class="mantine-1wpc1xj mantine-Button-inner"
+      >
+        <span
+          class="mantine-1ryt1ht mantine-Button-label"
+        />
+      </div>
+    </button>
+  </div>
+</div>
+`;

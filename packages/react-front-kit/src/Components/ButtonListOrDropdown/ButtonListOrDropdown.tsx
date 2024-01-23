@@ -1,7 +1,7 @@
 'use client';
 import type { ButtonProps, MenuProps } from '@mantine/core';
 import type { IItems } from '@smile/react-front-kit-shared';
-import type { ReactElement } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { Button, Menu, createStyles } from '@mantine/core';
 import { useUncontrolled } from '@mantine/hooks';
@@ -47,9 +47,11 @@ export function ButtonListOrDropdown(
     setCurrent(currentValue);
   }
 
-  function getCurrentItem(currentValue: string): string {
+  function getCurrentItem(currentValue: string): ReactNode {
     const currentItem = items.filter((item) => item.value === currentValue);
-    return currentItem[0]?.value ? currentItem[0].value : currentValue;
+    return (
+      currentItem.length < 0 && currentItem[0].content && currentItem[0].content
+    );
   }
 
   return (

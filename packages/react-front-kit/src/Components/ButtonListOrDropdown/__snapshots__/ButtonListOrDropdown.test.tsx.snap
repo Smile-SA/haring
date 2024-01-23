@@ -16,9 +16,7 @@ exports[`ButtonListOrDropdown matches snapshot 1`] = `
     >
       <span
         class="mantine-1ryt1ht mantine-Button-label"
-      >
-        FR
-      </span>
+      />
     </div>
   </button>
 </div>
