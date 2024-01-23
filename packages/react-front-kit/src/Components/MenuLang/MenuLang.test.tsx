@@ -1,7 +1,7 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
-import { langs } from './ManuLang.mock';
 import { MenuLang } from './MenuLang';
+import { langs } from './MenuLang.mock';
 
 describe('MenuLang', () => {
   beforeEach(() => {

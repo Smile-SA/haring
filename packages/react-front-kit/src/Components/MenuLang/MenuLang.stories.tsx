@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { langs } from './ManuLang.mock';
 import { MenuLang as Cmp } from './MenuLang';
+import { langs } from './MenuLang.mock';
 
 const meta = {
   component: Cmp,
