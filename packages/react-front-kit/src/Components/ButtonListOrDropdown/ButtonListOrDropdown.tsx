@@ -50,7 +50,7 @@ export function ButtonListOrDropdown(
   function getCurrentItem(currentValue: string): ReactNode {
     const currentItem = items.filter((item) => item.value === currentValue);
     return (
-      currentItem.length < 0 && currentItem[0].content && currentItem[0].content
+      currentItem.length > 0 && currentItem[0].content && currentItem[0].content
     );
   }
 
