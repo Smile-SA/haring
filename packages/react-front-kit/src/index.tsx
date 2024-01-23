@@ -80,6 +80,8 @@ export type {
   IMenuItem,
   ISidebarMenuProps,
 } from './Components/SidebarMenu/SidebarMenu';
+export { CardContent } from './Components/CardContent/CardContent';
+export type { ICardContentProps } from './Components/CardContent/CardContent';
 export { SwitchableView } from './Components/SwitchableView/SwitchableView';
 export type {
   IDataView,
