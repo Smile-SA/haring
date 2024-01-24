@@ -105,7 +105,7 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
     Data | Data[]
   > | null>(null);
   const visibleRowActions = actions.slice(0, rowActionNumber);
-  const menuRowActions = actions.slice(rowActionNumber);
+  const menuRowActions = rowActionNumber ? actions.slice(rowActionNumber) : [];
   const { classes } = useStyles();
 
   function setModal(action: IActionRowOverflowAction<Data>): void {
