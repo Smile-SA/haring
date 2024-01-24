@@ -2,6 +2,8 @@
 'use client';
 
 // component exports
+export type { ICardHeaderProps } from './Components/CardHeader/CardHeader';
+export { CardHeader } from './Components/CardHeader/CardHeader';
 export type { IMenuLanguagesProps } from './Components/MenuLanguages/MenuLanguages';
 export { MenuLanguages } from './Components/MenuLanguages/MenuLanguages';
 export type { IButtonListOrDropdownProps } from './Components/ButtonListOrDropdown/ButtonListOrDropdown';
