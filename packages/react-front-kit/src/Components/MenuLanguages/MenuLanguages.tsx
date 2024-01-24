@@ -12,7 +12,7 @@ export interface ILang extends IOption<string> {
   country?: string;
 }
 
-export interface IMenuLangProps
+export interface IMenuLanguagesProps
   extends Omit<IButtonListOrDropdownProps, 'items'> {
   languages: ILang[];
   squareFormat?: boolean;
@@ -22,7 +22,7 @@ const useStyles = createStyles(() => ({
   flag: { marginRight: '5px' },
 }));
 
-export function MenuLang(props: IMenuLangProps): ReactElement {
+export function MenuLanguages(props: IMenuLanguagesProps): ReactElement {
   const {
     languages,
     squareFormat = false,

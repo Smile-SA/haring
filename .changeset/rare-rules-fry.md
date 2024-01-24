@@ -2,4 +2,4 @@
 '@smile/react-front-kit': minor
 ---
 
-add MenuLang component
+add MenuLanguages component

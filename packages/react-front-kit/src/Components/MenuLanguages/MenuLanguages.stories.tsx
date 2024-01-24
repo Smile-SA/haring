@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { MenuLang as Cmp } from './MenuLang';
-import { languages } from './MenuLang.mock';
+import { MenuLanguages as Cmp } from './MenuLanguages';
+import { languages } from './MenuLanguages.mock';
 
 const meta = {
   component: Cmp,
   tags: ['autodocs'],
-  title: '3-custom/Components/MenuLang',
+  title: '3-custom/Components/MenuLanguages',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const MenuLang: IStory = {
+export const MenuLanguages: IStory = {
   args: {
     defaultCurrent: 'FR',
     languages,
