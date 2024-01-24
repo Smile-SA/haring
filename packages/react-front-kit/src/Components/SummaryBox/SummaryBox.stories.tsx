@@ -5,9 +5,11 @@ import { Container } from '@mantine/core';
 
 import { SummaryBox as Cmp } from './SummaryBox';
 import {
+  actionRightMock,
   childrenExampleMock,
   defaultSummaryBoxMock,
   leftMock,
+  otherChildrenExampleMock,
   otherTitleMock,
   otherTopMock,
   rightMock,
@@ -29,7 +31,7 @@ export const SummaryBox: IStory = {
 };
 
 const container = ({ ...props }): ReactElement => (
-  <Container bg="white" size="400px">
+  <Container bg="white" p="1rem" size="400px">
     <Cmp {...props} />
   </Container>
 );
@@ -49,6 +51,18 @@ export const SimpleRightNodeExample: IStory = {
     pb: 24,
     rightNode: rightMock,
     titleNode: titleMock,
+  },
+  render: ({ ...props }) => container(props),
+};
+
+export const ActionRightNodeExample: IStory = {
+  args: {
+    children: otherChildrenExampleMock,
+    rightNode: actionRightMock,
+    rightNodeStackProps: { justify: 'center', style: { minWidth: 70 } },
+    titleNode: titleMock,
+    topNode: topMock,
+    topNodeGroupProps: { mb: 12 },
   },
   render: ({ ...props }) => container(props),
 };

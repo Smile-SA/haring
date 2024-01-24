@@ -8,6 +8,12 @@ import {
 } from '@mantine/core';
 import { Export, Eye, UserCircle } from '@phosphor-icons/react';
 
+import { ActionRowOverflow } from '../ActionRowOverflow/ActionRowOverflow';
+import {
+  actionRowOverflowActionsMock,
+  actionRowOverflowSelectedMock,
+} from '../ActionRowOverflow/ActionRowOverflow.mock';
+
 export const defaultSummaryBoxMock = {
   children: 'children node',
   leftNode: 'left node',
@@ -62,10 +68,45 @@ export const childrenExampleMock = (
   </Flex>
 );
 
+export const otherChildrenExampleMock = (
+  <Flex direction="column" gap={24}>
+    <span>
+      Lorem ipsum dolor sit amet consectetur. Sollicitudin mattis blandit
+      aliquet odio urna mi id.
+    </span>
+    <Flex gap={5} justify="start" style={{ width: '100%' }} wrap="wrap">
+      <Button color="green" variant="light">
+        Approved
+      </Button>
+      <Button color="orange" variant="light">
+        In Progress
+      </Button>
+      <Button color="white" variant="light">
+        Paused
+      </Button>
+      <Button color="red" variant="light">
+        Blocked
+      </Button>
+      <Button color="black" variant="default">
+        Rejected
+      </Button>
+    </Flex>
+  </Flex>
+);
+
 export const rightMock = (
   <ActionIcon color="cyan" size={24}>
     <Export size={24} />
   </ActionIcon>
+);
+
+export const actionRightMock = (
+  <ActionRowOverflow
+    actions={actionRowOverflowActionsMock}
+    isCompactStyle
+    rowActionNumber={1}
+    selectedElements={actionRowOverflowSelectedMock}
+  />
 );
 
 export const leftMock = (
