@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CardContent matches snapshot 1`] = `
+exports[`SummaryBox matches snapshot 1`] = `
 <div>
   <div
     class="mantine-1nzdwls"
@@ -12,8 +12,7 @@ exports[`CardContent matches snapshot 1`] = `
       left node
     </div>
     <div
-      class="mantine-8tuotc"
-      style="flex-grow: 1;"
+      class="mantine-1ruz0vj"
     >
       <div
         class="mantine-Group-root mantine-k3ov3c"
@@ -26,8 +25,7 @@ exports[`CardContent matches snapshot 1`] = `
         title node
       </div>
       <div
-        class="mantine-Group-root mantine-k3ov3c"
-        style="flex-grow: 1;"
+        class="mantine-Group-root mantine-w3lnwg"
       >
         children node
       </div>
