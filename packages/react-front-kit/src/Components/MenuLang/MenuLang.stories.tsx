@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { MenuLang as Cmp } from './MenuLang';
-import { langs } from './MenuLang.mock';
+import { languages } from './MenuLang.mock';
 
 const meta = {
   component: Cmp,
@@ -15,7 +15,7 @@ type IStory = StoryObj<typeof meta>;
 export const MenuLang: IStory = {
   args: {
     defaultCurrent: 'FR',
-    langs,
+    languages,
     maxButtonItems: 0,
     squareFormat: false,
   },

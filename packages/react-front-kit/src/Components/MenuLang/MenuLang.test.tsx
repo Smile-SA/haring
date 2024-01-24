@@ -1,7 +1,7 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
 import { MenuLang } from './MenuLang';
-import { langs } from './MenuLang.mock';
+import { languages } from './MenuLang.mock';
 
 describe('MenuLang', () => {
   beforeEach(() => {
@@ -10,7 +10,7 @@ describe('MenuLang', () => {
   });
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <MenuLang defaultCurrent="FR" langs={langs} />,
+      <MenuLang defaultCurrent="FR" languages={languages} />,
     );
     expect(container).toMatchSnapshot();
   });

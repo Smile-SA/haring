@@ -14,7 +14,7 @@ export interface ILang extends IOption<string> {
 
 export interface IMenuLangProps
   extends Omit<IButtonListOrDropdownProps, 'items'> {
-  langs: ILang[];
+  languages: ILang[];
   squareFormat?: boolean;
 }
 
@@ -23,26 +23,30 @@ const useStyles = createStyles(() => ({
 }));
 
 export function MenuLang(props: IMenuLangProps): ReactElement {
-  const { langs, squareFormat = false, ...ButtonListOrDropdownProps } = props;
+  const {
+    languages,
+    squareFormat = false,
+    ...ButtonListOrDropdownProps
+  } = props;
   const { classes } = useStyles();
 
-  const items = langs.map((lang) => {
-    const classNames = ['fi', `fi-${lang.country}`];
+  const items = languages.map((language) => {
+    const classNames = ['fi', `fi-${language.country?.toLowerCase()}`];
     if (squareFormat) {
       classNames.push('fis');
     }
-    if (lang.label) {
+    if (language.label) {
       classNames.push(classes.flag);
     }
     return {
       content: (
         <>
-          {Boolean(lang.country) && <i className={classNames.join(' ')} />}
-          {lang.label}
+          {Boolean(language.country) && <i className={classNames.join(' ')} />}
+          {language.label}
         </>
       ),
-      label: lang.label,
-      value: lang.value,
+      label: language.label,
+      value: language.value,
     };
   });
 
