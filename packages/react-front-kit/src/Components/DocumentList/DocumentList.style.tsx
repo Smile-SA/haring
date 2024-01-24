@@ -13,10 +13,10 @@ export const useStyles = createStyles((theme) => ({
         position: 'absolute',
         top: 12.5,
       },
-      [`.${getStylesRef('documentCardIcon')}`]: {
+      [`.${getStylesRef('documentBoxIcon')}`]: {
         left: 32,
       },
-      [`.${getStylesRef('documentCardHeaderTop')}`]: {
+      [`.${getStylesRef('documentBoxHeaderTop')}`]: {
         marginLeft: 72,
       },
     },

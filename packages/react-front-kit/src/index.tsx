@@ -23,8 +23,8 @@ export { CollapseButton } from './Components/CollapseButton/CollapseButton';
 export type { ICollapseButtonProps } from './Components/CollapseButton/CollapseButton';
 export { ConfirmModal } from './Components/ConfirmModal/ConfirmModal';
 export type { IConfirmModalProps } from './Components/ConfirmModal/ConfirmModal';
-export { DocumentCard } from './Components/DocumentCard/DocumentCard';
-export type { IDocumentCardProps } from './Components/DocumentCard/DocumentCard';
+export { DocumentBox } from './Components/DocumentBox/DocumentBox';
+export type { IDocumentBoxProps } from './Components/DocumentBox/DocumentBox';
 export { DocumentList } from './Components/DocumentList/DocumentList';
 export type {
   IDocument,
@@ -80,8 +80,8 @@ export type {
   IMenuItem,
   ISidebarMenuProps,
 } from './Components/SidebarMenu/SidebarMenu';
-export { CardContent } from './Components/CardContent/CardContent';
-export type { ICardContentProps } from './Components/CardContent/CardContent';
+export { SummaryBox } from './Components/SummaryBox/SummaryBox';
+export type { ISummaryBoxProps } from './Components/SummaryBox/SummaryBox';
 export { SwitchableView } from './Components/SwitchableView/SwitchableView';
 export type {
   IDataView,

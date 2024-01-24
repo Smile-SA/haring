@@ -3,29 +3,29 @@ import type { ReactElement } from 'react';
 
 import { Container } from '@mantine/core';
 
-import { CardContent as Cmp } from './CardContent';
+import { SummaryBox as Cmp } from './SummaryBox';
 import {
   childrenExampleMock,
-  defaultCardContentMock,
+  defaultSummaryBoxMock,
   leftMock,
   otherTitleMock,
   otherTopMock,
   rightMock,
   titleMock,
   topMock,
-} from './CardContent.mock';
+} from './SummaryBox.mock';
 
 const meta = {
   component: Cmp,
   tags: ['autodocs'],
-  title: '3-custom/Components/CardContent',
+  title: '3-custom/Components/SummaryBox',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const CardContent: IStory = {
-  args: defaultCardContentMock,
+export const SummaryBox: IStory = {
+  args: defaultSummaryBoxMock,
 };
 
 const container = ({ ...props }): ReactElement => (
@@ -44,7 +44,7 @@ export const ChildrenExample: IStory = {
   render: ({ ...props }) => container(props),
 };
 
-export const RightNodeExample: IStory = {
+export const SimpleRightNodeExample: IStory = {
   args: {
     pb: 24,
     rightNode: rightMock,

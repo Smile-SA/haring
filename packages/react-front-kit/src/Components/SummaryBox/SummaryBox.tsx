@@ -5,8 +5,9 @@ import type { FlexProps } from '@mantine/core/lib/Flex/Flex';
 import type { ReactElement, ReactNode } from 'react';
 
 import { Flex, Group, Stack } from '@mantine/core';
+import { createStyles } from '@mantine/styles';
 
-export interface ICardContentProps extends FlexProps {
+export interface ISummaryBoxProps extends FlexProps {
   children?: ReactNode;
   childrenGroupProps?: GroupProps;
   contentContainerFlexProps?: FlexProps;
@@ -20,7 +21,13 @@ export interface ICardContentProps extends FlexProps {
   topNodeGroupProps?: GroupProps;
 }
 
-export function CardContent(props: ICardContentProps): ReactElement {
+const useStyles = createStyles(() => ({
+  grow: {
+    flexGrow: 1,
+  },
+}));
+
+export function SummaryBox(props: ISummaryBoxProps): ReactElement {
   const {
     children,
     childrenGroupProps,
@@ -35,6 +42,7 @@ export function CardContent(props: ICardContentProps): ReactElement {
     topNodeGroupProps,
     ...containerFlexProps
   } = props;
+  const { classes } = useStyles();
 
   return (
     <Flex
@@ -52,10 +60,10 @@ export function CardContent(props: ICardContentProps): ReactElement {
       {Boolean(topNode || titleNode || children) && (
         <Flex
           align="stretch"
+          className={classes.grow}
           direction="column"
           gap={4}
           justify="start"
-          style={{ flexGrow: 1 }}
           {...contentContainerFlexProps}
         >
           {Boolean(topNode) && <Group {...topNodeGroupProps}>{topNode}</Group>}
@@ -63,7 +71,7 @@ export function CardContent(props: ICardContentProps): ReactElement {
             <Group {...titleNodeGroupProps}>{titleNode}</Group>
           )}
           {Boolean(children) && (
-            <Group style={{ flexGrow: 1 }} {...childrenGroupProps}>
+            <Group className={classes.grow} {...childrenGroupProps}>
               {children}
             </Group>
           )}

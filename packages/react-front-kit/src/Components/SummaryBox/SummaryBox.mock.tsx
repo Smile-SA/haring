@@ -8,7 +8,7 @@ import {
 } from '@mantine/core';
 import { Export, Eye, UserCircle } from '@phosphor-icons/react';
 
-export const defaultCardContentMock = {
+export const defaultSummaryBoxMock = {
   children: 'children node',
   leftNode: 'left node',
   rightNode: 'right node',

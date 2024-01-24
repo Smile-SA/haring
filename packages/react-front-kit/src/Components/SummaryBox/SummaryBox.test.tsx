@@ -1,12 +1,12 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
-import { CardContent } from './CardContent';
-import { defaultCardContentMock } from './CardContent.mock';
+import { SummaryBox } from './SummaryBox';
+import { defaultSummaryBoxMock } from './SummaryBox.mock';
 
-describe('CardContent', () => {
+describe('SummaryBox', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <CardContent id="summary-card" {...defaultCardContentMock} />,
+      <SummaryBox id="summary-card" {...defaultSummaryBoxMock} />,
     );
     expect(container).toMatchSnapshot();
   });
