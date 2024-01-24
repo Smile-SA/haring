@@ -29,7 +29,7 @@ exports[`CardHeader matches snapshot 1`] = `
           Élément de texte
         </h2>
         <p
-          style="margin: 0px 0px -4px 0px;"
+          style="margin: 0px;"
         >
           sous-texte
         </p>

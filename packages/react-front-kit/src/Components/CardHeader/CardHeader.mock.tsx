@@ -7,6 +7,6 @@ export const icon = (
 export const title = (
   <>
     <h2 style={{ fontSize: '18px', margin: 0 }}>Élément de texte</h2>
-    <p style={{ margin: '0 0 -4px 0' }}>sous-texte</p>
+    <p style={{ margin: '0' }}>sous-texte</p>
   </>
 );
