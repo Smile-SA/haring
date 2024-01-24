@@ -19,7 +19,7 @@ exports[`MenuLang matches snapshot 1`] = `
           class="mantine-1ryt1ht mantine-Button-label"
         >
           <i
-            class="fi fi-fr false mantine-7umzq0"
+            class="fi fi-fr mantine-7umzq0"
           />
           Français
         </span>

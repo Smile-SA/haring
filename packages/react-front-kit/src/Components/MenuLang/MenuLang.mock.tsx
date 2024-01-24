@@ -1,5 +1,5 @@
 export const langs = [
-  { flag: 'fr', label: 'Français', value: 'FR' },
-  { flag: 'gb', label: 'Anglais', value: 'EN' },
-  { flag: 'es', label: 'Espagnole', value: 'ES' },
+  { country: 'fr', label: 'Français', value: 'FR' },
+  { country: 'gb', label: 'Anglais', value: 'EN' },
+  { country: 'es', label: 'Espagnole', value: 'ES' },
 ];
