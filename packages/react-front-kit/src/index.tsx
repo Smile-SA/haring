@@ -2,6 +2,8 @@
 'use client';
 
 // component exports
+export type { IMenuLanguagesProps } from './Components/MenuLanguages/MenuLanguages';
+export { MenuLanguages } from './Components/MenuLanguages/MenuLanguages';
 export type { IButtonListOrDropdownProps } from './Components/ButtonListOrDropdown/ButtonListOrDropdown';
 export { ButtonListOrDropdown } from './Components/ButtonListOrDropdown/ButtonListOrDropdown';
 export { ActionBar } from './Components/ActionBar/ActionBar';
