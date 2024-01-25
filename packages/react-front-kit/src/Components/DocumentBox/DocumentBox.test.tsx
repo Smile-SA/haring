@@ -1,11 +1,11 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
-import { DocumentCard } from './DocumentCard';
+import { DocumentBox } from './DocumentBox';
 
-describe('DocumentCard', () => {
+describe('DocumentBox', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <DocumentCard
+      <DocumentBox
         author="Aline"
         date="Published on December 24, 2023"
         iconType="PDF"
@@ -13,7 +13,7 @@ describe('DocumentCard', () => {
         title="Random_File.PDF"
       >
         children
-      </DocumentCard>,
+      </DocumentBox>,
     );
     expect(container).toMatchSnapshot();
   });

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SummaryBox matches snapshot 1`] = `
+<div>
+  <div
+    class="mantine-1nzdwls"
+    id="summary-card"
+  >
+    <div
+      class="mantine-Stack-root mantine-caxjnw"
+    >
+      left node
+    </div>
+    <div
+      class="mantine-1ruz0vj"
+    >
+      <div
+        class="mantine-Group-root mantine-k3ov3c"
+      >
+        top node
+      </div>
+      <div
+        class="mantine-Group-root mantine-k3ov3c"
+      >
+        title node
+      </div>
+      <div
+        class="mantine-Group-root mantine-w3lnwg"
+      >
+        children node
+      </div>
+    </div>
+    <div
+      class="mantine-Stack-root mantine-caxjnw"
+    >
+      right node
+    </div>
+  </div>
+</div>
+`;
