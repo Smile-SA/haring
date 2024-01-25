@@ -1,20 +1,39 @@
 'use client';
 
-import type { GroupProps, ModalProps } from '@mantine/core';
+import type {
+  ButtonProps,
+  GroupProps,
+  ModalProps,
+  TooltipProps,
+} from '@mantine/core';
+import type { FloatingPosition } from '@mantine/core/lib/Floating';
 import type { Record } from '@phosphor-icons/react';
 import type {
   IAction,
   IActionConfirmModalProps,
 } from '@smile/react-front-kit-shared';
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
-import { ActionIcon, Button, Group, Menu } from '@mantine/core';
+import { ActionIcon, Button, Group, Menu, Tooltip } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
 import { DotsThreeVertical } from '@phosphor-icons/react';
 import { useState } from 'react';
 
+import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
+
 const useStyles = createStyles((theme) => ({
-  actionIconRoot: {
+  actionIconCompact: {
+    '&[aria-expanded=true]': {
+      '& svg': {
+        filter: 'contrast(8) invert(1)',
+      },
+      backgroundColor: theme.fn.primaryColor(),
+    },
+    borderRadius: '28px',
+    height: '28px',
+    width: '28px',
+  },
+  actionIconDefault: {
     borderRadius: '32px',
     height: '32px',
     width: '32px',
@@ -38,6 +57,7 @@ const useStyles = createStyles((theme) => ({
   },
   groupRoot: {
     gap: '8px',
+    justifyContent: 'center',
   },
   menuDropdown: {
     borderRadius: '4px',
@@ -45,15 +65,24 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
+const defaultTooltipProps = {
+  color: 'gray.7',
+  position: 'bottom' as FloatingPosition,
+  radius: 6,
+  withArrow: true,
+};
 
 export type IActionRowOverflowAction<Data extends Record<string, unknown>> =
   IAction<Data[]>;
 
 export interface IActionRowOverflowProps<Data extends Record<string, unknown>>
   extends GroupProps {
-  actions?: IActionRowOverflowAction<Data>[];
+  actionButtonProps?: ButtonProps;
+  actionTooltipProps?: TooltipProps;
+  actions: IActionRowOverflowAction<Data>[];
+  isCompactStyle?: boolean;
   modalProps?: Omit<ModalProps, 'title'>;
+  overflowMenuLabel?: string;
   rowActionNumber?: number;
   selectedElements: Data[];
 }
@@ -62,8 +91,12 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
   props: IActionRowOverflowProps<Data>,
 ): ReactNode {
   const {
+    actionButtonProps,
+    actionTooltipProps,
     actions,
+    isCompactStyle = false,
     modalProps,
+    overflowMenuLabel = 'Other actions',
     rowActionNumber,
     selectedElements,
     ...groupProps
@@ -71,8 +104,8 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
   const [confirmAction, setConfirmAction] = useState<IActionConfirmModalProps<
     Data | Data[]
   > | null>(null);
-  const visibleRowActions = actions?.slice(0, rowActionNumber);
-  const menuRowActions = actions?.slice(rowActionNumber);
+  const visibleRowActions = actions.slice(0, rowActionNumber);
+  const menuRowActions = rowActionNumber ? actions.slice(rowActionNumber) : [];
   const { classes } = useStyles();
 
   function setModal(action: IActionRowOverflowAction<Data>): void {
@@ -108,67 +141,124 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
     }
   }
 
+  function getActionLabel(action?: IActionRowOverflowAction<Data>): string {
+    if (!action) {
+      return '';
+    }
+    return typeof action.label === 'function'
+      ? action.label(selectedElements)
+      : action.label;
+  }
+
+  function getActionIcon(action?: IActionRowOverflowAction<Data>): ReactNode {
+    if (!action) {
+      return null;
+    }
+    return typeof action.icon === 'function'
+      ? action.icon(selectedElements)
+      : action.icon;
+  }
+
+  function getActionComponentProps(
+    action?: IActionRowOverflowAction<Data>,
+  ): Record<string, unknown> | undefined {
+    if (!action) {
+      return undefined;
+    }
+    return typeof action.componentProps === 'function'
+      ? action.componentProps(selectedElements)
+      : action.componentProps;
+  }
+
+  const visibleRowAction = (
+    action: IActionRowOverflowAction<Data>,
+  ): ReactElement =>
+    !isCompactStyle ? (
+      <Button
+        key={action.id}
+        classNames={{
+          icon: classes.buttonIcon,
+          label: classes.buttonLabel,
+          root: classes.buttonRoot,
+        }}
+        color={action.color}
+        leftIcon={getActionIcon(action)}
+        onClick={() => handleAction(action)}
+        variant={action.color ? 'filled' : 'default'}
+        {...getActionComponentProps(action)}
+      >
+        {getActionLabel(action)}
+      </Button>
+    ) : (
+      <Tooltip
+        key={action.id}
+        label={getActionLabel(action)}
+        {...defaultTooltipProps}
+        {...actionTooltipProps}
+      >
+        <ActionIcon
+          aria-label={getActionLabel(action)}
+          className={classes.actionIconCompact}
+          color={action.color}
+          onClick={() => handleAction(action)}
+          radius={4}
+          type="button"
+          {...getActionComponentProps(action)}
+        >
+          {getActionIcon(action)}
+        </ActionIcon>
+      </Tooltip>
+    );
+
+  const menuRowAction = (
+    action: IActionRowOverflowAction<Data>,
+  ): ReactElement => (
+    <Menu.Item
+      key={action.id}
+      color={action.color}
+      icon={getActionIcon(action)}
+      onClick={() => handleAction(action)}
+      {...getActionComponentProps(action)}
+    >
+      {getActionLabel(action)}
+    </Menu.Item>
+  );
+
   return (
     <>
-      {actions && actions.length > 0 ? (
+      {actions.length > 0 ? (
         <Group className={classes.groupRoot} {...groupProps}>
-          {visibleRowActions?.map((action) => (
-            <Button
-              key={action.id}
-              classNames={{
-                icon: classes.buttonIcon,
-                label: classes.buttonLabel,
-                root: classes.buttonRoot,
-              }}
-              color={action.color}
-              leftIcon={
-                typeof action.icon === 'function'
-                  ? action.icon(selectedElements)
-                  : action.icon
-              }
-              onClick={() => handleAction(action)}
-              variant={action.color ? 'filled' : 'default'}
+          {visibleRowActions.map((action) => visibleRowAction(action))}
+          {menuRowActions.length > 0 ? (
+            <Menu
+              classNames={{ dropdown: classes.menuDropdown }}
+              radius={4}
+              shadow="lg"
             >
-              {typeof action.label === 'function'
-                ? action.label(selectedElements)
-                : action.label}
-            </Button>
-          ))}
-          {menuRowActions?.length !== undefined && menuRowActions.length > 0 ? (
-            <Menu classNames={{ dropdown: classes.menuDropdown }} shadow="lg">
-              <Menu.Target>
-                <ActionIcon
-                  className={classes.actionIconRoot}
-                  onClick={(e) => e.stopPropagation()}
-                  type="button"
-                  variant="light"
-                >
-                  <div>
-                    <DotsThreeVertical size={16} weight="bold" />
-                  </div>
-                </ActionIcon>
-              </Menu.Target>
-              <Menu.Dropdown onClick={(e) => e.stopPropagation()}>
-                {menuRowActions.map((action, index) => (
-                  <Menu.Item
-                    // eslint-disable-next-line react/no-array-index-key
-                    key={index}
-                    color={action.color}
-                    icon={
-                      typeof action.icon === 'function'
-                        ? action.icon(selectedElements)
-                        : action.icon
+              <Tooltip
+                label={overflowMenuLabel}
+                {...defaultTooltipProps}
+                {...actionTooltipProps}
+              >
+                <Menu.Target>
+                  <ActionIcon
+                    aria-label={overflowMenuLabel}
+                    className={
+                      isCompactStyle
+                        ? classes.actionIconCompact
+                        : classes.actionIconDefault
                     }
-                    onClick={() => handleAction(action)}
-                    {...(typeof action.componentProps === 'function'
-                      ? action.componentProps(selectedElements)
-                      : action.componentProps)}
+                    onClick={(e) => e.stopPropagation()}
+                    radius={4}
+                    type="button"
+                    variant="light"
                   >
-                    {typeof action.label === 'function'
-                      ? action.label(selectedElements)
-                      : action.label}
-                  </Menu.Item>
-                ))}
+                    <DotsThreeVertical size={16} weight="bold" />
+                  </ActionIcon>
+                </Menu.Target>
+              </Tooltip>
+              <Menu.Dropdown onClick={(e) => e.stopPropagation()}>
+                {menuRowActions.map((action) => menuRowAction(action))}
               </Menu.Dropdown>
             </Menu>
           ) : null}

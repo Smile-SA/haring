@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { DocumentCard as Cmp } from './DocumentCard';
+import { DocumentBox as Cmp } from './DocumentBox';
 
 const meta = {
   component: Cmp,
   tags: ['autodocs'],
-  title: '3-custom/Components/DocumentCard',
+  title: '3-custom/Components/DocumentBox',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const DocumentCard: IStory = {
+export const DocumentBox: IStory = {
   args: {
     author: 'Aline',
     children: 'Children',

@@ -51,7 +51,7 @@ export const useStyles = createStyles((theme) => ({
     },
     display: 'flex',
     flexWrap: 'wrap',
-    ref: getStylesRef('documentCardHeaderTop'),
+    ref: getStylesRef('documentBoxHeaderTop'),
   },
   icon: {
     [theme.fn.smallerThan('sm')]: {
@@ -70,7 +70,7 @@ export const useStyles = createStyles((theme) => ({
       position: 'absolute',
     },
     marginRight: '16px',
-    ref: getStylesRef('documentCardIcon'),
+    ref: getStylesRef('documentBoxIcon'),
   },
   image: {
     border: `1px solid ${theme.colors.gray[2]}`,
@@ -113,7 +113,7 @@ export const useStyles = createStyles((theme) => ({
   },
   root: {
     display: 'flex',
-    ref: getStylesRef('documentCard'),
+    ref: getStylesRef('documentBox'),
     [theme.fn.smallerThan('sm')]: {
       flexDirection: 'column',
     },

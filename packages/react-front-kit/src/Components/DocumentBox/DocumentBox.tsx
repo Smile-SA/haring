@@ -9,9 +9,9 @@ import { useState } from 'react';
 
 import defaultImage from '../../../assets/defaultImage.jpg';
 
-import { useStyles } from './DocumentCard.style';
+import { useStyles } from './DocumentBox.style';
 
-export interface IDocumentCardProps {
+export interface IDocumentBoxProps {
   author?: ReactNode;
   children?: ReactNode;
   date?: ReactNode;
@@ -23,7 +23,7 @@ export interface IDocumentCardProps {
   title?: ReactNode;
 }
 
-export function DocumentCard(props: IDocumentCardProps): ReactNode {
+export function DocumentBox(props: IDocumentBoxProps): ReactNode {
   const {
     author,
     children,
