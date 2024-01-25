@@ -12,6 +12,7 @@ const useStyles = createStyles((theme) => ({
   },
   root: {
     backgroundColor: theme.fn.primaryColor(),
+    boxShadow: '0px 8.687101364135742px 6.949680805206299px 0px #00000006',
     color: theme.white,
     padding: '24px 32px',
   },
