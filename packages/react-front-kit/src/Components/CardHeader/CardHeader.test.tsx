@@ -6,7 +6,7 @@ import { icon, title } from './CardHeader.mock';
 describe('CardHeader', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <CardHeader left={icon}>{title}</CardHeader>,
+      <CardHeader leftSection={icon}>{title}</CardHeader>,
     );
     expect(container).toMatchSnapshot();
   });

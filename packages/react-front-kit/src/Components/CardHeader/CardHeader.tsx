@@ -1,5 +1,6 @@
 'use client';
 
+import type { BoxProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
 import { Box, createStyles } from '@mantine/core';
@@ -17,21 +18,21 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export interface ICardHeaderProps {
+export interface ICardHeaderProps extends BoxProps {
   children: ReactNode;
-  left?: ReactNode;
-  right?: ReactNode;
+  leftSection?: ReactNode;
+  rightSection?: ReactNode;
 }
 
 export function CardHeader(props: ICardHeaderProps): ReactElement {
-  const { children, left, right } = props;
+  const { children, leftSection, rightSection, ...rootProps } = props;
   const { classes } = useStyles();
   return (
-    <Box className={classes.root}>
+    <Box className={classes.root} {...rootProps}>
       <div className={classes.container}>
-        {Boolean(left) && <div>{left}</div>}
+        {Boolean(leftSection) && <div>{leftSection}</div>}
         <div>{children}</div>
-        {Boolean(right) && <div>{right}</div>}
+        {Boolean(rightSection) && <div>{rightSection}</div>}
       </div>
     </Box>
   );
