@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import type { ReactElement } from 'react';
 
 import { Container } from '@mantine/core';
 
@@ -19,6 +18,15 @@ import {
 
 const meta = {
   component: Cmp,
+  decorators: [
+    function Component(Story, ctx) {
+      return (
+        <Container bg="white" p="1rem" size="400px">
+          <Story args={{ ...ctx.args }} />
+        </Container>
+      );
+    },
+  ],
   tags: ['autodocs'],
   title: '3-custom/Components/SummaryBox',
 } satisfies Meta<typeof Cmp>;
@@ -30,12 +38,6 @@ export const SummaryBox: IStory = {
   args: defaultSummaryBoxMock,
 };
 
-const container = ({ ...props }): ReactElement => (
-  <Container bg="white" p="1rem" size="400px">
-    <Cmp {...props} />
-  </Container>
-);
-
 export const ChildrenExample: IStory = {
   args: {
     children: childrenExampleMock,
@@ -43,7 +45,6 @@ export const ChildrenExample: IStory = {
     topNode: topMock,
     topNodeGroupProps: { mb: 12 },
   },
-  render: ({ ...props }) => container(props),
 };
 
 export const SimpleRightNodeExample: IStory = {
@@ -52,7 +53,6 @@ export const SimpleRightNodeExample: IStory = {
     rightNode: rightMock,
     titleNode: titleMock,
   },
-  render: ({ ...props }) => container(props),
 };
 
 export const ActionRightNodeExample: IStory = {
@@ -64,7 +64,6 @@ export const ActionRightNodeExample: IStory = {
     topNode: topMock,
     topNodeGroupProps: { mb: 12 },
   },
-  render: ({ ...props }) => container(props),
 };
 
 export const LeftNodeExample: IStory = {
@@ -73,5 +72,4 @@ export const LeftNodeExample: IStory = {
     titleNode: otherTitleMock,
     topNode: otherTopMock,
   },
-  render: ({ ...props }) => container(props),
 };
