@@ -30,8 +30,8 @@ function render(icons: Record<string, Icon>) {
         {Object.entries(icons).map(([key, IconCmp]) => {
           return (
             <Grid.Col key={key} span={1} title={key}>
-              <Center sx={{ flexDirection: 'column' }}>
-                <Text fz="xs" lineClamp={1} sx={{ maxWidth: '100%' }}>
+              <Center style={{ flexDirection: 'column' }}>
+                <Text fz="xs" lineClamp={1} style={{ maxWidth: '100%' }}>
                   {key}
                 </Text>
                 <IconCmp {...props} />

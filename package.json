@@ -69,9 +69,8 @@
     "wait-on": "^7.0.1"
   },
   "dependencies": {
-    "@mantine/core": "^6.0.20",
-    "@mantine/hooks": "^6.0.20",
-    "@mantine/styles": "^6.0.20",
+    "@mantine/core": "^7.4.2",
+    "@mantine/hooks": "^7.4.2",
     "@phosphor-icons/react": "^2.0.10",
     "@smile/react-front-kit-shared": "*",
     "react": "^18.2.0",
