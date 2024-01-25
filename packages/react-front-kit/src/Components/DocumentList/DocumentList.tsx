@@ -7,7 +7,7 @@ import { isNotNullNorEmpty } from '@smile/react-front-kit-shared';
 import { useMemo } from 'react';
 
 import { ActionBar } from '../ActionBar/ActionBar';
-import { DocumentCard } from '../DocumentCard/DocumentCard';
+import { DocumentBox } from '../DocumentBox/DocumentBox';
 import { SelectableList } from '../SelectableList/SelectableList';
 
 import { useStyles } from './DocumentList.style';
@@ -71,13 +71,13 @@ export function DocumentList(props: IDocumentListProps): ReactElement {
 
   return (
     <div className={classes.list}>
-      {selectedDocuments.length > 0 && (
+      {actions && selectedDocuments.length > 0 ? (
         <ActionBar<IDocument>
           actions={actions}
           selectedElements={selectedDocuments}
           {...actionBarProps}
         />
-      )}
+      ) : null}
       <SelectableList
         mt={24}
         onSelectChange={handleSelectChange}
@@ -85,7 +85,7 @@ export function DocumentList(props: IDocumentListProps): ReactElement {
         {...selectableListProps}
       >
         {documents.map((document, i) => (
-          <DocumentCard
+          <DocumentBox
             key={document.id}
             author={document.author}
             date={document.date}
@@ -103,7 +103,7 @@ export function DocumentList(props: IDocumentListProps): ReactElement {
             title={document.title}
           >
             {document.content}
-          </DocumentCard>
+          </DocumentBox>
         ))}
       </SelectableList>
     </div>

@@ -1,10 +1,10 @@
 import { Button, Space } from '@mantine/core';
 import { DownloadSimple } from '@phosphor-icons/react';
 
-import { DocumentCard } from '../DocumentCard/DocumentCard';
+import { DocumentBox } from '../DocumentBox/DocumentBox';
 
 export const selectableListElementsMock = [
-  <DocumentCard
+  <DocumentBox
     key={1}
     author="Aline Dupon"
     date="Published on December 24, 2023"
@@ -24,8 +24,8 @@ export const selectableListElementsMock = [
         PDF, FR - 1Mo
       </Button>
     </>
-  </DocumentCard>,
-  <DocumentCard
+  </DocumentBox>,
+  <DocumentBox
     key={2}
     author="Julien Dominique"
     date="Published on December 24, 2023"
@@ -45,8 +45,8 @@ export const selectableListElementsMock = [
         PTT, FR - 1Mo
       </Button>
     </>
-  </DocumentCard>,
-  <DocumentCard
+  </DocumentBox>,
+  <DocumentBox
     key={3}
     author="Mohamed Aldri"
     date="Published on December 24, 2023"
@@ -66,5 +66,5 @@ export const selectableListElementsMock = [
         PDF, FR - 1Mo
       </Button>
     </>
-  </DocumentCard>,
+  </DocumentBox>,
 ];
