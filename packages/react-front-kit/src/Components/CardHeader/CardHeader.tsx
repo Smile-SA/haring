@@ -12,7 +12,6 @@ const useStyles = createStyles((theme) => ({
   },
   root: {
     backgroundColor: theme.fn.primaryColor(),
-    borderRadius: '16px 16px 0 0',
     color: theme.white,
     padding: '24px 32px',
   },
