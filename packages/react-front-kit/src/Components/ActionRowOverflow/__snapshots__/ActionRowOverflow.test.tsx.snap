@@ -3,7 +3,7 @@
 exports[`ActionRowOverflow matches snapshot 1`] = `
 <div>
   <div
-    class="mantine-Group-root mantine-19vjl6i"
+    class="mantine-Group-root mantine-1vlub25"
   >
     <button
       class="mantine-UnstyledButton-root mantine-Button-root mantine-1fg4bc4"
@@ -162,28 +162,6 @@ exports[`ActionRowOverflow matches snapshot 1`] = `
         >
           Overflow Test 2
         </span>
-      </div>
-    </button>
-    <button
-      aria-controls="mantine-f4bipx4bi-dropdown"
-      aria-expanded="false"
-      aria-haspopup="menu"
-      class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1x9pd3r"
-      id="mantine-f4bipx4bi-target"
-      type="button"
-    >
-      <div>
-        <svg
-          fill="currentColor"
-          height="16"
-          viewBox="0 0 256 256"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M112,60a16,16,0,1,1,16,16A16,16,0,0,1,112,60Zm16,52a16,16,0,1,0,16,16A16,16,0,0,0,128,112Zm0,68a16,16,0,1,0,16,16A16,16,0,0,0,128,180Z"
-          />
-        </svg>
       </div>
     </button>
   </div>
