@@ -3,7 +3,7 @@
 exports[`DocumentList matches snapshot 1`] = `
 <div>
   <div
-    class="mantine-z0pqny"
+    class="mantine-16wy98o"
   >
     <div
       class="___ref-actionBar mantine-15edn1r"
@@ -12,7 +12,7 @@ exports[`DocumentList matches snapshot 1`] = `
         1 file(s) selected
       </span>
       <div
-        class="mantine-Group-root mantine-19vjl6i"
+        class="mantine-Group-root mantine-1vlub25"
       >
         <button
           class="mantine-UnstyledButton-root mantine-Button-root mantine-1fg4bc4"
@@ -173,28 +173,6 @@ exports[`DocumentList matches snapshot 1`] = `
             </span>
           </div>
         </button>
-        <button
-          aria-controls="mantine-f4bipx4bi-dropdown"
-          aria-expanded="false"
-          aria-haspopup="menu"
-          class="mantine-UnstyledButton-root mantine-ActionIcon-root mantine-1x9pd3r"
-          id="mantine-f4bipx4bi-target"
-          type="button"
-        >
-          <div>
-            <svg
-              fill="currentColor"
-              height="16"
-              viewBox="0 0 256 256"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M112,60a16,16,0,1,1,16,16A16,16,0,0,1,112,60Zm16,52a16,16,0,1,0,16,16A16,16,0,0,0,128,112Zm0,68a16,16,0,1,0,16,16A16,16,0,0,0,128,180Z"
-              />
-            </svg>
-          </div>
-        </button>
       </div>
     </div>
     <div
@@ -237,7 +215,7 @@ exports[`DocumentList matches snapshot 1`] = `
           </div>
         </div>
         <div
-          class="___ref-documentCard  mantine-1hsxp14"
+          class="___ref-documentBox  mantine-1hsxp14"
         >
           <div
             class=" mantine-Image-root mantine-d3it6h"
@@ -263,7 +241,7 @@ exports[`DocumentList matches snapshot 1`] = `
                 class="mantine-14n9mxy"
               >
                 <div
-                  class="___ref-documentCardIcon mantine-cznryd"
+                  class="___ref-documentBoxIcon mantine-cznryd"
                 >
                   <svg
                     class="mantine-wvylvx"
@@ -282,7 +260,7 @@ exports[`DocumentList matches snapshot 1`] = `
                   class="mantine-1x591ah"
                 >
                   <div
-                    class="___ref-documentCardHeaderTop mantine-hxvu3z"
+                    class="___ref-documentBoxHeaderTop mantine-hxvu3z"
                   >
                     <span
                       class="mantine-4yvscz"
@@ -422,7 +400,7 @@ exports[`DocumentList matches snapshot 1`] = `
           </div>
         </div>
         <div
-          class="___ref-documentCard  mantine-1hsxp14"
+          class="___ref-documentBox  mantine-1hsxp14"
         >
           <div
             class=" mantine-Image-root mantine-d3it6h"
@@ -448,7 +426,7 @@ exports[`DocumentList matches snapshot 1`] = `
                 class="mantine-14n9mxy"
               >
                 <div
-                  class="___ref-documentCardIcon mantine-cznryd"
+                  class="___ref-documentBoxIcon mantine-cznryd"
                 >
                   <svg
                     class="mantine-wvylvx"
@@ -467,7 +445,7 @@ exports[`DocumentList matches snapshot 1`] = `
                   class="mantine-1x591ah"
                 >
                   <div
-                    class="___ref-documentCardHeaderTop mantine-hxvu3z"
+                    class="___ref-documentBoxHeaderTop mantine-hxvu3z"
                   >
                     <span
                       class="mantine-4yvscz"
@@ -606,7 +584,7 @@ exports[`DocumentList matches snapshot 1`] = `
           </div>
         </div>
         <div
-          class="___ref-documentCard  mantine-1hsxp14"
+          class="___ref-documentBox  mantine-1hsxp14"
         >
           <div
             class=" mantine-Image-root mantine-d3it6h"
@@ -632,7 +610,7 @@ exports[`DocumentList matches snapshot 1`] = `
                 class="mantine-14n9mxy"
               >
                 <div
-                  class="___ref-documentCardIcon mantine-cznryd"
+                  class="___ref-documentBoxIcon mantine-cznryd"
                 >
                   <svg
                     class="mantine-wvylvx"
@@ -651,7 +629,7 @@ exports[`DocumentList matches snapshot 1`] = `
                   class="mantine-1x591ah"
                 >
                   <div
-                    class="___ref-documentCardHeaderTop mantine-hxvu3z"
+                    class="___ref-documentBoxHeaderTop mantine-hxvu3z"
                   >
                     <span
                       class="mantine-4yvscz"
