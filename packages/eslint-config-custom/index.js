@@ -20,6 +20,8 @@ module.exports = {
       { disallowTypeAnnotations: false },
     ],
     '@typescript-eslint/no-invalid-void-type': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
     'react/jsx-handler-names': ['error', { checkLocalVariables: false }],

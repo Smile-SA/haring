@@ -8,9 +8,10 @@ import type { MouseEvent, ReactElement } from 'react';
 
 import { ActionIcon, Text, Tooltip } from '@mantine/core';
 import { Dropzone as MantineDropzone } from '@mantine/dropzone';
-import { createStyles } from '@mantine/styles';
 import { Eye, Plus, X } from '@phosphor-icons/react';
 import { BitConverter } from '@smile/react-front-kit';
+
+import classes from './Dropzone.module.css';
 
 export interface IFile extends Partial<FileWithPath> {
   name: string;
@@ -26,69 +27,6 @@ export interface IDropzoneProps
   onRemoveFile?: (file: IFile) => void;
 }
 
-const useStyles = createStyles((theme) => ({
-  buttonPlus: {
-    alignItems: 'center',
-    cursor: 'pointer',
-    display: 'flex',
-    justifyContent: 'center',
-    margin: 'auto',
-  },
-  cardFile: {
-    background:
-      theme.colorScheme === 'dark' ? theme.black : theme.colors.gray[2],
-    borderRadius: '10px',
-    display: 'flex',
-    flexDirection: 'column',
-    height: '70px',
-    margin: '10px',
-    padding: '10px',
-    position: 'relative',
-    width: '80px',
-  },
-  cardFileButtonClose: {
-    position: 'absolute',
-    right: '-7px',
-    top: '-7px',
-  },
-  cardFileText: {
-    '&:first-of-type': {
-      fontWeight: 600,
-    },
-    display: 'inline-block',
-    fontSize: '12px',
-    height: 'fit-content',
-    margin: 'auto',
-    width: '100%',
-  },
-  cardsFile: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-  },
-  dropzoneBrowse: {
-    alignItems: 'center',
-    display: 'flex',
-    fontWeight: 600,
-    justifyContent: 'center',
-    marginTop: '0px',
-  },
-  dropzoneInner: {
-    margin: 'auto',
-    p: {
-      margin: '10px',
-    },
-    pointerEvents: 'auto',
-    textAlign: 'center',
-  },
-  dropzoneRoot: {
-    display: 'flex',
-    minHeight: '100%',
-    minWidth: '100%',
-  },
-  eye: { marginRight: '8px' },
-}));
-
 export function Dropzone(props: IDropzoneProps): ReactElement {
   const {
     children,
@@ -99,7 +37,6 @@ export function Dropzone(props: IDropzoneProps): ReactElement {
     onRemoveFile,
     ...MantineDropzoneProps
   } = props;
-  const { classes } = useStyles();
 
   function handleFileClick(e: MouseEvent<HTMLDivElement>): void {
     e.preventDefault();
