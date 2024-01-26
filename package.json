@@ -62,6 +62,7 @@
     "http-server": "^14.1.1",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
+    "postcss-preset-mantine": "^1.12.3",
     "prettier": "3.1.0",
     "storybook": "~7.4.1",
     "turbo": "^1.10.13",
@@ -69,8 +70,10 @@
     "wait-on": "^7.0.1"
   },
   "dependencies": {
-    "@mantine/core": "^7.4.2",
-    "@mantine/hooks": "^7.4.2",
+    "@mantine/core": "^7.5.0",
+    "@mantine/dates": "^7.5.0",
+    "@mantine/dropzone": "^7.5.0",
+    "@mantine/hooks": "^7.5.0",
     "@phosphor-icons/react": "^2.0.10",
     "@smile/react-front-kit-shared": "*",
     "react": "^18.2.0",

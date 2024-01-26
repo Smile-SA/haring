@@ -7,7 +7,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@mantine/carousel": "^7.4.2",
+    "@mantine/carousel": "^7.5.0",
     "@smile/react-front-kit": "*",
     "@smile/react-front-kit-dropzone": "*",
     "@smile/react-front-kit-shared": "*",

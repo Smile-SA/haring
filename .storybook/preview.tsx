@@ -2,6 +2,9 @@ import type { Preview, StoryContext, StoryFn } from '@storybook/react';
 import type { ReactElement } from 'react';
 
 import { MantineProvider } from '@mantine/core';
+import '@mantine/core/styles.css';
+import '@mantine/dates/styles.css';
+import '@mantine/dropzone/styles.css';
 
 import { Provider, themes } from '@smile/react-front-kit-shared';
 
@@ -12,7 +15,7 @@ function withProvider(Story: StoryFn, context: StoryContext): ReactElement {
         theme={{
           ...themes[context.globals.theme as 'main' | 'primary' | 'secondary']
             .theme,
-          colorScheme: context.globals.colorScheme as 'dark' | 'light',
+          // colorScheme: context.globals.colorScheme as 'dark' | 'light', TODO: colorScheme no longer exists
         }}
       >
         <Story />

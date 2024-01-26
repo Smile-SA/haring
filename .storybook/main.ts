@@ -21,8 +21,10 @@ const config: StorybookConfig = {
   },
   staticDirs: ['../public'],
   stories: [
-    '../packages/*/src/**/*.mdx',
-    '../packages/*/src/**/*.stories.@(js|jsx|ts|tsx)',
+    // '../packages/react-front-kit/src/Components/ActionBar/ActionBar.stories.@(js|jsx|ts|tsx)',
+    '../packages/react-front-kit/src/Components/ActionRowOverflow/*.stories.tsx',
+    // '../packages/*/src/**/*.mdx',
+    // '../packages/*/src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
 };
 export default config;

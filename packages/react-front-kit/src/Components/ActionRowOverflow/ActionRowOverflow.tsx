@@ -6,7 +6,6 @@ import type {
   ModalProps,
   TooltipProps,
 } from '@mantine/core';
-import type { FloatingPosition } from '@mantine/core/lib/Floating';
 import type { Record } from '@phosphor-icons/react';
 import type {
   IAction,
@@ -15,62 +14,61 @@ import type {
 import type { ReactElement, ReactNode } from 'react';
 
 import { ActionIcon, Button, Group, Menu, Tooltip } from '@mantine/core';
-import { createStyles } from '@mantine/styles';
 import { DotsThreeVertical } from '@phosphor-icons/react';
 import { useState } from 'react';
 
 import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
 
-const useStyles = createStyles((theme) => ({
-  actionIconCompact: {
-    '&[aria-expanded=true]': {
-      '& svg': {
-        filter: 'contrast(8) invert(1)',
-      },
-      backgroundColor: theme.fn.primaryColor(),
-    },
-    borderRadius: '28px',
-    height: '28px',
-    width: '28px',
-  },
-  actionIconDefault: {
-    borderRadius: '32px',
-    height: '32px',
-    width: '32px',
-  },
-  buttonIcon: {
-    [theme.fn.smallerThan('md')]: {
-      marginRight: 0,
-    },
-  },
-  buttonLabel: {
-    [theme.fn.smallerThan('md')]: {
-      display: 'none',
-    },
-  },
-  buttonRoot: {
-    [theme.fn.smallerThan('md')]: {
-      height: '32px',
-      padding: '0',
-      width: '32px',
-    },
-  },
-  groupRoot: {
-    gap: '8px',
-    justifyContent: 'center',
-  },
-  menuDropdown: {
-    borderRadius: '4px',
-    minWidth: '200px',
-  },
-}));
+// const useStyles = createStyles((theme) => ({
+//   actionIconCompact: {
+//     '&[aria-expanded=true]': {
+//       '& svg': {
+//         filter: 'contrast(8) invert(1)',
+//       },
+//       backgroundColor: theme.fn.primaryColor(),
+//     },
+//     borderRadius: '28px',
+//     height: '28px',
+//     width: '28px',
+//   },
+//   actionIconDefault: {
+//     borderRadius: '32px',
+//     height: '32px',
+//     width: '32px',
+//   },
+//   buttonIcon: {
+//     [theme.fn.smallerThan('md')]: {
+//       marginRight: 0,
+//     },
+//   },
+//   buttonLabel: {
+//     [theme.fn.smallerThan('md')]: {
+//       display: 'none',
+//     },
+//   },
+//   buttonRoot: {
+//     [theme.fn.smallerThan('md')]: {
+//       height: '32px',
+//       padding: '0',
+//       width: '32px',
+//     },
+//   },
+//   groupRoot: {
+//     gap: '8px',
+//     justifyContent: 'center',
+//   },
+//   menuDropdown: {
+//     borderRadius: '4px',
+//     minWidth: '200px',
+//   },
+// }));
 
-const defaultTooltipProps = {
-  color: 'gray.7',
-  position: 'bottom' as FloatingPosition,
-  radius: 6,
-  withArrow: true,
-};
+// const defaultTooltipProps = {
+//   color: 'gray.7',
+//   position: 'bottom' as FloatingPosition,
+//   radius: 6,
+//   withArrow: true,
+// };
 
 export type IActionRowOverflowAction<Data extends Record<string, unknown>> =
   IAction<Data[]>;
@@ -106,7 +104,8 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
   > | null>(null);
   const visibleRowActions = actions.slice(0, rowActionNumber);
   const menuRowActions = rowActionNumber ? actions.slice(rowActionNumber) : [];
-  const { classes } = useStyles();
+
+  // const { classes } = useStyles();
 
   function setModal(action: IActionRowOverflowAction<Data>): void {
     setConfirmAction({
@@ -176,13 +175,13 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
     !isCompactStyle ? (
       <Button
         key={action.id}
-        classNames={{
-          icon: classes.buttonIcon,
-          label: classes.buttonLabel,
-          root: classes.buttonRoot,
-        }}
+        // classNames={{
+        //   icon: classes.buttonIcon,
+        //   label: classes.buttonLabel,
+        //   root: classes.buttonRoot,
+        // }}
         color={action.color}
-        leftIcon={getActionIcon(action)}
+        leftSection={getActionIcon(action)}
         onClick={() => handleAction(action)}
         variant={action.color ? 'filled' : 'default'}
         {...getActionComponentProps(action)}
@@ -193,12 +192,11 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
       <Tooltip
         key={action.id}
         label={getActionLabel(action)}
-        {...defaultTooltipProps}
         {...actionTooltipProps}
       >
         <ActionIcon
           aria-label={getActionLabel(action)}
-          className={classes.actionIconCompact}
+          // className={classes.actionIconCompact}
           color={action.color}
           onClick={() => handleAction(action)}
           radius={4}
@@ -216,7 +214,7 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
     <Menu.Item
       key={action.id}
       color={action.color}
-      icon={getActionIcon(action)}
+      leftSection={getActionIcon(action)}
       onClick={() => handleAction(action)}
       {...getActionComponentProps(action)}
     >
@@ -227,27 +225,21 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
   return (
     <>
       {actions.length > 0 ? (
-        <Group className={classes.groupRoot} {...groupProps}>
+        <Group
+          // className={classes.groupRoot}
+          {...groupProps}
+        >
           {visibleRowActions.map((action) => visibleRowAction(action))}
           {menuRowActions.length > 0 ? (
             <Menu
-              classNames={{ dropdown: classes.menuDropdown }}
+              // classNames={{ dropdown: classes.menuDropdown }}
               radius={4}
               shadow="lg"
             >
-              <Tooltip
-                label={overflowMenuLabel}
-                {...defaultTooltipProps}
-                {...actionTooltipProps}
-              >
+              <Tooltip label={overflowMenuLabel} {...actionTooltipProps}>
                 <Menu.Target>
                   <ActionIcon
                     aria-label={overflowMenuLabel}
-                    className={
-                      isCompactStyle
-                        ? classes.actionIconCompact
-                        : classes.actionIconDefault
-                    }
                     onClick={(e) => e.stopPropagation()}
                     radius={4}
                     type="button"
@@ -264,16 +256,16 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
           ) : null}
         </Group>
       ) : null}
-      <ConfirmModal
-        {...confirmAction}
-        onCancel={() => handleModalButton(confirmAction?.onCancel)}
-        onClose={handleClose}
-        onConfirm={() => handleModalButton(confirmAction?.onConfirm)}
-        opened={Boolean(confirmAction)}
-        {...modalProps}
-      >
-        {confirmAction?.children}
-      </ConfirmModal>
+      {/* <ConfirmModal*/}
+      {/*  {...confirmAction}*/}
+      {/*  onCancel={() => handleModalButton(confirmAction?.onCancel)}*/}
+      {/*  onClose={handleClose}*/}
+      {/*  onConfirm={() => handleModalButton(confirmAction?.onConfirm)}*/}
+      {/*  opened={Boolean(confirmAction)}*/}
+      {/*  {...modalProps}*/}
+      {/* >*/}
+      {/*  {confirmAction?.children}*/}
+      {/* </ConfirmModal>*/}
     </>
   );
 }
