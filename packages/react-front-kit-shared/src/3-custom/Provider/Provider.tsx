@@ -23,8 +23,6 @@ export function Provider(props: IProviderProps): ReactElement {
       <MantineProvider
         // theme={{ ...main, colorScheme }} // TODO, colorScheme no longer exists
         theme={{ ...main }}
-        // withGlobalStyles // TODO: props no longer exists
-        // withNormalizeCSS / TODO: props no longer exists
       >
         {children}
       </MantineProvider>
