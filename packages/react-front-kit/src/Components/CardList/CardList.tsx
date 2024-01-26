@@ -1,60 +1,50 @@
 'use client';
 
-import type { ICardHeaderProps } from '../CardHeader/CardHeader';
-import type { CardProps } from '@mantine/core';
+import type { CardSectionProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
-import {
-  Card,
-  CardSection,
-  ScrollArea,
-  Stack,
-  createStyles,
-} from '@mantine/core';
+import { CardSection, ScrollArea } from '@mantine/core';
 
-import { CardHeader } from '../CardHeader/CardHeader';
-import { icon, title } from '../CardHeader/CardHeader.mock';
+import { useStyles } from './CardList.style';
 
-export const useStyles = createStyles(() => ({
-  root: {
-    margin: 0,
-  },
-  section: {
-    margin: '0',
-  },
-}));
+interface IChildren {
+  props: { children: ReactNode[] };
+}
 
-export interface ICardListProps extends CardProps {
-  cardHeaderProps?: ICardHeaderProps;
-  children: ReactNode;
+export interface ICardListProps extends CardSectionProps {
+  children: IChildren;
   height?: string;
   separator?: boolean;
-  spacing: string;
+  spacing?: string;
 }
 
 export function CardList(props: ICardListProps): ReactElement {
   const {
-    cardHeaderProps,
     children,
-    height = '500px',
-    separator,
-    spacing = '24px 32px',
-    ...RootProps
+    height,
+    separator = true,
+    spacing = '40px',
+    ...cardSectionProps
   } = props;
-  const { classes } = useStyles();
+  const { classes } = useStyles({ separator, spacing });
+  children.props.children.map((item: ReactNode, index: number) => (
+    <div key={`${index + index}`} className={classes.item}>
+      {item}
+    </div>
+  ));
 
   return (
-    <Card {...RootProps} className={classes.root} p={0}>
-      <CardHeader {...cardHeaderProps} leftSection={icon} p={spacing}>
-        {title}
-      </CardHeader>
-      <ScrollArea h={height}>
-        <CardSection className={classes.section} p={spacing}>
-          <Stack spacing={spacing}>
-            {children?.props?.children?.map((item: ReactNode) => <>{item}</>)}
-          </Stack>
-        </CardSection>
-      </ScrollArea>
-    </Card>
+    <ScrollArea
+      classNames={{ scrollbar: classes.scrollBar, thumb: classes.thumb }}
+      h={height}
+    >
+      <CardSection className={classes.section} {...cardSectionProps}>
+        {children.props.children.map((item: ReactNode, index: number) => (
+          <div key={`${index + index}`} className={classes.item}>
+            {item}
+          </div>
+        ))}
+      </CardSection>
+    </ScrollArea>
   );
 }
