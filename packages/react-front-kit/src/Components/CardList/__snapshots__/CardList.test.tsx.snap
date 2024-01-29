@@ -19,18 +19,14 @@ exports[`CardList matches snapshot 1`] = `
         style="min-width: 100%; display: table;"
       >
         <div
-          class="mantine-Card-cardSection mantine-57paqp"
+          class="mantine-Card-cardSection mantine-opwxym"
         >
           <div
-            class="mantine-1edc8tq"
+            class="mantine-1pure0w"
           >
             <span>
               Lorem ipsum dolor sit amet consectetur. Sollicitudin mattis blandit aliquet odio urna mi id. Mauris venenatis ut et at amet vel est.
             </span>
-          </div>
-          <div
-            class="mantine-1edc8tq"
-          >
             <div
               class="mantine-73o8aw"
               style="width: 100%;"
