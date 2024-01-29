@@ -1,10 +1,13 @@
-.action-icon-compact {
+.actionIconCompact {
+  /* TODO: nested selectors not working? with or without nexted syntax and &.
+      for example '.actionIconCompact svg { ... }' doesn't work, but 'svg { ... }' works */
+
   &[aria-expanded='true'] {
     & svg {
       filter: contrast(8) invert(1);
     }
 
-    background-color: var(--mantine-primary-color-0);
+    background-color: var(--mantine-primary-color-9);
   }
 
   border-radius: 28px;
@@ -12,42 +15,41 @@
   width: 28px;
 }
 
-.action-icon-default {
+.actionIconDefault {
   border-radius: 32px;
   height: 32px;
   width: 32px;
 }
 
-.button-icon {
-  @mixin larger-than $mantine-breakpoint-md {
+.buttonIcon {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
     margin-right: 0;
   }
 }
 
-.button-label {
-  @mixin larger-than $mantine-breakpoint-md {
+.buttonLabel {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
     display: none;
   }
 }
 
-.button-root {
-  @mixin larger-than $mantine-breakpoint-md {
+.buttonRoot {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
     height: 32px;
     padding: 0;
     width: 32px;
   }
 }
 
-.group-root {
+.groupRoot {
   gap: 8px;
   justify-content: center;
-
-  @mixin larger-than $mantine-breakpoint-md {
-    background: red !important;
-  }
 }
 
-.menu-dropdown {
+.menuDropdown {
   border-radius: 4px;
   min-width: 200px;
 }

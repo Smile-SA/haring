@@ -133,9 +133,9 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
       <Button
         key={action.id}
         classNames={{
-          icon: classes.buttonIcon,
           label: classes.buttonLabel,
           root: classes.buttonRoot,
+          section: classes.buttonIcon,
         }}
         color={action.color}
         leftSection={getActionIcon(action)}
@@ -199,6 +199,11 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
                 <Menu.Target>
                   <ActionIcon
                     aria-label={overflowMenuLabel}
+                    className={
+                      isCompactStyle
+                        ? classes.actionIconCompact
+                        : classes.actionIconDefault
+                    }
                     onClick={(e) => e.stopPropagation()}
                     radius={4}
                     type="button"
