@@ -23,6 +23,10 @@
   @mixin dark {
     background: var(--mantine-color-black);
   }
+
+  @mixin larger-than $mantine-breakpoint-md {
+    background: red !important;
+  }
 }
 
 .cardFileButtonClose {

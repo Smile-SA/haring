@@ -9,7 +9,8 @@ import type { MouseEvent, ReactElement } from 'react';
 import { ActionIcon, Text, Tooltip } from '@mantine/core';
 import { Dropzone as MantineDropzone } from '@mantine/dropzone';
 import { Eye, Plus, X } from '@phosphor-icons/react';
-import { BitConverter } from '@smile/react-front-kit';
+
+// import { BitConverter } from '@smile/react-front-kit';
 
 import classes from './Dropzone.module.css';
 
@@ -99,7 +100,7 @@ export function Dropzone(props: IDropzoneProps): ReactElement {
                 </Text>
                 {size !== undefined && (
                   <span className={classes.cardFileText}>
-                    <BitConverter options={{ locale: 'fr' }} value={size} />
+                    {/* <BitConverter options={{ locale: 'fr' }} value={size} /> */}
                   </span>
                 )}
               </div>
