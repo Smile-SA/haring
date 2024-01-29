@@ -5,8 +5,6 @@ import type { ReactElement } from 'react';
 
 import { Button, Modal } from '@mantine/core';
 
-import { useStyles } from './ConfirmModal.style';
-
 export type IConfirmModalProps = IConfirmModal;
 
 export function ConfirmModal(props: IConfirmModalProps): ReactElement {
@@ -22,40 +20,40 @@ export function ConfirmModal(props: IConfirmModalProps): ReactElement {
     title,
     ...modalProps
   } = props;
-  const { classes } = useStyles();
+  // const { classes } = useStyles();
   return (
     <Modal
       centered
-      classNames={{
-        body: classes.modalBody,
-        content: classes.modalContent,
-        header: classes.modalHeader,
-      }}
+      // classNames={{
+      //   body: classes.modalBody,
+      //   content: classes.modalContent,
+      //   header: classes.modalHeader,
+      // }}
       onClose={onClose}
       radius={16}
       size="lg"
       {...modalProps}
     >
       <>
-        <div className={classes.modalTitleContainer}>
+        <div /* className={classes.modalTitleContainer}*/>
           {Boolean(title) && <h2>{title}</h2>}
           {children}
         </div>
-        <div className={classes.modalButtonsContainer}>
+        <div /* className={classes.modalButtonsContainer}*/>
           <Button
-            className={classes.buttonLeftModal}
-            classNames={{
-              root: classes.buttonGrey,
-            }}
+            // className={classes.buttonLeftModal}
+            // classNames={{
+            //   root: classes.buttonGrey,
+            // }}
             color={cancelColor}
             onClick={onCancel}
           >
             {cancelLabel}
           </Button>
           <Button
-            classNames={{
-              root: classes.buttonRemoveRoot,
-            }}
+            // classNames={{
+            //   root: classes.buttonRemoveRoot,
+            // }}
             color={confirmColor}
             onClick={onConfirm}
           >
