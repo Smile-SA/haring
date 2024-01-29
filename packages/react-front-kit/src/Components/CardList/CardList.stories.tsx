@@ -1,29 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import type { ReactNode } from 'react';
 
 import { childrenExampleMock } from '../SummaryBox/SummaryBox.mock';
 
 import { CardList as Cmp } from './CardList';
 
-function addContainer(element: ReactNode): ReactNode {
-  return <div style={{ padding: '0 20px' }}>{element}</div>;
-}
-
 const summaryboxs = (
   <>
-    {addContainer(childrenExampleMock)}
-    {addContainer(childrenExampleMock)}
-    {addContainer(childrenExampleMock)}
-    {addContainer(childrenExampleMock)}
-    {addContainer(childrenExampleMock)}
+    {childrenExampleMock}
+    {childrenExampleMock}
+    {childrenExampleMock}
+    {childrenExampleMock}
+    {childrenExampleMock}
   </>
 );
 
 const texts = (
   <>
-    {addContainer(<p>Hello-world</p>)}
-    {addContainer(<p>Hello-world</p>)}
-    {addContainer(<p>Hello-world</p>)}
+    <p>Hello-world</p>
+    <p>Hello-world</p>
+    <p>Hello-world</p>
   </>
 );
 
@@ -39,7 +34,8 @@ type IStory = StoryObj<typeof meta>;
 export const CardListWithSummaryBox: IStory = {
   args: {
     children: summaryboxs,
-    height: '500px',
+    h: '500px',
+    p: '0px 20px',
     separator: true,
   },
 };
@@ -47,6 +43,7 @@ export const CardListWithSummaryBox: IStory = {
 export const CardListWithTexts: IStory = {
   args: {
     children: texts,
-    height: '200px',
+    h: '200px',
+    p: '0px 20px',
   },
 };

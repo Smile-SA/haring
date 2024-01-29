@@ -21,23 +21,17 @@ export interface ICardListProps extends Omit<ScrollAreaProps, 'children'> {
 export function CardList(props: ICardListProps): ReactElement {
   const {
     children,
-    height,
     separator = true,
     spacing = '40px',
-    ...ScrollAreaProps
+    p = '0px 20px',
+    ...scrollAreaProps
   } = props;
   const { classes } = useStyles({ separator, spacing });
-  children.props.children.map((item: ReactNode, index: number) => (
-    <div key={`${index + index}`} className={classes.item}>
-      {item}
-    </div>
-  ));
-
   return (
     <ScrollArea
       classNames={{ scrollbar: classes.scrollBar, thumb: classes.thumb }}
-      h={height}
-      {...ScrollAreaProps}
+      p={p}
+      {...scrollAreaProps}
     >
       <CardSection className={classes.section}>
         {children.props.children.map((item: ReactNode, index: number) => (
