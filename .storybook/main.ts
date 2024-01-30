@@ -23,7 +23,7 @@ const config: StorybookConfig = {
   stories: [
     '../packages/react-front-kit/src/Components/ActionBar/ActionBar.stories.@(js|jsx|ts|tsx)',
     '../packages/react-front-kit/src/Components/ActionRowOverflow/*.stories.tsx',
-    '../packages/react-front-kit/src/Components/BitConverted/*.stories.tsx',
+    '../packages/react-front-kit/src/Components/BitConverter/*.stories.tsx',
     '../packages/react-front-kit/src/Components/Breadcrumbs/*.stories.tsx',
     '../packages/react-front-kit/src/Components/ButtonListOrDropdown/*.stories.tsx',
     '../packages/react-front-kit/src/Components/CardHeader/*.stories.tsx',
