@@ -1,0 +1,25 @@
+.list {
+  & :global(.actionBarRef) {
+    margin-bottom: 1.5rem;
+  }
+
+  & :global(.selectableListRef) {
+    margin-top: 0;
+  }
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    & :global(.selectableListCheckboxRef) {
+      position: absolute;
+      top: 12.5px;
+    }
+
+    & :global(.documentBoxIconRef) {
+      left: 32px;
+    }
+
+    & :global(.documentBoxHeaderTopRef) {
+      margin-left: 72px;
+    }
+  }
+}

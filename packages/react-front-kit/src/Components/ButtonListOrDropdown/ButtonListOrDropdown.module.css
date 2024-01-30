@@ -1,0 +1,4 @@
+.buttonActive {
+  background-color: var(--mantine-primary-color-8);
+  font-weight: 700;
+}

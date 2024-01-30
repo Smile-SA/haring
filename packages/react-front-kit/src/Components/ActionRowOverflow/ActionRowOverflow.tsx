@@ -159,6 +159,7 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
           onClick={() => handleAction(action)}
           radius={4}
           type="button"
+          variant="subtle"
           {...getActionComponentProps(action)}
         >
           {getActionIcon(action)}
@@ -207,7 +208,7 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
                     onClick={(e) => e.stopPropagation()}
                     radius={4}
                     type="button"
-                    variant="light"
+                    variant={isCompactStyle ? 'subtle' : 'default'}
                   >
                     <DotsThreeVertical size={16} weight="bold" />
                   </ActionIcon>

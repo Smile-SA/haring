@@ -25,7 +25,7 @@ export function ActionBar<Data extends Record<string, unknown>>(
   const numberOfSelectedElements = selectedElements.length;
 
   return (
-    <div className={classes.actionBar}>
+    <div className={`${classes.actionBar} actionBarRef`}>
       <span>{selectedElementsLabel(numberOfSelectedElements)}</span>
       <ActionRowOverflow
         {...actionRowOverflowProps}

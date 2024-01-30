@@ -16,10 +16,12 @@
   position: relative;
   width: 80px;
 
+  /*noinspection CssInvalidAtRule*/
   @mixin light {
     background: var(--mantine-color-gray-2);
   }
 
+  /*noinspection CssInvalidAtRule*/
   @mixin dark {
     background: var(--mantine-color-black);
   }
