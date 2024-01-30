@@ -5,6 +5,8 @@
 export { ColumnPlus, FolderMove } from './1-styleGuide/Icons';
 export { FileIcon } from './1-styleGuide/FileIcon/FileIcon';
 export type { IFileIconProps } from './1-styleGuide/FileIcon/FileIcon';
+export { NestedProvider } from './3-custom/NestedProvider/NestedProvider';
+export type { INestedProviderProps } from './3-custom/NestedProvider/NestedProvider';
 export { Provider } from './3-custom/Provider/Provider';
 export type { IProviderProps } from './3-custom/Provider/Provider';
 // context exports

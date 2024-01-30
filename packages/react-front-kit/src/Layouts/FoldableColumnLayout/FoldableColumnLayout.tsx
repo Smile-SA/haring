@@ -12,13 +12,12 @@ import {
   Button,
   Container,
   Grid,
-  MantineProvider,
   Switch,
   Text,
 } from '@mantine/core';
 import { useUncontrolled } from '@mantine/hooks';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
-import { useMainTheme } from '@smile/react-front-kit-shared';
+import { NestedProvider, useMainTheme } from '@smile/react-front-kit-shared';
 
 import { useStyles } from './FoldableColumnLayout.style';
 
@@ -74,7 +73,7 @@ export function FoldableColumnLayout(
 
   return (
     <>
-      <MantineProvider theme={theme}>
+      <NestedProvider theme={theme}>
         <Box
           className={`${classes.box} ${boxMotif ? classes.boxWithMotif : ''}`}
           color="primary"
@@ -114,7 +113,7 @@ export function FoldableColumnLayout(
             )}
           </Grid>
         </Box>
-      </MantineProvider>
+      </NestedProvider>
       <div
         className={`${classes.collapseButton} ${
           boxMotif ? classes.collapseButtonWithMotif : ''

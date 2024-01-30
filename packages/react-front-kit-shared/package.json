@@ -51,7 +51,7 @@
       "require": "./dist/test-utils.cjs",
       "types": "./dist/test-utils/index.d.ts"
     },
-    "./style.css": "./style.css"
+    "./style.css": "./dist/style.css"
   },
   "types": "./dist/index.d.ts",
   "typesVersions": {

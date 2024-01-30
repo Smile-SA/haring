@@ -10,7 +10,6 @@ import {
   Button,
   Collapse,
   Flex,
-  MantineProvider,
   Modal,
   useMantineTheme,
 } from '@mantine/core';
@@ -35,7 +34,7 @@ import {
 } from '@smile/react-front-kit';
 import { menuMock } from '@smile/react-front-kit/mock';
 import { Dropzone } from '@smile/react-front-kit-dropzone';
-import { useThemes } from '@smile/react-front-kit-shared';
+import { NestedProvider, useThemes } from '@smile/react-front-kit-shared';
 import { TableGridView } from '@smile/react-front-kit-table';
 import { action } from '@storybook/addon-actions';
 import { useState } from 'react';
@@ -118,7 +117,7 @@ export function BrowsingPage(): ReactElement {
     ));
 
     return (
-      <MantineProvider theme={primary}>
+      <NestedProvider theme={primary}>
         <Accordion
           classNames={{
             chevron: classes.accordionChevron,
@@ -131,7 +130,7 @@ export function BrowsingPage(): ReactElement {
         >
           {items}
         </Accordion>
-      </MantineProvider>
+      </NestedProvider>
     );
   }
 
@@ -173,7 +172,7 @@ export function BrowsingPage(): ReactElement {
           </Breadcrumbs>
         }
       >
-        <MantineProvider theme={secondary}>
+        <NestedProvider theme={secondary}>
           <InfoCard
             content={
               <p
@@ -218,7 +217,7 @@ export function BrowsingPage(): ReactElement {
               onRemoveFile={(file) => setFiles(files.filter((f) => f !== file))}
             />
           </InfoCard>
-        </MantineProvider>
+        </NestedProvider>
         <div className={classes.sizeMobile}>
           <TableGridView
             actions={actions}

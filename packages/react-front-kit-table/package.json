@@ -47,7 +47,7 @@
       "require": "./dist/mock.cjs",
       "types": "./dist/mock.d.ts"
     },
-    "./style.css": "./style.css"
+    "./style.css": "./dist/style.css"
   },
   "types": "./dist/index.d.ts",
   "typesVersions": {
