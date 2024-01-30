@@ -4,7 +4,7 @@ import type { ICollapseButtonProps } from './CollapseButton';
 import type { CollapseProps } from '@mantine/core';
 import type { ElementType, MouseEvent, ReactElement } from 'react';
 
-import { ActionIcon, Button, Collapse } from '@mantine/core';
+import { ActionIcon, Button, Collapse, useMantineTheme } from '@mantine/core';
 import { CaretDown, CaretRight } from '@phosphor-icons/react';
 
 import classes from './CollapseButton.module.css';
@@ -44,6 +44,7 @@ export function CollapseButtonControlled<
     selected,
     ...buttonProps
   } = props;
+  const theme = useMantineTheme();
 
   function handleClick(event: MouseEvent<HTMLButtonElement>): void {
     event.stopPropagation();
@@ -86,7 +87,7 @@ export function CollapseButtonControlled<
         classNames={{
           label: labelClasses.join(' '),
           root: rootClasses.join(' '),
-          section: classes.rightIcon,
+          section: classes.section,
         }}
         component="div"
         data-selected={selected}
@@ -96,7 +97,7 @@ export function CollapseButtonControlled<
           Boolean(leftSection) && (
             <ActionIcon
               className={selected ? classes.iconSelected : ''}
-              color="primary"
+              color={theme.primaryColor}
               component="div"
               radius="sm"
               variant="light"

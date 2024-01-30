@@ -14,7 +14,6 @@
 }
 
 .iconSelected {
-  /* TODO: mixin light/dark does not seem to work, at least on storybook, dark scheme is never applied */
   /*noinspection CssInvalidAtRule*/
   @mixin light {
     background: var(--mantine-color-white);
@@ -62,7 +61,7 @@
   font-size: var(--mantine-font-size-md);
 }
 
-.rightIcon {
+.section {
   /*noinspection CssInvalidAtRule*/
   @mixin light {
     color: var(--mantine-color-dark-3);

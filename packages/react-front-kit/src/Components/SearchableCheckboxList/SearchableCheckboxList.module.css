@@ -1,0 +1,14 @@
+.checkboxRoot {
+  margin-bottom: 10px;
+}
+
+.checkboxBottom {
+  border-top: 1px solid var(--mantine-color-gray-2);
+  padding: 17px 0 24px;
+}
+
+.checkboxTop {
+  margin: 16px 0;
+}
+
+/* TODO: Known bug with label not positioned to the right, and missing gap, fixed in next patch */

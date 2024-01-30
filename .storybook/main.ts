@@ -31,7 +31,11 @@ const config: StorybookConfig = {
     '../packages/react-front-kit/src/Components/ConfirmModal/*.stories.tsx',
     '../packages/react-front-kit/src/Components/DocumentBox/*.stories.tsx',
     '../packages/react-front-kit/src/Components/DocumentList/*.stories.tsx',
+    '../packages/react-front-kit/src/Components/DropdownButton/*.stories.tsx',
+    '../packages/react-front-kit/src/Components/FilterList/*.stories.tsx',
+    '../packages/react-front-kit/src/Components/SearchableCheckboxList/*.stories.tsx',
     '../packages/react-front-kit/src/Components/SelectableList/*.stories.tsx',
+    '../packages/react-front-kit/src/Components/SidebarMenu/*.stories.tsx',
     // '../packages/*/src/**/*.mdx', // TODO: once all components are migrated, revert to this
     // '../packages/*/src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
