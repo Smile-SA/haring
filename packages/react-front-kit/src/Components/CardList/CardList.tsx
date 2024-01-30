@@ -9,7 +9,6 @@ import { useStyles } from './CardList.style';
 
 export interface ICardListProps extends Omit<ScrollAreaProps, 'children'> {
   children: ReactNode[];
-  height?: string;
   separator?: boolean;
   spacing?: MantineNumberSize;
 }
