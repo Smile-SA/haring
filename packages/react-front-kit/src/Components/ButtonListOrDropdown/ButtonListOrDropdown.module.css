@@ -1,4 +1,4 @@
 .buttonActive {
-  background-color: var(--mantine-primary-color-8);
+  background-color: var(--mantine-primary-color-filled-hover);
   font-weight: 700;
 }

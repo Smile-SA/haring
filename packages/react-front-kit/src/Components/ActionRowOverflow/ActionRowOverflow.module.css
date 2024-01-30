@@ -4,7 +4,7 @@
       filter: contrast(8) invert(1);
     }
 
-    background-color: var(--mantine-primary-color-9);
+    background-color: var(--mantine-primary-color-filled);
   }
 
   border-radius: 28px;
