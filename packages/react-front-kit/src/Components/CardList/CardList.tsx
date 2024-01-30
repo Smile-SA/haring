@@ -1,35 +1,45 @@
 'use client';
 
-import type { ScrollAreaProps } from '@mantine/core';
+import type { MantineNumberSize, ScrollAreaProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
-import { CardSection, ScrollArea } from '@mantine/core';
+import { Card, ScrollArea, Stack } from '@mantine/core';
 
 import { useStyles } from './CardList.style';
 
 export interface ICardListProps extends Omit<ScrollAreaProps, 'children'> {
-  children: ReactNode;
+  children: ReactNode[];
   height?: string;
   separator?: boolean;
-  spacing?: string;
+  spacing?: MantineNumberSize;
 }
 
 export function CardList(props: ICardListProps): ReactElement {
   const {
-    children,
+    children = [],
     separator = true,
-    spacing = '40px',
-    p = '0px 20px',
+    spacing = 'xl',
     ...scrollAreaProps
   } = props;
   const { classes } = useStyles({ separator, spacing });
   return (
     <ScrollArea
-      classNames={{ scrollbar: classes.scrollBar, thumb: classes.thumb }}
-      p={p}
       {...scrollAreaProps}
+      classNames={{
+        root: classes.rootScrollBar,
+        scrollbar: classes.scrollBar,
+        thumb: classes.thumb,
+      }}
     >
-      <CardSection className={classes.section}>{children}</CardSection>
+      <Card.Section className={classes.section}>
+        <Stack spacing={spacing}>
+          {children.map((item: ReactNode, index: number) => (
+            <div key={`${index + index}`} className={classes.item}>
+              {item}
+            </div>
+          ))}
+        </Stack>
+      </Card.Section>
     </ScrollArea>
   );
 }

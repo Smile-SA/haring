@@ -7,7 +7,14 @@ import { CardList } from './CardList';
 describe('CardList', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <CardList>{childrenExampleMock}</CardList>,
+      <CardList>
+        {[
+          childrenExampleMock,
+          childrenExampleMock,
+          childrenExampleMock,
+          childrenExampleMock,
+        ]}
+      </CardList>,
     );
     expect(container).toMatchSnapshot();
   });
