@@ -1,8 +1,5 @@
 .actionIconCompact {
-  /* TODO: nested selectors not working? with or without nexted syntax and &.
-      for example '.actionIconCompact svg { ... }' doesn't work, but 'svg { ... }' works */
-
-  &[aria-expanded='true'] {
+  & + [aria-expanded='true'] {
     & svg {
       filter: contrast(8) invert(1);
     }
