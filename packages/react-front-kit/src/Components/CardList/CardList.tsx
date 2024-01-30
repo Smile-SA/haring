@@ -3,19 +3,19 @@
 import type { MantineNumberSize, ScrollAreaProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
-import { Card, ScrollArea, Stack } from '@mantine/core';
+import { ScrollArea, Stack } from '@mantine/core';
 
 import { useStyles } from './CardList.style';
 
 export interface ICardListProps extends Omit<ScrollAreaProps, 'children'> {
-  children: ReactNode[];
+  children: ReactElement | ReactNode[];
   separator?: boolean;
   spacing?: MantineNumberSize;
 }
 
 export function CardList(props: ICardListProps): ReactElement {
   const {
-    children = [],
+    children,
     separator = true,
     spacing = 'xl',
     ...scrollAreaProps
@@ -30,15 +30,17 @@ export function CardList(props: ICardListProps): ReactElement {
         thumb: classes.thumb,
       }}
     >
-      <Card.Section className={classes.section}>
-        <Stack spacing={spacing}>
+      {Array.isArray(children) ? (
+        <Stack className={classes.stack} spacing={spacing}>
           {children.map((item: ReactNode, index: number) => (
             <div key={`${index + index}`} className={classes.item}>
               {item}
             </div>
           ))}
         </Stack>
-      </Card.Section>
+      ) : (
+        <div className={classes.item}>{children}</div>
+      )}
     </ScrollArea>
   );
 }

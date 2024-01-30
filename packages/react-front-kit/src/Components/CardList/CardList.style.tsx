@@ -34,7 +34,7 @@ export const useStyles = createStyles(
       background: theme.colors.gray[1],
       width: '7px !important',
     },
-    section: {
+    stack: {
       display: 'flex',
       flexDirection: 'column',
       margin: '0',

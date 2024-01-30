@@ -18,6 +18,12 @@ const summaryboxs = [
 const texts = ['Hello-world', 'Hello-world', 'Hello-world'];
 
 const meta = {
+  argTypes: {
+    spacing: {
+      control: { type: 'select' },
+      options: ['xl', 'lg', 'md', 'sm', 'xs'],
+    },
+  },
   component: Cmp,
   tags: ['autodocs'],
   title: '3-custom/Components/CardList',
@@ -26,11 +32,21 @@ const meta = {
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const CardListWithSummaryBox: IStory = {
+export const CardListWithMultiSummaryBox: IStory = {
   args: {
     children: summaryboxs,
     h: '200px',
     separator: true,
+    spacing: 'xl',
+  },
+};
+
+export const CardListWithOneSummaryBox: IStory = {
+  args: {
+    children: childrenExampleMock,
+    h: '110px',
+    separator: true,
+    spacing: 'xl',
   },
 };
 
@@ -38,15 +54,16 @@ export const CardListWithTexts: IStory = {
   args: {
     children: texts,
     h: '70px',
+    spacing: 'xl',
   },
   render: ({ ...props }) => (
-    <Card p={0}>
+    <Card>
       <Card.Section>
         <CardHeader>
           <h1 style={{ margin: '24px', marginBottom: 0 }}>Titre</h1>
         </CardHeader>
+        <Cmp {...props} />
       </Card.Section>
-      <Cmp {...props} />
     </Card>
   ),
 };
