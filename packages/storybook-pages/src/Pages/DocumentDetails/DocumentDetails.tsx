@@ -9,7 +9,6 @@ import {
   Button,
   Flex,
   Grid,
-  MantineProvider,
   Menu,
   Space,
   Tabs,
@@ -21,7 +20,7 @@ import {
   Preview,
   ResponsiveTabs,
 } from '@smile/react-front-kit';
-import { FolderMove, usePrimaryTheme } from '@smile/react-front-kit-shared';
+import { FolderMove, NestedProvider, usePrimaryTheme } from '@smile/react-front-kit-shared';
 
 import {
   CardAction,
@@ -115,7 +114,7 @@ export function DocumentDetails(): ReactElement {
           </Flex>
         </Grid.Col>
         <Grid.Col className={classes.colRight} span={5}>
-          <MantineProvider theme={primary}>
+          <NestedProvider theme={primary}>
             <ResponsiveTabs defaultValue="1" tabs={tabs}>
               <Space h="xl" />
               <Tabs.Panel value="1">
@@ -130,7 +129,7 @@ export function DocumentDetails(): ReactElement {
               <Tabs.Panel value="4">{CardPermissions}</Tabs.Panel>
               <Tabs.Panel value="5">{CardIdentity}</Tabs.Panel>
             </ResponsiveTabs>
-          </MantineProvider>
+          </NestedProvider>
         </Grid.Col>
       </Grid>
     </AppShell>

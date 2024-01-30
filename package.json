@@ -70,6 +70,7 @@
     "wait-on": "^7.0.1"
   },
   "dependencies": {
+    "@mantine/carousel": "^7.5.0",
     "@mantine/core": "^7.5.0",
     "@mantine/dates": "^7.5.0",
     "@mantine/dropzone": "^7.5.0",

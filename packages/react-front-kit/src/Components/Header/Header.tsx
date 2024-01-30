@@ -12,11 +12,11 @@ import {
   Button,
   Flex,
   Header as MantineHeader,
-  MantineProvider,
   useMantineTheme,
 } from '@mantine/core';
 import { useClickOutside } from '@mantine/hooks';
 import { MagnifyingGlass } from '@phosphor-icons/react';
+import { NestedProvider } from '@smile/react-front-kit-shared';
 import { useState } from 'react';
 
 import { HeaderMobile } from '../HeaderMobile/HeaderMobile';
@@ -117,7 +117,7 @@ export function Header(props: IHeaderProps): ReactElement {
                   </Button>
                 )}
                 {Boolean(searchOpened) && (
-                  <MantineProvider theme={searchTheme ?? defaultTheme}>
+                  <NestedProvider theme={searchTheme ?? defaultTheme}>
                     <HeaderSearch
                       data-testid="searchBar"
                       inputAriaLabel={searchInputProps?.title ?? 'Search'}
@@ -128,7 +128,7 @@ export function Header(props: IHeaderProps): ReactElement {
                       value={searchValue}
                       {...searchInputProps}
                     />
-                  </MantineProvider>
+                  </NestedProvider>
                 )}
               </div>
               {right}
