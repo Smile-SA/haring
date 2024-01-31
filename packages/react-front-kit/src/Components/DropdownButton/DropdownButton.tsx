@@ -38,7 +38,7 @@ export function DropdownButton(props: IDropdownButtonProps): ReactElement {
         {buttonComponent ?? (
           <Button
             data-testid="button"
-            rightIcon={opened ? <CaretUp /> : <CaretDown />}
+            rightSection={opened ? <CaretUp /> : <CaretDown />}
           >
             {label}
           </Button>

@@ -1,0 +1,24 @@
+.breadcrumb {
+  &:first-of-type {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  color: var(--mantine-color-dark-6);
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 1em;
+  margin-right: 1em;
+  text-decoration: none;
+  text-transform: capitalize;
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.container {
+  flex-wrap: wrap;
+  row-gap: 5px;
+}

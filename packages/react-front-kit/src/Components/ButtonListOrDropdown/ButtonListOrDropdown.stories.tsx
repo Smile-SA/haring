@@ -16,6 +16,6 @@ export const ButtonListOrDropdown: IStory = {
   args: {
     defaultCurrent: 'FR',
     items,
-    maxButtonItems: 0,
+    maxButtonItems: 4,
   },
 };
