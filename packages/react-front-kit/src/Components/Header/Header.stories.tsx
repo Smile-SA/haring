@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { AppShell } from '@mantine/core';
 import { primaryTheme } from '@smile/react-front-kit-shared';
 import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/storybook-utils';
 import { action } from '@storybook/addon-actions';
@@ -35,7 +36,11 @@ const meta = {
       const args = useStorybookArgsConnect(ctx.args, {
         onSearchChange: 'searchValue',
       });
-      return <Story args={{ ...args }} />;
+      return (
+        <AppShell>
+          <Story args={{ ...args }} />
+        </AppShell>
+      );
     },
   ],
   parameters: {
