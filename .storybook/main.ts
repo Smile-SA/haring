@@ -46,6 +46,7 @@ const config: StorybookConfig = {
     '../packages/react-front-kit/src/Components/Thumbnail/*.stories.tsx',
     '../packages/react-front-kit/src/Components/ThumbnailGrid/*.stories.tsx',
     '../packages/react-front-kit/src/Components/MenuLanguages/*.stories.tsx',
+    '../packages/react-front-kit/src/Components/InfoCard/*.stories.tsx',
     // '../packages/*/src/**/*.mdx', // TODO: once all components are migrated, revert to this
     // '../packages/*/src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
