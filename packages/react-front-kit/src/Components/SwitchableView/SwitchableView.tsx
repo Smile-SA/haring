@@ -1,45 +1,16 @@
 'use client';
 
-import type { PaperProps } from '@mantine/core';
 import type {
+  PaperProps,
   SegmentedControlItem,
   SegmentedControlProps,
-} from '@mantine/core/lib/SegmentedControl/SegmentedControl';
+} from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
 import { Paper, SegmentedControl } from '@mantine/core';
 import { useUncontrolled } from '@mantine/hooks';
-import { createStyles } from '@mantine/styles';
 
-const useStyles = createStyles(() => ({
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 42,
-    padding: 24,
-  },
-  switchButton: {
-    lineHeight: 0,
-    padding: '0.5rem',
-  },
-  topBar: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 8,
-  },
-  topBarLeft: {
-    margin: 'auto auto auto 0',
-    width: '100%',
-  },
-  topBarRight: {
-    alignItems: 'center',
-    display: 'flex',
-    flexDirection: 'row',
-    gap: 16,
-    margin: 'auto 0 auto auto',
-  },
-}));
+import classes from './SwitchableView.module.css';
 
 export interface IDataView extends SegmentedControlItem {
   dataView: ReactNode;
@@ -87,7 +58,6 @@ export function SwitchableView(props: ISwitchableViewProps): ReactElement {
     value,
   });
   const activeView = views[activeViewIndex];
-  const { classes } = useStyles();
 
   function handleViewChange(value: string): void {
     setActiveViewIndex(views.findIndex((view) => view.value === value));
