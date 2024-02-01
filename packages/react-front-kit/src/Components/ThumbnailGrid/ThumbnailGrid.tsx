@@ -5,18 +5,11 @@ import type { SimpleGridProps } from '@mantine/core';
 import type { ReactElement } from 'react';
 
 import { SimpleGrid } from '@mantine/core';
-import { createStyles } from '@mantine/styles';
 
 import { ActionBar } from '../ActionBar/ActionBar';
 import { Thumbnail } from '../Thumbnail/Thumbnail';
 
-const useStyles = createStyles(() => ({
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 24,
-  },
-}));
+import classes from './ThumbnailGrid.module.css';
 
 function defaultSelectedElementsText(n: number): string {
   return `${n} selected file${n > 1 ? 's' : ''}`;
@@ -43,8 +36,6 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
   const numberOfSelectedElements = selectedElements.length;
   const massActions = actions.filter(({ isMassAction }) => isMassAction);
   const itemActions = actions.filter(({ isItemAction = true }) => isItemAction);
-
-  const { classes } = useStyles();
 
   function handleSelect(index: number): void {
     onThumbnailClick?.(thumbnails[index], index);
