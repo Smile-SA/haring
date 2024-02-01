@@ -1,0 +1,155 @@
+.collapseButton {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    margin: auto;
+  }
+  /*noinspection CssInvalidAtRule*/
+  @mixin light {
+    background-color: transparent;
+    &:hover {
+      background-color: var(--mantine-color-gray-0);
+    }
+    color: var(--mantine-color-black);
+  }
+  /*noinspection CssInvalidAtRule*/
+  @mixin dark {
+    background-color: transparent;
+    &:hover {
+      background-color: var(--mantine-color-black);
+    }
+    color: var(--mantine-color-white);
+  }
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.collapseButtonCenter {
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.collapseRight {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    flex-direction: column;
+    margin: auto;
+    width: fit-content;
+  }
+
+  display: flex;
+  flex-warp: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.contentItem {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.contentItemGroup {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: left;
+  max-width: 175px;
+}
+
+.contentItems {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    margin-bottom: 16px;
+    min-width: 0px;
+  }
+
+  column-gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin-bottom: 28px;
+  row-gap: 10px;
+}
+
+.leftContainer {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    min-width: 0px !important;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 390px;
+}
+
+.motif {
+  left: -20px;
+  position: absolute;
+  top: -30px;
+  z-index: 0;
+}
+
+.rightContainer {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    max-width: 440px;
+  }
+
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.root {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    padding: 20px 16px;
+  }
+
+  overflow: hidden;
+  padding: 24px 48px;
+  position: relative;
+  width: 100%;
+}
+
+.title {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0px;
+    /*noinspection CssInvalidAtRule*/
+    @mixin smaller-than $mantine-breakpoint-sm {
+      font-size: 18px;
+    }
+  }
+}
+
+.topContent {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    row-gap: 8px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.motif {
+  opacity: 0.3;
+}

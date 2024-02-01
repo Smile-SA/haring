@@ -4,30 +4,21 @@ import type {
   ReactElement,
 } from 'react';
 
-import { useMantineTheme } from '@mantine/core';
+import classes from './InfoCard.module.css';
 
 export interface IMotifProps extends ComponentPropsWithoutRef<'svg'> {
   style?: CSSProperties;
 }
 
 export function Motif(props: IMotifProps): ReactElement {
-  const theme = useMantineTheme();
-  const {
-    style = {
-      fill:
-        theme.colorScheme === 'light'
-          ? theme.colors.dark[9]
-          : theme.colors.gray[0],
-      opacity: 0.1,
-    },
-    ...svgProps
-  } = props;
+  const { style, ...svgProps } = props;
   return (
     <svg
+      className={classes.motif}
+      fill="white"
       height="407"
       style={style}
       viewBox="0 0 412 407"
-      width="412"
       xmlns="http://www.w3.org/2000/svg"
       {...svgProps}
     >

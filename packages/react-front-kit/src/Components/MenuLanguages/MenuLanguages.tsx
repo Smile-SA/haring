@@ -4,9 +4,9 @@ import type { IButtonListOrDropdownProps } from '../ButtonListOrDropdown/ButtonL
 import type { IOption } from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';
 
-import { createStyles } from '@mantine/styles';
-
 import { ButtonListOrDropdown } from '../ButtonListOrDropdown/ButtonListOrDropdown';
+
+import classes from './MenuLanguages.module.css';
 
 export interface ILang extends IOption<string> {
   country?: string;
@@ -18,17 +18,12 @@ export interface IMenuLanguagesProps
   squareFormat?: boolean;
 }
 
-const useStyles = createStyles(() => ({
-  flag: { marginRight: '5px' },
-}));
-
 export function MenuLanguages(props: IMenuLanguagesProps): ReactElement {
   const {
     languages,
     squareFormat = false,
     ...ButtonListOrDropdownProps
   } = props;
-  const { classes } = useStyles();
 
   const items = languages.map((language) => {
     const classNames = ['fi', `fi-${language.country?.toLowerCase()}`];
@@ -36,7 +31,7 @@ export function MenuLanguages(props: IMenuLanguagesProps): ReactElement {
       classNames.push('fis');
     }
     if (language.label) {
-      classNames.push(classes.flag);
+      classNames.push(classes.flag as string);
     }
     return {
       content: (
