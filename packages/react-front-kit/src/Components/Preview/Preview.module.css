@@ -1,0 +1,27 @@
+.audio {
+  max-width: 100%;
+}
+
+.iframe {
+  background: var(--mantine-color-white);
+  box-shadow:
+    0 3.4348926544189453px 2.7479140758514404px 0 rgba(0, 0, 0, 0.0155),
+    0 8.687101364135742px 6.949680805206299px 0 rgba(0, 0, 0, 0.0222),
+    0 17.720870971679688px 14.176697731018066px 0 rgba(0, 0, 0, 0.0278),
+    0 36.501644134521484px 29.201316833496094px 0 rgba(0, 0, 0, 0.0345),
+    0 100px 80px 0 rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.image {
+  max-width: 100%;
+}
+
+.root {
+  text-align: center;
+  width: 100%;
+}
+
+.video {
+  max-width: 100%;
+}

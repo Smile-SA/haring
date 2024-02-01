@@ -1,0 +1,125 @@
+.button {
+  &[data-expanded] {
+    /*noinspection CssInvalidAtRule*/
+    @mixin light {
+      background-color: var(--mantine-color-gray-0);
+    }
+    /*noinspection CssInvalidAtRule*/
+    @mixin dark {
+      background-color: var(--mantine-color-dark-6);
+    }
+  }
+
+  &:hover {
+    /*noinspection CssInvalidAtRule*/
+    @mixin light {
+      background: var(--mantine-color-gray-0);
+    }
+    /*noinspection CssInvalidAtRule*/
+    @mixin dark {
+      background: var(--mantine-color-dark-6);
+    }
+  }
+
+  align-self: center;
+  margin-bottom: 6px;
+  margin-left: auto;
+}
+
+.container {
+  position: relative;
+}
+
+.dropdown {
+  border-radius: 4px;
+  padding: 20px;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin light {
+    background: var(--mantine-color-white);
+    border-color: var(--mantine-color-white);
+  }
+  /*noinspection CssInvalidAtRule*/
+  @mixin dark {
+    background: var(--mantine-color-dark-0);
+    border-color: var(--mantine-color-dark-0);
+  }
+}
+
+.dropdownContainer {
+  > .mantine-Tabs-tab {
+    &[data-active] {
+      background: var(--mantine-color-gray-0);
+      border: none;
+    }
+
+    :hover {
+      background-color: var(--mantine-color-gray-0);
+      border: none;
+    }
+
+    > span {
+      font-weight: initial;
+
+      /*noinspection CssInvalidAtRule*/
+      @mixin light {
+        color: var(--mantine-color-black);
+      }
+      /*noinspection CssInvalidAtRule*/
+      @mixin dark {
+        color: var(--mantine-color-white);
+      }
+    }
+
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+  }
+
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  & .mantine-Tabs-tabLabel {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+}
+
+.tab {
+  &[data-active] {
+    /*noinspection CssInvalidAtRule*/
+    @mixin light {
+      color: var(--mantine-color-black);
+    }
+    /*noinspection CssInvalidAtRule*/
+    @mixin dark {
+      color: var(--mantine-color-dark-0);
+    }
+  }
+
+  padding-bottom: 16px;
+}
+
+.tabs {
+  & .mantine-Tabs-tabLabel {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

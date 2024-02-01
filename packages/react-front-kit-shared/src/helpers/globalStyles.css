@@ -17,7 +17,7 @@
   width: 12px;
 }
 
-.mantine-Carousel-indicator[data-active="true"] {
+.mantine-Carousel-indicator[data-active='true'] {
   transition-duration: 500ms;
   width: 32px;
 }
@@ -35,7 +35,7 @@
 a {
   color: inherit;
 }
- 
+
 body {
   background-color: light-dark(
     var(--mantine-color-gray-1),
@@ -43,10 +43,10 @@ body {
   );
 }
 
-.harring-active:active {
+.haring-active:active {
   transform: none;
 }
 
-.harring-focus:focus {
+.haring-focus:focus {
   outline: 2px solid var(--mantine-color-orange-5);
 }

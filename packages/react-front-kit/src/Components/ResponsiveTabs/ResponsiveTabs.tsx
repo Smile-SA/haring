@@ -6,94 +6,12 @@ import type { ReactElement, ReactNode } from 'react';
 
 import { ActionIcon, Tabs } from '@mantine/core';
 import { useElementSize, useId } from '@mantine/hooks';
-import { createStyles } from '@mantine/styles';
 import { CaretDoubleRight } from '@phosphor-icons/react';
 import { useLayoutEffect, useState } from 'react';
 
 import { DropdownButton } from '../DropdownButton/DropdownButton';
 
-const useStyles = createStyles((theme) => ({
-  button: {
-    '&[data-expanded]': {
-      backgroundColor:
-        theme.colorScheme === 'light'
-          ? theme.colors.gray[0]
-          : theme.colors.dark[6],
-    },
-    ':hover': {
-      background:
-        theme.colorScheme === 'light'
-          ? theme.colors.gray[0]
-          : theme.colors.dark[6],
-    },
-    alignSelf: 'center',
-    marginBottom: 6,
-    marginLeft: 'auto',
-  },
-  container: {
-    position: 'relative',
-  },
-  dropdown: {
-    background:
-      theme.colorScheme === 'light' ? theme.white : theme.colors.dark[0],
-    borderColor:
-      theme.colorScheme === 'light' ? theme.white : theme.colors.dark[0],
-    borderRadius: 4,
-    padding: '20px',
-  },
-  dropdownContainer: {
-    '> .mantine-Tabs-tab': {
-      '&[data-active]': {
-        background: theme.colors.gray[0],
-        border: 'none',
-      },
-      ':hover': {
-        backgroundColor: theme.colors.gray[0],
-        border: 'none',
-      },
-      '> span': {
-        color: theme.colorScheme === 'light' ? theme.black : theme.white,
-        fontWeight: 'initial',
-      },
-      border: 'none',
-      borderRadius: 4,
-      padding: '10px',
-    },
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  hidden: {
-    '& .mantine-Tabs-tabLabel': {
-      fontSize: 18,
-      fontWeight: 600,
-    },
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'nowrap',
-    opacity: 0,
-    overflow: 'hidden',
-    position: 'absolute',
-    top: 0,
-    visibility: 'hidden',
-    width: '100%',
-  },
-  tab: {
-    '&[data-active]': {
-      color: theme.colorScheme === 'light' ? theme.black : theme.colors.dark[0],
-    },
-    paddingBottom: 16,
-  },
-  tabs: {
-    '& .mantine-Tabs-tabLabel': {
-      fontSize: 18,
-      fontWeight: 600,
-    },
-    flexWrap: 'nowrap',
-    position: 'absolute',
-    top: 0,
-    width: '100%',
-  },
-}));
+import classes from './ResponsiveTabs.module.css';
 
 const dropdownButtonWidth = 30;
 
@@ -121,9 +39,8 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
     : generatedId;
   const [overflowIndex, setOverflowIndex] = useState(tabs.length);
   const [opened, setOpened] = useState(false);
-  const { classes } = useStyles();
 
-  function handleTabChange(value: string): void {
+  function handleTabChange(value: string | null): void {
     if (overflowIndex < tabs.length) {
       const activeIndex = tabs.findIndex((tab) => tab.props.value === value);
       if (activeIndex >= overflowIndex) {
@@ -133,7 +50,9 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
   }
 
   useLayoutEffect(() => {
-    const tabElements = Array.from(ref.current.children) as HTMLElement[];
+    const tabElements = Array.from(
+      ref.current !== null ? ref.current.children : [],
+    ) as HTMLElement[];
     // Remove ids of hidden tabs to prevent duplicate ids
     tabElements.forEach((el) => el.removeAttribute('id'));
     const index = tabElements.findIndex(
@@ -152,7 +71,7 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
     <Tabs
       className={classes.container}
       classNames={{ tab: classes.tab }}
-      onTabChange={handleTabChange}
+      onChange={handleTabChange}
       radius="sm"
       style={{ paddingTop: height }}
       {...tabsProps}
@@ -168,7 +87,9 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
               <ActionIcon
                 aria-label={dropdownButtonAriaLabel}
                 className={classes.button}
+                color="gray-9"
                 radius="sm"
+                variant="subtle"
               >
                 <CaretDoubleRight />
               </ActionIcon>
