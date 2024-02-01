@@ -7,7 +7,7 @@ import { useId } from 'react';
 export interface INestedProviderProps extends MantineProviderProps {
   Component?: ElementType;
   children: ReactNode;
-  className: string;
+  className?: string;
 }
 
 export function NestedProvider(props: INestedProviderProps): ReactElement {

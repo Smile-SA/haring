@@ -1,0 +1,79 @@
+.around {
+  align-items: center;
+  gap: var(--mantine-spacing-xs);
+}
+
+.button {
+  &::after {
+    content: '';
+    display: block;
+    height: 36px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    translate: 0 -50%;
+    width: 1px;
+
+    /*noinspection CssInvalidAtRule*/
+    @mixin light {
+      background: var(--mantine-color-gray-3);
+    }
+    /*noinspection CssInvalidAtRule*/
+    @mixin dark {
+      background: var(--mantine-color-gray-8);
+    }
+  }
+
+  background: transparent;
+  border-radius: 0;
+  position: relative;
+}
+
+.buttonOpened {
+  &::after {
+    display: none;
+  }
+
+  background: var(--mantine-primary-color-filled);
+  color: var(--mantine-color-white);
+}
+
+.container {
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 64px;
+  position: relative;
+  width: 100%;
+}
+
+.menu {
+  align-items: center;
+  gap: var(--mantine-spacing-xl);
+  left: 50%;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  translate: -50% -50%;
+}
+
+.none {
+  display: none;
+}
+
+.sizeDesktop {
+  display: initial;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    display: none;
+  }
+}
+
+.sizeMobile {
+  display: none;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    display: initial;
+  }
+}

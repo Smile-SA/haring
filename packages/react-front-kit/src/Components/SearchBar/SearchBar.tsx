@@ -6,7 +6,7 @@ import type { ChangeEvent, FormEvent, ReactElement, ReactNode } from 'react';
 import { CloseButton, Input, TextInput } from '@mantine/core';
 import { useEffect, useRef } from 'react';
 
-import { useStyles } from './SearchBar.style';
+import classes from './SearchBar.module.css';
 
 export interface ISearchBarProps extends Omit<TextInputProps, 'onChange'> {
   clearButtonAriaLabel?: string;
@@ -35,7 +35,6 @@ export function SearchBar(props: ISearchBarProps): ReactElement {
     ...textInputProps
   } = props;
   const inputRef = useRef<HTMLInputElement>(null);
-  const { classes } = useStyles();
 
   useEffect(() => {
     if (inputRef.current && opened) {
@@ -88,6 +87,7 @@ export function SearchBar(props: ISearchBarProps): ReactElement {
               variant="white"
             />
           }
+          rightSectionPointerEvents="initial"
           value={value}
           variant="unstyled"
           {...textInputProps}
