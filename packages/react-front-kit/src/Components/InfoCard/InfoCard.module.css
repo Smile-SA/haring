@@ -3,7 +3,7 @@
   @mixin smaller-than $mantine-breakpoint-sm {
     margin: auto;
   }
-
+  /*noinspection CssInvalidAtRule*/
   @mixin light {
     background-color: transparent;
     &:hover {
@@ -11,6 +11,7 @@
     }
     color: var(--mantine-color-black);
   }
+  /*noinspection CssInvalidAtRule*/
   @mixin dark {
     background-color: transparent;
     &:hover {
