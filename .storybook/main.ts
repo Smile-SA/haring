@@ -41,6 +41,10 @@ const config: StorybookConfig = {
     '../packages/react-front-kit/src/Components/SearchBar/*.stories.tsx',
     '../packages/react-front-kit/src/Components/SelectableList/*.stories.tsx',
     '../packages/react-front-kit/src/Components/SidebarMenu/*.stories.tsx',
+    '../packages/react-front-kit/src/Components/SwitchableView/*.stories.tsx',
+    '../packages/react-front-kit/src/Components/SummaryBox/*.stories.tsx',
+    '../packages/react-front-kit/src/Components/Thumbnail/*.stories.tsx',
+    '../packages/react-front-kit/src/Components/ThumbnailGrid/*.stories.tsx',
     // '../packages/*/src/**/*.mdx', // TODO: once all components are migrated, revert to this
     // '../packages/*/src/**/*.stories.@(js|jsx|ts|tsx)',
   ],

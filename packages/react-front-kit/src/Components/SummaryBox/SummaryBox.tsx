@@ -1,11 +1,11 @@
 'use client';
 
-import type { GroupProps, StackProps } from '@mantine/core';
-import type { FlexProps } from '@mantine/core/lib/Flex/Flex';
+import type { FlexProps, GroupProps, StackProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
 import { Flex, Group, Stack } from '@mantine/core';
-import { createStyles } from '@mantine/styles';
+
+import classes from './SummaryBox.module.css';
 
 export interface ISummaryBoxProps extends FlexProps {
   children?: ReactNode;
@@ -20,12 +20,6 @@ export interface ISummaryBoxProps extends FlexProps {
   topNode?: ReactNode;
   topNodeGroupProps?: GroupProps;
 }
-
-const useStyles = createStyles(() => ({
-  grow: {
-    flexGrow: 1,
-  },
-}));
 
 export function SummaryBox(props: ISummaryBoxProps): ReactElement {
   const {
@@ -42,7 +36,6 @@ export function SummaryBox(props: ISummaryBoxProps): ReactElement {
     topNodeGroupProps,
     ...containerFlexProps
   } = props;
-  const { classes } = useStyles();
 
   return (
     <Flex
