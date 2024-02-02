@@ -12,7 +12,6 @@ import type { IAction } from '@smile/react-front-kit-shared';
 import type { MRT_RowSelectionState } from 'mantine-react-table';
 import type { ReactElement, SetStateAction } from 'react';
 
-import { createStyles } from '@mantine/styles';
 import { ListBullets, SquaresFour } from '@phosphor-icons/react';
 import { SwitchableView, ThumbnailGrid } from '@smile/react-front-kit';
 import { isNotNullNorEmpty, typeGuard } from '@smile/react-front-kit-shared';
@@ -20,12 +19,7 @@ import { useState } from 'react';
 
 import { Table } from '../Table/Table';
 
-const useStyles = createStyles(() => ({
-  tablePaper: {
-    border: 'none',
-    borderRadius: '4px',
-  },
-}));
+import classes from './TableGridView.module.css';
 
 export type ITableGridAction<Data extends Record<string, unknown>> = IAction<
   ITableData<Data> | IThumbnailData
@@ -76,8 +70,6 @@ export function TableGridView<Data extends Record<string, unknown>>(
   const selectedIndexes = Object.entries(rowSelection).map((entry) =>
     entry[1] ? entry[0] : null,
   );
-
-  const { classes } = useStyles();
 
   const thumbnails: IThumbnail[] = data
     .map((item, index) => {
