@@ -1,0 +1,138 @@
+.box {
+  padding: 40px 64px 0 64px;
+  position: relative;
+  width: 100%;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+}
+
+.boxWithMotif {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    padding: 24px;
+  }
+}
+
+.collapseButton {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    > button {
+      > * {
+        justify-content: space-between;
+      }
+
+      width: 100%;
+    }
+
+    padding: 0 24px;
+  }
+  /*noinspection CssInvalidAtRule*/
+  @mixin larger-than $mantine-breakpoint-md {
+    display: none;
+  }
+}
+
+.collapseButtonWithMotif {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    padding-top: 24px;
+  }
+}
+
+.container {
+  padding: 24px 64px 40px 64px;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    padding: 0 24px 24px 24px;
+  }
+}
+
+.content {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding-top: 24px;
+  }
+}
+
+.contentGrid {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.motif {
+  left: -40px;
+  pointer-events: none;
+  position: absolute;
+  top: -60px;
+  user-select: none;
+  z-index: 0;
+}
+
+.motifContainer {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.sidebar {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding-bottom: 0;
+    padding-top: 8px;
+  }
+}
+
+.topBlock {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    margin: 0;
+  }
+}
+
+.topBlockContent {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    padding: 0;
+  }
+}
+
+.topGrid {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    margin: 0;
+  }
+}
+
+.topLeft {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    display: none;
+  }
+}
+
+.topRight {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+/* TODO: Known bug with label not positioned to the right, and missing gap, fixed in next patch */

@@ -22,7 +22,7 @@ export function createThemes(themeConfig: IThemeOverride = {}): IThemes {
     ...baseRest
   } = baseTheme;
   const base: MantineThemeOverride = {
-    activeClassName: 'harring-active',
+    activeClassName: 'haring-active',
     components: {
       Checkbox: {
         defaultProps: {
@@ -33,7 +33,7 @@ export function createThemes(themeConfig: IThemeOverride = {}): IThemes {
     },
     cursorType: 'pointer',
     defaultRadius: '1.5rem',
-    focusClassName: 'harring-focus',
+    focusClassName: 'haring-focus',
     fontFamily: 'var(--rfk-font, Open Sans)',
     fontSizes: {
       lg: '18px',

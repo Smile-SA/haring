@@ -7,19 +7,12 @@ import type {
 } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Switch,
-  Text,
-} from '@mantine/core';
+import { Box, Button, Container, Grid, Switch, Text } from '@mantine/core';
 import { useUncontrolled } from '@mantine/hooks';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
 import { NestedProvider, useMainTheme } from '@smile/react-front-kit-shared';
 
-import { useStyles } from './FoldableColumnLayout.style';
+import classes from './FoldableColumnLayout.module.css';
 
 export interface IFoldableColumnLayoutProps {
   boxMotif?: ReactNode;
@@ -65,7 +58,6 @@ export function FoldableColumnLayout(
     });
   const main = useMainTheme();
   const theme = topBlockTheme ?? main;
-  const { classes } = useStyles();
 
   function handleSidebarVisibleToggle(isVisible: boolean): void {
     handleIsColumnVisibleChange(isVisible);
@@ -121,7 +113,7 @@ export function FoldableColumnLayout(
       >
         <Button
           onClick={() => handleSidebarVisibleToggle(!isColumnVisibleState)}
-          rightIcon={isColumnVisibleState ? <CaretUp /> : <CaretDown />}
+          rightSection={isColumnVisibleState ? <CaretUp /> : <CaretDown />}
         >
           {sidebarToggleLabel}
         </Button>

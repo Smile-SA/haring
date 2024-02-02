@@ -71,11 +71,11 @@
     "wait-on": "^7.0.1"
   },
   "dependencies": {
-    "@mantine/carousel": "^7.5.0",
-    "@mantine/core": "^7.5.0",
-    "@mantine/dates": "^7.5.0",
-    "@mantine/dropzone": "^7.5.0",
-    "@mantine/hooks": "^7.5.0",
+    "@mantine/carousel": "^7.5.1",
+    "@mantine/core": "^7.5.1",
+    "@mantine/dates": "^7.5.1",
+    "@mantine/dropzone": "^7.5.1",
+    "@mantine/hooks": "^7.5.1",
     "@phosphor-icons/react": "^2.0.10",
     "@smile/react-front-kit-shared": "*",
     "react": "^18.2.0",

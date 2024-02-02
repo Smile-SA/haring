@@ -9,6 +9,7 @@
     &:hover {
       background-color: var(--mantine-color-gray-0);
     }
+
     color: var(--mantine-color-black);
   }
   /*noinspection CssInvalidAtRule*/
@@ -17,6 +18,7 @@
     &:hover {
       background-color: var(--mantine-color-black);
     }
+
     color: var(--mantine-color-white);
   }
   margin-top: 12px;
@@ -42,7 +44,7 @@
   }
 
   display: flex;
-  flex-warp: wrap;
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: space-between;
   position: relative;
@@ -69,7 +71,7 @@
   /*noinspection CssInvalidAtRule*/
   @mixin smaller-than $mantine-breakpoint-sm {
     margin-bottom: 16px;
-    min-width: 0px;
+    min-width: 0;
   }
 
   column-gap: 40px;
@@ -83,7 +85,7 @@
 .leftContainer {
   /*noinspection CssInvalidAtRule*/
   @mixin smaller-than $mantine-breakpoint-sm {
-    min-width: 0px !important;
+    min-width: 0 !important;
   }
 
   display: flex;
@@ -131,7 +133,7 @@
   p {
     font-size: 26px;
     font-weight: 700;
-    margin: 0px;
+    margin: 0;
     /*noinspection CssInvalidAtRule*/
     @mixin smaller-than $mantine-breakpoint-sm {
       font-size: 18px;
