@@ -19,7 +19,7 @@ const texts = ['Hello-world', 'Hello-world', 'Hello-world'];
 
 const meta = {
   argTypes: {
-    spacing: {
+    gap: {
       control: { type: 'select' },
       options: ['xl', 'lg', 'md', 'sm', 'xs'],
     },
@@ -35,26 +35,26 @@ type IStory = StoryObj<typeof meta>;
 export const CardListWithMultiSummaryBox: IStory = {
   args: {
     children: summaryboxs,
+    gap: 'xl',
     h: '200px',
     separator: true,
-    spacing: 'xl',
   },
 };
 
 export const CardListWithOneSummaryBox: IStory = {
   args: {
     children: childrenExampleMock,
+    gap: 'xl',
     h: '110px',
     separator: true,
-    spacing: 'xl',
   },
 };
 
 export const CardListWithTexts: IStory = {
   args: {
     children: texts,
+    gap: 'xl',
     h: '70px',
-    spacing: 'xl',
   },
   render: ({ ...props }) => (
     <Card>

@@ -1,0 +1,40 @@
+.item {
+  position: relative;
+}
+
+.separator {
+  display: none;
+  margin: 0;
+  display: block;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  border: none;
+  height: 1px;
+  background: var(--mantine-color-gray-3);
+}
+.separatorActive {
+  display: block;
+  height: 1px;
+  width: 100%;
+}
+
+.rootScrollBar {
+  margin: 32px 0px;
+  padding: 0px 32px;
+}
+
+.scrollBar {
+  background: var(--mantine-color-gray-1);
+  width: 7px !important;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.thumb {
+  background: var(--mantine-color-gray-9);
+}

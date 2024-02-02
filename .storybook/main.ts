@@ -21,8 +21,8 @@ const config: StorybookConfig = {
   },
   staticDirs: ['../public'],
   stories: [
-    '../packages/*/src/**/*.mdx',
-    '../packages/*/src/**/*.stories.@(js|jsx|ts|tsx)',
+    // '../packages/*/src/**/*.mdx',
+    '../packages/*/src/**/CardList.stories.@(js|jsx|ts|tsx)',
   ],
 };
 export default config;
