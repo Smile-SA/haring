@@ -40,7 +40,7 @@ export const SummaryBox: IStory = {
 
 export const ChildrenExample: IStory = {
   args: {
-    children: childrenExampleMock,
+    children: childrenExampleMock(),
     titleNode: titleMock,
     topNode: topMock,
     topNodeGroupProps: { mb: 12 },

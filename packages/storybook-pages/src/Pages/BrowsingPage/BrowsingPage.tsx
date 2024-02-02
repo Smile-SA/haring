@@ -11,6 +11,7 @@ import {
   Collapse,
   Flex,
   Modal,
+  getThemeColor,
   useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
@@ -59,7 +60,7 @@ import {
   gridProps,
   tableProps,
 } from './BrowsingPage.mock';
-import { useStyles } from './BrowsingPage.style';
+import classes from './BrowsingPage.module.css';
 
 /**
  * Primary UI component for user interaction
@@ -76,7 +77,6 @@ export function BrowsingPage(): ReactElement {
   const [globalFilters, setGlobalFilters] = useState<IFilter[]>(
     SearchableCheckboxListProps,
   );
-  const { classes } = useStyles();
   const theme = useMantineTheme();
 
   const accordionItems = [
@@ -196,12 +196,14 @@ export function BrowsingPage(): ReactElement {
             }
             contentItems={[
               {
-                icon: <User color={theme.fn.primaryColor()} />,
+                icon: <User color={getThemeColor(theme.primaryColor, theme)} />,
                 iconProps: { color: 'cyan' },
                 label: 'N°6754389',
               },
               {
-                icon: <Suitcase color={theme.fn.primaryColor()} />,
+                icon: (
+                  <Suitcase color={getThemeColor(theme.primaryColor, theme)} />
+                ),
                 iconProps: { color: 'cyan' },
                 label: 'Contrat Individuel',
               },
@@ -239,7 +241,7 @@ export function BrowsingPage(): ReactElement {
                 <Button
                   fullWidth
                   onClick={toggle}
-                  rightIcon={filtersOpened ? <CaretUp /> : <CaretDown />}
+                  rightSection={filtersOpened ? <CaretUp /> : <CaretDown />}
                 >
                   {filtersOpened
                     ? 'Masquer les filtres'

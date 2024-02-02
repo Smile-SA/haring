@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react';
+
 import {
   ActionIcon,
   Avatar,
@@ -46,8 +48,8 @@ export const otherTitleMock = (
   </span>
 );
 
-export const childrenExampleMock = (
-  <Flex direction="column" gap={24}>
+export const childrenExampleMock = (key?: number): ReactElement => (
+  <Flex key={key} direction="column" gap={24}>
     <span>
       Lorem ipsum dolor sit amet consectetur. Sollicitudin mattis blandit
       aliquet odio urna mi id. Mauris venenatis ut et at amet vel est.
