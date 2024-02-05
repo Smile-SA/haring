@@ -1,15 +1,19 @@
 'use client';
 
-import type { ScrollAreaProps, StackProps } from '@mantine/core';
+import type {
+  MantineSpacing,
+  ScrollAreaProps,
+  StackProps,
+} from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
-import { ScrollArea, Stack, rem } from '@mantine/core';
+import { ScrollArea, Stack, getSpacing } from '@mantine/core';
 
 import classes from './CardList.module.css';
 
 export interface ICardListProps extends Omit<ScrollAreaProps, 'children'> {
   children: ReactElement | ReactNode[];
-  gap?: number;
+  gap?: MantineSpacing;
   separator?: boolean;
   stackProps?: StackProps;
 }
@@ -18,7 +22,7 @@ export function CardList(props: ICardListProps): ReactElement {
   const {
     children,
     separator = true,
-    gap = 32,
+    gap = 'xl',
     stackProps,
     ...scrollAreaProps
   } = props;
@@ -39,7 +43,7 @@ export function CardList(props: ICardListProps): ReactElement {
               key={`${index + index}`}
               className={classes.item}
               style={{
-                ['--separator-gap' as string]: rem(-gap / 2),
+                ['--separator-gap' as string]: getSpacing(gap),
                 ['--separator-display' as string]: separator ? 'block' : 'none',
               }}
             >

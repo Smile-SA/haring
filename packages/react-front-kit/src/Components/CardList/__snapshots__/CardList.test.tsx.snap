@@ -26,10 +26,10 @@ exports[`CardList matches snapshot 1`] = `
       >
         <div
           class="m-6d731127 mantine-Stack-root"
-          style="--stack-gap: calc(2rem * var(--mantine-scale)); --stack-align: stretch; --stack-justify: flex-start;"
+          style="--stack-gap: var(--mantine-spacing-xl); --stack-align: stretch; --stack-justify: flex-start;"
         >
           <div
-            style="--separator-gap: calc(-1rem * var(--mantine-scale)); --separator-display: block;"
+            style="--separator-gap: var(--mantine-spacing-xl); --separator-display: block;"
           >
             <div
               class="m-8bffd616 mantine-Flex-root __m__-r3"
@@ -138,7 +138,7 @@ exports[`CardList matches snapshot 1`] = `
             </div>
           </div>
           <div
-            style="--separator-gap: calc(-1rem * var(--mantine-scale)); --separator-display: block;"
+            style="--separator-gap: var(--mantine-spacing-xl); --separator-display: block;"
           >
             <div
               class="m-8bffd616 mantine-Flex-root __m__-ro"
@@ -247,7 +247,7 @@ exports[`CardList matches snapshot 1`] = `
             </div>
           </div>
           <div
-            style="--separator-gap: calc(-1rem * var(--mantine-scale)); --separator-display: block;"
+            style="--separator-gap: var(--mantine-spacing-xl); --separator-display: block;"
           >
             <div
               class="m-8bffd616 mantine-Flex-root __m__-r1d"
@@ -356,7 +356,7 @@ exports[`CardList matches snapshot 1`] = `
             </div>
           </div>
           <div
-            style="--separator-gap: calc(-1rem * var(--mantine-scale)); --separator-display: block;"
+            style="--separator-gap: var(--mantine-spacing-xl); --separator-display: block;"
           >
             <div
               class="m-8bffd616 mantine-Flex-root __m__-r22"
