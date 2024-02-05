@@ -1,5 +1,6 @@
 'use client';
 
+import type { IMenuItem } from '@smile/react-front-kit/src';
 import type { IFile } from '@smile/react-front-kit-dropzone';
 import type { IFilter } from '@smile/react-front-kit-shared';
 import type { FormEvent, ReactElement } from 'react';
@@ -67,7 +68,7 @@ import classes from './BrowsingPage.module.css';
  */
 export function BrowsingPage(): ReactElement {
   const [search, setSearch] = useState('');
-  const [sidebarMenu, setSidebarMenu] = useState(menuMock);
+  const [sidebarMenu, setSidebarMenu] = useState<IMenuItem<number>[]>(menuMock);
   const [files, setFiles] = useState<IFile[]>([]);
   const [gridCols, setGridCols] = useState(4);
   const [seeMoreModal, { open, close }] = useDisclosure(false);
