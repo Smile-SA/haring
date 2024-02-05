@@ -45,8 +45,8 @@ export const ResponsiveTabs: IStory = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await expect(canvas.getByText('First Content')).toBeVisible();
-    await userEvent.click(canvas.getAllByTestId('test-tab')[1]);
     await sleep(200);
+    await userEvent.click(canvas.getAllByTestId('test-tab')[1]);
     await expect(canvas.getByText('Second Content')).toBeVisible();
   },
   render: ({ children, ...props }) => (

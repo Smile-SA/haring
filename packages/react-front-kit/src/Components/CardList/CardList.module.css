@@ -2,7 +2,7 @@
   &:after {
     background: var(--mantine-color-gray-2);
     /*noinspection CssUnresolvedCustomProperty*/
-    bottom: var(--separator-gap);
+    bottom: calc((var(--separator-gap) * -1) / 2);
     content: '';
     /*noinspection CssUnresolvedCustomProperty*/
     display: var(--separator-display);
