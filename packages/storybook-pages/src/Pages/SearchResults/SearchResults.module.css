@@ -1,0 +1,56 @@
+.dataInput {
+  border: 1px solid var(--mantine-color-gray-2);
+  color: var(--mantine-color-dark-filled);
+}
+
+.dataInputLabel {
+  color: var(--mantine-color-dark-filled);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.documentListContainer {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    padding: 24px 16px 32px 16px;
+  }
+  border-radius: 16px;
+  padding: 48px 56px;
+}
+
+.main {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.periodContainer {
+  padding: 6px 0;
+}
+
+.select {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    input {
+      font-size: 14px;
+      padding: 0 16px;
+    }
+  }
+
+  :focus,
+  :focus-within {
+    /*noinspection CssInvalidFunction*/
+    outline: rem(2) solid var(--mantine-color-orange-5);
+  }
+
+  border-radius: 1.5rem;
+}
+
+.selectDropdown {
+  left: 0 !important;
+  max-width: calc(100vw - 48px);
+  width: 100% !important;
+}
+
+.selectRight {
+  width: 1.5rem;
+}

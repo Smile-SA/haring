@@ -1,0 +1,27 @@
+.actionIcons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.colLeftBar {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.colRight {
+  background: var(--mantine-primary-color-filled);
+  padding: 40px 64px;
+}
+
+.grid {
+  height: 100%;
+}
+
+.main {
+  overflow-x: hidden;
+  width: 100%;
+}
