@@ -3,9 +3,7 @@
 }
 
 .separator {
-  display: none;
   margin: 0;
-  display: block;
   position: absolute;
   left: 0px;
   width: 100%;

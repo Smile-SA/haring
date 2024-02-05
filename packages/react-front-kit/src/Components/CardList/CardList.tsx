@@ -3,7 +3,7 @@
 import type { MantineSpacing, ScrollAreaProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
-import { ScrollArea, Stack, getSize } from '@mantine/core';
+import { ScrollArea, Stack, useMantineTheme } from '@mantine/core';
 
 import classes from './CardList.module.css';
 
@@ -15,6 +15,8 @@ export interface ICardListProps extends Omit<ScrollAreaProps, 'children'> {
 
 export function CardList(props: ICardListProps): ReactElement {
   const { children, separator = true, gap = 'xl', ...scrollAreaProps } = props;
+
+  const theme = useMantineTheme();
 
   const classNames = [classes.separator];
   if (separator) {
@@ -34,15 +36,29 @@ export function CardList(props: ICardListProps): ReactElement {
           {children.map((item: ReactNode, index: number) => (
             <div key={`${index + index}`} className={classes.item}>
               {item}
-              <hr
-                className={classNames.join(' ')}
-                style={{
-                  bottom: separator
-                    ? //  "500px" should be replaced by "theme.separator" which should be "theme.gap" on this version of Mantine.
-                      getSize({ size: gap, sizes: '500px' }) / 2
-                    : '',
-                }}
-              />
+              {separator ? (
+                <hr
+                  className={classNames.join(' ')}
+                  style={
+                    index + 1 !== children.length
+                      ? {
+                          bottom:
+                            gap === 'xl' ||
+                            gap === 'sm' ||
+                            gap === 'lg' ||
+                            gap === 'xs' ||
+                            gap === 'md'
+                              ? `calc(${theme.spacing[gap]} -
+                            ${theme.spacing[gap]} -
+                            ${theme.spacing[gap]} / 2)`
+                              : typeof gap === 'number'
+                                ? `calc(-${gap}px /2)`
+                                : `calc(-${gap} / 2)`,
+                        }
+                      : { display: 'none' }
+                  }
+                />
+              ) : null}
             </div>
           ))}
         </Stack>
