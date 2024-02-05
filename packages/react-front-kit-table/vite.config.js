@@ -30,7 +30,6 @@ export default defineConfig({
       ],
       input: {
         index: resolve(__dirname, 'src/index.tsx'),
-        mock: resolve(__dirname, 'src/mock.tsx'),
         server: resolve(__dirname, 'src/server.tsx'),
       },
       output: {
