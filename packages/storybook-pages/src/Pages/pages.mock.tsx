@@ -164,15 +164,15 @@ export const CardAction = (
       Générales
     </Text>
     <Space h="lg" />
-    <Group spacing="xs">
-      <Button leftIcon={<FolderMove />}>Déplacer</Button>
-      <Button leftIcon={<PencilSimple size={14} weight="bold" />}>
+    <Group gap="xs">
+      <Button leftSection={<FolderMove />}>Déplacer</Button>
+      <Button leftSection={<PencilSimple size={14} weight="bold" />}>
         Editer le contenu
       </Button>
-      <Button leftIcon={<PencilSimpleLine size={14} weight="bold" />}>
+      <Button leftSection={<PencilSimpleLine size={14} weight="bold" />}>
         Annoter
       </Button>
-      <Button leftIcon={<TrashSimple size={14} weight="bold" />}>
+      <Button leftSection={<TrashSimple size={14} weight="bold" />}>
         Supprimer
       </Button>
     </Group>
@@ -185,11 +185,11 @@ export const CardMetadata = (
       Métadonnées
     </Text>
     <Space h="lg" />
-    <Group spacing="xs">
-      <Button leftIcon={<PencilSimple size={14} weight="bold" />}>
+    <Group gap="xs">
+      <Button leftSection={<PencilSimple size={14} weight="bold" />}>
         Editer les métadonnées
       </Button>
-      <Button leftIcon={<Plus size={14} weight="bold" />}>
+      <Button leftSection={<Plus size={14} weight="bold" />}>
         Créer une nouvelle version
       </Button>
     </Group>
@@ -204,10 +204,10 @@ export const CardNative = (
     <Space h="lg" />
     <Group grow pb="md">
       <Grid>
-        <Grid.Col maw="200px" pb="sm" pt="0" sm={3}>
+        <Grid.Col maw="200px" pb="sm" pt="0" span={3}>
           <Text span>Créer</Text>
         </Grid.Col>
-        <Grid.Col pb="sm" pt="0" sm={3}>
+        <Grid.Col pb="sm" pt="0" span={3}>
           <Text fw={600} span>
             22 mai 2021
           </Text>
@@ -216,10 +216,10 @@ export const CardNative = (
     </Group>
     <Group grow pb="md">
       <Grid>
-        <Grid.Col maw="200px" pb="sm" pt="0" sm={3}>
+        <Grid.Col maw="200px" pb="sm" pt="0" span={3}>
           <Text span>Dernière modification</Text>
         </Grid.Col>
-        <Grid.Col pb="sm" pt="0" sm={3}>
+        <Grid.Col pb="sm" pt="0" span={3}>
           <Text fw={600} span>
             22 mai 2021
           </Text>
@@ -228,10 +228,10 @@ export const CardNative = (
     </Group>
     <Group grow pb="md">
       <Grid>
-        <Grid.Col maw="200px" pb="sm" pt="0" sm={3}>
+        <Grid.Col maw="200px" pb="sm" pt="0" span={3}>
           <Text span>Créer par</Text>
         </Grid.Col>
-        <Grid.Col pb="sm" pt="0" sm={3}>
+        <Grid.Col pb="sm" pt="0" span={3}>
           <Text fw={600} span>
             22 mai 2021
           </Text>
@@ -240,10 +240,10 @@ export const CardNative = (
     </Group>
     <Group grow pb="md">
       <Grid>
-        <Grid.Col maw="200px" pb="sm" pt="0" sm={3}>
+        <Grid.Col maw="200px" pb="sm" pt="0" span={3}>
           <Text span>Modifier par</Text>
         </Grid.Col>
-        <Grid.Col pb="sm" pt="0" sm={3}>
+        <Grid.Col pb="sm" pt="0" span={3}>
           <Text fw={600} span>
             22 mai 2021
           </Text>
@@ -252,10 +252,10 @@ export const CardNative = (
     </Group>
     <Group grow>
       <Grid>
-        <Grid.Col maw="200px" pb="sm" pt="0" sm={3}>
+        <Grid.Col maw="200px" pb="sm" pt="0" span={3}>
           <Text span>Version</Text>
         </Grid.Col>
-        <Grid.Col pb="sm" pt="0" sm={3}>
+        <Grid.Col pb="sm" pt="0" span={3}>
           <Chip checked size="sm" variant="outline">
             V2
           </Chip>
@@ -271,11 +271,11 @@ export const CardPermissions = (
       Accés au document
     </Text>
     <Space h="lg" />
-    <Group spacing="xs">
-      <Button leftIcon={<PencilSimple size={14} weight="bold" />}>
+    <Group gap="xs">
+      <Button leftSection={<PencilSimple size={14} weight="bold" />}>
         Editer les droits
       </Button>
-      <Button leftIcon={<ShareNetwork size={14} weight="bold" />}>
+      <Button leftSection={<ShareNetwork size={14} weight="bold" />}>
         Partager en externe
       </Button>
     </Group>
@@ -292,10 +292,10 @@ export const CardIdentity = (
     <Space h="lg" />
     <Group grow pb="md">
       <Grid>
-        <Grid.Col maw="200px" pb="sm" pt="0" sm={3}>
+        <Grid.Col maw="200px" pb="sm" pt="0" span={3}>
           <Text span>Titre</Text>
         </Grid.Col>
-        <Grid.Col pb="sm" pt="0" sm={3}>
+        <Grid.Col pb="sm" pt="0" span={3}>
           <Text fw={600} span>
             22 mai 2021
           </Text>
@@ -304,10 +304,10 @@ export const CardIdentity = (
     </Group>
     <Group grow pb="md">
       <Grid>
-        <Grid.Col maw="200px" pb="sm" pt="0" sm={3}>
+        <Grid.Col maw="200px" pb="sm" pt="0" span={3}>
           <Text span>Description</Text>
         </Grid.Col>
-        <Grid.Col pb="sm" pt="0" sm={3}>
+        <Grid.Col pb="sm" pt="0" span={3}>
           <Text fw={600} span>
             22 mai 2021
           </Text>
@@ -316,10 +316,10 @@ export const CardIdentity = (
     </Group>
     <Group grow pb="md">
       <Grid>
-        <Grid.Col maw="200px" pb="sm" pt="0" sm={3}>
+        <Grid.Col maw="200px" pb="sm" pt="0" span={3}>
           <Text span>Type de document</Text>
         </Grid.Col>
-        <Grid.Col pb="sm" pt="0" sm={3}>
+        <Grid.Col pb="sm" pt="0" span={3}>
           <Text fw={600} span>
             22 mai 2021
           </Text>
@@ -329,10 +329,10 @@ export const CardIdentity = (
     <Divider color="cyan.9" my="lg" size="sm" />
     <Group grow pb="md" pt="md">
       <Grid>
-        <Grid.Col maw="200px" pb="sm" sm={3}>
+        <Grid.Col maw="200px" pb="sm" span={3}>
           <Text span>Titre</Text>
         </Grid.Col>
-        <Grid.Col pb="sm" sm={3}>
+        <Grid.Col pb="sm" span={3}>
           <Text fw={600} span>
             Facture_Medor
           </Text>
@@ -341,10 +341,10 @@ export const CardIdentity = (
     </Group>
     <Group grow pb="md">
       <Grid>
-        <Grid.Col maw="200px" pb="sm" pt="0" sm={3}>
+        <Grid.Col maw="200px" pb="sm" pt="0" span={3}>
           <Text span>Description</Text>
         </Grid.Col>
-        <Grid.Col pb="sm" pt="0" sm={3}>
+        <Grid.Col pb="sm" pt="0" span={3}>
           <Text fw={600} span>
             -
           </Text>
@@ -353,10 +353,10 @@ export const CardIdentity = (
     </Group>
     <Group grow>
       <Grid>
-        <Grid.Col maw="200px" pb="sm" pt="0" sm={3}>
+        <Grid.Col maw="200px" pb="sm" pt="0" span={3}>
           <Text span>Type de document</Text>
         </Grid.Col>
-        <Grid.Col pb="sm" pt="0" sm={3}>
+        <Grid.Col pb="sm" pt="0" span={3}>
           <Text fw={600} span>
             Facture
           </Text>
@@ -373,7 +373,7 @@ export const CardsMetadata = (
     <>{CardIdentity}</>
     <Space h="xl" />
     <Group grow>
-      <Button leftIcon={<Plus />}>Nouvelle métadonnées</Button>
+      <Button leftSection={<Plus />}>Nouvelle métadonnées</Button>
     </Group>
   </>
 );

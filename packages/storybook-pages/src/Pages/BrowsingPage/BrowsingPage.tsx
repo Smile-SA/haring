@@ -11,6 +11,7 @@ import {
   Collapse,
   Flex,
   Modal,
+  getThemeColor,
   useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
@@ -32,7 +33,6 @@ import {
   SidebarMenu,
   flattenNestedObjects,
 } from '@smile/react-front-kit';
-import { menuMock } from '@smile/react-front-kit/mock';
 import { Dropzone } from '@smile/react-front-kit-dropzone';
 import { NestedProvider, useThemes } from '@smile/react-front-kit-shared';
 import { TableGridView } from '@smile/react-front-kit-table';
@@ -57,9 +57,10 @@ import {
   actions,
   data,
   gridProps,
+  menuMock,
   tableProps,
 } from './BrowsingPage.mock';
-import { useStyles } from './BrowsingPage.style';
+import classes from './BrowsingPage.module.css';
 
 /**
  * Primary UI component for user interaction
@@ -76,7 +77,6 @@ export function BrowsingPage(): ReactElement {
   const [globalFilters, setGlobalFilters] = useState<IFilter[]>(
     SearchableCheckboxListProps,
   );
-  const { classes } = useStyles();
   const theme = useMantineTheme();
 
   const accordionItems = [
@@ -137,7 +137,10 @@ export function BrowsingPage(): ReactElement {
   return (
     <AppShell
       classNames={{ main: classes.main }}
-      header={
+      header={{ height: 90 }}
+      padding={0}
+    >
+      <AppShell.Header>
         <Header
           childrenComponent="nav"
           left={headerLeft}
@@ -150,146 +153,162 @@ export function BrowsingPage(): ReactElement {
         >
           {headerContent}
         </Header>
-      }
-      padding={0}
-    >
-      <FoldableColumnLayout
-        onChangeIsColumnVisible={(isVisible) => setGridCols(isVisible ? 4 : 5)}
-        sidebarContent={
-          <Flex direction="column" gap={24}>
-            <Button onClick={handleAddFolder} size="md">
-              Nouveau dossier
-            </Button>
-            <SidebarMenu menu={sidebarMenu} />
-          </Flex>
-        }
-        sidebarToggleLabel="Voir l'arborescence"
-        topBarRight={
-          <Breadcrumbs>
-            <a href="#">CALICO</a>
-            <a href="#">Clients</a>
-            <a href="#">Jean-Michel Dupont</a>
-          </Breadcrumbs>
-        }
-      >
-        <NestedProvider theme={secondary}>
-          <InfoCard
-            content={
-              <p
-                aria-hidden="true"
-                onClick={open}
-                style={{
-                  cursor: 'pointer',
-                  display: 'flex',
-                  fontWeight: 600,
-                  margin: '0',
-                  verticalAlign: 'center',
-                }}
-              >
-                <Eye
-                  size={18}
-                  style={{ margin: 'auto 10px auto 0' }}
-                  weight="bold"
-                />
-                Voir les propriétés du dossier
-              </p>
-            }
-            contentItems={[
-              {
-                icon: <User color={theme.fn.primaryColor()} />,
-                iconProps: { color: 'cyan' },
-                label: 'N°6754389',
-              },
-              {
-                icon: <Suitcase color={theme.fn.primaryColor()} />,
-                iconProps: { color: 'cyan' },
-                label: 'Contrat Individuel',
-              },
-            ]}
-            p="32px 48px"
-            title={<h1 style={{ margin: 0 }}>Jean-Michel DUPONT</h1>}
-          >
-            <Dropzone
-              browseLabel="Parcourir votre appareil"
-              dragLabel="Glissez vos documents ici"
-              files={files}
-              onDrop={setFiles}
-              onRemoveFile={(file) => setFiles(files.filter((f) => f !== file))}
-            />
-          </InfoCard>
-        </NestedProvider>
-        <div className={classes.sizeMobile}>
-          <TableGridView
-            actions={actions}
-            data={data}
-            gridProps={{ ...gridProps, cols: gridCols }}
-            mt={24}
-            style={{ gap: 20, padding: 16 }}
-            tableProps={{
-              ...tableProps,
-              enableRowSelection: false,
-              enableSelectAll: false,
-              initialState: {
-                ...tableProps.initialState,
-                columnPinning: { right: undefined },
-              },
-            }}
-            topBarLeft={
-              <div className={classes.filtersMobileButton}>
-                <Button
-                  fullWidth
-                  onClick={toggle}
-                  rightIcon={filtersOpened ? <CaretUp /> : <CaretDown />}
+      </AppShell.Header>
+      <AppShell.Main>
+        <FoldableColumnLayout
+          onChangeIsColumnVisible={(isVisible) =>
+            setGridCols(isVisible ? 4 : 5)
+          }
+          sidebarContent={
+            <Flex direction="column" gap={24}>
+              <Button onClick={handleAddFolder} size="md">
+                Nouveau dossier
+              </Button>
+              <SidebarMenu menu={sidebarMenu} />
+            </Flex>
+          }
+          sidebarToggleLabel="Voir l'arborescence"
+          topBarRight={
+            <Breadcrumbs>
+              <a href="#">CALICO</a>
+              <a href="#">Clients</a>
+              <a href="#">Jean-Michel Dupont</a>
+            </Breadcrumbs>
+          }
+        >
+          <NestedProvider theme={secondary}>
+            <InfoCard
+              content={
+                <p
+                  aria-hidden="true"
+                  onClick={open}
+                  style={{
+                    cursor: 'pointer',
+                    display: 'flex',
+                    fontWeight: 600,
+                    margin: '0',
+                    verticalAlign: 'center',
+                  }}
                 >
-                  {filtersOpened
-                    ? 'Masquer les filtres'
-                    : 'Afficher les filtres'}
-                </Button>
-              </div>
-            }
-            topContent={
-              <Collapse className={classes.filtersCollapse} in={filtersOpened}>
-                <FilterList
-                  direction="column"
-                  filters={globalFilters}
-                  filtersManageLabel="Gérer les filtres"
-                  onSubmit={action('Filters submitted')}
-                  submitLabel="Filtrer"
-                />
-              </Collapse>
-            }
-          />
-        </div>
-        <div className={classes.sizeDesktop}>
-          <TableGridView
-            actions={actions}
-            data={data}
-            gridProps={{ ...gridProps, cols: gridCols }}
-            mt={24}
-            style={{ gap: 20, padding: 16 }}
-            tableProps={tableProps}
-            topBarLeft={
-              <FilterList
-                filters={globalFilters}
-                filtersManageLabel="Gérer les filtres"
-                onSubmit={action('Filters submitted')}
-                submitLabel="Filtrer"
+                  <Eye
+                    size={18}
+                    style={{ margin: 'auto 10px auto 0' }}
+                    weight="bold"
+                  />
+                  Voir les propriétés du dossier
+                </p>
+              }
+              contentItems={[
+                {
+                  icon: (
+                    <User color={getThemeColor(theme.primaryColor, theme)} />
+                  ),
+                  iconProps: { color: 'cyan' },
+                  label: 'N°6754389',
+                },
+                {
+                  icon: (
+                    <Suitcase
+                      color={getThemeColor(theme.primaryColor, theme)}
+                    />
+                  ),
+                  iconProps: { color: 'cyan' },
+                  label: 'Contrat Individuel',
+                },
+              ]}
+              p="32px 48px"
+              title={<h1 style={{ margin: 0 }}>Jean-Michel DUPONT</h1>}
+            >
+              <Dropzone
+                browseLabel="Parcourir votre appareil"
+                dragLabel="Glissez vos documents ici"
+                files={files}
+                onDrop={setFiles}
+                onRemoveFile={(file) =>
+                  setFiles(files.filter((f) => f !== file))
+                }
               />
-            }
-            topContent={
-              <Collapse className={classes.filtersCollapse} in={filtersOpened}>
+            </InfoCard>
+          </NestedProvider>
+          <div className={classes.sizeMobile}>
+            <TableGridView
+              actions={actions}
+              data={data}
+              gridProps={{ ...gridProps, cols: gridCols }}
+              mt={24}
+              style={{ gap: 20, padding: 16 }}
+              tableProps={{
+                ...tableProps,
+                enableRowSelection: false,
+                enableSelectAll: false,
+                initialState: {
+                  ...tableProps.initialState,
+                  columnPinning: { right: undefined },
+                },
+              }}
+              topBarLeft={
+                <div className={classes.filtersMobileButton}>
+                  <Button
+                    fullWidth
+                    onClick={toggle}
+                    rightSection={filtersOpened ? <CaretUp /> : <CaretDown />}
+                  >
+                    {filtersOpened
+                      ? 'Masquer les filtres'
+                      : 'Afficher les filtres'}
+                  </Button>
+                </div>
+              }
+              topContent={
+                <Collapse
+                  className={classes.filtersCollapse}
+                  in={filtersOpened}
+                >
+                  <FilterList
+                    direction="column"
+                    filters={globalFilters}
+                    filtersManageLabel="Gérer les filtres"
+                    onSubmit={action('Filters submitted')}
+                    submitLabel="Filtrer"
+                  />
+                </Collapse>
+              }
+            />
+          </div>
+          <div className={classes.sizeDesktop}>
+            <TableGridView
+              actions={actions}
+              data={data}
+              gridProps={{ ...gridProps, cols: gridCols }}
+              mt={24}
+              style={{ gap: 20, padding: 16 }}
+              tableProps={tableProps}
+              topBarLeft={
                 <FilterList
-                  direction="column"
                   filters={globalFilters}
                   filtersManageLabel="Gérer les filtres"
                   onSubmit={action('Filters submitted')}
                   submitLabel="Filtrer"
                 />
-              </Collapse>
-            }
-          />
-        </div>
-      </FoldableColumnLayout>
+              }
+              topContent={
+                <Collapse
+                  className={classes.filtersCollapse}
+                  in={filtersOpened}
+                >
+                  <FilterList
+                    direction="column"
+                    filters={globalFilters}
+                    filtersManageLabel="Gérer les filtres"
+                    onSubmit={action('Filters submitted')}
+                    submitLabel="Filtrer"
+                  />
+                </Collapse>
+              }
+            />
+          </div>
+        </FoldableColumnLayout>
+      </AppShell.Main>
       <Modal
         classNames={{
           body: classes.modalBody,

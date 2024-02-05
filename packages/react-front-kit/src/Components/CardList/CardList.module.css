@@ -1,0 +1,44 @@
+.item {
+  &:after {
+    background: var(--mantine-color-gray-2);
+    /*noinspection CssUnresolvedCustomProperty*/
+    bottom: var(--separator-gap);
+    content: '';
+    /*noinspection CssUnresolvedCustomProperty*/
+    display: var(--separator-display);
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  &:last-child {
+    &:after {
+      display: none;
+    }
+
+    margin-bottom: 0;
+  }
+
+  position: relative;
+}
+
+.rootScrollBar {
+  margin: 32px 0;
+  padding: 0 32px;
+}
+
+.scrollBar {
+  background: var(--mantine-color-gray-1);
+  width: 7px !important;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.thumb {
+  background: var(--mantine-color-gray-7);
+}

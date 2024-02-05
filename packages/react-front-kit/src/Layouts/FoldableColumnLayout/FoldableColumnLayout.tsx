@@ -119,7 +119,12 @@ export function FoldableColumnLayout(
         </Button>
       </div>
       <Container className={classes.container} fluid {...containerProps}>
-        <Grid className={classes.contentGrid} gutter="xl" pt={12}>
+        <Grid
+          className={classes.contentGrid}
+          gutter="xl"
+          overflow="hidden"
+          pt={12}
+        >
           <Grid.Col
             aria-hidden={!isColumnVisibleState}
             className={classes.sidebar}

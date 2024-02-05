@@ -9,10 +9,10 @@ describe('CardList', () => {
     const { container } = renderWithProviders(
       <CardList>
         {[
-          childrenExampleMock,
-          childrenExampleMock,
-          childrenExampleMock,
-          childrenExampleMock,
+          childrenExampleMock(1),
+          childrenExampleMock(2),
+          childrenExampleMock(3),
+          childrenExampleMock(4),
         ]}
       </CardList>,
     );
