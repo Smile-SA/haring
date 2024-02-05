@@ -57,7 +57,6 @@ export const Inputs: IStory = {
   render: (props) => (
     <>
       <List
-        // @ts-expect-error ignore
         Cmp={Autocomplete}
         commonProps={{ ...props, data }}
         span={span}
@@ -93,7 +92,6 @@ export const Inputs: IStory = {
         }}
       />
       <List
-        // @ts-expect-error ignore
         Cmp={MultiSelect}
         commonProps={{ ...props, data }}
         span={span}
@@ -142,7 +140,6 @@ export const Inputs: IStory = {
         }}
       />
       <List
-        // @ts-expect-error ignore
         Cmp={Select}
         commonProps={{ ...props, data }}
         span={span}

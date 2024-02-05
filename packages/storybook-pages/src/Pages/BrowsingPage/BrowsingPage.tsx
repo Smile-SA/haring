@@ -1,6 +1,5 @@
 'use client';
 
-import type { IMenuItem } from '@smile/react-front-kit/src';
 import type { IFile } from '@smile/react-front-kit-dropzone';
 import type { IFilter } from '@smile/react-front-kit-shared';
 import type { FormEvent, ReactElement } from 'react';
@@ -34,7 +33,6 @@ import {
   SidebarMenu,
   flattenNestedObjects,
 } from '@smile/react-front-kit';
-import { menuMock } from '@smile/react-front-kit/mock';
 import { Dropzone } from '@smile/react-front-kit-dropzone';
 import { NestedProvider, useThemes } from '@smile/react-front-kit-shared';
 import { TableGridView } from '@smile/react-front-kit-table';
@@ -59,6 +57,7 @@ import {
   actions,
   data,
   gridProps,
+  menuMock,
   tableProps,
 } from './BrowsingPage.mock';
 import classes from './BrowsingPage.module.css';
@@ -68,7 +67,7 @@ import classes from './BrowsingPage.module.css';
  */
 export function BrowsingPage(): ReactElement {
   const [search, setSearch] = useState('');
-  const [sidebarMenu, setSidebarMenu] = useState<IMenuItem<number>[]>(menuMock);
+  const [sidebarMenu, setSidebarMenu] = useState(menuMock);
   const [files, setFiles] = useState<IFile[]>([]);
   const [gridCols, setGridCols] = useState(4);
   const [seeMoreModal, { open, close }] = useDisclosure(false);
