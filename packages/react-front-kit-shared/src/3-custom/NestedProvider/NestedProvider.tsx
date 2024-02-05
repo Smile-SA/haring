@@ -4,6 +4,8 @@ import type { ElementType, ReactElement, ReactNode } from 'react';
 import { MantineProvider } from '@mantine/core';
 import { useId } from 'react';
 
+import { useMainTheme } from '../../contexts';
+
 import classes from './NestedProvider.module.css';
 
 export interface INestedProviderProps extends MantineProviderProps {
@@ -13,8 +15,15 @@ export interface INestedProviderProps extends MantineProviderProps {
 }
 
 export function NestedProvider(props: INestedProviderProps): ReactElement {
-  const { Component = 'div', children, className, ...providerProps } = props;
+  const {
+    Component = 'div',
+    children,
+    className,
+    theme,
+    ...providerProps
+  } = props;
   const id = useId();
+  const main = useMainTheme();
   const selector = `#${CSS.escape(id)}`;
   const rootClassNames = [classes.nestedProvider];
   if (className) {
@@ -24,10 +33,11 @@ export function NestedProvider(props: INestedProviderProps): ReactElement {
   return (
     <MantineProvider
       cssVariablesSelector={selector}
-      forceColorScheme="dark"
+      forceColorScheme={theme !== main ? 'dark' : undefined}
       getRootElement={() =>
         document.querySelector<HTMLElement>(selector) ?? undefined
       }
+      theme={theme}
       {...providerProps}
     >
       <Component className={rootClassNames.join(' ')} id={id}>
