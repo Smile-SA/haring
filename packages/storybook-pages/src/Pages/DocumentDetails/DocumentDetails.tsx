@@ -98,7 +98,7 @@ export function DocumentDetails(): ReactElement {
         </Header>
       </AppShell.Header>
       <AppShell.Main>
-        <Grid className={classes.grid} grow m={0}>
+        <Grid className={classes.grid} grow m={0} overflow="hidden">
           <Grid.Col span={7}>
             <Flex align="flex-start" direction="column" p="26px 64px">
               <div className={classes.colLeftBar}>
