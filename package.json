@@ -2,7 +2,7 @@
   "name": "react-front-kit",
   "private": true,
   "description": "Front Kit Monorepo",
-  "license": "MIT",
+  "license": "LGPL-3.0",
   "homepage": "https://github.com/Smile-SA/react-front-kit",
   "repository": {
     "type": "git",

@@ -16,4 +16,4 @@ npm i @smile/react-front-kit @emotion/react @mantine/core @mantine/hooks @mantin
 
 ## License
 
-MIT
+LGPL-3.0
