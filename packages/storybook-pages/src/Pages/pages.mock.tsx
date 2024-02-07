@@ -27,7 +27,6 @@ import {
 } from '@phosphor-icons/react';
 import { DropdownButton } from '@smile/react-front-kit';
 import { FolderMove } from '@smile/react-front-kit-shared';
-import { action } from '@storybook/addon-actions';
 
 import idCard from '../../assets/example_id_card.png';
 
@@ -84,7 +83,7 @@ export const searchDocuments: IDocument[] = [
           créateur lors de l’import du document dans la GED, en l’absence de
           description cet espace est laissé vide...
         </p>
-        <Button color="gray.8" onClick={action('Download file')}>
+        <Button color="gray.8">
           <DownloadSimple width={12} />
           <Space w={8} />
           PDF, FR - 1Mo
@@ -108,7 +107,7 @@ export const searchDocuments: IDocument[] = [
           créateur lors de l’import du document dans la GED, en l’absence de
           description cet espace est laissé vide...
         </p>
-        <Button color="gray.8" onClick={action('Download file')}>
+        <Button color="gray.8">
           <DownloadSimple width={12} />
           <Space w={8} />
           PPT, FR - 1Mo
@@ -131,7 +130,7 @@ export const searchDocuments: IDocument[] = [
           créateur lors de l’import du document dans la GED, en l’absence de
           description cet espace est laissé vide...
         </p>
-        <Button color="gray.8" onClick={action('Download file')}>
+        <Button color="gray.8">
           <DownloadSimple width={12} />
           <Space w={8} />
           PDF, FR - 1Mo
@@ -154,7 +153,6 @@ export const searchActions: IActionRowOverflowAction<IDocument>[] = [
     isItemAction: false,
     isMassAction: true,
     label: 'Télécharger',
-    onAction: action('Download files'),
   },
 ];
 

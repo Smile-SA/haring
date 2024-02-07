@@ -36,7 +36,6 @@ import {
 import { Dropzone } from '@smile/react-front-kit-dropzone';
 import { NestedProvider, useThemes } from '@smile/react-front-kit-shared';
 import { TableGridView } from '@smile/react-front-kit-table';
-import { action } from '@storybook/addon-actions';
 import { useState } from 'react';
 
 import {
@@ -268,7 +267,6 @@ export function BrowsingPage(): ReactElement {
                     direction="column"
                     filters={globalFilters}
                     filtersManageLabel="Gérer les filtres"
-                    onSubmit={action('Filters submitted')}
                     submitLabel="Filtrer"
                   />
                 </Collapse>
@@ -287,7 +285,6 @@ export function BrowsingPage(): ReactElement {
                 <FilterList
                   filters={globalFilters}
                   filtersManageLabel="Gérer les filtres"
-                  onSubmit={action('Filters submitted')}
                   submitLabel="Filtrer"
                 />
               }
@@ -300,7 +297,6 @@ export function BrowsingPage(): ReactElement {
                     direction="column"
                     filters={globalFilters}
                     filtersManageLabel="Gérer les filtres"
-                    onSubmit={action('Filters submitted')}
                     submitLabel="Filtrer"
                   />
                 </Collapse>

@@ -6,6 +6,19 @@
   "publishConfig": {
     "access": "public"
   },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "vite build"
+  },
   "dependencies": {
     "@mantine/carousel": "^7.5.1",
     "@smile/react-front-kit": "*",
@@ -15,7 +28,10 @@
     "embla-carousel-react": "^7.1.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^7.4.1"
+    "@storybook/addon-actions": "^7.4.1",
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "vite": "^5.0.12",
+    "vite-plugin-dts": "^3.7.2"
   },
   "peerDependencies": {
     "@emotion/react": ">=11",
