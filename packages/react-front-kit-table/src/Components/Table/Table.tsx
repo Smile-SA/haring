@@ -1,12 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment*/
-/* eslint-disable @typescript-eslint/no-unsafe-member-access*/
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-
 'use client';
+
 import type { ITableAction, ITableConfirmAction } from '../../types';
-import type { FloatingPosition } from '@mantine/core/lib/Floating';
+import type { FloatingPosition } from '@mantine/core';
 import type { IPaginationProps } from '@smile/react-front-kit';
 import type { MRT_Row, MRT_TableOptions } from 'mantine-react-table';
 import type { ReactElement } from 'react';
@@ -38,7 +33,7 @@ import {
   getActionLabel,
 } from '../../helpers';
 
-import { useStyles } from './Table.style';
+import classes from './Table.module.css';
 
 export interface ITableProps<Data extends Record<string, unknown>>
   extends MRT_TableOptions<Data> {
@@ -71,7 +66,6 @@ export function Table<Data extends Record<string, unknown>>(
     ...mantineTableProps
   } = props;
   const { enablePagination = true, manualPagination } = mantineTableProps;
-  const { classes } = useStyles();
   const [confirmAction, setConfirmAction] =
     useState<ITableConfirmAction<Data> | null>(null);
   const [openedMenuRowIndex, setOpenedMenuRowIndex] = useState<number | null>(
@@ -233,7 +227,7 @@ export function Table<Data extends Record<string, unknown>>(
                     // eslint-disable-next-line react/no-array-index-key
                     key={index}
                     color={action.color}
-                    icon={getActionIcon(action, row)}
+                    leftSection={getActionIcon(action, row)}
                     onClick={() => handleAction(row, action)}
                     {...getActionComponentProps(action, row)}
                   >
@@ -261,7 +255,7 @@ export function Table<Data extends Record<string, unknown>>(
                 // eslint-disable-next-line react/no-array-index-key
                 key={index}
                 color={action.color}
-                leftIcon={getActionIcon(action, rows)}
+                leftSection={getActionIcon(action, rows)}
                 onClick={() => handleAction(rows, action)}
                 variant="default"
               >

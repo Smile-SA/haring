@@ -26,8 +26,8 @@ export const ColumnDirection: IStory = {
   args: {
     direction: 'column',
     filters: filtersMock,
+    gap: 12,
     onActiveFiltersChange: action('Active filters changed'),
     onSubmit: action('Filters submitted'),
-    spacing: 12,
   },
 };

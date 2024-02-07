@@ -11,7 +11,7 @@ import { useState } from 'react';
 
 import { SearchableCheckboxList } from '../SearchableCheckboxList/SearchableCheckboxList';
 
-import { useStyles } from './FilterList.style';
+import classes from './FilterList.module.css';
 
 export interface IFilterListProps
   extends Omit<StackProps, 'justify' | 'onSubmit'> {
@@ -46,7 +46,6 @@ export function FilterList(props: IFilterListProps): ReactElement {
   const Container: ElementType = direction === 'row' ? Group : Stack;
 
   const theme = useMantineTheme();
-  const { classes } = useStyles();
 
   function handleSubmit(): void {
     onSubmit?.(localFilters.filter((filter) => filter.active));

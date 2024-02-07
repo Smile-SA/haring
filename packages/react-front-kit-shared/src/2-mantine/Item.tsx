@@ -12,8 +12,8 @@ export default function Item(props: IItemProps): ReactElement {
   const { children, span = 1, title } = props;
   return (
     <Grid.Col span={span}>
-      <Center sx={{ flexDirection: 'column' }}>
-        <Text fz="xs" lineClamp={1} sx={{ maxWidth: '100%' }}>
+      <Center style={{ flexDirection: 'column' }}>
+        <Text fz="xs" lineClamp={1} style={{ maxWidth: '100%' }}>
           {title}
         </Text>
       </Center>

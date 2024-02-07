@@ -1,0 +1,33 @@
+.buttonGrey {
+  padding: 0.667em 3.333em;
+}
+
+.buttonLeftModal {
+  margin-bottom: 10px;
+  margin-right: 10px
+}
+
+.buttonRemoveRoot {
+  padding: 0.667em 3.333em
+}
+
+.modalBody {
+  padding: 0;
+}
+
+.modalButtonsContainer {
+  margin-top: 32px;
+}
+
+.modalContent {
+  padding: 48px;
+}
+
+.modalHeader {
+  height: 0;
+  padding: 0;
+}
+
+.modalTitleContainer {
+  margin-left: 12px;
+}

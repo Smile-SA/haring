@@ -1,20 +1,31 @@
+import type { IMenuItem } from '@smile/react-front-kit/src';
 import type { IFilter } from '@smile/react-front-kit-shared';
 import type {
   ITableGridViewGridProps,
   ITableGridViewTableProps,
 } from '@smile/react-front-kit-table';
-import type { IExampleDataType } from '@smile/react-front-kit-table/mock';
 
 import { TextInput } from '@mantine/core';
 import {
+  Chat,
   DownloadSimple,
   Eye,
+  HouseLine,
   PencilSimple,
   ShareNetwork,
   Star,
   Trash,
+  User,
 } from '@phosphor-icons/react';
 import { FolderMove } from '@smile/react-front-kit-shared';
+
+export interface IExampleDataType extends Record<string, unknown> {
+  creator: string;
+  date: string;
+  format: string;
+  id: number | string;
+  title: string;
+}
 
 export const actions = [
   {
@@ -160,7 +171,7 @@ export const gridProps: ITableGridViewGridProps = {
   iconTypeFieldName: 'format',
   idFieldName: 'id',
   labelFieldName: 'title',
-  selectedElementsText: (n) => `${n} fichier(s) sélectionnés`,
+  selectedElementsText: (n: number) => `${n} fichier(s) sélectionnés`,
   spacing: 25,
   verticalSpacing: 25,
 };
@@ -237,5 +248,47 @@ export const SearchableCheckboxListProps: IFilter[] = [
     component: <TextInput placeholder="Blandit mollis nisi curabitur" />,
     id: 12,
     label: 'Blandit mollis nisi curabitur',
+  },
+];
+
+export const menuMock: IMenuItem<number>[] = [
+  {
+    children: [{ id: 0, label: 'Home' }],
+    id: 1,
+    label: 'Home',
+    leftIcon: <HouseLine />,
+  },
+  {
+    children: [{ id: 2, label: 'Security' }],
+    id: 3,
+    label: 'Security',
+    leftIcon: <Chat />,
+  },
+  {
+    children: [
+      { id: 4, label: 'Release' },
+      { children: [{ id: 5, label: 'Account' }], id: 6, label: 'Account' },
+      { id: 7, label: 'Upcoming release' },
+    ],
+    id: 8,
+    label: 'Dashboard',
+    leftIcon: <Star />,
+  },
+  { id: 9, label: 'Open Issues', leftIcon: <HouseLine /> },
+  {
+    children: [
+      {
+        children: [
+          { id: 10, label: 'Wiki pages' },
+          { id: 11, label: 'Settings' },
+        ],
+        id: 12,
+        label: 'Dashboard',
+      },
+      { id: 13, label: 'Home' },
+    ],
+    id: 14,
+    label: 'Pull Requests',
+    leftIcon: <User />,
   },
 ];

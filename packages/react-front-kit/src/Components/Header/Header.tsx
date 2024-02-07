@@ -2,30 +2,25 @@
 
 import type { IHeaderMobileProps } from '../HeaderMobile/HeaderMobile';
 import type {
-  HeaderProps,
+  AppShellHeaderProps,
   MantineThemeOverride,
   TextInputProps,
 } from '@mantine/core';
 import type { ElementType, FormEvent, ReactElement, ReactNode } from 'react';
 
-import {
-  Button,
-  Flex,
-  Header as MantineHeader,
-  MantineProvider,
-  useMantineTheme,
-} from '@mantine/core';
+import { AppShell, Button, Flex, useMantineTheme } from '@mantine/core';
 import { useClickOutside } from '@mantine/hooks';
 import { MagnifyingGlass } from '@phosphor-icons/react';
+import { NestedProvider } from '@smile/react-front-kit-shared';
 import { useState } from 'react';
 
 import { HeaderMobile } from '../HeaderMobile/HeaderMobile';
 import { HeaderSearch } from '../HeaderSearch/HeaderSearch';
 
-import { useStyles } from './Header.style';
+import classes from './Header.module.css';
 
 export interface IHeaderProps
-  extends Omit<HeaderProps, 'height' | 'left' | 'right'> {
+  extends Omit<AppShellHeaderProps, 'height' | 'left' | 'right'> {
   children: ReactNode;
   childrenComponent?: ElementType;
   hasResponsiveMode?: boolean;
@@ -72,7 +67,6 @@ export function Header(props: IHeaderProps): ReactElement {
   const searchButtonRef = useClickOutside(() => setSearchOpened(false));
 
   const defaultTheme = useMantineTheme();
-  const { classes } = useStyles();
 
   function handleClick(): void {
     setSearchOpened(!searchOpened);
@@ -87,8 +81,8 @@ export function Header(props: IHeaderProps): ReactElement {
     <>
       {/* Desktop Header */}
       <div className={hasResponsiveMode ? classes.sizeDesktop : undefined}>
-        <MantineHeader
-          height={searchOpened ? height + 110 : height}
+        <AppShell.Header
+          h={searchOpened ? height + 110 : height}
           withBorder={withBorder}
           {...headerProps}
         >
@@ -117,7 +111,7 @@ export function Header(props: IHeaderProps): ReactElement {
                   </Button>
                 )}
                 {Boolean(searchOpened) && (
-                  <MantineProvider theme={searchTheme ?? defaultTheme}>
+                  <NestedProvider theme={searchTheme ?? defaultTheme}>
                     <HeaderSearch
                       data-testid="searchBar"
                       inputAriaLabel={searchInputProps?.title ?? 'Search'}
@@ -128,13 +122,13 @@ export function Header(props: IHeaderProps): ReactElement {
                       value={searchValue}
                       {...searchInputProps}
                     />
-                  </MantineProvider>
+                  </NestedProvider>
                 )}
               </div>
               {right}
             </Flex>
           </Flex>
-        </MantineHeader>
+        </AppShell.Header>
       </div>
       {/* Mobile Header */}
       <div className={hasResponsiveMode ? classes.sizeMobile : classes.none}>

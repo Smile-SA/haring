@@ -18,7 +18,7 @@ export default function List(props: IListProps): ReactElement {
   return (
     <Grid>
       <Grid.Col span={1}>
-        <Center h="100%" sx={{ alignItems: 'center' }}>
+        <Center h="100%" style={{ alignItems: 'center' }}>
           {title}
         </Center>
       </Grid.Col>

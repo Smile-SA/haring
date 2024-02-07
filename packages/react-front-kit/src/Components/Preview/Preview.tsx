@@ -2,34 +2,9 @@
 
 import type { ReactElement } from 'react';
 
-import { createStyles } from '@mantine/styles';
 import { useEffect, useState } from 'react';
 
-const useStyles = createStyles((theme) => ({
-  audio: {
-    maxWidth: '100%',
-  },
-  iframe: {
-    background: theme.white,
-    boxShadow:
-      '0px 3.4348926544189453px 2.7479140758514404px 0px rgba(0, 0, 0, 0.0155),' +
-      '0px 8.687101364135742px 6.949680805206299px 0px rgba(0, 0, 0, 0.0222),' +
-      '0px 17.720870971679688px 14.176697731018066px 0px rgba(0, 0, 0, 0.0278),' +
-      '0px 36.501644134521484px 29.201316833496094px 0px rgba(0, 0, 0, 0.0345),' +
-      '0px 100px 80px 0px rgba(0, 0, 0, 0.05)',
-    width: '100%',
-  },
-  image: {
-    maxWidth: '100%',
-  },
-  root: {
-    textAlign: 'center',
-    width: '100%',
-  },
-  video: {
-    maxWidth: '100%',
-  },
-}));
+import classes from './Preview.module.css';
 
 export interface IPreviewProps {
   defaultAspectRatio?: number;
@@ -64,7 +39,6 @@ export function Preview(
         ? defaultAspectRatio * defaultWidth
         : undefined),
   );
-  const { classes } = useStyles();
 
   const mimeType = defaultMimeType ?? type;
   const isImage = mimeType?.includes('image/');

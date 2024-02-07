@@ -13,6 +13,7 @@ import {
   Paper,
   Select,
   Space,
+  getThemeColor,
   useMantineTheme,
 } from '@mantine/core';
 import { DateInput } from '@mantine/dates';
@@ -40,9 +41,13 @@ import {
   searchDocuments,
 } from '../pages.mock';
 
-import { useStyles } from './SearchResults.style';
+import classes from './SearchResults.module.css';
 
-interface ITypeFilter extends IOption<string> {
+interface IOptionExtended extends IOption<string> {
+  label: string;
+}
+
+interface ITypeFilter extends IOptionExtended {
   results: number;
 }
 
@@ -52,7 +57,6 @@ interface ITypeFilter extends IOption<string> {
 export function SearchResults(): ReactElement {
   // style
   const theme = useMantineTheme();
-  const { classes } = useStyles();
   const numberOfResults = 135;
   // Search
   const [search, setSearch] = useState<string>('567890456');
@@ -198,7 +202,7 @@ export function SearchResults(): ReactElement {
             placeholder="JJ /MM/ AAAA"
             rightSection={
               <CalendarBlank
-                color={theme.fn.primaryColor()}
+                color={getThemeColor(theme.primaryColor, theme)}
                 size={20}
                 weight="bold"
               />
@@ -216,7 +220,7 @@ export function SearchResults(): ReactElement {
             placeholder="JJ /MM/ AAAA"
             rightSection={
               <CalendarBlank
-                color={theme.fn.primaryColor()}
+                color={getThemeColor(theme.primaryColor, theme)}
                 size={20}
                 weight="bold"
               />
@@ -272,7 +276,7 @@ export function SearchResults(): ReactElement {
         ? `Filtres actifs ${numberOfFiltersActive}`
         : `Voir les filtres actifs ${numberOfFiltersActive}`;
   // Sorting
-  const sortingOptions: IOption<string>[] = [
+  const sortingOptions: IOptionExtended[] = [
     { label: 'Trier par pertinence', value: 'relevance' },
     { label: 'Trier par titre', value: 'title' },
     { label: 'Trier par date de publication', value: 'publicationDate' },
@@ -383,7 +387,10 @@ export function SearchResults(): ReactElement {
   return (
     <AppShell
       classNames={{ main: classes.main }}
-      header={
+      header={{ height: 90 }}
+      padding={0}
+    >
+      <AppShell.Header>
         <Header
           childrenComponent="nav"
           hasSearch={false}
@@ -392,105 +399,104 @@ export function SearchResults(): ReactElement {
         >
           {headerContent}
         </Header>
-      }
-      padding={0}
-    >
-      <FoldableColumnLayout
-        boxMotif={<Motif style={{ fill: '#868E96', opacity: 0.1 }} />}
-        boxProps={{
-          p: '50px 64px',
-          style: { background: theme.colors.gray[8] },
-        }}
-        isColumnVisible={isColumnVisible}
-        onChangeIsColumnVisible={setIsColumnVisible}
-        sidebarContent={
-          <SidebarFilters
-            activeFilters={activeFilters}
-            defaultOpenedMenuIds={[2, 4]}
-            deleteButtonLabel="Supprimer tout"
-            filterButtonLabel="Filtrer"
-            menus={menus}
-            onDeleteButtonClick={() => {
-              removeAllFilters();
-              setNumberOfFiltersActive(0);
-            }}
-            onFilterButtonClick={() => {
-              setNumberOfFiltersActive(activeFilters.length);
-            }}
-            title="Filtres actifs"
-          />
-        }
-        sidebarToggleLabel={toggleLabel}
-        topBarRight={
-          <Flex style={{ justifyContent: 'flex-end' }}>
-            <Select
-              data={sortingOptions}
-              defaultValue={activeSorting}
-              dropdownPosition="bottom"
-              onChange={setActiveSorting}
+      </AppShell.Header>
+      <AppShell.Main>
+        <FoldableColumnLayout
+          boxMotif={<Motif style={{ fill: '#868E96', opacity: 0.1 }} />}
+          boxProps={{
+            p: '50px 64px',
+            style: { background: theme.colors.gray[8] },
+          }}
+          isColumnVisible={isColumnVisible}
+          onChangeIsColumnVisible={setIsColumnVisible}
+          sidebarContent={
+            <SidebarFilters
+              activeFilters={activeFilters}
+              defaultOpenedMenuIds={[2, 4]}
+              deleteButtonLabel="Supprimer tout"
+              filterButtonLabel="Filtrer"
+              menus={menus}
+              onDeleteButtonClick={() => {
+                removeAllFilters();
+                setNumberOfFiltersActive(0);
+              }}
+              onFilterButtonClick={() => {
+                setNumberOfFiltersActive(activeFilters.length);
+              }}
+              title="Filtres actifs"
             />
-          </Flex>
-        }
-        topBlock={
-          <Box mb={24}>
-            <SearchBar
-              leftSection={
-                <Select
-                  className={classes.select}
-                  classNames={{
-                    dropdown: classes.selectDropdown,
-                    rightSection: classes.selectRight,
-                  }}
-                  data={typeFilterOptions}
-                  defaultValue={activeType.value}
-                  onChange={(v) =>
-                    setActiveType(
-                      typeFilterOptions.find((type) => type.value === v) ??
-                        typeFilterOptions[0],
-                    )
-                  }
-                  rightSection={<CaretDown size={14} />}
-                  size="lg"
-                  styles={() => ({
-                    input: {
-                      padding: '0 calc(3.125rem  / 3) 0 40px',
-                    },
-                  })}
-                  variant="unstyled"
-                />
-              }
-              onChange={setSearch}
-              value={search}
+          }
+          sidebarToggleLabel={toggleLabel}
+          topBarRight={
+            <Flex style={{ justifyContent: 'flex-end' }}>
+              <Select
+                data={sortingOptions}
+                defaultValue={activeSorting}
+                onChange={setActiveSorting}
+              />
+            </Flex>
+          }
+          topBlock={
+            <Box mb={24}>
+              <SearchBar
+                leftSection={
+                  <Select
+                    className={classes.select}
+                    classNames={{
+                      dropdown: classes.selectDropdown,
+                      section: classes.selectRight,
+                    }}
+                    data={typeFilterOptions}
+                    defaultValue={activeType.value}
+                    onChange={(v) =>
+                      setActiveType(
+                        typeFilterOptions.find((type) => type.value === v) ??
+                          typeFilterOptions[0],
+                      )
+                    }
+                    rightSection={<CaretDown size={14} />}
+                    size="lg"
+                    styles={() => ({
+                      input: {
+                        padding: '0 calc(3.125rem  / 3) 0 40px',
+                      },
+                    })}
+                    variant="unstyled"
+                  />
+                }
+                onChange={setSearch}
+                value={search}
+              />
+            </Box>
+          }
+          topBlockTheme={secondary}
+        >
+          <Paper className={classes.documentListContainer} mb={24}>
+            <DocumentList
+              actionBarProps={{
+                selectedElementsLabel: (n) =>
+                  `${n} fichier${n > 1 ? 's' : ''} sélectionné${
+                    n > 1 ? 's' : ''
+                  }`,
+              }}
+              actions={searchActions}
+              documents={searchDocuments}
+              onDocumentSelected={handleDocumentSelected}
+              selectedDocuments={selectedDocuments}
             />
-          </Box>
-        }
-        topBlockTheme={secondary}
-      >
-        <Paper className={classes.documentListContainer} mb={24}>
-          <DocumentList
-            actionBarProps={{
-              selectedElementsLabel: (n) =>
-                `${n} fichier${n > 1 ? 's' : ''} sélectionné${
-                  n > 1 ? 's' : ''
-                }`,
-            }}
-            actions={searchActions}
-            documents={searchDocuments}
-            onDocumentSelected={handleDocumentSelected}
-            selectedDocuments={selectedDocuments}
+          </Paper>
+          <Pagination
+            isTransparent
+            itemsPerPage={rowsPerPage}
+            itemsPerPageAriaLabel="Nombre de résultats"
+            itemsPerPageOptions={rowsPerPageOptions}
+            onItemsPerPageChange={setRowsPerPage}
+            onPageChange={setPage}
+            page={page}
+            totalPages={totalPages}
           />
-        </Paper>
-        <Pagination
-          isTransparent
-          itemsPerPage={rowsPerPage}
-          itemsPerPageAriaLabel="Nombre de résultats"
-          itemsPerPageOptions={rowsPerPageOptions}
-          onItemsPerPageChange={setRowsPerPage}
-          onPageChange={setPage}
-          page={page}
-          totalPages={totalPages}
-        />
-      </FoldableColumnLayout>
+        </FoldableColumnLayout>
+      </AppShell.Main>
     </AppShell>
   );
 }

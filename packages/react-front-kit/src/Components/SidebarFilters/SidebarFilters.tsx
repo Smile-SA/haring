@@ -9,6 +9,7 @@ import {
   Box,
   Button,
   Group,
+  getThemeColor,
   useMantineTheme,
 } from '@mantine/core';
 import { CaretDown, CaretUp, TrashSimple, X } from '@phosphor-icons/react';
@@ -18,7 +19,7 @@ import { addPathAndDepth, flattenNestedObjects } from '../../helpers';
 import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonControlled';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 
-import { useStyles } from './SidebarFilters.style';
+import classes from './SidebarFilters.module.css';
 
 export interface ISidebarFilter {
   categoryId: IId[];
@@ -58,7 +59,6 @@ export function SidebarFilters(props: ISidebarFiltersProps): ReactElement {
     defaultOpenedMenuIds = [],
     defaultOpenedActiveFilters = true,
   } = props;
-  const { classes } = useStyles();
   const theme = useMantineTheme();
 
   const flatFilters = useMemo(
@@ -132,7 +132,7 @@ export function SidebarFilters(props: ISidebarFiltersProps): ReactElement {
             setActiveFiltersCollapseOpened(!activeFiltersCollapseOpened);
           }}
           opened={activeFiltersCollapseOpened}
-          rightIcon={
+          rightSection={
             <ActionIcon
               data-testid="toggle"
               onClick={() => {
@@ -154,9 +154,9 @@ export function SidebarFilters(props: ISidebarFiltersProps): ReactElement {
               <Badge
                 key={filter.id}
                 classNames={{
-                  inner: classes.badgeInner,
-                  rightSection: classes.badgeRight,
+                  label: classes.badgeInner,
                   root: classes.badgeRoot,
+                  section: classes.badgeRight,
                 }}
                 onClick={() => filter.onRemove?.(filter)}
                 pr={3}
@@ -233,7 +233,7 @@ export function SidebarFilters(props: ISidebarFiltersProps): ReactElement {
       <div className={classes.bottom}>
         <Button
           classNames={{ root: classes.activeFiltersButtonRoot }}
-          color={theme.fn.primaryColor()}
+          color={getThemeColor(theme.primaryColor, theme)}
           onClick={() => onFilterButtonClick?.(activeFilters)}
           variant="filled"
         >
@@ -242,7 +242,7 @@ export function SidebarFilters(props: ISidebarFiltersProps): ReactElement {
         <Button
           classNames={{ root: classes.removeAllFiltersButtonRoot }}
           color="dark"
-          leftIcon={<TrashSimple size={12} />}
+          leftSection={<TrashSimple size={12} />}
           onClick={() => onDeleteButtonClick?.(activeFilters)}
           variant="outline"
         >

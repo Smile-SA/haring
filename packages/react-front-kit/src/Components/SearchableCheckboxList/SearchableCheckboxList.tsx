@@ -7,12 +7,13 @@ import {
   Checkbox,
   Divider,
   Input,
+  getThemeColor,
   useMantineTheme,
 } from '@mantine/core';
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import { useState } from 'react';
 
-import { useStyles } from './SearchableCheckboxList.style';
+import classes from './SearchableCheckboxList.module.css';
 
 export interface ICheckbox {
   active?: boolean;
@@ -40,7 +41,6 @@ export function SearchableCheckboxList<T extends ICheckbox>(
   const [newCheckboxes, setNewCheckboxes] = useState(checkboxes);
 
   const theme = useMantineTheme();
-  const { classes } = useStyles();
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
     setSearchInput(event.target.value);
@@ -69,14 +69,14 @@ export function SearchableCheckboxList<T extends ICheckbox>(
         placeholder={placeholder}
         rightSection={
           <MagnifyingGlass
-            color={theme.fn.primaryColor()}
+            color={getThemeColor(theme.primaryColor, theme)}
             size={20}
             values={searchInput}
             weight="bold"
           />
         }
       />
-      <div className={classes.checkboxsTop}>
+      <div className={classes.checkboxTop}>
         {checkboxes.map((item) => {
           if (!item.active && checkboxIncludesSearchInput(item.label)) {
             return (
@@ -93,7 +93,7 @@ export function SearchableCheckboxList<T extends ICheckbox>(
         })}
       </div>
       <Divider color="gray.2" />
-      <div className={classes.checkboxsBottom}>
+      <div className={classes.checkboxBottom}>
         {checkboxes.map((item) => {
           if (item.active && checkboxIncludesSearchInput(item.label)) {
             return (

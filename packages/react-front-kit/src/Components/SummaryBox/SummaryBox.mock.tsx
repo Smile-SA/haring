@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react';
+
 import {
   ActionIcon,
   Avatar,
@@ -46,8 +48,8 @@ export const otherTitleMock = (
   </span>
 );
 
-export const childrenExampleMock = (
-  <Flex direction="column" gap={24}>
+export const childrenExampleMock = (key?: number): ReactElement => (
+  <Flex key={key} direction="column" gap={24}>
     <span>
       Lorem ipsum dolor sit amet consectetur. Sollicitudin mattis blandit
       aliquet odio urna mi id. Mauris venenatis ut et at amet vel est.
@@ -57,11 +59,11 @@ export const childrenExampleMock = (
         Approved
       </Button>
       <Flex align="center" gap={16}>
-        <ActionIcon color="cyan" size={24}>
-          <Export size={20} />
+        <ActionIcon color="cyan" size={30} variant="subtle">
+          <Export size={24} />
         </ActionIcon>
-        <ActionIcon color="cyan" size={24}>
-          <Eye size={20} />
+        <ActionIcon color="cyan" size={30} variant="subtle">
+          <Eye size={24} />
         </ActionIcon>
       </Flex>
     </Flex>
@@ -95,7 +97,7 @@ export const otherChildrenExampleMock = (
 );
 
 export const rightMock = (
-  <ActionIcon color="cyan" size={24}>
+  <ActionIcon color="cyan" size={30} variant="subtle">
     <Export size={24} />
   </ActionIcon>
 );

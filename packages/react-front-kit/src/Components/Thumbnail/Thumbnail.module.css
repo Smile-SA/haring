@@ -1,0 +1,83 @@
+.dotsIcon {
+  color: var(--mantine-primary-color-filled);
+}
+
+.fileIcon {
+  min-width: 22px;
+}
+
+.headerContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  margin-top: 10px;
+}
+
+.icon {
+  height: fit-content;
+  margin: auto;
+}
+
+.iconTitle {
+  min-width: 28px;
+}
+
+.menuButton {
+  background-color: var(--mantine-color-white-1);
+  &:hover {
+    background-color: var(--mantine-color-white);
+  }
+  &[aria-expanded='true'] {
+    svg {
+      filter: brightness(0) invert(1);
+    }
+
+    background-color: var(--mantine-primary-color-filled);
+    border-radius: 4px;
+    display: flex;
+    height: 28px;
+    width: 28px;
+  }
+}
+
+.menuButtonSelected {
+  svg {
+    filter: brightness(0) invert(1);
+  }
+
+  &[aria-expanded='true'] {
+    svg {
+      filter: none;
+    }
+
+    background-color: var(--mantine-primary-color-0);
+  }
+}
+
+.root {
+  background: var(--mantine-color-white-1);
+  border-radius: 16px;
+  cursor: pointer;
+  height: auto;
+  padding: 16px;
+  width: auto;
+}
+
+.rootSelected {
+  background: var(--mantine-primary-color-filled);
+  color: var(--mantine-color-white);
+}
+
+.title {
+  margin: 0 19px 0 0;
+  padding-left: 10px;
+  font-weight: 700;
+}
+
+.titleContainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}

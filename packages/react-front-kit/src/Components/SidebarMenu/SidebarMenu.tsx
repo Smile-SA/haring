@@ -53,7 +53,7 @@ export function getRecursiveMenu<
         indentation="line"
         isOpenOnSelect
         label={label}
-        leftIcon={leftIcon}
+        leftSection={leftIcon}
         level={level}
         onCollapseChange={(isOpened) => onMenuOpen(id, isOpened)}
         onSelect={setSelectedId}
