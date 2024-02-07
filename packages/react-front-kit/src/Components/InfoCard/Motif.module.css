@@ -1,0 +1,12 @@
+.motif {
+  opacity: 0.1;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin light {
+    fill: var(--mantine-color-dark-9);
+  }
+  /*noinspection CssInvalidAtRule*/
+  @mixin dark {
+    fill: var(--mantine-color-gray-0);
+  }
+}

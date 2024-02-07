@@ -48,7 +48,7 @@
 
 .menu {
   align-items: center;
-  gap: var(--mantine-spacing-xl);
+  gap: var(--mantine-spacing-lg);
   left: 50%;
   margin: auto;
   position: absolute;
@@ -64,7 +64,7 @@
   display: initial;
 
   /*noinspection CssInvalidAtRule*/
-  @mixin smaller-than $mantine-breakpoint-sm {
+  @mixin smaller-than $mantine-breakpoint-md {
     display: none;
   }
 }
@@ -73,7 +73,7 @@
   display: none;
 
   /*noinspection CssInvalidAtRule*/
-  @mixin smaller-than $mantine-breakpoint-sm {
+  @mixin smaller-than $mantine-breakpoint-md {
     display: initial;
   }
 }

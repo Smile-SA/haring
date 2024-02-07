@@ -1,23 +1,25 @@
 .element {
   &:not(:last-child):after {
+    border: 1px #e9ecef solid;
+    bottom: -41px;
+    content: '';
+    position: absolute;
+    width: 100%;
+
     /*noinspection CssInvalidAtRule*/
     @mixin smaller-than $mantine-breakpoint-sm {
       bottom: -25px;
     }
-    border: 1px #e9ecef solid;
-    bottom: -41px;
-    content: "";
-    position: absolute;
-    width: 100%;
   }
 
   position: relative;
 }
 
 .list {
+  gap: 80px;
+
   /*noinspection CssInvalidAtRule*/
   @mixin smaller-than $mantine-breakpoint-sm {
     gap: 48px;
   }
-  gap: 80px;
 }

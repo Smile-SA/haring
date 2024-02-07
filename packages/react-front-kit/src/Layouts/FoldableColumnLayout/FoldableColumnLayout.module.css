@@ -7,7 +7,7 @@
   @mixin smaller-than $mantine-breakpoint-md {
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 16px 24px;
   }
 }
 
@@ -21,15 +21,14 @@
 .collapseButton {
   /*noinspection CssInvalidAtRule*/
   @mixin smaller-than $mantine-breakpoint-md {
+    padding: 0 24px;
     > button {
+      width: 100%;
+
       > * {
         justify-content: space-between;
       }
-
-      width: 100%;
     }
-
-    padding: 0 24px;
   }
   /*noinspection CssInvalidAtRule*/
   @mixin larger-than $mantine-breakpoint-md {
@@ -134,5 +133,3 @@
     padding: 0;
   }
 }
-
-/* TODO: Known bug with label not positioned to the right, and missing gap, fixed in next patch */

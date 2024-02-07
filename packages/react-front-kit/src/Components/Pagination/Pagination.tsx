@@ -66,17 +66,13 @@ export function Pagination(props: IPaginationProps): ReactElement {
         />
       ) : null}
       <MantinePagination
+        autoContrast
         className={classes.pagination}
+        classNames={{ control: isTransparent ? classes.transparent : '' }}
         data-testid="pagination-page"
         onChange={handleChangePage}
         radius="sm"
         size="sm"
-        styles={{
-          control: {
-            backgroundColor: isTransparent ? 'transparent' : '',
-            borderColor: isTransparent ? 'transparent' : '',
-          },
-        }}
         total={totalPages}
         value={page}
         withControls={false}
