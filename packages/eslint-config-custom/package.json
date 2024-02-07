@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "main": "index.js",
-  "license": "MIT",
+  "license": "LGPL-3.0",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",

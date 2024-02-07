@@ -16,4 +16,4 @@ npm i @smile/react-front-kit-table @emotion/react @mantine/core @mantine/dates @
 
 ## License
 
-MIT
+LGPL-3.0
