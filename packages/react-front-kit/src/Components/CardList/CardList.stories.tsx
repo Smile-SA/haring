@@ -7,19 +7,19 @@ import { childrenExampleMock } from '../SummaryBox/SummaryBox.mock';
 
 import { CardList as Cmp } from './CardList';
 
-const summaryboxs = [
-  childrenExampleMock,
-  childrenExampleMock,
-  childrenExampleMock,
-  childrenExampleMock,
-  childrenExampleMock,
+const summaryBoxesMock = [
+  childrenExampleMock(1),
+  childrenExampleMock(2),
+  childrenExampleMock(3),
+  childrenExampleMock(4),
+  childrenExampleMock(5),
 ];
 
 const texts = ['Hello-world', 'Hello-world', 'Hello-world'];
 
 const meta = {
   argTypes: {
-    spacing: {
+    gap: {
       control: { type: 'select' },
       options: ['xl', 'lg', 'md', 'sm', 'xs'],
     },
@@ -34,27 +34,27 @@ type IStory = StoryObj<typeof meta>;
 
 export const CardListWithMultiSummaryBox: IStory = {
   args: {
-    children: summaryboxs,
-    h: '200px',
+    children: summaryBoxesMock,
+    h: 200,
     separator: true,
-    spacing: 'xl',
   },
 };
 
 export const CardListWithOneSummaryBox: IStory = {
   args: {
-    children: childrenExampleMock,
-    h: '110px',
+    children: childrenExampleMock(),
+    h: 110,
     separator: true,
-    spacing: 'xl',
   },
 };
 
 export const CardListWithTexts: IStory = {
   args: {
     children: texts,
-    h: '70px',
-    spacing: 'xl',
+    h: 80,
+    m: '32px 3px 32px 0',
+    p: 0,
+    stackProps: { m: '0 32px' },
   },
   render: ({ ...props }) => (
     <Card>

@@ -1,30 +1,31 @@
 'use client';
 
 import type {
+  AppShellHeaderProps,
   BurgerProps,
   CollapseProps,
-  HeaderProps,
   TextInputProps,
 } from '@mantine/core';
 import type { FormEvent, ReactElement, ReactNode } from 'react';
 
 import {
+  AppShell,
   Burger,
   Collapse,
   Divider,
   Flex,
-  Header as MantineHeader,
   Stack,
   TextInput,
+  getThemeColor,
   useMantineTheme,
 } from '@mantine/core';
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import { useState } from 'react';
 
-import { useStyles } from './HeaderMobile.style';
+import classes from './HeaderMobile.module.css';
 
 export interface IHeaderMobileProps
-  extends Omit<HeaderProps, 'children' | 'height' | 'left' | 'right'> {
+  extends Omit<AppShellHeaderProps, 'children' | 'height' | 'left' | 'right'> {
   burgerProps?: Omit<BurgerProps, 'onClick' | 'opened'>;
   children?: ReactNode;
   collapseProps?: Omit<CollapseProps, 'in'>;
@@ -58,14 +59,13 @@ export function HeaderMobile(props: IHeaderMobileProps): ReactElement {
   const [burgerOpened, setBurgerOpened] = useState(false);
 
   const theme = useMantineTheme();
-  const { classes } = useStyles(height);
 
   return (
-    <MantineHeader height={height} withBorder={withBorder} {...headerProps}>
+    <AppShell.Header h={height} withBorder={withBorder} {...headerProps}>
       <Flex className={classes.containerMobile} h={height}>
         <Flex gap={16}>
           <Burger
-            color={useMantineTheme().fn.primaryColor()}
+            color={getThemeColor(theme.primaryColor, theme)}
             onClick={() => setBurgerOpened((o) => !o)}
             opened={burgerOpened}
             size={22}
@@ -78,7 +78,10 @@ export function HeaderMobile(props: IHeaderMobileProps): ReactElement {
         <Flex className={classes.around}>{right}</Flex>
       </Flex>
       <Collapse in={burgerOpened} {...collapseProps}>
-        <Stack className={classes.burgerMenu}>
+        <Stack
+          className={classes.burgerMenu}
+          style={{ height: `calc(100vh - ${height}px)` }}
+        >
           {children}
           {Boolean(hasSearch) && (
             <form className={classes.burgerSearch} onSubmit={onSearchSubmit}>
@@ -90,7 +93,7 @@ export function HeaderMobile(props: IHeaderMobileProps): ReactElement {
                 rightSection={
                   <MagnifyingGlass
                     className={classes.searchIcon}
-                    color={theme.fn.primaryColor()}
+                    color={getThemeColor(theme.primaryColor, theme)}
                     size={20}
                   />
                 }
@@ -102,6 +105,6 @@ export function HeaderMobile(props: IHeaderMobileProps): ReactElement {
           )}
         </Stack>
       </Collapse>
-    </MantineHeader>
+    </AppShell.Header>
   );
 }

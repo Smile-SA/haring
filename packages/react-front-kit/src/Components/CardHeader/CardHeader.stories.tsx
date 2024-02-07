@@ -20,8 +20,8 @@ const meta = {
             />
           </Card.Section>
           <Card.Section m="24px 32px">
-            <Group mb="xs" mt="md" position="apart">
-              <Text weight={500}>Norway Fjord Adventures</Text>
+            <Group justify="apart" mb="xs" mt="md">
+              <Text fw={500}>Norway Fjord Adventures</Text>
               <Badge color="pink" variant="light">
                 On Sale
               </Badge>

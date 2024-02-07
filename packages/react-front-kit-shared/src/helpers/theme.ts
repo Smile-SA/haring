@@ -1,7 +1,9 @@
 import type { IThemeOverride, IThemes } from '../types';
 import type { MantineThemeOverride } from '@mantine/core';
 
-import { DEFAULT_THEME, rem } from '@mantine/core';
+import { DEFAULT_THEME } from '@mantine/core';
+
+import './globalStyles.css';
 
 export function createThemes(themeConfig: IThemeOverride = {}): IThemes {
   const {
@@ -15,15 +17,12 @@ export function createThemes(themeConfig: IThemeOverride = {}): IThemes {
 
   const {
     components: baseComponents,
-    focusRingStyles: baseFocusRingStyles,
     fontSizes: baseFontSizes,
     headings: baseHeadings,
     ...baseRest
   } = baseTheme;
   const base: MantineThemeOverride = {
-    activeStyles: {
-      transform: '',
-    },
+    activeClassName: 'haring-active',
     components: {
       Checkbox: {
         defaultProps: {
@@ -34,16 +33,7 @@ export function createThemes(themeConfig: IThemeOverride = {}): IThemes {
     },
     cursorType: 'pointer',
     defaultRadius: '1.5rem',
-    focusRingStyles: {
-      // Default orange for focus-ring on all elements and Input-based components
-      inputStyles: (theme) => ({
-        outline: `${rem(2)} solid ${theme.colors.orange[5]}`,
-      }),
-      styles: (theme) => ({
-        outline: `${rem(2)} solid ${theme.colors.orange[5]}`,
-      }),
-      ...baseFocusRingStyles,
-    },
+    focusClassName: 'haring-focus',
     fontFamily: 'var(--rfk-font, Open Sans)',
     fontSizes: {
       lg: '18px',
@@ -54,7 +44,7 @@ export function createThemes(themeConfig: IThemeOverride = {}): IThemes {
       ...baseFontSizes,
     },
     headings: {
-      fontWeight: 700,
+      fontWeight: '700',
       sizes: {
         h1: { fontSize: '26px', lineHeight: '135%' },
         h2: { fontSize: '18px', lineHeight: '155%' },
@@ -65,54 +55,13 @@ export function createThemes(themeConfig: IThemeOverride = {}): IThemes {
     ...baseRest,
   };
 
-  const { globalStyles: mainGlobalStyles, ...mainRest } = mainTheme;
   const main: MantineThemeOverride = {
     ...base,
     black: DEFAULT_THEME.colors.dark[6],
-    colorScheme: 'light',
-    globalStyles: (theme) => ({
-      '.mantine-Carousel-control': {
-        height: '42px',
-        svg: {
-          color: theme.colors[theme.primaryColor][9],
-        },
-        width: '42px',
-      },
-      '.mantine-Carousel-controls': {
-        padding: '0 5%',
-      },
-      '.mantine-Carousel-indicator': {
-        '&[data-active="true"]': {
-          transitionDuration: '500ms',
-          width: '32px',
-        },
-        height: '4px',
-        transitionDuration: '500ms',
-        width: '12px',
-      },
-      '.mantine-Carousel-indicators': {
-        justifyContent: 'flex-end',
-        padding: '3% 5%',
-      },
-      '.mantine-Carousel-root': {
-        borderRadius: '8px',
-        overflow: 'hidden',
-      },
-      a: {
-        color: 'inherit',
-      },
-      body: {
-        background:
-          theme.colorScheme === 'light'
-            ? theme.colors.gray[1]
-            : theme.colors.gray[9],
-      },
-      ...mainGlobalStyles,
-    }),
     primaryColor,
     primaryShade: 9,
     white: '#fff',
-    ...mainRest,
+    ...mainTheme,
   };
 
   const {
@@ -123,7 +72,6 @@ export function createThemes(themeConfig: IThemeOverride = {}): IThemes {
   const primary: MantineThemeOverride = {
     ...base,
     black: DEFAULT_THEME.colors[primaryColor][9],
-    colorScheme: 'dark',
     colors: {
       dark: [
         '#fff',
@@ -162,7 +110,6 @@ export function createThemes(themeConfig: IThemeOverride = {}): IThemes {
   const secondary: MantineThemeOverride = {
     ...base,
     black: DEFAULT_THEME.colors[secondaryColor][8],
-    colorScheme: 'dark',
     colors: {
       dark: [
         '#fff',

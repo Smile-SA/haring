@@ -2,28 +2,44 @@
 
 exports[`SelectableList matches snapshot 1`] = `
 <div>
+  <style
+    data-mantine-styles="true"
+  >
+    :root{--mantine-cursor-type: pointer;--mantine-color-black: #2e2e2e;--mantine-font-family: var(--rfk-font, Open Sans);--mantine-font-family-headings: var(--rfk-font, Open Sans);--mantine-radius-default: calc(1.5rem * var(--mantine-scale));--mantine-primary-color-filled: var(--mantine-color-cyan-filled);--mantine-primary-color-filled-hover: var(--mantine-color-cyan-filled-hover);--mantine-primary-color-light: var(--mantine-color-cyan-light);--mantine-primary-color-light-hover: var(--mantine-color-cyan-light-hover);--mantine-primary-color-light-color: var(--mantine-color-cyan-light-color);--mantine-font-size-xs: 10px;--mantine-font-size-sm: 12px;--mantine-font-size-md: 14px;--mantine-font-size-lg: 18px;--mantine-font-size-xl: 20px;--mantine-primary-color-0: var(--mantine-color-cyan-0);--mantine-primary-color-1: var(--mantine-color-cyan-1);--mantine-primary-color-2: var(--mantine-color-cyan-2);--mantine-primary-color-3: var(--mantine-color-cyan-3);--mantine-primary-color-4: var(--mantine-color-cyan-4);--mantine-primary-color-5: var(--mantine-color-cyan-5);--mantine-primary-color-6: var(--mantine-color-cyan-6);--mantine-primary-color-7: var(--mantine-color-cyan-7);--mantine-primary-color-8: var(--mantine-color-cyan-8);--mantine-primary-color-9: var(--mantine-color-cyan-9);--mantine-h1-font-size: 26px;--mantine-h1-line-height: 135%;--mantine-h2-font-size: 18px;--mantine-h2-line-height: 155%;--mantine-h3-font-size: 14px;--mantine-h3-line-height: 155%;}:root[data-mantine-color-scheme="dark"]{--mantine-color-anchor: var(--mantine-color-cyan-4);--mantine-color-dark-filled: var(--mantine-color-dark-9);--mantine-color-dark-filled-hover: var(--mantine-color-dark-8);--mantine-color-dark-light: rgba(36, 36, 36, 0.15);--mantine-color-dark-light-hover: rgba(36, 36, 36, 0.2);--mantine-color-dark-light-color: var(--mantine-color-dark-4);--mantine-color-dark-outline: var(--mantine-color-dark-5);--mantine-color-dark-outline-hover: rgba(59, 59, 59, 0.05);--mantine-color-gray-filled: var(--mantine-color-gray-9);--mantine-color-gray-filled-hover: var(--mantine-color-gray-8);--mantine-color-gray-light: rgba(73, 80, 87, 0.15);--mantine-color-gray-light-hover: rgba(73, 80, 87, 0.2);--mantine-color-gray-light-color: var(--mantine-color-gray-4);--mantine-color-gray-outline: var(--mantine-color-gray-5);--mantine-color-gray-outline-hover: rgba(173, 181, 189, 0.05);--mantine-color-red-filled: var(--mantine-color-red-9);--mantine-color-red-filled-hover: var(--mantine-color-red-8);--mantine-color-red-light: rgba(240, 62, 62, 0.15);--mantine-color-red-light-hover: rgba(240, 62, 62, 0.2);--mantine-color-red-light-color: var(--mantine-color-red-4);--mantine-color-red-outline: var(--mantine-color-red-5);--mantine-color-red-outline-hover: rgba(255, 107, 107, 0.05);--mantine-color-pink-filled: var(--mantine-color-pink-9);--mantine-color-pink-filled-hover: var(--mantine-color-pink-8);--mantine-color-pink-light: rgba(214, 51, 108, 0.15);--mantine-color-pink-light-hover: rgba(214, 51, 108, 0.2);--mantine-color-pink-light-color: var(--mantine-color-pink-4);--mantine-color-pink-outline: var(--mantine-color-pink-5);--mantine-color-pink-outline-hover: rgba(240, 101, 149, 0.05);--mantine-color-grape-filled: var(--mantine-color-grape-9);--mantine-color-grape-filled-hover: var(--mantine-color-grape-8);--mantine-color-grape-light: rgba(174, 62, 201, 0.15);--mantine-color-grape-light-hover: rgba(174, 62, 201, 0.2);--mantine-color-grape-light-color: var(--mantine-color-grape-4);--mantine-color-grape-outline: var(--mantine-color-grape-5);--mantine-color-grape-outline-hover: rgba(204, 93, 232, 0.05);--mantine-color-violet-filled: var(--mantine-color-violet-9);--mantine-color-violet-filled-hover: var(--mantine-color-violet-8);--mantine-color-violet-light: rgba(112, 72, 232, 0.15);--mantine-color-violet-light-hover: rgba(112, 72, 232, 0.2);--mantine-color-violet-light-color: var(--mantine-color-violet-4);--mantine-color-violet-outline: var(--mantine-color-violet-5);--mantine-color-violet-outline-hover: rgba(132, 94, 247, 0.05);--mantine-color-indigo-filled: var(--mantine-color-indigo-9);--mantine-color-indigo-filled-hover: var(--mantine-color-indigo-8);--mantine-color-indigo-light: rgba(66, 99, 235, 0.15);--mantine-color-indigo-light-hover: rgba(66, 99, 235, 0.2);--mantine-color-indigo-light-color: var(--mantine-color-indigo-4);--mantine-color-indigo-outline: var(--mantine-color-indigo-5);--mantine-color-indigo-outline-hover: rgba(92, 124, 250, 0.05);--mantine-color-blue-filled: var(--mantine-color-blue-9);--mantine-color-blue-filled-hover: var(--mantine-color-blue-8);--mantine-color-blue-light: rgba(28, 126, 214, 0.15);--mantine-color-blue-light-hover: rgba(28, 126, 214, 0.2);--mantine-color-blue-light-color: var(--mantine-color-blue-4);--mantine-color-blue-outline: var(--mantine-color-blue-5);--mantine-color-blue-outline-hover: rgba(51, 154, 240, 0.05);--mantine-color-cyan-filled: var(--mantine-color-cyan-9);--mantine-color-cyan-filled-hover: var(--mantine-color-cyan-8);--mantine-color-cyan-light: rgba(16, 152, 173, 0.15);--mantine-color-cyan-light-hover: rgba(16, 152, 173, 0.2);--mantine-color-cyan-light-color: var(--mantine-color-cyan-4);--mantine-color-cyan-outline: var(--mantine-color-cyan-5);--mantine-color-cyan-outline-hover: rgba(34, 184, 207, 0.05);--mantine-color-teal-filled: var(--mantine-color-teal-9);--mantine-color-teal-filled-hover: var(--mantine-color-teal-8);--mantine-color-teal-light: rgba(12, 166, 120, 0.15);--mantine-color-teal-light-hover: rgba(12, 166, 120, 0.2);--mantine-color-teal-light-color: var(--mantine-color-teal-4);--mantine-color-teal-outline: var(--mantine-color-teal-5);--mantine-color-teal-outline-hover: rgba(32, 201, 151, 0.05);--mantine-color-green-filled: var(--mantine-color-green-9);--mantine-color-green-filled-hover: var(--mantine-color-green-8);--mantine-color-green-light: rgba(55, 178, 77, 0.15);--mantine-color-green-light-hover: rgba(55, 178, 77, 0.2);--mantine-color-green-light-color: var(--mantine-color-green-4);--mantine-color-green-outline: var(--mantine-color-green-5);--mantine-color-green-outline-hover: rgba(81, 207, 102, 0.05);--mantine-color-lime-filled: var(--mantine-color-lime-9);--mantine-color-lime-filled-hover: var(--mantine-color-lime-8);--mantine-color-lime-light: rgba(116, 184, 22, 0.15);--mantine-color-lime-light-hover: rgba(116, 184, 22, 0.2);--mantine-color-lime-light-color: var(--mantine-color-lime-4);--mantine-color-lime-outline: var(--mantine-color-lime-5);--mantine-color-lime-outline-hover: rgba(148, 216, 45, 0.05);--mantine-color-yellow-filled: var(--mantine-color-yellow-9);--mantine-color-yellow-filled-hover: var(--mantine-color-yellow-8);--mantine-color-yellow-light: rgba(245, 159, 0, 0.15);--mantine-color-yellow-light-hover: rgba(245, 159, 0, 0.2);--mantine-color-yellow-light-color: var(--mantine-color-yellow-4);--mantine-color-yellow-outline: var(--mantine-color-yellow-5);--mantine-color-yellow-outline-hover: rgba(252, 196, 25, 0.05);--mantine-color-orange-filled: var(--mantine-color-orange-9);--mantine-color-orange-filled-hover: var(--mantine-color-orange-8);--mantine-color-orange-light: rgba(247, 103, 7, 0.15);--mantine-color-orange-light-hover: rgba(247, 103, 7, 0.2);--mantine-color-orange-light-color: var(--mantine-color-orange-4);--mantine-color-orange-outline: var(--mantine-color-orange-5);--mantine-color-orange-outline-hover: rgba(255, 146, 43, 0.05);}:root[data-mantine-color-scheme="light"]{--mantine-color-text: #2e2e2e;--mantine-color-anchor: var(--mantine-color-cyan-9);--mantine-color-dark-filled: var(--mantine-color-dark-9);--mantine-color-dark-filled-hover: var(--mantine-color-dark-8);--mantine-color-dark-light: rgba(20, 20, 20, 0.1);--mantine-color-dark-light-hover: rgba(20, 20, 20, 0.12);--mantine-color-dark-light-color: var(--mantine-color-dark-9);--mantine-color-dark-outline: var(--mantine-color-dark-9);--mantine-color-dark-outline-hover: rgba(20, 20, 20, 0.05);--mantine-color-gray-filled: var(--mantine-color-gray-9);--mantine-color-gray-filled-hover: var(--mantine-color-gray-8);--mantine-color-gray-light: rgba(33, 37, 41, 0.1);--mantine-color-gray-light-hover: rgba(33, 37, 41, 0.12);--mantine-color-gray-light-color: var(--mantine-color-gray-9);--mantine-color-gray-outline: var(--mantine-color-gray-9);--mantine-color-gray-outline-hover: rgba(33, 37, 41, 0.05);--mantine-color-red-filled: var(--mantine-color-red-9);--mantine-color-red-filled-hover: var(--mantine-color-red-8);--mantine-color-red-light: rgba(201, 42, 42, 0.1);--mantine-color-red-light-hover: rgba(201, 42, 42, 0.12);--mantine-color-red-light-color: var(--mantine-color-red-9);--mantine-color-red-outline: var(--mantine-color-red-9);--mantine-color-red-outline-hover: rgba(201, 42, 42, 0.05);--mantine-color-pink-filled: var(--mantine-color-pink-9);--mantine-color-pink-filled-hover: var(--mantine-color-pink-8);--mantine-color-pink-light: rgba(166, 30, 77, 0.1);--mantine-color-pink-light-hover: rgba(166, 30, 77, 0.12);--mantine-color-pink-light-color: var(--mantine-color-pink-9);--mantine-color-pink-outline: var(--mantine-color-pink-9);--mantine-color-pink-outline-hover: rgba(166, 30, 77, 0.05);--mantine-color-grape-filled: var(--mantine-color-grape-9);--mantine-color-grape-filled-hover: var(--mantine-color-grape-8);--mantine-color-grape-light: rgba(134, 46, 156, 0.1);--mantine-color-grape-light-hover: rgba(134, 46, 156, 0.12);--mantine-color-grape-light-color: var(--mantine-color-grape-9);--mantine-color-grape-outline: var(--mantine-color-grape-9);--mantine-color-grape-outline-hover: rgba(134, 46, 156, 0.05);--mantine-color-violet-filled: var(--mantine-color-violet-9);--mantine-color-violet-filled-hover: var(--mantine-color-violet-8);--mantine-color-violet-light: rgba(95, 61, 196, 0.1);--mantine-color-violet-light-hover: rgba(95, 61, 196, 0.12);--mantine-color-violet-light-color: var(--mantine-color-violet-9);--mantine-color-violet-outline: var(--mantine-color-violet-9);--mantine-color-violet-outline-hover: rgba(95, 61, 196, 0.05);--mantine-color-indigo-filled: var(--mantine-color-indigo-9);--mantine-color-indigo-filled-hover: var(--mantine-color-indigo-8);--mantine-color-indigo-light: rgba(54, 79, 199, 0.1);--mantine-color-indigo-light-hover: rgba(54, 79, 199, 0.12);--mantine-color-indigo-light-color: var(--mantine-color-indigo-9);--mantine-color-indigo-outline: var(--mantine-color-indigo-9);--mantine-color-indigo-outline-hover: rgba(54, 79, 199, 0.05);--mantine-color-blue-filled: var(--mantine-color-blue-9);--mantine-color-blue-filled-hover: var(--mantine-color-blue-8);--mantine-color-blue-light: rgba(24, 100, 171, 0.1);--mantine-color-blue-light-hover: rgba(24, 100, 171, 0.12);--mantine-color-blue-light-color: var(--mantine-color-blue-9);--mantine-color-blue-outline: var(--mantine-color-blue-9);--mantine-color-blue-outline-hover: rgba(24, 100, 171, 0.05);--mantine-color-cyan-filled: var(--mantine-color-cyan-9);--mantine-color-cyan-filled-hover: var(--mantine-color-cyan-8);--mantine-color-cyan-light: rgba(11, 114, 133, 0.1);--mantine-color-cyan-light-hover: rgba(11, 114, 133, 0.12);--mantine-color-cyan-light-color: var(--mantine-color-cyan-9);--mantine-color-cyan-outline: var(--mantine-color-cyan-9);--mantine-color-cyan-outline-hover: rgba(11, 114, 133, 0.05);--mantine-color-teal-filled: var(--mantine-color-teal-9);--mantine-color-teal-filled-hover: var(--mantine-color-teal-8);--mantine-color-teal-light: rgba(8, 127, 91, 0.1);--mantine-color-teal-light-hover: rgba(8, 127, 91, 0.12);--mantine-color-teal-light-color: var(--mantine-color-teal-9);--mantine-color-teal-outline: var(--mantine-color-teal-9);--mantine-color-teal-outline-hover: rgba(8, 127, 91, 0.05);--mantine-color-green-filled: var(--mantine-color-green-9);--mantine-color-green-filled-hover: var(--mantine-color-green-8);--mantine-color-green-light: rgba(43, 138, 62, 0.1);--mantine-color-green-light-hover: rgba(43, 138, 62, 0.12);--mantine-color-green-light-color: var(--mantine-color-green-9);--mantine-color-green-outline: var(--mantine-color-green-9);--mantine-color-green-outline-hover: rgba(43, 138, 62, 0.05);--mantine-color-lime-filled: var(--mantine-color-lime-9);--mantine-color-lime-filled-hover: var(--mantine-color-lime-8);--mantine-color-lime-light: rgba(92, 148, 13, 0.1);--mantine-color-lime-light-hover: rgba(92, 148, 13, 0.12);--mantine-color-lime-light-color: var(--mantine-color-lime-9);--mantine-color-lime-outline: var(--mantine-color-lime-9);--mantine-color-lime-outline-hover: rgba(92, 148, 13, 0.05);--mantine-color-yellow-filled: var(--mantine-color-yellow-9);--mantine-color-yellow-filled-hover: var(--mantine-color-yellow-8);--mantine-color-yellow-light: rgba(230, 119, 0, 0.1);--mantine-color-yellow-light-hover: rgba(230, 119, 0, 0.12);--mantine-color-yellow-light-color: var(--mantine-color-yellow-9);--mantine-color-yellow-outline: var(--mantine-color-yellow-9);--mantine-color-yellow-outline-hover: rgba(230, 119, 0, 0.05);--mantine-color-orange-filled: var(--mantine-color-orange-9);--mantine-color-orange-filled-hover: var(--mantine-color-orange-8);--mantine-color-orange-light: rgba(217, 72, 15, 0.1);--mantine-color-orange-light-hover: rgba(217, 72, 15, 0.12);--mantine-color-orange-light-color: var(--mantine-color-orange-9);--mantine-color-orange-outline: var(--mantine-color-orange-9);--mantine-color-orange-outline-hover: rgba(217, 72, 15, 0.05);}
+  </style>
+  <style
+    data-mantine-styles="classes"
+  >
+    @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
+  </style>
   <div
-    class="mantine-Stack-root ___ref-selectableList mantine-1g755ci"
+    class="undefined selectableListRef m-6d731127 mantine-Stack-root"
+    style="--stack-gap: var(--mantine-spacing-md); --stack-align: stretch; --stack-justify: flex-start;"
   >
     <div
-      class="mantine-Group-root mantine-w88wg2"
+      class="m-4081bf90 mantine-Group-root"
+      style="--group-gap: calc(2rem * var(--mantine-scale)); --group-align: center; --group-justify: flex-start; --group-wrap: nowrap;"
     >
       <div
-        class="mantine-Checkbox-root ___ref-selectableListCheckbox mantine-1p7nzyj"
+        class="selectableListCheckboxRef m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+        data-label-position="right"
+        style="--checkbox-size: calc(1rem * var(--mantine-scale)); --checkbox-radius: calc(0.125rem * var(--mantine-scale)); --checkbox-color: var(--mantine-color-cyan-filled); --label-fz: calc(1rem * var(--mantine-scale)); --label-lh: calc(1rem * var(--mantine-scale));"
       >
         <div
-          class="mantine-hqx0d1 mantine-Checkbox-body"
+          class="m-5f6e695e mantine-Checkbox-body"
         >
           <div
-            class="mantine-13uu19v mantine-Checkbox-inner"
+            class="m-26062bec mantine-Checkbox-inner"
+            data-label-position="right"
           >
             <input
-              class="mantine-1g8epsg mantine-Checkbox-input"
+              class="haring-focus m-26063560 mantine-Checkbox-input"
               id="mantine-f4bipx4bi"
               type="checkbox"
             />
             <svg
-              class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
+              aria-hidden="true"
+              class="m-bf295423 mantine-Checkbox-icon"
               fill="none"
               viewBox="0 0 10 7"
               xmlns="http://www.w3.org/2000/svg"
@@ -37,42 +53,26 @@ exports[`SelectableList matches snapshot 1`] = `
             </svg>
           </div>
           <div
-            class="mantine-djumwf mantine-Checkbox-labelWrapper"
+            class="m-d3ea56bb mantine-Checkbox-labelWrapper"
           />
         </div>
       </div>
       <div
-        class="___ref-documentBox  mantine-1hsxp14"
+        class="undefined  documentBoxRef"
       >
-        <div
-          class=" mantine-Image-root mantine-d3it6h"
-          style="width: 100%;"
-        >
-          <figure
-            class="mantine-qenwvq mantine-Image-figure"
-          >
-            <div
-              class="mantine-1iugybl mantine-Image-imageWrapper"
-            >
-              <img
-                class="mantine-Image-image mantine-10vaayr"
-                src=""
-                style="object-fit: cover; width: 100%; height: auto;"
-              />
-            </div>
-          </figure>
-        </div>
+        <img
+          class="undefined  m-9e117634 mantine-Image-root"
+          src=""
+          style="--image-radius: calc(1rem * var(--mantine-scale));"
+        />
         <div>
           <div>
-            <div
-              class="mantine-14n9mxy"
-            >
+            <div>
               <div
-                class="___ref-documentBoxIcon mantine-cznryd"
+                class="undefined documentBoxIconRef"
               >
                 <svg
-                  class="mantine-wvylvx"
-                  fill="#0b7285"
+                  fill="var(--mantine-color-cyan-filled)"
                   height="1em"
                   viewBox="0 0 256 256"
                   width="1em"
@@ -83,59 +83,54 @@ exports[`SelectableList matches snapshot 1`] = `
                   />
                 </svg>
               </div>
-              <div
-                class="mantine-1x591ah"
-              >
+              <div>
                 <div
-                  class="___ref-documentBoxHeaderTop mantine-hxvu3z"
+                  class="undefined documentBoxHeaderTopRef"
                 >
-                  <span
-                    class="mantine-4yvscz"
-                  >
+                  <span>
                     Random_File.PDF
                   </span>
-                  <span
-                    class="mantine-1g71ejr"
-                  >
+                  <span>
                     (Customer &gt; 567890456 &gt; Invoices)
                   </span>
                 </div>
-                <div
-                  class="mantine-11bkg4o"
-                >
+                <div>
                   <span>
                     Published on December 24, 2023
                   </span>
-                  <span
-                    class="mantine-1g4onuo"
-                  >
+                  <span>
                     -
                   </span>
-                  <span
-                    class="mantine-l9up18"
-                  >
+                  <span>
                     Aline Dupon
                   </span>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="mantine-1yhpcgp"
-          >
+          <div>
             <p>
               Ceci est une description faite pour cette facture et ajoutée par le créateur lors de l’import du document dans la GED, en l’absence de description cet espace est laissé vide...
             </p>
             <button
-              class="mantine-UnstyledButton-root mantine-Button-root mantine-1tate3y"
-              data-button="true"
+              class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+              style="--button-bg: var(--mantine-color-gray-8); --button-hover: var(--mantine-color-gray-9); --button-color: var(--mantine-color-white); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
               type="button"
             >
-              <div
-                class="mantine-1wpc1xj mantine-Button-inner"
+              <span
+                aria-hidden="true"
+                class="m-a25b86ee mantine-Button-loader"
               >
                 <span
-                  class="mantine-1ryt1ht mantine-Button-label"
+                  class="m-b34414df m-5ae2e3c mantine-Loader-root"
+                  style="--loader-size: calc(var(--button-height) / 1.8); --loader-color: var(--button-color);"
+                />
+              </span>
+              <span
+                class="m-80f1301b mantine-Button-inner"
+              >
+                <span
+                  class="m-811560b9 mantine-Button-label"
                 >
                   <svg
                     fill="currentColor"
@@ -149,28 +144,41 @@ exports[`SelectableList matches snapshot 1`] = `
                     />
                   </svg>
                   <div
-                    class="mantine-151bw52"
+                    class=""
+                    style="min-width: calc(0.5rem * var(--mantine-scale));"
                   />
                   PDF, FR - 1Mo
                 </span>
-              </div>
+              </span>
             </button>
           </div>
           <button
-            class="mantine-UnstyledButton-root mantine-Button-root mantine-7bznx3"
-            data-button="true"
+            class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+            data-variant="default"
+            data-with-right-section="true"
+            style="--button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
             type="button"
           >
-            <div
-              class="mantine-1wpc1xj mantine-Button-inner"
+            <span
+              aria-hidden="true"
+              class="m-a25b86ee mantine-Button-loader"
             >
               <span
-                class="mantine-1ryt1ht mantine-Button-label"
+                class="m-b34414df m-5ae2e3c mantine-Loader-root"
+                style="--loader-size: calc(var(--button-height) / 1.8); --loader-color: var(--button-color);"
+              />
+            </span>
+            <span
+              class="m-80f1301b mantine-Button-inner"
+            >
+              <span
+                class="m-811560b9 mantine-Button-label"
               >
                 Display preview
               </span>
               <span
-                class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+                class="m-a74036a mantine-Button-section"
+                data-position="right"
               >
                 <svg
                   fill="currentColor"
@@ -184,31 +192,37 @@ exports[`SelectableList matches snapshot 1`] = `
                   />
                 </svg>
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </div>
     </div>
     <div
-      class="mantine-Group-root mantine-w88wg2"
+      class="m-4081bf90 mantine-Group-root"
+      style="--group-gap: calc(2rem * var(--mantine-scale)); --group-align: center; --group-justify: flex-start; --group-wrap: nowrap;"
     >
       <div
-        class="mantine-Checkbox-root ___ref-selectableListCheckbox mantine-1p7nzyj"
+        class="selectableListCheckboxRef m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+        data-checked="true"
+        data-label-position="right"
+        style="--checkbox-size: calc(1rem * var(--mantine-scale)); --checkbox-radius: calc(0.125rem * var(--mantine-scale)); --checkbox-color: var(--mantine-color-cyan-filled); --label-fz: calc(1rem * var(--mantine-scale)); --label-lh: calc(1rem * var(--mantine-scale));"
       >
         <div
-          class="mantine-hqx0d1 mantine-Checkbox-body"
+          class="m-5f6e695e mantine-Checkbox-body"
         >
           <div
-            class="mantine-13uu19v mantine-Checkbox-inner"
+            class="m-26062bec mantine-Checkbox-inner"
+            data-label-position="right"
           >
             <input
               checked=""
-              class="mantine-1g8epsg mantine-Checkbox-input"
+              class="haring-focus m-26063560 mantine-Checkbox-input"
               id="mantine-f4bipx4bi"
               type="checkbox"
             />
             <svg
-              class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
+              aria-hidden="true"
+              class="m-bf295423 mantine-Checkbox-icon"
               fill="none"
               viewBox="0 0 10 7"
               xmlns="http://www.w3.org/2000/svg"
@@ -222,42 +236,26 @@ exports[`SelectableList matches snapshot 1`] = `
             </svg>
           </div>
           <div
-            class="mantine-djumwf mantine-Checkbox-labelWrapper"
+            class="m-d3ea56bb mantine-Checkbox-labelWrapper"
           />
         </div>
       </div>
       <div
-        class="___ref-documentBox  mantine-1hsxp14"
+        class="undefined  documentBoxRef"
       >
-        <div
-          class=" mantine-Image-root mantine-d3it6h"
-          style="width: 100%;"
-        >
-          <figure
-            class="mantine-qenwvq mantine-Image-figure"
-          >
-            <div
-              class="mantine-1iugybl mantine-Image-imageWrapper"
-            >
-              <img
-                class="mantine-Image-image mantine-10vaayr"
-                src=""
-                style="object-fit: cover; width: 100%; height: auto;"
-              />
-            </div>
-          </figure>
-        </div>
+        <img
+          class="undefined  m-9e117634 mantine-Image-root"
+          src=""
+          style="--image-radius: calc(1rem * var(--mantine-scale));"
+        />
         <div>
           <div>
-            <div
-              class="mantine-14n9mxy"
-            >
+            <div>
               <div
-                class="___ref-documentBoxIcon mantine-cznryd"
+                class="undefined documentBoxIconRef"
               >
                 <svg
-                  class="mantine-wvylvx"
-                  fill="#0b7285"
+                  fill="var(--mantine-color-cyan-filled)"
                   height="1em"
                   viewBox="0 0 256 256"
                   width="1em"
@@ -268,59 +266,54 @@ exports[`SelectableList matches snapshot 1`] = `
                   />
                 </svg>
               </div>
-              <div
-                class="mantine-1x591ah"
-              >
+              <div>
                 <div
-                  class="___ref-documentBoxHeaderTop mantine-hxvu3z"
+                  class="undefined documentBoxHeaderTopRef"
                 >
-                  <span
-                    class="mantine-4yvscz"
-                  >
+                  <span>
                     Presentation.PPT
                   </span>
-                  <span
-                    class="mantine-1g71ejr"
-                  >
+                  <span>
                     (Customer &gt; 567890456 &gt; Invoices)
                   </span>
                 </div>
-                <div
-                  class="mantine-11bkg4o"
-                >
+                <div>
                   <span>
                     Published on December 24, 2023
                   </span>
-                  <span
-                    class="mantine-1g4onuo"
-                  >
+                  <span>
                     -
                   </span>
-                  <span
-                    class="mantine-l9up18"
-                  >
+                  <span>
                     Julien Dominique
                   </span>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="mantine-1yhpcgp"
-          >
+          <div>
             <p>
               Ceci est une description faite pour cette facture et ajoutée par le créateur lors de l’import du document dans la GED, en l’absence de description cet espace est laissé vide...
             </p>
             <button
-              class="mantine-UnstyledButton-root mantine-Button-root mantine-1tate3y"
-              data-button="true"
+              class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+              style="--button-bg: var(--mantine-color-gray-8); --button-hover: var(--mantine-color-gray-9); --button-color: var(--mantine-color-white); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
               type="button"
             >
-              <div
-                class="mantine-1wpc1xj mantine-Button-inner"
+              <span
+                aria-hidden="true"
+                class="m-a25b86ee mantine-Button-loader"
               >
                 <span
-                  class="mantine-1ryt1ht mantine-Button-label"
+                  class="m-b34414df m-5ae2e3c mantine-Loader-root"
+                  style="--loader-size: calc(var(--button-height) / 1.8); --loader-color: var(--button-color);"
+                />
+              </span>
+              <span
+                class="m-80f1301b mantine-Button-inner"
+              >
+                <span
+                  class="m-811560b9 mantine-Button-label"
                 >
                   <svg
                     fill="currentColor"
@@ -334,28 +327,41 @@ exports[`SelectableList matches snapshot 1`] = `
                     />
                   </svg>
                   <div
-                    class="mantine-151bw52"
+                    class=""
+                    style="min-width: calc(0.5rem * var(--mantine-scale));"
                   />
                   PTT, FR - 1Mo
                 </span>
-              </div>
+              </span>
             </button>
           </div>
           <button
-            class="mantine-UnstyledButton-root mantine-Button-root mantine-7bznx3"
-            data-button="true"
+            class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+            data-variant="default"
+            data-with-right-section="true"
+            style="--button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
             type="button"
           >
-            <div
-              class="mantine-1wpc1xj mantine-Button-inner"
+            <span
+              aria-hidden="true"
+              class="m-a25b86ee mantine-Button-loader"
             >
               <span
-                class="mantine-1ryt1ht mantine-Button-label"
+                class="m-b34414df m-5ae2e3c mantine-Loader-root"
+                style="--loader-size: calc(var(--button-height) / 1.8); --loader-color: var(--button-color);"
+              />
+            </span>
+            <span
+              class="m-80f1301b mantine-Button-inner"
+            >
+              <span
+                class="m-811560b9 mantine-Button-label"
               >
                 Display preview
               </span>
               <span
-                class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+                class="m-a74036a mantine-Button-section"
+                data-position="right"
               >
                 <svg
                   fill="currentColor"
@@ -369,30 +375,35 @@ exports[`SelectableList matches snapshot 1`] = `
                   />
                 </svg>
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </div>
     </div>
     <div
-      class="mantine-Group-root mantine-w88wg2"
+      class="m-4081bf90 mantine-Group-root"
+      style="--group-gap: calc(2rem * var(--mantine-scale)); --group-align: center; --group-justify: flex-start; --group-wrap: nowrap;"
     >
       <div
-        class="mantine-Checkbox-root ___ref-selectableListCheckbox mantine-1p7nzyj"
+        class="selectableListCheckboxRef m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+        data-label-position="right"
+        style="--checkbox-size: calc(1rem * var(--mantine-scale)); --checkbox-radius: calc(0.125rem * var(--mantine-scale)); --checkbox-color: var(--mantine-color-cyan-filled); --label-fz: calc(1rem * var(--mantine-scale)); --label-lh: calc(1rem * var(--mantine-scale));"
       >
         <div
-          class="mantine-hqx0d1 mantine-Checkbox-body"
+          class="m-5f6e695e mantine-Checkbox-body"
         >
           <div
-            class="mantine-13uu19v mantine-Checkbox-inner"
+            class="m-26062bec mantine-Checkbox-inner"
+            data-label-position="right"
           >
             <input
-              class="mantine-1g8epsg mantine-Checkbox-input"
+              class="haring-focus m-26063560 mantine-Checkbox-input"
               id="mantine-f4bipx4bi"
               type="checkbox"
             />
             <svg
-              class="___ref-icon mantine-q9qwbl mantine-Checkbox-icon"
+              aria-hidden="true"
+              class="m-bf295423 mantine-Checkbox-icon"
               fill="none"
               viewBox="0 0 10 7"
               xmlns="http://www.w3.org/2000/svg"
@@ -406,42 +417,26 @@ exports[`SelectableList matches snapshot 1`] = `
             </svg>
           </div>
           <div
-            class="mantine-djumwf mantine-Checkbox-labelWrapper"
+            class="m-d3ea56bb mantine-Checkbox-labelWrapper"
           />
         </div>
       </div>
       <div
-        class="___ref-documentBox  mantine-1hsxp14"
+        class="undefined  documentBoxRef"
       >
-        <div
-          class=" mantine-Image-root mantine-d3it6h"
-          style="width: 100%;"
-        >
-          <figure
-            class="mantine-qenwvq mantine-Image-figure"
-          >
-            <div
-              class="mantine-1iugybl mantine-Image-imageWrapper"
-            >
-              <img
-                class="mantine-Image-image mantine-10vaayr"
-                src=""
-                style="object-fit: cover; width: 100%; height: auto;"
-              />
-            </div>
-          </figure>
-        </div>
+        <img
+          class="undefined  m-9e117634 mantine-Image-root"
+          src=""
+          style="--image-radius: calc(1rem * var(--mantine-scale));"
+        />
         <div>
           <div>
-            <div
-              class="mantine-14n9mxy"
-            >
+            <div>
               <div
-                class="___ref-documentBoxIcon mantine-cznryd"
+                class="undefined documentBoxIconRef"
               >
                 <svg
-                  class="mantine-wvylvx"
-                  fill="#0b7285"
+                  fill="var(--mantine-color-cyan-filled)"
                   height="1em"
                   viewBox="0 0 256 256"
                   width="1em"
@@ -452,59 +447,54 @@ exports[`SelectableList matches snapshot 1`] = `
                   />
                 </svg>
               </div>
-              <div
-                class="mantine-1x591ah"
-              >
+              <div>
                 <div
-                  class="___ref-documentBoxHeaderTop mantine-hxvu3z"
+                  class="undefined documentBoxHeaderTopRef"
                 >
-                  <span
-                    class="mantine-4yvscz"
-                  >
+                  <span>
                     Other_random_File.PDF
                   </span>
-                  <span
-                    class="mantine-1g71ejr"
-                  >
+                  <span>
                     (Customer &gt; 567890456 &gt; Invoices)
                   </span>
                 </div>
-                <div
-                  class="mantine-11bkg4o"
-                >
+                <div>
                   <span>
                     Published on December 24, 2023
                   </span>
-                  <span
-                    class="mantine-1g4onuo"
-                  >
+                  <span>
                     -
                   </span>
-                  <span
-                    class="mantine-l9up18"
-                  >
+                  <span>
                     Mohamed Aldri
                   </span>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="mantine-1yhpcgp"
-          >
+          <div>
             <p>
               Ceci est une description faite pour cette facture et ajoutée par le créateur lors de l’import du document dans la GED, en l’absence de description cet espace est laissé vide...
             </p>
             <button
-              class="mantine-UnstyledButton-root mantine-Button-root mantine-1tate3y"
-              data-button="true"
+              class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+              style="--button-bg: var(--mantine-color-gray-8); --button-hover: var(--mantine-color-gray-9); --button-color: var(--mantine-color-white); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
               type="button"
             >
-              <div
-                class="mantine-1wpc1xj mantine-Button-inner"
+              <span
+                aria-hidden="true"
+                class="m-a25b86ee mantine-Button-loader"
               >
                 <span
-                  class="mantine-1ryt1ht mantine-Button-label"
+                  class="m-b34414df m-5ae2e3c mantine-Loader-root"
+                  style="--loader-size: calc(var(--button-height) / 1.8); --loader-color: var(--button-color);"
+                />
+              </span>
+              <span
+                class="m-80f1301b mantine-Button-inner"
+              >
+                <span
+                  class="m-811560b9 mantine-Button-label"
                 >
                   <svg
                     fill="currentColor"
@@ -518,28 +508,41 @@ exports[`SelectableList matches snapshot 1`] = `
                     />
                   </svg>
                   <div
-                    class="mantine-151bw52"
+                    class=""
+                    style="min-width: calc(0.5rem * var(--mantine-scale));"
                   />
                   PDF, FR - 1Mo
                 </span>
-              </div>
+              </span>
             </button>
           </div>
           <button
-            class="mantine-UnstyledButton-root mantine-Button-root mantine-7bznx3"
-            data-button="true"
+            class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+            data-variant="default"
+            data-with-right-section="true"
+            style="--button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
             type="button"
           >
-            <div
-              class="mantine-1wpc1xj mantine-Button-inner"
+            <span
+              aria-hidden="true"
+              class="m-a25b86ee mantine-Button-loader"
             >
               <span
-                class="mantine-1ryt1ht mantine-Button-label"
+                class="m-b34414df m-5ae2e3c mantine-Loader-root"
+                style="--loader-size: calc(var(--button-height) / 1.8); --loader-color: var(--button-color);"
+              />
+            </span>
+            <span
+              class="m-80f1301b mantine-Button-inner"
+            >
+              <span
+                class="m-811560b9 mantine-Button-label"
               >
                 Display preview
               </span>
               <span
-                class="mantine-Button-icon mantine-Button-rightIcon mantine-467wo8"
+                class="m-a74036a mantine-Button-section"
+                data-position="right"
               >
                 <svg
                   fill="currentColor"
@@ -553,7 +556,7 @@ exports[`SelectableList matches snapshot 1`] = `
                   />
                 </svg>
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </div>

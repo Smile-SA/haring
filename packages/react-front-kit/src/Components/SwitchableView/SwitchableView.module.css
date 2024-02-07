@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  padding: 24px;
+}
+
+.switchButton {
+  line-height: 0px;
+  padding: 0.5rem;
+}
+
+.topBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.topBarLeft {
+  margin: auto auto auto 0;
+  width: 100%;
+}
+
+.topBarRight {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin: auto 0 auto auto;
+}

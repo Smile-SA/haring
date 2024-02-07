@@ -4,70 +4,10 @@ import type { ICollapseButtonProps } from './CollapseButton';
 import type { CollapseProps } from '@mantine/core';
 import type { ElementType, MouseEvent, ReactElement } from 'react';
 
-import { ActionIcon, Button, Collapse, createStyles } from '@mantine/core';
-import { _BackgroundImage } from '@mantine/core/lib/BackgroundImage/BackgroundImage';
+import { ActionIcon, Button, Collapse, useMantineTheme } from '@mantine/core';
 import { CaretDown, CaretRight } from '@phosphor-icons/react';
 
-const useStyles = createStyles((theme) => ({
-  button: {
-    alignItems: 'center',
-    background: 'transparent',
-    border: 0,
-    color: 'inherit',
-    cursor: 'inherit',
-    display: 'flex',
-    flex: 1,
-    font: 'inherit',
-    height: '100%',
-    padding: 0,
-    textAlign: 'left',
-    textDecoration: 'none',
-  },
-  iconSelected: {
-    background:
-      theme.colorScheme === 'light' ? theme.white : theme.colors.dark[7],
-  },
-  indentationLine: {
-    borderLeft:
-      theme.colorScheme === 'light'
-        ? `1px solid ${theme.colors.gray[1]}`
-        : `1px solid ${theme.colors.gray[8]}`,
-    marginLeft: 30,
-  },
-  indentationSimple: {
-    paddingLeft: 30,
-  },
-  label: {
-    color:
-      theme.colorScheme === 'light'
-        ? theme.colors.dark[3]
-        : theme.colors.dark[0],
-    flex: 1,
-  },
-  labelDeepLevel: {
-    fontSize: theme.fontSizes.sm,
-    fontWeight: 400,
-  },
-  labelLevel1: {
-    fontSize: theme.fontSizes.md,
-  },
-  rightIcon: {
-    color:
-      theme.colorScheme === 'light'
-        ? theme.colors.dark[3]
-        : theme.colors.dark[0],
-    fontSize: theme.fontSizes.md,
-  },
-  root: {
-    background: 'transparent',
-  },
-  rootDeepLevel: {
-    height: 30,
-  },
-  rootLevel1: {
-    height: 36,
-  },
-}));
+import classes from './CollapseButton.module.css';
 
 export interface ICollapseButtonControlledProps<
   T extends number | string,
@@ -94,7 +34,7 @@ export function CollapseButtonControlled<
     isOpenOnSelect = false,
     indentation,
     label,
-    leftIcon,
+    leftSection,
     level = 0,
     onCollapseChange,
     onSelect,
@@ -104,7 +44,7 @@ export function CollapseButtonControlled<
     selected,
     ...buttonProps
   } = props;
-  const { classes } = useStyles();
+  const theme = useMantineTheme();
 
   function handleClick(event: MouseEvent<HTMLButtonElement>): void {
     event.stopPropagation();
@@ -146,29 +86,29 @@ export function CollapseButtonControlled<
         aria-expanded={opened ? 'true' : 'false'}
         classNames={{
           label: labelClasses.join(' '),
-          rightIcon: classes.rightIcon,
           root: rootClasses.join(' '),
+          section: classes.section,
         }}
         component="div"
         data-selected={selected}
         data-testid="root"
         fullWidth={fullWidth}
-        leftIcon={
-          Boolean(leftIcon) && (
+        leftSection={
+          Boolean(leftSection) && (
             <ActionIcon
               className={selected ? classes.iconSelected : ''}
-              color="primary"
+              color={theme.primaryColor}
               component="div"
               radius="sm"
               variant="light"
             >
-              {leftIcon}
+              {leftSection}
             </ActionIcon>
           )
         }
         onClick={handleSelect}
         radius={radius}
-        rightIcon={
+        rightSection={
           Boolean(children) && (
             <ActionIcon
               data-testid="toggle"

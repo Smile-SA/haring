@@ -10,22 +10,16 @@ import { createThemes } from '../../helpers';
 
 export interface IProviderProps extends IThemeOverride {
   children?: ReactNode;
-  colorScheme?: 'dark' | 'light';
 }
+
 export function Provider(props: IProviderProps): ReactElement {
-  const { children, colorScheme = 'light', ...themeConfig } = props;
+  const { children, ...themeConfig } = props;
   const themes = createThemes(themeConfig);
   const { main } = themes;
 
   return (
     <themeContext.Provider value={themes}>
-      <MantineProvider
-        theme={{ ...main, colorScheme }}
-        withGlobalStyles
-        withNormalizeCSS
-      >
-        {children}
-      </MantineProvider>
+      <MantineProvider theme={main}>{children}</MantineProvider>
     </themeContext.Provider>
   );
 }

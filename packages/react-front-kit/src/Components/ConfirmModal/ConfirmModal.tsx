@@ -5,7 +5,7 @@ import type { ReactElement } from 'react';
 
 import { Button, Modal } from '@mantine/core';
 
-import { useStyles } from './ConfirmModal.style';
+import classes from './ConfirmModal.module.css';
 
 export type IConfirmModalProps = IConfirmModal;
 
@@ -22,7 +22,7 @@ export function ConfirmModal(props: IConfirmModalProps): ReactElement {
     title,
     ...modalProps
   } = props;
-  const { classes } = useStyles();
+
   return (
     <Modal
       centered

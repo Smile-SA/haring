@@ -10,7 +10,7 @@ import { ActionBar } from '../ActionBar/ActionBar';
 import { DocumentBox } from '../DocumentBox/DocumentBox';
 import { SelectableList } from '../SelectableList/SelectableList';
 
-import { useStyles } from './DocumentList.style';
+import classes from './DocumentList.module.css';
 
 export interface IDocument extends Record<string, unknown> {
   author?: string;
@@ -63,7 +63,6 @@ export function DocumentList(props: IDocumentListProps): ReactElement {
         .filter(isNotNullNorEmpty),
     [documents, selectedDocuments],
   );
-  const { classes } = useStyles();
 
   function handleSelectChange(index: number, isSelected: boolean): void {
     onDocumentSelected?.(documents[index], isSelected);

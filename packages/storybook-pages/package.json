@@ -7,7 +7,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@mantine/carousel": "^6.0.21",
+    "@mantine/carousel": "^7.5.1",
     "@smile/react-front-kit": "*",
     "@smile/react-front-kit-dropzone": "*",
     "@smile/react-front-kit-shared": "*",
@@ -19,10 +19,9 @@
   },
   "peerDependencies": {
     "@emotion/react": ">=11",
-    "@mantine/core": "6",
-    "@mantine/dates": "6",
-    "@mantine/hooks": "6",
-    "@mantine/styles": "6",
+    "@mantine/core": "7",
+    "@mantine/dates": "7",
+    "@mantine/hooks": "7",
     "@phosphor-icons/react": ">=2",
     "react": ">=18.0",
     "react-dom": ">=18.0"

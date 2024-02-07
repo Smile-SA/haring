@@ -1,13 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from '@mantine/core';
-import { MANTINE_COLORS } from '@mantine/styles';
+import { Button, DEFAULT_THEME } from '@mantine/core';
 import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/storybook-utils';
 import { useArgs } from '@storybook/preview-api';
 
 import { ConfirmModal as Cmp } from './ConfirmModal';
 
-const colorOptions = ['primary'].concat(MANTINE_COLORS);
+const colorOptions = Object.keys(DEFAULT_THEME.colors);
 
 const meta = {
   argTypes: {

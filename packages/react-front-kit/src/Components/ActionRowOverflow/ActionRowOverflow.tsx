@@ -2,11 +2,11 @@
 
 import type {
   ButtonProps,
+  FloatingPosition,
   GroupProps,
   ModalProps,
   TooltipProps,
 } from '@mantine/core';
-import type { FloatingPosition } from '@mantine/core/lib/Floating';
 import type { Record } from '@phosphor-icons/react';
 import type {
   IAction,
@@ -15,55 +15,12 @@ import type {
 import type { ReactElement, ReactNode } from 'react';
 
 import { ActionIcon, Button, Group, Menu, Tooltip } from '@mantine/core';
-import { createStyles } from '@mantine/styles';
 import { DotsThreeVertical } from '@phosphor-icons/react';
 import { useState } from 'react';
 
 import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
 
-const useStyles = createStyles((theme) => ({
-  actionIconCompact: {
-    '&[aria-expanded=true]': {
-      '& svg': {
-        filter: 'contrast(8) invert(1)',
-      },
-      backgroundColor: theme.fn.primaryColor(),
-    },
-    borderRadius: '28px',
-    height: '28px',
-    width: '28px',
-  },
-  actionIconDefault: {
-    borderRadius: '32px',
-    height: '32px',
-    width: '32px',
-  },
-  buttonIcon: {
-    [theme.fn.smallerThan('md')]: {
-      marginRight: 0,
-    },
-  },
-  buttonLabel: {
-    [theme.fn.smallerThan('md')]: {
-      display: 'none',
-    },
-  },
-  buttonRoot: {
-    [theme.fn.smallerThan('md')]: {
-      height: '32px',
-      padding: '0',
-      width: '32px',
-    },
-  },
-  groupRoot: {
-    gap: '8px',
-    justifyContent: 'center',
-  },
-  menuDropdown: {
-    borderRadius: '4px',
-    minWidth: '200px',
-  },
-}));
+import classes from './ActionRowOverflow.module.css';
 
 const defaultTooltipProps = {
   color: 'gray.7',
@@ -106,7 +63,6 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
   > | null>(null);
   const visibleRowActions = actions.slice(0, rowActionNumber);
   const menuRowActions = rowActionNumber ? actions.slice(rowActionNumber) : [];
-  const { classes } = useStyles();
 
   function setModal(action: IActionRowOverflowAction<Data>): void {
     setConfirmAction({
@@ -177,12 +133,12 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
       <Button
         key={action.id}
         classNames={{
-          icon: classes.buttonIcon,
           label: classes.buttonLabel,
           root: classes.buttonRoot,
+          section: classes.buttonIcon,
         }}
         color={action.color}
-        leftIcon={getActionIcon(action)}
+        leftSection={getActionIcon(action)}
         onClick={() => handleAction(action)}
         variant={action.color ? 'filled' : 'default'}
         {...getActionComponentProps(action)}
@@ -203,6 +159,7 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
           onClick={() => handleAction(action)}
           radius={4}
           type="button"
+          variant="subtle"
           {...getActionComponentProps(action)}
         >
           {getActionIcon(action)}
@@ -216,7 +173,7 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
     <Menu.Item
       key={action.id}
       color={action.color}
-      icon={getActionIcon(action)}
+      leftSection={getActionIcon(action)}
       onClick={() => handleAction(action)}
       {...getActionComponentProps(action)}
     >
@@ -251,7 +208,7 @@ export function ActionRowOverflow<Data extends Record<string, unknown>>(
                     onClick={(e) => e.stopPropagation()}
                     radius={4}
                     type="button"
-                    variant="light"
+                    variant={isCompactStyle ? 'subtle' : 'default'}
                   >
                     <DotsThreeVertical size={16} weight="bold" />
                   </ActionIcon>

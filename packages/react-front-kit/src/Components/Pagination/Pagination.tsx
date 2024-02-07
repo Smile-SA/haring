@@ -1,35 +1,11 @@
 'use client';
-import type { PaginationProps } from '@mantine/core';
-import type { FlexProps } from '@mantine/core/lib/Flex/Flex';
-import type { SelectProps } from '@mantine/core/lib/Select/Select';
+import type { FlexProps, PaginationProps, SelectProps } from '@mantine/core';
 import type { IOptions } from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';
 
-import {
-  Flex,
-  Pagination as MantinePagination,
-  Select,
-  createStyles,
-} from '@mantine/core';
+import { Flex, Pagination as MantinePagination, Select } from '@mantine/core';
 
-const useStyles = createStyles((theme, styleTransparent: boolean) => ({
-  container: {
-    justifyContent: 'space-between',
-    [theme.fn.smallerThan('sm')]: {
-      flexDirection: 'column',
-      rowGap: '16px',
-    },
-  },
-  control: {
-    backgroundColor: styleTransparent ? 'transparent' : '',
-    borderColor: styleTransparent ? 'transparent' : '',
-  },
-  pagination: {
-    [theme.fn.smallerThan('sm')]: {
-      justifyContent: 'center',
-    },
-  },
-}));
+import classes from './Pagination.module.css';
 
 export interface IPaginationProps extends FlexProps {
   isTransparent?: boolean;
@@ -59,10 +35,9 @@ export function Pagination(props: IPaginationProps): ReactElement {
     totalPages,
     ...flexProps
   } = props;
-  const { classes } = useStyles(isTransparent);
 
   /* methods */
-  function handleChangeItemsPerPage(value: string): void {
+  function handleChangeItemsPerPage(value: string | null): void {
     if (value) {
       onItemsPerPageChange?.(Number(value));
     }
@@ -92,11 +67,16 @@ export function Pagination(props: IPaginationProps): ReactElement {
       ) : null}
       <MantinePagination
         className={classes.pagination}
-        classNames={{ control: classes.control }}
         data-testid="pagination-page"
         onChange={handleChangePage}
         radius="sm"
         size="sm"
+        styles={{
+          control: {
+            backgroundColor: isTransparent ? 'transparent' : '',
+            borderColor: isTransparent ? 'transparent' : '',
+          },
+        }}
         total={totalPages}
         value={page}
         withControls={false}

@@ -7,7 +7,7 @@ import { ActionIcon, Collapse, Paper, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
 
-import { useStyles } from './InfoCard.style';
+import classes from './InfoCard.module.css';
 import { Motif } from './Motif';
 
 export type IMantineBreakpoint = 'lg' | 'md' | 'sm' | 'xl' | 'xs';
@@ -42,12 +42,11 @@ export function InfoCard(props: IInfoCardProps): ReactElement {
     leftContainerStyle,
     motif = <Motif />,
     rightContainerStyle,
-    responsiveBreakpoint = 'sm',
+    // responsiveBreakpoint = 'sm',
     title,
     ...PaperProps
   } = props;
 
-  const { classes } = useStyles(responsiveBreakpoint);
   const [opened, { toggle }] = useDisclosure(true);
 
   return (
