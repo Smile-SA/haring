@@ -17,7 +17,10 @@ function defaultSelectedElementsText(n: number): string {
 }
 
 export interface IThumbnailGridProps extends SimpleGridProps {
-  actionBarProps?: IActionBarProps<IThumbnail>;
+  actionBarProps?: Omit<
+    IActionBarProps<IThumbnail>,
+    'actions' | 'selectedElements'
+  >;
   actions?: IThumbnailAction[];
   onThumbnailClick?: (item: IThumbnail, index: number) => void;
   selectedElementsText?: (numberOfSelectedElements: number) => string;

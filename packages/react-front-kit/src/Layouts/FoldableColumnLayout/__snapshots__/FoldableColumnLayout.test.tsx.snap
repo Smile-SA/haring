@@ -37,7 +37,7 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
       <style
         data-mantine-styles="inline"
       >
-        .__m__-r2{--grid-gutter:var(--mantine-spacing-md);}
+        .__m__-r2{--grid-gutter:0rem;}@media(min-width: 62em){.__m__-r2{--grid-gutter:var(--mantine-spacing-lg);}}
       </style>
       <div
         class="m-410352e9 mantine-Grid-root __m__-r2"
@@ -154,7 +154,7 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
     <style
       data-mantine-styles="inline"
     >
-      .__m__-ri{--grid-gutter:var(--mantine-spacing-xl);}
+      .__m__-ri{--grid-gutter:var(--mantine-spacing-lg);}
     </style>
     <div
       class="m-410352e9 mantine-Grid-root __m__-ri"
