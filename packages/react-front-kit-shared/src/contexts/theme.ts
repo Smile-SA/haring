@@ -1,5 +1,5 @@
 import type { IThemes } from '../types';
-import type { MantineThemeOverride } from '@mantine/styles';
+import type { MantineThemeOverride } from '@mantine/core';
 
 import { createContext, useContext } from 'react';
 

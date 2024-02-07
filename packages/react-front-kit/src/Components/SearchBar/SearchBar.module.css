@@ -1,0 +1,105 @@
+.closeIcon {
+  &:focus,
+  &:focus-within {
+    outline: none;
+  }
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    right: -14px;
+    transform: scale(0.6);
+  }
+}
+
+.container {
+  &:focus,
+  &:focus-within {
+    outline: none;
+  }
+
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  padding-right: 0;
+  pointer-events: none;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    font-size: 14px;
+    height: 2.8rem;
+    min-height: 2.8rem;
+  }
+}
+
+.input {
+  &:focus,
+  &:focus-within {
+    outline: 0.125rem solid var(--mantine-color-orange-5);
+  }
+
+  border-radius: 1.5rem;
+  height: 100%;
+  justify-content: stretch;
+  padding-left: calc(3.125rem / 3);
+  padding-right: calc(3.125rem / 3);
+}
+
+.inputInner {
+  font-size: 18px;
+  height: 100%;
+  padding-left: 2px;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    font-size: 14px;
+  }
+}
+
+.inputInnerRoot {
+  height: 100%;
+}
+
+.inputRoot {
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: 100%;
+  pointer-events: auto;
+}
+
+.leftSection {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  pointer-events: auto;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    flex-wrap: nowrap;
+    font-size: 14px;
+    max-width: 50%;
+    min-width: 35%;
+    text-wrap: none;
+  }
+}
+
+.separator {
+  height: 75%;
+  margin: auto 1.5rem;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin light {
+    border: 1px solid var(--mantine-color-gray-7);
+  }
+  /*noinspection CssInvalidAtRule*/
+  @mixin dark {
+    border: 1px solid var(--mantine-color-dark-8);
+  }
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    height: 65%;
+    margin: 10px;
+  }
+}

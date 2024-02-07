@@ -7,20 +7,12 @@ import type {
 } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  MantineProvider,
-  Switch,
-  Text,
-} from '@mantine/core';
+import { Box, Button, Container, Grid, Switch, Text } from '@mantine/core';
 import { useUncontrolled } from '@mantine/hooks';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
-import { useMainTheme } from '@smile/react-front-kit-shared';
+import { NestedProvider, useMainTheme } from '@smile/react-front-kit-shared';
 
-import { useStyles } from './FoldableColumnLayout.style';
+import classes from './FoldableColumnLayout.module.css';
 
 export interface IFoldableColumnLayoutProps {
   boxMotif?: ReactNode;
@@ -66,7 +58,6 @@ export function FoldableColumnLayout(
     });
   const main = useMainTheme();
   const theme = topBlockTheme ?? main;
-  const { classes } = useStyles();
 
   function handleSidebarVisibleToggle(isVisible: boolean): void {
     handleIsColumnVisibleChange(isVisible);
@@ -74,7 +65,7 @@ export function FoldableColumnLayout(
 
   return (
     <>
-      <MantineProvider theme={theme}>
+      <NestedProvider theme={theme}>
         <Box
           className={`${classes.box} ${boxMotif ? classes.boxWithMotif : ''}`}
           color="primary"
@@ -114,7 +105,7 @@ export function FoldableColumnLayout(
             )}
           </Grid>
         </Box>
-      </MantineProvider>
+      </NestedProvider>
       <div
         className={`${classes.collapseButton} ${
           boxMotif ? classes.collapseButtonWithMotif : ''
@@ -122,13 +113,18 @@ export function FoldableColumnLayout(
       >
         <Button
           onClick={() => handleSidebarVisibleToggle(!isColumnVisibleState)}
-          rightIcon={isColumnVisibleState ? <CaretUp /> : <CaretDown />}
+          rightSection={isColumnVisibleState ? <CaretUp /> : <CaretDown />}
         >
           {sidebarToggleLabel}
         </Button>
       </div>
       <Container className={classes.container} fluid {...containerProps}>
-        <Grid className={classes.contentGrid} gutter="xl" pt={12}>
+        <Grid
+          className={classes.contentGrid}
+          gutter="xl"
+          overflow="hidden"
+          pt={12}
+        >
           <Grid.Col
             aria-hidden={!isColumnVisibleState}
             className={classes.sidebar}

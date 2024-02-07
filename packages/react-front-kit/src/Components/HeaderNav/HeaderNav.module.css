@@ -1,0 +1,55 @@
+.activeLabel {
+  & span > span > button {
+    color: var(--mantine-color-dark-6);
+  }
+}
+
+.activeRootLabel {
+  & span > span > button {
+    color: var(--mantine-primary-color-filled);
+  }
+}
+
+.dropdown {
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+
+.menu {
+  &:hover {
+    background-color: var(--mantine-color-gray-1);
+  }
+
+  background-color: transparent;
+}
+
+.navLink {
+  border-radius: 10px;
+  width: unset;
+}
+
+.navLinkLabel {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinkParentLabel {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.rootMenu {
+  & button {
+    color: var(--mantine-color-dark-6);
+  }
+
+  &:not(:first-child) {
+    margin-top: 32px;
+  }
+
+  font-size: 18px;
+}

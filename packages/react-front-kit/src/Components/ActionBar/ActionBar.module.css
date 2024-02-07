@@ -1,0 +1,10 @@
+.actionBar {
+  align-items: center;
+  background-color: var(--mantine-primary-color-filled);
+  border-radius: 4px;
+  color: var(--mantine-color-white);
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  width: 100%;
+}

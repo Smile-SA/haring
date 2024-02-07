@@ -2,14 +2,20 @@
 
 import type { ReactNode } from 'react';
 
-import { Box, Button, Image, useMantineTheme } from '@mantine/core';
+import {
+  Box,
+  Button,
+  Image,
+  getThemeColor,
+  useMantineTheme,
+} from '@mantine/core';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
 import { FileIcon } from '@smile/react-front-kit-shared';
 import { useState } from 'react';
 
 import defaultImage from '../../../assets/defaultImage.jpg';
 
-import { useStyles } from './DocumentBox.style';
+import classes from './DocumentBox.module.css';
 
 export interface IDocumentBoxProps {
   author?: ReactNode;
@@ -37,17 +43,17 @@ export function DocumentBox(props: IDocumentBoxProps): ReactNode {
   } = props;
   const [mobileImageDisplayed, setMobileImageDisplayed] = useState(false);
 
-  const { classes } = useStyles();
   const theme = useMantineTheme();
 
   return (
     <Box
-      className={`${classes.root} ${onCardClick ? classes.clickable : ''}`}
+      className={`${classes.root} ${
+        onCardClick ? classes.clickable : ''
+      } documentBoxRef`}
       onClick={onCardClick}
     >
       <Image
         classNames={{
-          image: classes.image,
           root: `${classes.imageRoot} ${
             mobileImageDisplayed ? classes.imageRootMobileDisplayed : ''
           }`,
@@ -58,16 +64,16 @@ export function DocumentBox(props: IDocumentBoxProps): ReactNode {
       <div>
         <div>
           <div className={classes.header}>
-            <div className={classes.iconContainer}>
+            <div className={`${classes.iconContainer} documentBoxIconRef`}>
               <FileIcon
                 className={classes.icon}
-                color={theme.fn.primaryColor()}
+                color={getThemeColor(theme.primaryColor, theme)}
                 type={iconType}
                 weight="light"
               />
             </div>
             <div className={classes.headerContent}>
-              <div className={classes.headerTop}>
+              <div className={`${classes.headerTop} documentBoxHeaderTopRef`}>
                 {Boolean(title) && (
                   <span className={classes.title}>{title}</span>
                 )}
@@ -93,7 +99,7 @@ export function DocumentBox(props: IDocumentBoxProps): ReactNode {
         <Button
           className={classes.mobileImageButton}
           onClick={() => setMobileImageDisplayed(!mobileImageDisplayed)}
-          rightIcon={mobileImageDisplayed ? <CaretUp /> : <CaretDown />}
+          rightSection={mobileImageDisplayed ? <CaretUp /> : <CaretDown />}
           variant="default"
         >
           {mobileImageButtonLabel}

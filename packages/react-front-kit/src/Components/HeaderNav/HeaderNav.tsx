@@ -3,12 +3,12 @@
 import type { IMenuItem } from '../SidebarMenu/SidebarMenu';
 import type { ElementType, ReactElement, ReactNode } from 'react';
 
-import { Menu, NavLink, useMantineTheme } from '@mantine/core';
+import { Menu, NavLink, getThemeColor, useMantineTheme } from '@mantine/core';
 import { CaretDown } from '@phosphor-icons/react';
 
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 
-import { useStyles } from './HeaderNav.style';
+import classes from './HeaderNav.module.css';
 
 function recursiveNavLinks<T extends number | string>(
   menus: IHeaderNavMenu<T>[],
@@ -47,7 +47,6 @@ export function HeaderNav<T extends number | string>(
 ): ReactElement {
   const { menus, isMobile = false, navLinkComponent = 'a' } = props;
   const theme = useMantineTheme();
-  const { classes } = useStyles();
 
   return (
     <>
@@ -91,7 +90,10 @@ export function HeaderNav<T extends number | string>(
                     component="button"
                     label={menu.label}
                     rightSection={
-                      <CaretDown color={theme.fn.primaryColor()} size={16} />
+                      <CaretDown
+                        color={getThemeColor(theme.primaryColor, theme)}
+                        size={16}
+                      />
                     }
                   />
                 </Menu.Target>
@@ -99,7 +101,7 @@ export function HeaderNav<T extends number | string>(
                   {recursiveNavLinks(
                     menu.children,
                     navLinkComponent,
-                    classes.navLink,
+                    classes.navLink as string,
                   )}
                 </Menu.Dropdown>
               </Menu>

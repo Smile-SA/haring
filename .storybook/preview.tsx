@@ -1,25 +1,18 @@
-import type { Preview, StoryContext, StoryFn } from '@storybook/react';
-import type { ReactElement } from 'react';
+/* eslint-disable import/order */
 
-import { MantineProvider } from '@mantine/core';
+import type { Preview } from '@storybook/react';
 
-import { Provider, themes } from '@smile/react-front-kit-shared';
+import '@mantine/core/styles.css';
+import '@mantine/dates/styles.css';
+import '@mantine/dropzone/styles.css';
+import '@mantine/carousel/styles.css';
+import { themes } from '@smile/react-front-kit-shared';
+import '@smile/react-front-kit-shared/style.css';
+import '@smile/react-front-kit/style.css';
+import '@smile/react-front-kit-dropzone/style.css';
+import '@smile/react-front-kit-table/style.css';
 
-function withProvider(Story: StoryFn, context: StoryContext): ReactElement {
-  return (
-    <Provider>
-      <MantineProvider
-        theme={{
-          ...themes[context.globals.theme as 'main' | 'primary' | 'secondary']
-            .theme,
-          colorScheme: context.globals.colorScheme as 'dark' | 'light',
-        }}
-      >
-        <Story />
-      </MantineProvider>
-    </Provider>
-  );
-}
+import WithProvider from './WithProvider';
 
 const style = {
   border: '1px solid lightgrey',
@@ -28,7 +21,7 @@ const style = {
   width: 14,
 };
 const preview: Preview = {
-  decorators: [withProvider],
+  decorators: [WithProvider],
   globalTypes: {
     colorScheme: {
       defaultValue: 'light',

@@ -11,6 +11,7 @@ import {
   Image,
   Menu,
   Text,
+  getThemeColor,
   useMantineTheme,
 } from '@mantine/core';
 import { DotsThreeVertical } from '@phosphor-icons/react';
@@ -20,7 +21,7 @@ import { useState } from 'react';
 import defaultImage from '../../../assets/defaultImage.jpg';
 import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
 
-import { useStyles } from './Thumbnail.style';
+import classes from './Thumbnail.module.css';
 
 export interface IThumbnailProps extends IThumbnail {
   actions?: IThumbnailAction[];
@@ -38,8 +39,6 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
   } = props;
   const [confirmAction, setConfirmAction] =
     useState<IActionConfirmModalProps<IThumbnail> | null>(null);
-
-  const { classes } = useStyles();
 
   function clearConfirmAction(): void {
     setConfirmAction(null);
@@ -82,7 +81,11 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
   return (
     <>
       <Box
-        bg={String(selected ? theme.fn.primaryColor() : theme.colors.gray[1])}
+        bg={String(
+          selected
+            ? getThemeColor(theme.primaryColor, theme)
+            : theme.colors.gray[1],
+        )}
         className={rootClasses.join(' ')}
         onClick={onClick}
       >
@@ -91,13 +94,15 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
             <FileIcon
               className={classes.fileIcon}
               color={String(
-                selected ? theme.colors.gray[1] : theme.fn.primaryColor(),
+                selected
+                  ? theme.colors.gray[1]
+                  : getThemeColor(theme.primaryColor, theme),
               )}
               size={22}
               type={iconType}
               weight="bold"
             />
-            <Text component="h3" truncate>
+            <Text className={classes.title} component="h3" truncate>
               {label}
             </Text>
           </div>
@@ -128,7 +133,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}
                       color={action.color}
-                      icon={
+                      leftSection={
                         typeof action.icon === 'function'
                           ? action.icon(props)
                           : action.icon

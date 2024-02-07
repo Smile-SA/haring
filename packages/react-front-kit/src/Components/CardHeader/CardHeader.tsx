@@ -3,20 +3,9 @@
 import type { BoxProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
-import { Box, createStyles } from '@mantine/core';
+import { Box } from '@mantine/core';
 
-const useStyles = createStyles((theme) => ({
-  container: {
-    display: 'flex',
-    gap: '16px',
-  },
-  root: {
-    backgroundColor: theme.fn.primaryColor(),
-    boxShadow: '0px 8.687101364135742px 6.949680805206299px 0px #00000006',
-    color: theme.white,
-    padding: '24px 32px',
-  },
-}));
+import classes from './CardHeader.module.css';
 
 export interface ICardHeaderProps extends BoxProps {
   children: ReactNode;
@@ -26,7 +15,7 @@ export interface ICardHeaderProps extends BoxProps {
 
 export function CardHeader(props: ICardHeaderProps): ReactElement {
   const { children, leftSection, rightSection, ...rootProps } = props;
-  const { classes } = useStyles();
+
   return (
     <Box className={classes.root} {...rootProps}>
       <div className={classes.container}>

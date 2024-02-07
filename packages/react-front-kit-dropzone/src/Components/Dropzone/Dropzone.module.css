@@ -1,0 +1,80 @@
+.buttonPlus {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.cardFile {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+  width: 80px;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin light {
+    background: var(--mantine-color-gray-2);
+  }
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin dark {
+    background: var(--mantine-color-black);
+  }
+}
+
+.cardFileButtonClose {
+  position: absolute;
+  right: -7px;
+  top: -7px;
+}
+
+.cardFileText {
+  display: inline-block;
+  font-size: 12px;
+  height: fit-content;
+  margin: auto;
+  width: 100%;
+}
+
+.cardFileText:first-of-type {
+  font-weight: 600;
+}
+
+.cardsFile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dropzoneBrowse {
+  align-items: center;
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+.dropzoneInner {
+  margin: auto;
+  pointer-events: auto;
+  text-align: center;
+}
+
+.dropzoneInner p {
+  margin: 10px;
+}
+
+.dropzoneRoot {
+  display: flex;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.eye {
+  margin-right: 8px;
+}

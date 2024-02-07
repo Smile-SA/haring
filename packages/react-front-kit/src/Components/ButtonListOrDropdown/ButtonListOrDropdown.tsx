@@ -3,15 +3,10 @@ import type { ButtonProps, MenuProps } from '@mantine/core';
 import type { IItems } from '@smile/react-front-kit-shared';
 import type { ReactElement, ReactNode } from 'react';
 
-import { Button, Menu, createStyles } from '@mantine/core';
+import { Button, Menu } from '@mantine/core';
 import { useUncontrolled } from '@mantine/hooks';
 
-const useStyles = createStyles((theme) => ({
-  buttonActive: {
-    backgroundColor: theme.colors[theme.primaryColor][8],
-    fontWeight: 700,
-  },
-}));
+import classes from './ButtonListOrDropdown.module.css';
 
 export interface IButtonListOrDropdownProps extends MenuProps {
   buttonProps?: ButtonProps;
@@ -34,8 +29,6 @@ export function ButtonListOrDropdown(
     onAction,
     ...MenuProps
   } = props;
-
-  const { classes } = useStyles();
 
   const [_current, setCurrent] = useUncontrolled({
     defaultValue: defaultCurrent,

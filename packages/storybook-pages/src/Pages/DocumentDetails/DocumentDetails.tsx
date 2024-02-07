@@ -9,7 +9,6 @@ import {
   Button,
   Flex,
   Grid,
-  MantineProvider,
   Menu,
   Space,
   Tabs,
@@ -21,7 +20,11 @@ import {
   Preview,
   ResponsiveTabs,
 } from '@smile/react-front-kit';
-import { FolderMove, usePrimaryTheme } from '@smile/react-front-kit-shared';
+import {
+  FolderMove,
+  NestedProvider,
+  usePrimaryTheme,
+} from '@smile/react-front-kit-shared';
 
 import {
   CardAction,
@@ -32,13 +35,12 @@ import {
   CardsMetadata,
 } from '../pages.mock';
 
-import { useStyles } from './DocumentDetails.style';
+import classes from './DocumentDetails.module.css';
 
 /**
  * Example Page of a document preview, actions and attributes in a `ResponsiveTabs` component
  */
 export function DocumentDetails(): ReactElement {
-  const { classes } = useStyles();
   const primary = usePrimaryTheme();
 
   const tabs = [
@@ -62,7 +64,10 @@ export function DocumentDetails(): ReactElement {
   return (
     <AppShell
       classNames={{ main: classes.main }}
-      header={
+      header={{ height: 90 }}
+      padding={0}
+    >
+      <AppShell.Header>
         <Header
           childrenComponent="nav"
           left={<img alt="logo" height="58" src="./logo.svg" width="128" />}
@@ -91,48 +96,48 @@ export function DocumentDetails(): ReactElement {
           <a href="#">Espace workflow</a>
           <a href="#">Archives</a>
         </Header>
-      }
-      padding={0}
-    >
-      <Grid className={classes.grid} grow m={0}>
-        <Grid.Col span={7}>
-          <Flex align="flex-start" direction="column" p="26px 64px">
-            <div className={classes.colLeftBar}>
-              <Button leftIcon={<CaretLeft />} p={0} variant="transparent">
-                <span style={{ fontSize: 14 }}>Retour à la liste</span>
-              </Button>
-              <div className={classes.actionIcons}>
-                <ActionIcon radius={4} size={40} variant="light">
-                  <Star size={17} />
-                </ActionIcon>
-                <ActionIcon radius={4} size={40} variant="light">
-                  <FolderMove size={17} />
-                </ActionIcon>
+      </AppShell.Header>
+      <AppShell.Main>
+        <Grid className={classes.grid} grow m={0} overflow="hidden">
+          <Grid.Col span={7}>
+            <Flex align="flex-start" direction="column" p="26px 64px">
+              <div className={classes.colLeftBar}>
+                <Button leftSection={<CaretLeft />} p={0} variant="transparent">
+                  <span style={{ fontSize: 14 }}>Retour à la liste</span>
+                </Button>
+                <div className={classes.actionIcons}>
+                  <ActionIcon radius={4} size={40} variant="light">
+                    <Star size={17} />
+                  </ActionIcon>
+                  <ActionIcon radius={4} size={40} variant="light">
+                    <FolderMove size={17} />
+                  </ActionIcon>
+                </div>
               </div>
-            </div>
-            <Space h="xl" />
-            <Preview url="./example.pdf" />
-          </Flex>
-        </Grid.Col>
-        <Grid.Col className={classes.colRight} span={5}>
-          <MantineProvider theme={primary}>
-            <ResponsiveTabs defaultValue="1" tabs={tabs}>
               <Space h="xl" />
-              <Tabs.Panel value="1">
-                <>{CardAction}</>
+              <Preview url="./example.pdf" />
+            </Flex>
+          </Grid.Col>
+          <Grid.Col className={classes.colRight} span={5}>
+            <NestedProvider theme={primary}>
+              <ResponsiveTabs defaultValue="1" tabs={tabs}>
                 <Space h="xl" />
-                <>{CardMetadata}</>
-                <Space h="xl" />
-                <>{CardPermissions}</>
-              </Tabs.Panel>
-              <Tabs.Panel value="2">{CardsMetadata}</Tabs.Panel>
-              <Tabs.Panel value="3">{CardNative}</Tabs.Panel>
-              <Tabs.Panel value="4">{CardPermissions}</Tabs.Panel>
-              <Tabs.Panel value="5">{CardIdentity}</Tabs.Panel>
-            </ResponsiveTabs>
-          </MantineProvider>
-        </Grid.Col>
-      </Grid>
+                <Tabs.Panel value="1">
+                  <>{CardAction}</>
+                  <Space h="xl" />
+                  <>{CardMetadata}</>
+                  <Space h="xl" />
+                  <>{CardPermissions}</>
+                </Tabs.Panel>
+                <Tabs.Panel value="2">{CardsMetadata}</Tabs.Panel>
+                <Tabs.Panel value="3">{CardNative}</Tabs.Panel>
+                <Tabs.Panel value="4">{CardPermissions}</Tabs.Panel>
+                <Tabs.Panel value="5">{CardIdentity}</Tabs.Panel>
+              </ResponsiveTabs>
+            </NestedProvider>
+          </Grid.Col>
+        </Grid>
+      </AppShell.Main>
     </AppShell>
   );
 }

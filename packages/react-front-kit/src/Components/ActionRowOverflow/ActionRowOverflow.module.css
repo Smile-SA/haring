@@ -1,0 +1,52 @@
+.actionIconCompact {
+  & + [aria-expanded='true'] {
+    & svg {
+      filter: contrast(8) invert(1);
+    }
+
+    background-color: var(--mantine-primary-color-filled);
+  }
+
+  border-radius: 28px;
+  height: 28px;
+  width: 28px;
+}
+
+.actionIconDefault {
+  border-radius: 32px;
+  height: 32px;
+  width: 32px;
+}
+
+.buttonIcon {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    margin-right: 0;
+  }
+}
+
+.buttonLabel {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    display: none;
+  }
+}
+
+.buttonRoot {
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-md {
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+}
+
+.groupRoot {
+  gap: 8px;
+  justify-content: center;
+}
+
+.menuDropdown {
+  border-radius: 4px;
+  min-width: 200px;
+}

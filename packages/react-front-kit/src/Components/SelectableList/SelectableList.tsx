@@ -2,33 +2,8 @@ import type { StackProps } from '@mantine/core';
 import type { ReactElement } from 'react';
 
 import { Checkbox, Group, Stack } from '@mantine/core';
-import { createStyles, getStylesRef } from '@mantine/styles';
 
-const useStyles = createStyles((theme) => ({
-  checkbox: {
-    ref: getStylesRef('selectableListCheckbox'),
-  },
-  element: {
-    ':not(:last-child):after': {
-      [theme.fn.smallerThan('sm')]: {
-        bottom: '-25px',
-      },
-      border: '1px #e9ecef solid',
-      bottom: '-41px',
-      content: '""',
-      position: 'absolute',
-      width: '100%',
-    },
-    position: 'relative',
-  },
-  list: {
-    [theme.fn.smallerThan('sm')]: {
-      gap: 48,
-    },
-    gap: 80,
-    ref: getStylesRef('selectableList'),
-  },
-}));
+import classes from './SelectableList.module.css';
 
 export interface ISelectableListProps extends StackProps {
   children: ReactElement[];
@@ -44,24 +19,22 @@ export function SelectableList(props: ISelectableListProps): ReactElement {
     ...stackProps
   } = props;
 
-  const { classes } = useStyles();
-
   return (
-    <Stack className={classes.list} {...stackProps}>
+    <Stack className={`${classes.list} selectableListRef`} {...stackProps}>
       {children.map((element, index) => (
         // eslint-disable-next-line react/no-array-index-key
         <Group
           key={element.key ?? index}
           className={classes.element}
-          noWrap
-          spacing={32}
+          gap={32}
+          wrap="nowrap"
         >
           <Checkbox
             checked={selectedIndexes.includes(index)}
-            className={classes.checkbox}
+            className="selectableListCheckboxRef"
             onChange={(e) => onSelectChange?.(index, e.currentTarget.checked)}
             radius={2}
-            size={16}
+            size="16"
           />
           {element}
         </Group>

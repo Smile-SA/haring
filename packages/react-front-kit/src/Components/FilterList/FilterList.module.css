@@ -1,0 +1,31 @@
+.filterComponent {
+  min-width: 184px;
+}
+
+.manageFilterModalBody {
+  padding: 24px;
+}
+
+.manageFilterModalHeader {
+  margin-bottom: 16px;
+  padding: 24px 24px 0 24px;
+}
+
+.manageFilterModalTitle {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.manageFiltersButton {
+  align-items: start;
+  background-color: transparent;
+  border: none;
+}
+
+.manageFiltersLabel {
+  gap: 4px;
+}
+
+.submitButton {
+  min-width: 184px;
+}

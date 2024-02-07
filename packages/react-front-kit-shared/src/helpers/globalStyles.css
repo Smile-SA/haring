@@ -1,0 +1,52 @@
+.mantine-Carousel-control {
+  height: 42px;
+  width: 42px;
+}
+
+.mantine-Carousel-control svg {
+  color: var(--mantine-primary-color-9);
+}
+
+.mantine-Carousel-controls {
+  padding: 0 5%;
+}
+
+.mantine-Carousel-indicator {
+  height: 4px;
+  transition-duration: 500ms;
+  width: 12px;
+}
+
+.mantine-Carousel-indicator[data-active='true'] {
+  transition-duration: 500ms;
+  width: 32px;
+}
+
+.mantine-Carousel-indicators {
+  justify-content: flex-end;
+  padding: 3% 5%;
+}
+
+.mantine-Carousel-root {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+body {
+  background-color: light-dark(
+    var(--mantine-color-gray-1),
+    var(--mantine-color-gray-9)
+  );
+}
+
+.haring-active:active {
+  transform: none;
+}
+
+.haring-focus:focus {
+  outline: 2px solid var(--mantine-color-orange-5);
+}
