@@ -4,7 +4,7 @@ import type {
   ReactElement,
 } from 'react';
 
-import classes from './InfoCard.module.css';
+import classes from './Motif.module.css';
 
 export interface IMotifProps extends ComponentPropsWithoutRef<'svg'> {
   style?: CSSProperties;
@@ -12,6 +12,7 @@ export interface IMotifProps extends ComponentPropsWithoutRef<'svg'> {
 
 export function Motif(props: IMotifProps): ReactElement {
   const { style, ...svgProps } = props;
+
   return (
     <svg
       className={classes.motif}

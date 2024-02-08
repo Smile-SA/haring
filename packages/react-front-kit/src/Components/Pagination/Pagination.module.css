@@ -9,9 +9,15 @@
 }
 
 .pagination {
-  /*noinspection CssInvalidAtRule*/
-  @mixin smaller-than $mantine-breakpoint-sm {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.transparent {
+  background-color: transparent;
+  border-color: transparent;
+
+  &[data-active='true'] {
+    background-color: var(--mantine-primary-color-filled);
   }
 }

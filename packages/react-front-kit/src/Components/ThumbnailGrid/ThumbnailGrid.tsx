@@ -1,6 +1,7 @@
 'use client';
 
 import type { IThumbnail, IThumbnailAction } from '../../types';
+import type { IActionBarProps } from '../ActionBar/ActionBar';
 import type { SimpleGridProps } from '@mantine/core';
 import type { ReactElement } from 'react';
 
@@ -16,6 +17,10 @@ function defaultSelectedElementsText(n: number): string {
 }
 
 export interface IThumbnailGridProps extends SimpleGridProps {
+  actionBarProps?: Omit<
+    IActionBarProps<IThumbnail>,
+    'actions' | 'selectedElements'
+  >;
   actions?: IThumbnailAction[];
   onThumbnailClick?: (item: IThumbnail, index: number) => void;
   selectedElementsText?: (numberOfSelectedElements: number) => string;
@@ -25,6 +30,7 @@ export interface IThumbnailGridProps extends SimpleGridProps {
 /** Additional props will be forwarded to the [Mantine SimpleGrid component](https://mantine.dev/core/simple-grid) */
 export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
   const {
+    actionBarProps,
     actions = [],
     onThumbnailClick,
     selectedElementsText = defaultSelectedElementsText,
@@ -48,6 +54,7 @@ export function ThumbnailGrid(props: IThumbnailGridProps): ReactElement {
           actions={massActions}
           selectedElements={selectedElements}
           selectedElementsLabel={selectedElementsText}
+          {...actionBarProps}
         />
       )}
       <SimpleGrid {...simpleGridProps}>

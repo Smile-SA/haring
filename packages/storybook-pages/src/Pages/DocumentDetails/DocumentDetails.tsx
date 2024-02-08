@@ -64,7 +64,7 @@ export function DocumentDetails(): ReactElement {
   return (
     <AppShell
       classNames={{ main: classes.main }}
-      header={{ height: 90 }}
+      header={{ height: { base: 76, lg: 90 } }}
       padding={0}
     >
       <AppShell.Header>

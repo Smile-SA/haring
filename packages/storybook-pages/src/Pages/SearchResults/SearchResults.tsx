@@ -387,7 +387,7 @@ export function SearchResults(): ReactElement {
   return (
     <AppShell
       classNames={{ main: classes.main }}
-      header={{ height: 90 }}
+      header={{ height: { base: 76, lg: 90 } }}
       padding={0}
     >
       <AppShell.Header>
@@ -402,9 +402,9 @@ export function SearchResults(): ReactElement {
       </AppShell.Header>
       <AppShell.Main>
         <FoldableColumnLayout
-          boxMotif={<Motif style={{ fill: '#868E96', opacity: 0.1 }} />}
+          boxMotif={<Motif style={{ fill: '#868E96' }} />}
           boxProps={{
-            p: '50px 64px',
+            p: { lg: '48px 64px' },
             style: { background: theme.colors.gray[8] },
           }}
           isColumnVisible={isColumnVisible}
@@ -456,11 +456,6 @@ export function SearchResults(): ReactElement {
                     }
                     rightSection={<CaretDown size={14} />}
                     size="lg"
-                    styles={() => ({
-                      input: {
-                        padding: '0 calc(3.125rem  / 3) 0 40px',
-                      },
-                    })}
                     variant="unstyled"
                   />
                 }

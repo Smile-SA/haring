@@ -1,4 +1,6 @@
 .closeIcon {
+  /*color: var(--mantine-color-gray-9);*/
+
   &:focus,
   &:focus-within {
     outline: none;
@@ -12,17 +14,17 @@
 }
 
 .container {
-  &:focus,
-  &:focus-within {
-    outline: none;
-  }
-
   align-items: center;
   display: flex;
   flex-direction: row;
   padding-left: 0;
   padding-right: 0;
   pointer-events: none;
+
+  &:focus,
+  &:focus-within {
+    outline: none;
+  }
 
   /*noinspection CssInvalidAtRule*/
   @mixin smaller-than $mantine-breakpoint-sm {
@@ -58,6 +60,7 @@
 
 .inputInnerRoot {
   height: 100%;
+  min-height: unset;
 }
 
 .inputRoot {
@@ -65,6 +68,10 @@
   flex-shrink: 1;
   height: 100%;
   pointer-events: auto;
+}
+
+.inputSection {
+  width: 2.25rem;
 }
 
 .leftSection {

@@ -11,6 +11,7 @@
   margin-right: 1em;
   text-decoration: none;
   text-transform: capitalize;
+
   /*noinspection CssInvalidAtRule*/
   @mixin smaller-than $mantine-breakpoint-md {
     margin-left: 0;

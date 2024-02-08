@@ -136,7 +136,7 @@ export function BrowsingPage(): ReactElement {
   return (
     <AppShell
       classNames={{ main: classes.main }}
-      header={{ height: 90 }}
+      header={{ height: { base: 76, lg: 90 } }}
       padding={0}
     >
       <AppShell.Header>
@@ -277,7 +277,11 @@ export function BrowsingPage(): ReactElement {
             <TableGridView
               actions={actions}
               data={data}
-              gridProps={{ ...gridProps, cols: gridCols }}
+              gridProps={{
+                ...gridProps,
+                actionBarProps: { rowActionNumber: 1 },
+                cols: gridCols,
+              }}
               mt={24}
               style={{ gap: 20, padding: 16 }}
               tableProps={tableProps}

@@ -50,12 +50,6 @@
 }
 
 .rowActions {
-  /*noinspection CssInvalidAtRule*/
-  @mixin smaller-than $mantine-breakpoint-sm {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   & > * {
     align-items: center;
     display: flex;
@@ -75,6 +69,12 @@
   margin-right: 16px;
   opacity: 0;
   /*ref: getStylesRef(rowActions);*/
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .rowActionsMenuOpened {
