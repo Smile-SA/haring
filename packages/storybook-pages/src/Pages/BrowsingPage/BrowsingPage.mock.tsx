@@ -61,6 +61,14 @@ export const actions = [
     label: 'Télécharger',
   },
   {
+    color: 'red',
+    confirmModalProps: {
+      cancelLabel: 'Annuler',
+      children: <p>Confirmer ?</p>,
+      confirmColor: 'red',
+      confirmLabel: 'Supprimer',
+      title: 'Supprimer fichiers ?',
+    },
     icon: <Trash />,
     id: 'delete',
     isMassAction: true,

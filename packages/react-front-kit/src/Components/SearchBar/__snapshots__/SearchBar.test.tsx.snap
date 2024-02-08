@@ -48,9 +48,8 @@ exports[`SearchBar matches snapshot 1`] = `
               <button
                 aria-label="Clear"
                 class="haring-focus haring-active m-86a44da5 mantine-CloseButton-root m-87cf2631 mantine-UnstyledButton-root"
-                data-size="lg"
                 data-variant="white"
-                style="--cb-size: var(--cb-size-lg);"
+                style="--cb-size: calc(2.4375rem * var(--mantine-scale));"
                 type="button"
               >
                 <svg

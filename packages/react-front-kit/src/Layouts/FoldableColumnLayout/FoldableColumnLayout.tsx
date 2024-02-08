@@ -77,13 +77,17 @@ export function FoldableColumnLayout(
             </div>
           )}
           {Boolean(topBlock) && (
-            <Grid className={classes.topBlock} grow>
+            <Grid
+              className={classes.topBlock}
+              grow
+              gutter={{ base: 0, md: 'lg' }}
+            >
               <Grid.Col className={classes.topBlockContent} span={1}>
                 {topBlock}
               </Grid.Col>
             </Grid>
           )}
-          <Grid className={classes.topGrid}>
+          <Grid className={classes.topGrid} gutter={{ base: 0, md: 'lg' }}>
             <Grid.Col className={classes.topLeft} span={3}>
               <Switch
                 checked={isColumnVisibleState}
@@ -121,7 +125,7 @@ export function FoldableColumnLayout(
       <Container className={classes.container} fluid {...containerProps}>
         <Grid
           className={classes.contentGrid}
-          gutter="xl"
+          gutter="lg"
           overflow="hidden"
           pt={12}
         >

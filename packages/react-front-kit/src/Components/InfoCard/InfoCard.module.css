@@ -1,4 +1,7 @@
 .collapseButton {
+  margin: 12px;
+  color: var(--mantine-color-text);
+
   /*noinspection CssInvalidAtRule*/
   @mixin smaller-than $mantine-breakpoint-sm {
     margin: auto;
@@ -9,8 +12,6 @@
     &:hover {
       background-color: var(--mantine-color-gray-0);
     }
-
-    color: var(--mantine-color-black);
   }
   /*noinspection CssInvalidAtRule*/
   @mixin dark {
@@ -18,11 +19,7 @@
     &:hover {
       background-color: var(--mantine-color-black);
     }
-
-    color: var(--mantine-color-white);
   }
-  margin-top: 12px;
-  margin-bottom: 12px;
 }
 
 .collapseButtonCenter {
@@ -36,19 +33,18 @@
 }
 
 .container {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+
   /*noinspection CssInvalidAtRule*/
   @mixin smaller-than $mantine-breakpoint-sm {
     flex-direction: column;
     margin: auto;
     width: fit-content;
   }
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: space-between;
-  position: relative;
-  z-index: 1;
 }
 
 .contentItem {
@@ -68,60 +64,62 @@
 }
 
 .contentItems {
-  /*noinspection CssInvalidAtRule*/
-  @mixin smaller-than $mantine-breakpoint-sm {
-    margin-bottom: 16px;
-    min-width: 0;
-  }
-
   column-gap: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
   margin-bottom: 28px;
   row-gap: 10px;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    margin-bottom: 16px;
+    min-width: 0;
+  }
 }
 
 .leftContainer {
-  /*noinspection CssInvalidAtRule*/
-  @mixin smaller-than $mantine-breakpoint-sm {
-    min-width: 0 !important;
-  }
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-width: 390px;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    min-width: 0 !important;
+  }
 }
 
 .motif {
-  left: -20px;
+  left: -40px;
+  pointer-events: none;
   position: absolute;
-  top: -30px;
+  top: -60px;
+  user-select: none;
   z-index: 0;
 }
 
 .rightContainer {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
   /*noinspection CssInvalidAtRule*/
   @mixin smaller-than $mantine-breakpoint-sm {
     max-width: 440px;
   }
-
-  display: flex;
-  height: 100%;
-  width: 100%;
 }
 
 .root {
-  /*noinspection CssInvalidAtRule*/
-  @mixin smaller-than $mantine-breakpoint-sm {
-    padding: 20px 16px;
-  }
-
   overflow: hidden;
   padding: 24px 48px;
   position: relative;
   width: 100%;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin smaller-than $mantine-breakpoint-sm {
+    padding: 20px 16px;
+  }
 }
 
 .title {
@@ -134,6 +132,7 @@
     font-size: 26px;
     font-weight: 700;
     margin: 0;
+
     /*noinspection CssInvalidAtRule*/
     @mixin smaller-than $mantine-breakpoint-sm {
       font-size: 18px;
@@ -142,16 +141,12 @@
 }
 
 .topContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
   /*noinspection CssInvalidAtRule*/
   @mixin smaller-than $mantine-breakpoint-sm {
     row-gap: 8px;
   }
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 24px;
-}
-
-.motif {
-  opacity: 0.3;
 }
