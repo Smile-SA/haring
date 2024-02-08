@@ -52,15 +52,19 @@ export function DocumentBox(props: IDocumentBoxProps): ReactNode {
       } documentBoxRef`}
       onClick={onCardClick}
     >
-      <Image
-        classNames={{
-          root: `${classes.imageRoot} ${
-            mobileImageDisplayed ? classes.imageRootMobileDisplayed : ''
-          }`,
-        }}
-        radius={16}
-        src={image}
-      />
+      <div
+        className={`${classes.imageContainer} ${
+          mobileImageDisplayed ? classes.imageRootMobileDisplayed : ''
+        }`}
+      >
+        <Image
+          classNames={{
+            root: classes.imageRoot,
+          }}
+          radius={16}
+          src={image}
+        />
+      </div>
       <div>
         <div>
           <div className={classes.header}>

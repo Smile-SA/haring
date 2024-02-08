@@ -10,12 +10,13 @@
 }
 
 .documentListContainer {
+  border-radius: 16px;
+  padding: 48px 56px;
+
   /*noinspection CssInvalidAtRule*/
   @mixin smaller-than $mantine-breakpoint-sm {
     padding: 24px 16px 32px 16px;
   }
-  border-radius: 16px;
-  padding: 48px 56px;
 }
 
 .main {
@@ -28,6 +29,12 @@
 }
 
 .select {
+  border-radius: 1.5rem;
+
+  input {
+    padding: 0 calc(3.125rem / 3) 0 40px;
+  }
+
   /*noinspection CssInvalidAtRule*/
   @mixin smaller-than $mantine-breakpoint-sm {
     input {
@@ -41,8 +48,6 @@
     /*noinspection CssInvalidFunction*/
     outline: rem(2) solid var(--mantine-color-orange-5);
   }
-
-  border-radius: 1.5rem;
 }
 
 .selectDropdown {
@@ -53,4 +58,5 @@
 
 .selectRight {
   width: 1.5rem;
+  color: var(--mantine-color-text);
 }

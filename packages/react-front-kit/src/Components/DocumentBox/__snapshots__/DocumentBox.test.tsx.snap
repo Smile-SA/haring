@@ -15,11 +15,15 @@ exports[`DocumentBox matches snapshot 1`] = `
   <div
     class="undefined  documentBoxRef"
   >
-    <img
-      class="undefined  m-9e117634 mantine-Image-root"
-      src=""
-      style="--image-radius: calc(1rem * var(--mantine-scale));"
-    />
+    <div
+      class="undefined "
+    >
+      <img
+        class="m-9e117634 mantine-Image-root"
+        src=""
+        style="--image-radius: calc(1rem * var(--mantine-scale));"
+      />
+    </div>
     <div>
       <div>
         <div>

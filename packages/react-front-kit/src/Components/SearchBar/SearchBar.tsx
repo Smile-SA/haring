@@ -74,6 +74,7 @@ export function SearchBar(props: ISearchBarProps): ReactElement {
           className={classes.input}
           classNames={{
             input: classes.inputInner,
+            section: classes.inputSection,
             wrapper: classes.inputInnerRoot,
           }}
           onChange={handleSearchChange}
@@ -83,7 +84,7 @@ export function SearchBar(props: ISearchBarProps): ReactElement {
               aria-label={clearButtonAriaLabel}
               className={classes.closeIcon}
               onClick={handleSearchClear}
-              size="lg"
+              size={39}
               variant="white"
             />
           }
