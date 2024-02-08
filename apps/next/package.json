@@ -10,13 +10,17 @@
   },
   "dependencies": {
     "@mantine/core": "^7.5.1",
+    "@mantine/dates": "^7.5.1",
+    "@mantine/dropzone": "^7.5.1",
     "@mantine/hooks": "^7.5.1",
     "@phosphor-icons/react": "^2.0.10",
+    "@smile/react-front-kit": "*",
+    "@smile/react-front-kit-dropzone": "*",
+    "@smile/react-front-kit-shared": "*",
+    "@smile/react-front-kit-table": "*",
     "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@smile/react-front-kit": "*",
-    "@smile/react-front-kit-shared": "*",
     "storybook-pages": "*"
   },
   "devDependencies": {

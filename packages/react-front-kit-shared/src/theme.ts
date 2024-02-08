@@ -1,15 +1,20 @@
 'use client';
 
+import type { MantineThemeOverride } from '@mantine/core';
+
 import { DEFAULT_THEME } from '@mantine/core';
 
 import { createThemes } from './helpers';
 
 const { main, primary, secondary } = createThemes();
 
-export const mainTheme = main;
-export const primaryTheme = primary;
-export const secondaryTheme = secondary;
-export const themes = {
+export const mainTheme: MantineThemeOverride = main;
+export const primaryTheme: MantineThemeOverride = primary;
+export const secondaryTheme: MantineThemeOverride = secondary;
+export const themes: Record<
+  string,
+  { color: string; theme: MantineThemeOverride; title: string }
+> = {
   main: {
     color: '#fff',
     theme: main,
