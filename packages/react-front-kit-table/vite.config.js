@@ -14,16 +14,22 @@ export default defineConfig({
     rollupOptions: {
       external: [
         '@emotion/react',
+        '@mantine/carousel',
         '@mantine/core',
         '@mantine/dates',
         '@mantine/dropzone',
         '@mantine/hooks',
         '@phosphor-icons/react',
+        '@smile/react-front-kit',
+        '@smile/react-front-kit-dropzone',
+        '@smile/react-front-kit-shared',
+        '@smile/react-front-kit-table',
         '@storybook/addon-actions',
         '@storybook/preview-api',
         '@tabler/icons-react',
         '@testing-library/react',
         'dayjs',
+        'embla-carousel-react',
         'mantine-react-table',
         'react',
         'react/jsx-runtime',
@@ -33,6 +39,16 @@ export default defineConfig({
         server: resolve(__dirname, 'src/server.tsx'),
       },
       output: {
+        banner: (chunkInfo) => {
+          if (
+            ['src/index.tsx'].find((modulePath) =>
+              chunkInfo.facadeModuleId?.endsWith(modulePath),
+            )
+          ) {
+            return `"use client"`;
+          }
+          return '';
+        },
         preserveModules: false,
       },
     },
