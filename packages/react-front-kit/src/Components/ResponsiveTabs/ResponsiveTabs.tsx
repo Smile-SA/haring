@@ -91,7 +91,7 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
                 radius="sm"
                 variant="subtle"
               >
-                <CaretDoubleRight />
+                <CaretDoubleRight size={14} />
               </ActionIcon>
             }
             classNames={{ dropdown: classes.dropdown }}
