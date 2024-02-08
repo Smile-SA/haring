@@ -24,7 +24,7 @@ export function NestedProvider(props: INestedProviderProps): ReactElement {
   } = props;
   const id = useId();
   const main = useMainTheme();
-  const selector = `#${CSS.escape(id)}`;
+  const selector = `#${id.replaceAll(':', '\\:')}`;
   const rootClassNames = [classes.nestedProvider];
   if (className) {
     rootClassNames.push(className);
