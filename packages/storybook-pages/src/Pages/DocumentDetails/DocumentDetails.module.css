@@ -25,3 +25,7 @@
   overflow-x: hidden;
   width: 100%;
 }
+
+.actionIcon {
+  border: none !important;
+}

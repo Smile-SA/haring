@@ -102,19 +102,34 @@ export function DocumentDetails(): ReactElement {
           <Grid.Col span={7}>
             <Flex align="flex-start" direction="column" p="26px 64px">
               <div className={classes.colLeftBar}>
-                <Button leftSection={<CaretLeft />} p={0} variant="transparent">
+                <Button
+                  color="black"
+                  leftSection={<CaretLeft />}
+                  p={0}
+                  variant="transparent"
+                >
                   <span style={{ fontSize: 14 }}>Retour à la liste</span>
                 </Button>
                 <div className={classes.actionIcons}>
-                  <ActionIcon radius={4} size={40} variant="light">
+                  <ActionIcon
+                    className={classes.actionIcon}
+                    radius={4}
+                    size={40}
+                    variant="default"
+                  >
                     <Star size={17} />
                   </ActionIcon>
-                  <ActionIcon radius={4} size={40} variant="light">
+                  <ActionIcon
+                    className={classes.actionIcon}
+                    radius={4}
+                    size={40}
+                    variant="default"
+                  >
                     <FolderMove size={17} />
                   </ActionIcon>
                 </div>
               </div>
-              <Space h="xl" />
+              <Space h="1.5rem" />
               <Preview url="./example.pdf" />
             </Flex>
           </Grid.Col>
