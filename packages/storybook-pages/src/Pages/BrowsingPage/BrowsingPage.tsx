@@ -200,7 +200,7 @@ export function BrowsingPage(): ReactElement {
               contentItems={[
                 {
                   icon: (
-                    <User color={getThemeColor(theme.primaryColor, theme)} />
+                    <User color={getThemeColor(theme.colors.cyan[9], theme)} />
                   ),
                   iconProps: { color: 'cyan' },
                   label: 'N°6754389',
@@ -208,7 +208,7 @@ export function BrowsingPage(): ReactElement {
                 {
                   icon: (
                     <Suitcase
-                      color={getThemeColor(theme.primaryColor, theme)}
+                      color={getThemeColor(theme.colors.cyan[9], theme)}
                     />
                   ),
                   iconProps: { color: 'cyan' },
