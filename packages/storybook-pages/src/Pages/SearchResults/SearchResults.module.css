@@ -42,12 +42,6 @@
       padding: 0 16px;
     }
   }
-
-  :focus,
-  :focus-within {
-    /*noinspection CssInvalidFunction*/
-    outline: rem(2) solid var(--mantine-color-orange-5);
-  }
 }
 
 .selectDropdown {
