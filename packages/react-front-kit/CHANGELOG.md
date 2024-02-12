@@ -1,5 +1,34 @@
 # @smile/react-front-kit
 
+## 0.9.0
+
+### Minor Changes
+
+- [`fae21b7`](https://github.com/Smile-SA/react-front-kit/commit/fae21b718216948b26858c15dce7ac4570c62128) Thanks [@vapersmile](https://github.com/vapersmile)! - add CardHeader
+
+- [`d430e2c`](https://github.com/Smile-SA/react-front-kit/commit/d430e2cbcd26871c4db0c53f92a4e4baa6af839c) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Migrated from Mantine V6 to V7
+
+- [`7cbd1e7`](https://github.com/Smile-SA/react-front-kit/commit/7cbd1e7befa1a0703ba3ac4cc0213c331716e824) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Refactored SidebarFilters to use SidebarMenu instead of a slightly modified copy. Improved SidebarMenu.
+
+- [`d66770d`](https://github.com/Smile-SA/react-front-kit/commit/d66770dd7a2bb033232907a7a889bef40aeff99a) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Added SummaryBox component
+
+- [`0d44f80`](https://github.com/Smile-SA/react-front-kit/commit/0d44f8035b133fd8f4caa23363bd0631d325dd9a) Thanks [@vapersmile](https://github.com/vapersmile)! - add ButtonListOrDropdown component
+
+- [`ab23fea`](https://github.com/Smile-SA/react-front-kit/commit/ab23fea931d081e22e411aa27da5fb3f548f8f0d) Thanks [@vapersmile](https://github.com/vapersmile)! - add MenuLanguages component
+
+- [`89e6985`](https://github.com/Smile-SA/react-front-kit/commit/89e6985997a82cf952b5966b8303678bfdd7b6fc) Thanks [@vapersmile](https://github.com/vapersmile)! - add CardList component
+
+- [`12d258d`](https://github.com/Smile-SA/react-front-kit/commit/12d258df37cefbbb0dbcd804abd61be23131e4f9) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Fixed various style issues after migration
+
+- [`9d07445`](https://github.com/Smile-SA/react-front-kit/commit/9d074450e9ae0096e9e263b6a2a4be8e8627a54b) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Extracted logic from ActionBar into new ActionRowOverflow, moved a type and some mocks
+
+- [`35632ef`](https://github.com/Smile-SA/react-front-kit/commit/35632efe8e25687a17f555b85feb27ad62fa7382) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Fixed styles of ResponsiveStyles after migration
+
+### Patch Changes
+
+- Updated dependencies [[`d430e2c`](https://github.com/Smile-SA/react-front-kit/commit/d430e2cbcd26871c4db0c53f92a4e4baa6af839c)]:
+  - @smile/react-front-kit-shared@0.9.0
+
 ## 0.8.1
 
 ### Patch Changes

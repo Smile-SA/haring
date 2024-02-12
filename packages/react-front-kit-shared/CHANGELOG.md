@@ -1,5 +1,11 @@
 # @smile/react-front-kit-shared
 
+## 0.9.0
+
+### Minor Changes
+
+- [`d430e2c`](https://github.com/Smile-SA/react-front-kit/commit/d430e2cbcd26871c4db0c53f92a4e4baa6af839c) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Migrated from Mantine V6 to V7
+
 ## 0.8.1
 
 ## 0.8.0
