@@ -9,23 +9,23 @@ const meta = {
   argTypes: {
     color: {
       control: 'select',
-      options: [
-        'primary',
-        'dark',
-        'gray',
-        'red',
-        'pink',
-        'grape',
-        'violet',
-        'indigo',
-        'blue',
-        'cyan',
-        'teal',
-        'green',
-        'lime',
-        'yellow',
-        'orange',
-      ],
+      options: {
+        blue: 'blue',
+        cyan: 'cyan',
+        dark: 'dark',
+        grape: 'grape',
+        gray: 'gray',
+        green: 'green',
+        indigo: 'indigo',
+        lime: 'lime',
+        orange: 'orange',
+        pink: 'pink',
+        primary: '',
+        red: 'red',
+        teal: 'teal',
+        violet: 'violet',
+        yellow: 'yellow',
+      },
     },
     disabled: {
       control: 'boolean',
@@ -49,7 +49,7 @@ type IStory = StoryObj<typeof meta>;
 const { Activity } = iconsElements;
 export const Buttons: IStory = {
   args: {
-    color: 'primary',
+    color: '',
     disabled: false,
   },
   render: (props) => (
