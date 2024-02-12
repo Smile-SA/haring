@@ -309,18 +309,20 @@ export function BrowsingPage(): ReactElement {
           </div>
         </FoldableColumnLayout>
       </AppShell.Main>
-      <Modal
-        classNames={{
-          body: classes.modalBody,
-          close: classes.modalClose,
-        }}
-        onClose={close}
-        opened={seeMoreModal}
-        size="xl"
-      >
-        <h3 className={classes.modalTitle}>Propriétés du dossier</h3>
-        {getAccordionItems()}
-      </Modal>
+      <NestedProvider theme={secondary}>
+        <Modal
+          classNames={{
+            body: classes.modalBody,
+            close: classes.modalClose,
+          }}
+          onClose={close}
+          opened={seeMoreModal}
+          size="xl"
+        >
+          <h3 className={classes.modalTitle}>Propriétés du dossier</h3>
+          {getAccordionItems()}
+        </Modal>
+      </NestedProvider>
       <Modal
         centered
         classNames={{ title: classes.filtersManagerModalTitle }}
