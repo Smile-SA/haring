@@ -446,6 +446,7 @@ export function SearchResults(): ReactElement {
                       dropdown: classes.selectDropdown,
                       section: classes.selectRight,
                     }}
+                    comboboxProps={{ withinPortal: false }}
                     data={typeFilterOptions}
                     defaultValue={activeType.value}
                     onChange={(v) =>
