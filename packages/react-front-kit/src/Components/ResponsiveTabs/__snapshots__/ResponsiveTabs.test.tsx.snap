@@ -1,10 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ResponsiveTabs matches snapshot 1`] = `
-<div
-  aria-hidden="true"
-  data-focus-id="mantine-f4bipx4bi"
->
+<div>
   <style
     data-mantine-styles="true"
   >
