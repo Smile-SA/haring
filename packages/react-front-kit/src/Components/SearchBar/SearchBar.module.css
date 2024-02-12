@@ -1,6 +1,5 @@
 .closeIcon {
-  color: var(--mantine-color-gray-9);
-
+  right: -8px;
   /*noinspection CssInvalidAtRule*/
   @mixin smaller-than $mantine-breakpoint-sm {
     right: -14px;
