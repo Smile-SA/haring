@@ -4,13 +4,14 @@
   border: 0;
   color: inherit;
   cursor: inherit;
-  display: flex;
-  flex: 1;
   font: inherit;
   height: 100%;
   padding: 0;
   text-align: left;
   text-decoration: none;
+  display: block;
+  margin: 7px;
+  height: fit-content;
 }
 
 .iconSelected {
