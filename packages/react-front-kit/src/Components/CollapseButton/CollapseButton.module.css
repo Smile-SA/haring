@@ -11,7 +11,7 @@
   text-decoration: none;
   display: block;
   margin: 7px;
-  height: fit-content;
+  max-width: fit-content;
 }
 
 .iconSelected {
