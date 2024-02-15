@@ -4,13 +4,14 @@
   border: 0;
   color: inherit;
   cursor: inherit;
-  display: flex;
-  flex: 1;
   font: inherit;
-  height: 100%;
+  height: min-content;
   padding: 0;
   text-align: left;
   text-decoration: none;
+  display: block;
+  margin: 7px;
+  max-width: min-content;
 }
 
 .iconSelected {
@@ -82,5 +83,5 @@
 }
 
 .rootLevel1 {
-  height: 36px;
+  height: 40px;
 }
