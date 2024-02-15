@@ -38,9 +38,8 @@ export const otherTitleMock = (
   <span>
     <b>Lorem ipsum</b>
     <span>
-      {' '}
       dolor sit amet consectetur. Sollicitudin mattis blandit aliquet odio urna
-      mi id :{' '}
+      mi id :
     </span>
     <Text c="blue" component="span">
       Lorem Ipsum dolor
