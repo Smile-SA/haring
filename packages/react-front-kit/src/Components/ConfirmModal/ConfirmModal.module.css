@@ -1,4 +1,4 @@
-.buttonGrey {
+.buttonLeftRoot {
   padding: 0.667em 3.333em;
 }
 
@@ -7,7 +7,7 @@
   margin-right: 10px;
 }
 
-.buttonRemoveRoot {
+.buttonRightRoot {
   padding: 0.667em 3.333em;
 }
 
@@ -30,4 +30,16 @@
 
 .modalTitleContainer {
   margin-left: 12px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.cross {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  transform: scale(115%);
 }

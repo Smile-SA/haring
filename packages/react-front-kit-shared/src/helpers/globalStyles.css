@@ -50,8 +50,13 @@ body {
 
 /*noinspection CssInvalidFunction*/
 .haring-focus:focus-visible {
-  outline: rem(2px) solid var(--mantine-color-orange-5);
-  outline-offset: rem(2px);
+  outline: rem(2px) solid var(--mantine-color-orange-5) !important;
+  outline-offset: rem(2px) !important;
+}
+
+.haring-focus button:focus-visible {
+  outline-color: var(--mantine-color-orange-5) !important;
+  outline-offset: 2px;
 }
 
 .mantine-Input-input:focus,

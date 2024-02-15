@@ -3,7 +3,7 @@
 import type { IConfirmModal } from '@smile/react-front-kit-shared';
 import type { ReactElement } from 'react';
 
-import { Button, Modal } from '@mantine/core';
+import { Button, Flex, Modal } from '@mantine/core';
 
 import classes from './ConfirmModal.module.css';
 
@@ -28,24 +28,24 @@ export function ConfirmModal(props: IConfirmModalProps): ReactElement {
       centered
       classNames={{
         body: classes.modalBody,
+        close: classes.cross,
         content: classes.modalContent,
         header: classes.modalHeader,
+        title: classes.title,
       }}
       onClose={onClose}
       radius={16}
       size="lg"
+      title={title}
       {...modalProps}
     >
       <>
-        <div className={classes.modalTitleContainer}>
-          {Boolean(title) && <h2>{title}</h2>}
-          {children}
-        </div>
-        <div className={classes.modalButtonsContainer}>
+        {children}
+        <Flex className={classes.modalButtonsContainer} wrap="wrap">
           <Button
             className={classes.buttonLeftModal}
             classNames={{
-              root: classes.buttonGrey,
+              root: classes.buttonLeftRoot,
             }}
             color={cancelColor}
             onClick={onCancel}
@@ -54,14 +54,14 @@ export function ConfirmModal(props: IConfirmModalProps): ReactElement {
           </Button>
           <Button
             classNames={{
-              root: classes.buttonRemoveRoot,
+              root: classes.buttonRightRoot,
             }}
             color={confirmColor}
             onClick={onConfirm}
           >
             {confirmLabel}
           </Button>
-        </div>
+        </Flex>
       </>
     </Modal>
   );
