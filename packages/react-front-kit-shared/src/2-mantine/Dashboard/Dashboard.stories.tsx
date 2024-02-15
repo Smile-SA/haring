@@ -5,6 +5,7 @@ import { CardList } from '@smile/react-front-kit';
 
 import {
   cardListMock,
+  cardListNotifications,
   cardListUploadMock,
   cardSimpleMock,
 } from './Dashboard.mock';
@@ -29,6 +30,12 @@ export const Dashboard: IStory = {
       <Grid.Col span={{ base: 12, lg: 4, xs: 6 }}>{cardListMock()}</Grid.Col>
       <Grid.Col span={{ base: 12, lg: 4, xs: 6 }}>
         {cardListMock(false)}
+      </Grid.Col>
+      <Grid.Col span={{ base: 12, lg: 4, xs: 6 }}>
+        {cardListNotifications()}
+      </Grid.Col>
+      <Grid.Col span={{ base: 12, lg: 4, xs: 6 }}>
+        {cardListNotifications(false)}
       </Grid.Col>
     </Grid>
   ),

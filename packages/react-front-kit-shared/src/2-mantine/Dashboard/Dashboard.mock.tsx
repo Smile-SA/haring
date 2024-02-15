@@ -2,6 +2,7 @@ import type { ReactElement } from 'react';
 
 import {
   ActionIcon,
+  Avatar,
   Badge,
   Button,
   Card,
@@ -9,30 +10,120 @@ import {
   Flex,
   Group,
   Image,
+  Indicator,
   Text,
 } from '@mantine/core';
 import {
+  Bell,
   DownloadSimple,
   Export,
   Eye,
   Folder,
   Note,
+  UserCircle,
 } from '@phosphor-icons/react';
-import { CardHeader, CardList } from '@smile/react-front-kit';
+import { CardHeader, CardList, SummaryBox } from '@smile/react-front-kit';
 
+const seeMoreMock = (
+  <CardSection p="0px 32px 32px 32px">
+    <Button fullWidth>Voir plus</Button>
+  </CardSection>
+);
+
+export const leftMock = (
+  <Indicator color="red" inline offset={8} withBorder>
+    <Avatar size={40}>
+      <UserCircle size={40} />
+    </Avatar>
+  </Indicator>
+);
+
+export const otherTitleMock = (name = 'Simon Leclerc'): ReactElement => {
+  return (
+    <span>
+      <b>{name} </b>
+      <span>
+        dolor sit amet consectetur. Sollicitudin mattis blandit aliquet odio
+        urna mi id :
+      </span>
+      <Text c="cyan" component="span">
+        Lorem Ipsum dolor
+      </Text>
+    </span>
+  );
+};
+
+export const otherTopMock = (text = 'Il y a 3h'): ReactElement => {
+  return <span style={{ color: '#5C5F66', fontSize: 12 }}>{text}</span>;
+};
+
+export const cardListNotifications = (button = true): ReactElement => {
+  return (
+    <Card radius={16}>
+      <Card.Section>
+        <CardHeader
+          leftSection={
+            <Bell size={38} style={{ marginTop: '12px' }} weight="thin" />
+          }
+        >
+          <>
+            <h2 style={{ fontSize: '18px', margin: 0 }}>Notifications</h2>
+            <p style={{ margin: '0' }}>sous-titre</p>
+          </>
+        </CardHeader>
+      </Card.Section>
+      <Card.Section>
+        <CardList h="565px">
+          <SummaryBox
+            leftNode={leftMock}
+            titleNode={otherTitleMock()}
+            topNode={otherTopMock()}
+          />
+          <SummaryBox
+            leftNode={leftMock}
+            titleNode={otherTitleMock('Marie Dupont')}
+            topNode={otherTopMock('Avant-hier')}
+          />
+          <SummaryBox
+            leftNode={leftMock}
+            titleNode={otherTitleMock('Vincent Le Grand')}
+            topNode={otherTopMock('Le 08 décembre 2023')}
+          />
+          <SummaryBox
+            leftNode={leftMock}
+            titleNode={otherTitleMock('Robert Maxwell')}
+            topNode={otherTopMock('Le 08 décembre 2023')}
+          />
+          <SummaryBox
+            leftNode={leftMock}
+            titleNode={otherTitleMock('Jamie Marcel')}
+            topNode={otherTopMock('Le 02 décembre 2023')}
+          />
+          <SummaryBox
+            leftNode={leftMock}
+            titleNode={otherTitleMock('Robert De Fino')}
+            topNode={otherTopMock('Le 27 Novembre 2023')}
+          />
+        </CardList>
+      </Card.Section>
+      {button ? seeMoreMock : null}
+    </Card>
+  );
+};
 const cardListUploadItem = (
   text = 'Ma carte de tiers payant',
 ): ReactElement => {
   return (
-    <Flex align="center" justify="space-between">
-      <Text color="dark.6" fw={700} size="14px">
-        {text}
-      </Text>
-      <DownloadSimple color="#0B7285" size={24} />
-    </Flex>
+    <SummaryBox
+      rightNode={
+        <ActionIcon color="cyan" size={30} variant="subtle">
+          <DownloadSimple size={24} />
+        </ActionIcon>
+      }
+      titleNode={<b>{text}</b>}
+    />
   );
 };
-
 export const cardListUploadMock = (
   <Card radius={16}>
     <Card.Section>
@@ -137,7 +228,6 @@ const cardListItemMock = (
     </Flex>
   );
 };
-
 export const cardListMock = (button = true): ReactElement => {
   return (
     <Card radius={16}>
@@ -154,7 +244,7 @@ export const cardListMock = (button = true): ReactElement => {
         </CardHeader>
       </Card.Section>
       <Card.Section>
-        <CardList h="546px">
+        <CardList h="565px">
           {cardListItemMock(
             0,
             null,
@@ -241,11 +331,7 @@ export const cardListMock = (button = true): ReactElement => {
           )}
         </CardList>
       </Card.Section>
-      {button ? (
-        <CardSection p="0px 32px 32px 32px">
-          <Button fullWidth>Voir plus</Button>
-        </CardSection>
-      ) : null}
+      {button ? seeMoreMock : null}
     </Card>
   );
 };
