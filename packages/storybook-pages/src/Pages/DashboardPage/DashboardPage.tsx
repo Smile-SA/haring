@@ -42,7 +42,7 @@ const avatar = (
   </Indicator>
 );
 
-const otherTitle = (name = 'Simon Leclerc'): ReactElement => {
+const notificationTitle = (name = 'Simon Leclerc'): ReactElement => {
   return (
     <span>
       <b>{name} </b>
@@ -57,7 +57,7 @@ const otherTitle = (name = 'Simon Leclerc'): ReactElement => {
   );
 };
 
-const otherTop = (text = 'Il y a 3h'): ReactElement => {
+const notificationTop = (text = 'Il y a 3h'): ReactElement => {
   return <span style={{ color: '#5C5F66', fontSize: 12 }}>{text}</span>;
 };
 
@@ -80,33 +80,33 @@ const cardListNotifications = (button = true): ReactElement => {
         <CardList h="565px">
           <SummaryBox
             leftNode={avatar}
-            titleNode={otherTitle()}
-            topNode={otherTop()}
+            titleNode={notificationTitle()}
+            topNode={notificationTop()}
           />
           <SummaryBox
             leftNode={avatar}
-            titleNode={otherTitle('Marie Dupont')}
-            topNode={otherTop('Avant-hier')}
+            titleNode={notificationTitle('Marie Dupont')}
+            topNode={notificationTop('Avant-hier')}
           />
           <SummaryBox
             leftNode={avatar}
-            titleNode={otherTitle('Vincent Le Grand')}
-            topNode={otherTop('Le 08 décembre 2023')}
+            titleNode={notificationTitle('Vincent Le Grand')}
+            topNode={notificationTop('Le 08 décembre 2023')}
           />
           <SummaryBox
             leftNode={avatar}
-            titleNode={otherTitle('Robert Maxwell')}
-            topNode={otherTop('Le 05 décembre 2023')}
+            titleNode={notificationTitle('Robert Maxwell')}
+            topNode={notificationTop('Le 05 décembre 2023')}
           />
           <SummaryBox
             leftNode={avatar}
-            titleNode={otherTitle('Jamie Marcel')}
-            topNode={otherTop('Le 01 décembre 2023')}
+            titleNode={notificationTitle('Jamie Marcel')}
+            topNode={notificationTop('Le 01 décembre 2023')}
           />
           <SummaryBox
             leftNode={avatar}
-            titleNode={otherTitle('Robert De Fino')}
-            topNode={otherTop('Le 27 Novembre 2023')}
+            titleNode={notificationTitle('Robert De Fino')}
+            topNode={notificationTop('Le 27 Novembre 2023')}
           />
         </CardList>
       </Card.Section>
