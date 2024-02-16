@@ -92,12 +92,12 @@ export const cardListNotifications = (button = true): ReactElement => {
           <SummaryBox
             leftNode={leftMock}
             titleNode={otherTitleMock('Robert Maxwell')}
-            topNode={otherTopMock('Le 08 décembre 2023')}
+            topNode={otherTopMock('Le 05 décembre 2023')}
           />
           <SummaryBox
             leftNode={leftMock}
             titleNode={otherTitleMock('Jamie Marcel')}
-            topNode={otherTopMock('Le 02 décembre 2023')}
+            topNode={otherTopMock('Le 01 décembre 2023')}
           />
           <SummaryBox
             leftNode={leftMock}
@@ -147,20 +147,12 @@ export const cardListUploadMock = (
     </Card.Section>
   </Card>
 );
-const contentCardMock = (date = 'Le 30 novembre 2023'): ReactElement => {
+const contentCardMock = (): ReactElement => {
   return (
-    <>
-      <Text fw={400} size="12px">
-        {date}
-      </Text>
-      <Text fw={700} mb="8px" mt="16px" size="14px">
-        Lorem ipsum dolor sit amet
-      </Text>
-      <Text color="dark.3" mb="24px" size="14px">
-        Lorem ipsum dolor sit amet consectetur. Sollicitudin mattis blandit
-        aliquet odio urna mi id. Mauris venenatis ut et at amet vel est.
-      </Text>
-    </>
+    <Text color="dark.3" mb="10px" size="14px">
+      Lorem ipsum dolor sit amet consectetur. Sollicitudin mattis blandit
+      aliquet odio urna mi id. Mauris venenatis ut et at amet vel est.
+    </Text>
   );
 };
 export const cardSimpleMock = (
@@ -169,35 +161,42 @@ export const cardSimpleMock = (
       <Image alt="Norway" height={246} src="https://picsum.photos/1301" />
     </Card.Section>
     <Card.Section m="32px">
-      {contentCardMock()}
-      <Group>
-        <Badge
-          color="gray"
-          p="16px"
-          size="lg"
-          style={{ textTransform: 'lowercase' }}
-          variant="light"
-          w="67px"
-        >
-          tag
-        </Badge>
-        <Badge
-          color="gray"
-          p="16px"
-          size="lg"
-          style={{ textTransform: 'lowercase' }}
-          variant="light"
-          w="67px"
-        >
-          tag
-        </Badge>
-      </Group>
+      <SummaryBox
+        titleNode={<b>Lorem ipsum dolor sit amet</b>}
+        topNode={<Text style={{ fontSize: '12px' }}>Le 30 novembre 2023</Text>}
+      >
+        <>
+          {contentCardMock()}
+          <Group>
+            <Badge
+              color="gray"
+              p="16px"
+              size="lg"
+              style={{ textTransform: 'lowercase' }}
+              variant="light"
+              w="67px"
+            >
+              tag
+            </Badge>
+            <Badge
+              color="gray"
+              p="16px"
+              size="lg"
+              style={{ textTransform: 'lowercase' }}
+              variant="light"
+              w="67px"
+            >
+              tag
+            </Badge>
+          </Group>
+        </>
+      </SummaryBox>
     </Card.Section>
   </Card>
 );
 const cardListItemMock = (
   index: number,
-  date: string | null,
+  date: string,
   badge = (
     <Badge
       color="gray"
@@ -212,20 +211,27 @@ const cardListItemMock = (
   ),
 ): ReactElement => {
   return (
-    <Flex key={index} direction="column">
-      <div>{date ? contentCardMock(date) : contentCardMock()}</div>
-      <Flex justify="space-between" style={{ width: '100%' }}>
-        {badge}
-        <Flex align="center" gap={16}>
-          <ActionIcon color="cyan" size={30} variant="subtle">
-            <Export size={24} />
-          </ActionIcon>
-          <ActionIcon color="cyan" size={30} variant="subtle">
-            <Eye size={24} />
-          </ActionIcon>
+    <SummaryBox
+      titleNode={<b>Lorem ipsum dolor sit amet</b>}
+      topNode={<Text style={{ fontSize: '12px' }}>{date}</Text>}
+    >
+      <>
+        {contentCardMock()}
+        <Flex key={index} style={{ width: '100%' }}>
+          <Flex justify="space-between" style={{ width: '100%' }}>
+            {badge}
+            <Flex align="center" gap={16}>
+              <ActionIcon color="cyan" size={30} variant="subtle">
+                <Export size={24} />
+              </ActionIcon>
+              <ActionIcon color="cyan" size={30} variant="subtle">
+                <Eye size={24} />
+              </ActionIcon>
+            </Flex>
+          </Flex>
         </Flex>
-      </Flex>
-    </Flex>
+      </>
+    </SummaryBox>
   );
 };
 export const cardListMock = (button = true): ReactElement => {
@@ -247,7 +253,7 @@ export const cardListMock = (button = true): ReactElement => {
         <CardList h="565px">
           {cardListItemMock(
             0,
-            null,
+            'Le 30 novembre 2023',
             <Badge
               color="green"
               p="16px"
