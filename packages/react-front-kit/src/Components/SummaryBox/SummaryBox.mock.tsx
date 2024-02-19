@@ -24,23 +24,18 @@ export const defaultSummaryBoxMock = {
   topNode: 'top node',
 };
 
-export const topMock = (
-  <span style={{ color: '#5C5F66', fontSize: 12 }}>30th novembre 2023</span>
-);
+export const topMock = <span>30th novembre 2023</span>;
 
-export const otherTopMock = (
-  <span style={{ color: '#5C5F66', fontSize: 12 }}>3 hours ago</span>
-);
+export const otherTopMock = <span>3 hours ago</span>;
 
-export const titleMock = <b>Lorem ipsum dolor sit amet</b>;
+export const titleMock = 'Lorem ipsum dolor sit amet';
 
-export const otherTitleMock = (
+export const otherChildrenMock = (
   <span>
-    <b>Lorem ipsum</b>
+    <strong>Lorem ipsum</strong>
     <span>
-      {' '}
       dolor sit amet consectetur. Sollicitudin mattis blandit aliquet odio urna
-      mi id :{' '}
+      mi id :
     </span>
     <Text c="blue" component="span">
       Lorem Ipsum dolor
