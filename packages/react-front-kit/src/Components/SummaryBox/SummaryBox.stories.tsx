@@ -9,7 +9,7 @@ import {
   defaultSummaryBoxMock,
   leftMock,
   otherChildrenExampleMock,
-  otherTitleMock,
+  otherChildrenMock,
   otherTopMock,
   rightMock,
   titleMock,
@@ -68,8 +68,8 @@ export const ActionRightNodeExample: IStory = {
 
 export const LeftNodeExample: IStory = {
   args: {
+    children: otherChildrenMock,
     leftNode: leftMock,
-    titleNode: otherTitleMock,
     topNode: otherTopMock,
   },
 };
