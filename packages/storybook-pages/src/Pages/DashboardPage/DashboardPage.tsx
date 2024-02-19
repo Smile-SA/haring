@@ -42,10 +42,10 @@ const avatar = (
   </Indicator>
 );
 
-const notificationTitle = (name = 'Simon Leclerc'): ReactElement => {
+const notificationContent = (name = 'Simon Leclerc'): ReactElement => {
   return (
     <span>
-      <b>{name} </b>
+      <strong>{name} </strong>
       <span>
         dolor sit amet consectetur. Sollicitudin mattis blandit aliquet odio
         urna mi id :
@@ -58,7 +58,7 @@ const notificationTitle = (name = 'Simon Leclerc'): ReactElement => {
 };
 
 const notificationTop = (text = 'Il y a 3h'): ReactElement => {
-  return <span style={{ color: '#5C5F66', fontSize: 12 }}>{text}</span>;
+  return <span>{text}</span>;
 };
 
 const cardListNotifications = (button = true): ReactElement => {
@@ -78,36 +78,32 @@ const cardListNotifications = (button = true): ReactElement => {
       </Card.Section>
       <Card.Section>
         <CardList h="565px">
+          <SummaryBox leftNode={avatar} topNode={notificationTop()}>
+            {notificationContent()}
+          </SummaryBox>
+          <SummaryBox leftNode={avatar} topNode={notificationTop('Avant-hier')}>
+            {notificationContent('Marie Dupont')}
+          </SummaryBox>
           <SummaryBox
             leftNode={avatar}
-            titleNode={notificationTitle()}
-            topNode={notificationTop()}
-          />
-          <SummaryBox
-            leftNode={avatar}
-            titleNode={notificationTitle('Marie Dupont')}
-            topNode={notificationTop('Avant-hier')}
-          />
-          <SummaryBox
-            leftNode={avatar}
-            titleNode={notificationTitle('Vincent Le Grand')}
             topNode={notificationTop('Le 08 décembre 2023')}
-          />
+          >
+            {notificationContent('Vincent Le Grand')}
+          </SummaryBox>
+          <SummaryBox leftNode={avatar}>
+            {notificationContent('Robert Maxwell')}
+          </SummaryBox>
           <SummaryBox
             leftNode={avatar}
-            titleNode={notificationTitle('Robert Maxwell')}
-            topNode={notificationTop('Le 05 décembre 2023')}
-          />
-          <SummaryBox
-            leftNode={avatar}
-            titleNode={notificationTitle('Jamie Marcel')}
+            titleNode={notificationContent('Jamie Marcel')}
             topNode={notificationTop('Le 01 décembre 2023')}
           />
           <SummaryBox
             leftNode={avatar}
-            titleNode={notificationTitle('Robert De Fino')}
             topNode={notificationTop('Le 27 Novembre 2023')}
-          />
+          >
+            {notificationContent('Robert De Fino')}
+          </SummaryBox>
         </CardList>
       </Card.Section>
       {button ? seeMore : null}
@@ -124,7 +120,7 @@ const cardListUploadItem = (
           <DownloadSimple size={24} />
         </ActionIcon>
       }
-      titleNode={<b>{text}</b>}
+      titleNode={<strong>{text}</strong>}
     />
   );
 };
@@ -165,7 +161,7 @@ const cardSimple = (
     </Card.Section>
     <Card.Section m="32px">
       <SummaryBox
-        titleNode={<b>Lorem ipsum dolor sit amet</b>}
+        titleNode="Lorem ipsum dolor sit amet"
         topNode={<Text style={{ fontSize: '12px' }}>Le 30 novembre 2023</Text>}
       >
         <>
@@ -215,7 +211,7 @@ const cardListItem = (
 ): ReactElement => {
   return (
     <SummaryBox
-      titleNode={<b>Lorem ipsum dolor sit amet</b>}
+      titleNode={<strong>Lorem ipsum dolor sit amet</strong>}
       topNode={<Text style={{ fontSize: '12px' }}>{date}</Text>}
     >
       <>

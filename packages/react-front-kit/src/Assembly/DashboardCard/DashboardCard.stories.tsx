@@ -42,7 +42,7 @@ export const CardListWithButton: IStory = {
           }
         >
           <>
-            <h2 style={{ fontSize: '18px', margin: 0 }}>Element de text</h2>
+            <h2>Element de text</h2>
             <p style={{ margin: '0' }}>sous-titre</p>
           </>
         </CardHeader>
@@ -50,10 +50,8 @@ export const CardListWithButton: IStory = {
       <Card.Section>
         <CardList h="565px">
           <SummaryBox
-            titleNode={<b>Lorem ipsum dolor sit amet</b>}
-            topNode={
-              <Text style={{ fontSize: '12px' }}>Le 30 novembre 2023</Text>
-            }
+            titleNode={<strong>Lorem ipsum dolor sit amet</strong>}
+            topNode="Le 30 novembre 2023"
           >
             <>
               <Text color="dark.3" mb="10px" size="14px">
@@ -86,7 +84,7 @@ export const CardListWithButton: IStory = {
             </>
           </SummaryBox>
           <SummaryBox
-            titleNode={<b>Lorem ipsum dolor sit amet</b>}
+            titleNode={<strong>Lorem ipsum dolor sit amet</strong>}
             topNode={
               <Text
                 style={{
@@ -140,7 +138,7 @@ export const CardListWithButton: IStory = {
             </>
           </SummaryBox>
           <SummaryBox
-            titleNode={<b>Lorem ipsum dolor sit amet</b>}
+            titleNode={<strong>Lorem ipsum dolor sit amet</strong>}
             topNode={
               <Text
                 style={{
@@ -194,10 +192,8 @@ export const CardListWithButton: IStory = {
             </>
           </SummaryBox>
           <SummaryBox
-            titleNode={<b>Lorem ipsum dolor sit amet</b>}
-            topNode={
-              <Text style={{ fontSize: '12px' }}>Le 18 novembre 2023</Text>
-            }
+            titleNode={<strong>Lorem ipsum dolor sit amet</strong>}
+            topNode="Le 18 novembre 2023"
           >
             <>
               <Text color="dark.3" mb="10px" size="14px">
@@ -231,7 +227,7 @@ export const CardListWithButton: IStory = {
           </SummaryBox>
 
           <SummaryBox
-            titleNode={<b>Lorem ipsum dolor sit amet</b>}
+            titleNode={<strong>Lorem ipsum dolor sit amet</strong>}
             topNode={
               <Text
                 style={{
@@ -285,7 +281,7 @@ export const CardListWithButton: IStory = {
             </>
           </SummaryBox>
           <SummaryBox
-            titleNode={<b>Lorem ipsum dolor sit amet</b>}
+            titleNode={<strong>Lorem ipsum dolor sit amet</strong>}
             topNode={
               <Text
                 style={{
@@ -357,7 +353,7 @@ export const CardListWithoutButton: IStory = {
           }
         >
           <>
-            <h2 style={{ fontSize: '18px', margin: 0 }}>Element de text</h2>
+            <h2>Element de text</h2>
             <p style={{ margin: '0' }}>sous-titre</p>
           </>
         </CardHeader>
@@ -365,10 +361,8 @@ export const CardListWithoutButton: IStory = {
       <Card.Section>
         <CardList h="565px">
           <SummaryBox
-            titleNode={<b>Lorem ipsum dolor sit amet</b>}
-            topNode={
-              <Text style={{ fontSize: '12px' }}>Le 30 novembre 2023</Text>
-            }
+            titleNode={<strong>Lorem ipsum dolor sit amet</strong>}
+            topNode="Le 30 novembre 2023"
           >
             <>
               <Text color="dark.3" mb="10px" size="14px">
@@ -401,7 +395,7 @@ export const CardListWithoutButton: IStory = {
             </>
           </SummaryBox>
           <SummaryBox
-            titleNode={<b>Lorem ipsum dolor sit amet</b>}
+            titleNode={<strong>Lorem ipsum dolor sit amet</strong>}
             topNode={
               <Text
                 style={{
@@ -455,7 +449,7 @@ export const CardListWithoutButton: IStory = {
             </>
           </SummaryBox>
           <SummaryBox
-            titleNode={<b>Lorem ipsum dolor sit amet</b>}
+            titleNode={<strong>Lorem ipsum dolor sit amet</strong>}
             topNode={
               <Text
                 style={{
@@ -509,10 +503,8 @@ export const CardListWithoutButton: IStory = {
             </>
           </SummaryBox>
           <SummaryBox
-            titleNode={<b>Lorem ipsum dolor sit amet</b>}
-            topNode={
-              <Text style={{ fontSize: '12px' }}>Le 18 novembre 2023</Text>
-            }
+            titleNode={<strong>Lorem ipsum dolor sit amet</strong>}
+            topNode="Le 18 novembre 2023"
           >
             <>
               <Text color="dark.3" mb="10px" size="14px">
@@ -546,7 +538,7 @@ export const CardListWithoutButton: IStory = {
           </SummaryBox>
 
           <SummaryBox
-            titleNode={<b>Lorem ipsum dolor sit amet</b>}
+            titleNode={<strong>Lorem ipsum dolor sit amet</strong>}
             topNode={
               <Text
                 style={{
@@ -600,7 +592,7 @@ export const CardListWithoutButton: IStory = {
             </>
           </SummaryBox>
           <SummaryBox
-            titleNode={<b>Lorem ipsum dolor sit amet</b>}
+            titleNode={<strong>Lorem ipsum dolor sit amet</strong>}
             topNode={
               <Text
                 style={{
@@ -669,7 +661,7 @@ export const CardListNotificationWithButton: IStory = {
           }
         >
           <>
-            <h2 style={{ fontSize: '18px', margin: 0 }}>Element de text</h2>
+            <h2>Element de text</h2>
             <p style={{ margin: '0' }}>sous-titre</p>
           </>
         </CardHeader>
@@ -684,22 +676,19 @@ export const CardListNotificationWithButton: IStory = {
                 </Avatar>
               </Indicator>
             }
-            titleNode={
+            topNode={<span>Il y a 3h</span>}
+          >
+            <span>
+              <strong>Simon Leclerc </strong>
               <span>
-                <b>Simon Leclerc </b>
-                <span>
-                  dolor sit amet consectetur. Sollicitudin mattis blandit
-                  aliquet odio urna mi id :
-                </span>
-                <Text c="cyan" component="span">
-                  Lorem Ipsum dolor
-                </Text>
+                dolor sit amet consectetur. Sollicitudin mattis blandit aliquet
+                odio urna mi id :
               </span>
-            }
-            topNode={
-              <span style={{ color: '#5C5F66', fontSize: 12 }}>Il y a 3h</span>
-            }
-          />
+              <Text c="cyan" component="span">
+                Lorem Ipsum dolor
+              </Text>
+            </span>
+          </SummaryBox>
           <SummaryBox
             leftNode={
               <Indicator color="red" inline offset={8} withBorder>
@@ -708,22 +697,19 @@ export const CardListNotificationWithButton: IStory = {
                 </Avatar>
               </Indicator>
             }
-            titleNode={
+            topNode={<span>Avant hier</span>}
+          >
+            <span>
+              <strong>Marie Dupont </strong>
               <span>
-                <b>Marie Dupont </b>
-                <span>
-                  dolor sit amet consectetur. Sollicitudin mattis blandit
-                  aliquet odio urna mi id :
-                </span>
-                <Text c="cyan" component="span">
-                  Lorem Ipsum dolor
-                </Text>
+                dolor sit amet consectetur. Sollicitudin mattis blandit aliquet
+                odio urna mi id :
               </span>
-            }
-            topNode={
-              <span style={{ color: '#5C5F66', fontSize: 12 }}>Avant hier</span>
-            }
-          />
+              <Text c="cyan" component="span">
+                Lorem Ipsum dolor
+              </Text>
+            </span>
+          </SummaryBox>
           <SummaryBox
             leftNode={
               <Indicator color="red" inline offset={8} withBorder>
@@ -732,24 +718,19 @@ export const CardListNotificationWithButton: IStory = {
                 </Avatar>
               </Indicator>
             }
-            titleNode={
+            topNode={<span>Le 08 décembre 2023</span>}
+          >
+            <span>
+              <strong>Vincent Le Grand </strong>
               <span>
-                <b>Vincent Le Grand </b>
-                <span>
-                  dolor sit amet consectetur. Sollicitudin mattis blandit
-                  aliquet odio urna mi id :
-                </span>
-                <Text c="cyan" component="span">
-                  Lorem Ipsum dolor
-                </Text>
+                dolor sit amet consectetur. Sollicitudin mattis blandit aliquet
+                odio urna mi id :
               </span>
-            }
-            topNode={
-              <span style={{ color: '#5C5F66', fontSize: 12 }}>
-                Le 08 décembre 2023
-              </span>
-            }
-          />
+              <Text c="cyan" component="span">
+                Lorem Ipsum dolor
+              </Text>
+            </span>
+          </SummaryBox>
           <SummaryBox
             leftNode={
               <Indicator color="red" inline offset={8} withBorder>
@@ -758,24 +739,19 @@ export const CardListNotificationWithButton: IStory = {
                 </Avatar>
               </Indicator>
             }
-            titleNode={
+            topNode={<span>Le 05 décembre 2023</span>}
+          >
+            <span>
+              <strong>Robert Maxwell </strong>
               <span>
-                <b>Robert Maxwell </b>
-                <span>
-                  dolor sit amet consectetur. Sollicitudin mattis blandit
-                  aliquet odio urna mi id :
-                </span>
-                <Text c="cyan" component="span">
-                  Lorem Ipsum dolor
-                </Text>
+                dolor sit amet consectetur. Sollicitudin mattis blandit aliquet
+                odio urna mi id :
               </span>
-            }
-            topNode={
-              <span style={{ color: '#5C5F66', fontSize: 12 }}>
-                Le 05 décembre 2023
-              </span>
-            }
-          />
+              <Text c="cyan" component="span">
+                Lorem Ipsum dolor
+              </Text>
+            </span>
+          </SummaryBox>
           <SummaryBox
             leftNode={
               <Indicator color="red" inline offset={8} withBorder>
@@ -784,24 +760,19 @@ export const CardListNotificationWithButton: IStory = {
                 </Avatar>
               </Indicator>
             }
-            titleNode={
+            topNode={<span>Le 01 décembre 2023</span>}
+          >
+            <span>
+              <strong>Jamie Marcel </strong>
               <span>
-                <b>Jamie Marcel </b>
-                <span>
-                  dolor sit amet consectetur. Sollicitudin mattis blandit
-                  aliquet odio urna mi id :
-                </span>
-                <Text c="cyan" component="span">
-                  Lorem Ipsum dolor
-                </Text>
+                dolor sit amet consectetur. Sollicitudin mattis blandit aliquet
+                odio urna mi id :
               </span>
-            }
-            topNode={
-              <span style={{ color: '#5C5F66', fontSize: 12 }}>
-                Le 01 décembre 2023
-              </span>
-            }
-          />
+              <Text c="cyan" component="span">
+                Lorem Ipsum dolor
+              </Text>
+            </span>
+          </SummaryBox>
           <SummaryBox
             leftNode={
               <Indicator color="red" inline offset={8} withBorder>
@@ -810,24 +781,19 @@ export const CardListNotificationWithButton: IStory = {
                 </Avatar>
               </Indicator>
             }
-            titleNode={
+            topNode={<span>Le 27 Novembre 2023</span>}
+          >
+            <span>
+              <strong>Robert De Fino </strong>
               <span>
-                <b>Robert De Fino </b>
-                <span>
-                  dolor sit amet consectetur. Sollicitudin mattis blandit
-                  aliquet odio urna mi id :
-                </span>
-                <Text c="cyan" component="span">
-                  Lorem Ipsum dolor
-                </Text>
+                dolor sit amet consectetur. Sollicitudin mattis blandit aliquet
+                odio urna mi id :
               </span>
-            }
-            topNode={
-              <span style={{ color: '#5C5F66', fontSize: 12 }}>
-                Le 27 Novembre 2023
-              </span>
-            }
-          />
+              <Text c="cyan" component="span">
+                Lorem Ipsum dolor
+              </Text>
+            </span>
+          </SummaryBox>
         </CardList>
       </Card.Section>
       <CardSection p="0px 32px 32px 32px">
@@ -847,7 +813,7 @@ export const CardListNotificationWithoutButton: IStory = {
           }
         >
           <>
-            <h2 style={{ fontSize: '18px', margin: 0 }}>Element de text</h2>
+            <h2>Element de text</h2>
             <p style={{ margin: '0' }}>sous-titre</p>
           </>
         </CardHeader>
@@ -862,22 +828,19 @@ export const CardListNotificationWithoutButton: IStory = {
                 </Avatar>
               </Indicator>
             }
-            titleNode={
+            topNode={<span>Il y a 3h</span>}
+          >
+            <span>
+              <strong>Simon Leclerc </strong>
               <span>
-                <b>Simon Leclerc </b>
-                <span>
-                  dolor sit amet consectetur. Sollicitudin mattis blandit
-                  aliquet odio urna mi id :
-                </span>
-                <Text c="cyan" component="span">
-                  Lorem Ipsum dolor
-                </Text>
+                dolor sit amet consectetur. Sollicitudin mattis blandit aliquet
+                odio urna mi id :
               </span>
-            }
-            topNode={
-              <span style={{ color: '#5C5F66', fontSize: 12 }}>Il y a 3h</span>
-            }
-          />
+              <Text c="cyan" component="span">
+                Lorem Ipsum dolor
+              </Text>
+            </span>
+          </SummaryBox>
           <SummaryBox
             leftNode={
               <Indicator color="red" inline offset={8} withBorder>
@@ -886,22 +849,19 @@ export const CardListNotificationWithoutButton: IStory = {
                 </Avatar>
               </Indicator>
             }
-            titleNode={
+            topNode={<span>Avant hier</span>}
+          >
+            <span>
+              <strong>Marie Dupont </strong>
               <span>
-                <b>Marie Dupont </b>
-                <span>
-                  dolor sit amet consectetur. Sollicitudin mattis blandit
-                  aliquet odio urna mi id :
-                </span>
-                <Text c="cyan" component="span">
-                  Lorem Ipsum dolor
-                </Text>
+                dolor sit amet consectetur. Sollicitudin mattis blandit aliquet
+                odio urna mi id :
               </span>
-            }
-            topNode={
-              <span style={{ color: '#5C5F66', fontSize: 12 }}>Avant hier</span>
-            }
-          />
+              <Text c="cyan" component="span">
+                Lorem Ipsum dolor
+              </Text>
+            </span>
+          </SummaryBox>
           <SummaryBox
             leftNode={
               <Indicator color="red" inline offset={8} withBorder>
@@ -910,24 +870,19 @@ export const CardListNotificationWithoutButton: IStory = {
                 </Avatar>
               </Indicator>
             }
-            titleNode={
+            topNode={<span>Le 08 décembre 2023</span>}
+          >
+            <span>
+              <strong>Vincent Le Grand </strong>
               <span>
-                <b>Vincent Le Grand </b>
-                <span>
-                  dolor sit amet consectetur. Sollicitudin mattis blandit
-                  aliquet odio urna mi id :
-                </span>
-                <Text c="cyan" component="span">
-                  Lorem Ipsum dolor
-                </Text>
+                dolor sit amet consectetur. Sollicitudin mattis blandit aliquet
+                odio urna mi id :
               </span>
-            }
-            topNode={
-              <span style={{ color: '#5C5F66', fontSize: 12 }}>
-                Le 08 décembre 2023
-              </span>
-            }
-          />
+              <Text c="cyan" component="span">
+                Lorem Ipsum dolor
+              </Text>
+            </span>
+          </SummaryBox>
           <SummaryBox
             leftNode={
               <Indicator color="red" inline offset={8} withBorder>
@@ -936,24 +891,19 @@ export const CardListNotificationWithoutButton: IStory = {
                 </Avatar>
               </Indicator>
             }
-            titleNode={
+            topNode={<span>Le 05 décembre 2023</span>}
+          >
+            <span>
+              <strong>Robert Maxwell </strong>
               <span>
-                <b>Robert Maxwell </b>
-                <span>
-                  dolor sit amet consectetur. Sollicitudin mattis blandit
-                  aliquet odio urna mi id :
-                </span>
-                <Text c="cyan" component="span">
-                  Lorem Ipsum dolor
-                </Text>
+                dolor sit amet consectetur. Sollicitudin mattis blandit aliquet
+                odio urna mi id :
               </span>
-            }
-            topNode={
-              <span style={{ color: '#5C5F66', fontSize: 12 }}>
-                Le 05 décembre 2023
-              </span>
-            }
-          />
+              <Text c="cyan" component="span">
+                Lorem Ipsum dolor
+              </Text>
+            </span>
+          </SummaryBox>
           <SummaryBox
             leftNode={
               <Indicator color="red" inline offset={8} withBorder>
@@ -962,24 +912,19 @@ export const CardListNotificationWithoutButton: IStory = {
                 </Avatar>
               </Indicator>
             }
-            titleNode={
+            topNode={<span>Le 01 décembre 2023</span>}
+          >
+            <span>
+              <strong>Jamie Marcel </strong>
               <span>
-                <b>Jamie Marcel </b>
-                <span>
-                  dolor sit amet consectetur. Sollicitudin mattis blandit
-                  aliquet odio urna mi id :
-                </span>
-                <Text c="cyan" component="span">
-                  Lorem Ipsum dolor
-                </Text>
+                dolor sit amet consectetur. Sollicitudin mattis blandit aliquet
+                odio urna mi id :
               </span>
-            }
-            topNode={
-              <span style={{ color: '#5C5F66', fontSize: 12 }}>
-                Le 01 décembre 2023
-              </span>
-            }
-          />
+              <Text c="cyan" component="span">
+                Lorem Ipsum dolor
+              </Text>
+            </span>
+          </SummaryBox>
           <SummaryBox
             leftNode={
               <Indicator color="red" inline offset={8} withBorder>
@@ -988,24 +933,19 @@ export const CardListNotificationWithoutButton: IStory = {
                 </Avatar>
               </Indicator>
             }
-            titleNode={
+            topNode={<span>Le 27 Novembre 2023</span>}
+          >
+            <span>
+              <strong>Robert De Fino </strong>
               <span>
-                <b>Robert De Fino </b>
-                <span>
-                  dolor sit amet consectetur. Sollicitudin mattis blandit
-                  aliquet odio urna mi id :
-                </span>
-                <Text c="cyan" component="span">
-                  Lorem Ipsum dolor
-                </Text>
+                dolor sit amet consectetur. Sollicitudin mattis blandit aliquet
+                odio urna mi id :
               </span>
-            }
-            topNode={
-              <span style={{ color: '#5C5F66', fontSize: 12 }}>
-                Le 27 Novembre 2023
-              </span>
-            }
-          />
+              <Text c="cyan" component="span">
+                Lorem Ipsum dolor
+              </Text>
+            </span>
+          </SummaryBox>
         </CardList>
       </Card.Section>
     </Card>
@@ -1022,7 +962,7 @@ export const CardListUpload: IStory = {
           }
         >
           <>
-            <h2 style={{ fontSize: '18px', margin: 0 }}>Element de text</h2>
+            <h2>Element de text</h2>
             <p style={{ margin: '0' }}>sous-titre</p>
           </>
         </CardHeader>
@@ -1035,7 +975,7 @@ export const CardListUpload: IStory = {
                 <DownloadSimple size={24} />
               </ActionIcon>
             }
-            titleNode={<b>Ma carte de tiers payant</b>}
+            titleNode={<strong>Ma carte de tiers payant</strong>}
           />
           <SummaryBox
             rightNode={
@@ -1043,7 +983,7 @@ export const CardListUpload: IStory = {
                 <DownloadSimple size={24} />
               </ActionIcon>
             }
-            titleNode={<b>Ma facture du 12/12/23</b>}
+            titleNode={<strong>Ma facture du 12/12/23</strong>}
           />
           <SummaryBox
             rightNode={
@@ -1051,7 +991,7 @@ export const CardListUpload: IStory = {
                 <DownloadSimple size={24} />
               </ActionIcon>
             }
-            titleNode={<b>Mon attestation de domicile</b>}
+            titleNode={<strong>Mon attestation de domicile</strong>}
           />
         </CardList>
       </Card.Section>
@@ -1067,10 +1007,8 @@ export const CardSimple: IStory = {
       </Card.Section>
       <Card.Section m="32px">
         <SummaryBox
-          titleNode={<b>Lorem ipsum dolor sit amet</b>}
-          topNode={
-            <Text style={{ fontSize: '12px' }}>Le 30 novembre 2023</Text>
-          }
+          titleNode={<strong>Lorem ipsum dolor sit amet</strong>}
+          topNode="Le 30 novembre 2023"
         >
           <>
             <Text color="dark.3" mb="10px" size="14px">
