@@ -1,3 +1,5 @@
+/*Carousel*/
+
 .mantine-Carousel-control {
   height: 42px;
   width: 42px;
@@ -30,6 +32,44 @@
 .mantine-Carousel-root {
   border-radius: 8px;
   overflow: hidden;
+}
+
+/*Calendar*/
+
+.mantine-Calendar-calendarHeaderLevel {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.mantine-Calendar-calendarHeader {
+  max-width: none;
+}
+
+.mantine-Calendar-calendarHeaderControlIcon {
+  color: var(--mantine-primary-color-9);
+}
+.mantine-Calendar-calendarHeaderControlIcon[data-direction='previous'] {
+  transform: scale(1.6) rotate(90deg);
+}
+
+.mantine-Calendar-calendarHeaderControlIcon[data-direction='next'] {
+  transform: scale(1.6) rotate(-90deg);
+}
+
+.mantine-Calendar-weekday,
+.mantine-Calendar-day[data-weekend] {
+  color: var(--mantine-color-dark-6);
+}
+
+.mantine-Calendar-day {
+  height: 50px;
+  width: 40px;
+  font-size: 14px;
+}
+.mantine-Calendar-day:hover {
+  background-color: var(--mantine-primary-color-9);
+  border-radius: 4px;
+  color: white;
 }
 
 a {
