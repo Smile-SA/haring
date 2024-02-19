@@ -31,13 +31,17 @@ exports[`SummaryBox matches snapshot 1`] = `
         class="m-4081bf90 mantine-Group-root"
         style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
       >
-        top node
+        <div>
+          top node
+        </div>
       </div>
       <div
         class="m-4081bf90 mantine-Group-root"
         style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
       >
-        title node
+        <div>
+          title node
+        </div>
       </div>
       <div
         class="m-4081bf90 mantine-Group-root"
