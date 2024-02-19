@@ -42,7 +42,7 @@ export const CardListWithButton: IStory = {
           }
         >
           <>
-            <h2>Element de text</h2>
+            <h2 style={{ fontSize: '18px', margin: 0 }}>Element de text</h2>
             <p style={{ margin: '0' }}>sous-titre</p>
           </>
         </CardHeader>
@@ -353,7 +353,7 @@ export const CardListWithoutButton: IStory = {
           }
         >
           <>
-            <h2>Element de text</h2>
+            <h2 style={{ fontSize: '18px', margin: 0 }}>Element de text</h2>
             <p style={{ margin: '0' }}>sous-titre</p>
           </>
         </CardHeader>
@@ -661,7 +661,7 @@ export const CardListNotificationWithButton: IStory = {
           }
         >
           <>
-            <h2>Element de text</h2>
+            <h2 style={{ fontSize: '18px', margin: 0 }}>Element de text</h2>
             <p style={{ margin: '0' }}>sous-titre</p>
           </>
         </CardHeader>
@@ -813,7 +813,7 @@ export const CardListNotificationWithoutButton: IStory = {
           }
         >
           <>
-            <h2>Element de text</h2>
+            <h2 style={{ fontSize: '18px', margin: 0 }}>Element de text</h2>
             <p style={{ margin: '0' }}>sous-titre</p>
           </>
         </CardHeader>
@@ -962,7 +962,7 @@ export const CardListUpload: IStory = {
           }
         >
           <>
-            <h2>Element de text</h2>
+            <h2 style={{ fontSize: '18px', margin: 0 }}>Element de text</h2>
             <p style={{ margin: '0' }}>sous-titre</p>
           </>
         </CardHeader>
