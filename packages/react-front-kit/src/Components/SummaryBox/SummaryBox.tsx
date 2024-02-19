@@ -60,13 +60,13 @@ export function SummaryBox(props: ISummaryBoxProps): ReactElement {
           {...contentContainerFlexProps}
         >
           {Boolean(topNode) && (
-            <Group {...topNodeGroupProps}>
-              <div className={classes.topNode}>{topNode}</div>
+            <Group className={classes.topNode} {...topNodeGroupProps}>
+              {topNode}
             </Group>
           )}
           {Boolean(titleNode) && (
-            <Group {...titleNodeGroupProps}>
-              <div className={classes.titleNode}>{titleNode}</div>
+            <Group className={classes.titleNode} {...titleNodeGroupProps}>
+              {titleNode}
             </Group>
           )}
           {Boolean(children) && (
