@@ -43,17 +43,18 @@
 
 .mantine-Calendar-calendarHeader {
   max-width: none;
+  margin-bottom: 25px;
 }
 
 .mantine-Calendar-calendarHeaderControlIcon {
   color: var(--mantine-primary-color-9);
 }
 .mantine-Calendar-calendarHeaderControlIcon[data-direction='previous'] {
-  transform: scale(1.6) rotate(90deg);
+  transform: scale(1.8) rotate(90deg);
 }
 
 .mantine-Calendar-calendarHeaderControlIcon[data-direction='next'] {
-  transform: scale(1.6) rotate(-90deg);
+  transform: scale(1.8) rotate(-90deg);
 }
 
 .mantine-Calendar-weekday,
@@ -61,16 +62,34 @@
   color: var(--mantine-color-dark-6);
 }
 
+.mantine-Calendar-weekday {
+  padding-bottom: 8px;
+}
+
 .mantine-Calendar-day {
   height: 50px;
   width: 40px;
   font-size: 14px;
 }
-.mantine-Calendar-day:hover {
+
+.mantine-Calendar-day[selected='true'],
+.mantine-Calendar-day[data-selected] {
   background-color: var(--mantine-primary-color-9);
+  border-radius: 4px !important;
+  color: white;
+}
+
+.mantine-Calendar-day:hover {
+  background-color: var(--mantine-primary-color-8);
   border-radius: 4px;
   color: white;
 }
+
+.mantine-Calendar-monthCell {
+  padding: 0 8.5px !important;
+}
+
+// General
 
 a {
   color: inherit;
