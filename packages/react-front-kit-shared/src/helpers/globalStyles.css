@@ -1,3 +1,45 @@
+/* General */
+
+a {
+  color: inherit;
+}
+
+body {
+  /*noinspection CssInvalidFunction*/
+  background-color: light-dark(
+    var(--mantine-color-gray-1),
+    var(--mantine-color-gray-9)
+  );
+}
+
+.haring-active:active {
+  transform: none;
+}
+
+/*noinspection CssInvalidFunction*/
+.haring-focus:focus-visible {
+  outline: rem(2px) solid var(--mantine-color-orange-5) !important;
+  outline-offset: rem(2px) !important;
+}
+
+.haring-focus button:focus-visible {
+  outline-color: var(--mantine-color-orange-5) !important;
+  outline-offset: 2px;
+}
+
+.mantine-Input-input:focus,
+.mantine-Input-input:focus-within {
+  border-color: var(--mantine-color-orange-5);
+}
+
+.mantine-Chip-input:focus-visible + .mantine-Chip-label,
+.mantine-Rating-input:focus-visible + .mantine-Rating-label,
+.mantine-Switch-input:focus-visible + .mantine-Switch-track,
+.mantine-SegmentedControl-input:focus:focus-visible
+  + .mantine-SegmentedControl-label {
+  outline-color: var(--mantine-color-orange-5);
+}
+
 /*Carousel*/
 
 .mantine-Carousel-control {
@@ -87,46 +129,4 @@
 
 .mantine-Calendar-monthCell {
   padding: 0 8.5px !important;
-}
-
-/* General */
-
-a {
-  color: inherit;
-}
-
-body {
-  /*noinspection CssInvalidFunction*/
-  background-color: light-dark(
-    var(--mantine-color-gray-1),
-    var(--mantine-color-gray-9)
-  );
-}
-
-.haring-active:active {
-  transform: none;
-}
-
-/*noinspection CssInvalidFunction*/
-.haring-focus:focus-visible {
-  outline: rem(2px) solid var(--mantine-color-orange-5) !important;
-  outline-offset: rem(2px) !important;
-}
-
-.haring-focus button:focus-visible {
-  outline-color: var(--mantine-color-orange-5) !important;
-  outline-offset: 2px;
-}
-
-.mantine-Input-input:focus,
-.mantine-Input-input:focus-within {
-  border-color: var(--mantine-color-orange-5);
-}
-
-.mantine-Chip-input:focus-visible + .mantine-Chip-label,
-.mantine-Rating-input:focus-visible + .mantine-Rating-label,
-.mantine-Switch-input:focus-visible + .mantine-Switch-track,
-.mantine-SegmentedControl-input:focus:focus-visible
-  + .mantine-SegmentedControl-label {
-  outline-color: var(--mantine-color-orange-5);
 }
