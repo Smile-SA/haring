@@ -64,6 +64,10 @@ body {
   border-color: var(--mantine-color-orange-5);
 }
 
-/* TODO: find correct selectors to override for remaining types of inputs (chip, segmented, checkboxes, etc), test on Inputs story,
-     also for other elements such as <nav>, etc.
-      Best way to check is to go on example pages and navigate with Tab. */
+.mantine-Chip-input:focus-visible + .mantine-Chip-label,
+.mantine-Rating-input:focus-visible + .mantine-Rating-label,
+.mantine-Switch-input:focus-visible + .mantine-Switch-track,
+.mantine-SegmentedControl-input:focus:focus-visible
+  + .mantine-SegmentedControl-label {
+  outline-color: var(--mantine-color-orange-5);
+}
