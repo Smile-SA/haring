@@ -17,7 +17,7 @@ type IStory = StoryObj<typeof meta>;
 
 export const CalendarHeader: IStory = {
   args: {
-    label: 'Août 2023',
+    label: 'August 2023',
     onLevelClick: action('onLevelClick'),
     onNext: action('onNext'),
     onPrevious: action('onPrevious'),
@@ -26,7 +26,7 @@ export const CalendarHeader: IStory = {
 
 export const InCardHeader: IStory = {
   args: {
-    label: 'Août 2023',
+    label: 'August 2023',
     onLevelClick: action('onLevelClick'),
     onNext: action('onNext'),
     onPrevious: action('onPrevious'),
