@@ -16,9 +16,13 @@ exports[`CalendarHeader matches snapshot 1`] = `
     class="m-8bffd616 mantine-Flex-root __m__-r0"
   >
     <div
+      aria-controls="mantine-f4bipx4bi-dropdown"
+      aria-expanded="false"
+      aria-haspopup="dialog"
       class="m-730a79ed mantine-CalendarHeader-calendarHeader"
       color="red"
       data-size="md"
+      id="mantine-f4bipx4bi-target"
       style="--dch-control-size: var(--dch-control-size-md); --dch-fz: var(--mantine-font-size-md);"
     >
       <button

@@ -7,6 +7,12 @@ import { action } from '@storybook/addon-actions';
 import { CalendarHeader as Cmp } from './CalendarHeader';
 
 const meta = {
+  argTypes: {
+    type: {
+      control: 'select',
+      options: ['month', 'monthsList', 'yearsList'],
+    },
+  },
   component: Cmp,
   tags: ['autodocs'],
   title: '3-custom/Components/CalendarHeader',
@@ -17,19 +23,23 @@ type IStory = StoryObj<typeof meta>;
 
 export const CalendarHeader: IStory = {
   args: {
+    date: new Date(),
     label: 'August 2023',
-    onLevelClick: action('onLevelClick'),
+    onDateClick: action('onDateClick'),
     onNext: action('onNext'),
     onPrevious: action('onPrevious'),
+    type: 'month',
   },
 };
 
 export const InCardHeader: IStory = {
   args: {
+    date: new Date(),
     label: 'August 2023',
-    onLevelClick: action('onLevelClick'),
+    onDateClick: action('onDateClick'),
     onNext: action('onNext'),
     onPrevious: action('onPrevious'),
+    type: 'month',
   },
   render: (args) => (
     <div>
