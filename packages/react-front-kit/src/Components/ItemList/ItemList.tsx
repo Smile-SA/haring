@@ -19,10 +19,9 @@ export interface IItemListProps extends Omit<ICardListProps, 'children'> {
 }
 
 export function ItemList(props: IItemListProps): ReactElement {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  const { items = [], separator = false, ...ICardListProps } = props;
+  const { items = [], separator = false, ...cardListProps } = props;
   return (
-    <CardList {...ICardListProps} separator={separator}>
+    <CardList {...cardListProps} separator={separator}>
       {items.map((value, index) => {
         return (
           <div
