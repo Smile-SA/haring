@@ -1,0 +1,7 @@
+{
+  "extends": "tsconfig/react-library.json",
+  "compilerOptions": {
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+  },
+  "include": [".", "../../global.d.ts"]
+}

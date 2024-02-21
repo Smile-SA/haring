@@ -1,0 +1,20 @@
+.root {
+  flex-grow: 1;
+  justify-content: center;
+  margin: 5px;
+}
+
+.header {
+  margin-bottom: 0;
+  flex-grow: 1;
+
+  & button {
+    font-weight: bold;
+    border-radius: 5px;
+
+    & > svg {
+      /*width: 24px;*/
+      /*height: 24px;*/
+    }
+  }
+}

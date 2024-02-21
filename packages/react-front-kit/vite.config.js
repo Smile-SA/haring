@@ -21,6 +21,7 @@ export default defineConfig({
         '@mantine/hooks',
         '@phosphor-icons/react',
         '@smile/react-front-kit',
+        '@smile/react-front-kit-dates',
         '@smile/react-front-kit-dropzone',
         '@smile/react-front-kit-shared',
         '@smile/react-front-kit-table',
