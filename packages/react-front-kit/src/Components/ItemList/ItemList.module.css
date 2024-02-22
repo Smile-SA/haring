@@ -1,0 +1,9 @@
+.itemRoot {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.itemDescription {
+  margin: 0;
+}
