@@ -4,6 +4,8 @@
 // component exports
 export type { IDataBadgeProps } from './Components/DataBadge/DataBadge';
 export { DataBadge } from './Components/DataBadge/DataBadge';
+export type { IItemListProps } from './Components/ItemList/ItemList';
+export { ItemList } from './Components/ItemList/ItemList';
 export type { ICardListProps } from './Components/CardList/CardList';
 export { CardList } from './Components/CardList/CardList';
 export type { ICardHeaderProps } from './Components/CardHeader/CardHeader';
