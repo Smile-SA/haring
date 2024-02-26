@@ -9,7 +9,11 @@ describe('CalendarHeader', () => {
   });
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <CalendarHeader date={new Date(0, 0, 0)} label="August 2023" />,
+      <CalendarHeader
+        date={new Date(0, 0, 0)}
+        label="August 2023"
+        level="month"
+      />,
     );
     expect(container).toMatchSnapshot();
   });

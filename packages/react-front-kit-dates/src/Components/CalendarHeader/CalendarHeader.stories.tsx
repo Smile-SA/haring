@@ -1,16 +1,20 @@
+import type { ICalendarHeaderClickType } from './CalendarHeader';
+import type { CalendarLevel } from '@mantine/dates/lib/types/GeneralTypes';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Badge, Button, Card, Group, Text } from '@mantine/core';
 import { CardHeader } from '@smile/react-front-kit';
+import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/storybook-utils';
 import { action } from '@storybook/addon-actions';
 
 import { CalendarHeader as Cmp } from './CalendarHeader';
 
 const meta = {
   argTypes: {
-    type: {
+    level: {
       control: 'select',
-      options: ['month', 'monthsList', 'yearsList'],
+      defaultValue: 'decade',
+      options: ['month', 'year', 'decade'],
     },
   },
   component: Cmp,
@@ -24,22 +28,22 @@ type IStory = StoryObj<typeof meta>;
 export const CalendarHeader: IStory = {
   args: {
     date: new Date(),
-    label: 'August 2023',
+    label: 'August 2024',
+    level: 'month',
     onDateClick: action('onDateClick'),
     onNext: action('onNext'),
     onPrevious: action('onPrevious'),
-    type: 'month',
   },
 };
 
 export const InCardHeader: IStory = {
   args: {
     date: new Date(),
-    label: 'August 2023',
+    label: '2024',
+    level: 'year',
     onDateClick: action('onDateClick'),
     onNext: action('onNext'),
     onPrevious: action('onPrevious'),
-    type: 'month',
   },
   render: (args) => (
     <div>
@@ -77,4 +81,50 @@ export const InCardHeader: IStory = {
       </Card>
     </div>
   ),
+};
+
+function renderLabelMock(date: Date, level: CalendarLevel): string {
+  switch (level) {
+    case 'decade': {
+      const decade = Math.floor(date.getFullYear() / 10) * 10;
+      return `${decade} - ${decade + 9}`;
+    }
+    case 'year':
+      return date.getFullYear().toString();
+    case 'month':
+      return date.toLocaleString('en-GB', { month: 'long', year: 'numeric' });
+    default:
+      return '';
+  }
+}
+
+function renderLevelMock(level: ICalendarHeaderClickType): CalendarLevel {
+  action('onDateClick');
+  return level !== 'day' ? level : 'month';
+}
+
+export const LevelSwitchingExample: IStory = {
+  args: {
+    date: new Date(),
+    label: renderLabelMock(new Date(), 'decade'),
+    level: 'decade',
+    onNext: action('onNext'),
+    onPrevious: action('onPrevious'),
+  },
+  decorators: [
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    (Story, ctx) => {
+      const args = useStorybookArgsConnect(ctx.args, {
+        onDateClick: (_, date, level) => ({
+          date: date as Date,
+          label: renderLabelMock(
+            date as Date,
+            renderLevelMock(level as ICalendarHeaderClickType),
+          ),
+          level: renderLevelMock(level as ICalendarHeaderClickType),
+        }),
+      });
+      return <Story args={{ ...args }} />;
+    },
+  ],
 };

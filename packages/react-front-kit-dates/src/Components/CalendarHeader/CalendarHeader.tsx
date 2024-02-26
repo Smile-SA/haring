@@ -6,6 +6,7 @@ import type {
   MonthsListProps,
   YearsListProps,
 } from '@mantine/dates';
+import type { CalendarLevel } from '@mantine/dates/lib/types/GeneralTypes';
 import type { ReactElement } from 'react';
 
 import { Flex, Popover } from '@mantine/core';
@@ -19,28 +20,27 @@ import { useState } from 'react';
 
 import classes from './CalendarHeader.module.css';
 
-export type ICalendarHeaderType = 'month' | 'monthsList' | 'yearsList';
 export type ICalendarHeaderClickType = 'day' | 'month' | 'year';
 
 export interface ICalendarHeaderProps
   extends Omit<CalendarHeaderProps, 'onLevelClick'> {
   date: Date;
+  level: CalendarLevel;
   monthProps?: Omit<MonthProps, 'month'>;
   monthsListProps?: Omit<MonthsListProps, 'year'>;
   onDateClick?: (
     event: React.MouseEvent<HTMLButtonElement>,
     date: Date,
-    type: ICalendarHeaderClickType,
+    level: ICalendarHeaderClickType,
   ) => void;
-  type?: ICalendarHeaderType;
   yearsListProps?: Omit<YearsListProps, 'decade'>;
 }
 
 export function CalendarHeader(props: ICalendarHeaderProps): ReactElement {
   const {
     date,
+    level,
     label,
-    type = 'month',
     yearsListProps,
     monthsListProps,
     monthProps,
@@ -49,9 +49,9 @@ export function CalendarHeader(props: ICalendarHeaderProps): ReactElement {
   } = props;
   const [opened, setOpened] = useState(false);
 
-  function level(): ReactElement | null {
-    switch (type) {
-      case 'yearsList':
+  function dropdownLevel(): ReactElement | null {
+    switch (level) {
+      case 'decade':
         return (
           <YearsList
             __onControlClick={(e, d) => onDateClick?.(e, d, 'year')}
@@ -59,7 +59,7 @@ export function CalendarHeader(props: ICalendarHeaderProps): ReactElement {
             {...yearsListProps}
           />
         );
-      case 'monthsList':
+      case 'year':
         return (
           <MonthsList
             __onControlClick={(e, d) => onDateClick?.(e, d, 'month')}
@@ -93,7 +93,7 @@ export function CalendarHeader(props: ICalendarHeaderProps): ReactElement {
             {...calendarHeaderProps}
           />
         </Popover.Target>
-        <Popover.Dropdown>{level()}</Popover.Dropdown>
+        <Popover.Dropdown>{dropdownLevel()}</Popover.Dropdown>
       </Popover>
     </Flex>
   );
