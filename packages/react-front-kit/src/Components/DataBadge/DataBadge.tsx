@@ -66,12 +66,12 @@ export function DataBadge(props: IDataBadgeProps): ReactElement {
 
   return (
     <Badge
-      {...badgeProps}
       autoContrast
       bg={!color ? 'transparent' : undefined}
-      className={classes.root}
+      className={[classes.root, size === 'md' && classes.rootMd].join(' ')}
       color={color ? color : getThemeColor(theme.colors.dark[3], theme)}
       variant="light"
+      {...badgeProps}
     >
       <div className={classes.groupRoot}>
         <span

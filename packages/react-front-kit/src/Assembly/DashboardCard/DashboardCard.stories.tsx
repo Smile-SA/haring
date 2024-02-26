@@ -8,6 +8,7 @@ import {
   Card,
   CardSection,
   Flex,
+  Grid,
   Group,
   Image,
   Indicator,
@@ -21,7 +22,12 @@ import {
   UserCircle,
 } from '@phosphor-icons/react';
 
-import { CardHeader, CardList, SummaryBox } from '@smile/react-front-kit';
+import {
+  CardHeader,
+  CardList,
+  DataBadge,
+  SummaryBox,
+} from '@smile/react-front-kit';
 
 const meta = {
   component: null,
@@ -1040,6 +1046,57 @@ export const CardSimple: IStory = {
             </Group>
           </>
         </SummaryBox>
+      </Card.Section>
+    </Card>
+  ),
+};
+
+export const CardDataBadge: IStory = {
+  render: () => (
+    <Card radius={16}>
+      <Card.Section>
+        <CardHeader
+          leftSection={
+            <Note size={38} style={{ marginTop: '12px' }} weight="thin" />
+          }
+        >
+          <>
+            <h2 style={{ fontSize: '18px', margin: 0 }}>Element de text</h2>
+            <p style={{ margin: '0' }}>sous-text</p>
+          </>
+        </CardHeader>
+      </Card.Section>
+      <Card.Section m="32px 16px 16px">
+        <DataBadge
+          color="cyan"
+          number={48}
+          size="lg"
+          style={{ background: 'var(--mantine-primary-color-0)' }}
+        >
+          EN COURS DE CANDIDATURE
+        </DataBadge>
+      </Card.Section>
+      <Card.Section m="0 30px 18px 30px">
+        <Grid mx="auto">
+          <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
+            <DataBadge number={18}>EN COURS DE CANDIDATURE</DataBadge>
+          </Grid.Col>
+          <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
+            <DataBadge number={12}>en cours de consultation</DataBadge>
+          </Grid.Col>
+          <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
+            <DataBadge number={26}>en cours de signature</DataBadge>
+          </Grid.Col>
+          <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
+            <DataBadge number={11}>en cours de procédure</DataBadge>
+          </Grid.Col>
+          <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
+            <DataBadge number={0}>terminé/signé</DataBadge>
+          </Grid.Col>
+          <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
+            <DataBadge number={3}>clôturé</DataBadge>
+          </Grid.Col>
+        </Grid>
       </Card.Section>
     </Card>
   ),
