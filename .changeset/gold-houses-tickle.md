@@ -3,4 +3,4 @@
 'storybook-pages': minor
 ---
 
-Add dataBadge component and add it to Assembly/DashboardCard and Pages/DashboardPage
+Add DataBadge component and add it to Assembly/DashboardCard and Pages/DashboardPage
