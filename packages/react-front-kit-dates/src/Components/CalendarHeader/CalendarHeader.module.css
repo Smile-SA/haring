@@ -11,10 +11,5 @@
   & button {
     font-weight: bold;
     border-radius: 5px;
-
-    & > svg {
-      /*width: 24px;*/
-      /*height: 24px;*/
-    }
   }
 }
