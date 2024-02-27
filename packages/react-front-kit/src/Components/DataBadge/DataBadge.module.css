@@ -5,6 +5,7 @@
   display: block;
   height: auto;
   width: auto;
+  position: relative;
 }
 
 .rootMd {
@@ -13,7 +14,7 @@
 
 .groupRoot {
   display: flex;
-  white-space: wrap;
+  white-space: normal;
   display: flex;
 }
 
@@ -22,6 +23,7 @@
   margin-right: 16px;
   display: block;
   font-size: 34px;
+  min-width: fit-content;
 }
 
 .numberMd {

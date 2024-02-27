@@ -13,56 +13,14 @@ export interface IDataBadgeProps extends Omit<BadgeProps, 'color'> {
   children?: string;
   color?: DefaultMantineColor;
   number?: number;
-  ratio?: 1 | 10 | 100 | 1000;
+  ratio?: number;
   size?: ISize;
 }
 
 export function DataBadge(props: IDataBadgeProps): ReactElement {
-  const {
-    children,
-    color,
-    number,
-    size = 'md',
-    ratio = 10,
-    ...badgeProps
-  } = props;
+  const { children, color, number, size = 'md', ratio, ...badgeProps } = props;
 
   const theme = useMantineTheme();
-
-  function getRatio(size: ISize): Record<string, string> {
-    let value = '40px';
-
-    if (size === 'md') {
-      switch (ratio) {
-        case 1:
-          value = '12px';
-          break;
-        case 10:
-          value = '24px';
-          break;
-        case 100:
-          value = '35px';
-          break;
-        case 1000:
-          value = '47px';
-          break;
-      }
-    } else {
-      switch (ratio) {
-        case 1:
-          value = '20px';
-          break;
-        case 100:
-          value = '60px';
-          break;
-        case 1000:
-          value = '80px';
-          break;
-      }
-    }
-
-    return { width: value };
-  }
 
   return (
     <Badge
@@ -78,7 +36,7 @@ export function DataBadge(props: IDataBadgeProps): ReactElement {
           className={[classes.number, size === 'md' && classes.numberMd].join(
             ' ',
           )}
-          style={getRatio(size)}
+          style={{ width: `${ratio}%` }}
         >
           {number}
         </span>
