@@ -4,6 +4,7 @@ import type { BoxProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
 import { Box } from '@mantine/core';
+import { NestedProvider, useThemes } from '@smile/react-front-kit-shared';
 
 import classes from './CardHeader.module.css';
 
@@ -15,14 +16,15 @@ export interface ICardHeaderProps extends BoxProps {
 
 export function CardHeader(props: ICardHeaderProps): ReactElement {
   const { children, leftSection, rightSection, ...rootProps } = props;
+  const { secondary } = useThemes();
 
   return (
     <Box className={classes.root} {...rootProps}>
-      <div className={classes.container}>
+      <NestedProvider className={classes.container} theme={secondary}>
         {Boolean(leftSection) && <div>{leftSection}</div>}
-        <div>{children}</div>
+        <div className={classes.content}>{children}</div>
         {Boolean(rightSection) && <div>{rightSection}</div>}
-      </div>
+      </NestedProvider>
     </Box>
   );
 }
