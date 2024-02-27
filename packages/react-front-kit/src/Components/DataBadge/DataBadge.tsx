@@ -13,7 +13,7 @@ export interface IDataBadgeProps extends Omit<BadgeProps, 'color'> {
   children?: string;
   color?: DefaultMantineColor;
   number?: number;
-  numberSize?: 1 | 10 | 100 | 1000;
+  ratio?: 1 | 10 | 100 | 1000;
   size?: ISize;
 }
 
@@ -21,19 +21,19 @@ export function DataBadge(props: IDataBadgeProps): ReactElement {
   const {
     children,
     color,
-    number = 10,
+    number,
     size = 'md',
-    numberSize = 10,
+    ratio = 10,
     ...badgeProps
   } = props;
 
   const theme = useMantineTheme();
 
-  function getNumberSize(size: ISize): Record<string, string> {
+  function getRatio(size: ISize): Record<string, string> {
     let value = '40px';
 
     if (size === 'md') {
-      switch (numberSize) {
+      switch (ratio) {
         case 1:
           value = '12px';
           break;
@@ -48,7 +48,7 @@ export function DataBadge(props: IDataBadgeProps): ReactElement {
           break;
       }
     } else {
-      switch (numberSize) {
+      switch (ratio) {
         case 1:
           value = '20px';
           break;
@@ -78,7 +78,7 @@ export function DataBadge(props: IDataBadgeProps): ReactElement {
           className={[classes.number, size === 'md' && classes.numberMd].join(
             ' ',
           )}
-          style={getNumberSize(size)}
+          style={getRatio(size)}
         >
           {number}
         </span>

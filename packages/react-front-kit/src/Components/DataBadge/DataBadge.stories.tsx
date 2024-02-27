@@ -21,7 +21,6 @@ export const DataBadgeLg: IStory = {
     children: 'Application in progress',
     color: 'cyan',
     number: 48,
-    numberSize: 10,
     size: 'lg',
   },
 };
