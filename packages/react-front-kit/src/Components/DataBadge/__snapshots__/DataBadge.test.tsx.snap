@@ -24,9 +24,7 @@ exports[`DataBadge matches snapshot 1`] = `
         <span
           class=" "
           style="width: 24px;"
-        >
-          10
-        </span>
+        />
         <p
           class=" "
         />

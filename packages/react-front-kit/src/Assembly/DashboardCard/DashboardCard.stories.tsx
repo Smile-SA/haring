@@ -1067,12 +1067,7 @@ export const CardDataBadge: IStory = {
         </CardHeader>
       </Card.Section>
       <Card.Section m="32px 16px 16px">
-        <DataBadge
-          color="cyan"
-          number={48}
-          size="lg"
-          style={{ background: 'var(--mantine-primary-color-0)' }}
-        >
+        <DataBadge color="cyan" number={48} size="lg">
           EN COURS DE CANDIDATURE
         </DataBadge>
       </Card.Section>
