@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ItemList matches snapshot 1`] = `
+exports[`EventList matches snapshot 1`] = `
 <div>
   <style
     data-mantine-styles="true"
@@ -13,118 +13,17 @@ exports[`ItemList matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-d57069b5 mantine-ScrollArea-root"
-    style="--sa-corner-width: 0px; --sa-corner-height: 0px;"
+    style="border-left: 8px solid #DBE4FF; padding-left: 16px;"
   >
-    <div
-      class="m-c0783ff9 mantine-ScrollArea-viewport"
-      data-scrollbars="xy"
-      style="overflow-x: scroll; overflow-y: scroll;"
-    >
-      <div
-        style="min-width: 100%; display: table;"
-      >
-        <div
-          class="m-6d731127 mantine-Stack-root"
-          style="--stack-gap: var(--mantine-spacing-xl); --stack-align: stretch; --stack-justify: flex-start;"
-        >
-          <div
-            style="--separator-gap: var(--mantine-spacing-xl); --separator-display: none;"
-          >
-            <div>
-              <strong>
-                Aujourd'hui
-              </strong>
-            </div>
-          </div>
-          <div
-            style="--separator-gap: var(--mantine-spacing-xl); --separator-display: none;"
-          >
-            <div
-              style="border-left: 8px solid #DBE4FF; padding-left: 16px;"
-            >
-              <strong>
-                Réunion d'équipe
-              </strong>
-              <span>
-                10h00 - 12h00
-              </span>
-            </div>
-          </div>
-          <div
-            style="--separator-gap: var(--mantine-spacing-xl); --separator-display: none;"
-          >
-            <div
-              style="border-left: 8px solid #FFE8CC; padding-left: 16px;"
-            >
-              <strong>
-                Repas clients
-              </strong>
-              <span>
-                12h00 - 13h30
-              </span>
-              <p>
-                12 avenue Des gourmets, 69003, Lyon
-              </p>
-            </div>
-          </div>
-          <div
-            style="--separator-gap: var(--mantine-spacing-xl); --separator-display: none;"
-          >
-            <div
-              style="border-left: 8px solid #D3F9D8; padding-left: 16px;"
-            >
-              <strong>
-                Point Avancement du projet M2A RP
-              </strong>
-              <span>
-                18h00 - 18h30
-              </span>
-              <p>
-                Lorem ipsum
-              </p>
-            </div>
-          </div>
-          <div
-            style="--separator-gap: var(--mantine-spacing-xl); --separator-display: none;"
-          >
-            <div>
-              <strong>
-                Demain
-              </strong>
-            </div>
-          </div>
-          <div
-            style="--separator-gap: var(--mantine-spacing-xl); --separator-display: none;"
-          >
-            <div
-              style="border-left: 8px solid #DBE4FF; padding-left: 16px;"
-            >
-              <strong>
-                Réunion d'équipe
-              </strong>
-              <span>
-                10h00 - 12h00
-              </span>
-            </div>
-          </div>
-          <div
-            style="--separator-gap: var(--mantine-spacing-xl); --separator-display: none;"
-          >
-            <div
-              style="border-left: 8px solid #D3F9D8; padding-left: 16px;"
-            >
-              <strong>
-                Point Avancement du projet M2A RP
-              </strong>
-              <span>
-                18h00 - 18h30
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <strong>
+      Réunion d'équipe
+    </strong>
+    <span>
+      10h00 - 12h00
+    </span>
+    <p>
+      12 avenue Des gourmets, 69003, Lyon
+    </p>
   </div>
 </div>
 `;

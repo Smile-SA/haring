@@ -1,6 +1,13 @@
-import type { IItem } from './ItemList';
+import type { IEventListProps } from './EventList.tsx';
 
-export const itemsMock: IItem[] = [
+export const eventMock: IEventListProps = {
+  color: '#DBE4FF',
+  description: '12 avenue Des gourmets, 69003, Lyon',
+  details: '10h00 - 12h00',
+  title: "Réunion d'équipe",
+};
+
+export const EventMock: IEventListProps[] = [
   {
     title: "Aujourd'hui",
   },

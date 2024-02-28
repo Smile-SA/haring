@@ -2,4 +2,4 @@
 '@smile/react-front-kit': minor
 ---
 
-Add EventList component
+Modify ItemList to EventList.
