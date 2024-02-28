@@ -20,3 +20,10 @@ export const EventList: IStory = {
     title: eventMock.title,
   },
 };
+
+export const EventListWithoutColorAndDescription: IStory = {
+  args: {
+    details: eventMock.details,
+    title: eventMock.title,
+  },
+};

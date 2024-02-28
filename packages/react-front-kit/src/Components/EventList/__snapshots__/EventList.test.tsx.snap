@@ -16,10 +16,10 @@ exports[`EventList matches snapshot 1`] = `
     style="border-left: 8px solid #DBE4FF; padding-left: 16px;"
   >
     <strong>
-      Réunion d'équipe
+      Team meeting
     </strong>
     <span>
-      10h00 - 12h00
+      10:00 AM - 12:00 PM
     </span>
     <p>
       12 avenue Des gourmets, 69003, Lyon
