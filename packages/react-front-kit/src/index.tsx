@@ -2,8 +2,8 @@
 'use client';
 
 // component exports
-export type { IItemListProps } from './Components/ItemList/ItemList';
-export { ItemList } from './Components/ItemList/ItemList';
+export type { IEventListProps } from './Components/EventList/EventList';
+export { EventList } from './Components/EventList/EventList';
 export type { ICardListProps } from './Components/CardList/CardList';
 export { CardList } from './Components/CardList/CardList';
 export type { ICardHeaderProps } from './Components/CardHeader/CardHeader';
