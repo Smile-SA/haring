@@ -2,6 +2,8 @@
 'use client';
 
 // component exports
+export type { IIconCardProps } from './Components/IconCard/IconCard';
+export { IconCard } from './Components/IconCard/IconCard';
 export type { IItemListProps } from './Components/ItemList/ItemList';
 export { ItemList } from './Components/ItemList/ItemList';
 export type { ICardListProps } from './Components/CardList/CardList';
