@@ -1,0 +1,43 @@
+.root {
+  border-radius: 8px;
+  padding: 16px 24px;
+  font-size: 14px;
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.rootMd {
+  padding: 6px 10px;
+}
+
+.groupRoot {
+  display: flex;
+  white-space: normal;
+  display: flex;
+}
+
+.number {
+  margin: auto 0;
+  margin-right: 16px;
+  display: block;
+  font-size: 34px;
+  min-width: fit-content;
+}
+
+.numberMd {
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+.text {
+  margin: 0;
+  max-width: 123px;
+}
+
+.textMd {
+  font-weight: 400;
+  text-transform: lowercase;
+  max-width: 100%;
+}

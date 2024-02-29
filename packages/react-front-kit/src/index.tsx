@@ -2,6 +2,8 @@
 'use client';
 
 // component exports
+export type { IDataBadgeProps } from './Components/DataBadge/DataBadge';
+export { DataBadge } from './Components/DataBadge/DataBadge';
 export type { IEventListProps } from './Components/EventList/EventList';
 export { EventList } from './Components/EventList/EventList';
 export type { ICardListProps } from './Components/CardList/CardList';
