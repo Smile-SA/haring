@@ -26,7 +26,27 @@ import {
   Note,
   UserCircle,
 } from '@phosphor-icons/react';
-import { CardHeader, CardList, SummaryBox } from '@smile/react-front-kit';
+import {
+  CardHeader,
+  CardList,
+  DataBadge,
+  SummaryBox,
+} from '@smile/react-front-kit';
+
+const header = (
+  title = 'Element de text',
+  subTitle = 'sous-titre',
+  icon = <Note size={38} style={{ marginTop: '12px' }} weight="thin" />,
+): ReactElement => {
+  return (
+    <CardHeader leftSection={icon}>
+      <>
+        <h2 style={{ fontSize: '18px', margin: 0 }}>{title}</h2>
+        <p style={{ margin: '0' }}>{subTitle}</p>
+      </>
+    </CardHeader>
+  );
+};
 
 const seeMore = (
   <CardSection p="0px 32px 32px 32px">
@@ -65,16 +85,11 @@ const cardListNotifications = (button = true): ReactElement => {
   return (
     <Card radius={16}>
       <Card.Section>
-        <CardHeader
-          leftSection={
-            <Bell size={38} style={{ marginTop: '12px' }} weight="thin" />
-          }
-        >
-          <>
-            <h2 style={{ fontSize: '18px', margin: 0 }}>Notifications</h2>
-            <p style={{ margin: '0' }}>sous-titre</p>
-          </>
-        </CardHeader>
+        {header(
+          'Notifications',
+          undefined,
+          <Bell size={38} style={{ marginTop: '12px' }} weight="thin" />,
+        )}
       </Card.Section>
       <Card.Section>
         <CardList h="565px">
@@ -127,16 +142,11 @@ const cardListUploadItem = (
 const cardListUpload = (
   <Card radius={16}>
     <Card.Section>
-      <CardHeader
-        leftSection={
-          <Folder size={38} style={{ marginTop: '12px' }} weight="thin" />
-        }
-      >
-        <>
-          <h2 style={{ fontSize: '18px', margin: 0 }}>Mes documents</h2>
-          <p style={{ margin: '0' }}>sous-titre</p>
-        </>
-      </CardHeader>
+      {header(
+        'Mes documents',
+        undefined,
+        <Folder size={38} style={{ marginTop: '12px' }} weight="thin" />,
+      )}
     </Card.Section>
     <Card.Section>
       <CardList>
@@ -236,18 +246,7 @@ const cardListItem = (
 const cardList = (button = true): ReactElement => {
   return (
     <Card radius={16}>
-      <Card.Section>
-        <CardHeader
-          leftSection={
-            <Note size={38} style={{ marginTop: '12px' }} weight="thin" />
-          }
-        >
-          <>
-            <h2 style={{ fontSize: '18px', margin: 0 }}>Element de text</h2>
-            <p style={{ margin: '0' }}>sous-titre</p>
-          </>
-        </CardHeader>
-      </Card.Section>
+      <Card.Section>{header()}</Card.Section>
       <Card.Section>
         <CardList h="565px">
           {cardListItem(
@@ -341,6 +340,39 @@ const cardList = (button = true): ReactElement => {
   );
 };
 
+const cardDataBadge = (
+  <Card radius={16}>
+    <Card.Section>{header()}</Card.Section>
+    <Card.Section m="32px 16px 16px">
+      <DataBadge color="cyan" number={48} size="lg">
+        EN COURS DE CANDIDATURE
+      </DataBadge>
+    </Card.Section>
+    <Card.Section m="0 30px 18px 30px">
+      <Grid mx="auto">
+        <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
+          <DataBadge number={18}>EN COURS DE CANDIDATURE</DataBadge>
+        </Grid.Col>
+        <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
+          <DataBadge number={12}>en cours de consultation</DataBadge>
+        </Grid.Col>
+        <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
+          <DataBadge number={26}>en cours de signature</DataBadge>
+        </Grid.Col>
+        <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
+          <DataBadge number={11}>en cours de procédure</DataBadge>
+        </Grid.Col>
+        <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
+          <DataBadge number={0}>terminé/signé</DataBadge>
+        </Grid.Col>
+        <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
+          <DataBadge number={3}>clôturé</DataBadge>
+        </Grid.Col>
+      </Grid>
+    </Card.Section>
+  </Card>
+);
+
 export function DashboardPage(): ReactElement {
   return (
     <Grid maw="1480px" mx="auto">
@@ -351,13 +383,14 @@ export function DashboardPage(): ReactElement {
         </Stack>
       </Grid.Col>
       <Grid.Col span={{ base: 12, lg: 4, xs: 6 }}>{cardList()}</Grid.Col>
-      <Grid.Col span={{ base: 12, lg: 4, xs: 6 }}>{cardList(false)}</Grid.Col>
       <Grid.Col span={{ base: 12, lg: 4, xs: 6 }}>
         {cardListNotifications()}
       </Grid.Col>
+      <Grid.Col span={{ base: 12, lg: 4, xs: 6 }}>{cardList(false)}</Grid.Col>
       <Grid.Col span={{ base: 12, lg: 4, xs: 6 }}>
         {cardListNotifications(false)}
       </Grid.Col>
+      <Grid.Col span={{ base: 12, lg: 4, xs: 6 }}>{cardDataBadge}</Grid.Col>
     </Grid>
   );
 }
