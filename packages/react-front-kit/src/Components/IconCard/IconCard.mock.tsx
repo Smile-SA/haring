@@ -1,4 +1,4 @@
-import { Eye, Note } from '@phosphor-icons/react';
+import { Clock, Eye, Note } from '@phosphor-icons/react';
 
 export const iconCardMock = {
   children: (
@@ -32,4 +32,82 @@ export const iconCardMock = {
   ),
   subTitle: 'sub-title',
   title: 'My documents',
+};
+
+export const iconCardMockWithoutTitle = {
+  children: (
+    <p
+      style={{
+        cursor: 'pointer',
+        fontWeight: 'light',
+        margin: '6px auto 0 auto',
+        maxWidth: '200px',
+        textAlign: 'center',
+        width: 'fit-content',
+      }}
+    >
+      Nous intervenons <strong>7 jours/7, 24h/24, </strong>
+      partout en France
+    </p>
+  ),
+  icon: (
+    <div
+      style={{
+        background: 'white',
+        border: '5px solid #E9F0F5',
+        borderRadius: '100px',
+        display: 'flex',
+        height: '110px',
+        margin: '0 auto',
+        padding: '16px',
+        width: '110px',
+      }}
+    >
+      <Clock
+        color="#006A94"
+        size={36}
+        style={{ margin: 'auto' }}
+        weight="bold"
+      />
+    </div>
+  ),
+};
+
+export const iconCardMockWithNumber = {
+  children: (
+    <p
+      style={{
+        cursor: 'pointer',
+        fontWeight: 'light',
+        margin: '6px auto 0 auto',
+        maxWidth: '200px',
+        textAlign: 'center',
+        width: 'fit-content',
+      }}
+    >
+      Nous intervenons <strong>7 jours/7, 24h/24, </strong>
+      partout en France
+    </p>
+  ),
+  icon: (
+    <div
+      style={{
+        background: 'white',
+        border: '5px solid #E9F0F5',
+        borderRadius: '100px',
+        display: 'flex',
+        height: '110px',
+        margin: '0 auto',
+        padding: '16px',
+        width: '110px',
+      }}
+    >
+      <Clock
+        color="#006A94"
+        size={36}
+        style={{ margin: 'auto' }}
+        weight="bold"
+      />
+    </div>
+  ),
 };

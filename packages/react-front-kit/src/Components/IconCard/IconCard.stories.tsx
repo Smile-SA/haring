@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { IconCard as Cmp } from './IconCard';
-import { iconCardMock } from './IconCard.mock';
+import { iconCardMock, iconCardMockWithoutTitle } from './IconCard.mock';
 
 const meta = {
   component: Cmp,
@@ -18,5 +18,13 @@ export const IconCard: IStory = {
     icon: iconCardMock.icon,
     subTitle: iconCardMock.subTitle,
     title: iconCardMock.title,
+  },
+};
+
+export const IconCardWithoutTitle: IStory = {
+  args: {
+    children: iconCardMockWithoutTitle.children,
+    color: 'white',
+    icon: iconCardMockWithoutTitle.icon,
   },
 };

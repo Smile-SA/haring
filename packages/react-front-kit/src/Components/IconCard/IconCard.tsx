@@ -1,8 +1,15 @@
 'use client';
 
+import type { CardProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
-import { Card, CardProps, getThemeColor, useMantineTheme } from '@mantine/core';
+import {
+  Card,
+  getThemeColor,
+  isLightColor,
+  parseThemeColor,
+  useMantineTheme,
+} from '@mantine/core';
 
 import classes from './IconCard.module.css';
 
@@ -22,6 +29,15 @@ export function IconCard(props: IIconCardProps): ReactElement {
       {...cardProps}
       bg={color ? color : getThemeColor(theme.primaryColor, theme)}
       classNames={{ root: classes.root }}
+      style={
+        color
+          ? {
+              color: isLightColor(parseThemeColor({ color, theme }).value)
+                ? getThemeColor(theme.colors.dark[6], theme)
+                : 'white',
+            }
+          : { color: 'white' }
+      }
     >
       {Boolean(icon) && <div>{icon}</div>}
       {(Boolean(title) || Boolean(subTitle)) && (

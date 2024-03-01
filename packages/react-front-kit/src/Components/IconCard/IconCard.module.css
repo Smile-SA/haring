@@ -1,20 +1,19 @@
 .root {
-    padding: 32px 25px;
-    border-radius: 16px;
-    color: var(--mantine-color-white);
-    text-align: center;
-    gap: 18px
+  padding: 32px 25px;
+  border-radius: 16px;
+  text-align: center;
+  gap: 18px;
 }
 
 .titleGroupe {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .children {
-    margin-top: 6px;
+  margin-top: 6px;
 }
