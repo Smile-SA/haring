@@ -8,7 +8,7 @@ import type {
 import { Button, Card, Group, TextInput } from '@mantine/core';
 import { Controller, useForm } from 'react-hook-form';
 
-import { withExceptionCapturing } from '../react-hook-form-utilities';
+import { withExceptionCapturing } from '../../utilities/react-hook-form-utilities';
 
 export interface IStep2Fields {
   familyName: string;
