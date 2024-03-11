@@ -72,6 +72,7 @@
   },
   "dependencies": {
     "@mantine/carousel": "^7.5.1",
+    "@mantine/form": "^7.5.1",
     "@mantine/core": "^7.5.1",
     "@mantine/dates": "^7.5.1",
     "@mantine/dropzone": "^7.5.1",
@@ -79,7 +80,8 @@
     "@phosphor-icons/react": "^2.0.10",
     "@smile/react-front-kit-shared": "*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.50.1"
   },
   "packageManager": "npm@8.19.2",
   "workspaces": [
