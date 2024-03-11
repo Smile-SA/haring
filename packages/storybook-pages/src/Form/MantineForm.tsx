@@ -1,3 +1,4 @@
+import type { FormErrors } from '@mantine/form';
 import type { ReactElement } from 'react';
 
 import { Box, Button, Checkbox, Group, TextInput } from '@mantine/core';
@@ -8,7 +9,13 @@ interface IFields {
   termsOfService: boolean;
 }
 
-export function MantineForm(): ReactElement {
+export interface IMantineFormProps {
+  onFormErrors: (errors: FormErrors) => void;
+  onFormSubmit: (data: IFields) => void;
+}
+
+export function MantineForm(props: IMantineFormProps): ReactElement {
+  const { onFormErrors, onFormSubmit } = props;
   const form = useForm<IFields>({
     initialValues: {
       email: '',
@@ -18,11 +25,15 @@ export function MantineForm(): ReactElement {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
     },
   });
-  console.log('render');
 
   return (
     <Box maw={340} mx="auto">
-      <form onSubmit={form.onSubmit((values) => console.log(values))}>
+      <form
+        onSubmit={form.onSubmit(
+          (values) => onFormSubmit(values),
+          (validationErrors) => onFormErrors(validationErrors),
+        )}
+      >
         <TextInput
           label="Email"
           placeholder="your@email.com"

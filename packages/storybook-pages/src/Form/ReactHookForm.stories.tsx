@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { action } from '@storybook/addon-actions';
+
 import { ReactHookForm } from './ReactHookForm';
 
 const meta = {
@@ -8,6 +10,11 @@ const meta = {
 } satisfies Meta<typeof ReactHookForm>;
 
 export default meta;
-type IStory = Omit<StoryObj<typeof meta>, 'args'>;
+type IStory = StoryObj<typeof meta>;
 
-export const ReactHookFormExample: IStory = {};
+export const ReactHookFormExample: IStory = {
+  args: {
+    onFormErrors: action('Form Errors'),
+    onFormSubmit: action('Form Submit'),
+  },
+};

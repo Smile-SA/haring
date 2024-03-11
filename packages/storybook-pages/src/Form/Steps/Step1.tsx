@@ -5,39 +5,41 @@ import type {
   SubmitHandler,
 } from 'react-hook-form';
 
-import { Box, Button, Checkbox, Group, TextInput } from '@mantine/core';
+import { Button, Card, Checkbox, Group, TextInput } from '@mantine/core';
 import { Controller, useForm } from 'react-hook-form';
 
-import { withExceptionCapturing } from './react-hook-form-utilities';
+import { withExceptionCapturing } from '../react-hook-form-utilities';
 
-interface IFields {
+export interface IStep1Fields {
   email: string;
   termsOfService: boolean;
 }
 
-export interface IReactHookFormProps {
-  onFormErrors: (errors: FieldErrors<IFields>) => void;
-  onFormSubmit: (data: IFields) => void;
+export interface IStep1Props {
+  onFormErrors: (errors: FieldErrors<IStep1Fields>) => void;
+  onFormSubmit: (data: IStep1Fields) => void;
 }
 
-export function ReactHookForm(props: IReactHookFormProps): ReactElement {
+export function Step1(props: IStep1Props): ReactElement {
   const { onFormErrors, onFormSubmit } = props;
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<IFields>({
+  } = useForm<IStep1Fields>({
     defaultValues: {
       email: '',
       termsOfService: false,
     },
   });
-  const onValidSubmit: SubmitHandler<IFields> = (data) => onFormSubmit(data);
-  const onInvalidSubmit: SubmitErrorHandler<IFields> = (errors) =>
+  const onValidSubmit: SubmitHandler<IStep1Fields> = (data) =>
+    onFormSubmit(data);
+  const onInvalidSubmit: SubmitErrorHandler<IStep1Fields> = (errors) =>
     onFormErrors(errors);
 
   return (
-    <Box maw={340} mx="auto">
+    <Card bg="orange.2" p={20} radius={10}>
+      <p>Step 1</p>
       <form
         onSubmit={withExceptionCapturing(
           handleSubmit(onValidSubmit, onInvalidSubmit),
@@ -80,6 +82,6 @@ export function ReactHookForm(props: IReactHookFormProps): ReactElement {
           <Button type="submit">Submit</Button>
         </Group>
       </form>
-    </Box>
+    </Card>
   );
 }
