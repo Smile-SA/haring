@@ -1,12 +1,10 @@
 'use client';
 
-import type { TextInputProps } from '@mantine/core';
+import type { FlexProps, TextInputProps } from '@mantine/core';
 import type { ReactElement } from 'react';
 
-import { TextInput } from '@mantine/core';
+import { Flex, TextInput } from '@mantine/core';
 import { useState } from 'react';
-
-import classes from './FullNaleFields.module.css';
 
 interface IFullNameFieldsValues {
   firstNameValue?: string;
@@ -18,18 +16,19 @@ type ITextInputProps = Omit<
   'defaultValue' | 'error' | 'label' | 'placeholder'
 >;
 
-export interface IFullNameFieldsProps {
+export interface IFullNameFieldsProps extends FlexProps {
   firstNameDefaultValue?: string;
   firstNameError?: string;
   firstNameLabel?: string;
   firstNamePlaceholder?: string;
-  firstNameProps: ITextInputProps;
+  firstNameProps?: ITextInputProps;
   lastNameDefaultValue?: string;
   lastNameError?: string;
   lastNameLabel?: string;
   lastNamePlaceholder?: string;
-  lastNameProps: ITextInputProps;
-  onGetValues: (value: IFullNameFieldsValues) => void;
+  lastNameProps?: ITextInputProps;
+  onGetValues?: (value: IFullNameFieldsValues) => void;
+  onValueChange?: (name: string, value: string) => void;
 }
 
 export function FullNameFields(props: IFullNameFieldsProps): ReactElement {
@@ -48,16 +47,29 @@ export function FullNameFields(props: IFullNameFieldsProps): ReactElement {
     firstNameProps,
     lastNameProps,
     onGetValues,
+    onValueChange,
+    ...flexProps
   } = props;
 
-  onGetValues({ firstNameValue, lastNameValue });
+  onGetValues && onGetValues({ firstNameValue, lastNameValue });
+
+  function firstNameHandle(newValue: string): void {
+    setFirstNameValue(newValue);
+    onValueChange && onValueChange('firstName', newValue);
+  }
+
+  function lastNameHandle(newValue: string): void {
+    setLastNameValue(newValue);
+    onValueChange && onValueChange('lastName', newValue);
+  }
+
   return (
-    <div className={classes.root}>
+    <Flex gap="sm" {...flexProps}>
       <TextInput
         defaultValue={firstNameDefaultValue}
         error={firstNameError}
         label={firstNameLabel}
-        onChange={(e) => setFirstNameValue(e.target.value)}
+        onChange={(e) => firstNameHandle(e.target.value)}
         placeholder={firstNamePlaceholder}
         value={firstNameValue}
         {...firstNameProps}
@@ -66,11 +78,11 @@ export function FullNameFields(props: IFullNameFieldsProps): ReactElement {
         defaultValue={lastNameDefaultValue}
         error={lastNameError}
         label={lastNameLabel}
-        onChange={(e) => setLastNameValue(e.target.value)}
+        onChange={(e) => lastNameHandle(e.target.value)}
         placeholder={lastNamePlaceholder}
         value={lastNameValue}
         {...lastNameProps}
       />
-    </div>
+    </Flex>
   );
 }

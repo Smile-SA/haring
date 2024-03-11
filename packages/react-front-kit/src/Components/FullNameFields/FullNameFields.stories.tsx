@@ -14,3 +14,7 @@ type IStory = StoryObj<typeof meta>;
 export const FullNameFields: IStory = {
   args: {},
 };
+
+export const FullNameFieldsWithError: IStory = {
+  args: { lastNameDefaultValue: '1SZde%*', lastNameError: 'Bad Format' },
+};
