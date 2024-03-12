@@ -18,8 +18,8 @@ export interface IFullNameFieldsProps<T extends IFullNameFieldsValues>
   value?: T;
 }
 
-export function FullNameFields<T extends IFullNameFieldsValues>(
-  props: IFullNameFieldsProps<T>,
+export function FullNameFields(
+  props: IFullNameFieldsProps<IFullNameFieldsValues>,
 ): ReactElement {
   const { firstNameProps, lastNameProps, value, onChange, ...flexProps } =
     props;
