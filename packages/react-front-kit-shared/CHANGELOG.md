@@ -1,5 +1,13 @@
 # @smile/react-front-kit-shared
 
+## 0.10.0
+
+### Minor Changes
+
+- [#149](https://github.com/Smile-SA/react-front-kit/pull/149) [`2706a09`](https://github.com/Smile-SA/react-front-kit/commit/2706a097fd86b072cf21d12fe2a97427883671cf) Thanks [@vapersmile](https://github.com/vapersmile)! - Add Calendar style on globlaStyle and add a preview
+
+- [#150](https://github.com/Smile-SA/react-front-kit/pull/150) [`34fabfb`](https://github.com/Smile-SA/react-front-kit/commit/34fabfbd1a2c048c39adc567548a3ee7e85074ee) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Fixed missing global styles for focus-visible color
+
 ## 0.9.0
 
 ### Minor Changes
