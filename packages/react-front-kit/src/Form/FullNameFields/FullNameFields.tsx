@@ -11,30 +11,15 @@ interface IFullNameFieldsValues {
 }
 
 export interface IFullNameFieldsProps extends FlexProps {
-  firstNameDefaultValue?: string;
-  firstNameError?: string;
-  firstNameLabel?: string;
-  firstNamePlaceholder?: string;
   firstNameProps?: TextInputProps;
-  lastNameDefaultValue?: string;
-  lastNameError?: string;
-  lastNameLabel?: string;
-  lastNamePlaceholder?: string;
   lastNameProps?: TextInputProps;
   onValueChange?: (value: IFullNameFieldsValues) => void;
   value?: IFullNameFieldsValues;
 }
 
 export function FullNameFields(props: IFullNameFieldsProps): ReactElement {
-  const {
-    lastNameDefaultValue,
-    lastNameError,
-    firstNameProps,
-    lastNameProps,
-    value,
-    onValueChange,
-    ...flexProps
-  } = props;
+  const { firstNameProps, lastNameProps, value, onValueChange, ...flexProps } =
+    props;
 
   return (
     <Flex gap="sm" {...flexProps}>
