@@ -10,29 +10,32 @@ interface IFullNameFieldsValues {
   lastName?: string;
 }
 
-export interface IFullNameFieldsProps extends FlexProps {
+export interface IFullNameFieldsProps<T extends IFullNameFieldsValues>
+  extends Omit<FlexProps, 'onChange'> {
   firstNameProps?: TextInputProps;
   lastNameProps?: TextInputProps;
-  onValueChange?: (value: IFullNameFieldsValues) => void;
-  value?: IFullNameFieldsValues;
+  onChange?: (value: T) => void;
+  value?: T;
 }
 
-export function FullNameFields(props: IFullNameFieldsProps): ReactElement {
-  const { firstNameProps, lastNameProps, value, onValueChange, ...flexProps } =
+export function FullNameFields<T extends IFullNameFieldsValues>(
+  props: IFullNameFieldsProps<T>,
+): ReactElement {
+  const { firstNameProps, lastNameProps, value, onChange, ...flexProps } =
     props;
 
   return (
     <Flex gap="sm" {...flexProps}>
       <TextInput
         label="First name"
-        onChange={(e) => onValueChange?.({ firstName: e.target.value })}
+        onChange={(e) => onChange?.({ ...value, lastName: e.target.value })}
         placeholder="Jean"
         value={value?.firstName}
         {...firstNameProps}
       />
       <TextInput
         label="Last name"
-        onChange={(e) => onValueChange?.({ lastName: e.target.value })}
+        onChange={(e) => onChange?.({ ...value, lastName: e.target.value })}
         placeholder="Dupont"
         value={value?.lastName}
         {...lastNameProps}
