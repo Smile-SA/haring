@@ -30,8 +30,43 @@ import {
   CardHeader,
   CardList,
   DataBadge,
+  IconCard,
   SummaryBox,
 } from '@smile/react-front-kit';
+
+export const iconCardMock = {
+  children: (
+    <p
+      style={{
+        cursor: 'pointer',
+        display: 'flex',
+        fontWeight: 600,
+        margin: '0 auto',
+        verticalAlign: 'center',
+        width: 'fit-content',
+      }}
+    >
+      <Eye size={18} style={{ margin: 'auto 10px auto 0' }} weight="bold" />
+      View more
+    </p>
+  ),
+  icon: (
+    <div
+      style={{
+        background: 'white',
+        borderRadius: '100px',
+        height: '64px',
+        margin: '0 auto',
+        padding: '16px',
+        width: '64px',
+      }}
+    >
+      <Note color="#0B7285" size={32} weight="light" />
+    </div>
+  ),
+  subTitle: 'sub-title',
+  title: 'My documents',
+};
 
 const header = (
   title = 'Element de text',
@@ -390,7 +425,18 @@ export function DashboardPage(): ReactElement {
       <Grid.Col span={{ base: 12, lg: 4, xs: 6 }}>
         {cardListNotifications(false)}
       </Grid.Col>
-      <Grid.Col span={{ base: 12, lg: 4, xs: 6 }}>{cardDataBadge}</Grid.Col>
+      <Grid.Col span={{ base: 12, lg: 4, xs: 6 }}>
+        {cardDataBadge}
+        <IconCard
+          icon={iconCardMock.icon}
+          mt="16px"
+          subTitle={iconCardMock.subTitle}
+          title={iconCardMock.title}
+          w="50%"
+        >
+          {iconCardMock.children}
+        </IconCard>
+      </Grid.Col>
     </Grid>
   );
 }

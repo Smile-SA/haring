@@ -76,3 +76,6 @@ storybook-static
 
 # Vercel
 .vercel
+
+# Vite config
+**/vite.config.js.*
