@@ -27,7 +27,6 @@ export function Step3(props: IStep3Props): ReactElement {
         Thank you! Click on the button below to send the form.
       </Text>
       <br />
-      {/* TODO: show summary that looks like the final transformed form data */}
       <Button onClick={onComplete}>Complete</Button>
     </Card>
   );
