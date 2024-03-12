@@ -16,5 +16,8 @@ export const FullNameFields: IStory = {
 };
 
 export const FullNameFieldsWithError: IStory = {
-  args: { lastNameDefaultValue: '1SZde%*', lastNameError: 'Bad Format' },
+  args: {
+    lastNameProps: { error: 'Bad Format' },
+    value: { firstName: undefined, lastName: '*&hgfF%' },
+  },
 };

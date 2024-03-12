@@ -47,7 +47,7 @@ exports[`FullNameFields matches snapshot 1`] = `
         for="mantine-f4bipx4bi"
         id="mantine-f4bipx4bi-label"
       >
-        Last Name
+        Last name
       </label>
       <div
         class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
