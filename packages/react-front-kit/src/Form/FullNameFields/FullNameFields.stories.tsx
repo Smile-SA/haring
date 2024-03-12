@@ -5,7 +5,7 @@ import { FullNameFields as Cmp } from './FullNameFields';
 const meta = {
   component: Cmp,
   tags: ['autodocs'],
-  title: '3-custom/Components/FullNameFields',
+  title: '3-custom/Form/FullNameFields',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;
