@@ -1,5 +1,24 @@
 # @smile/react-front-kit
 
+## 0.10.0
+
+### Minor Changes
+
+- [#155](https://github.com/Smile-SA/react-front-kit/pull/155) [`6beb932`](https://github.com/Smile-SA/react-front-kit/commit/6beb932fae8deded5b78cceaf26f77154d45a3da) Thanks [@vapersmile](https://github.com/vapersmile)! - Add IconCard component and add it to DashboardPage
+
+- [#152](https://github.com/Smile-SA/react-front-kit/pull/152) [`33efc70`](https://github.com/Smile-SA/react-front-kit/commit/33efc7074426a9d0a5221fb2ce3b8ebabbf46547) Thanks [@vapersmile](https://github.com/vapersmile)! - Add DataBadge component and add it to Assembly/DashboardCard and Pages/DashboardPage
+
+- [#147](https://github.com/Smile-SA/react-front-kit/pull/147) [`0f32a2f`](https://github.com/Smile-SA/react-front-kit/commit/0f32a2ffb47c0042974346471e3f96cd4462ee05) Thanks [@vapersmile](https://github.com/vapersmile)! - Add DashboardPage and Assembly/DashboardCard
+
+- [#151](https://github.com/Smile-SA/react-front-kit/pull/151) [`91be559`](https://github.com/Smile-SA/react-front-kit/commit/91be5598ba5847cdde5e7965dc7b4799c98bfceb) Thanks [@vapersmile](https://github.com/vapersmile)! - Add EventList component
+
+- [#154](https://github.com/Smile-SA/react-front-kit/pull/154) [`9940de2`](https://github.com/Smile-SA/react-front-kit/commit/9940de2478564193a408d7484ece220d81176c50) Thanks [@vapersmile](https://github.com/vapersmile)! - Modify ItemList to EventList.
+
+### Patch Changes
+
+- Updated dependencies [[`2706a09`](https://github.com/Smile-SA/react-front-kit/commit/2706a097fd86b072cf21d12fe2a97427883671cf), [`34fabfb`](https://github.com/Smile-SA/react-front-kit/commit/34fabfbd1a2c048c39adc567548a3ee7e85074ee)]:
+  - @smile/react-front-kit-shared@0.10.0
+
 ## 0.9.0
 
 ### Minor Changes
