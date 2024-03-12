@@ -1,3 +1,4 @@
+import type { IFields } from '../ReactHookFormComplex';
 import type { ReactElement } from 'react';
 import type {
   FieldErrors,
@@ -5,14 +6,14 @@ import type {
   SubmitHandler,
 } from 'react-hook-form';
 
-import { Button, Card, Group, TextInput } from '@mantine/core';
-import { Controller, useForm } from 'react-hook-form';
+import { Button, Card, Checkbox, Group, Text, TextInput } from '@mantine/core';
+import { Controller, useForm, useFormContext } from 'react-hook-form';
 
 import { withExceptionCapturing } from '../../utilities/react-hook-form-utilities';
 
 export interface IStep2Fields {
-  familyName: string;
-  firstName: string;
+  email: string;
+  termsOfService: boolean;
 }
 
 export interface IStep2Props {
@@ -22,14 +23,16 @@ export interface IStep2Props {
 
 export function Step2(props: IStep2Props): ReactElement {
   const { onFormErrors, onFormSubmit } = props;
+
+  const { getValues } = useFormContext<IFields>();
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm<IStep2Fields>({
     defaultValues: {
-      familyName: '',
-      firstName: '',
+      email: '',
+      termsOfService: false,
     },
   });
   const onValidSubmit: SubmitHandler<IStep2Fields> = (data) =>
@@ -37,55 +40,48 @@ export function Step2(props: IStep2Props): ReactElement {
   const onInvalidSubmit: SubmitErrorHandler<IStep2Fields> = (errors) =>
     onFormErrors(errors);
 
-  // TODO: validate something with multiple fields
-
   return (
-    <Card bg="blue.2" p={20} radius={10}>
+    <Card bg="orange.2" p={20} radius={10}>
       <p>Step 2</p>
       <form
         onSubmit={withExceptionCapturing(
           handleSubmit(onValidSubmit, onInvalidSubmit),
         )}
       >
+        <Text size="sm">Name: {getValues().fullName}</Text>
+        <br />
         <Controller
           control={control}
-          name="firstName"
+          name="email"
           render={({ field }) => (
             <TextInput
-              label="FirstName"
-              placeholder="Your Firstname"
+              label="Email"
+              placeholder="your@email.com"
               withAsterisk
               {...field}
-              error={errors.firstName?.message}
+              error={errors.email?.message}
             />
           )}
           rules={{
-            // pattern: {
-            //   message: 'Invalid email',
-            //   value: /\S+@\S+\.\S+/,
-            // },
+            pattern: {
+              message: 'Invalid email',
+              value: /\S+@\S+\.\S+/,
+            },
             required: 'Required field',
           }}
         />
         <Controller
           control={control}
-          name="familyName"
+          name="termsOfService"
           render={({ field }) => (
-            <TextInput
-              label="FamilyName"
-              placeholder="Your FamilyName"
-              withAsterisk
+            <Checkbox
+              checked={field.value}
+              label="I agree to sell my privacy"
+              mt="md"
               {...field}
-              error={errors.familyName?.message}
+              value="termsOfService"
             />
           )}
-          rules={{
-            // pattern: {
-            //   message: 'Invalid email',
-            //   value: /\S+@\S+\.\S+/,
-            // },
-            required: 'Required field',
-          }}
         />
         <Group justify="flex-end" mt="md">
           <Button type="submit">Submit</Button>

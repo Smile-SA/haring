@@ -5,14 +5,18 @@ import type {
   SubmitHandler,
 } from 'react-hook-form';
 
-import { Button, Card, Checkbox, Group, TextInput } from '@mantine/core';
+import { Button, Card, Code, Group, Text, TextInput } from '@mantine/core';
 import { Controller, useForm } from 'react-hook-form';
 
 import { withExceptionCapturing } from '../../utilities/react-hook-form-utilities';
 
 export interface IStep1Fields {
-  email: string;
-  termsOfService: boolean;
+  city: string;
+  familyName: string;
+  firstName: string;
+  postalCode: number | '';
+  streetName: string;
+  streetNumber: string;
 }
 
 export interface IStep1Props {
@@ -25,11 +29,16 @@ export function Step1(props: IStep1Props): ReactElement {
   const {
     control,
     handleSubmit,
+    getValues,
     formState: { errors },
   } = useForm<IStep1Fields>({
     defaultValues: {
-      email: '',
-      termsOfService: false,
+      city: '',
+      familyName: '',
+      firstName: '',
+      postalCode: '',
+      streetName: '',
+      streetNumber: '',
     },
   });
   const onValidSubmit: SubmitHandler<IStep1Fields> = (data) =>
@@ -38,46 +47,122 @@ export function Step1(props: IStep1Props): ReactElement {
     onFormErrors(errors);
 
   return (
-    <Card bg="orange.2" p={20} radius={10}>
+    <Card bg="blue.2" p={20} radius={10}>
       <p>Step 1</p>
       <form
         onSubmit={withExceptionCapturing(
           handleSubmit(onValidSubmit, onInvalidSubmit),
         )}
       >
-        <Controller
-          control={control}
-          name="email"
-          render={({ field }) => (
-            <TextInput
-              label="Email"
-              placeholder="your@email.com"
-              withAsterisk
-              {...field}
-              error={errors.email?.message}
-            />
-          )}
-          rules={{
-            pattern: {
-              message: 'Invalid email',
-              value: /\S+@\S+\.\S+/,
-            },
-            required: 'Required field',
-          }}
-        />
-        <Controller
-          control={control}
-          name="termsOfService"
-          render={({ field }) => (
-            <Checkbox
-              checked={field.value}
-              label="I agree to sell my privacy"
-              mt="md"
-              {...field}
-              value="termsOfService"
-            />
-          )}
-        />
+        <Group justify="flex-start" mt="md">
+          <Controller
+            control={control}
+            name="firstName"
+            render={({ field }) => (
+              <TextInput
+                label="First Name"
+                placeholder="Your Firstname"
+                withAsterisk
+                {...field}
+                error={errors.firstName?.message}
+              />
+            )}
+            rules={{ required: 'Required field' }}
+          />
+          <Controller
+            control={control}
+            name="familyName"
+            render={({ field }) => (
+              <TextInput
+                label="Family Name"
+                placeholder="Your FamilyName"
+                withAsterisk
+                {...field}
+                error={errors.familyName?.message}
+              />
+            )}
+            rules={{ required: 'Required field' }}
+          />
+        </Group>
+        <Group justify="flex-start" mt="md">
+          <Controller
+            control={control}
+            name="streetNumber"
+            render={({ field }) => (
+              <TextInput
+                label="Street N°"
+                placeholder="123"
+                withAsterisk
+                {...field}
+                error={errors.streetNumber?.message}
+              />
+            )}
+            rules={{ required: 'Required field' }}
+          />
+          <Controller
+            control={control}
+            name="streetName"
+            render={({ field }) => (
+              <TextInput
+                label="Street Name"
+                placeholder="My Street"
+                withAsterisk
+                {...field}
+                error={errors.streetName?.message}
+              />
+            )}
+            rules={{ required: 'Required field' }}
+          />
+          <Controller
+            control={control}
+            name="city"
+            render={({ field }) => (
+              <TextInput
+                label="City"
+                placeholder="My City"
+                withAsterisk
+                {...field}
+                error={errors.city?.message}
+                onChange={(e) => field.onChange(e.target.value.toUpperCase())}
+              />
+            )}
+            rules={{ required: 'Required field' }}
+          />
+          <Controller
+            control={control}
+            name="postalCode"
+            render={({ field }) => (
+              <TextInput
+                label="Postal Code"
+                placeholder="12345"
+                withAsterisk
+                {...field}
+                error={errors.postalCode?.message}
+              />
+            )}
+            rules={{
+              minLength: {
+                message: 'Postal codes must have 5 numbers',
+                value: 5,
+              },
+              required: 'Required field',
+              validate: {
+                postalCode: (v) =>
+                  getValues().city === 'LYON'
+                    ? v.toString().startsWith('69')
+                      ? true
+                      : "Lyon's Postal Code must begin with 69"
+                    : true,
+              },
+            }}
+          />
+        </Group>
+        <Group justify="flex-start" mt="md">
+          <Text size="lg">
+            If City is <Code>Lyon</Code>, Postal Code must begin with{' '}
+            <Code>69</Code>, in this format <Code>69xxx</Code>.
+          </Text>
+        </Group>
         <Group justify="flex-end" mt="md">
           <Button type="submit">Submit</Button>
         </Group>
