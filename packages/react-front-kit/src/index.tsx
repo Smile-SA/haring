@@ -2,6 +2,8 @@
 'use client';
 
 // component exports
+export type { IFullNameFieldsProps } from './Form/FullNameFields/FullNameFields';
+export { FullNameFields } from './Form/FullNameFields/FullNameFields';
 export type { IIconCardProps } from './Components/IconCard/IconCard';
 export { IconCard } from './Components/IconCard/IconCard';
 export type { IDataBadgeProps } from './Components/DataBadge/DataBadge';
