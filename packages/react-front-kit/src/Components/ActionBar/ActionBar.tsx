@@ -1,7 +1,6 @@
 'use client';
 
 import type { IActionRowOverflowProps } from '../ActionRowOverflow/ActionRowOverflow';
-import type { Record } from '@phosphor-icons/react';
 import type { ReactElement } from 'react';
 
 import { ActionRowOverflow } from '../ActionRowOverflow/ActionRowOverflow';

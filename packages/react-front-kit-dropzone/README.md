@@ -1,6 +1,10 @@
 # React Front Kit dropzone
 
-Dropzone component.
+File upload components.
+
+## Documentation
+
+You can access the documentation here: https://smile-sa.github.io/react-front-kit-doc
 
 ## Prerequisite
 
@@ -8,10 +12,19 @@ You must have React 18 or later installed on your project.
 
 ## Installation
 
-Install `@smile/react-front-kit-dropzone` and peer dependencies with:
+You must install `@smile/react-front-kit` first and then install `@smile/react-front-kit-dropzone` and peer dependencies with:
 
 ```bash
-npm i @smile/react-front-kit-dropzone @emotion/react @mantine/core @mantine/hooks @mantine/styles @mantine/dropzone @phosphor-icons/react
+npm i @smile/react-front-kit-dropzone @mantine/dropzone
+```
+
+## Styles
+
+Import the styles in your app with:
+
+```js
+import '@mantine/dropzone/styles.css';
+import '@smile/react-front-kit-dropzone/style.css';
 ```
 
 ## License

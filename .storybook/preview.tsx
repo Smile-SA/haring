@@ -9,6 +9,7 @@ import '@mantine/carousel/styles.css';
 import { themes } from '@smile/react-front-kit-shared';
 import '@smile/react-front-kit-shared/style.css';
 import '@smile/react-front-kit/style.css';
+import '@smile/react-front-kit-dates/style.css';
 import '@smile/react-front-kit-dropzone/style.css';
 import '@smile/react-front-kit-table/style.css';
 

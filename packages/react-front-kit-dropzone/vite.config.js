@@ -13,7 +13,6 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        '@emotion/react',
         '@mantine/carousel',
         '@mantine/core',
         '@mantine/dates',
