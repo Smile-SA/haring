@@ -170,8 +170,8 @@ export function Table<Data extends Record<string, unknown>>(
       className: classes.alertBanner,
     },
     manualFiltering: false,
-    manualPagination: true,
-    manualSorting: true,
+    manualPagination: true, // TODO: why is this on by default ?
+    // manualSorting: true, // TODO: why is this on by default ?
     paginationDisplayMode,
     positionActionsColumn: 'last',
     positionToolbarAlertBanner: 'top',

@@ -6,6 +6,7 @@
 }
 
 .alertToolbar {
+  /* TODO: works but there is a "clear selection" button in that toolbar that is blue on blue */
   color: var(--mantine-color-white);
 }
 
@@ -19,7 +20,7 @@
 
   &[aria-expanded='true'] {
     & svg {
-      filter: contrast(8) invert(1);
+      /*filter: contrast(8) invert(1);*/
     }
 
     background-color: var(--mantine-primary-color-filled);
@@ -39,14 +40,16 @@
 }
 
 .paper {
-  border: 0;
-  border-radius: 24px;
-  box-shadow:
-    0 3.43489px 2.74791px 0 rgba(0, 0, 0, 0.02),
-    0 8.6871px 6.94968px 0 rgba(0, 0, 0, 0.02),
-    0 17.72087px 14.1767px 0 rgba(0, 0, 0, 0.03),
-    0 36.50164px 29.20132px 0 rgba(0, 0, 0, 0.03),
-    0 100px 80px 0 rgba(0, 0, 0, 0.05);
+  &:global(.mrt-table-paper) {
+    border: 0;
+    border-radius: 24px;
+    box-shadow:
+      0 3.43489px 2.74791px 0 rgba(0, 0, 0, 0.02),
+      0 8.6871px 6.94968px 0 rgba(0, 0, 0, 0.02),
+      0 17.72087px 14.1767px 0 rgba(0, 0, 0, 0.03),
+      0 36.50164px 29.20132px 0 rgba(0, 0, 0, 0.03),
+      0 100px 80px 0 rgba(0, 0, 0, 0.05);
+  }
 }
 
 .rowActions {
@@ -68,6 +71,7 @@
   margin-left: 24px;
   margin-right: 16px;
   opacity: 0;
+  /* TODO: no idea what this was used for */
   /*ref: getStylesRef(rowActions);*/
 
   /*noinspection CssInvalidAtRule*/
@@ -78,9 +82,11 @@
 }
 
 .rowActionsMenuOpened {
+  /* TODO: no idea what this was used for */
   /*ref: getStylesRef(rowActionsMenuOpened);*/
 }
 
+/* TODO: no idea what this is supposed to do */
 .rowSelected {
   & td:has(.rowActions),
   & td:has(.rowActionsMenuOpened) {
@@ -88,6 +94,7 @@
   }
 }
 
+/* TODO: no idea what this is supposed to do */
 .table {
   & tr:hover .rowActions & tr .rowActionsMenuOpened {
     opacity: 1;
@@ -97,3 +104,5 @@
 .toolbarAction {
   background: var(--mantine-color-white);
 }
+
+/* TODO: the sort buttons are probably like this because it's the global button style ?*/
