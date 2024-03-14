@@ -28,7 +28,7 @@ export function FullNameFields(
     <Flex gap="sm" {...flexProps}>
       <TextInput
         label="First name"
-        onChange={(e) => onChange?.({ ...value, lastName: e.target.value })}
+        onChange={(e) => onChange?.({ ...value, firstName: e.target.value })}
         placeholder="Jean"
         value={value?.firstName}
         {...firstNameProps}
