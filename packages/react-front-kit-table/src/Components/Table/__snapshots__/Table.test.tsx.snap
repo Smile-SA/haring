@@ -18,7 +18,7 @@ exports[`Table matches snapshot 1`] = `
     style="--paper-shadow: var(--mantine-shadow-xs);"
   >
     <div
-      class="common-styles-module_common-toolbar-styles__DnjR8 MRT_TopToolbar-module_top-toolbar__HcmaG"
+      class="common-styles-module_common-toolbar-styles__DnjR8 MRT_TopToolbar-module_root__r4-V9"
     >
       <div
         class="MRT_TopToolbar-module_actions-container__-uL0u m-8bffd616 mantine-Flex-root __m__-r2"
@@ -178,7 +178,8 @@ exports[`Table matches snapshot 1`] = `
               align="left"
               class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a"
               colspan="1"
-              style="min-width: max(calc(var(--header-mrt_row_select-size) * 1px), 40px); --mrt-table-head-cell-padding: 16; --mrt-table-head-cell-z-index: 1;"
+              data-index="0"
+              style="min-width: max(calc(var(--header-mrt_row_select-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
                 class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r11"
@@ -243,7 +244,8 @@ exports[`Table matches snapshot 1`] = `
               align="left"
               class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
               colspan="1"
-              style="min-width: max(calc(var(--header-id-size) * 1px), 40px); --mrt-table-head-cell-padding: 16; --mrt-table-head-cell-z-index: 1;"
+              data-index="1"
+              style="min-width: max(calc(var(--header-id-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
                 class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r1f"
@@ -254,7 +256,6 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <div
                     class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r1j"
-                    title="id"
                   >
                     id
                   </div>
@@ -278,9 +279,9 @@ exports[`Table matches snapshot 1`] = `
                     >
                       <svg
                         fill="currentColor"
-                        height="1em"
+                        height="100%"
                         viewBox="0 0 256 256"
-                        width="1em"
+                        width="100%"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -320,13 +321,13 @@ exports[`Table matches snapshot 1`] = `
                       <svg
                         class="tabler-icon tabler-icon-dots-vertical"
                         fill="none"
-                        height="24"
+                        height="100%"
                         stroke="currentColor"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
                         viewBox="0 0 24 24"
-                        width="24"
+                        width="100%"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -384,7 +385,8 @@ exports[`Table matches snapshot 1`] = `
               align="left"
               class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
               colspan="1"
-              style="min-width: max(calc(var(--header-format-size) * 1px), 40px); --mrt-table-head-cell-padding: 16; --mrt-table-head-cell-z-index: 1;"
+              data-index="2"
+              style="min-width: max(calc(var(--header-format-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
                 class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r2g"
@@ -395,7 +397,6 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <div
                     class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r2k"
-                    title="Format"
                   >
                     Format
                   </div>
@@ -419,9 +420,9 @@ exports[`Table matches snapshot 1`] = `
                     >
                       <svg
                         fill="currentColor"
-                        height="1em"
+                        height="100%"
                         viewBox="0 0 256 256"
-                        width="1em"
+                        width="100%"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -461,13 +462,13 @@ exports[`Table matches snapshot 1`] = `
                       <svg
                         class="tabler-icon tabler-icon-dots-vertical"
                         fill="none"
-                        height="24"
+                        height="100%"
                         stroke="currentColor"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
                         viewBox="0 0 24 24"
-                        width="24"
+                        width="100%"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -525,7 +526,8 @@ exports[`Table matches snapshot 1`] = `
               align="left"
               class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
               colspan="1"
-              style="min-width: max(calc(var(--header-title-size) * 1px), 40px); --mrt-table-head-cell-padding: 16; --mrt-table-head-cell-z-index: 1;"
+              data-index="3"
+              style="min-width: max(calc(var(--header-title-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
                 class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r3h"
@@ -536,7 +538,6 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <div
                     class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r3l"
-                    title="Titre"
                   >
                     Titre
                   </div>
@@ -560,9 +561,9 @@ exports[`Table matches snapshot 1`] = `
                     >
                       <svg
                         fill="currentColor"
-                        height="1em"
+                        height="100%"
                         viewBox="0 0 256 256"
-                        width="1em"
+                        width="100%"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -602,13 +603,13 @@ exports[`Table matches snapshot 1`] = `
                       <svg
                         class="tabler-icon tabler-icon-dots-vertical"
                         fill="none"
-                        height="24"
+                        height="100%"
                         stroke="currentColor"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
                         viewBox="0 0 24 24"
-                        width="24"
+                        width="100%"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -666,7 +667,8 @@ exports[`Table matches snapshot 1`] = `
               align="left"
               class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
               colspan="1"
-              style="min-width: max(calc(var(--header-creator-size) * 1px), 40px); --mrt-table-head-cell-padding: 16; --mrt-table-head-cell-z-index: 1;"
+              data-index="4"
+              style="min-width: max(calc(var(--header-creator-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
                 class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r4i"
@@ -677,7 +679,6 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <div
                     class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r4m"
-                    title="Créateur"
                   >
                     Créateur
                   </div>
@@ -701,9 +702,9 @@ exports[`Table matches snapshot 1`] = `
                     >
                       <svg
                         fill="currentColor"
-                        height="1em"
+                        height="100%"
                         viewBox="0 0 256 256"
-                        width="1em"
+                        width="100%"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -743,13 +744,13 @@ exports[`Table matches snapshot 1`] = `
                       <svg
                         class="tabler-icon tabler-icon-dots-vertical"
                         fill="none"
-                        height="24"
+                        height="100%"
                         stroke="currentColor"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
                         viewBox="0 0 24 24"
-                        width="24"
+                        width="100%"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -807,7 +808,8 @@ exports[`Table matches snapshot 1`] = `
               align="left"
               class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
               colspan="1"
-              style="min-width: max(calc(var(--header-date-size) * 1px), 40px); --mrt-table-head-cell-padding: 16; --mrt-table-head-cell-z-index: 1;"
+              data-index="5"
+              style="min-width: max(calc(var(--header-date-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
                 class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r5j"
@@ -818,7 +820,6 @@ exports[`Table matches snapshot 1`] = `
                 >
                   <div
                     class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r5n"
-                    title="Date publication"
                   >
                     Date publication
                   </div>
@@ -842,9 +843,9 @@ exports[`Table matches snapshot 1`] = `
                     >
                       <svg
                         fill="currentColor"
-                        height="1em"
+                        height="100%"
                         viewBox="0 0 256 256"
-                        width="1em"
+                        width="100%"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -884,13 +885,13 @@ exports[`Table matches snapshot 1`] = `
                       <svg
                         class="tabler-icon tabler-icon-dots-vertical"
                         fill="none"
-                        height="24"
+                        height="100%"
                         stroke="currentColor"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
                         viewBox="0 0 24 24"
-                        width="24"
+                        width="100%"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -946,9 +947,12 @@ exports[`Table matches snapshot 1`] = `
             </th>
             <th
               align="left"
-              class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-pinned__c6s5g MRT_TableHeadCell-module_root-pinned-right__-kvYE MRT_TableHeadCell-module_root-pinned-right-first__dr1rR"
+              class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a"
               colspan="1"
-              style="min-width: max(calc(var(--header-mrt_row_actions-size) * 1px), 40px); --mrt-table-cell-right: 0; --mrt-table-head-cell-padding: 16; --mrt-table-head-cell-z-index: 2;"
+              data-column-pinned="right"
+              data-first-right-pinned="true"
+              data-index="6"
+              style="min-width: max(calc(var(--header-mrt_row_actions-size) * 1px), 40px); --mrt-table-cell-right: 0; --mrt-table-head-cell-padding: 16;"
             >
               <div
                 class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r6k"
@@ -972,15 +976,15 @@ exports[`Table matches snapshot 1`] = `
           class="m-b2404537 mantine-Table-tbody MRT_TableBody-module_root__kGhRy"
         >
           <tr
-            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4 MRT_TableBodyRow-module_root-hover__-v3Hd"
+            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
             data-hover="true"
             data-index="0"
             data-with-row-border="true"
           >
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_first-column__dmNmP"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              data-index="0"
+              style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               <span
                 class=""
@@ -1026,60 +1030,62 @@ exports[`Table matches snapshot 1`] = `
               </span>
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-id-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="1"
+              style="min-width: max(calc(var(--col-id-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               1
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-format-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="2"
+              style="min-width: max(calc(var(--col-format-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               SVG
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-title-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="3"
+              style="min-width: max(calc(var(--col-title-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Doc test
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-creator-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="4"
+              style="min-width: max(calc(var(--col-creator-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Valentin Perello
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-date-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="5"
+              style="min-width: max(calc(var(--col-date-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               20/05/2022
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-pinned__3lH9Y MRT_TableBodyCell-module_root-pinned-right__zmJMr MRT_TableBodyCell-module_root-pinned-right-first__Q-H42 MRT_TableBodyCell-module_last-column__dqABZ"
-              data-pinned="true"
-              style="min-width: max(calc(var(--col-mrt_row_actions-size) * 1px), 40px); --mrt-table-cell-right: 0;"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              data-column-pinned="right"
+              data-first-right-pinned="true"
+              data-index="6"
+              style="min-width: max(calc(var(--col-mrt_row_actions-size) * 1px), 40px); --mrt-cell-align: left; --mrt-table-cell-right: 0;"
             >
               <div
-                class=""
+                class=" rowActionsRef"
               />
             </td>
           </tr>
           <tr
-            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4 MRT_TableBodyRow-module_root-hover__-v3Hd"
+            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
             data-hover="true"
             data-index="1"
             data-with-row-border="true"
           >
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_first-column__dmNmP"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              data-index="0"
+              style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               <span
                 class=""
@@ -1125,60 +1131,62 @@ exports[`Table matches snapshot 1`] = `
               </span>
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-id-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="1"
+              style="min-width: max(calc(var(--col-id-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               2
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-format-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="2"
+              style="min-width: max(calc(var(--col-format-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               PDF
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-title-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="3"
+              style="min-width: max(calc(var(--col-title-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Doc test
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-creator-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="4"
+              style="min-width: max(calc(var(--col-creator-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Valentin Perello
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-date-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="5"
+              style="min-width: max(calc(var(--col-date-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               20/05/2022
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-pinned__3lH9Y MRT_TableBodyCell-module_root-pinned-right__zmJMr MRT_TableBodyCell-module_root-pinned-right-first__Q-H42 MRT_TableBodyCell-module_last-column__dqABZ"
-              data-pinned="true"
-              style="min-width: max(calc(var(--col-mrt_row_actions-size) * 1px), 40px); --mrt-table-cell-right: 0;"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              data-column-pinned="right"
+              data-first-right-pinned="true"
+              data-index="6"
+              style="min-width: max(calc(var(--col-mrt_row_actions-size) * 1px), 40px); --mrt-cell-align: left; --mrt-table-cell-right: 0;"
             >
               <div
-                class=""
+                class=" rowActionsRef"
               />
             </td>
           </tr>
           <tr
-            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4 MRT_TableBodyRow-module_root-hover__-v3Hd"
+            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
             data-hover="true"
             data-index="2"
             data-with-row-border="true"
           >
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_first-column__dmNmP"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              data-index="0"
+              style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               <span
                 class=""
@@ -1224,60 +1232,62 @@ exports[`Table matches snapshot 1`] = `
               </span>
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-id-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="1"
+              style="min-width: max(calc(var(--col-id-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               3
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-format-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="2"
+              style="min-width: max(calc(var(--col-format-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               PDF
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-title-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="3"
+              style="min-width: max(calc(var(--col-title-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Doc test
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-creator-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="4"
+              style="min-width: max(calc(var(--col-creator-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Valentin Perello
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-date-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="5"
+              style="min-width: max(calc(var(--col-date-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               20/05/2022
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-pinned__3lH9Y MRT_TableBodyCell-module_root-pinned-right__zmJMr MRT_TableBodyCell-module_root-pinned-right-first__Q-H42 MRT_TableBodyCell-module_last-column__dqABZ"
-              data-pinned="true"
-              style="min-width: max(calc(var(--col-mrt_row_actions-size) * 1px), 40px); --mrt-table-cell-right: 0;"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              data-column-pinned="right"
+              data-first-right-pinned="true"
+              data-index="6"
+              style="min-width: max(calc(var(--col-mrt_row_actions-size) * 1px), 40px); --mrt-cell-align: left; --mrt-table-cell-right: 0;"
             >
               <div
-                class=""
+                class=" rowActionsRef"
               />
             </td>
           </tr>
           <tr
-            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4 MRT_TableBodyRow-module_root-hover__-v3Hd"
+            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
             data-hover="true"
             data-index="3"
             data-with-row-border="true"
           >
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_first-column__dmNmP"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              data-index="0"
+              style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               <span
                 class=""
@@ -1323,60 +1333,63 @@ exports[`Table matches snapshot 1`] = `
               </span>
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-id-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="1"
+              style="min-width: max(calc(var(--col-id-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               4
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-format-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="2"
+              style="min-width: max(calc(var(--col-format-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               PDF
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-title-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="3"
+              style="min-width: max(calc(var(--col-title-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Doc test
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-creator-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="4"
+              style="min-width: max(calc(var(--col-creator-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Valentin Perello
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-date-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="5"
+              style="min-width: max(calc(var(--col-date-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               20/05/2022
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-pinned__3lH9Y MRT_TableBodyCell-module_root-pinned-right__zmJMr MRT_TableBodyCell-module_root-pinned-right-first__Q-H42 MRT_TableBodyCell-module_last-column__dqABZ"
-              data-pinned="true"
-              style="min-width: max(calc(var(--col-mrt_row_actions-size) * 1px), 40px); --mrt-table-cell-right: 0;"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              data-column-pinned="right"
+              data-first-right-pinned="true"
+              data-index="6"
+              style="min-width: max(calc(var(--col-mrt_row_actions-size) * 1px), 40px); --mrt-cell-align: left; --mrt-table-cell-right: 0;"
             >
               <div
-                class=""
+                class=" rowActionsRef"
               />
             </td>
           </tr>
           <tr
-            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4 MRT_TableBodyRow-module_root-hover__-v3Hd"
+            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
             data-hover="true"
             data-index="4"
             data-with-row-border="true"
           >
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_first-column__dmNmP MRT_TableBodyCell-module_last-row__swVO-"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              data-index="0"
+              data-last-row="true"
+              style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               <span
                 class=""
@@ -1422,47 +1435,55 @@ exports[`Table matches snapshot 1`] = `
               </span>
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc MRT_TableBodyCell-module_last-row__swVO-"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-id-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="1"
+              data-last-row="true"
+              style="min-width: max(calc(var(--col-id-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               5
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc MRT_TableBodyCell-module_last-row__swVO-"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-format-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="2"
+              data-last-row="true"
+              style="min-width: max(calc(var(--col-format-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               PDF
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc MRT_TableBodyCell-module_last-row__swVO-"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-title-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="3"
+              data-last-row="true"
+              style="min-width: max(calc(var(--col-title-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Doc test
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc MRT_TableBodyCell-module_last-row__swVO-"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-creator-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="4"
+              data-last-row="true"
+              style="min-width: max(calc(var(--col-creator-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Valentin Perello
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-data-col__HHcxc MRT_TableBodyCell-module_last-row__swVO-"
-              data-pinned="false"
-              style="min-width: max(calc(var(--col-date-size) * 1px), 40px);"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              data-index="5"
+              data-last-row="true"
+              style="min-width: max(calc(var(--col-date-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               20/05/2022
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-default-background__BTtYU MRT_TableBodyCell-module_root-pinned__3lH9Y MRT_TableBodyCell-module_root-pinned-right__zmJMr MRT_TableBodyCell-module_root-pinned-right-first__Q-H42 MRT_TableBodyCell-module_last-column__dqABZ MRT_TableBodyCell-module_last-row__swVO-"
-              data-pinned="true"
-              style="min-width: max(calc(var(--col-mrt_row_actions-size) * 1px), 40px); --mrt-table-cell-right: 0;"
+              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              data-column-pinned="right"
+              data-first-right-pinned="true"
+              data-index="6"
+              data-last-row="true"
+              style="min-width: max(calc(var(--col-mrt_row_actions-size) * 1px), 40px); --mrt-cell-align: left; --mrt-table-cell-right: 0;"
             >
               <div
-                class=""
+                class=" rowActionsRef"
               />
             </td>
           </tr>

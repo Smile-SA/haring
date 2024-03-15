@@ -148,7 +148,6 @@ export function Table<Data extends Record<string, unknown>>(
       ...icons,
     },
     initialState: {
-      // TODO: not working at all
       columnPinning: {
         right: ['mrt-row-actions'],
       },
@@ -167,7 +166,6 @@ export function Table<Data extends Record<string, unknown>>(
     mantineToolbarAlertBannerProps: {
       className: classes.alertBanner,
     },
-
     manualFiltering: false,
     manualPagination: true, // TODO: why is this on by default ?
     // manualSorting: true, // TODO: why is this on by default ?
