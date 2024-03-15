@@ -1,44 +1,4 @@
-.alertBanner {
-  background: var(--mantine-primary-color-filled);
-  border: 0;
-  border-radius: 0;
-  height: 56px;
-}
-
-.alertToolbar {
-  /* TODO: works but there is a "clear selection" button in that toolbar that is blue on blue */
-  color: var(--mantine-color-white);
-}
-
-.internalToolbar {
-  align-items: center;
-  gap: 10px;
-}
-
-.menuButton {
-  /* todo: works? check previously migrated component that also uses this */
-
-  &[aria-expanded='true'] {
-    & svg {
-      /*filter: contrast(8) invert(1);*/
-    }
-
-    background-color: var(--mantine-primary-color-filled);
-    border-radius: 4px;
-    display: flex;
-    height: 28px;
-    width: 28px;
-  }
-}
-
-.menuButtonWrapper {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  width: 100%;
-}
-
+/* Root */
 .paper {
   &:global(.mrt-table-paper) {
     border: 0;
@@ -50,59 +10,100 @@
       0 36.50164px 29.20132px 0 rgba(0, 0, 0, 0.03),
       0 100px 80px 0 rgba(0, 0, 0, 0.05);
   }
-}
 
-.rowActions {
-  & > * {
-    align-items: center;
-    display: flex;
-    height: 1.75rem;
-    justify-content: center;
-    min-height: 1.75rem;
-    min-width: 1.75rem;
-    width: 1.75rem;
+  :global(.mrt-toolbar-internal-buttons) {
+    padding-right: 8px;
   }
 
-  background: var(--mantine-color-gray-1);
-  border-radius: 4px;
-  box-shadow: none;
+  tbody tr {
+    border-bottom: none;
+
+    &:nth-child(even) {
+      background-color: var(--mantine-color-gray-0);
+    }
+  }
+
+  :global(.mrt-bottom-toolbar) {
+    border-top: none;
+  }
+}
+
+/* Top Bar */
+.alertBanner {
+  background: var(--mantine-primary-color-filled);
+  border: 0;
+  border-radius: 0;
+  height: 56px;
+  padding: 0 16px;
+
+  :global(.mantine-Alert-wrapper),
+  :global(.mantine-Alert-body),
+  :global(.mantine-Alert-message) {
+    height: 100%;
+  }
+}
+
+.alertToolbar {
+  color: var(--mantine-color-white);
+  height: 100%;
+  max-width: 50%;
   display: flex;
-  justify-content: space-between;
-  margin-left: 24px;
-  margin-right: 16px;
-  opacity: 0;
-  /* TODO: no idea what this was used for */
-  /*ref: getStylesRef(rowActions);*/
+  align-content: center;
+  align-items: center;
 
-  /*noinspection CssInvalidAtRule*/
-  @mixin smaller-than $mantine-breakpoint-sm {
-    margin-left: 0;
-    margin-right: 0;
+  button {
+    display: none;
   }
 }
 
-.rowActionsMenuOpened {
-  /* TODO: no idea what this was used for */
-  /*ref: getStylesRef(rowActionsMenuOpened);*/
-}
-
-/* TODO: no idea what this is supposed to do */
-.rowSelected {
-  & td:has(.rowActions),
-  & td:has(.rowActionsMenuOpened) {
-    background: var(--mantine-color-gray-1) !important;
-  }
-}
-
-/* TODO: no idea what this is supposed to do */
-.table {
-  & tr:hover .rowActions & tr .rowActionsMenuOpened {
-    opacity: 1;
-  }
+.internalToolbar {
+  align-items: center;
+  gap: 10px;
 }
 
 .toolbarAction {
   background: var(--mantine-color-white);
 }
 
-/* TODO: the sort buttons are probably like this because it's the global button style ?*/
+/* Action Buttons */
+.action {
+  color: var(--mantine-color-text);
+}
+
+.menuButton {
+  /* TODO: does nothing, i don't think the button changed data-expanded attribute */
+
+  &[aria-expanded='true'] {
+    & svg {
+      filter: contrast(8) invert(1);
+    }
+
+    background-color: var(--mantine-primary-color-filled);
+    border-radius: 4px;
+    display: flex;
+    height: 28px;
+    width: 28px;
+  }
+}
+
+.rowActions {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  margin-left: 24px;
+  margin-right: 16px;
+  opacity: 0;
+}
+
+/* Only show action buttons when row is hovered */
+.table {
+  & tr:hover {
+    & :global(.rowActionsRef) {
+      opacity: 1;
+
+      & :global(.rowActionsMenuOpenedRef) {
+        opacity: 1;
+      }
+    }
+  }
+}
