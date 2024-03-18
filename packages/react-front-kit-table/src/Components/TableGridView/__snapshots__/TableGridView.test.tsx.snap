@@ -1273,8 +1273,12 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-controls="mantine-f4bipx4bi-dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
                       class="haring-focus haring-active undefined undefined m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
+                      id="mantine-f4bipx4bi-target"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
@@ -1291,6 +1295,7 @@ exports[`TableGridView matches snapshot 1`] = `
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
+                          class=""
                           fill="currentColor"
                           height="16"
                           viewBox="0 0 256 256"
@@ -1513,8 +1518,12 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-controls="mantine-f4bipx4bi-dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
                       class="haring-focus haring-active undefined undefined m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
+                      id="mantine-f4bipx4bi-target"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
@@ -1531,6 +1540,7 @@ exports[`TableGridView matches snapshot 1`] = `
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
+                          class=""
                           fill="currentColor"
                           height="16"
                           viewBox="0 0 256 256"
@@ -1753,8 +1763,12 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-controls="mantine-f4bipx4bi-dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
                       class="haring-focus haring-active undefined undefined m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
+                      id="mantine-f4bipx4bi-target"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
@@ -1771,6 +1785,7 @@ exports[`TableGridView matches snapshot 1`] = `
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
+                          class=""
                           fill="currentColor"
                           height="16"
                           viewBox="0 0 256 256"
@@ -1993,8 +2008,12 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-controls="mantine-f4bipx4bi-dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
                       class="haring-focus haring-active undefined undefined m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
+                      id="mantine-f4bipx4bi-target"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
@@ -2011,6 +2030,7 @@ exports[`TableGridView matches snapshot 1`] = `
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
+                          class=""
                           fill="currentColor"
                           height="16"
                           viewBox="0 0 256 256"
@@ -2233,8 +2253,12 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-controls="mantine-f4bipx4bi-dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
                       class="haring-focus haring-active undefined undefined m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
+                      id="mantine-f4bipx4bi-target"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
@@ -2251,6 +2275,7 @@ exports[`TableGridView matches snapshot 1`] = `
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
+                          class=""
                           fill="currentColor"
                           height="16"
                           viewBox="0 0 256 256"
@@ -2473,8 +2498,12 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-controls="mantine-f4bipx4bi-dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
                       class="haring-focus haring-active undefined undefined m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
+                      id="mantine-f4bipx4bi-target"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
@@ -2491,6 +2520,7 @@ exports[`TableGridView matches snapshot 1`] = `
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
+                          class=""
                           fill="currentColor"
                           height="16"
                           viewBox="0 0 256 256"
@@ -2720,8 +2750,12 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-controls="mantine-f4bipx4bi-dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
                       class="haring-focus haring-active undefined undefined m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
+                      id="mantine-f4bipx4bi-target"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
@@ -2738,6 +2772,7 @@ exports[`TableGridView matches snapshot 1`] = `
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
+                          class=""
                           fill="currentColor"
                           height="16"
                           viewBox="0 0 256 256"
