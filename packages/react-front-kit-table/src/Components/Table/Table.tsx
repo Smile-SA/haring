@@ -167,8 +167,8 @@ export function Table<Data extends Record<string, unknown>>(
       className: classes.alertBanner,
     },
     manualFiltering: false,
-    manualPagination: true, // TODO: why is this on by default ?
-    // manualSorting: true, // TODO: why is this on by default ?
+    manualPagination: true,
+    manualSorting: true,
     paginationDisplayMode,
     positionActionsColumn: 'last',
     positionToolbarAlertBanner: 'top',
@@ -208,16 +208,16 @@ export function Table<Data extends Record<string, unknown>>(
               withinPortal
             >
               <Menu.Target>
-                <Tooltip label={menuLabel} {...tooltipProps}>
-                  <ActionIcon
-                    className={`${classes.menuButton} ${classes.action}`}
-                    radius={4}
-                    type="button"
-                    variant="transparent"
-                  >
+                <ActionIcon
+                  className={`${classes.menuButton} ${classes.action}`}
+                  radius={4}
+                  type="button"
+                  variant="transparent"
+                >
+                  <Tooltip label={menuLabel} {...tooltipProps}>
                     <DotsThreeVertical size={16} />
-                  </ActionIcon>
-                </Tooltip>
+                  </Tooltip>
+                </ActionIcon>
               </Menu.Target>
               <Menu.Dropdown>
                 {menuRowActions.map((action, index) => (
