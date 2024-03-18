@@ -101,7 +101,7 @@
     "@phosphor-icons/react": ">=2",
     "@tabler/icons-react": ">=2",
     "dayjs": ">=1",
-    "mantine-react-table": "2.0.0-alpha.14",
+    "mantine-react-table": "2.0.0-beta.0",
     "react": ">=18.0",
     "react-dom": ">=18.0"
   },
