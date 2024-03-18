@@ -51,6 +51,7 @@ export function Preview(
       fetch(url)
         .then((r) => r.blob())
         .then((blob) => setType(blob.type))
+        // eslint-disable-next-line no-console
         .catch((error) => console.error(error));
     }
   }, [defaultMimeType, url]);

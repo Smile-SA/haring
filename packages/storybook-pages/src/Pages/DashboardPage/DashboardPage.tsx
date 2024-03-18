@@ -34,6 +34,7 @@ import {
   SummaryBox,
 } from '@smile/react-front-kit';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const iconCardMock = {
   children: (
     <p

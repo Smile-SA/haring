@@ -25,6 +25,7 @@ import {
   MRT_ToggleGlobalFilterButton as MrtToggleGlobalFilterButton,
   useMantineReactTable,
 } from 'mantine-react-table';
+import 'mantine-react-table/styles.css';
 import { useState } from 'react';
 
 import {
@@ -128,10 +129,11 @@ export function Table<Data extends Record<string, unknown>>(
         size: 124,
       },
     },
+    enableColumnPinning: true,
     enableDensityToggle: false,
     enableFullScreenToggle: false,
     enableGlobalFilter: false,
-    enablePinning: false,
+    enablePinning: true,
     enableRowActions: true,
     enableRowSelection: true,
     icons: {
@@ -158,11 +160,6 @@ export function Table<Data extends Record<string, unknown>>(
     mantinePaperProps: {
       className: classes.paper,
     },
-    mantineTableBodyRowProps: ({ row }) => {
-      return {
-        className: row.getIsSelected() ? classes.rowSelected : '',
-      };
-    },
     mantineTableProps: {
       className: classes.table,
     },
@@ -176,9 +173,9 @@ export function Table<Data extends Record<string, unknown>>(
     positionActionsColumn: 'last',
     positionToolbarAlertBanner: 'top',
     renderRowActions: ({ row }) => {
-      const rowActionClasses = [classes.rowActions];
+      const rowActionClasses = [classes.rowActions, 'rowActionsRef'];
       if (row.index === openedMenuRowIndex) {
-        rowActionClasses.push(classes.rowActionsMenuOpened);
+        rowActionClasses.push('rowActionsMenuOpenedRef');
       }
       return (
         <div className={rowActionClasses.join(' ')}>
@@ -189,9 +186,11 @@ export function Table<Data extends Record<string, unknown>>(
               {...tooltipProps}
             >
               <ActionIcon
+                className={classes.action}
                 onClick={() => handleAction(row, action)}
                 radius={4}
                 type="button"
+                variant="transparent"
                 {...getActionComponentProps(action, row)}
               >
                 {getActionIcon(action, row)}
@@ -210,14 +209,13 @@ export function Table<Data extends Record<string, unknown>>(
             >
               <Menu.Target>
                 <ActionIcon
-                  className={classes.menuButton}
+                  className={`${classes.menuButton} ${classes.action}`}
                   radius={4}
                   type="button"
+                  variant="transparent"
                 >
                   <Tooltip label={menuLabel} {...tooltipProps}>
-                    <div className={classes.menuButtonWrapper}>
-                      <DotsThreeVertical size={16} />
-                    </div>
+                    <DotsThreeVertical size={16} />
                   </Tooltip>
                 </ActionIcon>
               </Menu.Target>
@@ -241,9 +239,7 @@ export function Table<Data extends Record<string, unknown>>(
       );
     },
     renderToolbarAlertBannerContent: ({ selectedAlert }) => (
-      <div className={classes.alertToolbar}>
-        <p>{selectedAlert}</p>
-      </div>
+      <div className={classes.alertToolbar}>{selectedAlert}</div>
     ),
     renderToolbarInternalActions: ({ table }) => {
       const { rows } = table.getSelectedRowModel();
@@ -262,7 +258,6 @@ export function Table<Data extends Record<string, unknown>>(
                 {getActionLabel(action, rows)}
               </Button>
             ))}
-
           {table.options.enableFilters &&
           table.options.enableGlobalFilter &&
           !initialState?.showGlobalFilter ? (

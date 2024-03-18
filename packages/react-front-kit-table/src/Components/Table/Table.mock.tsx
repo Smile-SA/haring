@@ -142,5 +142,6 @@ export const tableMock: ITableProps<Record<string, unknown>> = {
       title: 'Doc test 7',
     },
   ],
+  manualSorting: false,
   rowActionNumber: 3,
 };
