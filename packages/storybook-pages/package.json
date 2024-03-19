@@ -21,13 +21,15 @@
   },
   "dependencies": {
     "@mantine/carousel": "^7.5.1",
+    "@mantine/charts": "^7.5.2",
     "@mantine/form": "^7.5.1",
     "@smile/react-front-kit": "*",
     "@smile/react-front-kit-dropzone": "*",
     "@smile/react-front-kit-shared": "*",
     "@smile/react-front-kit-table": "*",
     "embla-carousel-react": "^7.1.0",
-    "react-hook-form": "^7.50.1"
+    "react-hook-form": "^7.50.1",
+    "recharts": "^2.12.3"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^7.4.1",
