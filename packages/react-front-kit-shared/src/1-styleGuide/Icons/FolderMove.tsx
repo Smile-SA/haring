@@ -21,7 +21,7 @@ const weights = new Map<IconWeight, ReactElement>([
   ],
 ]);
 
-export const FolderMove: Icon = forwardRef<SVGSVGElement, IconProps>(
+export const FolderMove = forwardRef<SVGSVGElement, IconProps>(
   function FolderMove(props, ref) {
     const { color = 'currentColor', ...iconProps } = props;
     return (
@@ -35,4 +35,4 @@ export const FolderMove: Icon = forwardRef<SVGSVGElement, IconProps>(
       />
     );
   },
-);
+) as Icon;
