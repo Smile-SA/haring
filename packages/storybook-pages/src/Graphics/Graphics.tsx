@@ -26,6 +26,7 @@ export function DocumentDetails(): ReactElement {
         <PieChart
           data={pieChartMock}
           labelsPosition="inside"
+          labelsType="percent"
           mx="auto"
           withLabels
           withLabelsLine

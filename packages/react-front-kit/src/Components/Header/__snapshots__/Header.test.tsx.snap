@@ -66,15 +66,6 @@ exports[`Header matches snapshot 1`] = `
                 type="button"
               >
                 <span
-                  aria-hidden="true"
-                  class="m-a25b86ee mantine-Button-loader"
-                >
-                  <span
-                    class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                    style="--loader-size: calc(var(--button-height) / 1.8); --loader-color: var(--button-color);"
-                  />
-                </span>
-                <span
                   class="m-80f1301b mantine-Button-inner"
                 >
                   <span
@@ -106,10 +97,10 @@ exports[`Header matches snapshot 1`] = `
         style="--app-shell-header-z-index: 100;"
       >
         <div
-          class="m-8bffd616 mantine-Flex-root __m__-rg"
+          class="m-8bffd616 mantine-Flex-root __m__-rd"
         >
           <div
-            class="m-8bffd616 mantine-Flex-root __m__-ri"
+            class="m-8bffd616 mantine-Flex-root __m__-rf"
             style="gap: calc(1rem * var(--mantine-scale));"
           >
             <button
@@ -131,10 +122,10 @@ exports[`Header matches snapshot 1`] = `
             />
           </div>
           <div
-            class="m-8bffd616 mantine-Flex-root __m__-rn"
+            class="m-8bffd616 mantine-Flex-root __m__-rk"
           />
           <div
-            class="m-8bffd616 mantine-Flex-root __m__-rp"
+            class="m-8bffd616 mantine-Flex-root __m__-rm"
           />
         </div>
         <div
