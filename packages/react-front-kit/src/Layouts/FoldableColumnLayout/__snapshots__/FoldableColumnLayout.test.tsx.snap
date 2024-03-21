@@ -57,19 +57,21 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
               class="m-5f93f3bb mantine-Switch-root m-5f75b09e mantine-Switch-root"
               data-label-position="right"
             >
-              <div
+              <label
                 class="m-5f6e695e mantine-Switch-body"
+                for="sidebar-toggle"
               >
                 <input
                   checked=""
                   class="m-926b4011 mantine-Switch-input"
                   id="sidebar-toggle"
+                  role="switch"
                   type="checkbox"
                 />
-                <label
+                <div
+                  aria-hidden="true"
                   class="m-9307d992 mantine-Switch-track"
                   data-label-position="right"
-                  for="sidebar-toggle"
                 >
                   <span
                     class="m-93039a1d mantine-Switch-thumb"
@@ -78,13 +80,12 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
                   <span
                     class="m-8277e082 mantine-Switch-trackLabel"
                   />
-                </label>
+                </div>
                 <div
                   class="m-d3ea56bb mantine-Switch-labelWrapper"
                 >
-                  <label
+                  <span
                     class="m-8ee546b8 mantine-Switch-label"
-                    for="sidebar-toggle"
                   >
                     <p
                       class="haring-focus m-b6d8b162 mantine-Text-root"
@@ -93,9 +94,9 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
                     >
                       Display sidebar
                     </p>
-                  </label>
+                  </span>
                 </div>
-              </div>
+              </label>
             </div>
           </div>
         </div>
@@ -111,15 +112,6 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
       style="--button-color: var(--mantine-color-white);"
       type="button"
     >
-      <span
-        aria-hidden="true"
-        class="m-a25b86ee mantine-Button-loader"
-      >
-        <span
-          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-          style="--loader-size: calc(var(--button-height) / 1.8); --loader-color: var(--button-color);"
-        />
-      </span>
       <span
         class="m-80f1301b mantine-Button-inner"
       >
@@ -154,10 +146,10 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
     <style
       data-mantine-styles="inline"
     >
-      .__m__-ri{--grid-gutter:var(--mantine-spacing-lg);}
+      .__m__-rh{--grid-gutter:var(--mantine-spacing-lg);}
     </style>
     <div
-      class="m-410352e9 mantine-Grid-root __m__-ri"
+      class="m-410352e9 mantine-Grid-root __m__-rh"
       overflow="hidden"
       style="--grid-overflow: hidden;"
     >
@@ -167,11 +159,11 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
         <style
           data-mantine-styles="inline"
         >
-          .__m__-rk{--col-flex-grow:auto;--col-flex-basis:25%;--col-max-width:25%;}
+          .__m__-rj{--col-flex-grow:auto;--col-flex-basis:25%;--col-max-width:25%;}
         </style>
         <div
           aria-hidden="false"
-          class="m-96bdd299 mantine-Grid-col __m__-rk"
+          class="m-96bdd299 mantine-Grid-col __m__-rj"
         >
           <span>
             sidebar content
@@ -180,10 +172,10 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
         <style
           data-mantine-styles="inline"
         >
-          .__m__-rm{--col-flex-grow:auto;--col-flex-basis:75%;--col-max-width:75%;}
+          .__m__-rl{--col-flex-grow:auto;--col-flex-basis:75%;--col-max-width:75%;}
         </style>
         <div
-          class="m-96bdd299 mantine-Grid-col __m__-rm"
+          class="m-96bdd299 mantine-Grid-col __m__-rl"
         >
           <span>
             main content

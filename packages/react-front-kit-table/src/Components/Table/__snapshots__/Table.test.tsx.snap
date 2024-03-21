@@ -43,15 +43,6 @@ exports[`Table matches snapshot 1`] = `
                 type="button"
               >
                 <span
-                  aria-hidden="true"
-                  class="m-302b9fb1 mantine-ActionIcon-loader"
-                >
-                  <span
-                    class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                    style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                  />
-                </span>
-                <span
                   class="m-8d3afb97 mantine-ActionIcon-icon"
                 >
                   <svg
@@ -79,15 +70,6 @@ exports[`Table matches snapshot 1`] = `
                 style="--ai-size: var(--ai-size-lg); --ai-bg: transparent; --ai-hover: var(--mantine-color-gray-light-hover); --ai-color: var(--mantine-color-gray-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                 type="button"
               >
-                <span
-                  aria-hidden="true"
-                  class="m-302b9fb1 mantine-ActionIcon-loader"
-                >
-                  <span
-                    class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                    style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                  />
-                </span>
                 <span
                   class="m-8d3afb97 mantine-ActionIcon-icon"
                 >
@@ -182,14 +164,14 @@ exports[`Table matches snapshot 1`] = `
               style="min-width: max(calc(var(--header-mrt_row_select-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
-                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r11"
+                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-rr"
               >
                 <div
-                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr m-8bffd616 mantine-Flex-root __m__-r13"
+                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr m-8bffd616 mantine-Flex-root __m__-rt"
                   style="--mrt-table-head-cell-labels-padding-left: 0;"
                 >
                   <div
-                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r15"
+                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-rv"
                   >
                     <span
                       class=""
@@ -236,7 +218,7 @@ exports[`Table matches snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r1c"
+                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r17"
                 />
               </div>
             </th>
@@ -248,14 +230,14 @@ exports[`Table matches snapshot 1`] = `
               style="min-width: max(calc(var(--header-id-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
-                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r1f"
+                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r1a"
               >
                 <div
-                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r1h"
+                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r1c"
                   style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                 >
                   <div
-                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r1j"
+                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r1e"
                   >
                     id
                   </div>
@@ -265,15 +247,6 @@ exports[`Table matches snapshot 1`] = `
                     style="--ai-color: var(--mantine-color-white);"
                     type="button"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="m-302b9fb1 mantine-ActionIcon-loader"
-                    >
-                      <span
-                        class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                        style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                      />
-                    </span>
                     <span
                       class="m-8d3afb97 mantine-ActionIcon-icon"
                     >
@@ -292,7 +265,7 @@ exports[`Table matches snapshot 1`] = `
                   </button>
                 </div>
                 <div
-                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r1t"
+                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r1l"
                 >
                   <button
                     aria-controls="undefined-dropdown"
@@ -307,19 +280,10 @@ exports[`Table matches snapshot 1`] = `
                     type="button"
                   >
                     <span
-                      aria-hidden="true"
-                      class="m-302b9fb1 mantine-ActionIcon-loader"
-                    >
-                      <span
-                        class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                        style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                      />
-                    </span>
-                    <span
                       class="m-8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
-                        class="tabler-icon tabler-icon-dots-vertical"
+                        class="tabler-icon tabler-icon-dots-vertical "
                         fill="none"
                         height="100%"
                         stroke="currentColor"
@@ -350,11 +314,11 @@ exports[`Table matches snapshot 1`] = `
                 style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
               >
                 <div
-                  class="m-8bffd616 mantine-Flex-root __m__-r28"
+                  class="m-8bffd616 mantine-Flex-root __m__-r1t"
                   style="flex-direction: column;"
                 >
                   <div
-                    class="m-8bffd616 mantine-Flex-root __m__-r2a"
+                    class="m-8bffd616 mantine-Flex-root __m__-r1v"
                     style="align-items: flex-end;"
                   >
                     <div
@@ -389,14 +353,14 @@ exports[`Table matches snapshot 1`] = `
               style="min-width: max(calc(var(--header-format-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
-                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r2g"
+                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r25"
               >
                 <div
-                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r2i"
+                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r27"
                   style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                 >
                   <div
-                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r2k"
+                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r29"
                   >
                     Format
                   </div>
@@ -406,15 +370,6 @@ exports[`Table matches snapshot 1`] = `
                     style="--ai-color: var(--mantine-color-white);"
                     type="button"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="m-302b9fb1 mantine-ActionIcon-loader"
-                    >
-                      <span
-                        class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                        style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                      />
-                    </span>
                     <span
                       class="m-8d3afb97 mantine-ActionIcon-icon"
                     >
@@ -433,7 +388,7 @@ exports[`Table matches snapshot 1`] = `
                   </button>
                 </div>
                 <div
-                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r2u"
+                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r2g"
                 >
                   <button
                     aria-controls="undefined-dropdown"
@@ -448,19 +403,10 @@ exports[`Table matches snapshot 1`] = `
                     type="button"
                   >
                     <span
-                      aria-hidden="true"
-                      class="m-302b9fb1 mantine-ActionIcon-loader"
-                    >
-                      <span
-                        class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                        style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                      />
-                    </span>
-                    <span
                       class="m-8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
-                        class="tabler-icon tabler-icon-dots-vertical"
+                        class="tabler-icon tabler-icon-dots-vertical "
                         fill="none"
                         height="100%"
                         stroke="currentColor"
@@ -491,11 +437,11 @@ exports[`Table matches snapshot 1`] = `
                 style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
               >
                 <div
-                  class="m-8bffd616 mantine-Flex-root __m__-r39"
+                  class="m-8bffd616 mantine-Flex-root __m__-r2o"
                   style="flex-direction: column;"
                 >
                   <div
-                    class="m-8bffd616 mantine-Flex-root __m__-r3b"
+                    class="m-8bffd616 mantine-Flex-root __m__-r2q"
                     style="align-items: flex-end;"
                   >
                     <div
@@ -530,14 +476,14 @@ exports[`Table matches snapshot 1`] = `
               style="min-width: max(calc(var(--header-title-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
-                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r3h"
+                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r30"
               >
                 <div
-                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r3j"
+                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r32"
                   style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                 >
                   <div
-                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r3l"
+                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r34"
                   >
                     Titre
                   </div>
@@ -547,15 +493,6 @@ exports[`Table matches snapshot 1`] = `
                     style="--ai-color: var(--mantine-color-white);"
                     type="button"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="m-302b9fb1 mantine-ActionIcon-loader"
-                    >
-                      <span
-                        class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                        style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                      />
-                    </span>
                     <span
                       class="m-8d3afb97 mantine-ActionIcon-icon"
                     >
@@ -574,7 +511,7 @@ exports[`Table matches snapshot 1`] = `
                   </button>
                 </div>
                 <div
-                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r3v"
+                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r3b"
                 >
                   <button
                     aria-controls="undefined-dropdown"
@@ -589,19 +526,10 @@ exports[`Table matches snapshot 1`] = `
                     type="button"
                   >
                     <span
-                      aria-hidden="true"
-                      class="m-302b9fb1 mantine-ActionIcon-loader"
-                    >
-                      <span
-                        class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                        style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                      />
-                    </span>
-                    <span
                       class="m-8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
-                        class="tabler-icon tabler-icon-dots-vertical"
+                        class="tabler-icon tabler-icon-dots-vertical "
                         fill="none"
                         height="100%"
                         stroke="currentColor"
@@ -632,11 +560,11 @@ exports[`Table matches snapshot 1`] = `
                 style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
               >
                 <div
-                  class="m-8bffd616 mantine-Flex-root __m__-r4a"
+                  class="m-8bffd616 mantine-Flex-root __m__-r3j"
                   style="flex-direction: column;"
                 >
                   <div
-                    class="m-8bffd616 mantine-Flex-root __m__-r4c"
+                    class="m-8bffd616 mantine-Flex-root __m__-r3l"
                     style="align-items: flex-end;"
                   >
                     <div
@@ -671,14 +599,14 @@ exports[`Table matches snapshot 1`] = `
               style="min-width: max(calc(var(--header-creator-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
-                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r4i"
+                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r3r"
               >
                 <div
-                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r4k"
+                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r3t"
                   style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                 >
                   <div
-                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r4m"
+                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r3v"
                   >
                     Créateur
                   </div>
@@ -688,15 +616,6 @@ exports[`Table matches snapshot 1`] = `
                     style="--ai-color: var(--mantine-color-white);"
                     type="button"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="m-302b9fb1 mantine-ActionIcon-loader"
-                    >
-                      <span
-                        class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                        style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                      />
-                    </span>
                     <span
                       class="m-8d3afb97 mantine-ActionIcon-icon"
                     >
@@ -715,7 +634,7 @@ exports[`Table matches snapshot 1`] = `
                   </button>
                 </div>
                 <div
-                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r50"
+                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r46"
                 >
                   <button
                     aria-controls="undefined-dropdown"
@@ -730,19 +649,10 @@ exports[`Table matches snapshot 1`] = `
                     type="button"
                   >
                     <span
-                      aria-hidden="true"
-                      class="m-302b9fb1 mantine-ActionIcon-loader"
-                    >
-                      <span
-                        class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                        style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                      />
-                    </span>
-                    <span
                       class="m-8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
-                        class="tabler-icon tabler-icon-dots-vertical"
+                        class="tabler-icon tabler-icon-dots-vertical "
                         fill="none"
                         height="100%"
                         stroke="currentColor"
@@ -773,11 +683,11 @@ exports[`Table matches snapshot 1`] = `
                 style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
               >
                 <div
-                  class="m-8bffd616 mantine-Flex-root __m__-r5b"
+                  class="m-8bffd616 mantine-Flex-root __m__-r4e"
                   style="flex-direction: column;"
                 >
                   <div
-                    class="m-8bffd616 mantine-Flex-root __m__-r5d"
+                    class="m-8bffd616 mantine-Flex-root __m__-r4g"
                     style="align-items: flex-end;"
                   >
                     <div
@@ -812,14 +722,14 @@ exports[`Table matches snapshot 1`] = `
               style="min-width: max(calc(var(--header-date-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
-                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r5j"
+                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r4m"
               >
                 <div
-                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r5l"
+                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r4o"
                   style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                 >
                   <div
-                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r5n"
+                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r4q"
                   >
                     Date publication
                   </div>
@@ -829,15 +739,6 @@ exports[`Table matches snapshot 1`] = `
                     style="--ai-color: var(--mantine-color-white);"
                     type="button"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="m-302b9fb1 mantine-ActionIcon-loader"
-                    >
-                      <span
-                        class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                        style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                      />
-                    </span>
                     <span
                       class="m-8d3afb97 mantine-ActionIcon-icon"
                     >
@@ -856,7 +757,7 @@ exports[`Table matches snapshot 1`] = `
                   </button>
                 </div>
                 <div
-                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r61"
+                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r51"
                 >
                   <button
                     aria-controls="undefined-dropdown"
@@ -871,19 +772,10 @@ exports[`Table matches snapshot 1`] = `
                     type="button"
                   >
                     <span
-                      aria-hidden="true"
-                      class="m-302b9fb1 mantine-ActionIcon-loader"
-                    >
-                      <span
-                        class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                        style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                      />
-                    </span>
-                    <span
                       class="m-8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
-                        class="tabler-icon tabler-icon-dots-vertical"
+                        class="tabler-icon tabler-icon-dots-vertical "
                         fill="none"
                         height="100%"
                         stroke="currentColor"
@@ -914,11 +806,11 @@ exports[`Table matches snapshot 1`] = `
                 style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
               >
                 <div
-                  class="m-8bffd616 mantine-Flex-root __m__-r6c"
+                  class="m-8bffd616 mantine-Flex-root __m__-r59"
                   style="flex-direction: column;"
                 >
                   <div
-                    class="m-8bffd616 mantine-Flex-root __m__-r6e"
+                    class="m-8bffd616 mantine-Flex-root __m__-r5b"
                     style="align-items: flex-end;"
                   >
                     <div
@@ -955,18 +847,18 @@ exports[`Table matches snapshot 1`] = `
               style="min-width: max(calc(var(--header-mrt_row_actions-size) * 1px), 40px); --mrt-table-cell-right: 0; --mrt-table-head-cell-padding: 16;"
             >
               <div
-                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r6k"
+                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r5h"
               >
                 <div
-                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr m-8bffd616 mantine-Flex-root __m__-r6m"
+                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr m-8bffd616 mantine-Flex-root __m__-r5j"
                   style="--mrt-table-head-cell-labels-padding-left: 0;"
                 >
                   <div
-                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r6o"
+                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r5l"
                   />
                 </div>
                 <div
-                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r6q"
+                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r5n"
                 />
               </div>
             </th>
@@ -1540,7 +1432,7 @@ exports[`Table matches snapshot 1`] = `
     style="min-height: var(--mantine-spacing-xl);"
   />
   <div
-    class="_container_1th2l_1 m-8bffd616 mantine-Flex-root __m__-r97"
+    class="_container_1th2l_1 m-8bffd616 mantine-Flex-root __m__-r89"
     data-testid="pagination"
   >
     <div

@@ -78,15 +78,6 @@ exports[`DocumentBox matches snapshot 1`] = `
         type="button"
       >
         <span
-          aria-hidden="true"
-          class="m-a25b86ee mantine-Button-loader"
-        >
-          <span
-            class="m-b34414df m-5ae2e3c mantine-Loader-root"
-            style="--loader-size: calc(var(--button-height) / 1.8); --loader-color: var(--button-color);"
-          />
-        </span>
-        <span
           class="m-80f1301b mantine-Button-inner"
         >
           <span

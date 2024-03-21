@@ -35,7 +35,7 @@ const weights = new Map<IconWeight, ReactElement>([
   ],
 ]);
 
-export const ColumnPlus: Icon = forwardRef<SVGSVGElement, IconProps>(
+export const ColumnPlus = forwardRef<SVGSVGElement, IconProps>(
   function ColumnPlus(props, ref) {
     const { color = 'currentColor', ...iconProps } = props;
     return (
@@ -49,4 +49,4 @@ export const ColumnPlus: Icon = forwardRef<SVGSVGElement, IconProps>(
       />
     );
   },
-);
+) as Icon;
