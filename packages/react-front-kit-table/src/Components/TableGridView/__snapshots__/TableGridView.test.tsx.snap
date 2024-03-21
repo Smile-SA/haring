@@ -128,15 +128,6 @@ exports[`TableGridView matches snapshot 1`] = `
                     type="button"
                   >
                     <span
-                      aria-hidden="true"
-                      class="m-302b9fb1 mantine-ActionIcon-loader"
-                    >
-                      <span
-                        class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                        style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                      />
-                    </span>
-                    <span
                       class="m-8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
@@ -164,15 +155,6 @@ exports[`TableGridView matches snapshot 1`] = `
                     style="--ai-size: var(--ai-size-lg); --ai-bg: transparent; --ai-hover: var(--mantine-color-gray-light-hover); --ai-color: var(--mantine-color-gray-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                     type="button"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="m-302b9fb1 mantine-ActionIcon-loader"
-                    >
-                      <span
-                        class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                        style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                      />
-                    </span>
                     <span
                       class="m-8d3afb97 mantine-ActionIcon-icon"
                     >
@@ -267,14 +249,14 @@ exports[`TableGridView matches snapshot 1`] = `
                   style="min-width: max(calc(var(--header-mrt_row_select-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
                 >
                   <div
-                    class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r1c"
+                    class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r16"
                   >
                     <div
-                      class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr m-8bffd616 mantine-Flex-root __m__-r1e"
+                      class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr m-8bffd616 mantine-Flex-root __m__-r18"
                       style="--mrt-table-head-cell-labels-padding-left: 0;"
                     >
                       <div
-                        class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r1g"
+                        class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r1a"
                       >
                         <span
                           class=""
@@ -322,7 +304,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </div>
                     </div>
                     <div
-                      class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r1p"
+                      class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r1k"
                     />
                   </div>
                 </th>
@@ -334,14 +316,14 @@ exports[`TableGridView matches snapshot 1`] = `
                   style="min-width: max(calc(var(--header-id-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
                 >
                   <div
-                    class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r1s"
+                    class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r1n"
                   >
                     <div
-                      class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r1u"
+                      class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r1p"
                       style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                     >
                       <div
-                        class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r20"
+                        class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r1r"
                       >
                         id
                       </div>
@@ -351,15 +333,6 @@ exports[`TableGridView matches snapshot 1`] = `
                         style="--ai-color: var(--mantine-color-white);"
                         type="button"
                       >
-                        <span
-                          aria-hidden="true"
-                          class="m-302b9fb1 mantine-ActionIcon-loader"
-                        >
-                          <span
-                            class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                            style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                          />
-                        </span>
                         <span
                           class="m-8d3afb97 mantine-ActionIcon-icon"
                         >
@@ -378,7 +351,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </button>
                     </div>
                     <div
-                      class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r2c"
+                      class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r24"
                     >
                       <button
                         aria-controls="mantine-f4bipx4bi-dropdown"
@@ -393,19 +366,10 @@ exports[`TableGridView matches snapshot 1`] = `
                         type="button"
                       >
                         <span
-                          aria-hidden="true"
-                          class="m-302b9fb1 mantine-ActionIcon-loader"
-                        >
-                          <span
-                            class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                            style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                          />
-                        </span>
-                        <span
                           class="m-8d3afb97 mantine-ActionIcon-icon"
                         >
                           <svg
-                            class="tabler-icon tabler-icon-dots-vertical"
+                            class="tabler-icon tabler-icon-dots-vertical "
                             fill="none"
                             height="100%"
                             stroke="currentColor"
@@ -436,11 +400,11 @@ exports[`TableGridView matches snapshot 1`] = `
                     style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
                   >
                     <div
-                      class="m-8bffd616 mantine-Flex-root __m__-r2p"
+                      class="m-8bffd616 mantine-Flex-root __m__-r2e"
                       style="flex-direction: column;"
                     >
                       <div
-                        class="m-8bffd616 mantine-Flex-root __m__-r2r"
+                        class="m-8bffd616 mantine-Flex-root __m__-r2g"
                         style="align-items: flex-end;"
                       >
                         <div
@@ -476,14 +440,14 @@ exports[`TableGridView matches snapshot 1`] = `
                   style="min-width: max(calc(var(--header-format-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
                 >
                   <div
-                    class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r32"
+                    class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r2n"
                   >
                     <div
-                      class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r34"
+                      class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r2p"
                       style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                     >
                       <div
-                        class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r36"
+                        class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r2r"
                       >
                         Format
                       </div>
@@ -493,15 +457,6 @@ exports[`TableGridView matches snapshot 1`] = `
                         style="--ai-color: var(--mantine-color-white);"
                         type="button"
                       >
-                        <span
-                          aria-hidden="true"
-                          class="m-302b9fb1 mantine-ActionIcon-loader"
-                        >
-                          <span
-                            class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                            style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                          />
-                        </span>
                         <span
                           class="m-8d3afb97 mantine-ActionIcon-icon"
                         >
@@ -520,7 +475,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </button>
                     </div>
                     <div
-                      class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r3i"
+                      class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r34"
                     >
                       <button
                         aria-controls="mantine-f4bipx4bi-dropdown"
@@ -535,19 +490,10 @@ exports[`TableGridView matches snapshot 1`] = `
                         type="button"
                       >
                         <span
-                          aria-hidden="true"
-                          class="m-302b9fb1 mantine-ActionIcon-loader"
-                        >
-                          <span
-                            class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                            style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                          />
-                        </span>
-                        <span
                           class="m-8d3afb97 mantine-ActionIcon-icon"
                         >
                           <svg
-                            class="tabler-icon tabler-icon-dots-vertical"
+                            class="tabler-icon tabler-icon-dots-vertical "
                             fill="none"
                             height="100%"
                             stroke="currentColor"
@@ -578,11 +524,11 @@ exports[`TableGridView matches snapshot 1`] = `
                     style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
                   >
                     <div
-                      class="m-8bffd616 mantine-Flex-root __m__-r3v"
+                      class="m-8bffd616 mantine-Flex-root __m__-r3e"
                       style="flex-direction: column;"
                     >
                       <div
-                        class="m-8bffd616 mantine-Flex-root __m__-r41"
+                        class="m-8bffd616 mantine-Flex-root __m__-r3g"
                         style="align-items: flex-end;"
                       >
                         <div
@@ -618,14 +564,14 @@ exports[`TableGridView matches snapshot 1`] = `
                   style="min-width: max(calc(var(--header-title-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
                 >
                   <div
-                    class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r48"
+                    class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r3n"
                   >
                     <div
-                      class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r4a"
+                      class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r3p"
                       style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                     >
                       <div
-                        class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r4c"
+                        class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r3r"
                       >
                         Titre
                       </div>
@@ -635,15 +581,6 @@ exports[`TableGridView matches snapshot 1`] = `
                         style="--ai-color: var(--mantine-color-white);"
                         type="button"
                       >
-                        <span
-                          aria-hidden="true"
-                          class="m-302b9fb1 mantine-ActionIcon-loader"
-                        >
-                          <span
-                            class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                            style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                          />
-                        </span>
                         <span
                           class="m-8d3afb97 mantine-ActionIcon-icon"
                         >
@@ -662,7 +599,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </button>
                     </div>
                     <div
-                      class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r4o"
+                      class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r44"
                     >
                       <button
                         aria-controls="mantine-f4bipx4bi-dropdown"
@@ -677,19 +614,10 @@ exports[`TableGridView matches snapshot 1`] = `
                         type="button"
                       >
                         <span
-                          aria-hidden="true"
-                          class="m-302b9fb1 mantine-ActionIcon-loader"
-                        >
-                          <span
-                            class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                            style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                          />
-                        </span>
-                        <span
                           class="m-8d3afb97 mantine-ActionIcon-icon"
                         >
                           <svg
-                            class="tabler-icon tabler-icon-dots-vertical"
+                            class="tabler-icon tabler-icon-dots-vertical "
                             fill="none"
                             height="100%"
                             stroke="currentColor"
@@ -720,11 +648,11 @@ exports[`TableGridView matches snapshot 1`] = `
                     style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
                   >
                     <div
-                      class="m-8bffd616 mantine-Flex-root __m__-r55"
+                      class="m-8bffd616 mantine-Flex-root __m__-r4e"
                       style="flex-direction: column;"
                     >
                       <div
-                        class="m-8bffd616 mantine-Flex-root __m__-r57"
+                        class="m-8bffd616 mantine-Flex-root __m__-r4g"
                         style="align-items: flex-end;"
                       >
                         <div
@@ -760,14 +688,14 @@ exports[`TableGridView matches snapshot 1`] = `
                   style="min-width: max(calc(var(--header-creator-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
                 >
                   <div
-                    class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r5e"
+                    class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r4n"
                   >
                     <div
-                      class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r5g"
+                      class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r4p"
                       style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                     >
                       <div
-                        class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r5i"
+                        class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r4r"
                       >
                         Créateur
                       </div>
@@ -777,15 +705,6 @@ exports[`TableGridView matches snapshot 1`] = `
                         style="--ai-color: var(--mantine-color-white);"
                         type="button"
                       >
-                        <span
-                          aria-hidden="true"
-                          class="m-302b9fb1 mantine-ActionIcon-loader"
-                        >
-                          <span
-                            class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                            style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                          />
-                        </span>
                         <span
                           class="m-8d3afb97 mantine-ActionIcon-icon"
                         >
@@ -804,7 +723,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </button>
                     </div>
                     <div
-                      class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r5u"
+                      class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r54"
                     >
                       <button
                         aria-controls="mantine-f4bipx4bi-dropdown"
@@ -819,19 +738,10 @@ exports[`TableGridView matches snapshot 1`] = `
                         type="button"
                       >
                         <span
-                          aria-hidden="true"
-                          class="m-302b9fb1 mantine-ActionIcon-loader"
-                        >
-                          <span
-                            class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                            style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                          />
-                        </span>
-                        <span
                           class="m-8d3afb97 mantine-ActionIcon-icon"
                         >
                           <svg
-                            class="tabler-icon tabler-icon-dots-vertical"
+                            class="tabler-icon tabler-icon-dots-vertical "
                             fill="none"
                             height="100%"
                             stroke="currentColor"
@@ -862,11 +772,11 @@ exports[`TableGridView matches snapshot 1`] = `
                     style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
                   >
                     <div
-                      class="m-8bffd616 mantine-Flex-root __m__-r6b"
+                      class="m-8bffd616 mantine-Flex-root __m__-r5e"
                       style="flex-direction: column;"
                     >
                       <div
-                        class="m-8bffd616 mantine-Flex-root __m__-r6d"
+                        class="m-8bffd616 mantine-Flex-root __m__-r5g"
                         style="align-items: flex-end;"
                       >
                         <div
@@ -902,14 +812,14 @@ exports[`TableGridView matches snapshot 1`] = `
                   style="min-width: max(calc(var(--header-date-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
                 >
                   <div
-                    class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r6k"
+                    class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r5n"
                   >
                     <div
-                      class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r6m"
+                      class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r5p"
                       style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                     >
                       <div
-                        class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r6o"
+                        class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r5r"
                       >
                         Date publication
                       </div>
@@ -919,15 +829,6 @@ exports[`TableGridView matches snapshot 1`] = `
                         style="--ai-color: var(--mantine-color-white);"
                         type="button"
                       >
-                        <span
-                          aria-hidden="true"
-                          class="m-302b9fb1 mantine-ActionIcon-loader"
-                        >
-                          <span
-                            class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                            style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                          />
-                        </span>
                         <span
                           class="m-8d3afb97 mantine-ActionIcon-icon"
                         >
@@ -946,7 +847,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </button>
                     </div>
                     <div
-                      class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r74"
+                      class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r64"
                     >
                       <button
                         aria-controls="mantine-f4bipx4bi-dropdown"
@@ -961,19 +862,10 @@ exports[`TableGridView matches snapshot 1`] = `
                         type="button"
                       >
                         <span
-                          aria-hidden="true"
-                          class="m-302b9fb1 mantine-ActionIcon-loader"
-                        >
-                          <span
-                            class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                            style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                          />
-                        </span>
-                        <span
                           class="m-8d3afb97 mantine-ActionIcon-icon"
                         >
                           <svg
-                            class="tabler-icon tabler-icon-dots-vertical"
+                            class="tabler-icon tabler-icon-dots-vertical "
                             fill="none"
                             height="100%"
                             stroke="currentColor"
@@ -1004,11 +896,11 @@ exports[`TableGridView matches snapshot 1`] = `
                     style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
                   >
                     <div
-                      class="m-8bffd616 mantine-Flex-root __m__-r7h"
+                      class="m-8bffd616 mantine-Flex-root __m__-r6e"
                       style="flex-direction: column;"
                     >
                       <div
-                        class="m-8bffd616 mantine-Flex-root __m__-r7j"
+                        class="m-8bffd616 mantine-Flex-root __m__-r6g"
                         style="align-items: flex-end;"
                       >
                         <div
@@ -1046,18 +938,18 @@ exports[`TableGridView matches snapshot 1`] = `
                   style="min-width: max(calc(var(--header-mrt_row_actions-size) * 1px), 40px); --mrt-table-cell-right: 0; --mrt-table-head-cell-padding: 16;"
                 >
                   <div
-                    class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r7q"
+                    class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r6n"
                   >
                     <div
-                      class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr m-8bffd616 mantine-Flex-root __m__-r7s"
+                      class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr m-8bffd616 mantine-Flex-root __m__-r6p"
                       style="--mrt-table-head-cell-labels-padding-left: 0;"
                     >
                       <div
-                        class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r7u"
+                        class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r6r"
                       />
                     </div>
                     <div
-                      class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r80"
+                      class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r6t"
                     />
                   </div>
                 </th>
@@ -1173,15 +1065,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
-                      <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
@@ -1217,15 +1100,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
-                      <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
@@ -1247,15 +1121,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
-                      <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
                       <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
@@ -1282,15 +1147,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
-                      <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
                       <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
@@ -1418,15 +1274,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
-                      <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
@@ -1462,15 +1309,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
-                      <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
@@ -1492,15 +1330,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
-                      <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
                       <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
@@ -1527,15 +1356,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
-                      <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
                       <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
@@ -1663,15 +1483,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
-                      <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
@@ -1707,15 +1518,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
-                      <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
@@ -1737,15 +1539,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
-                      <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
                       <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
@@ -1772,15 +1565,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
-                      <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
                       <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
@@ -1908,15 +1692,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
-                      <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
@@ -1952,15 +1727,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
-                      <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
@@ -1982,15 +1748,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
-                      <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
                       <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
@@ -2017,15 +1774,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
-                      <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
                       <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
@@ -2153,15 +1901,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
-                      <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
@@ -2197,15 +1936,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
-                      <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
@@ -2227,15 +1957,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
-                      <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
                       <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
@@ -2262,15 +1983,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
-                      <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
                       <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
@@ -2398,15 +2110,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
-                      <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
@@ -2442,15 +2145,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
-                      <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
@@ -2472,15 +2166,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
-                      <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
                       <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
@@ -2507,15 +2192,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
-                      <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
                       <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
@@ -2650,15 +2326,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
-                      <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
@@ -2694,15 +2361,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
-                      <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
                         <svg
@@ -2724,15 +2382,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
-                      <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
                       <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
@@ -2759,15 +2408,6 @@ exports[`TableGridView matches snapshot 1`] = `
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                       type="button"
                     >
-                      <span
-                        aria-hidden="true"
-                        class="m-302b9fb1 mantine-ActionIcon-loader"
-                      >
-                        <span
-                          class="m-b34414df m-5ae2e3c mantine-Loader-root"
-                          style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-                        />
-                      </span>
                       <span
                         class="m-8d3afb97 mantine-ActionIcon-icon"
                       >
@@ -2800,7 +2440,7 @@ exports[`TableGridView matches snapshot 1`] = `
         style="min-height: var(--mantine-spacing-xl);"
       />
       <div
-        class="_container_1th2l_1 m-8bffd616 mantine-Flex-root __m__-ris"
+        class="_container_1th2l_1 m-8bffd616 mantine-Flex-root __m__-rfc"
         data-testid="pagination"
       >
         <div

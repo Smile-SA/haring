@@ -23,15 +23,6 @@ exports[`CollapseButton matches snapshot 1`] = `
     style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
   >
     <span
-      aria-hidden="true"
-      class="m-a25b86ee mantine-Button-loader"
-    >
-      <span
-        class="m-b34414df m-5ae2e3c mantine-Loader-root"
-        style="--loader-size: calc(var(--button-height) / 1.8); --loader-color: var(--button-color);"
-      />
-    </span>
-    <span
       class="m-80f1301b mantine-Button-inner"
     >
       <span
@@ -54,15 +45,6 @@ exports[`CollapseButton matches snapshot 1`] = `
           style="--ai-radius: var(--mantine-radius-sm); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
           type="button"
         >
-          <span
-            aria-hidden="true"
-            class="m-302b9fb1 mantine-ActionIcon-loader"
-          >
-            <span
-              class="m-b34414df m-5ae2e3c mantine-Loader-root"
-              style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-            />
-          </span>
           <span
             class="m-8d3afb97 mantine-ActionIcon-icon"
           >

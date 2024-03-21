@@ -141,15 +141,6 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
         type="button"
       >
         <span
-          aria-hidden="true"
-          class="m-302b9fb1 mantine-ActionIcon-loader"
-        >
-          <span
-            class="m-b34414df m-5ae2e3c mantine-Loader-root"
-            style="--loader-size: calc(var(--ai-size) * 0.55); --loader-color: var(--ai-color);"
-          />
-        </span>
-        <span
           class="m-8d3afb97 mantine-ActionIcon-icon"
         >
           <svg
