@@ -1,5 +1,16 @@
 # @smile/react-front-kit
 
+## 0.11.0
+
+### Minor Changes
+
+- [#160](https://github.com/Smile-SA/react-front-kit/pull/160) [`101fddc72292db017216a707f5f7865ab48cd8db`](https://github.com/Smile-SA/react-front-kit/commit/101fddc72292db017216a707f5f7865ab48cd8db) Thanks [@vapersmile](https://github.com/vapersmile)! - Add FullNameFields component on Form category
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @smile/react-front-kit-shared@0.11.0
+
 ## 0.10.0
 
 ### Minor Changes
