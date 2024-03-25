@@ -1,5 +1,19 @@
 # storybook-pages
 
+## 0.11.0
+
+### Minor Changes
+
+- [#165](https://github.com/Smile-SA/react-front-kit/pull/165) [`d1a9e6334e72db880d2d7bf6df9777b3fa5a692e`](https://github.com/Smile-SA/react-front-kit/commit/d1a9e6334e72db880d2d7bf6df9777b3fa5a692e) Thanks [@vapersmile](https://github.com/vapersmile)! - add Graphics page on 2-Mantine and update to 7.6.2 "@mantine/"
+
+### Patch Changes
+
+- Updated dependencies [[`8bffd86290670993bd34dcd5934d5a0ba52d2066`](https://github.com/Smile-SA/react-front-kit/commit/8bffd86290670993bd34dcd5934d5a0ba52d2066), [`101fddc72292db017216a707f5f7865ab48cd8db`](https://github.com/Smile-SA/react-front-kit/commit/101fddc72292db017216a707f5f7865ab48cd8db)]:
+  - @smile/react-front-kit-table@0.11.0
+  - @smile/react-front-kit@0.11.0
+  - @smile/react-front-kit-dropzone@0.11.0
+  - @smile/react-front-kit-shared@0.11.0
+
 ## 0.10.0
 
 ### Minor Changes
