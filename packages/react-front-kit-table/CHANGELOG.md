@@ -1,5 +1,17 @@
 # @smile/react-front-kit-table
 
+## 0.11.0
+
+### Minor Changes
+
+- [#164](https://github.com/Smile-SA/react-front-kit/pull/164) [`8bffd86290670993bd34dcd5934d5a0ba52d2066`](https://github.com/Smile-SA/react-front-kit/commit/8bffd86290670993bd34dcd5934d5a0ba52d2066) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Migrated Table component to MantineReactTable V2 beta, fixed and improved styles
+
+### Patch Changes
+
+- Updated dependencies [[`101fddc72292db017216a707f5f7865ab48cd8db`](https://github.com/Smile-SA/react-front-kit/commit/101fddc72292db017216a707f5f7865ab48cd8db)]:
+  - @smile/react-front-kit@0.11.0
+  - @smile/react-front-kit-shared@0.11.0
+
 ## 0.10.0
 
 ### Patch Changes
