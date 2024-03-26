@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { action } from '@storybook/addon-actions';
+
 import { AddressField as Cmp } from './AddressField';
 
 const meta = {
@@ -12,5 +14,7 @@ export default meta;
 type IStory = StoryObj<typeof meta>;
 
 export const AddressField: IStory = {
-  args: {},
+  args: {
+    onOptionSubmit: action('location'),
+  },
 };
