@@ -39,8 +39,13 @@ interface ILocation {
   type: string;
 }
 
-export interface IAddressFieldProps extends AutocompleteProps {
+export interface IAddressFieldProps
+  extends Omit<AutocompleteProps, 'onOptionSubmit'> {
+  acceptLanguage?: string;
+  countryCodes?: string;
   minValueLength?: number;
+  onOptionSubmit?: (location: ILocation) => void;
+  resultsLimit?: number;
 }
 
 function removeDuplicates(locations: ILocation[]): ILocation[] {
@@ -65,71 +70,73 @@ function getParamsForUrl(params: string): string {
 
 export function AddressField(props: IAddressFieldProps): ReactElement {
   const {
+    acceptLanguage = '',
+    countryCodes = '',
     label = 'Find an address',
     placeholder = "89 Pall Mall, St. James's, London SW1Y 5HS, United Kingdom",
+    resultsLimit = 10,
     minValueLength = 5,
+    onOptionSubmit,
     ...autocompleteProps
   } = props;
   const [data, setData] = useState<ILocation[] | null>(null);
   const [value, setValue] = useDebouncedState('', 1000);
 
-  function getData(params: string): void {
-    try {
-      if (minValueLength < 0) {
-        throw new Error('the value must be positive');
-      }
-      const valueForUrl = getParamsForUrl(params);
-      console.log(valueForUrl);
-      const xhr = new XMLHttpRequest();
-      xhr.open(
-        'GET',
-        `https://nominatim.openstreetmap.org/search.php?q=${valueForUrl}&format=jsonv2&addressdetails=1`,
-      );
-      xhr.onload = function () {
-        if (xhr.status === 200) {
-          const newData: ILocation[] = JSON.parse(xhr.responseText);
-          const newDataWithoutDuplicate = removeDuplicates(newData);
-          setData(newDataWithoutDuplicate);
-          console.log(newDataWithoutDuplicate);
-        }
-      };
-      xhr.send();
-    } catch (error) {
-      console.error(`error: ${error as string}`);
-    }
-  }
-
   useEffect(() => {
+    function getData(params: string): void {
+      try {
+        if (minValueLength < 0) {
+          throw new Error('the value must be positive');
+        } else if (value.length >= minValueLength) {
+          const valueForUrl = getParamsForUrl(params);
+          const xhr = new XMLHttpRequest();
+
+          const url = new URL('https://nominatim.openstreetmap.org/search.php');
+          url.searchParams.set('q', valueForUrl);
+          url.searchParams.set('format', 'jsonv2');
+          url.searchParams.set('addressdetails', '1');
+          url.searchParams.set('countrycodes', countryCodes);
+          url.searchParams.set('accept-language', acceptLanguage);
+          url.searchParams.set('limit', resultsLimit.toString());
+
+          xhr.open('GET', url);
+          xhr.onload = function () {
+            if (xhr.status === 200) {
+              const newData: ILocation[] = JSON.parse(xhr.responseText);
+              const newDataWithoutDuplicate = removeDuplicates(newData);
+              setData(newDataWithoutDuplicate);
+            }
+          };
+          xhr.send();
+        } else {
+          setData([]);
+        }
+      } catch (error) {
+        console.error(`error: ${error as string}`);
+      }
+    }
+
     getData(value);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value]);
+  }, [
+    acceptLanguage,
+    countryCodes,
+    minValueLength,
+    resultsLimit,
+    setData,
+    value,
+  ]);
 
   function onOptionSubmitHandle(value: string): void {
-    // console.log(value);
-  }
-
-  function getRenderOptions(option: {
-    option: { value: string };
-  }): ReactElement {
-    return (
-      <>
-        {data?.map((element) => {
-          console.log(option.option.value);
-          console.log(element.osm_id);
-          return (
-            element.osm_id.toString() === option.option.value && (
-              <p key={option.option.value}>{element.display_name}</p>
-            )
-          );
-        })}{' '}
-      </>
-    );
+    const locationObj: ILocation | undefined = data?.filter((element) => {
+      return element.display_name.toString() === value && element;
+    })[0];
+    onOptionSubmit && locationObj && onOptionSubmit(locationObj);
   }
 
   return (
     <Autocomplete
       {...autocompleteProps}
-      data={data?.map((location) => `${location.osm_id}`)}
+      data={data?.map((location) => `${location.display_name}`)}
       filter={({ options }) => {
         return options;
       }}
@@ -137,8 +144,6 @@ export function AddressField(props: IAddressFieldProps): ReactElement {
       onChange={(e) => setValue(e)}
       onOptionSubmit={(value) => onOptionSubmitHandle(value)}
       placeholder={placeholder}
-      renderOption={getRenderOptions}
     />
   );
 }
-// TODO: Faire en sorte qu'on puissent renvoyer tous l'objet au clique de l'item de la liste des propositions
