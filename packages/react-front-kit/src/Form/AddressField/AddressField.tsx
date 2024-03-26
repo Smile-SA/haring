@@ -5,7 +5,8 @@ import type { AutocompleteProps } from '@mantine/core';
 import type { ReactElement } from 'react';
 
 import { Autocomplete } from '@mantine/core';
-import { useState } from 'react';
+import { useDebouncedState } from '@mantine/hooks';
+import { useEffect, useState } from 'react';
 
 interface ILocation {
   address: {
@@ -37,6 +38,11 @@ interface ILocation {
   place_rank: number;
   type: string;
 }
+
+export interface IAddressFieldProps extends AutocompleteProps {
+  minValueLength?: number;
+}
+
 function removeDuplicates(locations: ILocation[]): ILocation[] {
   const seenDisplayNames: Record<string, boolean> = {};
 
@@ -49,8 +55,12 @@ function removeDuplicates(locations: ILocation[]): ILocation[] {
   });
 }
 
-export interface IAddressFieldProps extends AutocompleteProps {
-  minValueLength?: number;
+function getParamsForUrl(params: string): string {
+  return params
+    .replaceAll(/ +(?= )/g, '')
+    .replaceAll(' ', '+')
+    .replaceAll("'", '%27')
+    .toLowerCase();
 }
 
 export function AddressField(props: IAddressFieldProps): ReactElement {
@@ -61,52 +71,74 @@ export function AddressField(props: IAddressFieldProps): ReactElement {
     ...autocompleteProps
   } = props;
   const [data, setData] = useState<ILocation[] | null>(null);
-  const [requestTimeOutActive, setRequestTimeOutActive] = useState(false);
+  const [value, setValue] = useDebouncedState('', 1000);
 
-  function getData(value: string): void {
-    if (!requestTimeOutActive) {
-      try {
-        const valueForUrl = value.replace(' ', '+');
-        const xhr = new XMLHttpRequest();
-        xhr.open(
-          'GET',
-          `https://nominatim.openstreetmap.org/search.php?street=${valueForUrl}&format=jsonv2&addressdetails=1&dedupe=1`,
-        );
-        xhr.onload = function () {
-          if (xhr.status === 200) {
-            const newData: ILocation[] = JSON.parse(xhr.responseText);
-            const newDataWithoutDuplicate = removeDuplicates(newData);
-            setData(newDataWithoutDuplicate);
-            setRequestTimeOutActive(true);
-            console.log('on');
-            setTimeout(() => {
-              setRequestTimeOutActive(false);
-              console.log('off');
-            }, 10000);
-          }
-        };
-        xhr.send();
-      } catch (error) {
-        console.error(`error: ${error as string}`);
+  function getData(params: string): void {
+    try {
+      if (minValueLength < 0) {
+        throw new Error('the value must be positive');
       }
+      const valueForUrl = getParamsForUrl(params);
+      console.log(valueForUrl);
+      const xhr = new XMLHttpRequest();
+      xhr.open(
+        'GET',
+        `https://nominatim.openstreetmap.org/search.php?q=${valueForUrl}&format=jsonv2&addressdetails=1`,
+      );
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          const newData: ILocation[] = JSON.parse(xhr.responseText);
+          const newDataWithoutDuplicate = removeDuplicates(newData);
+          setData(newDataWithoutDuplicate);
+          console.log(newDataWithoutDuplicate);
+        }
+      };
+      xhr.send();
+    } catch (error) {
+      console.error(`error: ${error as string}`);
     }
   }
 
-  function handleChange(newValue: string): void {
-    newValue.length >= minValueLength && getData(newValue);
+  useEffect(() => {
+    getData(value);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
+
+  function onOptionSubmitHandle(value: string): void {
+    // console.log(value);
   }
+
+  function getRenderOptions(option: {
+    option: { value: string };
+  }): ReactElement {
+    return (
+      <>
+        {data?.map((element) => {
+          console.log(option.option.value);
+          console.log(element.osm_id);
+          return (
+            element.osm_id.toString() === option.option.value && (
+              <p key={option.option.value}>{element.display_name}</p>
+            )
+          );
+        })}{' '}
+      </>
+    );
+  }
+
   return (
     <Autocomplete
       {...autocompleteProps}
-      data={data?.map((location) => location.display_name)}
+      data={data?.map((location) => `${location.osm_id}`)}
+      filter={({ options }) => {
+        return options;
+      }}
       label={label}
-      onChange={(e) => handleChange(e)}
+      onChange={(e) => setValue(e)}
+      onOptionSubmit={(value) => onOptionSubmitHandle(value)}
       placeholder={placeholder}
+      renderOption={getRenderOptions}
     />
   );
 }
-
-//TODO: se renseigner sur debounce voir sur mantine (useDebounceState + useEffect (peux etre un truck préfer au mieux) utiliser le state sans le value) https://mantine.dev/hooks/use-debounced-state/
-// TODO: min param superieur ou égale a 0
-//TODO: voir https://mantine.dev/core/autocomplete/#options-filtering juste return options
-//TODO: Faire en sorte qu'on puissent renvoyer tous l'objet au clique de l'item de la liste des propositions
+// TODO: Faire en sorte qu'on puissent renvoyer tous l'objet au clique de l'item de la liste des propositions
