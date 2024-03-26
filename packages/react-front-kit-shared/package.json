@@ -102,7 +102,6 @@
     "vite-plugin-dts": "^3.7.2"
   },
   "peerDependencies": {
-    "@emotion/react": ">=11",
     "@mantine/core": "7",
     "@mantine/hooks": "7",
     "@phosphor-icons/react": ">=2",
