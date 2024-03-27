@@ -2,4 +2,4 @@
 'storybook-pages': minor
 ---
 
-add AddressField
+add FetchAutocompleteField
