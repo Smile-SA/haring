@@ -9,7 +9,11 @@ describe('FetchAutocompleteField', () => {
   });
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <FetchAutocompleteField minValueLength={0} />,
+      <FetchAutocompleteField
+        baseUrl=""
+        fetchDataLabelKey=""
+        minValueLength={0}
+      />,
     );
     expect(container).toMatchSnapshot();
   });

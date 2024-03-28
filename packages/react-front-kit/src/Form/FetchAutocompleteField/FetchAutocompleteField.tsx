@@ -8,54 +8,31 @@ import { Autocomplete } from '@mantine/core';
 import { useDebouncedState } from '@mantine/hooks';
 import { useEffect, useState } from 'react';
 
-interface ILocation {
-  address: {
-    ISO3166_2_lvl4: string;
-    ISO3166_2_lvl6: string;
-    country: string;
-    country_code: string;
-    county: string;
-    house_number: string;
-    municipality: string;
-    postcode: string;
-    region: string;
-    road: string;
-    state: string;
-    village: string;
-  };
-  addresstype: string;
-  boundingbox: [string, string, string, string];
-  category: string;
-  display_name: string;
-  importance: number;
-  lat: string;
-  licence: string;
-  lon: string;
-  name: string;
-  osm_id: number;
-  osm_type: string;
-  place_id: number;
-  place_rank: number;
-  type: string;
+export interface IFetchOption {
+  key: string;
+  value: string;
 }
 
 export interface IFetchAutocompleteFieldProps
   extends Omit<AutocompleteProps, 'onOptionSubmit'> {
-  acceptLanguage?: string;
-  countryCodes?: string;
+  baseUrl: string;
+  fetchDataLabelKey: string;
+  fetchOthersOptions?: IFetchOption[];
+  fetchSearchOptionKey?: string;
   minValueLength?: number;
-  onOptionSubmit?: (location: ILocation) => void;
-  resultsLimit?: number;
+  onOptionSubmit?: (value: unknown) => void;
 }
 
-function removeDuplicates(locations: ILocation[]): ILocation[] {
+type IFetchData<T> = Record<string, T>;
+
+function removeDuplicates(values: IFetchData<string>[]): IFetchData<string>[] {
   const seenDisplayNames: Record<string, boolean> = {};
 
-  return locations.filter((location) => {
-    if (seenDisplayNames[location.display_name]) {
+  return values.filter((element) => {
+    if (seenDisplayNames[element.fetchDataLabelKey]) {
       return false;
     }
-    seenDisplayNames[location.display_name] = true;
+    seenDisplayNames[element.fetchDataLabelKey] = true;
     return true;
   });
 }
@@ -72,73 +49,72 @@ export function FetchAutocompleteField(
   props: IFetchAutocompleteFieldProps,
 ): ReactElement {
   const {
-    acceptLanguage = '',
-    countryCodes = '',
+    baseUrl,
+    fetchDataLabelKey,
+    fetchSearchOptionKey = 'q',
     label = 'Find an address',
     placeholder = "89 Pall Mall, St. James's, London SW1Y 5HS, United Kingdom",
-    resultsLimit = 10,
     minValueLength = 5,
     onOptionSubmit,
+    fetchOthersOptions,
     ...autocompleteProps
   } = props;
-  const [data, setData] = useState<ILocation[] | null>(null);
+  const [data, setData] = useState<IFetchData<string>[] | null>(null);
   const [value, setValue] = useDebouncedState('', 1000);
 
   useEffect(() => {
     function getData(params: string): void {
-      try {
-        if (minValueLength < 0) {
-          throw new Error('the value must be positive');
-        } else if (value.length >= minValueLength) {
-          const valueForUrl = getParamsForUrl(params);
-          const xhr = new XMLHttpRequest();
-
-          const url = new URL('https://nominatim.openstreetmap.org/search.php');
-          url.searchParams.set('q', valueForUrl);
-          url.searchParams.set('format', 'jsonv2');
-          url.searchParams.set('addressdetails', '1');
-          url.searchParams.set('countrycodes', countryCodes);
-          url.searchParams.set('accept-language', acceptLanguage);
-          url.searchParams.set('limit', resultsLimit.toString());
-
-          xhr.open('GET', url);
-          xhr.onload = function () {
-            if (xhr.status === 200) {
-              const newData: ILocation[] = JSON.parse(xhr.responseText);
-              const newDataWithoutDuplicate = removeDuplicates(newData);
-              setData(newDataWithoutDuplicate);
+      if (value.length >= minValueLength && value.length >= 0) {
+        const valueForUrl = getParamsForUrl(params);
+        const xhr = new XMLHttpRequest();
+        const url = new URL(baseUrl);
+        url.searchParams.set(fetchSearchOptionKey, valueForUrl);
+        fetchOthersOptions?.forEach((element) => {
+          url.searchParams.set(element.key, element.value);
+        });
+        xhr.open('GET', url);
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            const newData: IFetchData<string>[] = JSON.parse(xhr.responseText);
+            console.log(newData);
+            if (!Array.isArray(newData)) {
+              throw new Error(`data fetch is not an array`);
             }
-          };
-          xhr.send();
-        } else {
-          setData([]);
-        }
-      } catch (error) {
-        console.error(`error: ${error as string}`);
+            const newDataWithoutDuplicate = removeDuplicates(newData);
+            setData(newDataWithoutDuplicate);
+          } else {
+            throw new Error(`code ${xhr.status}, something went wrong`);
+          }
+        };
+        xhr.send();
+      } else {
+        setData([]);
       }
     }
 
     getData(value);
   }, [
-    acceptLanguage,
-    countryCodes,
+    baseUrl,
+    fetchSearchOptionKey,
+    fetchOthersOptions,
     minValueLength,
-    resultsLimit,
     setData,
     value,
   ]);
 
   function onOptionSubmitHandle(value: string): void {
-    const locationObj: ILocation | undefined = data?.filter((element) => {
-      return element.display_name.toString() === value && element;
-    })[0];
+    const locationObj: IFetchData<string> | undefined = data?.filter(
+      (element) => {
+        return element[fetchDataLabelKey] === value && element;
+      },
+    )[0];
     onOptionSubmit && locationObj && onOptionSubmit(locationObj);
   }
 
   return (
     <Autocomplete
       {...autocompleteProps}
-      data={data?.map((location) => `${location.display_name}`)}
+      data={data?.map((element) => `${element[fetchDataLabelKey]}`)}
       filter={({ options }) => {
         return options;
       }}
@@ -149,3 +125,5 @@ export function FetchAutocompleteField(
     />
   );
 }
+// TODO: faire une props qui format les data avant de renvoyer un label et une value
+// TODO: regarder fetch
