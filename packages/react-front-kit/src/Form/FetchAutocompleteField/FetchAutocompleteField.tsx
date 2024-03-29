@@ -13,6 +13,11 @@ export interface IFetchOption {
   value: string;
 }
 
+export interface IValue {
+  label: string;
+  value: unknown;
+}
+
 export interface IFetchAutocompleteFieldProps
   extends Omit<AutocompleteProps, 'onOptionSubmit'> {
   baseUrl: string;
@@ -21,21 +26,10 @@ export interface IFetchAutocompleteFieldProps
   fetchSearchOptionKey?: string;
   minValueLength?: number;
   onOptionSubmit?: (value: unknown) => void;
+  transformResultsFunction: (data: unknown) => IValue[];
 }
 
 type IFetchData<T> = Record<string, T>;
-
-function removeDuplicates(values: IFetchData<string>[]): IFetchData<string>[] {
-  const seenDisplayNames: Record<string, boolean> = {};
-
-  return values.filter((element) => {
-    if (seenDisplayNames[element.fetchDataLabelKey]) {
-      return false;
-    }
-    seenDisplayNames[element.fetchDataLabelKey] = true;
-    return true;
-  });
-}
 
 function getParamsForUrl(params: string): string {
   return params
@@ -51,15 +45,16 @@ export function FetchAutocompleteField(
   const {
     baseUrl,
     fetchDataLabelKey,
+    fetchOthersOptions,
     fetchSearchOptionKey = 'q',
     label = 'Find an address',
-    placeholder = "89 Pall Mall, St. James's, London SW1Y 5HS, United Kingdom",
     minValueLength = 5,
+    placeholder = "89 Pall Mall, St. James's, London SW1Y 5HS, United Kingdom",
     onOptionSubmit,
-    fetchOthersOptions,
+    transformResultsFunction,
     ...autocompleteProps
   } = props;
-  const [data, setData] = useState<IFetchData<string>[] | null>(null);
+  const [data, setData] = useState<IValue[]>([]);
   const [value, setValue] = useDebouncedState('', 1000);
 
   useEffect(() => {
@@ -80,8 +75,8 @@ export function FetchAutocompleteField(
             if (!Array.isArray(newData)) {
               throw new Error(`data fetch is not an array`);
             }
-            const newDataWithoutDuplicate = removeDuplicates(newData);
-            setData(newDataWithoutDuplicate);
+            const transformResult = transformResultsFunction(newData);
+            setData(transformResult);
           } else {
             throw new Error(`code ${xhr.status}, something went wrong`);
           }
@@ -100,21 +95,24 @@ export function FetchAutocompleteField(
     minValueLength,
     setData,
     value,
+    transformResultsFunction,
   ]);
 
   function onOptionSubmitHandle(value: string): void {
-    const locationObj: IFetchData<string> | undefined = data?.filter(
-      (element) => {
-        return element[fetchDataLabelKey] === value && element;
-      },
-    )[0];
-    onOptionSubmit && locationObj && onOptionSubmit(locationObj);
+    const result = data.filter((element) => {
+      if (element.label === value) {
+        return true;
+      }
+      return false;
+    })[0];
+
+    onOptionSubmit && onOptionSubmit(result);
   }
 
   return (
     <Autocomplete
       {...autocompleteProps}
-      data={data?.map((element) => `${element[fetchDataLabelKey]}`)}
+      data={data.map((element) => element.label)}
       filter={({ options }) => {
         return options;
       }}
@@ -125,5 +123,6 @@ export function FetchAutocompleteField(
     />
   );
 }
+
 // TODO: faire une props qui format les data avant de renvoyer un label et une value
 // TODO: regarder fetch

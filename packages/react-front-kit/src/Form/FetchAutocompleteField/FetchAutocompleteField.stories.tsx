@@ -1,12 +1,9 @@
+import type { IValue } from './FetchAutocompleteField';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
 
-import {
-  fetchAdressDataGouvMock,
-  fetchOpenStreetMapMock,
-  fetchOptionsMock,
-} from './FetchAutoCompleteField.mock';
+import { fetchOpenStreetMapMock } from './FetchAutoCompleteField.mock';
 import { FetchAutocompleteField as Cmp } from './FetchAutocompleteField';
 
 const meta = {
@@ -24,14 +21,11 @@ export const FieldWithOpenStreetMapApi: IStory = {
     fetchDataLabelKey: fetchOpenStreetMapMock.fetchDataLabelKey,
     fetchOthersOptions: fetchOpenStreetMapMock.fetchOthersOptions,
     onOptionSubmit: action('location'),
-  },
-};
-
-export const FieldWithAdressDataGouvApi: IStory = {
-  args: {
-    baseUrl: fetchAdressDataGouvMock.baseUrl,
-    fetchDataLabelKey: fetchAdressDataGouvMock.fetchDataLabelKey,
-    fetchOthersOptions: fetchAdressDataGouvMock.fetchOthersOptions,
-    onOptionSubmit: action('location'),
+    transformResultsFunction: (data) => {
+      const result: IValue[] = data.map((element: { display_name: string }) => {
+        return { label: element.display_name, value: element };
+      });
+      return result;
+    },
   },
 };
