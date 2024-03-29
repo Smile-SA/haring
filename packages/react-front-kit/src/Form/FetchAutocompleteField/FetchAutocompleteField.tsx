@@ -72,9 +72,6 @@ export function FetchAutocompleteField(
           if (xhr.status === 200) {
             const newData: IFetchData<string>[] = JSON.parse(xhr.responseText);
             console.log(newData);
-            if (!Array.isArray(newData)) {
-              throw new Error(`data fetch is not an array`);
-            }
             const transformResult = transformResultsFunction(newData);
             setData(transformResult);
           } else {
