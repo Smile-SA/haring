@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddressField matches snapshot 1`] = `
+exports[`FetchAutocompleteField matches snapshot 1`] = `
 <div>
   <style
     data-mantine-styles="true"
@@ -27,6 +27,7 @@ exports[`AddressField matches snapshot 1`] = `
       data-variant="default"
     >
       <input
+        aria-controls="mantine-f4bipx4bi"
         aria-haspopup="listbox"
         aria-invalid="false"
         autocomplete="off"

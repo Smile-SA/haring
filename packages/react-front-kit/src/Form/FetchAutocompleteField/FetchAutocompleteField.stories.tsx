@@ -23,6 +23,7 @@ export const FieldWithOpenStreetMapApi: IStory = {
     fetchDataLabelKey: fetchOpenStreetMapMock.fetchDataLabelKey,
     fetchOthersOptions: fetchOpenStreetMapMock.fetchOthersOptions,
     onOptionSubmit: action('location'),
+    // @ts-expect-error-type
     transformResultsFunction: fetchOpenStreetMapMock.transformResultsFunction,
   },
 };
@@ -33,6 +34,7 @@ export const FieldWithAdressDataGouvApi: IStory = {
     fetchDataLabelKey: fetchAdressDataGouvMock.fetchDataLabelKey,
     fetchOthersOptions: fetchAdressDataGouvMock.fetchOthersOptions,
     onOptionSubmit: action('location'),
+    // @ts-expect-error-type
     transformResultsFunction: fetchAdressDataGouvMock.transformResultsFunction,
   },
 };

@@ -13,12 +13,12 @@ export interface IFetchOption {
   value: string;
 }
 
-export interface IValue {
+export interface IValue<F> {
   label: string;
-  value: unknown;
+  value: F;
 }
 
-export interface IFetchAutocompleteFieldProps
+export interface IFetchAutocompleteFieldProps<F, G>
   extends Omit<AutocompleteProps, 'onOptionSubmit'> {
   baseUrl: string;
   fetchDataLabelKey: string;
@@ -26,10 +26,8 @@ export interface IFetchAutocompleteFieldProps
   fetchSearchOptionKey?: string;
   minValueLength?: number;
   onOptionSubmit?: (value: unknown) => void;
-  transformResultsFunction: (data: unknown) => IValue[];
+  transformResultsFunction: (data: G) => IValue<F>[];
 }
-
-type IFetchData<T> = Record<string, T>;
 
 function getParamsForUrl(params: string): string {
   return params
@@ -39,8 +37,8 @@ function getParamsForUrl(params: string): string {
     .toLowerCase();
 }
 
-export function FetchAutocompleteField(
-  props: IFetchAutocompleteFieldProps,
+export function FetchAutocompleteField<F, G>(
+  props: IFetchAutocompleteFieldProps<F, G>,
 ): ReactElement {
   const {
     baseUrl,
@@ -54,7 +52,7 @@ export function FetchAutocompleteField(
     transformResultsFunction,
     ...autocompleteProps
   } = props;
-  const [data, setData] = useState<IValue[]>([]);
+  const [data, setData] = useState<IValue<F>[]>([]);
   const [value, setValue] = useDebouncedState('', 1000);
 
   useEffect(() => {
@@ -70,8 +68,7 @@ export function FetchAutocompleteField(
         xhr.open('GET', url);
         xhr.onload = function () {
           if (xhr.status === 200) {
-            const newData: IFetchData<string>[] = JSON.parse(xhr.responseText);
-            console.log(newData);
+            const newData: G = JSON.parse(xhr.responseText);
             const transformResult = transformResultsFunction(newData);
             setData(transformResult);
           } else {
@@ -120,6 +117,3 @@ export function FetchAutocompleteField(
     />
   );
 }
-
-// TODO: faire une props qui format les data avant de renvoyer un label et une value
-// TODO: regarder fetch
