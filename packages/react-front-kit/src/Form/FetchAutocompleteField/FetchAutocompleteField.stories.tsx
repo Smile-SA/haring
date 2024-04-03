@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import {
-  fetchAdressDataGouvMock,
-  fetchOpenStreetMapMock,
+  getDataAddressGouvMock,
+  getDataOpenStreetMapMock,
 } from './FetchAutoCompleteField.mock';
 import { FetchAutocompleteField as Cmp } from './FetchAutocompleteField';
 
@@ -19,22 +19,16 @@ type IStory = StoryObj<typeof meta>;
 
 export const FieldWithOpenStreetMapApi: IStory = {
   args: {
-    baseUrl: fetchOpenStreetMapMock.baseUrl,
-    fetchDataLabelKey: fetchOpenStreetMapMock.fetchDataLabelKey,
-    fetchOthersOptions: fetchOpenStreetMapMock.fetchOthersOptions,
-    onOptionSubmit: action('location'),
     // @ts-expect-error-type
-    transformResultsFunction: fetchOpenStreetMapMock.transformResultsFunction,
+    onFetchData: getDataOpenStreetMapMock,
+    onOptionSubmit: action('location'),
   },
 };
 
-export const FieldWithAdressDataGouvApi: IStory = {
+export const FieldWithAddressGouvApi: IStory = {
   args: {
-    baseUrl: fetchAdressDataGouvMock.baseUrl,
-    fetchDataLabelKey: fetchAdressDataGouvMock.fetchDataLabelKey,
-    fetchOthersOptions: fetchAdressDataGouvMock.fetchOthersOptions,
-    onOptionSubmit: action('location'),
     // @ts-expect-error-type
-    transformResultsFunction: fetchAdressDataGouvMock.transformResultsFunction,
+    onFetchData: getDataAddressGouvMock,
+    onOptionSubmit: action('location'),
   },
 };

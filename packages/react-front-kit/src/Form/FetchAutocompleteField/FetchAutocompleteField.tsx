@@ -18,79 +18,44 @@ export interface IValue<F> {
   value: F;
 }
 
-export interface IFetchAutocompleteFieldProps<F, G>
+export interface IFetchAutocompleteFieldProps<F>
   extends Omit<AutocompleteProps, 'onOptionSubmit'> {
   baseUrl: string;
-  fetchDataLabelKey: string;
-  fetchOthersOptions?: IFetchOption[];
-  fetchSearchOptionKey?: string;
   minValueLength?: number;
+  onFetchData: (value: string) => Promise<IValue<F>[]>;
   onOptionSubmit?: (value: unknown) => void;
-  transformResultsFunction: (data: G) => IValue<F>[];
 }
 
-function getParamsForUrl(params: string): string {
-  return params
-    .replaceAll(/ +(?= )/g, '')
-    .replaceAll(' ', '+')
-    .replaceAll("'", '%27')
-    .toLowerCase();
-}
-
-export function FetchAutocompleteField<F, G>(
-  props: IFetchAutocompleteFieldProps<F, G>,
+export function FetchAutocompleteField<F>(
+  props: IFetchAutocompleteFieldProps<F>,
 ): ReactElement {
   const {
-    baseUrl,
-    fetchDataLabelKey,
-    fetchOthersOptions,
-    fetchSearchOptionKey = 'q',
     label = 'Find an address',
     minValueLength = 5,
     placeholder = "89 Pall Mall, St. James's, London SW1Y 5HS, United Kingdom",
     onOptionSubmit,
-    transformResultsFunction,
+    onFetchData,
     ...autocompleteProps
   } = props;
   const [data, setData] = useState<IValue<F>[]>([]);
   const [value, setValue] = useDebouncedState('', 1000);
 
   useEffect(() => {
-    function getData(params: string): void {
+    function getData(): void {
       if (value.length >= minValueLength && value.length >= 0) {
-        const valueForUrl = getParamsForUrl(params);
-        const xhr = new XMLHttpRequest();
-        const url = new URL(baseUrl);
-        url.searchParams.set(fetchSearchOptionKey, valueForUrl);
-        fetchOthersOptions?.forEach((element) => {
-          url.searchParams.set(element.key, element.value);
-        });
-        xhr.open('GET', url);
-        xhr.onload = function () {
-          if (xhr.status === 200) {
-            const newData: G = JSON.parse(xhr.responseText);
-            const transformResult = transformResultsFunction(newData);
-            setData(transformResult);
-          } else {
-            throw new Error(`code ${xhr.status}, something went wrong`);
-          }
-        };
-        xhr.send();
+        onFetchData(value)
+          .then((data) => {
+            setData(data);
+          })
+          .catch((error) => {
+            console.error('Error fetching data:', error);
+          });
       } else {
         setData([]);
       }
     }
-
-    getData(value);
-  }, [
-    baseUrl,
-    fetchSearchOptionKey,
-    fetchOthersOptions,
-    minValueLength,
-    setData,
-    value,
-    transformResultsFunction,
-  ]);
+    getData();
+  }, [minValueLength, onFetchData, value]);
 
   function onOptionSubmitHandle(value: string): void {
     const result = data.filter((element) => {
@@ -117,3 +82,4 @@ export function FetchAutocompleteField<F, G>(
     />
   );
 }
+// TODO: Enlever getParamsForUrl et se renseigner

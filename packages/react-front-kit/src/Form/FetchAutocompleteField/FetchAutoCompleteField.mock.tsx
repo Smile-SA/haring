@@ -1,8 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type {
-  IFetchAutocompleteFieldProps,
-  IFetchOption,
-} from './FetchAutocompleteField';
+import type { IFetchOption } from './FetchAutocompleteField';
 
 export interface IOpenStreetMapData {
   display_name: string;
@@ -20,47 +17,42 @@ export const fetchOptionsMock: IFetchOption[] = [
   { key: 'limit', value: '10' },
 ];
 
-export const fetchOpenStreetMapMock: IFetchAutocompleteFieldProps<
-  IOpenStreetMapData,
-  IOpenStreetMapData[]
-> = {
-  baseUrl: 'https://nominatim.openstreetmap.org/search.php',
-  fetchDataLabelKey: 'display_name',
-  fetchOthersOptions: fetchOptionsMock,
-  transformResultsFunction: (data) => {
-    const result = data.map((element) => {
-      return { label: element.display_name, value: element };
-    });
-    const resultWithoutDuplicate = result.map((item) => {
-      const { label } = item;
-      return result.filter((element) => {
-        return element.label === label;
-      })[0];
-    });
-    return resultWithoutDuplicate;
-  },
-};
+export async function getDataOpenStreetMapMock(
+  value: string,
+): Promise<unknown> {
+  const response = await fetch(
+    `https://nominatim.openstreetmap.org/search.php?q=${encodeURIComponent(
+      value,
+    )}&format=jsonv2&addressdetails=1&countrycodes=fr&accept-language=fr&limit=10`,
+  );
+  const data: IOpenStreetMapData[] = await response.json();
+  const result = data.map((element) => {
+    return { label: element.display_name, value: element };
+  });
+  const resultWithoutDuplicate = result.map((item) => {
+    const { label } = item;
+    return result.filter((element) => {
+      return element.label === label;
+    })[0];
+  });
+  return resultWithoutDuplicate;
+}
 
-export const fetchAdressDataGouvMock: IFetchAutocompleteFieldProps<
-  IAdressGouvData,
-  { features: IAdressGouvData[] }
-> = {
-  baseUrl: 'https://api-adresse.data.gouv.fr/search/',
-  fetchDataLabelKey: 'label',
-  fetchOthersOptions: [
-    { key: 'type', value: '' },
-    { key: 'autocomplete', value: '1' },
-  ],
-  transformResultsFunction: (data: { features: IAdressGouvData[] }) => {
-    const result = data.features.map((element) => {
-      return { label: element.properties.label, value: element };
-    });
-    const resultWithoutDuplicate = result.map((item) => {
-      const { label } = item;
-      return result.filter((element) => {
-        return element.label === label;
-      })[0];
-    });
-    return resultWithoutDuplicate;
-  },
-};
+export async function getDataAddressGouvMock(value: string): Promise<unknown> {
+  const response = await fetch(
+    `https://api-adresse.data.gouv.fr/search/?q=${encodeURIComponent(
+      value,
+    )}&autocomplete=1`,
+  );
+  const data: { features: IAdressGouvData[] } = await response.json();
+  const result = data.features.map((element) => {
+    return { label: element.properties.label, value: element };
+  });
+  const resultWithoutDuplicate = result.map((item) => {
+    const { label } = item;
+    return result.filter((element) => {
+      return element.label === label;
+    })[0];
+  });
+  return resultWithoutDuplicate;
+}
