@@ -20,7 +20,7 @@ export interface IValue<F> {
 
 export interface IFetchAutocompleteFieldProps<F>
   extends Omit<AutocompleteProps, 'onOptionSubmit'> {
-  baseUrl: string;
+  deDebounce?: number;
   minValueLength?: number;
   onFetchData: (value: string) => Promise<IValue<F>[]>;
   onOptionSubmit?: (value: unknown) => void;
@@ -30,6 +30,7 @@ export function FetchAutocompleteField<F>(
   props: IFetchAutocompleteFieldProps<F>,
 ): ReactElement {
   const {
+    deDebounce = 1000,
     label = 'Find an address',
     minValueLength = 5,
     placeholder = "89 Pall Mall, St. James's, London SW1Y 5HS, United Kingdom",
@@ -38,7 +39,7 @@ export function FetchAutocompleteField<F>(
     ...autocompleteProps
   } = props;
   const [data, setData] = useState<IValue<F>[]>([]);
-  const [value, setValue] = useDebouncedState('', 1000);
+  const [value, setValue] = useDebouncedState('', deDebounce);
 
   useEffect(() => {
     function getData(): void {
@@ -48,6 +49,7 @@ export function FetchAutocompleteField<F>(
             setData(data);
           })
           .catch((error) => {
+            // eslint-disable-next-line no-console
             console.error('Error fetching data:', error);
           });
       } else {
@@ -82,4 +84,3 @@ export function FetchAutocompleteField<F>(
     />
   );
 }
-// TODO: Enlever getParamsForUrl et se renseigner
