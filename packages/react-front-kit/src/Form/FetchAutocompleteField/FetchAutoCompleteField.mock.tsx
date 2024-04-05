@@ -3,7 +3,7 @@ export interface IOpenStreetMapData {
   display_name: string;
 }
 
-export interface IAdressGouvData {
+export interface IAddressGouvData {
   properties: { label: string };
 }
 
@@ -25,11 +25,11 @@ export async function getDataOpenStreetMapMock(
 
 export async function getDataAddressGouvMock(value: string): Promise<unknown> {
   const response = await fetch(
-    `https://api-adresse.data.gouv.fr/search/?q=${encodeURIComponent(
+    `https://api-Adresse.data.gouv.fr/search/?q=${encodeURIComponent(
       value,
     )}&autocomplete=1`,
   );
-  const data: { features: IAdressGouvData[] } = await response.json();
+  const data: { features: IAddressGouvData[] } = await response.json();
   const result = data.features.map((element) => {
     return { label: element.properties.label, value: element };
   });
