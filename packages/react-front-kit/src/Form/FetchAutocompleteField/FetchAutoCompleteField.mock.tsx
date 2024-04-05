@@ -25,7 +25,7 @@ export async function getDataOpenStreetMapMock(
 
 export async function getDataAddressGouvMock(value: string): Promise<unknown> {
   const response = await fetch(
-    `https://api-Addresse.data.gouv.fr/search/?q=${encodeURIComponent(
+    `https://api-Adresse.data.gouv.fr/search/?q=${encodeURIComponent(
       value,
     )}&autocomplete=1`,
   );
