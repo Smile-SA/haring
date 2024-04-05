@@ -2,18 +2,18 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
 
-import { AdressGouvAutocompleteField as Cmp } from './AdressGouvAutocompleteField';
+import { AddressGouvAutocompleteField as Cmp } from './AddressGouvAutocompleteField';
 
 const meta = {
   component: Cmp,
   tags: ['autodocs'],
-  title: '3-custom/Form/AdressGouvAutocompleteField',
+  title: '3-custom/Form/AddressGouvAutocompleteField',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const AdressGouvAutocompleteField: IStory = {
+export const AddressGouvAutocompleteField: IStory = {
   args: {
     onOptionSubmit: action('location'),
   },

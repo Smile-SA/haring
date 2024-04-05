@@ -1,6 +1,6 @@
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
 
-import { AdressGouvAutocompleteField } from './AdressGouvAutocompleteField';
+import { AddressGouvAutocompleteField } from './AddressGouvAutocompleteField';
 
 describe('FetchAutocompleteField', () => {
   beforeEach(() => {
@@ -9,7 +9,7 @@ describe('FetchAutocompleteField', () => {
   });
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <AdressGouvAutocompleteField minValueLength={12} />,
+      <AddressGouvAutocompleteField minValueLength={12} />,
     );
     expect(container).toMatchSnapshot();
   });

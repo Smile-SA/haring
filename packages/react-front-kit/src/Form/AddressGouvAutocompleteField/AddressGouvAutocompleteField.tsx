@@ -1,6 +1,6 @@
 'use client';
 
-import type { IAdressGouvData } from '../FetchAutocompleteField/FetchAutoCompleteField.mock';
+import type { IAddressGouvData } from '../FetchAutocompleteField/FetchAutoCompleteField.mock';
 import type {
   IFetchAutocompleteFieldProps,
   IValue,
@@ -9,7 +9,7 @@ import type { ReactElement } from 'react';
 
 import { FetchAutocompleteField } from '../FetchAutocompleteField/FetchAutocompleteField';
 
-export interface IAdressAutocompleteFieldProps<F>
+export interface IAddressAutocompleteFieldProps<F>
   extends Omit<IFetchAutocompleteFieldProps<F>, 'onFetchData'> {
   lat?: string;
   limit?: number;
@@ -18,8 +18,8 @@ export interface IAdressAutocompleteFieldProps<F>
   type?: string;
 }
 
-export function AdressGouvAutocompleteField<F>(
-  props: IAdressAutocompleteFieldProps<F>,
+export function AddressGouvAutocompleteField<F>(
+  props: IAddressAutocompleteFieldProps<F>,
 ): ReactElement {
   const {
     lat = '',
@@ -32,11 +32,11 @@ export function AdressGouvAutocompleteField<F>(
     value: string,
   ): Promise<IValue<unknown>[]> {
     const response = await fetch(
-      `https://api-adresse.data.gouv.fr/search/?q=${encodeURIComponent(
+      `https://api-Adresse.data.gouv.fr/search/?q=${encodeURIComponent(
         value,
       )}&autocomplete=1&lat=${lat}&lon=${lon}&type=${type}&limit=${limit}`,
     );
-    const data: { features: IAdressGouvData[] } = await response.json();
+    const data: { features: IAddressGouvData[] } = await response.json();
     const result = data.features.map((element) => {
       return { label: element.properties.label, value: element };
     });
