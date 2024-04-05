@@ -1,5 +1,16 @@
 # @smile/react-front-kit
 
+## 0.12.0
+
+### Minor Changes
+
+- [#169](https://github.com/Smile-SA/react-front-kit/pull/169) [`de7d02fe8b751aa9cdb18f8d8104ae1644b91aed`](https://github.com/Smile-SA/react-front-kit/commit/de7d02fe8b751aa9cdb18f8d8104ae1644b91aed) Thanks [@vapersmile](https://github.com/vapersmile)! - add component AddressGouvAutoCompleteField
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @smile/react-front-kit-shared@0.12.0
+
 ## 0.11.0
 
 ### Minor Changes
