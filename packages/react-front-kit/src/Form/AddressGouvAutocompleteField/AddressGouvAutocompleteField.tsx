@@ -28,9 +28,7 @@ export function AddressGouvAutocompleteField<F>(
     type = '',
     ...fetchAutocompleteFieldProps
   } = props;
-  async function getDataAddressGouvMock(
-    value: string,
-  ): Promise<IValue<unknown>[]> {
+  async function getDataAddressGouv(value: string): Promise<IValue<unknown>[]> {
     const response = await fetch(
       `https://api-Adresse.data.gouv.fr/search/?q=${encodeURIComponent(
         value,
@@ -46,7 +44,7 @@ export function AddressGouvAutocompleteField<F>(
   return (
     <FetchAutocompleteField
       {...fetchAutocompleteFieldProps}
-      onFetchData={getDataAddressGouvMock}
+      onFetchData={getDataAddressGouv}
     />
   );
 }
