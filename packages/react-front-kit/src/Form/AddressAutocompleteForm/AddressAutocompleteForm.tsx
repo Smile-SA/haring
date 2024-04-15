@@ -1,50 +1,89 @@
 'use client';
-
-import type { IAddressGouvData } from '../FetchAutocompleteField/FetchAutoCompleteField.mock';
-import type {
-  IFetchAutocompleteFieldProps,
-  IValue,
-} from '../FetchAutocompleteField/FetchAutocompleteField';
+import type { IFetchAutocompleteFieldProps } from '../FetchAutocompleteField/FetchAutocompleteField';
+import type { TextInputProps } from '@mantine/core';
 import type { ReactElement } from 'react';
+
+import { Group, TextInput } from '@mantine/core';
 
 import { FetchAutocompleteField } from '../FetchAutocompleteField/FetchAutocompleteField';
 
-export interface IAddressAutocompleteFieldProps<F>
-  extends Omit<IFetchAutocompleteFieldProps<F>, 'onFetchData'> {
-  lat?: string;
-  limit?: number;
-  lon?: string;
-  onFetchData?: (value: string) => Promise<IValue<F>[]>;
-  type?: string;
+export interface IAddressAutocompleteFormProps<T>
+  extends IFetchAutocompleteFieldProps<T> {
+  cityDescription?: string;
+  cityLabel?: string;
+  cityPlaceholder?: string;
+  countryDescription?: string;
+  countryLabel?: string;
+  countryPlaceholder?: string;
+  numberDescription?: string;
+  numberLabel?: string;
+  numberPlaceholder?: string;
+  postCodeDescription?: string;
+  postCodeLabel?: string;
+  postCodePlaceholder?: string;
+  streetDescription?: string;
+  streetLabel?: string;
+  streetPlaceholder?: string;
+  textInputProps?: TextInputProps;
 }
 
-export function AddressGouvAutocompleteField<F>(
-  props: IAddressAutocompleteFieldProps<F>,
+export function AddressAutocompleteForm<T>(
+  props: IAddressAutocompleteFormProps<T>,
 ): ReactElement {
   const {
-    lat = '',
-    limit = 10,
-    lon = '',
-    type = '',
-    ...fetchAutocompleteFieldProps
+    streetDescription,
+    streetLabel = 'Street Name',
+    streetPlaceholder = 'Pall Mall',
+    cityDescription,
+    cityLabel = 'City',
+    cityPlaceholder = 'London',
+    countryDescription,
+    countryLabel = 'country',
+    countryPlaceholder = 'United Kingdom',
+    numberDescription,
+    numberLabel = 'Street number',
+    numberPlaceholder = '89',
+    postCodeDescription,
+    postCodeLabel = 'Postal code',
+    postCodePlaceholder = 'SW1Y 5HS',
+    textInputProps,
+    ...FetchAutocompleteFieldProps
   } = props;
-  async function getDataAddressGouv(value: string): Promise<IValue<unknown>[]> {
-    const response = await fetch(
-      `https://api-Adresse.data.gouv.fr/search/?q=${encodeURIComponent(
-        value,
-      )}&autocomplete=1&lat=${lat}&lon=${lon}&type=${type}&limit=${limit}`,
-    );
-    const data: { features: IAddressGouvData[] } = await response.json();
-    const result = data.features.map((element) => {
-      return { label: element.properties.label, value: element };
-    });
-
-    return result;
-  }
   return (
-    <FetchAutocompleteField
-      {...fetchAutocompleteFieldProps}
-      onFetchData={getDataAddressGouv}
-    />
+    <div>
+      <FetchAutocompleteField {...FetchAutocompleteFieldProps} />
+      <Group grow mt="15">
+        <TextInput
+          description={streetDescription}
+          label={streetLabel}
+          placeholder={streetPlaceholder}
+        />
+        <TextInput
+          description={numberDescription}
+          label={numberLabel}
+          placeholder={numberPlaceholder}
+        />
+      </Group>
+      <Group grow>
+        <TextInput
+          description={cityDescription}
+          label={cityLabel}
+          placeholder={cityPlaceholder}
+          {...textInputProps}
+        />
+        <TextInput
+          description={postCodeDescription}
+          label={postCodeLabel}
+          placeholder={postCodePlaceholder}
+          {...textInputProps}
+        />
+      </Group>
+      <TextInput
+        description={countryDescription}
+        label={countryLabel}
+        placeholder={countryPlaceholder}
+        {...textInputProps}
+      />
+    </div>
   );
 }
