@@ -87,3 +87,7 @@ export function AddressAutocompleteForm<T>(
     </div>
   );
 }
+
+//TODO: Faire le responsive
+//TODO: Crée un fonction pour modifier dans le composant qui modifie le format des datas envoyés
+//TODO: Ajout des valeurs automatiquement dans les champs.
