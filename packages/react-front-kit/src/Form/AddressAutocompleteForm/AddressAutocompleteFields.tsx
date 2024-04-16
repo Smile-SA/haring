@@ -3,10 +3,12 @@ import type { IFetchAutocompleteFieldProps } from '../FetchAutocompleteField/Fet
 import type { TextInputProps } from '@mantine/core';
 import type { ReactElement } from 'react';
 
-import { Group, TextInput } from '@mantine/core';
+import { TextInput } from '@mantine/core';
 import { useState } from 'react';
 
 import { FetchAutocompleteField } from '../FetchAutocompleteField/FetchAutocompleteField';
+
+import classes from './AddressAutocompleteFields.module.css';
 
 export interface IAdressFields {
   city?: string;
@@ -27,7 +29,7 @@ export interface IAddressAutocompleteFieldsProps<T>
   numberDescription?: string;
   numberLabel?: string;
   numberPlaceholder?: string;
-  onFieldsValuesChange: (value: IAdressFields) => void;
+  onFieldsValuesChange?: (value: IAdressFields) => void;
   onOptionSubmit: (value: unknown) => IAdressFields;
   postCodeDescription?: string;
   postCodeLabel?: string;
@@ -49,7 +51,7 @@ export function AddressAutocompleteFields<T>(
     cityLabel = 'City',
     cityPlaceholder = 'London',
     countryDescription,
-    countryLabel = 'country',
+    countryLabel = 'Country',
     countryPlaceholder = 'United Kingdom',
     numberDescription,
     numberLabel = 'Street number',
@@ -79,8 +81,61 @@ export function AddressAutocompleteFields<T>(
   }
 
   function onChangeHandle(label: string, value: string): void {
-    onFieldsValuesChange({ [label]: value });
+    onFieldsValuesChange?.({ [label]: value });
   }
+
+  const inputs = [
+    {
+      description: streetDescription,
+      label: streetLabel,
+      onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
+        setStreetValue(e.target.value);
+        onChangeHandle('street', e.target.value);
+      },
+      placeholder: streetPlaceholder,
+      value: streetValue,
+    },
+    {
+      description: numberDescription,
+      label: numberLabel,
+      onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
+        setNumberValue(e.target.value);
+        onChangeHandle('number', e.target.value);
+      },
+      placeholder: numberPlaceholder,
+      value: numberValue,
+    },
+    {
+      description: cityDescription,
+      label: cityLabel,
+      onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
+        setCityValue(e.target.value);
+        onChangeHandle('city', e.target.value);
+      },
+      placeholder: cityPlaceholder,
+      value: cityValue,
+    },
+    {
+      description: postCodeDescription,
+      label: postCodeLabel,
+      onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPostCodeValue(e.target.value);
+        onChangeHandle('postCode', e.target.value);
+      },
+      placeholder: postCodePlaceholder,
+      value: postCodeValue,
+    },
+    {
+      description: countryDescription,
+      label: countryLabel,
+      onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
+        setCountryValue(e.target.value);
+        onChangeHandle('country', e.target.value);
+      },
+      placeholder: countryPlaceholder,
+      value: countryValue,
+    },
+  ];
 
   return (
     <div>
@@ -88,66 +143,23 @@ export function AddressAutocompleteFields<T>(
         onOptionSubmit={(value) => onOptionSubmitHandle(value)}
         {...FetchAutocompleteFieldProps}
       />
-      <Group grow mt="15">
-        <TextInput
-          description={streetDescription}
-          label={streetLabel}
-          onChange={(e) => {
-            setStreetValue(e.target.value);
-            onChangeHandle('street', e.target.value);
-          }}
-          placeholder={streetPlaceholder}
-          value={streetValue}
-        />
-        <TextInput
-          description={numberDescription}
-          label={numberLabel}
-          onChange={(e) => {
-            setNumberValue(e.target.value);
-            onChangeHandle('number', e.target.value);
-          }}
-          placeholder={numberPlaceholder}
-          value={numberValue}
-        />
-      </Group>
-      <Group grow>
-        <TextInput
-          description={cityDescription}
-          label={cityLabel}
-          onChange={(e) => {
-            setCityValue(e.target.value);
-            onChangeHandle('city', e.target.value);
-          }}
-          placeholder={cityPlaceholder}
-          value={cityValue}
-          {...textInputProps}
-        />
-        <TextInput
-          description={postCodeDescription}
-          label={postCodeLabel}
-          onChange={(e) => {
-            setPostCodeValue(e.target.value);
-            onChangeHandle('postCode', e.target.value);
-          }}
-          placeholder={postCodePlaceholder}
-          value={postCodeValue}
-          {...textInputProps}
-        />
-      </Group>
-      <TextInput
-        description={countryDescription}
-        label={countryLabel}
-        onChange={(e) => {
-          setCountryValue(e.target.value);
-          onChangeHandle('country', e.target.value);
-        }}
-        placeholder={countryPlaceholder}
-        value={countryValue}
-        {...textInputProps}
-      />
+      <div className={classes.inputContainer}>
+        {inputs.map((input) => {
+          return (
+            <TextInput
+              key={input.label}
+              className={classes.input}
+              description={input.description}
+              label={input.label}
+              onChange={(e) => {
+                input.onchange(e);
+              }}
+              placeholder={input.placeholder}
+              value={input.value}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
-
-// TODO: Faire le responsive
-// TODO: Crée un fonction pour modifier dans le composant qui modifie le format des datas envoyés

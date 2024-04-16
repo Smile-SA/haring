@@ -21,6 +21,7 @@ export const AddressAutocompleteFields: IStory = {
     // @ts-expect-error-type
     onFetchData: getDataAddressGouvMock,
     onFieldsValuesChange: action('value change'),
+    // @ts-expect-error-type
     onOptionSubmit: onOptionSubmitMock,
   },
 };
