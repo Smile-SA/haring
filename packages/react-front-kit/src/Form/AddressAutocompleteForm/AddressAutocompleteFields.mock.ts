@@ -12,7 +12,6 @@ export function onOptionSubmitMock(value: {
   };
 }): IAdressFields {
   const address = value.value.properties;
-  console.log(address);
   return {
     city: address?.city,
     country: 'France',
