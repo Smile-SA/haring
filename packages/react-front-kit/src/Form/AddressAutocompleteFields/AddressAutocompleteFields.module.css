@@ -1,0 +1,14 @@
+.inputContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.input {
+  maxwidth: 300px;
+  width: calc(50% - 5px);
+  @mixin smaller-than $mantine-breakpoint-sm {
+    width: 100%;
+  }
+}

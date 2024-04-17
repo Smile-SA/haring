@@ -9,17 +9,17 @@ import type { ReactElement } from 'react';
 
 import { FetchAutocompleteField } from '../FetchAutocompleteField/FetchAutocompleteField';
 
-export interface IAddressAutocompleteFieldProps<F>
-  extends Omit<IFetchAutocompleteFieldProps<F>, 'onFetchData'> {
+export interface IAddressAutocompleteFieldProps
+  extends Omit<IFetchAutocompleteFieldProps<IAddressGouvData>, 'onFetchData'> {
   lat?: string;
   limit?: number;
   lon?: string;
-  onFetchData?: (value: string) => Promise<IValue<F>[]>;
+  onFetchData?: (value: string) => Promise<IValue<IAddressGouvData>[]>;
   type?: string;
 }
 
-export function AddressGouvAutocompleteField<F>(
-  props: IAddressAutocompleteFieldProps<F>,
+export function AddressGouvAutocompleteField(
+  props: IAddressAutocompleteFieldProps,
 ): ReactElement {
   const {
     lat = '',
@@ -28,7 +28,9 @@ export function AddressGouvAutocompleteField<F>(
     type = '',
     ...fetchAutocompleteFieldProps
   } = props;
-  async function getDataAddressGouv(value: string): Promise<IValue<unknown>[]> {
+  async function getDataAddressGouv(
+    value: string,
+  ): Promise<IValue<IAddressGouvData>[]> {
     const response = await fetch(
       `https://api-Adresse.data.gouv.fr/search/?q=${encodeURIComponent(
         value,
