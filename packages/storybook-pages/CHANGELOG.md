@@ -1,5 +1,19 @@
 # storybook-pages
 
+## 0.12.0
+
+### Minor Changes
+
+- [#172](https://github.com/Smile-SA/react-front-kit/pull/172) [`59acbe4471c19bd9bbe4ab2eee022fdcb1bbfd5f`](https://github.com/Smile-SA/react-front-kit/commit/59acbe4471c19bd9bbe4ab2eee022fdcb1bbfd5f) Thanks [@vapersmile](https://github.com/vapersmile)! - add FetchAutocompleteField
+
+### Patch Changes
+
+- Updated dependencies [[`65cfb35a7a21cfca9c54970f16f1dcf95e56ec16`](https://github.com/Smile-SA/react-front-kit/commit/65cfb35a7a21cfca9c54970f16f1dcf95e56ec16), [`59acbe4471c19bd9bbe4ab2eee022fdcb1bbfd5f`](https://github.com/Smile-SA/react-front-kit/commit/59acbe4471c19bd9bbe4ab2eee022fdcb1bbfd5f)]:
+  - @smile/react-front-kit@0.12.0
+  - @smile/react-front-kit-dropzone@0.12.0
+  - @smile/react-front-kit-table@0.12.0
+  - @smile/react-front-kit-shared@0.12.0
+
 ## 0.11.0
 
 ### Minor Changes
