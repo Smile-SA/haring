@@ -1,22 +1,16 @@
 import type { IAdressFields } from './AddressAutocompleteFields';
+import type { IAddressGouvData } from '../FetchAutocompleteField/FetchAutoCompleteField.mock';
+import type { IValue } from '../FetchAutocompleteField/FetchAutocompleteField';
 
-export function onOptionSubmitMock(value: {
-  value: {
-    properties?: {
-      city?: string;
-      housenumber?: string;
-      number?: string;
-      postcode?: string;
-      street?: string;
-    };
-  };
-}): IAdressFields {
+export function onOptionSubmitMock(
+  value: IValue<IAddressGouvData>,
+): IAdressFields {
   const address = value.value.properties;
   return {
-    city: address?.city,
+    city: address.city,
     country: 'France',
-    number: address?.housenumber,
-    postCode: address?.postcode,
-    street: address?.street,
+    number: address.housenumber,
+    postCode: address.postcode,
+    street: address.street,
   };
 }

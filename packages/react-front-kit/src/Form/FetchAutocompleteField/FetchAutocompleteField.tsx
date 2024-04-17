@@ -13,21 +13,21 @@ export interface IFetchOption {
   value: string;
 }
 
-export interface IValue<F> {
+export interface IValue<T> {
   label: string;
-  value: F;
+  value: T;
 }
 
-export interface IFetchAutocompleteFieldProps<F>
+export interface IFetchAutocompleteFieldProps<T>
   extends Omit<AutocompleteProps, 'onOptionSubmit'> {
   deDebounce?: number;
   minValueLength?: number;
-  onFetchData: (value: string) => Promise<IValue<F>[]>;
-  onOptionSubmit?: (value: unknown) => void;
+  onFetchData: (value: string) => Promise<IValue<T>[]>;
+  onOptionSubmit?: (value: IValue<T>) => void;
 }
 
-export function FetchAutocompleteField<F>(
-  props: IFetchAutocompleteFieldProps<F>,
+export function FetchAutocompleteField<T>(
+  props: IFetchAutocompleteFieldProps<T>,
 ): ReactElement {
   const {
     deDebounce = 1000,
@@ -38,7 +38,7 @@ export function FetchAutocompleteField<F>(
     onFetchData,
     ...autocompleteProps
   } = props;
-  const [data, setData] = useState<IValue<F>[]>([]);
+  const [data, setData] = useState<IValue<T>[]>([]);
   const [value, setValue] = useDebouncedState('', deDebounce);
 
   useEffect(() => {

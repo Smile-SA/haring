@@ -1,3 +1,4 @@
+import type { IAddressGouvData } from '../FetchAutocompleteField/FetchAutoCompleteField.mock';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
@@ -8,20 +9,18 @@ import { AddressAutocompleteFields as Cmp } from './AddressAutocompleteFields';
 import { onOptionSubmitMock } from './AddressAutocompleteFields.mock';
 
 const meta = {
-  component: Cmp,
+  component: Cmp<IAddressGouvData>,
   tags: ['autodocs'],
   title: '3-custom/Form/AddressAutocompleteFields',
-} satisfies Meta<typeof Cmp>;
+} satisfies Meta<typeof Cmp<IAddressGouvData>>;
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
 export const AddressAutocompleteFields: IStory = {
   args: {
-    // @ts-expect-error-type
     onFetchData: getDataAddressGouvMock,
     onFieldsValuesChange: action('value change'),
-    // @ts-expect-error-type
     onOptionSubmit: onOptionSubmitMock,
   },
 };

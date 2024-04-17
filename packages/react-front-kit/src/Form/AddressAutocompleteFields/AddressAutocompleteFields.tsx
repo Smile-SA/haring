@@ -1,5 +1,8 @@
 'use client';
-import type { IFetchAutocompleteFieldProps } from '../FetchAutocompleteField/FetchAutocompleteField';
+import type {
+  IFetchAutocompleteFieldProps,
+  IValue,
+} from '../FetchAutocompleteField/FetchAutocompleteField';
 import type { TextInputProps } from '@mantine/core';
 import type { ReactElement } from 'react';
 
@@ -18,25 +21,42 @@ export interface IAdressFields {
   street?: string;
 }
 
+export interface ICity {
+  description?: string;
+  label?: string;
+  placeholder?: string;
+}
+export interface ICountry {
+  description?: string;
+  label?: string;
+  placeholder?: string;
+}
+export interface INumber {
+  description?: string;
+  label?: string;
+  placeholder?: string;
+}
+export interface IPostcode {
+  description?: string;
+  label?: string;
+  placeholder?: string;
+}
+
+export interface IStreet {
+  description?: string;
+  label?: string;
+  placeholder?: string;
+}
+
 export interface IAddressAutocompleteFieldsProps<T>
   extends Omit<IFetchAutocompleteFieldProps<T>, 'onOptionSubmit'> {
-  cityDescription?: string;
-  cityLabel?: string;
-  cityPlaceholder?: string;
-  countryDescription?: string;
-  countryLabel?: string;
-  countryPlaceholder?: string;
-  numberDescription?: string;
-  numberLabel?: string;
-  numberPlaceholder?: string;
+  city?: ICity;
+  country?: ICountry;
+  number?: INumber;
   onFieldsValuesChange?: (value: IAdressFields) => void;
-  onOptionSubmit: (value: unknown) => IAdressFields;
-  postCodeDescription?: string;
-  postCodeLabel?: string;
-  postCodePlaceholder?: string;
-  streetDescription?: string;
-  streetLabel?: string;
-  streetPlaceholder?: string;
+  onOptionSubmit: (value: IValue<T>) => IAdressFields;
+  postCode?: IPostcode;
+  street?: IStreet;
   textInputProps?: TextInputProps;
 }
 
@@ -44,25 +64,24 @@ export function AddressAutocompleteFields<T>(
   props: IAddressAutocompleteFieldsProps<T>,
 ): ReactElement {
   const {
-    streetDescription,
-    streetLabel = 'Street Name',
-    streetPlaceholder = 'Pall Mall',
-    cityDescription,
-    cityLabel = 'City',
-    cityPlaceholder = 'London',
-    countryDescription,
-    countryLabel = 'Country',
-    countryPlaceholder = 'United Kingdom',
-    numberDescription,
-    numberLabel = 'Street number',
-    numberPlaceholder = '89',
+    street = {
+      label: 'Street Name',
+      placeholder: 'Pall Mall',
+    },
+    city = {
+      label: 'City',
+      placeholder: 'London',
+    },
+    country = { label: 'Country', placeholder: 'United Kingdom' },
+    number = { label: 'Street number', placeholder: '89' },
     onOptionSubmit,
     onFieldsValuesChange,
-    postCodeDescription,
-    postCodeLabel = 'Postal code',
-    postCodePlaceholder = 'SW1Y 5HS',
+    postCode = {
+      label: 'Postal code',
+      placeholder: 'SW1Y 5HS',
+    },
     textInputProps,
-    ...FetchAutocompleteFieldProps
+    ...fetchAutocompleteFieldProps
   } = props;
 
   const [streetValue, setStreetValue] = useState('');
@@ -71,13 +90,13 @@ export function AddressAutocompleteFields<T>(
   const [postCodeValue, setPostCodeValue] = useState('');
   const [countryValue, setCountryValue] = useState('');
 
-  function onOptionSubmitHandle(value: unknown): void {
+  function onOptionSubmitHandle(value: IValue<T>): void {
     const addressFields = onOptionSubmit(value);
-    addressFields.street && setStreetValue(addressFields.street);
-    addressFields.number && setNumberValue(addressFields.number);
-    addressFields.city && setCityValue(addressFields.city);
-    addressFields.postCode && setPostCodeValue(addressFields.postCode);
-    addressFields.country && setCountryValue(addressFields.country);
+    setStreetValue(addressFields.street ?? '');
+    setNumberValue(addressFields.number ?? '');
+    setCityValue(addressFields.city ?? '');
+    setPostCodeValue(addressFields.postCode ?? '');
+    setCountryValue(addressFields.country ?? '');
   }
 
   function onChangeHandle(label: string, value: string): void {
@@ -86,53 +105,53 @@ export function AddressAutocompleteFields<T>(
 
   const inputs = [
     {
-      description: streetDescription,
-      label: streetLabel,
+      description: street.description,
+      label: street.label,
       onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
         setStreetValue(e.target.value);
         onChangeHandle('street', e.target.value);
       },
-      placeholder: streetPlaceholder,
+      placeholder: street.placeholder,
       value: streetValue,
     },
     {
-      description: numberDescription,
-      label: numberLabel,
+      description: number.description,
+      label: number.label,
       onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
         setNumberValue(e.target.value);
         onChangeHandle('number', e.target.value);
       },
-      placeholder: numberPlaceholder,
+      placeholder: number.placeholder,
       value: numberValue,
     },
     {
-      description: cityDescription,
-      label: cityLabel,
+      description: city.description,
+      label: city.label,
       onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
         setCityValue(e.target.value);
         onChangeHandle('city', e.target.value);
       },
-      placeholder: cityPlaceholder,
+      placeholder: city.placeholder,
       value: cityValue,
     },
     {
-      description: postCodeDescription,
-      label: postCodeLabel,
+      description: postCode.description,
+      label: postCode.label,
       onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
         setPostCodeValue(e.target.value);
         onChangeHandle('postCode', e.target.value);
       },
-      placeholder: postCodePlaceholder,
+      placeholder: postCode.placeholder,
       value: postCodeValue,
     },
     {
-      description: countryDescription,
-      label: countryLabel,
+      description: country.description,
+      label: country.label,
       onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
         setCountryValue(e.target.value);
         onChangeHandle('country', e.target.value);
       },
-      placeholder: countryPlaceholder,
+      placeholder: country.placeholder,
       value: countryValue,
     },
   ];
@@ -141,7 +160,7 @@ export function AddressAutocompleteFields<T>(
     <div>
       <FetchAutocompleteField
         onOptionSubmit={(value) => onOptionSubmitHandle(value)}
-        {...FetchAutocompleteFieldProps}
+        {...fetchAutocompleteFieldProps}
       />
       <div className={classes.inputContainer}>
         {inputs.map((input) => {
