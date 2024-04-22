@@ -13,7 +13,7 @@ import { FetchAutocompleteField } from '../FetchAutocompleteField/FetchAutocompl
 
 import classes from './AddressAutocompleteFields.module.css';
 
-export interface IAdressFields {
+export interface IAddressFields {
   city?: string;
   country?: string;
   number?: string;
@@ -53,8 +53,8 @@ export interface IAddressAutocompleteFieldsProps<T>
   city?: ICity;
   country?: ICountry;
   number?: INumber;
-  onFieldsValuesChange?: (value: IAdressFields) => void;
-  onOptionSubmit: (value: IValue<T>) => IAdressFields;
+  onFieldsValuesChange?: (value: IAddressFields) => void;
+  onOptionSubmit: (value: IValue<T>) => IAddressFields;
   postCode?: IPostcode;
   street?: IStreet;
   textInputProps?: TextInputProps;

@@ -6,7 +6,7 @@ import { TextInput } from '@mantine/core';
 
 import classes from './AddressFields.module.css';
 
-export interface IAdressFieldsValues {
+export interface IAddressFieldsValues {
   city?: string;
   country?: string;
   number?: string;
@@ -41,7 +41,7 @@ export interface IStreet {
   placeholder?: string;
 }
 
-export interface IAddressFieldsProps<T extends IAdressFieldsValues> {
+export interface IAddressFieldsProps<T extends IAddressFieldsValues> {
   cityProps?: TextInputProps;
   countryProps?: TextInputProps;
   numberProps?: TextInputProps;
@@ -52,7 +52,7 @@ export interface IAddressFieldsProps<T extends IAdressFieldsValues> {
 }
 
 export function AddressFields(
-  props: IAddressFieldsProps<IAdressFieldsValues>,
+  props: IAddressFieldsProps<IAddressFieldsValues>,
 ): ReactElement {
   const {
     streetProps = {
