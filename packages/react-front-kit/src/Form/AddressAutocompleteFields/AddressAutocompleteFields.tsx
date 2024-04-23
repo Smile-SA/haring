@@ -14,9 +14,9 @@ import { FetchAutocompleteField } from '../FetchAutocompleteField/FetchAutocompl
 
 export interface IAddressAutocompleteFieldsProps<T>
   extends Omit<IFetchAutocompleteFieldProps<T>, 'onOptionSubmit'> {
-  addressFieldsProps: IAddressFieldsValues;
+  addressFieldsProps?: IAddressFieldsValues;
   onFieldsValuesChange?: (value: IAddressFieldsValues) => void;
-  onOptionSubmit: (value: IValue<T>) => IAddressFieldsValues;
+  onOptionSubmit?: (value: IValue<T>) => IAddressFieldsValues;
   textInputProps?: TextInputProps;
 }
 
@@ -38,12 +38,12 @@ export function AddressAutocompleteFields<T>(
   const [countryValue, setCountryValue] = useState('');
 
   function onOptionSubmitHandle(value: IValue<T>): void {
-    const addressFields = onOptionSubmit(value);
-    setStreetValue(addressFields.street ?? '');
-    setNumberValue(addressFields.number ?? '');
-    setCityValue(addressFields.city ?? '');
-    setPostCodeValue(addressFields.postCode ?? '');
-    setCountryValue(addressFields.country ?? '');
+    const addressFields = onOptionSubmit?.(value);
+    setStreetValue(addressFields?.street ?? '');
+    setNumberValue(addressFields?.number ?? '');
+    setCityValue(addressFields?.city ?? '');
+    setPostCodeValue(addressFields?.postCode ?? '');
+    setCountryValue(addressFields?.country ?? '');
   }
 
   function onChangeHandle(values: IAddressFieldsValues): void {
@@ -69,6 +69,7 @@ export function AddressAutocompleteFields<T>(
           postCode: postCodeValue,
           street: streetValue,
         }}
+        {...addressFieldsProps}
       />
     </div>
   );
