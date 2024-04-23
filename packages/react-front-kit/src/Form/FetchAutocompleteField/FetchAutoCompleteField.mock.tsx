@@ -10,7 +10,6 @@ export interface IAddressGouvData {
     city?: string;
     housenumber?: string;
     label: string;
-    number?: string;
     postcode?: string;
     street?: string;
   };
