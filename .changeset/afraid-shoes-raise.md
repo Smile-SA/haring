@@ -2,4 +2,4 @@
 '@smile/react-front-kit': minor
 ---
 
-Add AddressFields
+Add AddressFields and update AddressAutocompleteFields
