@@ -1,5 +1,5 @@
 'use client';
-import type { IAddressFields } from '../../../dist/Form/AddressAutocompleteFields/AddressAutocompleteFields';
+import type { IAddressFieldsValues } from '../AddressFields/AddressFields';
 import type {
   IFetchAutocompleteFieldProps,
   IValue,
@@ -14,9 +14,9 @@ import { FetchAutocompleteField } from '../FetchAutocompleteField/FetchAutocompl
 
 export interface IAddressAutocompleteFieldsProps<T>
   extends Omit<IFetchAutocompleteFieldProps<T>, 'onOptionSubmit'> {
-  addressFieldsProps: IAddressFields;
-  onFieldsValuesChange?: (value: IAddressFields) => void;
-  onOptionSubmit: (value: IValue<T>) => IAddressFields;
+  addressFieldsProps: IAddressFieldsValues;
+  onFieldsValuesChange?: (value: IAddressFieldsValues) => void;
+  onOptionSubmit: (value: IValue<T>) => IAddressFieldsValues;
   textInputProps?: TextInputProps;
 }
 
@@ -46,6 +46,14 @@ export function AddressAutocompleteFields<T>(
     setCountryValue(addressFields.country ?? '');
   }
 
+  function onChangeHandle(values: IAddressFieldsValues): void {
+    values.street !== undefined && setStreetValue(values.street);
+    values.number !== undefined && setNumberValue(values.number);
+    values.city !== undefined && setCityValue(values.city);
+    values.postCode !== undefined && setPostCodeValue(values.postCode);
+    values.country !== undefined && setCountryValue(values.country);
+  }
+
   return (
     <div>
       <FetchAutocompleteField
@@ -53,6 +61,7 @@ export function AddressAutocompleteFields<T>(
         {...fetchAutocompleteFieldProps}
       />
       <AddressFields
+        onChange={(values) => onChangeHandle(values)}
         value={{
           city: cityValue,
           country: countryValue,
