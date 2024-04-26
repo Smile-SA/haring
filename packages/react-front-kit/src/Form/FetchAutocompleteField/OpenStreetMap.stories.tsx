@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
 
-import { getDataOpenStreetMapMock } from './FetchAutoCompleteField.mock';
+import { getDataOpenStreetMapRequest } from './FetchAutoCompleteField.mock';
 import { FetchAutocompleteField as Cmp } from './FetchAutocompleteField';
 
 const meta = {
@@ -17,7 +17,7 @@ type IStory = StoryObj<typeof meta>;
 
 export const FieldWithOpenStreetMapApi: IStory = {
   args: {
-    onFetchData: getDataOpenStreetMapMock,
+    onFetchData: getDataOpenStreetMapRequest,
     onOptionSubmit: action('location'),
   },
 };

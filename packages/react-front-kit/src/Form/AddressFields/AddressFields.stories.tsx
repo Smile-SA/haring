@@ -15,6 +15,6 @@ type IStory = StoryObj<typeof meta>;
 
 export const AddressFields: IStory = {
   args: {
-    onChange: action('on change'),
+    onChange: action('onChange'),
   },
 };

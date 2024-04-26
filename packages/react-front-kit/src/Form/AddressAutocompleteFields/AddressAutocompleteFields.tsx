@@ -15,6 +15,7 @@ import { FetchAutocompleteField } from '../FetchAutocompleteField/FetchAutocompl
 export interface IAddressAutocompleteFieldsProps<T>
   extends Omit<IFetchAutocompleteFieldProps<T>, 'onOptionSubmit'> {
   addressFieldsProps?: IAddressFieldsValues;
+  autocompleteField: ReactElement;
   onFieldsValuesChange?: (value: IAddressFieldsValues) => void;
   onOptionSubmit?: (value: IValue<T>) => IAddressFieldsValues;
   textInputProps?: TextInputProps;
@@ -25,6 +26,7 @@ export function AddressAutocompleteFields<T>(
 ): ReactElement {
   const {
     addressFieldsProps,
+    autocompleteField,
     onOptionSubmit,
     onFieldsValuesChange,
     textInputProps,
@@ -52,6 +54,7 @@ export function AddressAutocompleteFields<T>(
     values.city !== undefined && setCityValue(values.city);
     values.postCode !== undefined && setPostCodeValue(values.postCode);
     values.country !== undefined && setCountryValue(values.country);
+    onFieldsValuesChange?.(values);
   }
 
   return (

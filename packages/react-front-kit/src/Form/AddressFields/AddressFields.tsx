@@ -14,46 +14,17 @@ export interface IAddressFieldsValues {
   street?: string;
 }
 
-export interface ICity {
-  description?: string;
-  label?: string;
-  placeholder?: string;
-}
-export interface ICountry {
-  description?: string;
-  label?: string;
-  placeholder?: string;
-}
-export interface INumber {
-  description?: string;
-  label?: string;
-  placeholder?: string;
-}
-export interface IPostcode {
-  description?: string;
-  label?: string;
-  placeholder?: string;
-}
-
-export interface IStreet {
-  description?: string;
-  label?: string;
-  placeholder?: string;
-}
-
-export interface IAddressFieldsProps<T extends IAddressFieldsValues> {
+export interface IAddressFieldsProps {
   cityProps?: TextInputProps;
   countryProps?: TextInputProps;
   numberProps?: TextInputProps;
-  onChange?: (value: T) => void;
+  onChange: (value: IAddressFieldsValues) => void;
   postCodeProps?: TextInputProps;
   streetProps?: TextInputProps;
-  value?: T;
+  value?: IAddressFieldsValues;
 }
 
-export function AddressFields(
-  props: IAddressFieldsProps<IAddressFieldsValues>,
-): ReactElement {
+export function AddressFields(props: IAddressFieldsProps): ReactElement {
   const {
     streetProps = {
       label: 'Street Name',
@@ -73,53 +44,56 @@ export function AddressFields(
     value,
   } = props;
 
-  function onChangeHandle(label: string, value: string): void {
-    onChange?.({ [label]: value });
+  function onChangeHandle(key: string, val: string): void {
+    const otherValue = value
+      ? value
+      : { city: '', country: '', number: '', postalCode: '', street: '' };
+    onChange({ ...otherValue, [key]: val });
   }
 
   const inputs = [
     {
       description: streetProps.description,
-      label: streetProps.label,
-      onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('street', e.target.value);
       },
+      label: streetProps.label,
       placeholder: streetProps.placeholder,
       value: value?.street,
     },
     {
       description: numberProps.description,
-      label: numberProps.label,
-      onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('number', e.target.value);
       },
+      label: numberProps.label,
       placeholder: numberProps.placeholder,
       value: value?.number,
     },
     {
       description: cityProps.description,
-      label: cityProps.label,
-      onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('city', e.target.value);
       },
+      label: cityProps.label,
       placeholder: cityProps.placeholder,
       value: value?.city,
     },
     {
       description: postCodeProps.description,
-      label: postCodeProps.label,
-      onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('postCode', e.target.value);
       },
+      label: postCodeProps.label,
       placeholder: postCodeProps.placeholder,
       value: value?.postCode,
     },
     {
       description: countryProps.description,
-      label: countryProps.label,
-      onchange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('country', e.target.value);
       },
+      label: countryProps.label,
       placeholder: countryProps.placeholder,
       value: value?.country,
     },
@@ -134,9 +108,7 @@ export function AddressFields(
             className={classes.input}
             description={input.description}
             label={input.label}
-            onChange={(e) => {
-              input.onchange(e);
-            }}
+            onChange={input.handleChange}
             placeholder={input.placeholder}
             value={input.value}
           />
