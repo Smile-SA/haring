@@ -1,7 +1,7 @@
 'use client';
 
-import type { IDocument } from '@smile/react-front-kit';
-import type { IOption } from '@smile/react-front-kit-shared';
+import type { IDocument } from '@smile/haring-react';
+import type { IOption } from '@smile/haring-react-shared';
 import type { ReactElement } from 'react';
 
 import {
@@ -26,11 +26,11 @@ import {
   Pagination,
   SearchBar,
   SidebarFilters,
-} from '@smile/react-front-kit';
+} from '@smile/haring-react';
 import {
   isNotNullNorEmpty,
   useSecondaryTheme,
-} from '@smile/react-front-kit-shared';
+} from '@smile/haring-react-shared';
 import { useState } from 'react';
 
 import {

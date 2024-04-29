@@ -1,4 +1,4 @@
-import type { IAction, IConfirmAction } from '@smile/react-front-kit-shared';
+import type { IAction, IConfirmAction } from '@smile/haring-react-shared';
 import type { MRT_Row } from 'mantine-react-table';
 
 export type ITableData<Data extends Record<string, unknown>> =

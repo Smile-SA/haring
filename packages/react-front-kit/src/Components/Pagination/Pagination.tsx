@@ -1,6 +1,6 @@
 'use client';
 import type { FlexProps, PaginationProps, SelectProps } from '@mantine/core';
-import type { IOptions } from '@smile/react-front-kit-shared';
+import type { IOptions } from '@smile/haring-react-shared';
 import type { ReactElement } from 'react';
 
 import { Flex, Pagination as MantinePagination, Select } from '@mantine/core';

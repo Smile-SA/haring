@@ -18,45 +18,45 @@ exports[`HeaderMobile matches snapshot 1`] = `
     :root{--app-shell-padding:0px;}
   </style>
   <div
-    class="m-89ab340 mantine-AppShell-root"
+    class="m_89ab340 mantine-AppShell-root"
     data-resizing="true"
     style="--app-shell-transition-duration: 200ms; --app-shell-transition-timing-function: ease;"
   >
     <header
-      class="m-3b16f56b mantine-AppShell-header right-scroll-bar-position"
+      class="m_3b16f56b mantine-AppShell-header right-scroll-bar-position"
       data-with-border="true"
       style="--app-shell-header-z-index: 100;"
     >
       <div
-        class="m-8bffd616 mantine-Flex-root __m__-r2"
+        class="m_8bffd616 mantine-Flex-root __m__-r2"
       >
         <div
-          class="m-8bffd616 mantine-Flex-root __m__-r4"
+          class="m_8bffd616 mantine-Flex-root __m__-r4"
           style="gap: calc(1rem * var(--mantine-scale));"
         >
           <button
-            class="haring-focus m-fea6bf1a mantine-Burger-root m-87cf2631 mantine-UnstyledButton-root"
+            class="haring-focus m_fea6bf1a mantine-Burger-root m_87cf2631 mantine-UnstyledButton-root"
             color="var(--mantine-color-cyan-filled)"
             style="--burger-color: var(--mantine-color-cyan-filled); --burger-size: calc(1.375rem * var(--mantine-scale));"
             title="Open navigation"
             type="button"
           >
             <div
-              class="m-d4fb9cad mantine-Burger-burger"
+              class="m_d4fb9cad mantine-Burger-burger"
               data-reduce-motion="true"
             />
           </button>
           <div
-            class="m-3eebeb36 mantine-Divider-root"
+            class="m_3eebeb36 mantine-Divider-root"
             data-orientation="vertical"
             role="separator"
           />
         </div>
         <div
-          class="m-8bffd616 mantine-Flex-root __m__-r9"
+          class="m_8bffd616 mantine-Flex-root __m__-r9"
         />
         <div
-          class="m-8bffd616 mantine-Flex-root __m__-rb"
+          class="m_8bffd616 mantine-Flex-root __m__-rb"
         />
       </div>
       <div
@@ -65,7 +65,7 @@ exports[`HeaderMobile matches snapshot 1`] = `
         style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
       >
         <div
-          class="m-6d731127 mantine-Stack-root"
+          class="m_6d731127 mantine-Stack-root"
           style="--stack-gap: var(--mantine-spacing-md); --stack-align: stretch; --stack-justify: flex-start; height: calc(100vh - 76px);"
         >
           <a
@@ -85,11 +85,11 @@ exports[`HeaderMobile matches snapshot 1`] = `
           </a>
           <form>
             <div
-              class="m-46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+              class="m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
               data-size="md"
             >
               <div
-                class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+                class="m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
                 data-size="md"
                 data-variant="default"
                 data-with-right-section="true"
@@ -98,13 +98,13 @@ exports[`HeaderMobile matches snapshot 1`] = `
                 <input
                   aria-invalid="false"
                   aria-label="Search"
-                  class="m-8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+                  class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
                   data-variant="default"
                   id="test"
                   placeholder="Search on the site"
                 />
                 <div
-                  class="m-82577fc2 mantine-Input-section mantine-TextInput-section"
+                  class="m_82577fc2 mantine-Input-section mantine-TextInput-section"
                   data-position="right"
                 >
                   <svg

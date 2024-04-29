@@ -16,16 +16,16 @@ exports[`ButtonListOrDropdown matches snapshot 1`] = `
     aria-controls="mantine-f4bipx4bi-dropdown"
     aria-expanded="false"
     aria-haspopup="menu"
-    class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+    class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
     id="mantine-f4bipx4bi-target"
     style="--button-color: var(--mantine-color-white);"
     type="button"
   >
     <span
-      class="m-80f1301b mantine-Button-inner"
+      class="m_80f1301b mantine-Button-inner"
     >
       <span
-        class="m-811560b9 mantine-Button-label"
+        class="m_811560b9 mantine-Button-label"
       >
         FR
       </span>

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { AppShell } from '@mantine/core';
-import { primaryTheme } from '@smile/react-front-kit-shared';
-import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/storybook-utils';
+import { primaryTheme } from '@smile/haring-react-shared';
+import { useStorybookArgsConnect } from '@smile/haring-react-shared/storybook-utils';
 import { action } from '@storybook/addon-actions';
 import { expect } from '@storybook/jest';
 import { userEvent, within } from '@storybook/testing-library';

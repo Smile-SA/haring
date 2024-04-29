@@ -2,7 +2,7 @@ import type { IThumbnail, IThumbnailAction } from '../../types';
 import type { HandlerFunction } from '@storybook/addon-actions';
 
 import { Trash } from '@phosphor-icons/react';
-import { FolderMove } from '@smile/react-front-kit-shared';
+import { FolderMove } from '@smile/haring-react-shared';
 import { action } from '@storybook/addon-actions';
 
 import { thumbnailActionsMock } from '../Thumbnail/Thumbnail.mock';

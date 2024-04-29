@@ -6,14 +6,17 @@ In this monorepo project you will find the following projects:
 
 Public packages:
 
-- packages/react-front-kit: Contains the basic UI components
-- packages/react-front-kit-shared: Contains the shared UI components and
+- packages/haring-react: Contains the basic UI components
+- packages/haring-react-shared: Contains the shared UI components and
   functions
-- packages/react-front-kit-table: Contains the table component
+- packages/haring-react-dates: Contains the date related components
+- packages/haring-react-dropzone: Contains the dropzone components
+- packages/haring-react-table: Contains the table components
 
 Private configuration packages:
 
 - packages/eslint-config-custom: Shared eslint configuration
+- packages/storybook: Storybook global stories
 - packages/test: Shared jest configuration
 - packages/tsconfig: Shared typescript configuration
 
@@ -45,14 +48,14 @@ The following commands are used on the CI:
 - `npm run build-storybook`: Builds the static version of storybook
 - `npm run serve-and-test-storybook`: Launches storybook interaction tests
 
-## `react-front-kit*` project commands
+## `haring*` project commands
 
-Inside all `react-front-kit*` directories you can launch following commands:
+Inside all `haring*` directories you can launch following commands:
 
 - `npm run build`: Builds the library
 - `npm run test`: Runs unit tests
 
-## Creating a new component in `react-front-kit`
+## Creating a new component in `haring`
 
 To create a new component use the dedicated command `npm run generate`.
 

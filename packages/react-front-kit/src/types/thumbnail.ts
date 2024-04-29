@@ -1,4 +1,4 @@
-import type { IAction } from '@smile/react-front-kit-shared';
+import type { IAction } from '@smile/haring-react-shared';
 
 export interface IThumbnail extends Record<string, unknown> {
   iconType?: string;

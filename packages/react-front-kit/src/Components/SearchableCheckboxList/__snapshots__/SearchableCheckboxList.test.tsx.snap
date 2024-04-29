@@ -13,19 +13,19 @@ exports[`SearchableCheckboxList matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-6c018570 mantine-Input-wrapper"
+    class="m_6c018570 mantine-Input-wrapper"
     data-variant="default"
     data-with-right-section="true"
     style="--input-left-section-pointer-events: none; --input-right-section-pointer-events: none;"
   >
     <input
       aria-invalid="false"
-      class="m-8fb7ebe7 mantine-Input-input"
+      class="m_8fb7ebe7 mantine-Input-input"
       data-variant="default"
       placeholder="Test"
     />
     <div
-      class="m-82577fc2 mantine-Input-section"
+      class="m_82577fc2 mantine-Input-section"
       data-position="right"
     >
       <svg
@@ -44,25 +44,25 @@ exports[`SearchableCheckboxList matches snapshot 1`] = `
   </div>
   <div>
     <div
-      class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+      class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
       data-label-position="right"
       style="--checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled);"
     >
       <div
-        class="m-5f6e695e mantine-Checkbox-body"
+        class="m_5f6e695e mantine-Checkbox-body"
       >
         <div
-          class="m-26062bec mantine-Checkbox-inner"
+          class="m_26062bec mantine-Checkbox-inner"
           data-label-position="right"
         >
           <input
-            class="haring-focus m-26063560 mantine-Checkbox-input"
+            class="haring-focus m_26063560 mantine-Checkbox-input"
             id="mantine-f4bipx4bi"
             type="checkbox"
           />
           <svg
             aria-hidden="true"
-            class="m-bf295423 mantine-Checkbox-icon"
+            class="m_bf295423 mantine-Checkbox-icon"
             fill="none"
             viewBox="0 0 10 7"
             xmlns="http://www.w3.org/2000/svg"
@@ -76,10 +76,10 @@ exports[`SearchableCheckboxList matches snapshot 1`] = `
           </svg>
         </div>
         <div
-          class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+          class="m_d3ea56bb mantine-Checkbox-labelWrapper"
         >
           <label
-            class="m-8ee546b8 mantine-Checkbox-label"
+            class="m_8ee546b8 mantine-Checkbox-label"
             for="mantine-f4bipx4bi"
           >
             Tomato
@@ -88,25 +88,25 @@ exports[`SearchableCheckboxList matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+      class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
       data-label-position="right"
       style="--checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled);"
     >
       <div
-        class="m-5f6e695e mantine-Checkbox-body"
+        class="m_5f6e695e mantine-Checkbox-body"
       >
         <div
-          class="m-26062bec mantine-Checkbox-inner"
+          class="m_26062bec mantine-Checkbox-inner"
           data-label-position="right"
         >
           <input
-            class="haring-focus m-26063560 mantine-Checkbox-input"
+            class="haring-focus m_26063560 mantine-Checkbox-input"
             id="mantine-f4bipx4bi"
             type="checkbox"
           />
           <svg
             aria-hidden="true"
-            class="m-bf295423 mantine-Checkbox-icon"
+            class="m_bf295423 mantine-Checkbox-icon"
             fill="none"
             viewBox="0 0 10 7"
             xmlns="http://www.w3.org/2000/svg"
@@ -120,10 +120,10 @@ exports[`SearchableCheckboxList matches snapshot 1`] = `
           </svg>
         </div>
         <div
-          class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+          class="m_d3ea56bb mantine-Checkbox-labelWrapper"
         >
           <label
-            class="m-8ee546b8 mantine-Checkbox-label"
+            class="m_8ee546b8 mantine-Checkbox-label"
             for="mantine-f4bipx4bi"
           >
             Banana
@@ -133,33 +133,33 @@ exports[`SearchableCheckboxList matches snapshot 1`] = `
     </div>
   </div>
   <div
-    class="m-3eebeb36 mantine-Divider-root"
+    class="m_3eebeb36 mantine-Divider-root"
     data-orientation="horizontal"
     role="separator"
     style="--divider-color: var(--mantine-color-gray-2);"
   />
   <div>
     <div
-      class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+      class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
       data-label-position="right"
       style="--checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled);"
     >
       <div
-        class="m-5f6e695e mantine-Checkbox-body"
+        class="m_5f6e695e mantine-Checkbox-body"
       >
         <div
-          class="m-26062bec mantine-Checkbox-inner"
+          class="m_26062bec mantine-Checkbox-inner"
           data-label-position="right"
         >
           <input
             checked=""
-            class="haring-focus m-26063560 mantine-Checkbox-input"
+            class="haring-focus m_26063560 mantine-Checkbox-input"
             id="mantine-f4bipx4bi"
             type="checkbox"
           />
           <svg
             aria-hidden="true"
-            class="m-bf295423 mantine-Checkbox-icon"
+            class="m_bf295423 mantine-Checkbox-icon"
             fill="none"
             viewBox="0 0 10 7"
             xmlns="http://www.w3.org/2000/svg"
@@ -173,10 +173,10 @@ exports[`SearchableCheckboxList matches snapshot 1`] = `
           </svg>
         </div>
         <div
-          class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+          class="m_d3ea56bb mantine-Checkbox-labelWrapper"
         >
           <label
-            class="m-8ee546b8 mantine-Checkbox-label"
+            class="m_8ee546b8 mantine-Checkbox-label"
             for="mantine-f4bipx4bi"
           >
             apple
@@ -185,26 +185,26 @@ exports[`SearchableCheckboxList matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+      class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
       data-label-position="right"
       style="--checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled);"
     >
       <div
-        class="m-5f6e695e mantine-Checkbox-body"
+        class="m_5f6e695e mantine-Checkbox-body"
       >
         <div
-          class="m-26062bec mantine-Checkbox-inner"
+          class="m_26062bec mantine-Checkbox-inner"
           data-label-position="right"
         >
           <input
             checked=""
-            class="haring-focus m-26063560 mantine-Checkbox-input"
+            class="haring-focus m_26063560 mantine-Checkbox-input"
             id="mantine-f4bipx4bi"
             type="checkbox"
           />
           <svg
             aria-hidden="true"
-            class="m-bf295423 mantine-Checkbox-icon"
+            class="m_bf295423 mantine-Checkbox-icon"
             fill="none"
             viewBox="0 0 10 7"
             xmlns="http://www.w3.org/2000/svg"
@@ -218,10 +218,10 @@ exports[`SearchableCheckboxList matches snapshot 1`] = `
           </svg>
         </div>
         <div
-          class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+          class="m_d3ea56bb mantine-Checkbox-labelWrapper"
         >
           <label
-            class="m-8ee546b8 mantine-Checkbox-label"
+            class="m_8ee546b8 mantine-Checkbox-label"
             for="mantine-f4bipx4bi"
           >
             Orange 
@@ -231,17 +231,17 @@ exports[`SearchableCheckboxList matches snapshot 1`] = `
     </div>
   </div>
   <button
-    class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+    class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
     data-block="true"
     data-size="md"
     style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-color: var(--mantine-color-white);"
     type="button"
   >
     <span
-      class="m-80f1301b mantine-Button-inner"
+      class="m_80f1301b mantine-Button-inner"
     >
       <span
-        class="m-811560b9 mantine-Button-label"
+        class="m_811560b9 mantine-Button-label"
       >
         Test
       </span>

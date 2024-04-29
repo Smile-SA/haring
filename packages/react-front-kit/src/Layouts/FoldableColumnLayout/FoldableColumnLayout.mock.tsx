@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 
-import { primaryTheme } from '@smile/react-front-kit-shared';
+import { primaryTheme } from '@smile/haring-react-shared';
 
 import { Header } from '../../Components/Header/Header';
 import { SidebarMenu } from '../../Components/SidebarMenu/SidebarMenu';

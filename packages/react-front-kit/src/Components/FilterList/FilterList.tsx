@@ -1,7 +1,7 @@
 'use client';
 
 import type { ModalProps, StackProps } from '@mantine/core';
-import type { IFilter } from '@smile/react-front-kit-shared';
+import type { IFilter } from '@smile/haring-react-shared';
 import type { ElementType, ReactElement } from 'react';
 
 import { Button, Group, Modal, Stack, useMantineTheme } from '@mantine/core';

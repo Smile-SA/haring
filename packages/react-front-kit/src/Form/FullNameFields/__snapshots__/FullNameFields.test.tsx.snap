@@ -13,26 +13,26 @@ exports[`FullNameFields matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-8bffd616 mantine-Flex-root __m__-r0"
+    class="m_8bffd616 mantine-Flex-root __m__-r0"
     style="gap: var(--mantine-spacing-sm);"
   >
     <div
-      class="m-46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+      class="m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
     >
       <label
-        class="m-8fdc1311 mantine-InputWrapper-label mantine-TextInput-label"
+        class="m_8fdc1311 mantine-InputWrapper-label mantine-TextInput-label"
         for="mantine-f4bipx4bi"
         id="mantine-f4bipx4bi-label"
       >
         First name
       </label>
       <div
-        class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+        class="m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
         data-variant="default"
       >
         <input
           aria-invalid="false"
-          class="m-8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+          class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
           data-variant="default"
           id="mantine-f4bipx4bi"
           placeholder="Jean"
@@ -40,22 +40,22 @@ exports[`FullNameFields matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="m-46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+      class="m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
     >
       <label
-        class="m-8fdc1311 mantine-InputWrapper-label mantine-TextInput-label"
+        class="m_8fdc1311 mantine-InputWrapper-label mantine-TextInput-label"
         for="mantine-f4bipx4bi"
         id="mantine-f4bipx4bi-label"
       >
         Last name
       </label>
       <div
-        class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+        class="m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
         data-variant="default"
       >
         <input
           aria-invalid="false"
-          class="m-8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+          class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
           data-variant="default"
           id="mantine-f4bipx4bi"
           placeholder="Dupont"

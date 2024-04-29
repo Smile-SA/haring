@@ -10,7 +10,7 @@ import type {
 import type {
   IAction,
   IActionConfirmModalProps,
-} from '@smile/react-front-kit-shared';
+} from '@smile/haring-react-shared';
 import type { ReactElement, ReactNode } from 'react';
 
 import { ActionIcon, Button, Group, Menu, Tooltip } from '@mantine/core';

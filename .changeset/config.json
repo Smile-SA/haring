@@ -3,11 +3,11 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "Smile-SA/react-front-kit"
+      "repo": "Smile-SA/haring"
     }
   ],
   "commit": false,
-  "fixed": [["@smile/react-front-kit*", "storybook-pages"]],
+  "fixed": [["@smile/haring*", "storybook-pages"]],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",

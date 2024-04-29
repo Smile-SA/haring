@@ -1,9 +1,9 @@
-import type { IMenuItem } from '@smile/react-front-kit/src';
-import type { IFilter } from '@smile/react-front-kit-shared';
+import type { IMenuItem } from '@smile/haring-react/src';
+import type { IFilter } from '@smile/haring-react-shared';
 import type {
   ITableGridViewGridProps,
   ITableGridViewTableProps,
-} from '@smile/react-front-kit-table';
+} from '@smile/haring-react-table';
 
 import { TextInput } from '@mantine/core';
 import {
@@ -17,7 +17,7 @@ import {
   Trash,
   User,
 } from '@phosphor-icons/react';
-import { FolderMove } from '@smile/react-front-kit-shared';
+import { FolderMove } from '@smile/haring-react-shared';
 
 export interface IExampleDataType extends Record<string, unknown> {
   creator: string;
