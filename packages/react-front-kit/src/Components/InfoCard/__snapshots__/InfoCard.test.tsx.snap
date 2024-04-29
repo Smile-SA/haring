@@ -13,7 +13,7 @@ exports[`InfoCard matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-1b7284a3 mantine-Paper-root"
+    class="m_1b7284a3 mantine-Paper-root"
     style="--paper-radius: calc(1rem * var(--mantine-scale));"
   >
     <div>
@@ -108,12 +108,12 @@ exports[`InfoCard matches snapshot 1`] = `
         <div />
       </div>
       <button
-        class="haring-focus haring-active undefined false m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus haring-active undefined false m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
         style="--ai-color: var(--mantine-color-white);"
         type="button"
       >
         <span
-          class="m-8d3afb97 mantine-ActionIcon-icon"
+          class="m_8d3afb97 mantine-ActionIcon-icon"
         >
           <svg
             fill="currentColor"

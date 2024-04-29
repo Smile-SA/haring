@@ -1,4 +1,4 @@
-import type { IFilter } from '@smile/react-front-kit-shared';
+import type { IFilter } from '@smile/haring-react-shared';
 
 import { Select, TextInput } from '@mantine/core';
 

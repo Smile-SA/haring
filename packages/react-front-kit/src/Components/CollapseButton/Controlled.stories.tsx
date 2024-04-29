@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/storybook-utils';
+import { useStorybookArgsConnect } from '@smile/haring-react-shared/storybook-utils';
 
 import collapseButtonMeta, { CollapseButton } from './CollapseButton.stories';
 import { CollapseButtonControlled as Cmp } from './CollapseButtonControlled';

@@ -4,7 +4,7 @@ import type { BoxProps } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
 import { Box } from '@mantine/core';
-import { NestedProvider, useThemes } from '@smile/react-front-kit-shared';
+import { NestedProvider, useThemes } from '@smile/haring-react-shared';
 
 import classes from './CardHeader.module.css';
 

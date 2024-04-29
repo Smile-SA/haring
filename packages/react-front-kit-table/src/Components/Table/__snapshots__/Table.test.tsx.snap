@@ -13,7 +13,7 @@ exports[`Table matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="mrt-table-paper MRT_TablePaper-module_root__q0v5L m-1b7284a3 mantine-Paper-root"
+    class="mrt-table-paper MRT_TablePaper-module_root__q0v5L m_1b7284a3 mantine-Paper-root"
     data-with-border="true"
     style="--paper-shadow: var(--mantine-shadow-xs);"
   >
@@ -21,29 +21,29 @@ exports[`Table matches snapshot 1`] = `
       class="common-styles-module_common-toolbar-styles__DnjR8 MRT_TopToolbar-module_root__r4-V9"
     >
       <div
-        class="MRT_TopToolbar-module_actions-container__-uL0u m-8bffd616 mantine-Flex-root __m__-r2"
+        class="MRT_TopToolbar-module_actions-container__-uL0u m_8bffd616 mantine-Flex-root __m__-r2"
       >
         <span />
         <div
-          class="m-8bffd616 mantine-Flex-root __m__-r4"
+          class="m_8bffd616 mantine-Flex-root __m__-r4"
           style="justify-content: end; flex-wrap: wrap-reverse;"
         >
           <div
-            class="mrt-toolbar-internal-buttons MRT_ToolbarInternalButtons-module_root__NKoUG m-8bffd616 mantine-Flex-root __m__-r6"
+            class="mrt-toolbar-internal-buttons MRT_ToolbarInternalButtons-module_root__NKoUG m_8bffd616 mantine-Flex-root __m__-r6"
           >
             <div
-              class="m-8bffd616 mantine-Flex-root __m__-r8"
+              class="m_8bffd616 mantine-Flex-root __m__-r8"
             >
               <button
                 aria-label="Show/Hide filters"
-                class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                 data-size="lg"
                 data-variant="subtle"
                 style="--ai-size: var(--ai-size-lg); --ai-bg: transparent; --ai-hover: var(--mantine-color-gray-light-hover); --ai-color: var(--mantine-color-gray-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                 type="button"
               >
                 <span
-                  class="m-8d3afb97 mantine-ActionIcon-icon"
+                  class="m_8d3afb97 mantine-ActionIcon-icon"
                 >
                   <svg
                     fill="currentColor"
@@ -53,7 +53,7 @@ exports[`Table matches snapshot 1`] = `
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M230.6,49.53A15.81,15.81,0,0,0,216,40H40A16,16,0,0,0,28.19,66.76l.08.09L96,139.17V216a16,16,0,0,0,24.87,13.32l32-21.34A16,16,0,0,0,160,194.66V139.17l67.74-72.32.08-.09A15.8,15.8,0,0,0,230.6,49.53ZM40,56h0Zm108.34,72.28A15.92,15.92,0,0,0,144,139.17v55.49L112,216V139.17a15.92,15.92,0,0,0-4.32-10.94L40,56H216Z"
+                      d="M230.6,49.53A15.81,15.81,0,0,0,216,40H40A16,16,0,0,0,28.19,66.76l.08.09L96,139.17V216a16,16,0,0,0,24.87,13.32l32-21.34A16,16,0,0,0,160,194.66V139.17l67.74-72.32.08-.09A15.8,15.8,0,0,0,230.6,49.53ZM40,56h0Zm106.18,74.58A8,8,0,0,0,144,136v58.66L112,216V136a8,8,0,0,0-2.16-5.47L40,56H216Z"
                     />
                   </svg>
                 </span>
@@ -63,7 +63,7 @@ exports[`Table matches snapshot 1`] = `
                 aria-expanded="false"
                 aria-haspopup="menu"
                 aria-label="Show/Hide columns"
-                class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                 data-size="lg"
                 data-variant="subtle"
                 id="undefined-target"
@@ -71,7 +71,7 @@ exports[`Table matches snapshot 1`] = `
                 type="button"
               >
                 <span
-                  class="m-8d3afb97 mantine-ActionIcon-icon"
+                  class="m_8d3afb97 mantine-ActionIcon-icon"
                 >
                   <svg
                     fill="none"
@@ -120,7 +120,7 @@ exports[`Table matches snapshot 1`] = `
       >
         <div
           aria-busy="true"
-          class="m-db6d6462 mantine-Progress-root"
+          class="m_db6d6462 mantine-Progress-root"
           radius="0"
           style="--progress-radius: 0rem;"
         >
@@ -130,7 +130,7 @@ exports[`Table matches snapshot 1`] = `
             aria-valuemin="0"
             aria-valuenow="100"
             aria-valuetext="100%"
-            class="m-2242eb65 mantine-Progress-section"
+            class="m_2242eb65 mantine-Progress-section"
             data-animated="true"
             data-striped="true"
             role="progressbar"
@@ -144,59 +144,59 @@ exports[`Table matches snapshot 1`] = `
       style="--mrt-top-toolbar-height: 0;"
     >
       <table
-        class="m-b23fa0ef mantine-Table-table"
+        class="m_b23fa0ef mantine-Table-table"
         style="--table-horizontal-spacing: var(--mantine-spacing-md); --table-vertical-spacing: var(--mantine-spacing-md); --header-mrt_row_select-size: 60; --col-mrt_row_select-size: 60; --header-id-size: 180; --col-id-size: 180; --header-format-size: 180; --col-format-size: 180; --header-title-size: 180; --col-title-size: 180; --header-creator-size: 180; --col-creator-size: 180; --header-date-size: 180; --col-date-size: 180; --header-mrt_row_actions-size: 124; --col-mrt_row_actions-size: 124;"
       >
         <thead
-          class="m-b242d975 mantine-Table-thead MRT_TableHead-module_root__j9NkO MRT_TableHead-module_root-table-row-group__d9FO4"
+          class="m_b242d975 mantine-Table-thead MRT_TableHead-module_root__j9NkO MRT_TableHead-module_root-table-row-group__d9FO4"
           style="position: relative;"
         >
           <tr
-            class="m-4e7aa4fd mantine-Table-tr MRT_TableHeadRow-module_root__hUKv4"
+            class="m_4e7aa4fd mantine-Table-tr MRT_TableHeadRow-module_root__hUKv4"
             data-hover="true"
             data-with-row-border="true"
           >
             <th
               align="left"
-              class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a"
+              class="m_4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a"
               colspan="1"
               data-index="0"
               style="min-width: max(calc(var(--header-mrt_row_select-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
-                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-rr"
+                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m_8bffd616 mantine-Flex-root __m__-rr"
               >
                 <div
-                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr m-8bffd616 mantine-Flex-root __m__-rt"
+                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr m_8bffd616 mantine-Flex-root __m__-rt"
                   style="--mrt-table-head-cell-labels-padding-left: 0;"
                 >
                   <div
-                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-rv"
+                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m_8bffd616 mantine-Flex-root __m__-rv"
                   >
                     <span
                       class=""
                     >
                       <div
-                        class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+                        class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
                         data-label-position="right"
                         data-size="md"
                         style="--checkbox-size: var(--checkbox-size-md); --checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled); --label-fz: var(--mantine-font-size-md); --label-lh: var(--label-lh-md);"
                       >
                         <div
-                          class="m-5f6e695e mantine-Checkbox-body"
+                          class="m_5f6e695e mantine-Checkbox-body"
                         >
                           <div
-                            class="m-26062bec mantine-Checkbox-inner"
+                            class="m_26062bec mantine-Checkbox-inner"
                             data-label-position="right"
                           >
                             <input
                               aria-label="Toggle select all"
-                              class="haring-focus m-26063560 mantine-Checkbox-input"
+                              class="haring-focus m_26063560 mantine-Checkbox-input"
                               type="checkbox"
                             />
                             <svg
                               aria-hidden="true"
-                              class="m-bf295423 mantine-Checkbox-icon"
+                              class="m_bf295423 mantine-Checkbox-icon"
                               fill="none"
                               viewBox="0 0 10 7"
                               xmlns="http://www.w3.org/2000/svg"
@@ -210,7 +210,7 @@ exports[`Table matches snapshot 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+                            class="m_d3ea56bb mantine-Checkbox-labelWrapper"
                           />
                         </div>
                       </div>
@@ -218,37 +218,37 @@ exports[`Table matches snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r17"
+                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m_8bffd616 mantine-Flex-root __m__-r17"
                 />
               </div>
             </th>
             <th
               align="left"
-              class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
+              class="m_4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
               colspan="1"
               data-index="1"
               style="min-width: max(calc(var(--header-id-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
-                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r1a"
+                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m_8bffd616 mantine-Flex-root __m__-r1a"
               >
                 <div
-                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r1c"
+                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m_8bffd616 mantine-Flex-root __m__-r1c"
                   style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                 >
                   <div
-                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r1e"
+                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m_8bffd616 mantine-Flex-root __m__-r1e"
                   >
                     id
                   </div>
                   <button
                     aria-label="Sort by id descending"
-                    class="haring-focus haring-active mrt-table-head-sort-button MRT_TableHeadCellSortLabel-module_sort-icon__zs1xA m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active mrt-table-head-sort-button MRT_TableHeadCellSortLabel-module_sort-icon__zs1xA m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     style="--ai-color: var(--mantine-color-white);"
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         fill="currentColor"
@@ -265,14 +265,14 @@ exports[`Table matches snapshot 1`] = `
                   </button>
                 </div>
                 <div
-                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r1l"
+                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m_8bffd616 mantine-Flex-root __m__-r1l"
                 >
                   <button
                     aria-controls="undefined-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     aria-label="Column Actions"
-                    class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-size="sm"
                     data-variant="subtle"
                     id="undefined-target"
@@ -280,7 +280,7 @@ exports[`Table matches snapshot 1`] = `
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         class="tabler-icon tabler-icon-dots-vertical "
@@ -314,26 +314,26 @@ exports[`Table matches snapshot 1`] = `
                 style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
               >
                 <div
-                  class="m-8bffd616 mantine-Flex-root __m__-r1t"
+                  class="m_8bffd616 mantine-Flex-root __m__-r1t"
                   style="flex-direction: column;"
                 >
                   <div
-                    class="m-8bffd616 mantine-Flex-root __m__-r1v"
+                    class="m_8bffd616 mantine-Flex-root __m__-r1v"
                     style="align-items: flex-end;"
                   >
                     <div
-                      class="mrt-filter-text-input MRT_FilterTextInput-module_root__Ss8Ql MRT_FilterTextInput-module_not-filter-chip__u8b1y m-46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+                      class="mrt-filter-text-input MRT_FilterTextInput-module_root__Ss8Ql MRT_FilterTextInput-module_not-filter-chip__u8b1y m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
                       data-variant="unstyled"
                       style="margin-top: 0rem;"
                     >
                       <div
-                        class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+                        class="m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
                         data-variant="unstyled"
                       >
                         <input
                           aria-invalid="false"
                           aria-label="Filter by id"
-                          class="m-8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+                          class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
                           data-variant="unstyled"
                           placeholder="Filter by id"
                           title="Filter by id"
@@ -347,31 +347,31 @@ exports[`Table matches snapshot 1`] = `
             </th>
             <th
               align="left"
-              class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
+              class="m_4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
               colspan="1"
               data-index="2"
               style="min-width: max(calc(var(--header-format-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
-                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r25"
+                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m_8bffd616 mantine-Flex-root __m__-r25"
               >
                 <div
-                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r27"
+                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m_8bffd616 mantine-Flex-root __m__-r27"
                   style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                 >
                   <div
-                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r29"
+                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m_8bffd616 mantine-Flex-root __m__-r29"
                   >
                     Format
                   </div>
                   <button
                     aria-label="Sort by Format ascending"
-                    class="haring-focus haring-active mrt-table-head-sort-button MRT_TableHeadCellSortLabel-module_sort-icon__zs1xA m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active mrt-table-head-sort-button MRT_TableHeadCellSortLabel-module_sort-icon__zs1xA m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     style="--ai-color: var(--mantine-color-white);"
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         fill="currentColor"
@@ -388,14 +388,14 @@ exports[`Table matches snapshot 1`] = `
                   </button>
                 </div>
                 <div
-                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r2g"
+                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m_8bffd616 mantine-Flex-root __m__-r2g"
                 >
                   <button
                     aria-controls="undefined-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     aria-label="Column Actions"
-                    class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-size="sm"
                     data-variant="subtle"
                     id="undefined-target"
@@ -403,7 +403,7 @@ exports[`Table matches snapshot 1`] = `
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         class="tabler-icon tabler-icon-dots-vertical "
@@ -437,26 +437,26 @@ exports[`Table matches snapshot 1`] = `
                 style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
               >
                 <div
-                  class="m-8bffd616 mantine-Flex-root __m__-r2o"
+                  class="m_8bffd616 mantine-Flex-root __m__-r2o"
                   style="flex-direction: column;"
                 >
                   <div
-                    class="m-8bffd616 mantine-Flex-root __m__-r2q"
+                    class="m_8bffd616 mantine-Flex-root __m__-r2q"
                     style="align-items: flex-end;"
                   >
                     <div
-                      class="mrt-filter-text-input MRT_FilterTextInput-module_root__Ss8Ql MRT_FilterTextInput-module_not-filter-chip__u8b1y m-46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+                      class="mrt-filter-text-input MRT_FilterTextInput-module_root__Ss8Ql MRT_FilterTextInput-module_not-filter-chip__u8b1y m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
                       data-variant="unstyled"
                       style="margin-top: 0rem;"
                     >
                       <div
-                        class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+                        class="m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
                         data-variant="unstyled"
                       >
                         <input
                           aria-invalid="false"
                           aria-label="Filter by Format"
-                          class="m-8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+                          class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
                           data-variant="unstyled"
                           placeholder="Filter by Format"
                           title="Filter by Format"
@@ -470,31 +470,31 @@ exports[`Table matches snapshot 1`] = `
             </th>
             <th
               align="left"
-              class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
+              class="m_4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
               colspan="1"
               data-index="3"
               style="min-width: max(calc(var(--header-title-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
-                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r30"
+                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m_8bffd616 mantine-Flex-root __m__-r30"
               >
                 <div
-                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r32"
+                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m_8bffd616 mantine-Flex-root __m__-r32"
                   style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                 >
                   <div
-                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r34"
+                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m_8bffd616 mantine-Flex-root __m__-r34"
                   >
                     Titre
                   </div>
                   <button
                     aria-label="Sort by Titre ascending"
-                    class="haring-focus haring-active mrt-table-head-sort-button MRT_TableHeadCellSortLabel-module_sort-icon__zs1xA m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active mrt-table-head-sort-button MRT_TableHeadCellSortLabel-module_sort-icon__zs1xA m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     style="--ai-color: var(--mantine-color-white);"
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         fill="currentColor"
@@ -511,14 +511,14 @@ exports[`Table matches snapshot 1`] = `
                   </button>
                 </div>
                 <div
-                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r3b"
+                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m_8bffd616 mantine-Flex-root __m__-r3b"
                 >
                   <button
                     aria-controls="undefined-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     aria-label="Column Actions"
-                    class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-size="sm"
                     data-variant="subtle"
                     id="undefined-target"
@@ -526,7 +526,7 @@ exports[`Table matches snapshot 1`] = `
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         class="tabler-icon tabler-icon-dots-vertical "
@@ -560,26 +560,26 @@ exports[`Table matches snapshot 1`] = `
                 style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
               >
                 <div
-                  class="m-8bffd616 mantine-Flex-root __m__-r3j"
+                  class="m_8bffd616 mantine-Flex-root __m__-r3j"
                   style="flex-direction: column;"
                 >
                   <div
-                    class="m-8bffd616 mantine-Flex-root __m__-r3l"
+                    class="m_8bffd616 mantine-Flex-root __m__-r3l"
                     style="align-items: flex-end;"
                   >
                     <div
-                      class="mrt-filter-text-input MRT_FilterTextInput-module_root__Ss8Ql MRT_FilterTextInput-module_not-filter-chip__u8b1y m-46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+                      class="mrt-filter-text-input MRT_FilterTextInput-module_root__Ss8Ql MRT_FilterTextInput-module_not-filter-chip__u8b1y m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
                       data-variant="unstyled"
                       style="margin-top: 0rem;"
                     >
                       <div
-                        class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+                        class="m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
                         data-variant="unstyled"
                       >
                         <input
                           aria-invalid="false"
                           aria-label="Filter by Titre"
-                          class="m-8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+                          class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
                           data-variant="unstyled"
                           placeholder="Filter by Titre"
                           title="Filter by Titre"
@@ -593,31 +593,31 @@ exports[`Table matches snapshot 1`] = `
             </th>
             <th
               align="left"
-              class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
+              class="m_4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
               colspan="1"
               data-index="4"
               style="min-width: max(calc(var(--header-creator-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
-                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r3r"
+                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m_8bffd616 mantine-Flex-root __m__-r3r"
               >
                 <div
-                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r3t"
+                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m_8bffd616 mantine-Flex-root __m__-r3t"
                   style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                 >
                   <div
-                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r3v"
+                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m_8bffd616 mantine-Flex-root __m__-r3v"
                   >
                     Créateur
                   </div>
                   <button
                     aria-label="Sort by Créateur ascending"
-                    class="haring-focus haring-active mrt-table-head-sort-button MRT_TableHeadCellSortLabel-module_sort-icon__zs1xA m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active mrt-table-head-sort-button MRT_TableHeadCellSortLabel-module_sort-icon__zs1xA m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     style="--ai-color: var(--mantine-color-white);"
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         fill="currentColor"
@@ -634,14 +634,14 @@ exports[`Table matches snapshot 1`] = `
                   </button>
                 </div>
                 <div
-                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r46"
+                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m_8bffd616 mantine-Flex-root __m__-r46"
                 >
                   <button
                     aria-controls="undefined-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     aria-label="Column Actions"
-                    class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-size="sm"
                     data-variant="subtle"
                     id="undefined-target"
@@ -649,7 +649,7 @@ exports[`Table matches snapshot 1`] = `
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         class="tabler-icon tabler-icon-dots-vertical "
@@ -683,26 +683,26 @@ exports[`Table matches snapshot 1`] = `
                 style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
               >
                 <div
-                  class="m-8bffd616 mantine-Flex-root __m__-r4e"
+                  class="m_8bffd616 mantine-Flex-root __m__-r4e"
                   style="flex-direction: column;"
                 >
                   <div
-                    class="m-8bffd616 mantine-Flex-root __m__-r4g"
+                    class="m_8bffd616 mantine-Flex-root __m__-r4g"
                     style="align-items: flex-end;"
                   >
                     <div
-                      class="mrt-filter-text-input MRT_FilterTextInput-module_root__Ss8Ql MRT_FilterTextInput-module_not-filter-chip__u8b1y m-46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+                      class="mrt-filter-text-input MRT_FilterTextInput-module_root__Ss8Ql MRT_FilterTextInput-module_not-filter-chip__u8b1y m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
                       data-variant="unstyled"
                       style="margin-top: 0rem;"
                     >
                       <div
-                        class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+                        class="m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
                         data-variant="unstyled"
                       >
                         <input
                           aria-invalid="false"
                           aria-label="Filter by Créateur"
-                          class="m-8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+                          class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
                           data-variant="unstyled"
                           placeholder="Filter by Créateur"
                           title="Filter by Créateur"
@@ -716,31 +716,31 @@ exports[`Table matches snapshot 1`] = `
             </th>
             <th
               align="left"
-              class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
+              class="m_4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a MRT_TableHeadCell-module_root-no-select__BEOVU"
               colspan="1"
               data-index="5"
               style="min-width: max(calc(var(--header-date-size) * 1px), 40px); --mrt-table-head-cell-padding: 16;"
             >
               <div
-                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r4m"
+                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m_8bffd616 mantine-Flex-root __m__-r4m"
               >
                 <div
-                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m-8bffd616 mantine-Flex-root __m__-r4o"
+                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr MRT_TableHeadCell-module_labels-sortable__tyuLr MRT_TableHeadCell-module_labels-data__PvFGO m_8bffd616 mantine-Flex-root __m__-r4o"
                   style="--mrt-table-head-cell-labels-padding-left: 2.75;"
                 >
                   <div
-                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r4q"
+                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-hidden-overflow__QY40r MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m_8bffd616 mantine-Flex-root __m__-r4q"
                   >
                     Date publication
                   </div>
                   <button
                     aria-label="Sort by Date publication ascending"
-                    class="haring-focus haring-active mrt-table-head-sort-button MRT_TableHeadCellSortLabel-module_sort-icon__zs1xA m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active mrt-table-head-sort-button MRT_TableHeadCellSortLabel-module_sort-icon__zs1xA m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     style="--ai-color: var(--mantine-color-white);"
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         fill="currentColor"
@@ -757,14 +757,14 @@ exports[`Table matches snapshot 1`] = `
                   </button>
                 </div>
                 <div
-                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r51"
+                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m_8bffd616 mantine-Flex-root __m__-r51"
                 >
                   <button
                     aria-controls="undefined-dropdown"
                     aria-expanded="false"
                     aria-haspopup="menu"
                     aria-label="Column Actions"
-                    class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-size="sm"
                     data-variant="subtle"
                     id="undefined-target"
@@ -772,7 +772,7 @@ exports[`Table matches snapshot 1`] = `
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         class="tabler-icon tabler-icon-dots-vertical "
@@ -806,26 +806,26 @@ exports[`Table matches snapshot 1`] = `
                 style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
               >
                 <div
-                  class="m-8bffd616 mantine-Flex-root __m__-r59"
+                  class="m_8bffd616 mantine-Flex-root __m__-r59"
                   style="flex-direction: column;"
                 >
                   <div
-                    class="m-8bffd616 mantine-Flex-root __m__-r5b"
+                    class="m_8bffd616 mantine-Flex-root __m__-r5b"
                     style="align-items: flex-end;"
                   >
                     <div
-                      class="mrt-filter-text-input MRT_FilterTextInput-module_root__Ss8Ql MRT_FilterTextInput-module_not-filter-chip__u8b1y m-46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+                      class="mrt-filter-text-input MRT_FilterTextInput-module_root__Ss8Ql MRT_FilterTextInput-module_not-filter-chip__u8b1y m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
                       data-variant="unstyled"
                       style="margin-top: 0rem;"
                     >
                       <div
-                        class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+                        class="m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
                         data-variant="unstyled"
                       >
                         <input
                           aria-invalid="false"
                           aria-label="Filter by Date publication"
-                          class="m-8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+                          class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
                           data-variant="unstyled"
                           placeholder="Filter by Date publication"
                           title="Filter by Date publication"
@@ -839,7 +839,7 @@ exports[`Table matches snapshot 1`] = `
             </th>
             <th
               align="left"
-              class="m-4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a"
+              class="m_4e7aa4f3 mantine-Table-th MRT_TableHeadCell-module_root__6y50a"
               colspan="1"
               data-column-pinned="right"
               data-first-right-pinned="true"
@@ -847,34 +847,34 @@ exports[`Table matches snapshot 1`] = `
               style="min-width: max(calc(var(--header-mrt_row_actions-size) * 1px), 40px); --mrt-table-cell-right: 0; --mrt-table-head-cell-padding: 16;"
             >
               <div
-                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m-8bffd616 mantine-Flex-root __m__-r5h"
+                class="mrt-table-head-cell-content MRT_TableHeadCell-module_content__-pzSK m_8bffd616 mantine-Flex-root __m__-r5h"
               >
                 <div
-                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr m-8bffd616 mantine-Flex-root __m__-r5j"
+                  class="mrt-table-head-cell-labels MRT_TableHeadCell-module_labels__oiMSr m_8bffd616 mantine-Flex-root __m__-r5j"
                   style="--mrt-table-head-cell-labels-padding-left: 0;"
                 >
                   <div
-                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m-8bffd616 mantine-Flex-root __m__-r5l"
+                    class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m_8bffd616 mantine-Flex-root __m__-r5l"
                   />
                 </div>
                 <div
-                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m-8bffd616 mantine-Flex-root __m__-r5n"
+                  class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m_8bffd616 mantine-Flex-root __m__-r5n"
                 />
               </div>
             </th>
           </tr>
         </thead>
         <tbody
-          class="m-b2404537 mantine-Table-tbody MRT_TableBody-module_root__kGhRy"
+          class="m_b2404537 mantine-Table-tbody MRT_TableBody-module_root__kGhRy"
         >
           <tr
-            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
+            class="m_4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
             data-hover="true"
             data-index="0"
             data-with-row-border="true"
           >
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
               data-index="0"
               style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px); --mrt-cell-align: left;"
             >
@@ -882,26 +882,26 @@ exports[`Table matches snapshot 1`] = `
                 class=""
               >
                 <div
-                  class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+                  class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
                   data-label-position="right"
                   data-size="md"
                   style="--checkbox-size: var(--checkbox-size-md); --checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled); --label-fz: var(--mantine-font-size-md); --label-lh: var(--label-lh-md);"
                 >
                   <div
-                    class="m-5f6e695e mantine-Checkbox-body"
+                    class="m_5f6e695e mantine-Checkbox-body"
                   >
                     <div
-                      class="m-26062bec mantine-Checkbox-inner"
+                      class="m_26062bec mantine-Checkbox-inner"
                       data-label-position="right"
                     >
                       <input
                         aria-label="Toggle select row"
-                        class="haring-focus m-26063560 mantine-Checkbox-input"
+                        class="haring-focus m_26063560 mantine-Checkbox-input"
                         type="checkbox"
                       />
                       <svg
                         aria-hidden="true"
-                        class="m-bf295423 mantine-Checkbox-icon"
+                        class="m_bf295423 mantine-Checkbox-icon"
                         fill="none"
                         viewBox="0 0 10 7"
                         xmlns="http://www.w3.org/2000/svg"
@@ -915,49 +915,49 @@ exports[`Table matches snapshot 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+                      class="m_d3ea56bb mantine-Checkbox-labelWrapper"
                     />
                   </div>
                 </div>
               </span>
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="1"
               style="min-width: max(calc(var(--col-id-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               1
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="2"
               style="min-width: max(calc(var(--col-format-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               SVG
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="3"
               style="min-width: max(calc(var(--col-title-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Doc test
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="4"
               style="min-width: max(calc(var(--col-creator-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Valentin Perello
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="5"
               style="min-width: max(calc(var(--col-date-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               20/05/2022
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
               data-column-pinned="right"
               data-first-right-pinned="true"
               data-index="6"
@@ -969,13 +969,13 @@ exports[`Table matches snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
+            class="m_4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
             data-hover="true"
             data-index="1"
             data-with-row-border="true"
           >
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
               data-index="0"
               style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px); --mrt-cell-align: left;"
             >
@@ -983,26 +983,26 @@ exports[`Table matches snapshot 1`] = `
                 class=""
               >
                 <div
-                  class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+                  class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
                   data-label-position="right"
                   data-size="md"
                   style="--checkbox-size: var(--checkbox-size-md); --checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled); --label-fz: var(--mantine-font-size-md); --label-lh: var(--label-lh-md);"
                 >
                   <div
-                    class="m-5f6e695e mantine-Checkbox-body"
+                    class="m_5f6e695e mantine-Checkbox-body"
                   >
                     <div
-                      class="m-26062bec mantine-Checkbox-inner"
+                      class="m_26062bec mantine-Checkbox-inner"
                       data-label-position="right"
                     >
                       <input
                         aria-label="Toggle select row"
-                        class="haring-focus m-26063560 mantine-Checkbox-input"
+                        class="haring-focus m_26063560 mantine-Checkbox-input"
                         type="checkbox"
                       />
                       <svg
                         aria-hidden="true"
-                        class="m-bf295423 mantine-Checkbox-icon"
+                        class="m_bf295423 mantine-Checkbox-icon"
                         fill="none"
                         viewBox="0 0 10 7"
                         xmlns="http://www.w3.org/2000/svg"
@@ -1016,49 +1016,49 @@ exports[`Table matches snapshot 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+                      class="m_d3ea56bb mantine-Checkbox-labelWrapper"
                     />
                   </div>
                 </div>
               </span>
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="1"
               style="min-width: max(calc(var(--col-id-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               2
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="2"
               style="min-width: max(calc(var(--col-format-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               PDF
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="3"
               style="min-width: max(calc(var(--col-title-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Doc test
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="4"
               style="min-width: max(calc(var(--col-creator-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Valentin Perello
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="5"
               style="min-width: max(calc(var(--col-date-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               20/05/2022
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
               data-column-pinned="right"
               data-first-right-pinned="true"
               data-index="6"
@@ -1070,13 +1070,13 @@ exports[`Table matches snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
+            class="m_4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
             data-hover="true"
             data-index="2"
             data-with-row-border="true"
           >
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
               data-index="0"
               style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px); --mrt-cell-align: left;"
             >
@@ -1084,26 +1084,26 @@ exports[`Table matches snapshot 1`] = `
                 class=""
               >
                 <div
-                  class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+                  class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
                   data-label-position="right"
                   data-size="md"
                   style="--checkbox-size: var(--checkbox-size-md); --checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled); --label-fz: var(--mantine-font-size-md); --label-lh: var(--label-lh-md);"
                 >
                   <div
-                    class="m-5f6e695e mantine-Checkbox-body"
+                    class="m_5f6e695e mantine-Checkbox-body"
                   >
                     <div
-                      class="m-26062bec mantine-Checkbox-inner"
+                      class="m_26062bec mantine-Checkbox-inner"
                       data-label-position="right"
                     >
                       <input
                         aria-label="Toggle select row"
-                        class="haring-focus m-26063560 mantine-Checkbox-input"
+                        class="haring-focus m_26063560 mantine-Checkbox-input"
                         type="checkbox"
                       />
                       <svg
                         aria-hidden="true"
-                        class="m-bf295423 mantine-Checkbox-icon"
+                        class="m_bf295423 mantine-Checkbox-icon"
                         fill="none"
                         viewBox="0 0 10 7"
                         xmlns="http://www.w3.org/2000/svg"
@@ -1117,49 +1117,49 @@ exports[`Table matches snapshot 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+                      class="m_d3ea56bb mantine-Checkbox-labelWrapper"
                     />
                   </div>
                 </div>
               </span>
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="1"
               style="min-width: max(calc(var(--col-id-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               3
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="2"
               style="min-width: max(calc(var(--col-format-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               PDF
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="3"
               style="min-width: max(calc(var(--col-title-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Doc test
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="4"
               style="min-width: max(calc(var(--col-creator-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Valentin Perello
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="5"
               style="min-width: max(calc(var(--col-date-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               20/05/2022
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
               data-column-pinned="right"
               data-first-right-pinned="true"
               data-index="6"
@@ -1171,13 +1171,13 @@ exports[`Table matches snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
+            class="m_4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
             data-hover="true"
             data-index="3"
             data-with-row-border="true"
           >
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
               data-index="0"
               style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px); --mrt-cell-align: left;"
             >
@@ -1185,26 +1185,26 @@ exports[`Table matches snapshot 1`] = `
                 class=""
               >
                 <div
-                  class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+                  class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
                   data-label-position="right"
                   data-size="md"
                   style="--checkbox-size: var(--checkbox-size-md); --checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled); --label-fz: var(--mantine-font-size-md); --label-lh: var(--label-lh-md);"
                 >
                   <div
-                    class="m-5f6e695e mantine-Checkbox-body"
+                    class="m_5f6e695e mantine-Checkbox-body"
                   >
                     <div
-                      class="m-26062bec mantine-Checkbox-inner"
+                      class="m_26062bec mantine-Checkbox-inner"
                       data-label-position="right"
                     >
                       <input
                         aria-label="Toggle select row"
-                        class="haring-focus m-26063560 mantine-Checkbox-input"
+                        class="haring-focus m_26063560 mantine-Checkbox-input"
                         type="checkbox"
                       />
                       <svg
                         aria-hidden="true"
-                        class="m-bf295423 mantine-Checkbox-icon"
+                        class="m_bf295423 mantine-Checkbox-icon"
                         fill="none"
                         viewBox="0 0 10 7"
                         xmlns="http://www.w3.org/2000/svg"
@@ -1218,49 +1218,49 @@ exports[`Table matches snapshot 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+                      class="m_d3ea56bb mantine-Checkbox-labelWrapper"
                     />
                   </div>
                 </div>
               </span>
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="1"
               style="min-width: max(calc(var(--col-id-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               4
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="2"
               style="min-width: max(calc(var(--col-format-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               PDF
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="3"
               style="min-width: max(calc(var(--col-title-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Doc test
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="4"
               style="min-width: max(calc(var(--col-creator-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               Valentin Perello
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="5"
               style="min-width: max(calc(var(--col-date-size) * 1px), 40px); --mrt-cell-align: left;"
             >
               20/05/2022
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
               data-column-pinned="right"
               data-first-right-pinned="true"
               data-index="6"
@@ -1272,13 +1272,13 @@ exports[`Table matches snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="m-4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
+            class="m_4e7aa4fd mantine-Table-tr MRT_TableBodyRow-module_root__2c3D4"
             data-hover="true"
             data-index="4"
             data-with-row-border="true"
           >
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
               data-index="0"
               data-last-row="true"
               style="min-width: max(calc(var(--col-mrt_row_select-size) * 1px), 40px); --mrt-cell-align: left;"
@@ -1287,26 +1287,26 @@ exports[`Table matches snapshot 1`] = `
                 class=""
               >
                 <div
-                  class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+                  class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
                   data-label-position="right"
                   data-size="md"
                   style="--checkbox-size: var(--checkbox-size-md); --checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled); --label-fz: var(--mantine-font-size-md); --label-lh: var(--label-lh-md);"
                 >
                   <div
-                    class="m-5f6e695e mantine-Checkbox-body"
+                    class="m_5f6e695e mantine-Checkbox-body"
                   >
                     <div
-                      class="m-26062bec mantine-Checkbox-inner"
+                      class="m_26062bec mantine-Checkbox-inner"
                       data-label-position="right"
                     >
                       <input
                         aria-label="Toggle select row"
-                        class="haring-focus m-26063560 mantine-Checkbox-input"
+                        class="haring-focus m_26063560 mantine-Checkbox-input"
                         type="checkbox"
                       />
                       <svg
                         aria-hidden="true"
-                        class="m-bf295423 mantine-Checkbox-icon"
+                        class="m_bf295423 mantine-Checkbox-icon"
                         fill="none"
                         viewBox="0 0 10 7"
                         xmlns="http://www.w3.org/2000/svg"
@@ -1320,14 +1320,14 @@ exports[`Table matches snapshot 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+                      class="m_d3ea56bb mantine-Checkbox-labelWrapper"
                     />
                   </div>
                 </div>
               </span>
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="1"
               data-last-row="true"
               style="min-width: max(calc(var(--col-id-size) * 1px), 40px); --mrt-cell-align: left;"
@@ -1335,7 +1335,7 @@ exports[`Table matches snapshot 1`] = `
               5
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="2"
               data-last-row="true"
               style="min-width: max(calc(var(--col-format-size) * 1px), 40px); --mrt-cell-align: left;"
@@ -1343,7 +1343,7 @@ exports[`Table matches snapshot 1`] = `
               PDF
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="3"
               data-last-row="true"
               style="min-width: max(calc(var(--col-title-size) * 1px), 40px); --mrt-cell-align: left;"
@@ -1351,7 +1351,7 @@ exports[`Table matches snapshot 1`] = `
               Doc test
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="4"
               data-last-row="true"
               style="min-width: max(calc(var(--col-creator-size) * 1px), 40px); --mrt-cell-align: left;"
@@ -1359,7 +1359,7 @@ exports[`Table matches snapshot 1`] = `
               Valentin Perello
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi MRT_TableBodyCell-module_root-data-col__HHcxc"
               data-index="5"
               data-last-row="true"
               style="min-width: max(calc(var(--col-date-size) * 1px), 40px); --mrt-cell-align: left;"
@@ -1367,7 +1367,7 @@ exports[`Table matches snapshot 1`] = `
               20/05/2022
             </td>
             <td
-              class="m-4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
+              class="m_4e7aa4ef mantine-Table-td MRT_TableBodyCell-module_root__Wf-zi"
               data-column-pinned="right"
               data-first-right-pinned="true"
               data-index="6"
@@ -1395,7 +1395,7 @@ exports[`Table matches snapshot 1`] = `
       >
         <div
           aria-busy="true"
-          class="m-db6d6462 mantine-Progress-root"
+          class="m_db6d6462 mantine-Progress-root"
           radius="0"
           style="--progress-radius: 0rem;"
         >
@@ -1405,7 +1405,7 @@ exports[`Table matches snapshot 1`] = `
             aria-valuemin="0"
             aria-valuenow="100"
             aria-valuetext="100%"
-            class="m-2242eb65 mantine-Progress-section"
+            class="m_2242eb65 mantine-Progress-section"
             data-animated="true"
             data-striped="true"
             role="progressbar"
@@ -1432,22 +1432,22 @@ exports[`Table matches snapshot 1`] = `
     style="min-height: var(--mantine-spacing-xl);"
   />
   <div
-    class="_container_1th2l_1 m-8bffd616 mantine-Flex-root __m__-r89"
+    class="_container_1th2l_1 m_8bffd616 mantine-Flex-root __m__-r89"
     data-testid="pagination"
   >
     <div
-      class="_pagination_1th2l_11 m-4addd315 mantine-Pagination-root"
+      class="_pagination_1th2l_11 m_4addd315 mantine-Pagination-root"
       data-size="sm"
       data-testid="pagination-page"
       style="--pagination-control-radius: var(--mantine-radius-sm); --pagination-control-size: var(--pagination-control-size-sm); --pagination-control-fz: var(--mantine-font-size-sm); --pagination-active-color: var(--mantine-color-white);"
     >
       <div
-        class="m-4081bf90 mantine-Group-root"
+        class="m_4081bf90 mantine-Group-root"
         style="--group-gap: calc(0.5rem * var(--mantine-scale)); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
       >
         <button
           aria-current="page"
-          class="haring-focus haring-active m-326d024a mantine-Pagination-control m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active m_326d024a mantine-Pagination-control m_87cf2631 mantine-UnstyledButton-root"
           data-active="true"
           data-with-padding="true"
           type="button"

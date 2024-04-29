@@ -11,7 +11,7 @@ import type { ElementType, FormEvent, ReactElement, ReactNode } from 'react';
 import { AppShell, Button, Flex, useMantineTheme } from '@mantine/core';
 import { useClickOutside } from '@mantine/hooks';
 import { MagnifyingGlass } from '@phosphor-icons/react';
-import { NestedProvider } from '@smile/react-front-kit-shared';
+import { NestedProvider } from '@smile/haring-react-shared';
 import { useState } from 'react';
 
 import { HeaderMobile } from '../HeaderMobile/HeaderMobile';

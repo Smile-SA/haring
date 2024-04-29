@@ -2,7 +2,7 @@
 
 import type { ITableAction, ITableConfirmAction } from '../../types';
 import type { FloatingPosition } from '@mantine/core';
-import type { IPaginationProps } from '@smile/react-front-kit';
+import type { IPaginationProps } from '@smile/haring-react';
 import type { MRT_Row, MRT_TableOptions } from 'mantine-react-table';
 import type { ReactElement } from 'react';
 
@@ -14,8 +14,8 @@ import {
   DotsThreeVertical,
   Funnel,
 } from '@phosphor-icons/react';
-import { ConfirmModal, Pagination } from '@smile/react-front-kit';
-import { ColumnPlus } from '@smile/react-front-kit-shared';
+import { ConfirmModal, Pagination } from '@smile/haring-react';
+import { ColumnPlus } from '@smile/haring-react-shared';
 import {
   MantineReactTable,
   MRT_ShowHideColumnsButton as MrtShowHideColumnsButton,

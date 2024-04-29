@@ -13,17 +13,17 @@ exports[`Breadcrumbs matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-8b3717df mantine-Breadcrumbs-root"
+    class="m_8b3717df mantine-Breadcrumbs-root"
     data-testid="Breadcrumbs"
   >
     <a
-      class="m-f678d540 mantine-Breadcrumbs-breadcrumb"
+      class="m_f678d540 mantine-Breadcrumbs-breadcrumb"
       href="test"
     >
       test
     </a>
     <div
-      class="m-3b8f2208 mantine-Breadcrumbs-separator"
+      class="m_3b8f2208 mantine-Breadcrumbs-separator"
     >
       <svg
         fill="none"
@@ -41,7 +41,7 @@ exports[`Breadcrumbs matches snapshot 1`] = `
       </svg>
     </div>
     <a
-      class="m-f678d540 mantine-Breadcrumbs-breadcrumb"
+      class="m_f678d540 mantine-Breadcrumbs-breadcrumb"
       href="test"
     >
       test

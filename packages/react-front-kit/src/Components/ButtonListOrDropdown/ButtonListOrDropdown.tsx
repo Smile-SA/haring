@@ -1,6 +1,6 @@
 'use client';
 import type { ButtonProps, MenuProps } from '@mantine/core';
-import type { IItems } from '@smile/react-front-kit-shared';
+import type { IItems } from '@smile/haring-react-shared';
 import type { ReactElement, ReactNode } from 'react';
 
 import { Button, Menu } from '@mantine/core';

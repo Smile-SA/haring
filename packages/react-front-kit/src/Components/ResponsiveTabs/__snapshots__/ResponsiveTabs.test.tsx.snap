@@ -13,7 +13,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-89d60db1 mantine-Tabs-root"
+    class="m_89d60db1 mantine-Tabs-root"
     data-orientation="horizontal"
     data-variant="default"
     id="responsive-tabs"
@@ -26,7 +26,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       <button
         aria-controls="responsive-tabs-panel-1"
         aria-selected="false"
-        class="haring-focus m-539e827b m-4ec4dce6 mantine-Tabs-tab m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus m_539e827b m_4ec4dce6 mantine-Tabs-tab m_87cf2631 mantine-UnstyledButton-root"
         data-orientation="horizontal"
         data-variant="default"
         role="tab"
@@ -42,7 +42,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       <button
         aria-controls="responsive-tabs-panel-2"
         aria-selected="false"
-        class="haring-focus m-539e827b m-4ec4dce6 mantine-Tabs-tab m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus m_539e827b m_4ec4dce6 mantine-Tabs-tab m_87cf2631 mantine-UnstyledButton-root"
         data-orientation="horizontal"
         data-testid="test-tab"
         data-variant="default"
@@ -59,7 +59,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       <button
         aria-controls="responsive-tabs-panel-3"
         aria-selected="false"
-        class="haring-focus m-539e827b m-4ec4dce6 mantine-Tabs-tab m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus m_539e827b m_4ec4dce6 mantine-Tabs-tab m_87cf2631 mantine-UnstyledButton-root"
         data-orientation="horizontal"
         data-variant="default"
         role="tab"
@@ -75,7 +75,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       <button
         aria-controls="responsive-tabs-panel-4"
         aria-selected="false"
-        class="haring-focus m-539e827b m-4ec4dce6 mantine-Tabs-tab m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus m_539e827b m_4ec4dce6 mantine-Tabs-tab m_87cf2631 mantine-UnstyledButton-root"
         data-orientation="horizontal"
         data-variant="default"
         role="tab"
@@ -91,7 +91,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       <button
         aria-controls="responsive-tabs-panel-5"
         aria-selected="false"
-        class="haring-focus m-539e827b m-4ec4dce6 mantine-Tabs-tab m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus m_539e827b m_4ec4dce6 mantine-Tabs-tab m_87cf2631 mantine-UnstyledButton-root"
         data-orientation="horizontal"
         data-variant="default"
         role="tab"
@@ -107,7 +107,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
       <button
         aria-controls="responsive-tabs-panel-6"
         aria-selected="false"
-        class="haring-focus m-539e827b m-4ec4dce6 mantine-Tabs-tab m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus m_539e827b m_4ec4dce6 mantine-Tabs-tab m_87cf2631 mantine-UnstyledButton-root"
         data-orientation="horizontal"
         data-variant="default"
         role="tab"
@@ -123,7 +123,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
     </div>
     <div
       aria-orientation="horizontal"
-      class="m-576c9d4 m-89d33d6d mantine-Tabs-list"
+      class="m_576c9d4 m_89d33d6d mantine-Tabs-list"
       data-grow="true"
       data-orientation="horizontal"
       data-variant="default"
@@ -134,14 +134,14 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
         aria-expanded="false"
         aria-haspopup="menu"
         aria-label="Overflow Button"
-        class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
         data-variant="subtle"
         id="responsive-tabs-overflow-button-target"
         style="--ai-radius: var(--mantine-radius-sm); --ai-bg: transparent; --ai-hover: rgba(0, 0, 0, 0.12); --ai-color: gray-9; --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
         type="button"
       >
         <span
-          class="m-8d3afb97 mantine-ActionIcon-icon"
+          class="m_8d3afb97 mantine-ActionIcon-icon"
         >
           <svg
             fill="currentColor"
@@ -159,7 +159,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
     </div>
     <div
       aria-labelledby="responsive-tabs-tab-1"
-      class="m-b0c91715 mantine-Tabs-panel"
+      class="m_b0c91715 mantine-Tabs-panel"
       data-orientation="horizontal"
       id="responsive-tabs-panel-1"
       role="tabpanel"
@@ -169,7 +169,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
     </div>
     <div
       aria-labelledby="responsive-tabs-tab-2"
-      class="m-b0c91715 mantine-Tabs-panel"
+      class="m_b0c91715 mantine-Tabs-panel"
       data-orientation="horizontal"
       id="responsive-tabs-panel-2"
       role="tabpanel"
@@ -179,7 +179,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
     </div>
     <div
       aria-labelledby="responsive-tabs-tab-3"
-      class="m-b0c91715 mantine-Tabs-panel"
+      class="m_b0c91715 mantine-Tabs-panel"
       data-orientation="horizontal"
       id="responsive-tabs-panel-3"
       role="tabpanel"
@@ -189,7 +189,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
     </div>
     <div
       aria-labelledby="responsive-tabs-tab-4"
-      class="m-b0c91715 mantine-Tabs-panel"
+      class="m_b0c91715 mantine-Tabs-panel"
       data-orientation="horizontal"
       id="responsive-tabs-panel-4"
       role="tabpanel"
@@ -199,7 +199,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
     </div>
     <div
       aria-labelledby="responsive-tabs-tab-5"
-      class="m-b0c91715 mantine-Tabs-panel"
+      class="m_b0c91715 mantine-Tabs-panel"
       data-orientation="horizontal"
       id="responsive-tabs-panel-5"
       role="tabpanel"
@@ -209,7 +209,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
     </div>
     <div
       aria-labelledby="responsive-tabs-tab-6"
-      class="m-b0c91715 mantine-Tabs-panel"
+      class="m_b0c91715 mantine-Tabs-panel"
       data-orientation="horizontal"
       id="responsive-tabs-panel-6"
       role="tabpanel"

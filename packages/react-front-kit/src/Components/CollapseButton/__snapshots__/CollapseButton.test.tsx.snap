@@ -14,7 +14,7 @@ exports[`CollapseButton matches snapshot 1`] = `
   </style>
   <div
     aria-expanded="false"
-    class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+    class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
     data-block="true"
     data-size="md"
     data-testid="root"
@@ -23,10 +23,10 @@ exports[`CollapseButton matches snapshot 1`] = `
     style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
   >
     <span
-      class="m-80f1301b mantine-Button-inner"
+      class="m_80f1301b mantine-Button-inner"
     >
       <span
-        class="m-811560b9 mantine-Button-label"
+        class="m_811560b9 mantine-Button-label"
       >
         <button
           class=" "
@@ -35,18 +35,18 @@ exports[`CollapseButton matches snapshot 1`] = `
         />
       </span>
       <span
-        class="m-a74036a mantine-Button-section"
+        class="m_a74036a mantine-Button-section"
         data-position="right"
       >
         <button
-          class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
           data-testid="toggle"
           data-variant="transparent"
           style="--ai-radius: var(--mantine-radius-sm); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
           type="button"
         >
           <span
-            class="m-8d3afb97 mantine-ActionIcon-icon"
+            class="m_8d3afb97 mantine-ActionIcon-icon"
           >
             <svg
               fill="currentColor"

@@ -1,8 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import type {
-  IActionRowOverflowAction,
-  IDocument,
-} from '@smile/react-front-kit';
+import type { IActionRowOverflowAction, IDocument } from '@smile/haring-react';
 
 import {
   Avatar,
@@ -25,8 +22,8 @@ import {
   ShareNetwork,
   TrashSimple,
 } from '@phosphor-icons/react';
-import { DropdownButton } from '@smile/react-front-kit';
-import { FolderMove } from '@smile/react-front-kit-shared';
+import { DropdownButton } from '@smile/haring-react';
+import { FolderMove } from '@smile/haring-react-shared';
 
 import idCard from '../../assets/example_id_card.png';
 

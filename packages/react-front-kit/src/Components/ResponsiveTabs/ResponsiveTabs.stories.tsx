@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { ReactNode } from 'react';
 
-import { sleep } from '@smile/react-front-kit-shared/storybook-utils';
+import { sleep } from '@smile/haring-react-shared/storybook-utils';
 import { expect } from '@storybook/jest';
 import { userEvent, within } from '@storybook/testing-library';
 

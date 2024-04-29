@@ -9,7 +9,7 @@ import type { MouseEvent, ReactElement } from 'react';
 import { ActionIcon, Text, Tooltip } from '@mantine/core';
 import { Dropzone as MantineDropzone } from '@mantine/dropzone';
 import { Eye, Plus, X } from '@phosphor-icons/react';
-import { BitConverter } from '@smile/react-front-kit';
+import { BitConverter } from '@smile/haring-react';
 
 import classes from './Dropzone.module.css';
 

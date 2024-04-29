@@ -10,7 +10,7 @@ import type { ReactElement, ReactNode } from 'react';
 import { Box, Button, Container, Grid, Switch, Text } from '@mantine/core';
 import { useUncontrolled } from '@mantine/hooks';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
-import { NestedProvider, useMainTheme } from '@smile/react-front-kit-shared';
+import { NestedProvider, useMainTheme } from '@smile/haring-react-shared';
 
 import classes from './FoldableColumnLayout.module.css';
 

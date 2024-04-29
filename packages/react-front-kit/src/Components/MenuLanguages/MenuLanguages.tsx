@@ -1,7 +1,7 @@
 'use client';
 
 import type { IButtonListOrDropdownProps } from '../ButtonListOrDropdown/ButtonListOrDropdown';
-import type { IOption } from '@smile/react-front-kit-shared';
+import type { IOption } from '@smile/haring-react-shared';
 import type { ReactElement } from 'react';
 
 import { ButtonListOrDropdown } from '../ButtonListOrDropdown/ButtonListOrDropdown';

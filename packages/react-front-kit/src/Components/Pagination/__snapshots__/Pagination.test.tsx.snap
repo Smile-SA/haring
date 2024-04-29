@@ -13,15 +13,15 @@ exports[`Pagination matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-8bffd616 mantine-Flex-root __m__-r0"
+    class="m_8bffd616 mantine-Flex-root __m__-r0"
     data-testid="pagination"
   >
     <div
-      class="m-46b77525 mantine-InputWrapper-root mantine-Select-root"
+      class="m_46b77525 mantine-InputWrapper-root mantine-Select-root"
       data-size="xs"
     >
       <div
-        class="m-6c018570 mantine-Input-wrapper mantine-Select-wrapper"
+        class="m_6c018570 mantine-Input-wrapper mantine-Select-wrapper"
         data-pointer="true"
         data-size="xs"
         data-variant="default"
@@ -33,7 +33,7 @@ exports[`Pagination matches snapshot 1`] = `
           aria-invalid="false"
           aria-label="Number of results per page"
           autocomplete="off"
-          class="m-8fb7ebe7 mantine-Input-input mantine-Select-input"
+          class="m_8fb7ebe7 mantine-Input-input mantine-Select-input"
           data-testid="pagination-itemsPerPage"
           data-variant="default"
           id="mantine-f4bipx4bi"
@@ -41,11 +41,11 @@ exports[`Pagination matches snapshot 1`] = `
           value="Display 15 results"
         />
         <div
-          class="m-82577fc2 mantine-Input-section mantine-Select-section"
+          class="m_82577fc2 mantine-Input-section mantine-Select-section"
           data-position="right"
         >
           <svg
-            class="m-2943220b mantine-ComboboxChevron-chevron"
+            class="m_2943220b mantine-ComboboxChevron-chevron"
             data-combobox-chevron="true"
             data-size="xs"
             fill="none"
@@ -68,17 +68,17 @@ exports[`Pagination matches snapshot 1`] = `
       value="15"
     />
     <div
-      class="m-4addd315 mantine-Pagination-root"
+      class="m_4addd315 mantine-Pagination-root"
       data-size="sm"
       data-testid="pagination-page"
       style="--pagination-control-radius: var(--mantine-radius-sm); --pagination-control-size: var(--pagination-control-size-sm); --pagination-control-fz: var(--mantine-font-size-sm); --pagination-active-color: var(--mantine-color-white);"
     >
       <div
-        class="m-4081bf90 mantine-Group-root"
+        class="m_4081bf90 mantine-Group-root"
         style="--group-gap: calc(0.5rem * var(--mantine-scale)); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
       >
         <button
-          class="haring-focus haring-active m-326d024a mantine-Pagination-control m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active m_326d024a mantine-Pagination-control m_87cf2631 mantine-UnstyledButton-root"
           data-with-padding="true"
           type="button"
         >
@@ -86,7 +86,7 @@ exports[`Pagination matches snapshot 1`] = `
         </button>
         <button
           aria-current="page"
-          class="haring-focus haring-active m-326d024a mantine-Pagination-control m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active m_326d024a mantine-Pagination-control m_87cf2631 mantine-UnstyledButton-root"
           data-active="true"
           data-with-padding="true"
           type="button"
@@ -94,28 +94,28 @@ exports[`Pagination matches snapshot 1`] = `
           2
         </button>
         <button
-          class="haring-focus haring-active m-326d024a mantine-Pagination-control m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active m_326d024a mantine-Pagination-control m_87cf2631 mantine-UnstyledButton-root"
           data-with-padding="true"
           type="button"
         >
           3
         </button>
         <button
-          class="haring-focus haring-active m-326d024a mantine-Pagination-control m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active m_326d024a mantine-Pagination-control m_87cf2631 mantine-UnstyledButton-root"
           data-with-padding="true"
           type="button"
         >
           4
         </button>
         <button
-          class="haring-focus haring-active m-326d024a mantine-Pagination-control m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active m_326d024a mantine-Pagination-control m_87cf2631 mantine-UnstyledButton-root"
           data-with-padding="true"
           type="button"
         >
           5
         </button>
         <div
-          class="m-4ad7767d mantine-Pagination-dots"
+          class="m_4ad7767d mantine-Pagination-dots"
         >
           <svg
             viewBox="0 0 16 16"
@@ -128,7 +128,7 @@ exports[`Pagination matches snapshot 1`] = `
           </svg>
         </div>
         <button
-          class="haring-focus haring-active m-326d024a mantine-Pagination-control m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active m_326d024a mantine-Pagination-control m_87cf2631 mantine-UnstyledButton-root"
           data-with-padding="true"
           type="button"
         >

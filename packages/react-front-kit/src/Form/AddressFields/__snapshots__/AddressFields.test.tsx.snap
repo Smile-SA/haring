@@ -14,22 +14,22 @@ exports[`FetchAutocompleteField matches snapshot 1`] = `
   </style>
   <div>
     <div
-      class="m-46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+      class="m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
     >
       <label
-        class="m-8fdc1311 mantine-InputWrapper-label mantine-TextInput-label"
+        class="m_8fdc1311 mantine-InputWrapper-label mantine-TextInput-label"
         for="mantine-f4bipx4bi"
         id="mantine-f4bipx4bi-label"
       >
         Street Name
       </label>
       <div
-        class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+        class="m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
         data-variant="default"
       >
         <input
           aria-invalid="false"
-          class="m-8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+          class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
           data-variant="default"
           id="mantine-f4bipx4bi"
           placeholder="Pall Mall"
@@ -37,22 +37,22 @@ exports[`FetchAutocompleteField matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="m-46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+      class="m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
     >
       <label
-        class="m-8fdc1311 mantine-InputWrapper-label mantine-TextInput-label"
+        class="m_8fdc1311 mantine-InputWrapper-label mantine-TextInput-label"
         for="mantine-f4bipx4bi"
         id="mantine-f4bipx4bi-label"
       >
         Street number
       </label>
       <div
-        class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+        class="m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
         data-variant="default"
       >
         <input
           aria-invalid="false"
-          class="m-8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+          class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
           data-variant="default"
           id="mantine-f4bipx4bi"
           placeholder="89"
@@ -60,22 +60,22 @@ exports[`FetchAutocompleteField matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="m-46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+      class="m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
     >
       <label
-        class="m-8fdc1311 mantine-InputWrapper-label mantine-TextInput-label"
+        class="m_8fdc1311 mantine-InputWrapper-label mantine-TextInput-label"
         for="mantine-f4bipx4bi"
         id="mantine-f4bipx4bi-label"
       >
         City
       </label>
       <div
-        class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+        class="m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
         data-variant="default"
       >
         <input
           aria-invalid="false"
-          class="m-8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+          class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
           data-variant="default"
           id="mantine-f4bipx4bi"
           placeholder="London"
@@ -83,22 +83,22 @@ exports[`FetchAutocompleteField matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="m-46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+      class="m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
     >
       <label
-        class="m-8fdc1311 mantine-InputWrapper-label mantine-TextInput-label"
+        class="m_8fdc1311 mantine-InputWrapper-label mantine-TextInput-label"
         for="mantine-f4bipx4bi"
         id="mantine-f4bipx4bi-label"
       >
         Postal code
       </label>
       <div
-        class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+        class="m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
         data-variant="default"
       >
         <input
           aria-invalid="false"
-          class="m-8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+          class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
           data-variant="default"
           id="mantine-f4bipx4bi"
           placeholder="SW1Y 5HS"
@@ -106,22 +106,22 @@ exports[`FetchAutocompleteField matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="m-46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+      class="m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
     >
       <label
-        class="m-8fdc1311 mantine-InputWrapper-label mantine-TextInput-label"
+        class="m_8fdc1311 mantine-InputWrapper-label mantine-TextInput-label"
         for="mantine-f4bipx4bi"
         id="mantine-f4bipx4bi-label"
       >
         Country
       </label>
       <div
-        class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+        class="m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
         data-variant="default"
       >
         <input
           aria-invalid="false"
-          class="m-8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+          class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
           data-variant="default"
           id="mantine-f4bipx4bi"
           placeholder="United Kingdom"

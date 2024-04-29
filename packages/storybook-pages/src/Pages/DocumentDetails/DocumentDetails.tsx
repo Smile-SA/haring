@@ -19,12 +19,12 @@ import {
   Header,
   Preview,
   ResponsiveTabs,
-} from '@smile/react-front-kit';
+} from '@smile/haring-react';
 import {
   FolderMove,
   NestedProvider,
   usePrimaryTheme,
-} from '@smile/react-front-kit-shared';
+} from '@smile/haring-react-shared';
 
 import {
   CardAction,

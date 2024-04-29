@@ -2,7 +2,7 @@ import type { IActionRowOverflowProps } from './ActionRowOverflow';
 import type { IThumbnail, IThumbnailAction } from '../../types';
 
 import { Trash } from '@phosphor-icons/react';
-import { FolderMove } from '@smile/react-front-kit-shared';
+import { FolderMove } from '@smile/haring-react-shared';
 import { action } from '@storybook/addon-actions';
 
 export const actionRowOverflowActionsMock: IThumbnailAction[] = [
