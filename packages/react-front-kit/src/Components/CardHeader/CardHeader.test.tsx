@@ -1,4 +1,4 @@
-import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
+import { renderWithProviders } from '@smile/haring-react-shared/test-utils';
 
 import { CardHeader } from './CardHeader';
 import { icon, title } from './CardHeader.mock';

@@ -1,15 +1,15 @@
 {
-  "name": "@smile/react-front-kit-shared",
+  "name": "@smile/haring-react-shared",
   "version": "0.12.0",
-  "description": "Shared elements for react-front-kit component library based on mantine",
+  "description": "Shared elements for Haring component library based on mantine",
   "license": "LGPL-3.0",
-  "homepage": "https://github.com/Smile-SA/react-front-kit",
+  "homepage": "https://github.com/Smile-SA/haring",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Smile-SA/react-front-kit.git"
+    "url": "git@github.com:Smile-SA/haring.git"
   },
   "bugs": {
-    "url": "https://github.com/Smile-SA/react-front-kit/issues"
+    "url": "https://github.com/Smile-SA/haring/issues"
   },
   "keywords": [
     "react",

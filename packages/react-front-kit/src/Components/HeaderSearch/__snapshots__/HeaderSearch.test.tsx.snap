@@ -16,23 +16,23 @@ exports[`HeaderSearch matches snapshot 1`] = `
     class=""
   >
     <div
-      class="m-6c018570 mantine-Input-wrapper"
+      class="m_6c018570 mantine-Input-wrapper"
       data-size="lg"
       data-variant="default"
       style="--input-height: var(--input-height-lg); --input-fz: var(--mantine-font-size-lg); --input-left-section-pointer-events: none; --input-right-section-pointer-events: none;"
     >
       <div
         aria-invalid="false"
-        class="m-8fb7ebe7 mantine-Input-input"
+        class="m_8fb7ebe7 mantine-Input-input"
         data-variant="default"
       >
         <form>
           <div
-            class="m-46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+            class="m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
             data-variant="unstyled"
           >
             <div
-              class="m-6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+              class="m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
               data-variant="unstyled"
               data-with-right-section="true"
               style="--input-right-section-pointer-events: initial;"
@@ -40,17 +40,17 @@ exports[`HeaderSearch matches snapshot 1`] = `
               <input
                 aria-invalid="false"
                 aria-label="Search"
-                class="m-8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+                class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
                 data-variant="unstyled"
                 id="header-search-test"
               />
               <div
-                class="m-82577fc2 mantine-Input-section mantine-TextInput-section"
+                class="m_82577fc2 mantine-Input-section mantine-TextInput-section"
                 data-position="right"
               >
                 <button
                   aria-label="Clear"
-                  class="haring-focus haring-active m-86a44da5 mantine-CloseButton-root m-87cf2631 mantine-UnstyledButton-root"
+                  class="haring-focus haring-active m_86a44da5 mantine-CloseButton-root m_87cf2631 mantine-UnstyledButton-root"
                   data-variant="white"
                   style="--cb-size: calc(2.4375rem * var(--mantine-scale));"
                   type="button"

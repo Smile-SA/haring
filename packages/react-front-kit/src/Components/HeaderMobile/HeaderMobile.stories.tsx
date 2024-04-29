@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { AppShell } from '@mantine/core';
-import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/storybook-utils';
+import { useStorybookArgsConnect } from '@smile/haring-react-shared/storybook-utils';
 import { action } from '@storybook/addon-actions';
 
 import {

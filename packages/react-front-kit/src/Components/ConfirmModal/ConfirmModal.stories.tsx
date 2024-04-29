@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button, DEFAULT_THEME } from '@mantine/core';
-import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/storybook-utils';
+import { useStorybookArgsConnect } from '@smile/haring-react-shared/storybook-utils';
 import { useArgs } from '@storybook/preview-api';
 
 import { ConfirmModal as Cmp } from './ConfirmModal';

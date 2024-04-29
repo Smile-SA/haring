@@ -10,7 +10,7 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
-import { FileIcon } from '@smile/react-front-kit-shared';
+import { FileIcon } from '@smile/haring-react-shared';
 import { useState } from 'react';
 
 import defaultImage from '../../../assets/defaultImage.jpg';

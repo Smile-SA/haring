@@ -16,7 +16,7 @@ exports[`DropdownButton matches snapshot 1`] = `
     aria-controls=":r0:-dropdown"
     aria-expanded="false"
     aria-haspopup="menu"
-    class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+    class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
     data-testid="button"
     data-with-right-section="true"
     id=":r0:-target"
@@ -24,15 +24,15 @@ exports[`DropdownButton matches snapshot 1`] = `
     type="button"
   >
     <span
-      class="m-80f1301b mantine-Button-inner"
+      class="m_80f1301b mantine-Button-inner"
     >
       <span
-        class="m-811560b9 mantine-Button-label"
+        class="m_811560b9 mantine-Button-label"
       >
         label
       </span>
       <span
-        class="m-a74036a mantine-Button-section"
+        class="m_a74036a mantine-Button-section"
         data-position="right"
       >
         <svg

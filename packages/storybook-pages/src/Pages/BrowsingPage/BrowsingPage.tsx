@@ -1,7 +1,7 @@
 'use client';
 
-import type { IFile } from '@smile/react-front-kit-dropzone';
-import type { IFilter } from '@smile/react-front-kit-shared';
+import type { IFile } from '@smile/haring-react-dropzone';
+import type { IFilter } from '@smile/haring-react-shared';
 import type { FormEvent, ReactElement } from 'react';
 
 import {
@@ -32,10 +32,10 @@ import {
   SearchableCheckboxList,
   SidebarMenu,
   flattenNestedObjects,
-} from '@smile/react-front-kit';
-import { Dropzone } from '@smile/react-front-kit-dropzone';
-import { NestedProvider, useThemes } from '@smile/react-front-kit-shared';
-import { TableGridView } from '@smile/react-front-kit-table';
+} from '@smile/haring-react';
+import { Dropzone } from '@smile/haring-react-dropzone';
+import { NestedProvider, useThemes } from '@smile/haring-react-shared';
+import { TableGridView } from '@smile/haring-react-table';
 import { useState } from 'react';
 
 import {

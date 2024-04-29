@@ -1,4 +1,4 @@
-import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
+import { renderWithProviders } from '@smile/haring-react-shared/test-utils';
 
 import { EventList } from './EventList';
 import { eventMock } from './EventList.mock';

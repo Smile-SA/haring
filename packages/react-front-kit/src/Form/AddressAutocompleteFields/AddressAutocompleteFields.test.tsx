@@ -1,7 +1,7 @@
 import type { IAddressFieldsValues } from '../AddressFields/AddressFields';
 import type { IValue } from '../FetchAutocompleteField/FetchAutocompleteField';
 
-import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
+import { renderWithProviders } from '@smile/haring-react-shared/test-utils';
 
 import { AddressAutocompleteFields } from './AddressAutocompleteFields';
 

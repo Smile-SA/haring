@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import {
   iconsElements,
   sleep,
-} from '@smile/react-front-kit-shared/storybook-utils';
+} from '@smile/haring-react-shared/storybook-utils';
 import { expect } from '@storybook/jest';
 import { userEvent, within } from '@storybook/testing-library';
 

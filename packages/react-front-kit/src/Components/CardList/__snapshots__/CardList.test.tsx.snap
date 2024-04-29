@@ -13,11 +13,11 @@ exports[`CardList matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-d57069b5 mantine-ScrollArea-root"
+    class="m_d57069b5 mantine-ScrollArea-root"
     style="--sa-corner-width: 0px; --sa-corner-height: 0px;"
   >
     <div
-      class="m-c0783ff9 mantine-ScrollArea-viewport"
+      class="m_c0783ff9 mantine-ScrollArea-viewport"
       data-scrollbars="xy"
       style="overflow-x: scroll; overflow-y: scroll;"
     >
@@ -25,51 +25,51 @@ exports[`CardList matches snapshot 1`] = `
         style="min-width: 100%; display: table;"
       >
         <div
-          class="m-6d731127 mantine-Stack-root"
+          class="m_6d731127 mantine-Stack-root"
           style="--stack-gap: var(--mantine-spacing-xl); --stack-align: stretch; --stack-justify: flex-start;"
         >
           <div
             style="--separator-gap: var(--mantine-spacing-xl); --separator-display: block;"
           >
             <div
-              class="m-8bffd616 mantine-Flex-root __m__-r3"
+              class="m_8bffd616 mantine-Flex-root __m__-r3"
               style="gap: calc(1.5rem * var(--mantine-scale)); flex-direction: column;"
             >
               <span>
                 Lorem ipsum dolor sit amet consectetur. Sollicitudin mattis blandit aliquet odio urna mi id. Mauris venenatis ut et at amet vel est.
               </span>
               <div
-                class="m-8bffd616 mantine-Flex-root __m__-r5"
+                class="m_8bffd616 mantine-Flex-root __m__-r5"
                 style="width: 100%; justify-content: space-between;"
               >
                 <button
-                  class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+                  class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
                   data-variant="light"
                   style="--button-bg: var(--mantine-color-green-light); --button-hover: var(--mantine-color-green-light-hover); --button-color: var(--mantine-color-green-light-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                   type="button"
                 >
                   <span
-                    class="m-80f1301b mantine-Button-inner"
+                    class="m_80f1301b mantine-Button-inner"
                   >
                     <span
-                      class="m-811560b9 mantine-Button-label"
+                      class="m_811560b9 mantine-Button-label"
                     >
                       Approved
                     </span>
                   </span>
                 </button>
                 <div
-                  class="m-8bffd616 mantine-Flex-root __m__-r9"
+                  class="m_8bffd616 mantine-Flex-root __m__-r9"
                   style="gap: calc(1rem * var(--mantine-scale)); align-items: center;"
                 >
                   <button
-                    class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         fill="currentColor"
@@ -85,13 +85,13 @@ exports[`CardList matches snapshot 1`] = `
                     </span>
                   </button>
                   <button
-                    class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         fill="currentColor"
@@ -114,44 +114,44 @@ exports[`CardList matches snapshot 1`] = `
             style="--separator-gap: var(--mantine-spacing-xl); --separator-display: block;"
           >
             <div
-              class="m-8bffd616 mantine-Flex-root __m__-rf"
+              class="m_8bffd616 mantine-Flex-root __m__-rf"
               style="gap: calc(1.5rem * var(--mantine-scale)); flex-direction: column;"
             >
               <span>
                 Lorem ipsum dolor sit amet consectetur. Sollicitudin mattis blandit aliquet odio urna mi id. Mauris venenatis ut et at amet vel est.
               </span>
               <div
-                class="m-8bffd616 mantine-Flex-root __m__-rh"
+                class="m_8bffd616 mantine-Flex-root __m__-rh"
                 style="width: 100%; justify-content: space-between;"
               >
                 <button
-                  class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+                  class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
                   data-variant="light"
                   style="--button-bg: var(--mantine-color-green-light); --button-hover: var(--mantine-color-green-light-hover); --button-color: var(--mantine-color-green-light-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                   type="button"
                 >
                   <span
-                    class="m-80f1301b mantine-Button-inner"
+                    class="m_80f1301b mantine-Button-inner"
                   >
                     <span
-                      class="m-811560b9 mantine-Button-label"
+                      class="m_811560b9 mantine-Button-label"
                     >
                       Approved
                     </span>
                   </span>
                 </button>
                 <div
-                  class="m-8bffd616 mantine-Flex-root __m__-rl"
+                  class="m_8bffd616 mantine-Flex-root __m__-rl"
                   style="gap: calc(1rem * var(--mantine-scale)); align-items: center;"
                 >
                   <button
-                    class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         fill="currentColor"
@@ -167,13 +167,13 @@ exports[`CardList matches snapshot 1`] = `
                     </span>
                   </button>
                   <button
-                    class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         fill="currentColor"
@@ -196,44 +196,44 @@ exports[`CardList matches snapshot 1`] = `
             style="--separator-gap: var(--mantine-spacing-xl); --separator-display: block;"
           >
             <div
-              class="m-8bffd616 mantine-Flex-root __m__-rr"
+              class="m_8bffd616 mantine-Flex-root __m__-rr"
               style="gap: calc(1.5rem * var(--mantine-scale)); flex-direction: column;"
             >
               <span>
                 Lorem ipsum dolor sit amet consectetur. Sollicitudin mattis blandit aliquet odio urna mi id. Mauris venenatis ut et at amet vel est.
               </span>
               <div
-                class="m-8bffd616 mantine-Flex-root __m__-rt"
+                class="m_8bffd616 mantine-Flex-root __m__-rt"
                 style="width: 100%; justify-content: space-between;"
               >
                 <button
-                  class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+                  class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
                   data-variant="light"
                   style="--button-bg: var(--mantine-color-green-light); --button-hover: var(--mantine-color-green-light-hover); --button-color: var(--mantine-color-green-light-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                   type="button"
                 >
                   <span
-                    class="m-80f1301b mantine-Button-inner"
+                    class="m_80f1301b mantine-Button-inner"
                   >
                     <span
-                      class="m-811560b9 mantine-Button-label"
+                      class="m_811560b9 mantine-Button-label"
                     >
                       Approved
                     </span>
                   </span>
                 </button>
                 <div
-                  class="m-8bffd616 mantine-Flex-root __m__-r11"
+                  class="m_8bffd616 mantine-Flex-root __m__-r11"
                   style="gap: calc(1rem * var(--mantine-scale)); align-items: center;"
                 >
                   <button
-                    class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         fill="currentColor"
@@ -249,13 +249,13 @@ exports[`CardList matches snapshot 1`] = `
                     </span>
                   </button>
                   <button
-                    class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         fill="currentColor"
@@ -278,44 +278,44 @@ exports[`CardList matches snapshot 1`] = `
             style="--separator-gap: var(--mantine-spacing-xl); --separator-display: block;"
           >
             <div
-              class="m-8bffd616 mantine-Flex-root __m__-r17"
+              class="m_8bffd616 mantine-Flex-root __m__-r17"
               style="gap: calc(1.5rem * var(--mantine-scale)); flex-direction: column;"
             >
               <span>
                 Lorem ipsum dolor sit amet consectetur. Sollicitudin mattis blandit aliquet odio urna mi id. Mauris venenatis ut et at amet vel est.
               </span>
               <div
-                class="m-8bffd616 mantine-Flex-root __m__-r19"
+                class="m_8bffd616 mantine-Flex-root __m__-r19"
                 style="width: 100%; justify-content: space-between;"
               >
                 <button
-                  class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+                  class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
                   data-variant="light"
                   style="--button-bg: var(--mantine-color-green-light); --button-hover: var(--mantine-color-green-light-hover); --button-color: var(--mantine-color-green-light-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                   type="button"
                 >
                   <span
-                    class="m-80f1301b mantine-Button-inner"
+                    class="m_80f1301b mantine-Button-inner"
                   >
                     <span
-                      class="m-811560b9 mantine-Button-label"
+                      class="m_811560b9 mantine-Button-label"
                     >
                       Approved
                     </span>
                   </span>
                 </button>
                 <div
-                  class="m-8bffd616 mantine-Flex-root __m__-r1d"
+                  class="m_8bffd616 mantine-Flex-root __m__-r1d"
                   style="gap: calc(1rem * var(--mantine-scale)); align-items: center;"
                 >
                   <button
-                    class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         fill="currentColor"
@@ -331,13 +331,13 @@ exports[`CardList matches snapshot 1`] = `
                     </span>
                   </button>
                   <button
-                    class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                    class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                     type="button"
                   >
                     <span
-                      class="m-8d3afb97 mantine-ActionIcon-icon"
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
                     >
                       <svg
                         fill="currentColor"

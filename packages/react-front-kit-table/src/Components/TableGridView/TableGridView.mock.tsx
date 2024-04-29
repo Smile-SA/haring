@@ -12,7 +12,7 @@ import {
   Star,
   Trash,
 } from '@phosphor-icons/react';
-import { FolderMove } from '@smile/react-front-kit-shared';
+import { FolderMove } from '@smile/haring-react-shared';
 import { action } from '@storybook/addon-actions';
 
 import { tableMock } from '../Table/Table.mock';

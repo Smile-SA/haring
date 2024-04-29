@@ -13,26 +13,26 @@ exports[`CalendarHeader matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-8bffd616 mantine-Flex-root __m__-r0"
+    class="m_8bffd616 mantine-Flex-root __m__-r0"
   >
     <div
       aria-controls="mantine-f4bipx4bi-dropdown"
       aria-expanded="false"
       aria-haspopup="dialog"
-      class="m-730a79ed mantine-CalendarHeader-calendarHeader"
+      class="m_730a79ed mantine-CalendarHeader-calendarHeader"
       color="red"
       data-size="md"
       id="mantine-f4bipx4bi-target"
       style="--dch-control-size: var(--dch-control-size-md); --dch-fz: var(--mantine-font-size-md);"
     >
       <button
-        class="haring-focus m-2351eeb0 mantine-CalendarHeader-calendarHeaderControl m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus m_2351eeb0 mantine-CalendarHeader-calendarHeaderControl m_87cf2631 mantine-UnstyledButton-root"
         data-direction="previous"
         tabindex="0"
         type="button"
       >
         <svg
-          class="m-367dc749 mantine-CalendarHeader-calendarHeaderControlIcon"
+          class="m_367dc749 mantine-CalendarHeader-calendarHeaderControlIcon"
           data-direction="previous"
           fill="none"
           style="width: 45%; height: 45%; display: block;"
@@ -48,20 +48,20 @@ exports[`CalendarHeader matches snapshot 1`] = `
         </svg>
       </button>
       <button
-        class="haring-focus m-f6645d97 mantine-CalendarHeader-calendarHeaderLevel m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus m_f6645d97 mantine-CalendarHeader-calendarHeaderLevel m_87cf2631 mantine-UnstyledButton-root"
         tabindex="0"
         type="button"
       >
         August 2023
       </button>
       <button
-        class="haring-focus m-2351eeb0 mantine-CalendarHeader-calendarHeaderControl m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus m_2351eeb0 mantine-CalendarHeader-calendarHeaderControl m_87cf2631 mantine-UnstyledButton-root"
         data-direction="next"
         tabindex="0"
         type="button"
       >
         <svg
-          class="m-367dc749 mantine-CalendarHeader-calendarHeaderControlIcon"
+          class="m_367dc749 mantine-CalendarHeader-calendarHeaderControlIcon"
           data-direction="next"
           fill="none"
           style="width: 45%; height: 45%; display: block;"

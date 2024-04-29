@@ -27,7 +27,7 @@ import {
   CardList,
   DataBadge,
   SummaryBox,
-} from '@smile/react-front-kit';
+} from '@smile/haring-react';
 
 const meta = {
   component: null,

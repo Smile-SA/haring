@@ -19,7 +19,7 @@ exports[`DocumentBox matches snapshot 1`] = `
       class="undefined "
     >
       <img
-        class="m-9e117634 mantine-Image-root"
+        class="m_9e117634 mantine-Image-root"
         src=""
         style="--image-radius: calc(1rem * var(--mantine-scale));"
       />
@@ -71,22 +71,22 @@ exports[`DocumentBox matches snapshot 1`] = `
         children
       </div>
       <button
-        class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-variant="default"
         data-with-right-section="true"
         style="--button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
         type="button"
       >
         <span
-          class="m-80f1301b mantine-Button-inner"
+          class="m_80f1301b mantine-Button-inner"
         >
           <span
-            class="m-811560b9 mantine-Button-label"
+            class="m_811560b9 mantine-Button-label"
           >
             Display preview
           </span>
           <span
-            class="m-a74036a mantine-Button-section"
+            class="m_a74036a mantine-Button-section"
             data-position="right"
           >
             <svg

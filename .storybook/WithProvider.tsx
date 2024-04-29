@@ -3,7 +3,7 @@ import type { ReactElement } from 'react';
 
 import { MantineProvider } from '@mantine/core';
 
-import { Provider, themes } from '@smile/react-front-kit-shared';
+import { Provider, themes } from '@smile/haring-react-shared';
 
 import ColorScheme from './ColorScheme';
 

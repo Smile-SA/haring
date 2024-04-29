@@ -7,14 +7,14 @@ import type {
   IThumbnail,
   IThumbnailData,
   IThumbnailGridProps,
-} from '@smile/react-front-kit';
-import type { IAction } from '@smile/react-front-kit-shared';
+} from '@smile/haring-react';
+import type { IAction } from '@smile/haring-react-shared';
 import type { MRT_RowSelectionState } from 'mantine-react-table';
 import type { ReactElement, SetStateAction } from 'react';
 
 import { ListBullets, SquaresFour } from '@phosphor-icons/react';
-import { SwitchableView, ThumbnailGrid } from '@smile/react-front-kit';
-import { isNotNullNorEmpty, typeGuard } from '@smile/react-front-kit-shared';
+import { SwitchableView, ThumbnailGrid } from '@smile/haring-react';
+import { isNotNullNorEmpty, typeGuard } from '@smile/haring-react-shared';
 import { useState } from 'react';
 
 import { Table } from '../Table/Table';

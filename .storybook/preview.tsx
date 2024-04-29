@@ -6,12 +6,12 @@ import '@mantine/core/styles.css';
 import '@mantine/dates/styles.css';
 import '@mantine/dropzone/styles.css';
 import '@mantine/carousel/styles.css';
-import { themes } from '@smile/react-front-kit-shared';
-import '@smile/react-front-kit-shared/style.css';
-import '@smile/react-front-kit/style.css';
-import '@smile/react-front-kit-dates/style.css';
-import '@smile/react-front-kit-dropzone/style.css';
-import '@smile/react-front-kit-table/style.css';
+import { themes } from '@smile/haring-react-shared';
+import '@smile/haring-react-shared/style.css';
+import '@smile/haring-react/style.css';
+import '@smile/haring-react-dates/style.css';
+import '@smile/haring-react-dropzone/style.css';
+import '@smile/haring-react-table/style.css';
 
 import WithProvider from './WithProvider';
 

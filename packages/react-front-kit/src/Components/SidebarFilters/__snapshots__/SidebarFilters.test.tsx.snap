@@ -18,7 +18,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
     <div>
       <div
         aria-expanded="true"
-        class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-block="true"
         data-size="md"
         data-testid="root"
@@ -27,10 +27,10 @@ exports[`SidebarFilters matches snapshot 1`] = `
         style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
       >
         <span
-          class="m-80f1301b mantine-Button-inner"
+          class="m_80f1301b mantine-Button-inner"
         >
           <span
-            class="m-811560b9 mantine-Button-label"
+            class="m_811560b9 mantine-Button-label"
           >
             <button
               class=" "
@@ -46,18 +46,18 @@ exports[`SidebarFilters matches snapshot 1`] = `
             </button>
           </span>
           <span
-            class="m-a74036a mantine-Button-section"
+            class="m_a74036a mantine-Button-section"
             data-position="right"
           >
             <button
-              class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+              class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
               data-testid="toggle"
               data-variant="transparent"
               style="--ai-radius: var(--mantine-radius-sm); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
               type="button"
             >
               <span
-                class="m-8d3afb97 mantine-ActionIcon-icon"
+                class="m_8d3afb97 mantine-ActionIcon-icon"
               >
                 <svg
                   fill="white"
@@ -83,18 +83,18 @@ exports[`SidebarFilters matches snapshot 1`] = `
       >
         <div>
           <div
-            class="m-347db0ec mantine-Badge-root"
+            class="m_347db0ec mantine-Badge-root"
             data-size="xl"
             data-variant="outline"
             style="--badge-height: var(--badge-height-xl); --badge-padding-x: var(--badge-padding-x-xl); --badge-fz: var(--badge-fz-xl); --badge-bg: transparent; --badge-color: var(--mantine-color-cyan-outline); --badge-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-cyan-outline);"
           >
             <span
-              class="m-5add502a mantine-Badge-label"
+              class="m_5add502a mantine-Badge-label"
             >
               Dupont
             </span>
             <span
-              class="m-91fdda9b mantine-Badge-section"
+              class="m_91fdda9b mantine-Badge-section"
               data-position="right"
             >
               <svg
@@ -111,18 +111,18 @@ exports[`SidebarFilters matches snapshot 1`] = `
             </span>
           </div>
           <div
-            class="m-347db0ec mantine-Badge-root"
+            class="m_347db0ec mantine-Badge-root"
             data-size="xl"
             data-variant="outline"
             style="--badge-height: var(--badge-height-xl); --badge-padding-x: var(--badge-padding-x-xl); --badge-fz: var(--badge-fz-xl); --badge-bg: transparent; --badge-color: var(--mantine-color-cyan-outline); --badge-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-cyan-outline);"
           >
             <span
-              class="m-5add502a mantine-Badge-label"
+              class="m_5add502a mantine-Badge-label"
             >
               Martin
             </span>
             <span
-              class="m-91fdda9b mantine-Badge-section"
+              class="m_91fdda9b mantine-Badge-section"
               data-position="right"
             >
               <svg
@@ -139,18 +139,18 @@ exports[`SidebarFilters matches snapshot 1`] = `
             </span>
           </div>
           <div
-            class="m-347db0ec mantine-Badge-root"
+            class="m_347db0ec mantine-Badge-root"
             data-size="xl"
             data-variant="outline"
             style="--badge-height: var(--badge-height-xl); --badge-padding-x: var(--badge-padding-x-xl); --badge-fz: var(--badge-fz-xl); --badge-bg: transparent; --badge-color: var(--mantine-color-cyan-outline); --badge-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-cyan-outline);"
           >
             <span
-              class="m-5add502a mantine-Badge-label"
+              class="m_5add502a mantine-Badge-label"
             >
               Freelance
             </span>
             <span
-              class="m-91fdda9b mantine-Badge-section"
+              class="m_91fdda9b mantine-Badge-section"
               data-position="right"
             >
               <svg
@@ -167,18 +167,18 @@ exports[`SidebarFilters matches snapshot 1`] = `
             </span>
           </div>
           <div
-            class="m-347db0ec mantine-Badge-root"
+            class="m_347db0ec mantine-Badge-root"
             data-size="xl"
             data-variant="outline"
             style="--badge-height: var(--badge-height-xl); --badge-padding-x: var(--badge-padding-x-xl); --badge-fz: var(--badge-fz-xl); --badge-bg: transparent; --badge-color: var(--mantine-color-cyan-outline); --badge-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-cyan-outline);"
           >
             <span
-              class="m-5add502a mantine-Badge-label"
+              class="m_5add502a mantine-Badge-label"
             >
               CDI
             </span>
             <span
-              class="m-91fdda9b mantine-Badge-section"
+              class="m_91fdda9b mantine-Badge-section"
               data-position="right"
             >
               <svg
@@ -199,7 +199,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
     </div>
     <div>
       <div
-        class="m-4081bf90 mantine-Group-root"
+        class="m_4081bf90 mantine-Group-root"
         style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
       >
         <span
@@ -215,12 +215,12 @@ exports[`SidebarFilters matches snapshot 1`] = `
         </span>
       </div>
       <div
-        class="m-1b7284a3 mantine-Paper-root"
+        class="m_1b7284a3 mantine-Paper-root"
         style="padding: 0rem;"
       >
         <div
           aria-expanded="true"
-          class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-block="true"
           data-selected="false"
           data-size="md"
@@ -230,10 +230,10 @@ exports[`SidebarFilters matches snapshot 1`] = `
           style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
         >
           <span
-            class="m-80f1301b mantine-Button-inner"
+            class="m_80f1301b mantine-Button-inner"
           >
             <span
-              class="m-811560b9 mantine-Button-label"
+              class="m_811560b9 mantine-Button-label"
             >
               <button
                 class=" "
@@ -244,18 +244,18 @@ exports[`SidebarFilters matches snapshot 1`] = `
               </button>
             </span>
             <span
-              class="m-a74036a mantine-Button-section"
+              class="m_a74036a mantine-Button-section"
               data-position="right"
             >
               <button
-                class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                 data-testid="toggle"
                 data-variant="transparent"
                 style="--ai-radius: var(--mantine-radius-sm); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                 type="button"
               >
                 <span
-                  class="m-8d3afb97 mantine-ActionIcon-icon"
+                  class="m_8d3afb97 mantine-ActionIcon-icon"
                 >
                   <svg
                     fill="currentColor"
@@ -281,31 +281,31 @@ exports[`SidebarFilters matches snapshot 1`] = `
         >
           <div>
             <div
-              class="m-4081bf90 mantine-Group-root"
+              class="m_4081bf90 mantine-Group-root"
               style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
             >
               <div
-                class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+                class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
                 data-label-position="right"
                 style="--checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled);"
               >
                 <div
-                  class="m-5f6e695e mantine-Checkbox-body"
+                  class="m_5f6e695e mantine-Checkbox-body"
                 >
                   <div
-                    class="m-26062bec mantine-Checkbox-inner"
+                    class="m_26062bec mantine-Checkbox-inner"
                     data-label-position="right"
                   >
                     <input
                       checked=""
-                      class="haring-focus m-26063560 mantine-Checkbox-input"
+                      class="haring-focus m_26063560 mantine-Checkbox-input"
                       id="mantine-f4bipx4bi"
                       type="checkbox"
                       value="Dupont"
                     />
                     <svg
                       aria-hidden="true"
-                      class="m-bf295423 mantine-Checkbox-icon"
+                      class="m_bf295423 mantine-Checkbox-icon"
                       fill="none"
                       viewBox="0 0 10 7"
                       xmlns="http://www.w3.org/2000/svg"
@@ -319,7 +319,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+                    class="m_d3ea56bb mantine-Checkbox-labelWrapper"
                   />
                 </div>
               </div>
@@ -327,31 +327,31 @@ exports[`SidebarFilters matches snapshot 1`] = `
             </div>
             <br />
             <div
-              class="m-4081bf90 mantine-Group-root"
+              class="m_4081bf90 mantine-Group-root"
               style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
             >
               <div
-                class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+                class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
                 data-label-position="right"
                 style="--checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled);"
               >
                 <div
-                  class="m-5f6e695e mantine-Checkbox-body"
+                  class="m_5f6e695e mantine-Checkbox-body"
                 >
                   <div
-                    class="m-26062bec mantine-Checkbox-inner"
+                    class="m_26062bec mantine-Checkbox-inner"
                     data-label-position="right"
                   >
                     <input
                       checked=""
-                      class="haring-focus m-26063560 mantine-Checkbox-input"
+                      class="haring-focus m_26063560 mantine-Checkbox-input"
                       id="mantine-f4bipx4bi"
                       type="checkbox"
                       value="Martin"
                     />
                     <svg
                       aria-hidden="true"
-                      class="m-bf295423 mantine-Checkbox-icon"
+                      class="m_bf295423 mantine-Checkbox-icon"
                       fill="none"
                       viewBox="0 0 10 7"
                       xmlns="http://www.w3.org/2000/svg"
@@ -365,7 +365,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+                    class="m_d3ea56bb mantine-Checkbox-labelWrapper"
                   />
                 </div>
               </div>
@@ -373,30 +373,30 @@ exports[`SidebarFilters matches snapshot 1`] = `
             </div>
             <br />
             <div
-              class="m-4081bf90 mantine-Group-root"
+              class="m_4081bf90 mantine-Group-root"
               style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
             >
               <div
-                class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+                class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
                 data-label-position="right"
                 style="--checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled);"
               >
                 <div
-                  class="m-5f6e695e mantine-Checkbox-body"
+                  class="m_5f6e695e mantine-Checkbox-body"
                 >
                   <div
-                    class="m-26062bec mantine-Checkbox-inner"
+                    class="m_26062bec mantine-Checkbox-inner"
                     data-label-position="right"
                   >
                     <input
-                      class="haring-focus m-26063560 mantine-Checkbox-input"
+                      class="haring-focus m_26063560 mantine-Checkbox-input"
                       id="mantine-f4bipx4bi"
                       type="checkbox"
                       value="André"
                     />
                     <svg
                       aria-hidden="true"
-                      class="m-bf295423 mantine-Checkbox-icon"
+                      class="m_bf295423 mantine-Checkbox-icon"
                       fill="none"
                       viewBox="0 0 10 7"
                       xmlns="http://www.w3.org/2000/svg"
@@ -410,7 +410,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+                    class="m_d3ea56bb mantine-Checkbox-labelWrapper"
                   />
                 </div>
               </div>
@@ -420,7 +420,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
         </div>
         <div
           aria-expanded="true"
-          class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-block="true"
           data-selected="false"
           data-size="md"
@@ -430,10 +430,10 @@ exports[`SidebarFilters matches snapshot 1`] = `
           style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
         >
           <span
-            class="m-80f1301b mantine-Button-inner"
+            class="m_80f1301b mantine-Button-inner"
           >
             <span
-              class="m-811560b9 mantine-Button-label"
+              class="m_811560b9 mantine-Button-label"
             >
               <button
                 class=" "
@@ -444,18 +444,18 @@ exports[`SidebarFilters matches snapshot 1`] = `
               </button>
             </span>
             <span
-              class="m-a74036a mantine-Button-section"
+              class="m_a74036a mantine-Button-section"
               data-position="right"
             >
               <button
-                class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                 data-testid="toggle"
                 data-variant="transparent"
                 style="--ai-radius: var(--mantine-radius-sm); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                 type="button"
               >
                 <span
-                  class="m-8d3afb97 mantine-ActionIcon-icon"
+                  class="m_8d3afb97 mantine-ActionIcon-icon"
                 >
                   <svg
                     fill="currentColor"
@@ -481,7 +481,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
         >
           <div
             aria-expanded="true"
-            class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+            class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
             data-block="true"
             data-selected="false"
             data-size="md"
@@ -491,10 +491,10 @@ exports[`SidebarFilters matches snapshot 1`] = `
             style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
           >
             <span
-              class="m-80f1301b mantine-Button-inner"
+              class="m_80f1301b mantine-Button-inner"
             >
               <span
-                class="m-811560b9 mantine-Button-label"
+                class="m_811560b9 mantine-Button-label"
               >
                 <button
                   class=" "
@@ -505,18 +505,18 @@ exports[`SidebarFilters matches snapshot 1`] = `
                 </button>
               </span>
               <span
-                class="m-a74036a mantine-Button-section"
+                class="m_a74036a mantine-Button-section"
                 data-position="right"
               >
                 <button
-                  class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                  class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                   data-testid="toggle"
                   data-variant="transparent"
                   style="--ai-radius: var(--mantine-radius-sm); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                   type="button"
                 >
                   <span
-                    class="m-8d3afb97 mantine-ActionIcon-icon"
+                    class="m_8d3afb97 mantine-ActionIcon-icon"
                   >
                     <svg
                       fill="currentColor"
@@ -542,31 +542,31 @@ exports[`SidebarFilters matches snapshot 1`] = `
           >
             <div>
               <div
-                class="m-4081bf90 mantine-Group-root"
+                class="m_4081bf90 mantine-Group-root"
                 style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
               >
                 <div
-                  class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+                  class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
                   data-label-position="right"
                   style="--checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled);"
                 >
                   <div
-                    class="m-5f6e695e mantine-Checkbox-body"
+                    class="m_5f6e695e mantine-Checkbox-body"
                   >
                     <div
-                      class="m-26062bec mantine-Checkbox-inner"
+                      class="m_26062bec mantine-Checkbox-inner"
                       data-label-position="right"
                     >
                       <input
                         checked=""
-                        class="haring-focus m-26063560 mantine-Checkbox-input"
+                        class="haring-focus m_26063560 mantine-Checkbox-input"
                         id="mantine-f4bipx4bi"
                         type="checkbox"
                         value="CDI"
                       />
                       <svg
                         aria-hidden="true"
-                        class="m-bf295423 mantine-Checkbox-icon"
+                        class="m_bf295423 mantine-Checkbox-icon"
                         fill="none"
                         viewBox="0 0 10 7"
                         xmlns="http://www.w3.org/2000/svg"
@@ -580,7 +580,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+                      class="m_d3ea56bb mantine-Checkbox-labelWrapper"
                     />
                   </div>
                 </div>
@@ -588,30 +588,30 @@ exports[`SidebarFilters matches snapshot 1`] = `
               </div>
               <br />
               <div
-                class="m-4081bf90 mantine-Group-root"
+                class="m_4081bf90 mantine-Group-root"
                 style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
               >
                 <div
-                  class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+                  class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
                   data-label-position="right"
                   style="--checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled);"
                 >
                   <div
-                    class="m-5f6e695e mantine-Checkbox-body"
+                    class="m_5f6e695e mantine-Checkbox-body"
                   >
                     <div
-                      class="m-26062bec mantine-Checkbox-inner"
+                      class="m_26062bec mantine-Checkbox-inner"
                       data-label-position="right"
                     >
                       <input
-                        class="haring-focus m-26063560 mantine-Checkbox-input"
+                        class="haring-focus m_26063560 mantine-Checkbox-input"
                         id="mantine-f4bipx4bi"
                         type="checkbox"
                         value="CDD"
                       />
                       <svg
                         aria-hidden="true"
-                        class="m-bf295423 mantine-Checkbox-icon"
+                        class="m_bf295423 mantine-Checkbox-icon"
                         fill="none"
                         viewBox="0 0 10 7"
                         xmlns="http://www.w3.org/2000/svg"
@@ -625,7 +625,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+                      class="m_d3ea56bb mantine-Checkbox-labelWrapper"
                     />
                   </div>
                 </div>
@@ -635,7 +635,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
           </div>
           <div
             aria-expanded="true"
-            class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+            class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
             data-block="true"
             data-selected="false"
             data-size="md"
@@ -645,10 +645,10 @@ exports[`SidebarFilters matches snapshot 1`] = `
             style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
           >
             <span
-              class="m-80f1301b mantine-Button-inner"
+              class="m_80f1301b mantine-Button-inner"
             >
               <span
-                class="m-811560b9 mantine-Button-label"
+                class="m_811560b9 mantine-Button-label"
               >
                 <button
                   class=" "
@@ -659,18 +659,18 @@ exports[`SidebarFilters matches snapshot 1`] = `
                 </button>
               </span>
               <span
-                class="m-a74036a mantine-Button-section"
+                class="m_a74036a mantine-Button-section"
                 data-position="right"
               >
                 <button
-                  class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+                  class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                   data-testid="toggle"
                   data-variant="transparent"
                   style="--ai-radius: var(--mantine-radius-sm); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                   type="button"
                 >
                   <span
-                    class="m-8d3afb97 mantine-ActionIcon-icon"
+                    class="m_8d3afb97 mantine-ActionIcon-icon"
                   >
                     <svg
                       fill="currentColor"
@@ -696,31 +696,31 @@ exports[`SidebarFilters matches snapshot 1`] = `
           >
             <div>
               <div
-                class="m-4081bf90 mantine-Group-root"
+                class="m_4081bf90 mantine-Group-root"
                 style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
               >
                 <div
-                  class="m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+                  class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
                   data-label-position="right"
                   style="--checkbox-radius: var(--mantine-radius-sm); --checkbox-color: var(--mantine-color-cyan-filled);"
                 >
                   <div
-                    class="m-5f6e695e mantine-Checkbox-body"
+                    class="m_5f6e695e mantine-Checkbox-body"
                   >
                     <div
-                      class="m-26062bec mantine-Checkbox-inner"
+                      class="m_26062bec mantine-Checkbox-inner"
                       data-label-position="right"
                     >
                       <input
                         checked=""
-                        class="haring-focus m-26063560 mantine-Checkbox-input"
+                        class="haring-focus m_26063560 mantine-Checkbox-input"
                         id="mantine-f4bipx4bi"
                         type="checkbox"
                         value="FREELANCE"
                       />
                       <svg
                         aria-hidden="true"
-                        class="m-bf295423 mantine-Checkbox-icon"
+                        class="m_bf295423 mantine-Checkbox-icon"
                         fill="none"
                         viewBox="0 0 10 7"
                         xmlns="http://www.w3.org/2000/svg"
@@ -734,7 +734,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+                      class="m_d3ea56bb mantine-Checkbox-labelWrapper"
                     />
                   </div>
                 </div>
@@ -745,7 +745,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
         </div>
         <div
           aria-expanded="false"
-          class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-block="true"
           data-selected="false"
           data-size="md"
@@ -754,10 +754,10 @@ exports[`SidebarFilters matches snapshot 1`] = `
           style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
         >
           <span
-            class="m-80f1301b mantine-Button-inner"
+            class="m_80f1301b mantine-Button-inner"
           >
             <span
-              class="m-811560b9 mantine-Button-label"
+              class="m_811560b9 mantine-Button-label"
             >
               <button
                 class=" "
@@ -771,7 +771,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
         </div>
         <div
           aria-expanded="false"
-          class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-block="true"
           data-selected="false"
           data-size="md"
@@ -780,10 +780,10 @@ exports[`SidebarFilters matches snapshot 1`] = `
           style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
         >
           <span
-            class="m-80f1301b mantine-Button-inner"
+            class="m_80f1301b mantine-Button-inner"
           >
             <span
-              class="m-811560b9 mantine-Button-label"
+              class="m_811560b9 mantine-Button-label"
             >
               <button
                 class=" "
@@ -799,16 +799,16 @@ exports[`SidebarFilters matches snapshot 1`] = `
     </div>
     <div>
       <button
-        class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-variant="filled"
         style="--button-bg: var(--mantine-color-cyan-filled); --button-hover: color-mix(in srgb, var(--mantine-color-cyan-filled), black 10%); --button-color: var(--mantine-color-white); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
         type="button"
       >
         <span
-          class="m-80f1301b mantine-Button-inner"
+          class="m_80f1301b mantine-Button-inner"
         >
           <span
-            class="m-811560b9 mantine-Button-label"
+            class="m_811560b9 mantine-Button-label"
           >
             Filtrer
              (
@@ -818,17 +818,17 @@ exports[`SidebarFilters matches snapshot 1`] = `
         </span>
       </button>
       <button
-        class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-variant="outline"
         data-with-left-section="true"
         style="--button-bg: transparent; --button-hover: var(--mantine-color-dark-outline-hover); --button-color: var(--mantine-color-dark-outline); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-dark-outline);"
         type="button"
       >
         <span
-          class="m-80f1301b mantine-Button-inner"
+          class="m_80f1301b mantine-Button-inner"
         >
           <span
-            class="m-a74036a mantine-Button-section"
+            class="m_a74036a mantine-Button-section"
             data-position="left"
           >
             <svg
@@ -844,7 +844,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
             </svg>
           </span>
           <span
-            class="m-811560b9 mantine-Button-label"
+            class="m_811560b9 mantine-Button-label"
           >
             Remove all
              (

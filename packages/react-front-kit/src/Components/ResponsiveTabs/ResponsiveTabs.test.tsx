@@ -1,4 +1,4 @@
-import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
+import { renderWithProviders } from '@smile/haring-react-shared/test-utils';
 
 import { ResponsiveTabs } from './ResponsiveTabs';
 import { contentsMock, tabsMock } from './ResponsiveTabs.mock';

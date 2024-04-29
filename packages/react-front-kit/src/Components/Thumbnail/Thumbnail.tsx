@@ -1,7 +1,7 @@
 'use client';
 
 import type { IThumbnail, IThumbnailAction } from '../../types';
-import type { IActionConfirmModalProps } from '@smile/react-front-kit-shared';
+import type { IActionConfirmModalProps } from '@smile/haring-react-shared';
 import type { ReactElement } from 'react';
 
 import {
@@ -15,7 +15,7 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { DotsThreeVertical } from '@phosphor-icons/react';
-import { FileIcon } from '@smile/react-front-kit-shared';
+import { FileIcon } from '@smile/haring-react-shared';
 import { useState } from 'react';
 
 import defaultImage from '../../../assets/defaultImage.jpg';

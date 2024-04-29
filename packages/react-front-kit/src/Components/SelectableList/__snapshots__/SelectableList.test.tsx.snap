@@ -13,33 +13,33 @@ exports[`SelectableList matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="undefined selectableListRef m-6d731127 mantine-Stack-root"
+    class="undefined selectableListRef m_6d731127 mantine-Stack-root"
     style="--stack-gap: var(--mantine-spacing-md); --stack-align: stretch; --stack-justify: flex-start;"
   >
     <div
-      class="m-4081bf90 mantine-Group-root"
+      class="m_4081bf90 mantine-Group-root"
       style="--group-gap: calc(2rem * var(--mantine-scale)); --group-align: center; --group-justify: flex-start; --group-wrap: nowrap;"
     >
       <div
-        class="selectableListCheckboxRef m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+        class="selectableListCheckboxRef m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
         data-label-position="right"
         style="--checkbox-size: calc(1rem * var(--mantine-scale)); --checkbox-radius: calc(0.125rem * var(--mantine-scale)); --checkbox-color: var(--mantine-color-cyan-filled); --label-fz: calc(1rem * var(--mantine-scale)); --label-lh: calc(1rem * var(--mantine-scale));"
       >
         <div
-          class="m-5f6e695e mantine-Checkbox-body"
+          class="m_5f6e695e mantine-Checkbox-body"
         >
           <div
-            class="m-26062bec mantine-Checkbox-inner"
+            class="m_26062bec mantine-Checkbox-inner"
             data-label-position="right"
           >
             <input
-              class="haring-focus m-26063560 mantine-Checkbox-input"
+              class="haring-focus m_26063560 mantine-Checkbox-input"
               id="mantine-f4bipx4bi"
               type="checkbox"
             />
             <svg
               aria-hidden="true"
-              class="m-bf295423 mantine-Checkbox-icon"
+              class="m_bf295423 mantine-Checkbox-icon"
               fill="none"
               viewBox="0 0 10 7"
               xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ exports[`SelectableList matches snapshot 1`] = `
             </svg>
           </div>
           <div
-            class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+            class="m_d3ea56bb mantine-Checkbox-labelWrapper"
           />
         </div>
       </div>
@@ -64,7 +64,7 @@ exports[`SelectableList matches snapshot 1`] = `
           class="undefined "
         >
           <img
-            class="m-9e117634 mantine-Image-root"
+            class="m_9e117634 mantine-Image-root"
             src=""
             style="--image-radius: calc(1rem * var(--mantine-scale));"
           />
@@ -117,15 +117,15 @@ exports[`SelectableList matches snapshot 1`] = `
               Ceci est une description faite pour cette facture et ajoutée par le créateur lors de l’import du document dans la GED, en l’absence de description cet espace est laissé vide...
             </p>
             <button
-              class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+              class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
               style="--button-bg: var(--mantine-color-gray-8); --button-hover: var(--mantine-color-gray-9); --button-color: var(--mantine-color-white); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
               type="button"
             >
               <span
-                class="m-80f1301b mantine-Button-inner"
+                class="m_80f1301b mantine-Button-inner"
               >
                 <span
-                  class="m-811560b9 mantine-Button-label"
+                  class="m_811560b9 mantine-Button-label"
                 >
                   <svg
                     fill="currentColor"
@@ -135,7 +135,7 @@ exports[`SelectableList matches snapshot 1`] = `
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,132.69V40a8,8,0,0,0-16,0v92.69L93.66,106.34a8,8,0,0,0-11.32,11.32Z"
+                      d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z"
                     />
                   </svg>
                   <div
@@ -148,22 +148,22 @@ exports[`SelectableList matches snapshot 1`] = `
             </button>
           </div>
           <button
-            class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+            class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
             data-variant="default"
             data-with-right-section="true"
             style="--button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
             type="button"
           >
             <span
-              class="m-80f1301b mantine-Button-inner"
+              class="m_80f1301b mantine-Button-inner"
             >
               <span
-                class="m-811560b9 mantine-Button-label"
+                class="m_811560b9 mantine-Button-label"
               >
                 Display preview
               </span>
               <span
-                class="m-a74036a mantine-Button-section"
+                class="m_a74036a mantine-Button-section"
                 data-position="right"
               >
                 <svg
@@ -184,31 +184,31 @@ exports[`SelectableList matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="m-4081bf90 mantine-Group-root"
+      class="m_4081bf90 mantine-Group-root"
       style="--group-gap: calc(2rem * var(--mantine-scale)); --group-align: center; --group-justify: flex-start; --group-wrap: nowrap;"
     >
       <div
-        class="selectableListCheckboxRef m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+        class="selectableListCheckboxRef m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
         data-checked="true"
         data-label-position="right"
         style="--checkbox-size: calc(1rem * var(--mantine-scale)); --checkbox-radius: calc(0.125rem * var(--mantine-scale)); --checkbox-color: var(--mantine-color-cyan-filled); --label-fz: calc(1rem * var(--mantine-scale)); --label-lh: calc(1rem * var(--mantine-scale));"
       >
         <div
-          class="m-5f6e695e mantine-Checkbox-body"
+          class="m_5f6e695e mantine-Checkbox-body"
         >
           <div
-            class="m-26062bec mantine-Checkbox-inner"
+            class="m_26062bec mantine-Checkbox-inner"
             data-label-position="right"
           >
             <input
               checked=""
-              class="haring-focus m-26063560 mantine-Checkbox-input"
+              class="haring-focus m_26063560 mantine-Checkbox-input"
               id="mantine-f4bipx4bi"
               type="checkbox"
             />
             <svg
               aria-hidden="true"
-              class="m-bf295423 mantine-Checkbox-icon"
+              class="m_bf295423 mantine-Checkbox-icon"
               fill="none"
               viewBox="0 0 10 7"
               xmlns="http://www.w3.org/2000/svg"
@@ -222,7 +222,7 @@ exports[`SelectableList matches snapshot 1`] = `
             </svg>
           </div>
           <div
-            class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+            class="m_d3ea56bb mantine-Checkbox-labelWrapper"
           />
         </div>
       </div>
@@ -233,7 +233,7 @@ exports[`SelectableList matches snapshot 1`] = `
           class="undefined "
         >
           <img
-            class="m-9e117634 mantine-Image-root"
+            class="m_9e117634 mantine-Image-root"
             src=""
             style="--image-radius: calc(1rem * var(--mantine-scale));"
           />
@@ -286,15 +286,15 @@ exports[`SelectableList matches snapshot 1`] = `
               Ceci est une description faite pour cette facture et ajoutée par le créateur lors de l’import du document dans la GED, en l’absence de description cet espace est laissé vide...
             </p>
             <button
-              class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+              class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
               style="--button-bg: var(--mantine-color-gray-8); --button-hover: var(--mantine-color-gray-9); --button-color: var(--mantine-color-white); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
               type="button"
             >
               <span
-                class="m-80f1301b mantine-Button-inner"
+                class="m_80f1301b mantine-Button-inner"
               >
                 <span
-                  class="m-811560b9 mantine-Button-label"
+                  class="m_811560b9 mantine-Button-label"
                 >
                   <svg
                     fill="currentColor"
@@ -304,7 +304,7 @@ exports[`SelectableList matches snapshot 1`] = `
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,132.69V40a8,8,0,0,0-16,0v92.69L93.66,106.34a8,8,0,0,0-11.32,11.32Z"
+                      d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z"
                     />
                   </svg>
                   <div
@@ -317,22 +317,22 @@ exports[`SelectableList matches snapshot 1`] = `
             </button>
           </div>
           <button
-            class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+            class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
             data-variant="default"
             data-with-right-section="true"
             style="--button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
             type="button"
           >
             <span
-              class="m-80f1301b mantine-Button-inner"
+              class="m_80f1301b mantine-Button-inner"
             >
               <span
-                class="m-811560b9 mantine-Button-label"
+                class="m_811560b9 mantine-Button-label"
               >
                 Display preview
               </span>
               <span
-                class="m-a74036a mantine-Button-section"
+                class="m_a74036a mantine-Button-section"
                 data-position="right"
               >
                 <svg
@@ -353,29 +353,29 @@ exports[`SelectableList matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="m-4081bf90 mantine-Group-root"
+      class="m_4081bf90 mantine-Group-root"
       style="--group-gap: calc(2rem * var(--mantine-scale)); --group-align: center; --group-justify: flex-start; --group-wrap: nowrap;"
     >
       <div
-        class="selectableListCheckboxRef m-bf2d988c mantine-Checkbox-root m-5f75b09e mantine-Checkbox-root"
+        class="selectableListCheckboxRef m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
         data-label-position="right"
         style="--checkbox-size: calc(1rem * var(--mantine-scale)); --checkbox-radius: calc(0.125rem * var(--mantine-scale)); --checkbox-color: var(--mantine-color-cyan-filled); --label-fz: calc(1rem * var(--mantine-scale)); --label-lh: calc(1rem * var(--mantine-scale));"
       >
         <div
-          class="m-5f6e695e mantine-Checkbox-body"
+          class="m_5f6e695e mantine-Checkbox-body"
         >
           <div
-            class="m-26062bec mantine-Checkbox-inner"
+            class="m_26062bec mantine-Checkbox-inner"
             data-label-position="right"
           >
             <input
-              class="haring-focus m-26063560 mantine-Checkbox-input"
+              class="haring-focus m_26063560 mantine-Checkbox-input"
               id="mantine-f4bipx4bi"
               type="checkbox"
             />
             <svg
               aria-hidden="true"
-              class="m-bf295423 mantine-Checkbox-icon"
+              class="m_bf295423 mantine-Checkbox-icon"
               fill="none"
               viewBox="0 0 10 7"
               xmlns="http://www.w3.org/2000/svg"
@@ -389,7 +389,7 @@ exports[`SelectableList matches snapshot 1`] = `
             </svg>
           </div>
           <div
-            class="m-d3ea56bb mantine-Checkbox-labelWrapper"
+            class="m_d3ea56bb mantine-Checkbox-labelWrapper"
           />
         </div>
       </div>
@@ -400,7 +400,7 @@ exports[`SelectableList matches snapshot 1`] = `
           class="undefined "
         >
           <img
-            class="m-9e117634 mantine-Image-root"
+            class="m_9e117634 mantine-Image-root"
             src=""
             style="--image-radius: calc(1rem * var(--mantine-scale));"
           />
@@ -453,15 +453,15 @@ exports[`SelectableList matches snapshot 1`] = `
               Ceci est une description faite pour cette facture et ajoutée par le créateur lors de l’import du document dans la GED, en l’absence de description cet espace est laissé vide...
             </p>
             <button
-              class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+              class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
               style="--button-bg: var(--mantine-color-gray-8); --button-hover: var(--mantine-color-gray-9); --button-color: var(--mantine-color-white); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
               type="button"
             >
               <span
-                class="m-80f1301b mantine-Button-inner"
+                class="m_80f1301b mantine-Button-inner"
               >
                 <span
-                  class="m-811560b9 mantine-Button-label"
+                  class="m_811560b9 mantine-Button-label"
                 >
                   <svg
                     fill="currentColor"
@@ -471,7 +471,7 @@ exports[`SelectableList matches snapshot 1`] = `
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,132.69V40a8,8,0,0,0-16,0v92.69L93.66,106.34a8,8,0,0,0-11.32,11.32Z"
+                      d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z"
                     />
                   </svg>
                   <div
@@ -484,22 +484,22 @@ exports[`SelectableList matches snapshot 1`] = `
             </button>
           </div>
           <button
-            class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+            class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
             data-variant="default"
             data-with-right-section="true"
             style="--button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
             type="button"
           >
             <span
-              class="m-80f1301b mantine-Button-inner"
+              class="m_80f1301b mantine-Button-inner"
             >
               <span
-                class="m-811560b9 mantine-Button-label"
+                class="m_811560b9 mantine-Button-label"
               >
                 Display preview
               </span>
               <span
-                class="m-a74036a mantine-Button-section"
+                class="m_a74036a mantine-Button-section"
                 data-position="right"
               >
                 <svg

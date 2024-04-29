@@ -3,8 +3,8 @@ import type { CalendarLevel } from '@mantine/dates/lib/types/GeneralTypes';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Badge, Button, Card, Group, Text } from '@mantine/core';
-import { CardHeader } from '@smile/react-front-kit';
-import { useStorybookArgsConnect } from '@smile/react-front-kit-shared/storybook-utils';
+import { CardHeader } from '@smile/haring-react';
+import { useStorybookArgsConnect } from '@smile/haring-react-shared/storybook-utils';
 import { action } from '@storybook/addon-actions';
 
 import { CalendarHeader as Cmp } from './CalendarHeader';

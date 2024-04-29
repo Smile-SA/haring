@@ -20,21 +20,21 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
         1 selected file
       </span>
       <div
-        class="m-4081bf90 mantine-Group-root"
+        class="m_4081bf90 mantine-Group-root"
         style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
       >
         <button
-          class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-variant="default"
           data-with-left-section="true"
           style="--button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
           type="button"
         >
           <span
-            class="m-80f1301b mantine-Button-inner"
+            class="m_80f1301b mantine-Button-inner"
           >
             <span
-              class="m-a74036a mantine-Button-section"
+              class="m_a74036a mantine-Button-section"
               data-position="left"
             >
               <svg
@@ -63,24 +63,24 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
               </svg>
             </span>
             <span
-              class="m-811560b9 mantine-Button-label"
+              class="m_811560b9 mantine-Button-label"
             >
               Move in tree
             </span>
           </span>
         </button>
         <button
-          class="haring-focus haring-active m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-variant="filled"
           data-with-left-section="true"
           style="--button-bg: var(--mantine-color-red-filled); --button-hover: var(--mantine-color-red-filled-hover); --button-color: var(--mantine-color-white); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
           type="button"
         >
           <span
-            class="m-80f1301b mantine-Button-inner"
+            class="m_80f1301b mantine-Button-inner"
           >
             <span
-              class="m-a74036a mantine-Button-section"
+              class="m_a74036a mantine-Button-section"
               data-position="left"
             >
               <svg
@@ -96,7 +96,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
               </svg>
             </span>
             <span
-              class="m-811560b9 mantine-Button-label"
+              class="m_811560b9 mantine-Button-label"
             >
               Delete
             </span>
@@ -110,14 +110,14 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
       .__m__-r8{--sg-spacing-x:var(--mantine-spacing-md);--sg-spacing-y:var(--mantine-spacing-md);--sg-cols:1;}
     </style>
     <div
-      class="m-2415a157 mantine-SimpleGrid-root __m__-r8"
+      class="m_2415a157 mantine-SimpleGrid-root __m__-r8"
     >
       <div
         class=""
         style="background: rgb(241, 243, 245);"
       >
         <div
-          class="m-4081bf90 mantine-Group-root"
+          class="m_4081bf90 mantine-Group-root"
           style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
         >
           <div>
@@ -133,7 +133,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
               />
             </svg>
             <h3
-              class="haring-focus m-b6d8b162 mantine-Text-root"
+              class="haring-focus m_b6d8b162 mantine-Text-root"
               data-truncate="end"
             >
               Debit_Suivi_PREV
@@ -144,13 +144,13 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
               aria-controls="mantine-f4bipx4bi-dropdown"
               aria-expanded="false"
               aria-haspopup="menu"
-              class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+              class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
               id="mantine-f4bipx4bi-target"
               style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-color: var(--mantine-color-white);"
               type="button"
             >
               <span
-                class="m-8d3afb97 mantine-ActionIcon-icon"
+                class="m_8d3afb97 mantine-ActionIcon-icon"
               >
                 <div>
                   <svg
@@ -170,7 +170,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
           </div>
         </div>
         <img
-          class="m-9e117634 mantine-Image-root"
+          class="m_9e117634 mantine-Image-root"
           src=""
           style="--image-radius: calc(1rem * var(--mantine-scale));"
         />
@@ -179,7 +179,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
         class=" "
       >
         <div
-          class="m-4081bf90 mantine-Group-root"
+          class="m_4081bf90 mantine-Group-root"
           style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
         >
           <div>
@@ -195,7 +195,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
               />
             </svg>
             <h3
-              class="haring-focus m-b6d8b162 mantine-Text-root"
+              class="haring-focus m_b6d8b162 mantine-Text-root"
               data-truncate="end"
             >
               Debit_Suivi_PREV_2
@@ -206,13 +206,13 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
               aria-controls="mantine-f4bipx4bi-dropdown"
               aria-expanded="false"
               aria-haspopup="menu"
-              class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+              class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
               id="mantine-f4bipx4bi-target"
               style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-color: var(--mantine-color-white);"
               type="button"
             >
               <span
-                class="m-8d3afb97 mantine-ActionIcon-icon"
+                class="m_8d3afb97 mantine-ActionIcon-icon"
               >
                 <div>
                   <svg
@@ -232,7 +232,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
           </div>
         </div>
         <img
-          class="m-9e117634 mantine-Image-root"
+          class="m_9e117634 mantine-Image-root"
           src=""
           style="--image-radius: calc(1rem * var(--mantine-scale));"
         />
@@ -242,7 +242,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
         style="background: rgb(241, 243, 245);"
       >
         <div
-          class="m-4081bf90 mantine-Group-root"
+          class="m_4081bf90 mantine-Group-root"
           style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
         >
           <div>
@@ -258,7 +258,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
               />
             </svg>
             <h3
-              class="haring-focus m-b6d8b162 mantine-Text-root"
+              class="haring-focus m_b6d8b162 mantine-Text-root"
               data-truncate="end"
             >
               Debit_Suivi_PREV_3
@@ -269,13 +269,13 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
               aria-controls="mantine-f4bipx4bi-dropdown"
               aria-expanded="false"
               aria-haspopup="menu"
-              class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+              class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
               id="mantine-f4bipx4bi-target"
               style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-color: var(--mantine-color-white);"
               type="button"
             >
               <span
-                class="m-8d3afb97 mantine-ActionIcon-icon"
+                class="m_8d3afb97 mantine-ActionIcon-icon"
               >
                 <div>
                   <svg
@@ -295,7 +295,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
           </div>
         </div>
         <img
-          class="m-9e117634 mantine-Image-root"
+          class="m_9e117634 mantine-Image-root"
           src=""
           style="--image-radius: calc(1rem * var(--mantine-scale));"
         />

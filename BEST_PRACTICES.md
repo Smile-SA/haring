@@ -82,7 +82,7 @@ For components :
 
 - When possible, components should be created using the `npm run generate`
   command which automates a lot of the creation (
-  see [Creating a new component in react-front-kit](./CONTRIBUTING.md#creating-a-new-component-in-react-front-kit)).
+  see [Creating a new component in Haring](./CONTRIBUTING.md#creating-a-new-component-in-haring)).
 - Components are contained in the `src/Components/` folder.
 - Component folders and Component files should be written in `PascalCase`.
 - Component test files are suffixed by `.test.tsx`.

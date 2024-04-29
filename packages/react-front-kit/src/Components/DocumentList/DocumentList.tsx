@@ -3,7 +3,7 @@ import type { IActionRowOverflowAction } from '../ActionRowOverflow/ActionRowOve
 import type { ISelectableListProps } from '../SelectableList/SelectableList';
 import type { ReactElement, ReactNode } from 'react';
 
-import { isNotNullNorEmpty } from '@smile/react-front-kit-shared';
+import { isNotNullNorEmpty } from '@smile/haring-react-shared';
 import { useMemo } from 'react';
 
 import { ActionBar } from '../ActionBar/ActionBar';

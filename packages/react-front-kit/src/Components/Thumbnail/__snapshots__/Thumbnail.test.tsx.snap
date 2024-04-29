@@ -17,7 +17,7 @@ exports[`Thumbnail matches snapshot 1`] = `
     style="background: rgb(241, 243, 245);"
   >
     <div
-      class="m-4081bf90 mantine-Group-root"
+      class="m_4081bf90 mantine-Group-root"
       style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
     >
       <div>
@@ -33,14 +33,14 @@ exports[`Thumbnail matches snapshot 1`] = `
           />
         </svg>
         <h3
-          class="haring-focus m-b6d8b162 mantine-Text-root"
+          class="haring-focus m_b6d8b162 mantine-Text-root"
           data-truncate="end"
         />
       </div>
       <div />
     </div>
     <img
-      class="m-9e117634 mantine-Image-root"
+      class="m_9e117634 mantine-Image-root"
       src=""
       style="--image-radius: calc(1rem * var(--mantine-scale));"
     />

@@ -16,24 +16,24 @@ exports[`HeaderNav matches snapshot in desktop mode 1`] = `
     aria-controls="mantine-f4bipx4bi-dropdown"
     aria-expanded="false"
     aria-haspopup="menu"
-    class="haring-focus m-f0824112 mantine-NavLink-root m-87cf2631 mantine-UnstyledButton-root"
+    class="haring-focus m_f0824112 mantine-NavLink-root m_87cf2631 mantine-UnstyledButton-root"
     id="mantine-f4bipx4bi-target"
     type="button"
   >
     <div
-      class="m-f07af9d2 mantine-NavLink-body"
+      class="m_f07af9d2 mantine-NavLink-body"
     >
       <span
-        class="m-1f6ac4c4 mantine-NavLink-label"
+        class="m_1f6ac4c4 mantine-NavLink-label"
       >
         Espace documentaire
       </span>
       <span
-        class="m-57492dcc mantine-NavLink-description"
+        class="m_57492dcc mantine-NavLink-description"
       />
     </div>
     <span
-      class="m-690090b5 mantine-NavLink-section"
+      class="m_690090b5 mantine-NavLink-section"
       data-position="right"
     >
       <svg
@@ -55,23 +55,23 @@ exports[`HeaderNav matches snapshot in desktop mode 1`] = `
     style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
   >
     <div
-      class="m-e17b862f mantine-NavLink-children"
+      class="m_e17b862f mantine-NavLink-children"
     />
   </div>
   <a
-    class="haring-focus m-f0824112 mantine-NavLink-root m-87cf2631 mantine-UnstyledButton-root"
+    class="haring-focus m_f0824112 mantine-NavLink-root m_87cf2631 mantine-UnstyledButton-root"
     href="#"
   >
     <div
-      class="m-f07af9d2 mantine-NavLink-body"
+      class="m_f07af9d2 mantine-NavLink-body"
     >
       <span
-        class="m-1f6ac4c4 mantine-NavLink-label"
+        class="m_1f6ac4c4 mantine-NavLink-label"
       >
         Espace workflow
       </span>
       <span
-        class="m-57492dcc mantine-NavLink-description"
+        class="m_57492dcc mantine-NavLink-description"
       />
     </div>
   </a>
@@ -81,23 +81,23 @@ exports[`HeaderNav matches snapshot in desktop mode 1`] = `
     style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
   >
     <div
-      class="m-e17b862f mantine-NavLink-children"
+      class="m_e17b862f mantine-NavLink-children"
     />
   </div>
   <a
-    class="haring-focus m-f0824112 mantine-NavLink-root m-87cf2631 mantine-UnstyledButton-root"
+    class="haring-focus m_f0824112 mantine-NavLink-root m_87cf2631 mantine-UnstyledButton-root"
     href="#"
   >
     <div
-      class="m-f07af9d2 mantine-NavLink-body"
+      class="m_f07af9d2 mantine-NavLink-body"
     >
       <span
-        class="m-1f6ac4c4 mantine-NavLink-label"
+        class="m_1f6ac4c4 mantine-NavLink-label"
       >
         Archives
       </span>
       <span
-        class="m-57492dcc mantine-NavLink-description"
+        class="m_57492dcc mantine-NavLink-description"
       />
     </div>
   </a>
@@ -107,7 +107,7 @@ exports[`HeaderNav matches snapshot in desktop mode 1`] = `
     style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
   >
     <div
-      class="m-e17b862f mantine-NavLink-children"
+      class="m_e17b862f mantine-NavLink-children"
     />
   </div>
 </div>
@@ -126,12 +126,12 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-1b7284a3 mantine-Paper-root"
+    class="m_1b7284a3 mantine-Paper-root"
     style="padding: 0rem;"
   >
     <div
       aria-expanded="false"
-      class="haring-focus haring-active    m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+      class="haring-focus haring-active    m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
       data-block="true"
       data-selected="false"
       data-size="md"
@@ -141,10 +141,10 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
       style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
     >
       <span
-        class="m-80f1301b mantine-Button-inner"
+        class="m_80f1301b mantine-Button-inner"
       >
         <span
-          class="m-811560b9 mantine-Button-label"
+          class="m_811560b9 mantine-Button-label"
         >
           <button
             class=" "
@@ -155,18 +155,18 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
           </button>
         </span>
         <span
-          class="m-a74036a mantine-Button-section"
+          class="m_a74036a mantine-Button-section"
           data-position="right"
         >
           <button
-            class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+            class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
             data-testid="toggle"
             data-variant="transparent"
             style="--ai-radius: var(--mantine-radius-sm); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
             type="button"
           >
             <span
-              class="m-8d3afb97 mantine-ActionIcon-icon"
+              class="m_8d3afb97 mantine-ActionIcon-icon"
             >
               <svg
                 fill="currentColor"
@@ -192,7 +192,7 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
     >
       <div
         aria-expanded="false"
-        class="haring-focus haring-active      m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus haring-active      m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-block="true"
         data-selected="false"
         data-size="md"
@@ -201,10 +201,10 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
         style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
       >
         <span
-          class="m-80f1301b mantine-Button-inner"
+          class="m_80f1301b mantine-Button-inner"
         >
           <span
-            class="  m-811560b9 mantine-Button-label"
+            class="  m_811560b9 mantine-Button-label"
           >
             <button
               class=" "
@@ -218,7 +218,7 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
       </div>
       <div
         aria-expanded="false"
-        class="haring-focus haring-active      m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus haring-active      m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-block="true"
         data-selected="false"
         data-size="md"
@@ -227,10 +227,10 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
         style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
       >
         <span
-          class="m-80f1301b mantine-Button-inner"
+          class="m_80f1301b mantine-Button-inner"
         >
           <span
-            class="  m-811560b9 mantine-Button-label"
+            class="  m_811560b9 mantine-Button-label"
           >
             <button
               class=" "
@@ -244,7 +244,7 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
       </div>
       <div
         aria-expanded="false"
-        class="haring-focus haring-active      m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus haring-active      m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-block="true"
         data-selected="false"
         data-size="md"
@@ -254,10 +254,10 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
         style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
       >
         <span
-          class="m-80f1301b mantine-Button-inner"
+          class="m_80f1301b mantine-Button-inner"
         >
           <span
-            class="  m-811560b9 mantine-Button-label"
+            class="  m_811560b9 mantine-Button-label"
           >
             <button
               class=" "
@@ -268,18 +268,18 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
             </button>
           </span>
           <span
-            class="m-a74036a mantine-Button-section"
+            class="m_a74036a mantine-Button-section"
             data-position="right"
           >
             <button
-              class="haring-focus haring-active m-8d3f4000 mantine-ActionIcon-root m-87cf2631 mantine-UnstyledButton-root"
+              class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
               data-testid="toggle"
               data-variant="transparent"
               style="--ai-radius: var(--mantine-radius-sm); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
               type="button"
             >
               <span
-                class="m-8d3afb97 mantine-ActionIcon-icon"
+                class="m_8d3afb97 mantine-ActionIcon-icon"
               >
                 <svg
                   fill="currentColor"
@@ -305,7 +305,7 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
       >
         <div
           aria-expanded="false"
-          class="haring-focus haring-active      m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active      m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-block="true"
           data-selected="false"
           data-size="md"
@@ -314,10 +314,10 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
           style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
         >
           <span
-            class="m-80f1301b mantine-Button-inner"
+            class="m_80f1301b mantine-Button-inner"
           >
             <span
-              class="  m-811560b9 mantine-Button-label"
+              class="  m_811560b9 mantine-Button-label"
             >
               <button
                 class=" "
@@ -331,7 +331,7 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
         </div>
         <div
           aria-expanded="false"
-          class="haring-focus haring-active      m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+          class="haring-focus haring-active      m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-block="true"
           data-selected="false"
           data-size="md"
@@ -340,10 +340,10 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
           style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
         >
           <span
-            class="m-80f1301b mantine-Button-inner"
+            class="m_80f1301b mantine-Button-inner"
           >
             <span
-              class="  m-811560b9 mantine-Button-label"
+              class="  m_811560b9 mantine-Button-label"
             >
               <button
                 class=" "
@@ -358,7 +358,7 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
       </div>
       <div
         aria-expanded="false"
-        class="haring-focus haring-active      m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+        class="haring-focus haring-active      m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-block="true"
         data-selected="false"
         data-size="md"
@@ -367,10 +367,10 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
         style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
       >
         <span
-          class="m-80f1301b mantine-Button-inner"
+          class="m_80f1301b mantine-Button-inner"
         >
           <span
-            class="  m-811560b9 mantine-Button-label"
+            class="  m_811560b9 mantine-Button-label"
           >
             <button
               class=" "
@@ -385,7 +385,7 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
     </div>
     <div
       aria-expanded="false"
-      class="haring-focus haring-active    m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+      class="haring-focus haring-active    m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
       data-block="true"
       data-selected="false"
       data-size="md"
@@ -394,10 +394,10 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
       style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
     >
       <span
-        class="m-80f1301b mantine-Button-inner"
+        class="m_80f1301b mantine-Button-inner"
       >
         <span
-          class="m-811560b9 mantine-Button-label"
+          class="m_811560b9 mantine-Button-label"
         >
           <button
             class=" "
@@ -411,7 +411,7 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
     </div>
     <div
       aria-expanded="false"
-      class="haring-focus haring-active    m-77c9d27d mantine-Button-root m-87cf2631 mantine-UnstyledButton-root"
+      class="haring-focus haring-active    m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
       data-block="true"
       data-selected="false"
       data-size="md"
@@ -420,10 +420,10 @@ exports[`HeaderNav matches snapshot in mobile mode 1`] = `
       style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: 0rem; --button-bg: var(--mantine-color-white); --button-hover: rgba(252, 252, 252, 1); --button-color: var(--mantine-color-cyan-filled); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
     >
       <span
-        class="m-80f1301b mantine-Button-inner"
+        class="m_80f1301b mantine-Button-inner"
       >
         <span
-          class="m-811560b9 mantine-Button-label"
+          class="m_811560b9 mantine-Button-label"
         >
           <button
             class=" "
