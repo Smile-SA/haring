@@ -10,13 +10,12 @@ export interface IAddressGouvData {
     city?: string;
     housenumber?: string;
     label: string;
-    number?: string;
     postcode?: string;
     street?: string;
   };
 }
 
-export async function getDataOpenStreetMapMock(
+export async function getDataOpenStreetMapRequest(
   value: string,
 ): Promise<IValue<IOpenStreetMapData>[]> {
   const response = await fetch(
@@ -32,7 +31,7 @@ export async function getDataOpenStreetMapMock(
   return result;
 }
 
-export async function getDataAddressGouvMock(
+export async function getDataAddressGouvRequest(
   value: string,
 ): Promise<IValue<IAddressGouvData>[]> {
   const response = await fetch(

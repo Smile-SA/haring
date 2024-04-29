@@ -1,4 +1,4 @@
-import type { IAdressFields } from './AddressAutocompleteFields';
+import type { IAddressFieldsValues } from '../AddressFields/AddressFields';
 import type { IValue } from '../FetchAutocompleteField/FetchAutocompleteField';
 
 import { renderWithProviders } from '@smile/react-front-kit-shared/test-utils';
@@ -18,7 +18,7 @@ describe('FetchAutocompleteField', () => {
             { label: 'test', value: { Address: 'test', Number: 'test' } },
           ] as unknown as Promise<IValue<unknown>[]>;
         }}
-        onOptionSubmit={function (_value: unknown): IAdressFields {
+        onOptionSubmit={function (_value: unknown): IAddressFieldsValues {
           return {
             city: 'city',
             country: 'country',

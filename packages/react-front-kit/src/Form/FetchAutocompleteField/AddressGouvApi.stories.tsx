@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
 
-import { getDataAddressGouvMock } from './FetchAutoCompleteField.mock';
+import { getDataAddressGouvRequest } from './FetchAutoCompleteField.mock';
 import { FetchAutocompleteField as Cmp } from './FetchAutocompleteField';
 
 const meta = {
@@ -17,7 +17,7 @@ type IStory = StoryObj<typeof meta>;
 
 export const FieldWithAddressGouvApi: IStory = {
   args: {
-    onFetchData: getDataAddressGouvMock,
+    onFetchData: getDataAddressGouvRequest,
     onOptionSubmit: action('location'),
   },
 };

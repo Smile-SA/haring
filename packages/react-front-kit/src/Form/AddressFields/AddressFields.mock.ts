@@ -1,4 +1,4 @@
-import type { IAddressFieldsValues } from '../AddressFields/AddressFields';
+import type { IAddressFieldsValues } from './AddressFields';
 import type { IAddressGouvData } from '../FetchAutocompleteField/FetchAutoCompleteField.mock';
 import type { IValue } from '../FetchAutocompleteField/FetchAutocompleteField';
 
