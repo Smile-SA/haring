@@ -1,7 +1,7 @@
 {
   "name": "haring-monorepo",
   "private": true,
-  "description": "Front Kit Monorepo",
+  "description": "Haring Monorepo",
   "license": "LGPL-3.0",
   "homepage": "https://github.com/Smile-SA/haring",
   "repository": {
