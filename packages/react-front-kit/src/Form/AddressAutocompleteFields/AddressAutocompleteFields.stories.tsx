@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
 
-import { getDataAddressGouvMock } from '../FetchAutocompleteField/FetchAutoCompleteField.mock';
+import { getDataAddressGouvRequest } from '../FetchAutocompleteField/FetchAutoCompleteField.mock';
 
 import { AddressAutocompleteFields as Cmp } from './AddressAutocompleteFields';
 import { onOptionSubmitMock } from './AddressAutocompleteFields.mock';
@@ -17,10 +17,11 @@ const meta = {
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const AddressAutocompleteFields: IStory = {
-  args: {
-    onFetchData: getDataAddressGouvMock,
-    onFieldsValuesChange: action('value change'),
-    onOptionSubmit: onOptionSubmitMock,
-  },
-};
+export const AddressAutocompleteFieldsWithDefaultAutocompleteFieldsComponent: IStory =
+  {
+    args: {
+      onFetchData: getDataAddressGouvRequest,
+      onFieldsValuesChange: action('on change'),
+      onOptionSubmit: onOptionSubmitMock,
+    },
+  };
