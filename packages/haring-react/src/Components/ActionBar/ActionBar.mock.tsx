@@ -4,7 +4,7 @@ import type { IThumbnail } from '../../types';
 import {
   actionRowOverflowActionsMock,
   actionRowOverflowSelectedMock,
-} from '../ActionRowOverflow/ActionRowOverflow.mock';
+} from '../ActionList/ActionList.mock';
 
 export const actionBarLabelMock = (elements: number): string =>
   `${elements} selected`;

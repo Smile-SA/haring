@@ -15,6 +15,6 @@ const meta = {
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const DocumentDetails: IStory = {
+export const GraphicExamples: IStory = {
   args: {},
 };

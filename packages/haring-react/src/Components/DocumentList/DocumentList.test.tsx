@@ -1,6 +1,6 @@
 import { renderWithProviders } from '@smile/haring-react-shared/test-utils';
 
-import { actionRowOverflowActionsMock } from '../ActionRowOverflow/ActionRowOverflow.mock';
+import { actionRowOverflowActionsMock } from '../ActionList/ActionList.mock';
 
 import { DocumentList } from './DocumentList';
 import { documentsMock } from './DocumentList.mock';
