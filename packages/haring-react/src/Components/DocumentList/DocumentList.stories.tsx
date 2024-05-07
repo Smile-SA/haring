@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
 
-import { actionRowOverflowActionsMock } from '../ActionRowOverflow/ActionRowOverflow.mock';
+import { actionRowOverflowActionsMock } from '../ActionList/ActionList.mock';
 
 import { DocumentList as Cmp } from './DocumentList';
 import { documentsMock } from './DocumentList.mock';

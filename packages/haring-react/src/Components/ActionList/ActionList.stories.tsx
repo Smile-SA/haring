@@ -1,30 +1,27 @@
-import type { IActionListAction } from '../ActionList/ActionList';
+import type { IActionListAction } from './ActionList';
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { ActionList as Cmp } from './ActionList';
 import {
   actionRowOverflowActionsMock,
   actionRowOverflowSelectedMock,
-} from '../ActionList/ActionList.mock';
-
-import { ActionBar as Cmp } from './ActionBar';
-import { actionBarLabelMock } from './ActionBar.mock';
+} from './ActionList.mock';
 
 const meta = {
   component: Cmp,
   tags: ['autodocs'],
-  title: '3-custom/Components/ActionBar',
+  title: '3-custom/Components/ActionList',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const ActionBar: IStory = {
+export const ActionList: IStory = {
   args: {
     actions: actionRowOverflowActionsMock as IActionListAction<
       Record<string, unknown>
     >[],
     rowActionNumber: 2,
     selectedElements: actionRowOverflowSelectedMock,
-    selectedElementsLabel: actionBarLabelMock,
   },
 };

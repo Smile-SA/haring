@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import type { IActionRowOverflowAction, IDocument } from '@smile/haring-react';
+import type { IActionListAction, IDocument } from '@smile/haring-react';
 
 import {
   Avatar,
@@ -143,7 +143,7 @@ export const searchDocuments: IDocument[] = [
   },
 ];
 
-export const searchActions: IActionRowOverflowAction<IDocument>[] = [
+export const searchActions: IActionListAction<IDocument>[] = [
   {
     icon: <DownloadSimple size={16} />,
     id: 'download',

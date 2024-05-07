@@ -29,7 +29,7 @@ const svgSeparator = (
   </svg>
 );
 
-/** Additional props will be forwarded to the [Mantine Breadcrumb component](https://mantine.dev/core/breadcrumbs) */
+/** Additional props will be forwarded to the [Mantine Breadcrumbs component](https://mantine.dev/core/Breadcrumbs) */
 export function Breadcrumbs(props: IBreadcrumbsProps): ReactElement {
   const { separator = svgSeparator, children, ...BreadcrumbsProps } = props;
 
