@@ -1,5 +1,17 @@
 # @smile/haring-react-dropzone
 
+## 0.13.0
+
+### Minor Changes
+
+- [#178](https://github.com/Smile-SA/haring/pull/178) [`ce8f39a2c52590b2c91950450a84222434913743`](https://github.com/Smile-SA/haring/commit/ce8f39a2c52590b2c91950450a84222434913743) Thanks [@tonai](https://github.com/tonai)! - Rename packages
+
+### Patch Changes
+
+- Updated dependencies [[`3b5022233daf5ee652df14a0b654bf18af672d38`](https://github.com/Smile-SA/haring/commit/3b5022233daf5ee652df14a0b654bf18af672d38), [`88bcbd0f441dd6da0ad41383230ae3a588fd5fe0`](https://github.com/Smile-SA/haring/commit/88bcbd0f441dd6da0ad41383230ae3a588fd5fe0), [`ce8f39a2c52590b2c91950450a84222434913743`](https://github.com/Smile-SA/haring/commit/ce8f39a2c52590b2c91950450a84222434913743)]:
+  - @smile/haring-react@0.13.0
+  - @smile/haring-react-shared@0.13.0
+
 ## 0.12.0
 
 ### Patch Changes

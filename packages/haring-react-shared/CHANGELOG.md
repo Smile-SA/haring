@@ -1,5 +1,11 @@
 # @smile/haring-react-shared
 
+## 0.13.0
+
+### Minor Changes
+
+- [#178](https://github.com/Smile-SA/haring/pull/178) [`ce8f39a2c52590b2c91950450a84222434913743`](https://github.com/Smile-SA/haring/commit/ce8f39a2c52590b2c91950450a84222434913743) Thanks [@tonai](https://github.com/tonai)! - Rename packages
+
 ## 0.12.0
 
 ## 0.11.0
