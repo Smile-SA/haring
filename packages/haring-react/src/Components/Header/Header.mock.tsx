@@ -1,12 +1,12 @@
-import type { IHeaderNavMenu } from '../HeaderNav/HeaderNav';
+import type { IHeaderMenuMenu } from '../HeaderMenu/HeaderMenu';
 import type { ReactElement } from 'react';
 
 import { Avatar, Menu } from '@mantine/core';
 
 import { DropdownButton } from '../DropdownButton/DropdownButton';
-import { HeaderNav } from '../HeaderNav/HeaderNav';
+import { HeaderMenu } from '../HeaderMenu/HeaderMenu';
 
-export const menusMock: IHeaderNavMenu<number>[] = [
+export const menusMock: IHeaderMenuMenu<number>[] = [
   {
     children: [
       { id: 4, label: 'Releases', url: '#' },
@@ -31,7 +31,7 @@ export const menusMock: IHeaderNavMenu<number>[] = [
 ];
 
 export const childrenMock = (isMobile: boolean): ReactElement => {
-  return <HeaderNav isMobile={isMobile} menus={menusMock} />;
+  return <HeaderMenu isMobile={isMobile} menus={menusMock} />;
 };
 
 export const leftContentMock = (

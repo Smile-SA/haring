@@ -10,11 +10,11 @@ import {
 } from '@mantine/core';
 import { Export, Eye, UserCircle } from '@phosphor-icons/react';
 
-import { ActionRowOverflow } from '../ActionRowOverflow/ActionRowOverflow';
+import { ActionList } from '../ActionList/ActionList';
 import {
   actionRowOverflowActionsMock,
   actionRowOverflowSelectedMock,
-} from '../ActionRowOverflow/ActionRowOverflow.mock';
+} from '../ActionList/ActionList.mock';
 
 export const defaultSummaryBoxMock = {
   children: 'children node',
@@ -98,7 +98,7 @@ export const rightMock = (
 );
 
 export const actionRightMock = (
-  <ActionRowOverflow
+  <ActionList
     actions={actionRowOverflowActionsMock}
     isCompactStyle
     rowActionNumber={1}

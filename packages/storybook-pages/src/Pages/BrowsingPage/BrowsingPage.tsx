@@ -28,8 +28,8 @@ import {
   FilterList,
   FoldableColumnLayout,
   Header,
-  InfoCard,
-  SearchableCheckboxList,
+  InfoBox,
+  SearchableList,
   SidebarMenu,
   flattenNestedObjects,
 } from '@smile/haring-react';
@@ -52,7 +52,7 @@ import {
 } from '../pages.mock';
 
 import {
-  SearchableCheckboxListProps,
+  SearchableListProps,
   actions,
   data,
   gridProps,
@@ -73,9 +73,8 @@ export function BrowsingPage(): ReactElement {
   const { primary, secondary } = useThemes();
   const [filtersOpened, { toggle }] = useDisclosure(false);
   const [filtersManagerModal, handleFiltersManagerModal] = useDisclosure(false);
-  const [globalFilters, setGlobalFilters] = useState<IFilter[]>(
-    SearchableCheckboxListProps,
-  );
+  const [globalFilters, setGlobalFilters] =
+    useState<IFilter[]>(SearchableListProps);
   const theme = useMantineTheme();
 
   const accordionItems = [
@@ -176,7 +175,7 @@ export function BrowsingPage(): ReactElement {
           }
         >
           <NestedProvider theme={secondary}>
-            <InfoCard
+            <InfoBox
               content={
                 <p
                   aria-hidden="true"
@@ -227,7 +226,7 @@ export function BrowsingPage(): ReactElement {
                   setFiles(files.filter((f) => f !== file))
                 }
               />
-            </InfoCard>
+            </InfoBox>
           </NestedProvider>
           <div className={classes.sizeMobile}>
             <TableGridView
@@ -331,7 +330,7 @@ export function BrowsingPage(): ReactElement {
         size="md"
         title="Gérer les filtres"
       >
-        <SearchableCheckboxList<IFilter>
+        <SearchableList<IFilter>
           buttonLabel="Valider les modifications"
           checkboxes={globalFilters}
           onClickButton={handleFiltersManagerSubmit}

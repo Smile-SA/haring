@@ -32,7 +32,7 @@ import {
 const meta = {
   component: null,
   tags: ['autodocs'],
-  title: '3-custom/Assembly/DashboardCard',
+  title: '3-custom/Assembly/Cards',
 };
 
 export default meta;
@@ -958,7 +958,7 @@ export const CardListNotificationWithoutButton: IStory = {
   ),
 };
 
-export const CardListUpload: IStory = {
+export const CardListSimple: IStory = {
   render: () => (
     <Card radius={16}>
       <Card.Section>

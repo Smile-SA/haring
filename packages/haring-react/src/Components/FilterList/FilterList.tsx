@@ -9,7 +9,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { Plus } from '@phosphor-icons/react';
 import { useState } from 'react';
 
-import { SearchableCheckboxList } from '../SearchableCheckboxList/SearchableCheckboxList';
+import { SearchableList } from '../SearchableList/SearchableList';
 
 import classes from './FilterList.module.css';
 
@@ -97,7 +97,7 @@ export function FilterList(props: IFilterListProps): ReactElement {
         title={manageFilterModalTitle}
         {...modalProps}
       >
-        <SearchableCheckboxList<IFilter>
+        <SearchableList<IFilter>
           buttonLabel={manageFilterModalSearchSubmit}
           checkboxes={filters}
           onClickButton={handleManageFiltersSubmit}

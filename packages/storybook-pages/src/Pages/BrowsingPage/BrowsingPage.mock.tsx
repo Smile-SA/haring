@@ -184,7 +184,7 @@ export const gridProps: ITableGridViewGridProps = {
   verticalSpacing: 25,
 };
 
-export const SearchableCheckboxListProps: IFilter[] = [
+export const SearchableListProps: IFilter[] = [
   {
     active: false,
     component: <TextInput placeholder="Nom du filtre" />,
