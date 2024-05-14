@@ -54,6 +54,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
   const inputs = [
     {
       description: streetProps.description,
+      error: streetProps.error,
       handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('street', e.target.value);
       },
@@ -63,6 +64,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
     },
     {
       description: numberProps.description,
+      error: numberProps.error,
       handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('number', e.target.value);
       },
@@ -72,6 +74,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
     },
     {
       description: cityProps.description,
+      error: cityProps.error,
       handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('city', e.target.value);
       },
@@ -81,6 +84,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
     },
     {
       description: postCodeProps.description,
+      error: postCodeProps.error,
       handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('postCode', e.target.value);
       },
@@ -90,6 +94,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
     },
     {
       description: countryProps.description,
+      error: countryProps.error,
       handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('country', e.target.value);
       },
@@ -107,6 +112,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
             key={input.label as string}
             className={classes.input}
             description={input.description}
+            error={input.error}
             label={input.label}
             onChange={input.handleChange}
             placeholder={input.placeholder}
