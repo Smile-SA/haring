@@ -6,6 +6,8 @@ import { TextInput } from '@mantine/core';
 
 import classes from './AddressFields.module.css';
 
+type ITextInputProps = Omit<TextInputProps, 'error'>;
+
 export interface IAddressFieldsValues {
   city?: string;
   country?: string;
@@ -15,8 +17,8 @@ export interface IAddressFieldsValues {
 }
 
 export interface IAddressFieldsProps {
-  cityProps?: TextInputProps;
-  countryProps?: TextInputProps;
+  cityProps?: ITextInputProps;
+  countryProps?: ITextInputProps;
   errors?: {
     city?: string;
     country?: string;
@@ -24,10 +26,10 @@ export interface IAddressFieldsProps {
     postCode?: string;
     street?: string;
   };
-  numberProps?: TextInputProps;
+  numberProps?: ITextInputProps;
   onChange: (value: IAddressFieldsValues) => void;
-  postCodeProps?: TextInputProps;
-  streetProps?: TextInputProps;
+  postCodeProps?: ITextInputProps;
+  streetProps?: ITextInputProps;
   value?: IAddressFieldsValues;
 }
 
@@ -69,6 +71,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
       label: streetProps.label,
       placeholder: streetProps.placeholder,
       value: value?.street,
+      ...streetProps,
     },
     {
       description: numberProps.description,
@@ -79,6 +82,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
       label: numberProps.label,
       placeholder: numberProps.placeholder,
       value: value?.number,
+      ...numberProps,
     },
     {
       description: cityProps.description,
@@ -89,6 +93,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
       label: cityProps.label,
       placeholder: cityProps.placeholder,
       value: value?.city,
+      ...cityProps,
     },
     {
       description: postCodeProps.description,
@@ -99,6 +104,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
       label: postCodeProps.label,
       placeholder: postCodeProps.placeholder,
       value: value?.postCode,
+      ...postCodeProps,
     },
     {
       description: countryProps.description,
@@ -109,6 +115,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
       label: countryProps.label,
       placeholder: countryProps.placeholder,
       value: value?.country,
+      ...countryProps,
     },
   ];
 
@@ -119,12 +126,8 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
           <TextInput
             key={input.label as string}
             className={classes.input}
-            description={input.description}
-            error={input.error}
-            label={input.label}
             onChange={input.handleChange}
-            placeholder={input.placeholder}
-            value={input.value}
+            {...input}
           />
         );
       })}
