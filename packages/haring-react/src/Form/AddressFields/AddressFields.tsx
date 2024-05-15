@@ -63,57 +63,42 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
 
   const inputs = [
     {
-      description: streetProps.description,
       error: errors?.street,
-      handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('street', e.target.value);
       },
-      label: streetProps.label,
-      placeholder: streetProps.placeholder,
       value: value?.street,
       ...streetProps,
     },
     {
-      description: numberProps.description,
       error: errors?.number,
-      handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('number', e.target.value);
       },
-      label: numberProps.label,
-      placeholder: numberProps.placeholder,
       value: value?.number,
       ...numberProps,
     },
     {
-      description: cityProps.description,
       error: errors?.city,
-      handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('city', e.target.value);
       },
-      label: cityProps.label,
-      placeholder: cityProps.placeholder,
       value: value?.city,
       ...cityProps,
     },
     {
-      description: postCodeProps.description,
       error: errors?.postCode,
       handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('postCode', e.target.value);
       },
-      label: postCodeProps.label,
-      placeholder: postCodeProps.placeholder,
       value: value?.postCode,
       ...postCodeProps,
     },
     {
       description: countryProps.description,
-      error: errors?.country,
-      handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('country', e.target.value);
       },
-      label: countryProps.label,
-      placeholder: countryProps.placeholder,
       value: value?.country,
       ...countryProps,
     },
@@ -126,7 +111,6 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
           <TextInput
             key={input.label as string}
             className={classes.input}
-            onChange={input.handleChange}
             {...input}
           />
         );
