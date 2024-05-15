@@ -17,6 +17,13 @@ export interface IAddressFieldsValues {
 export interface IAddressFieldsProps {
   cityProps?: TextInputProps;
   countryProps?: TextInputProps;
+  errors?: {
+    city?: string;
+    country?: string;
+    number?: string;
+    postCode?: string;
+    street?: string;
+  };
   numberProps?: TextInputProps;
   onChange: (value: IAddressFieldsValues) => void;
   postCodeProps?: TextInputProps;
@@ -26,6 +33,7 @@ export interface IAddressFieldsProps {
 
 export function AddressFields(props: IAddressFieldsProps): ReactElement {
   const {
+    errors,
     streetProps = {
       label: 'Street Name',
       placeholder: 'Pall Mall',
@@ -54,7 +62,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
   const inputs = [
     {
       description: streetProps.description,
-      error: streetProps.error,
+      error: errors?.street,
       handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('street', e.target.value);
       },
@@ -64,7 +72,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
     },
     {
       description: numberProps.description,
-      error: numberProps.error,
+      error: errors?.number,
       handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('number', e.target.value);
       },
@@ -74,7 +82,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
     },
     {
       description: cityProps.description,
-      error: cityProps.error,
+      error: errors?.city,
       handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('city', e.target.value);
       },
@@ -84,7 +92,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
     },
     {
       description: postCodeProps.description,
-      error: postCodeProps.error,
+      error: errors?.postCode,
       handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('postCode', e.target.value);
       },
@@ -94,7 +102,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
     },
     {
       description: countryProps.description,
-      error: countryProps.error,
+      error: errors?.country,
       handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('country', e.target.value);
       },
