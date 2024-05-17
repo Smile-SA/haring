@@ -10,6 +10,7 @@ import {
   Button,
   Collapse,
   Flex,
+  Input,
   Modal,
   getThemeColor,
   useMantineTheme,
@@ -66,6 +67,10 @@ import classes from './BrowsingPage.module.css';
  */
 export function BrowsingPage(): ReactElement {
   const [search, setSearch] = useState('');
+  const [currentModalIsNewFolder, setCurrentModalIsNewFolder] =
+    useState<boolean>(false);
+  const [newFolderNameInput, setNewFolderNameInput] =
+    useState('Nouveau dossier');
   const [sidebarMenu, setSidebarMenu] = useState(menuMock);
   const [files, setFiles] = useState<IFile[]>([]);
   const [gridCols, setGridCols] = useState(4);
@@ -89,16 +94,19 @@ export function BrowsingPage(): ReactElement {
     event.preventDefault();
   }
 
-  function handleAddFolder(): void {
+  function handleClickNewFolderSubmitButton(): void {
     setSidebarMenu(
       sidebarMenu.concat([
         {
           id: flattenNestedObjects(sidebarMenu).length + 1,
-          label: 'Nouveau Dossier',
+          label: newFolderNameInput,
           leftIcon: <FolderPlus />,
         },
       ]),
     );
+    setNewFolderNameInput('Nouveau dossier');
+    close();
+    setCurrentModalIsNewFolder(false);
   }
 
   function handleFiltersManagerSubmit(filters: IFilter[]): void {
@@ -113,7 +121,6 @@ export function BrowsingPage(): ReactElement {
         <Accordion.Panel>{item.content}</Accordion.Panel>
       </Accordion.Item>
     ));
-
     return (
       <NestedProvider theme={primary}>
         <Accordion
@@ -129,6 +136,22 @@ export function BrowsingPage(): ReactElement {
           {items}
         </Accordion>
       </NestedProvider>
+    );
+  }
+
+  function getNewFolderNameInput(): ReactElement {
+    return (
+      <div className={classes.newFolderModalContent} style={{ gap: '20px' }}>
+        <Input.Wrapper label="Nom du dossier">
+          <Input
+            onChange={(e) => setNewFolderNameInput(e.target.value)}
+            value={newFolderNameInput}
+          />
+        </Input.Wrapper>
+        <Button onClick={() => handleClickNewFolderSubmitButton()}>
+          Envoyer
+        </Button>
+      </div>
     );
   }
 
@@ -159,7 +182,13 @@ export function BrowsingPage(): ReactElement {
           }
           sidebarContent={
             <Flex direction="column" gap={24}>
-              <Button onClick={handleAddFolder} size="md">
+              <Button
+                onClick={() => {
+                  setCurrentModalIsNewFolder(true);
+                  open();
+                }}
+                size="md"
+              >
                 Nouveau dossier
               </Button>
               <SidebarMenu menu={sidebarMenu} />
@@ -179,7 +208,10 @@ export function BrowsingPage(): ReactElement {
               content={
                 <p
                   aria-hidden="true"
-                  onClick={open}
+                  onClick={() => {
+                    setCurrentModalIsNewFolder(false);
+                    open();
+                  }}
                   style={{
                     cursor: 'pointer',
                     display: 'flex',
@@ -310,6 +342,7 @@ export function BrowsingPage(): ReactElement {
       </AppShell.Main>
       <NestedProvider theme={secondary}>
         <Modal
+          centered
           classNames={{
             body: classes.modalBody,
             close: classes.modalClose,
@@ -318,8 +351,14 @@ export function BrowsingPage(): ReactElement {
           opened={seeMoreModal}
           size="xl"
         >
-          <h3 className={classes.modalTitle}>Propriétés du dossier</h3>
-          {getAccordionItems()}
+          <h3 className={classes.modalTitle}>
+            {currentModalIsNewFolder
+              ? 'Nouveau dossier'
+              : 'Propriétés du dossier'}
+          </h3>
+          {currentModalIsNewFolder
+            ? getNewFolderNameInput()
+            : getAccordionItems()}
         </Modal>
       </NestedProvider>
       <Modal
