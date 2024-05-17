@@ -99,7 +99,10 @@ export function BrowsingPage(): ReactElement {
       sidebarMenu.concat([
         {
           id: flattenNestedObjects(sidebarMenu).length + 1,
-          label: newFolderNameInput,
+          label:
+            newFolderNameInput.trim().length > 0
+              ? newFolderNameInput
+              : 'Nouveau dossier',
           leftIcon: <FolderPlus />,
         },
       ]),
