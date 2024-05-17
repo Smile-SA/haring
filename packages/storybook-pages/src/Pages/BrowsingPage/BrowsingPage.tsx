@@ -66,11 +66,16 @@ import classes from './BrowsingPage.module.css';
  * Primary UI component for user interaction
  */
 export function BrowsingPage(): ReactElement {
+  const newFolderTxt = 'Nouveau dossier';
+  const folderNameTxt = 'Nom du Dossier';
+  const sendTxt = 'Envoyer';
+  const SeeDirectoryTreeTxt = "Voir l'arborescence";
+
   const [search, setSearch] = useState('');
   const [currentModalIsNewFolder, setCurrentModalIsNewFolder] =
     useState<boolean>(false);
-  const [newFolderNameInput, setNewFolderNameInput] =
-    useState('Nouveau dossier');
+
+  const [newFolderNameInput, setNewFolderNameInput] = useState(newFolderTxt);
   const [sidebarMenu, setSidebarMenu] = useState(menuMock);
   const [files, setFiles] = useState<IFile[]>([]);
   const [gridCols, setGridCols] = useState(4);
@@ -102,12 +107,12 @@ export function BrowsingPage(): ReactElement {
           label:
             newFolderNameInput.trim().length > 0
               ? newFolderNameInput
-              : 'Nouveau dossier',
+              : newFolderTxt,
           leftIcon: <FolderPlus />,
         },
       ]),
     );
-    setNewFolderNameInput('Nouveau dossier');
+    setNewFolderNameInput(newFolderTxt);
     close();
     setCurrentModalIsNewFolder(false);
   }
@@ -145,14 +150,14 @@ export function BrowsingPage(): ReactElement {
   function getNewFolderNameInput(): ReactElement {
     return (
       <div className={classes.newFolderModalContent} style={{ gap: '20px' }}>
-        <Input.Wrapper label="Nom du dossier">
+        <Input.Wrapper label={folderNameTxt}>
           <Input
             onChange={(e) => setNewFolderNameInput(e.target.value)}
             value={newFolderNameInput}
           />
         </Input.Wrapper>
         <Button onClick={() => handleClickNewFolderSubmitButton()}>
-          Envoyer
+          {sendTxt}
         </Button>
       </div>
     );
@@ -192,12 +197,12 @@ export function BrowsingPage(): ReactElement {
                 }}
                 size="md"
               >
-                Nouveau dossier
+                {newFolderTxt}
               </Button>
               <SidebarMenu menu={sidebarMenu} />
             </Flex>
           }
-          sidebarToggleLabel="Voir l'arborescence"
+          sidebarToggleLabel={SeeDirectoryTreeTxt}
           topBarRight={
             <Breadcrumbs>
               <a href="#">CALICO</a>
@@ -355,9 +360,7 @@ export function BrowsingPage(): ReactElement {
           size="xl"
         >
           <h3 className={classes.modalTitle}>
-            {currentModalIsNewFolder
-              ? 'Nouveau dossier'
-              : 'Propriétés du dossier'}
+            {currentModalIsNewFolder ? newFolderTxt : 'Propriétés du dossier'}
           </h3>
           {currentModalIsNewFolder
             ? getNewFolderNameInput()
