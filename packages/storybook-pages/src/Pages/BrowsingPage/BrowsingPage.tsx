@@ -201,7 +201,7 @@ export function BrowsingPage(): ReactElement {
           sidebarToggleLabel={texts.seeDirectoryTree}
           topBarRight={
             <Breadcrumbs>
-              <a href="#">CALICO</a>
+              <a href="#">{texts.calico}</a>
               <a href="#">{texts.clients}</a>
               <a href="#">Jean-Michel Dupont</a>
             </Breadcrumbs>

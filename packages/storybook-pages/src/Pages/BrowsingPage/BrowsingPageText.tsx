@@ -1,6 +1,8 @@
 export const texts = {
   action: 'Action',
   browserLabel: 'Parcourir votre appareil',
+  calico: 'CALICO',
+  clients: 'Clients',
   displayFilters: 'Afficher les filtres',
   displayFolderProperties: 'Voir les propriétés du dossier',
   dragLabel: 'Glissez vos documents ici',
