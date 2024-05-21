@@ -61,21 +61,17 @@ import {
   tableProps,
 } from './BrowsingPage.mock';
 import classes from './BrowsingPage.module.css';
+import { texts } from './BrowsingPageText';
 
 /**
  * Primary UI component for user interaction
  */
 export function BrowsingPage(): ReactElement {
-  const newFolderTxt = 'Nouveau dossier';
-  const folderNameTxt = 'Nom du Dossier';
-  const sendTxt = 'Envoyer';
-  const SeeDirectoryTreeTxt = "Voir l'arborescence";
-
   const [search, setSearch] = useState('');
   const [currentModalIsNewFolder, setCurrentModalIsNewFolder] =
     useState<boolean>(false);
 
-  const [newFolderNameInput, setNewFolderNameInput] = useState(newFolderTxt);
+  const [newFolderNameInput, setNewFolderNameInput] = useState(texts.newFolder);
   const [sidebarMenu, setSidebarMenu] = useState(menuMock);
   const [files, setFiles] = useState<IFile[]>([]);
   const [gridCols, setGridCols] = useState(4);
@@ -88,11 +84,11 @@ export function BrowsingPage(): ReactElement {
   const theme = useMantineTheme();
 
   const accordionItems = [
-    { content: CardAction, key: 1, title: 'Action' },
-    { content: CardsMetadata, key: 2, title: 'Métadonnées' },
-    { content: CardNative, key: 3, title: 'Historique' },
-    { content: CardPermissions, key: 4, title: 'Droits' },
-    { content: CardIdentity, key: 5, title: 'Cycle de vie' },
+    { content: CardAction, key: 1, title: texts.action },
+    { content: CardsMetadata, key: 2, title: texts.metaData },
+    { content: CardNative, key: 3, title: texts.history },
+    { content: CardPermissions, key: 4, title: texts.rights },
+    { content: CardIdentity, key: 5, title: texts.lifeCycle },
   ];
 
   function handleSearchSubmit(event: FormEvent): void {
@@ -107,12 +103,12 @@ export function BrowsingPage(): ReactElement {
           label:
             newFolderNameInput.trim().length > 0
               ? newFolderNameInput
-              : newFolderTxt,
+              : texts.newFolder,
           leftIcon: <FolderPlus />,
         },
       ]),
     );
-    setNewFolderNameInput(newFolderTxt);
+    setNewFolderNameInput(texts.newFolder);
     close();
     setCurrentModalIsNewFolder(false);
   }
@@ -138,7 +134,7 @@ export function BrowsingPage(): ReactElement {
             control: classes.accordionControl,
             item: classes.accordionItem,
           }}
-          defaultValue="Métadonnées"
+          defaultValue={texts.metaData}
           variant="filled"
         >
           {items}
@@ -150,14 +146,14 @@ export function BrowsingPage(): ReactElement {
   function getNewFolderNameInput(): ReactElement {
     return (
       <div className={classes.newFolderModalContent} style={{ gap: '20px' }}>
-        <Input.Wrapper label={folderNameTxt}>
+        <Input.Wrapper label={texts.folderName}>
           <Input
             onChange={(e) => setNewFolderNameInput(e.target.value)}
             value={newFolderNameInput}
           />
         </Input.Wrapper>
         <Button onClick={() => handleClickNewFolderSubmitButton()}>
-          {sendTxt}
+          {texts.send}
         </Button>
       </div>
     );
@@ -197,12 +193,12 @@ export function BrowsingPage(): ReactElement {
                 }}
                 size="md"
               >
-                {newFolderTxt}
+                {texts.newFolder}
               </Button>
               <SidebarMenu menu={sidebarMenu} />
             </Flex>
           }
-          sidebarToggleLabel={SeeDirectoryTreeTxt}
+          sidebarToggleLabel={texts.seeDirectoryTree}
           topBarRight={
             <Breadcrumbs>
               <a href="#">CALICO</a>
@@ -251,15 +247,15 @@ export function BrowsingPage(): ReactElement {
                     />
                   ),
                   iconProps: { color: 'cyan' },
-                  label: 'Contrat Individuel',
+                  label: texts.individualContract,
                 },
               ]}
               p="32px 48px"
               title={<h1 style={{ margin: 0 }}>Jean-Michel DUPONT</h1>}
             >
               <Dropzone
-                browseLabel="Parcourir votre appareil"
-                dragLabel="Glissez vos documents ici"
+                browseLabel={texts.browserLabel}
+                dragLabel={texts.dragLabel}
                 files={files}
                 onDrop={setFiles}
                 onRemoveFile={(file) =>
@@ -291,9 +287,7 @@ export function BrowsingPage(): ReactElement {
                     onClick={toggle}
                     rightSection={filtersOpened ? <CaretUp /> : <CaretDown />}
                   >
-                    {filtersOpened
-                      ? 'Masquer les filtres'
-                      : 'Afficher les filtres'}
+                    {filtersOpened ? texts.hideFilters : texts.displayFilters}
                   </Button>
                 </div>
               }
@@ -305,8 +299,8 @@ export function BrowsingPage(): ReactElement {
                   <FilterList
                     direction="column"
                     filters={globalFilters}
-                    filtersManageLabel="Gérer les filtres"
-                    submitLabel="Filtrer"
+                    filtersManageLabel={texts.manageFilters}
+                    submitLabel={texts.filter}
                   />
                 </Collapse>
               }
@@ -327,8 +321,8 @@ export function BrowsingPage(): ReactElement {
               topBarLeft={
                 <FilterList
                   filters={globalFilters}
-                  filtersManageLabel="Gérer les filtres"
-                  submitLabel="Filtrer"
+                  filtersManageLabel={texts.manageFilters}
+                  submitLabel={texts.filter}
                 />
               }
               topContent={
@@ -339,8 +333,8 @@ export function BrowsingPage(): ReactElement {
                   <FilterList
                     direction="column"
                     filters={globalFilters}
-                    filtersManageLabel="Gérer les filtres"
-                    submitLabel="Filtrer"
+                    filtersManageLabel={texts.manageFilters}
+                    submitLabel={texts.filter}
                   />
                 </Collapse>
               }
@@ -360,7 +354,7 @@ export function BrowsingPage(): ReactElement {
           size="xl"
         >
           <h3 className={classes.modalTitle}>
-            {currentModalIsNewFolder ? newFolderTxt : 'Propriétés du dossier'}
+            {currentModalIsNewFolder ? texts.newFolder : texts.folderProperties}
           </h3>
           {currentModalIsNewFolder
             ? getNewFolderNameInput()
@@ -373,13 +367,13 @@ export function BrowsingPage(): ReactElement {
         onClose={handleFiltersManagerModal.close}
         opened={filtersManagerModal}
         size="md"
-        title="Gérer les filtres"
+        title={texts.manageFilters}
       >
         <SearchableList<IFilter>
-          buttonLabel="Valider les modifications"
+          buttonLabel={texts.validateModification}
           checkboxes={globalFilters}
           onClickButton={handleFiltersManagerSubmit}
-          placeholder="Chercher dans les filtres"
+          placeholder={texts.searchInFilters}
         />
       </Modal>
     </AppShell>
