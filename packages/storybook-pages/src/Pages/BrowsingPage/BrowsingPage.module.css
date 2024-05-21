@@ -98,6 +98,16 @@
   margin-top: 0;
 }
 
+.newFolderModalContent {
+  label {
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  button {
+    margin-top: 12px;
+  }
+}
+
 .sizeDesktop {
   display: initial;
 
