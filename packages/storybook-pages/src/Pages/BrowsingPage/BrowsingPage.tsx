@@ -202,7 +202,7 @@ export function BrowsingPage(): ReactElement {
           topBarRight={
             <Breadcrumbs>
               <a href="#">CALICO</a>
-              <a href="#">Clients</a>
+              <a href="#">{texts.clients}</a>
               <a href="#">Jean-Michel Dupont</a>
             </Breadcrumbs>
           }
@@ -229,7 +229,7 @@ export function BrowsingPage(): ReactElement {
                     style={{ margin: 'auto 10px auto 0' }}
                     weight="bold"
                   />
-                  Voir les propriétés du dossier
+                  {texts.displayFolderProperties}
                 </p>
               }
               contentItems={[

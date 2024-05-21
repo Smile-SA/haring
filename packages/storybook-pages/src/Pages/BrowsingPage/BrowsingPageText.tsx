@@ -2,6 +2,7 @@ export const texts = {
   action: 'Action',
   browserLabel: 'Parcourir votre appareil',
   displayFilters: 'Afficher les filtres',
+  displayFolderProperties: 'Voir les propriétés du dossier',
   dragLabel: 'Glissez vos documents ici',
   filter: 'filtrer',
   folderName: 'Nom du Dossier',
