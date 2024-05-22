@@ -34,6 +34,8 @@ import {
   SummaryBox,
 } from '@smile/haring-react';
 
+import { texts } from './DashboardPagesTexts';
+
 // eslint-disable-next-line react-refresh/only-export-components
 export const iconCardMock = {
   children: (
@@ -48,7 +50,7 @@ export const iconCardMock = {
       }}
     >
       <Eye size={18} style={{ margin: 'auto 10px auto 0' }} weight="bold" />
-      View more
+      {texts.viewMore}
     </p>
   ),
   icon: (
@@ -65,13 +67,13 @@ export const iconCardMock = {
       <Note color="#0B7285" size={32} weight="light" />
     </div>
   ),
-  subTitle: 'sub-title',
-  title: 'My documents',
+  subTitle: texts.iconCardSubtitle,
+  title: texts.iconCardTitle,
 };
 
 const header = (
-  title = 'Element de text',
-  subTitle = 'sous-titre',
+  title = texts.headerTitle,
+  subTitle = texts.headerSubTitle,
   icon = <Note size={38} style={{ marginTop: '12px' }} weight="thin" />,
 ): ReactElement => {
   return (
@@ -86,7 +88,7 @@ const header = (
 
 const seeMore = (
   <CardSection p="0px 32px 32px 32px">
-    <Button fullWidth>Voir plus</Button>
+    <Button fullWidth>{texts.viewMore}</Button>
   </CardSection>
 );
 
@@ -113,7 +115,7 @@ const notificationContent = (name = 'Simon Leclerc'): ReactElement => {
   );
 };
 
-const notificationTop = (text = 'Il y a 3h'): ReactElement => {
+const notificationTop = (text = texts.threeHoursAgo): ReactElement => {
   return <span>{text}</span>;
 };
 
@@ -122,7 +124,7 @@ const cardListNotifications = (button = true): ReactElement => {
     <Card radius={16}>
       <Card.Section>
         {header(
-          'Notifications',
+          texts.notifications,
           undefined,
           <Bell size={38} style={{ marginTop: '12px' }} weight="thin" />,
         )}
@@ -132,12 +134,15 @@ const cardListNotifications = (button = true): ReactElement => {
           <SummaryBox leftNode={avatar} topNode={notificationTop()}>
             {notificationContent()}
           </SummaryBox>
-          <SummaryBox leftNode={avatar} topNode={notificationTop('Avant-hier')}>
+          <SummaryBox
+            leftNode={avatar}
+            topNode={notificationTop(texts.beforeYesterday)}
+          >
             {notificationContent('Marie Dupont')}
           </SummaryBox>
           <SummaryBox
             leftNode={avatar}
-            topNode={notificationTop('Le 08 décembre 2023')}
+            topNode={notificationTop(texts.heightDecember2023)}
           >
             {notificationContent('Vincent Le Grand')}
           </SummaryBox>
@@ -147,11 +152,11 @@ const cardListNotifications = (button = true): ReactElement => {
           <SummaryBox
             leftNode={avatar}
             titleNode={notificationContent('Jamie Marcel')}
-            topNode={notificationTop('Le 01 décembre 2023')}
+            topNode={notificationTop(texts.firstDecember2023)}
           />
           <SummaryBox
             leftNode={avatar}
-            topNode={notificationTop('Le 27 Novembre 2023')}
+            topNode={notificationTop(texts.twentySeven2023)}
           >
             {notificationContent('Robert De Fino')}
           </SummaryBox>
@@ -161,9 +166,7 @@ const cardListNotifications = (button = true): ReactElement => {
     </Card>
   );
 };
-const cardListUploadItem = (
-  text = 'Ma carte de tiers payant',
-): ReactElement => {
+const cardListUploadItem = (text = texts.cardListUploadText): ReactElement => {
   return (
     <SummaryBox
       rightNode={
@@ -179,7 +182,7 @@ const cardListUpload = (
   <Card radius={16}>
     <Card.Section>
       {header(
-        'Mes documents',
+        texts.iconCardTitle,
         undefined,
         <Folder size={38} style={{ marginTop: '12px' }} weight="thin" />,
       )}
@@ -187,8 +190,8 @@ const cardListUpload = (
     <Card.Section>
       <CardList>
         {cardListUploadItem()}
-        {cardListUploadItem('Ma facture du 12/12/23')}
-        {cardListUploadItem('Mon attestation de domicile')}
+        {cardListUploadItem(texts.myBill)}
+        {cardListUploadItem(texts.myResidenceCertificate)}
       </CardList>
     </Card.Section>
   </Card>
@@ -208,7 +211,9 @@ const cardSimple = (
     <Card.Section m="32px">
       <SummaryBox
         titleNode="Lorem ipsum dolor sit amet"
-        topNode={<Text style={{ fontSize: '12px' }}>Le 30 novembre 2023</Text>}
+        topNode={
+          <Text style={{ fontSize: '12px' }}>{texts.twentySeven2023}</Text>
+        }
       >
         <>
           {contentCard}
@@ -287,7 +292,7 @@ const cardList = (button = true): ReactElement => {
         <CardList h="565px">
           {cardListItem(
             0,
-            'Le 30 novembre 2023',
+            texts.twentyDecember2023,
             <Badge
               color="green"
               p="16px"
@@ -296,12 +301,12 @@ const cardList = (button = true): ReactElement => {
               variant="light"
               w="98px"
             >
-              Validé
+              {texts.valid}
             </Badge>,
           )}
           {cardListItem(
             1,
-            'Le 24 novembre 2023',
+            texts.fiveTeenDecember2023,
             <Badge
               color="orange.8"
               p="16px"
@@ -310,12 +315,12 @@ const cardList = (button = true): ReactElement => {
               variant="light"
               w="98px"
             >
-              En cours
+              {texts.inProgress}
             </Badge>,
           )}
           {cardListItem(
             2,
-            'Le 23 novembre 2023',
+            texts.tenDecember2023,
             <Badge
               color="gray"
               p="16px"
@@ -324,12 +329,12 @@ const cardList = (button = true): ReactElement => {
               variant="light"
               w="98px"
             >
-              En pause
+              {texts.onBreak}
             </Badge>,
           )}
           {cardListItem(
             0,
-            'Le 18 novembre 2023',
+            texts.heightDecember2023,
             <Badge
               color="green"
               p="16px"
@@ -338,12 +343,12 @@ const cardList = (button = true): ReactElement => {
               variant="light"
               w="98px"
             >
-              Validé
+              {texts.valid}
             </Badge>,
           )}
           {cardListItem(
             1,
-            'Le 16 novembre 2023',
+            texts.firstDecember2023,
             <Badge
               color="orange.8"
               p="16px"
@@ -352,12 +357,12 @@ const cardList = (button = true): ReactElement => {
               variant="light"
               w="98px"
             >
-              En cours
+              {texts.inProgress}
             </Badge>,
           )}
           {cardListItem(
             2,
-            'Le 8 novembre 2023',
+            texts.twentySeven2023,
             <Badge
               color="gray"
               p="16px"
@@ -366,7 +371,7 @@ const cardList = (button = true): ReactElement => {
               variant="light"
               w="98px"
             >
-              En pause
+              {texts.onBreak}
             </Badge>,
           )}
         </CardList>
@@ -381,25 +386,25 @@ const cardDataBadge = (
     <Card.Section>{header()}</Card.Section>
     <Card.Section m="32px 16px 16px">
       <DataBadge color="cyan" number={48} size="lg">
-        EN COURS DE CANDIDATURE
+        {texts.applicationInProgress}
       </DataBadge>
     </Card.Section>
     <Card.Section m="0 30px 18px 30px">
       <Grid mx="auto">
         <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
-          <DataBadge number={18}>EN COURS DE CANDIDATURE</DataBadge>
+          <DataBadge number={18}>{texts.applicationInProgress}</DataBadge>
         </Grid.Col>
         <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
-          <DataBadge number={12}>en cours de consultation</DataBadge>
+          <DataBadge number={12}>{texts.currentlyUnderConsultation}</DataBadge>
         </Grid.Col>
         <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
-          <DataBadge number={26}>en cours de signature</DataBadge>
+          <DataBadge number={26}>{texts.beingSigned}</DataBadge>
         </Grid.Col>
         <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
-          <DataBadge number={11}>en cours de procédure</DataBadge>
+          <DataBadge number={11}>{texts.duringTheProcedure}</DataBadge>
         </Grid.Col>
         <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
-          <DataBadge number={0}>terminé/signé</DataBadge>
+          <DataBadge number={0}>{texts.fence}</DataBadge>
         </Grid.Col>
         <Grid.Col p="5px 10px" span={{ base: 12, xs: 6 }}>
           <DataBadge number={3}>clôturé</DataBadge>

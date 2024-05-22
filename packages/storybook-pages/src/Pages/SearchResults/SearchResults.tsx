@@ -42,6 +42,7 @@ import {
 } from '../pages.mock';
 
 import classes from './SearchResults.module.css';
+import { texts } from './SearchResultsTexts';
 
 interface IOptionExtended extends IOption<string> {
   label: string;
@@ -124,7 +125,7 @@ export function SearchResults(): ReactElement {
         </div>
       ),
       id: 1,
-      label: `Nom du client`,
+      label: texts.clientName,
     },
     {
       children: [
@@ -134,7 +135,7 @@ export function SearchResults(): ReactElement {
               <Group>
                 <Checkbox
                   checked={cdiFilter}
-                  label="CDI"
+                  label={texts.permanentContract}
                   onChange={(event) => {
                     setActiveFiltersManager(4, event.target, 'CDI');
                   }}
@@ -145,7 +146,7 @@ export function SearchResults(): ReactElement {
               <Group>
                 <Checkbox
                   checked={cddFilter}
-                  label="CDD"
+                  label={texts.permanentContract}
                   onChange={(event) => {
                     setActiveFiltersManager(5, event.target, 'CDD');
                   }}
@@ -155,7 +156,7 @@ export function SearchResults(): ReactElement {
             </>
           ),
           id: 3,
-          label: 'Contrat classique',
+          label: texts.classicContract,
         },
         {
           content: (
@@ -163,7 +164,7 @@ export function SearchResults(): ReactElement {
               <Group>
                 <Checkbox
                   checked={freelanceFilter}
-                  label="Freelance"
+                  label={texts.freelance}
                   onChange={(event) => {
                     setActiveFiltersManager(6, event.target, 'Freelance');
                   }}
@@ -174,7 +175,7 @@ export function SearchResults(): ReactElement {
               <Group>
                 <Checkbox
                   checked={particularFilter}
-                  label="Particulié"
+                  label={texts.particular}
                   onChange={(event) => {
                     setActiveFiltersManager(7, event.target, 'Particular');
                   }}
@@ -184,11 +185,11 @@ export function SearchResults(): ReactElement {
             </>
           ),
           id: 4,
-          label: 'Contrat special',
+          label: texts.specialContract,
         },
       ],
       id: 2,
-      label: 'Type de contrat',
+      label: texts.typeOfContract,
     },
     {
       content: (
@@ -198,7 +199,7 @@ export function SearchResults(): ReactElement {
               input: classes.dataInput,
               label: classes.dataInputLabel,
             }}
-            label="Entre le"
+            label={texts.between}
             placeholder="JJ /MM/ AAAA"
             rightSection={
               <CalendarBlank
@@ -216,7 +217,7 @@ export function SearchResults(): ReactElement {
               input: classes.dataInput,
               label: classes.dataInputLabel,
             }}
-            label="Et le"
+            label={texts.andThe}
             placeholder="JJ /MM/ AAAA"
             rightSection={
               <CalendarBlank
@@ -231,34 +232,34 @@ export function SearchResults(): ReactElement {
         </div>
       ),
       id: 5,
-      label: 'Période',
+      label: texts.period,
     },
-    { id: 6, label: 'Durée du contrat' },
-    { id: 7, label: 'Nom du filtre' },
-    { id: 8, label: 'Nom du filtre' },
-    { id: 9, label: 'Nom du filtre' },
+    { id: 6, label: texts.contractDuration },
+    { id: 7, label: texts.filterName },
+    { id: 8, label: texts.filterName },
+    { id: 9, label: texts.filterName },
   ];
 
   // pagination row per page
   const rowsPerPageOptions = [
-    { label: 'Afficher 5 résultats', value: 5 },
-    { label: 'Afficher 10 résultats', value: 10 },
-    { label: 'Afficher 20 résultats', value: 20 },
+    { label: texts.displayNbResult(5), value: 5 },
+    { label: texts.displayNbResult(10), value: 10 },
+    { label: texts.displayNbResult(20), value: 20 },
   ];
   // Search Type Filter
   const typeFilterOptions: ITypeFilter[] = [
     {
-      label: `Tous (${numberOfResults})`,
+      label: `${texts.all} (${numberOfResults})`,
       results: numberOfResults,
       value: 'all',
     },
     {
       label: `Factures (${Math.ceil(numberOfResults / 2)})`,
       results: Math.ceil(numberOfResults / 2),
-      value: 'invoice',
+      value: texts.invoice,
     },
     {
-      label: `Contrats (${Math.floor(numberOfResults / 2)})`,
+      label: `${texts.contracts} (${Math.floor(numberOfResults / 2)})`,
       results: Math.floor(numberOfResults / 2),
       value: 'contract',
     },
@@ -271,18 +272,23 @@ export function SearchResults(): ReactElement {
   const [isColumnVisible, setIsColumnVisible] = useState(true);
   const toggleLabel =
     !isColumnVisible && numberOfFiltersActive === 0
-      ? `Voir les filtres`
+      ? texts.seeFilters
       : isColumnVisible
-        ? `Filtres actifs ${numberOfFiltersActive}`
-        : `Voir les filtres actifs ${numberOfFiltersActive}`;
+        ? `${texts.activeFilters
+            .slice(0, 1)
+            .toUpperCase()}${texts.activeFilters.slice(
+            1,
+            -1,
+          )} ${numberOfFiltersActive}`
+        : `${texts.seeThe} ${texts.activeFilters} ${numberOfFiltersActive}`;
   // Sorting
   const sortingOptions: IOptionExtended[] = [
-    { label: 'Trier par pertinence', value: 'relevance' },
-    { label: 'Trier par titre', value: 'title' },
-    { label: 'Trier par date de publication', value: 'publicationDate' },
-    { label: 'Trier par auteur', value: 'author' },
-    { label: 'Trier par emplacement', value: 'location' },
-    { label: 'Trier par description', value: 'description' },
+    { label: `${texts.sortBy} ${texts.relevance}`, value: 'relevance' },
+    { label: `${texts.sortBy} ${texts.title}`, value: 'title' },
+    { label: `${texts.sortBy} ${texts.date}`, value: 'publicationDate' },
+    { label: `${texts.sortBy} ${texts.author}`, value: 'author' },
+    { label: `${texts.sortBy} ${texts.location}`, value: 'location' },
+    { label: `${texts.sortBy} ${texts.desc}`, value: 'description' },
   ];
   const [activeSorting, setActiveSorting] = useState<string | null>(
     sortingOptions[0]?.value,
@@ -413,8 +419,8 @@ export function SearchResults(): ReactElement {
             <SidebarFilters
               activeFilters={activeFilters}
               defaultOpenedMenuIds={[2, 4]}
-              deleteButtonLabel="Supprimer tout"
-              filterButtonLabel="Filtrer"
+              deleteButtonLabel={texts.removeAll}
+              filterButtonLabel={texts.filter}
               menus={menus}
               onDeleteButtonClick={() => {
                 removeAllFilters();
@@ -423,7 +429,7 @@ export function SearchResults(): ReactElement {
               onFilterButtonClick={() => {
                 setNumberOfFiltersActive(activeFilters.length);
               }}
-              title="Filtres actifs"
+              title={texts.activeFilters}
             />
           }
           sidebarToggleLabel={toggleLabel}
@@ -471,7 +477,7 @@ export function SearchResults(): ReactElement {
             <DocumentList
               actionBarProps={{
                 selectedElementsLabel: (n) =>
-                  `${n} fichier${n > 1 ? 's' : ''} sélectionné${
+                  `${n} ${texts.file}{n > 1 ? 's' : ''} ${texts.selected} ${
                     n > 1 ? 's' : ''
                   }`,
               }}
