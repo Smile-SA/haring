@@ -36,6 +36,7 @@ import {
 } from '../pages.mock';
 
 import classes from './DocumentDetails.module.css';
+import { texts } from './DocumentDetailsTexts';
 
 /**
  * Example Page of a document preview, actions and attributes in a `ResponsiveTabs` component
@@ -73,18 +74,18 @@ export function DocumentDetails(): ReactElement {
           left={<img alt="logo" height="58" src="./logo.svg" width="128" />}
           right={
             <>
-              <DropdownButton label="Mon espace">
+              <DropdownButton label={texts.mySpace}>
                 <Menu.Item component="a" href="#">
-                  Calico
+                  {texts.calico}
                 </Menu.Item>
                 <Menu.Item component="a" href="#">
-                  Espace RH
+                  {texts.mySpace}
                 </Menu.Item>
                 <Menu.Item component="a" href="#">
-                  Aventure IA
+                  {texts.adventureAI}
                 </Menu.Item>
                 <Menu.Item component="a" href="#">
-                  Lunette & CO
+                  {texts.glassesAndCo}
                 </Menu.Item>
               </DropdownButton>
               <Avatar src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80" />
@@ -92,9 +93,9 @@ export function DocumentDetails(): ReactElement {
           }
           searchTheme={primary}
         >
-          <a href="#">Espace documentaire</a>
-          <a href="#">Espace workflow</a>
-          <a href="#">Archives</a>
+          <a href="#">{texts.spaceDoc}</a>
+          <a href="#">{texts.spaceWorkflow}</a>
+          <a href="#">{texts.archives}</a>
         </Header>
       </AppShell.Header>
       <AppShell.Main>
@@ -108,7 +109,7 @@ export function DocumentDetails(): ReactElement {
                   p={0}
                   variant="transparent"
                 >
-                  <span style={{ fontSize: 14 }}>Retour à la liste</span>
+                  <span style={{ fontSize: 14 }}>{texts.listReturn}</span>
                 </Button>
                 <div className={classes.actionIcons}>
                   <ActionIcon
