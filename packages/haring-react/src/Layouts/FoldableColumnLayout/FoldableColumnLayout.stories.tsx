@@ -18,7 +18,7 @@ const meta = {
   parameters: {
     layout: 'fullscreen',
   },
-  title: '3-Custom/Layouts/FoldableColumnLayout',
+  title: '3-custom/Layouts/FoldableColumnLayout',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;

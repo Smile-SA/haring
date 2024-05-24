@@ -10,7 +10,7 @@ const meta = {
   parameters: {
     layout: 'fullscreen',
   },
-  title: '3-Custom/Pages/DocumentDetails',
+  title: '3-custom/Pages/DocumentDetails',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;

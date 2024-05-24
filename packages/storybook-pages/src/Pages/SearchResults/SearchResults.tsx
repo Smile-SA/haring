@@ -408,11 +408,8 @@ export function SearchResults(): ReactElement {
       </AppShell.Header>
       <AppShell.Main>
         <FoldableColumnLayout
-          boxMotif={<Motif style={{ fill: '#868E96' }} />}
-          boxProps={{
-            p: { lg: '48px 64px' },
-            style: { background: theme.colors.gray[8] },
-          }}
+          boxMotif={<Motif />}
+          boxProps={{ p: { lg: '48px 64px' } }}
           isColumnVisible={isColumnVisible}
           onChangeIsColumnVisible={setIsColumnVisible}
           sidebarContent={

@@ -18,7 +18,7 @@ export default function WithProvider(
     title,
   } = context;
 
-  const isPage = title.startsWith('3-Custom/Pages/');
+  const isPage = title.toLowerCase().startsWith('3-custom/pages/');
   if (isPage) {
     return (
       <Provider
