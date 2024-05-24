@@ -1,8 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { sharedMeta } from '../pages-story';
+
 import { SearchResults as Cmp } from './SearchResults';
 
 const meta = {
+  ...sharedMeta,
   component: Cmp,
   parameters: {
     layout: 'fullscreen',

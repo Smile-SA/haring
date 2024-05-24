@@ -1,10 +1,11 @@
-'use client';
-
 import type { Meta, StoryObj } from '@storybook/react';
+
+import { sharedMeta } from '../pages-story';
 
 import { DocumentDetails as Cmp } from './DocumentDetails';
 
 const meta = {
+  ...sharedMeta,
   component: Cmp,
   parameters: {
     layout: 'fullscreen',

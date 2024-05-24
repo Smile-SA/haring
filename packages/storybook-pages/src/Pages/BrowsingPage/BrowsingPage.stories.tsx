@@ -1,8 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { sharedMeta } from '../pages-story';
+
 import { BrowsingPage as Cmp } from './BrowsingPage';
 
 const meta = {
+  ...sharedMeta,
+  args: { themePrimaryColor: 'cyan', themeSecondaryColor: 'gray' },
   component: Cmp,
   parameters: {
     layout: 'fullscreen',
