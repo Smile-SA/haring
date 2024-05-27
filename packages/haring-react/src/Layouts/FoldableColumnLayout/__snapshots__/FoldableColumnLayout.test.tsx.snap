@@ -31,8 +31,7 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
     id=":r0:"
   >
     <div
-      class="undefined "
-      color="primary"
+      class="undefined undefined m_1b7284a3 mantine-Paper-root"
     >
       <style
         data-mantine-styles="inline"
