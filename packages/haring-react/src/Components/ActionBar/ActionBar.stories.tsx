@@ -23,7 +23,7 @@ export const ActionBar: IStory = {
     actions: actionRowOverflowActionsMock as IActionListAction<
       Record<string, unknown>
     >[],
-    rowActionNumber: 2,
+    maxVisibleActions: 2,
     selectedElements: actionRowOverflowSelectedMock,
     selectedElementsLabel: actionBarLabelMock,
   },

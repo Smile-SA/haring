@@ -312,7 +312,7 @@ export function BrowsingPage(): ReactElement {
               data={data}
               gridProps={{
                 ...gridProps,
-                actionBarProps: { rowActionNumber: 1 },
+                actionBarProps: { maxVisibleActions: 1 },
                 cols: gridCols,
               }}
               mt={24}
@@ -370,10 +370,10 @@ export function BrowsingPage(): ReactElement {
         title={texts.manageFilters}
       >
         <SearchableList<IFilter>
-          buttonLabel={texts.validateModification}
           checkboxes={globalFilters}
           onClickButton={handleFiltersManagerSubmit}
           placeholder={texts.searchInFilters}
+          submitButtonLabel={texts.validateModification}
         />
       </Modal>
     </AppShell>

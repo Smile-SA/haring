@@ -98,10 +98,10 @@ export function FilterList(props: IFilterListProps): ReactElement {
         {...modalProps}
       >
         <SearchableList<IFilter>
-          buttonLabel={manageFilterModalSearchSubmit}
           checkboxes={filters}
           onClickButton={handleManageFiltersSubmit}
           placeholder={manageFilterModalSearchPlaceholder}
+          submitButtonLabel={manageFilterModalSearchSubmit}
         />
       </Modal>
     </Container>
