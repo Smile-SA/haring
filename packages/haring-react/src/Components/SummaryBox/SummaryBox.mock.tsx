@@ -101,7 +101,7 @@ export const actionRightMock = (
   <ActionList
     actions={actionRowOverflowActionsMock}
     isCompactStyle
-    rowActionNumber={1}
+    maxVisibleActions={1}
     selectedElements={actionRowOverflowSelectedMock}
   />
 );

@@ -1,7 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { SidebarFilters as Cmp } from './SidebarFilters';
-import { activeFilters, getMenu } from './SidebarFilters.mock';
+import {
+  activeFilters,
+  getMenu,
+  getMenuWithSelectableList,
+} from './SidebarFilters.mock';
 
 const meta = {
   component: Cmp,
@@ -32,6 +36,17 @@ export const WithoutActiveFilters: IStory = {
     deleteButtonLabel: 'Remove all',
     filterButtonLabel: 'Filtrer',
     menus: getMenu(false),
+    title: 'Active filters',
+  },
+};
+
+export const WithSelectableList: IStory = {
+  args: {
+    activeFilters,
+    defaultOpenedActiveFilters: true,
+    defaultOpenedMenuIds: [1, 3, 10, 11],
+    deleteButtonLabel: 'Remove all',
+    menus: getMenuWithSelectableList(),
     title: 'Active filters',
   },
 };

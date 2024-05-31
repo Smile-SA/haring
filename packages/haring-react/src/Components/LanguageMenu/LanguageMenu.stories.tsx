@@ -4,6 +4,14 @@ import { LanguageMenu as Cmp } from './LanguageMenu';
 import { languages } from './LanguageMenu.mock';
 
 const meta = {
+  argTypes: {
+    maxVisibleButtons: {
+      control: 'number',
+      description:
+        'If there are more (>) items than this amount, all the items will be displayed as a dropdown instead of buttons',
+      type: { name: 'number' },
+    },
+  },
   component: Cmp,
   tags: ['autodocs'],
   title: '3-custom/Components/LanguageMenu',
@@ -16,7 +24,7 @@ export const LanguageMenu: IStory = {
   args: {
     defaultCurrent: 'FR',
     languages,
-    maxButtonItems: 0,
+    maxVisibleButtons: 0,
     squareFormat: false,
   },
 };

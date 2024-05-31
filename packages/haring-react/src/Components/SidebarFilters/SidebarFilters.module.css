@@ -18,8 +18,11 @@
 }
 
 .activeFiltersCollapseRoot {
-  background: inherit;
+  background: transparent;
   padding: 0;
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 .badgeInner {
