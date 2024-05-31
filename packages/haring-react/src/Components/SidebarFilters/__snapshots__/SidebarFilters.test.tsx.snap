@@ -240,7 +240,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
                 data-testid="select"
                 type="button"
               >
-                Nom du client (2)
+                Client name (2)
               </button>
             </span>
             <span
@@ -440,7 +440,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
                 data-testid="select"
                 type="button"
               >
-                Type de contrat (2)
+                Type of Contract (2)
               </button>
             </span>
             <span
@@ -501,7 +501,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
                   data-testid="select"
                   type="button"
                 >
-                  Contrat classique (1)
+                  Classic contract (1)
                 </button>
               </span>
               <span
@@ -655,7 +655,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
                   data-testid="select"
                   type="button"
                 >
-                  Contrat special (1)
+                  Special contract (1)
                 </button>
               </span>
               <span
@@ -764,7 +764,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
                 data-testid="select"
                 type="button"
               >
-                Période
+                Period
               </button>
             </span>
           </span>
@@ -790,7 +790,7 @@ exports[`SidebarFilters matches snapshot 1`] = `
                 data-testid="select"
                 type="button"
               >
-                Durée du contrat
+                Contract duration
               </button>
             </span>
           </span>

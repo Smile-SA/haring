@@ -50,7 +50,7 @@ export function getMenu(checked: boolean): IMenuItem<number>[] {
         </>
       ),
       id: 1,
-      label: 'Nom du client',
+      label: 'Client name',
     },
     {
       children: [
@@ -67,7 +67,7 @@ export function getMenu(checked: boolean): IMenuItem<number>[] {
             </>
           ),
           id: 10,
-          label: 'Contrat classique',
+          label: 'Classic contract',
         },
         {
           content: (
@@ -76,17 +76,17 @@ export function getMenu(checked: boolean): IMenuItem<number>[] {
             </Group>
           ),
           id: 11,
-          label: 'Contrat special',
+          label: 'Special contract',
         },
       ],
       id: 3,
-      label: 'Type de contrat',
+      label: 'Type of Contract',
     },
     {
       id: 8,
-      label: 'Période',
+      label: 'Period',
     },
-    { id: 9, label: 'Durée du contrat' },
+    { id: 9, label: 'Contract duration' },
   ];
 }
 
@@ -116,7 +116,7 @@ export function getMenuWithSelectableList(): IMenuItem<number>[] {
         />
       ),
       id: 1,
-      label: 'Nom du client',
+      label: 'Client name',
     },
     {
       children: [
@@ -129,7 +129,7 @@ export function getMenuWithSelectableList(): IMenuItem<number>[] {
             />
           ),
           id: 10,
-          label: 'Contrat classique',
+          label: 'Classic contract',
         },
         {
           content: (
@@ -140,16 +140,16 @@ export function getMenuWithSelectableList(): IMenuItem<number>[] {
             />
           ),
           id: 11,
-          label: 'Contrat special',
+          label: 'Special contract',
         },
       ],
       id: 3,
-      label: 'Type de contrat',
+      label: 'Type of Contract',
     },
     {
       id: 8,
-      label: 'Période',
+      label: 'Period',
     },
-    { id: 9, label: 'Durée du contrat' },
+    { id: 9, label: 'Contract duration' },
   ];
 }
