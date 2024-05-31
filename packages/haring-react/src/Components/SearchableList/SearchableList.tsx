@@ -22,19 +22,25 @@ export interface ICheckbox {
 }
 
 export interface ISearchableListProps<T extends ICheckbox> {
-  buttonLabel?: string;
   checkboxes?: T[];
+  minSearchableItems?: number;
+  onChange?: (checkboxes: T[]) => void;
   onClickButton?: (checkboxes: T[]) => void;
   placeholder?: string;
+  submitButton?: boolean;
+  submitButtonLabel?: string;
 }
 
 export function SearchableList<T extends ICheckbox>(
   props: ISearchableListProps<T>,
 ): ReactElement {
   const {
-    buttonLabel = 'Validate changes',
+    submitButtonLabel = 'Validate changes',
+    minSearchableItems = 10,
     placeholder = 'Search in options',
+    submitButton = true,
     checkboxes = [],
+    onChange,
     onClickButton,
   } = props;
   const [searchInput, setSearchInput] = useState('');
@@ -56,6 +62,7 @@ export function SearchableList<T extends ICheckbox>(
         return element;
       }),
     );
+    onChange?.(checkboxes);
   }
 
   function checkboxIncludesSearchInput(label: string): boolean {
@@ -64,18 +71,20 @@ export function SearchableList<T extends ICheckbox>(
 
   return (
     <>
-      <Input
-        onChange={handleInputChange}
-        placeholder={placeholder}
-        rightSection={
-          <MagnifyingGlass
-            color={getThemeColor(theme.primaryColor, theme)}
-            size={20}
-            values={searchInput}
-            weight="bold"
-          />
-        }
-      />
+      {Boolean(minSearchableItems <= checkboxes.length) && (
+        <Input
+          onChange={handleInputChange}
+          placeholder={placeholder}
+          rightSection={
+            <MagnifyingGlass
+              color={getThemeColor(theme.primaryColor, theme)}
+              size={20}
+              values={searchInput}
+              weight="bold"
+            />
+          }
+        />
+      )}
       <div className={classes.checkboxTop}>
         {checkboxes.map((item) => {
           if (!item.active && checkboxIncludesSearchInput(item.label)) {
@@ -109,13 +118,15 @@ export function SearchableList<T extends ICheckbox>(
           return '';
         })}
       </div>
-      <Button
-        fullWidth
-        onClick={() => onClickButton?.(newCheckboxes)}
-        size="md"
-      >
-        {buttonLabel}
-      </Button>
+      {Boolean(submitButton) && (
+        <Button
+          fullWidth
+          onClick={() => onClickButton?.(newCheckboxes)}
+          size="md"
+        >
+          {submitButtonLabel}
+        </Button>
+      )}
     </>
   );
 }

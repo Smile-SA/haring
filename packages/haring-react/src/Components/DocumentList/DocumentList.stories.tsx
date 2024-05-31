@@ -19,7 +19,7 @@ type IStory = StoryObj<typeof meta>;
 export const DocumentList: IStory = {
   args: {
     actionBarProps: {
-      rowActionNumber: 2,
+      maxVisibleActions: 2,
     },
     actions: actionRowOverflowActionsMock,
     documents: documentsMock,

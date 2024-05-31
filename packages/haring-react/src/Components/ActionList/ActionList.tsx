@@ -38,9 +38,9 @@ export interface IActionListProps<Data extends Record<string, unknown>>
   actionTooltipProps?: TooltipProps;
   actions: IActionListAction<Data>[];
   isCompactStyle?: boolean;
+  maxVisibleActions?: number;
   modalProps?: Omit<ModalProps, 'title'>;
   overflowMenuLabel?: string;
-  rowActionNumber?: number;
   selectedElements: Data[];
 }
 
@@ -54,16 +54,16 @@ export function ActionList<Data extends Record<string, unknown>>(
     isCompactStyle = false,
     modalProps,
     overflowMenuLabel = 'Other actions',
-    rowActionNumber,
+    maxVisibleActions,
     selectedElements,
     ...groupProps
   } = props;
   const [confirmAction, setConfirmAction] = useState<IActionConfirmModalProps<
     Data | Data[]
   > | null>(null);
-  const visibleRowActions = actions.slice(0, rowActionNumber);
+  const visibleRowActions = actions.slice(0, maxVisibleActions);
   const menuRowActions =
-    rowActionNumber !== undefined ? actions.slice(rowActionNumber) : [];
+    maxVisibleActions !== undefined ? actions.slice(maxVisibleActions) : [];
 
   function setModal(action: IActionListAction<Data>): void {
     setConfirmAction({

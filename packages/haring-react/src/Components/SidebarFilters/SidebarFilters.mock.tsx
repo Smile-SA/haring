@@ -2,6 +2,8 @@ import type { IMenuItem } from '../SidebarMenu/SidebarMenu';
 
 import { Checkbox, Group } from '@mantine/core';
 
+import { SearchableList } from '../SearchableList/SearchableList';
+
 export const activeFilters = [
   {
     categoryId: [1],
@@ -72,6 +74,70 @@ export function getMenu(checked: boolean): IMenuItem<number>[] {
             <Group>
               <Checkbox defaultChecked={checked} value="FREELANCE" /> Freelance
             </Group>
+          ),
+          id: 11,
+          label: 'Contrat special',
+        },
+      ],
+      id: 3,
+      label: 'Type de contrat',
+    },
+    {
+      id: 8,
+      label: 'Période',
+    },
+    { id: 9, label: 'Durée du contrat' },
+  ];
+}
+
+const clientsMock = [
+  { active: true, id: 1, label: 'Dupont', value: 'dupont' },
+  { active: true, id: 2, label: 'Martin', value: 'martin' },
+  { active: false, id: 5, label: 'Andrée', value: 'andree' },
+];
+
+const classicsContractsMock = [
+  { active: true, id: 4, label: 'CDI', value: 'cdi' },
+  { active: false, id: 7, label: 'CDD', value: 'cdd' },
+];
+
+const specialContractMock = [
+  { active: true, id: 3, label: 'Freelance', value: 'freelance' },
+];
+
+export function getMenuWithSelectableList(): IMenuItem<number>[] {
+  return [
+    {
+      content: (
+        <SearchableList
+          checkboxes={clientsMock}
+          minSearchableItems={0}
+          submitButton={false}
+        />
+      ),
+      id: 1,
+      label: 'Nom du client',
+    },
+    {
+      children: [
+        {
+          content: (
+            <SearchableList
+              checkboxes={classicsContractsMock}
+              minSearchableItems={0}
+              submitButton={false}
+            />
+          ),
+          id: 10,
+          label: 'Contrat classique',
+        },
+        {
+          content: (
+            <SearchableList
+              checkboxes={specialContractMock}
+              minSearchableItems={0}
+              submitButton={false}
+            />
           ),
           id: 11,
           label: 'Contrat special',
