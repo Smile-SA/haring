@@ -13,7 +13,7 @@ export interface IButtonListProps extends MenuProps {
   current?: string;
   defaultCurrent: string;
   items: IItems<string>;
-  maxButtonItems?: number;
+  maxVisibleButtons?: number;
   onAction?: () => void;
 }
 
@@ -21,7 +21,7 @@ export function ButtonList(props: IButtonListProps): ReactElement {
   const {
     buttonProps,
     current,
-    maxButtonItems = 0,
+    maxVisibleButtons = 0,
     defaultCurrent,
     items = [],
     onAction,
@@ -44,7 +44,7 @@ export function ButtonList(props: IButtonListProps): ReactElement {
 
   return (
     <>
-      {items.length < maxButtonItems ? (
+      {items.length <= maxVisibleButtons ? (
         <Button.Group>
           {items.map((item) => {
             return (

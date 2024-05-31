@@ -8,6 +8,14 @@ import {
 } from './ActionList.mock';
 
 const meta = {
+  argTypes: {
+    maxVisibleActions: {
+      control: 'number',
+      description:
+        'If there are more (>) actions than this amount, the extra actions will be displayed in the overflow menu',
+      type: { name: 'number' },
+    },
+  },
   component: Cmp,
   tags: ['autodocs'],
   title: '3-custom/Components/ActionList',
@@ -21,7 +29,7 @@ export const ActionList: IStory = {
     actions: actionRowOverflowActionsMock as IActionListAction<
       Record<string, unknown>
     >[],
-    rowActionNumber: 2,
+    maxVisibleActions: 2,
     selectedElements: actionRowOverflowSelectedMock,
   },
 };
