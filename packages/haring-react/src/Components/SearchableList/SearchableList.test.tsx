@@ -11,9 +11,9 @@ describe('SearchableList', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
       <SearchableList
-        buttonLabel="Test"
         checkboxes={checkboxesMock}
         placeholder="Test"
+        submitButtonLabel="Test"
       />,
     );
     expect(container).toMatchSnapshot();
