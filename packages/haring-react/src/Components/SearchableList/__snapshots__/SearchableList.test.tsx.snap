@@ -12,36 +12,6 @@ exports[`SearchableList matches snapshot 1`] = `
   >
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
-  <div
-    class="m_6c018570 mantine-Input-wrapper"
-    data-variant="default"
-    data-with-right-section="true"
-    style="--input-left-section-pointer-events: none; --input-right-section-pointer-events: none;"
-  >
-    <input
-      aria-invalid="false"
-      class="m_8fb7ebe7 mantine-Input-input"
-      data-variant="default"
-      placeholder="Test"
-    />
-    <div
-      class="m_82577fc2 mantine-Input-section"
-      data-position="right"
-    >
-      <svg
-        fill="var(--mantine-color-cyan-filled)"
-        height="20"
-        values=""
-        viewBox="0 0 256 256"
-        width="20"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"
-        />
-      </svg>
-    </div>
-  </div>
   <div>
     <div
       class="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root"
