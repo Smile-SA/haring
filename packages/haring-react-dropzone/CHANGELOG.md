@@ -1,5 +1,13 @@
 # @smile/haring-react-dropzone
 
+## 0.14.0
+
+### Patch Changes
+
+- Updated dependencies [[`25456c718328c0547632e201536595045263015c`](https://github.com/Smile-SA/haring/commit/25456c718328c0547632e201536595045263015c), [`82463c955e41b6483c4cff3acb2459ac93d582c0`](https://github.com/Smile-SA/haring/commit/82463c955e41b6483c4cff3acb2459ac93d582c0), [`fda867d0bb675f159d7a07bb3d23559461a0c6a1`](https://github.com/Smile-SA/haring/commit/fda867d0bb675f159d7a07bb3d23559461a0c6a1), [`2ac4fa2d6426caca6ee646635380814514f2f19e`](https://github.com/Smile-SA/haring/commit/2ac4fa2d6426caca6ee646635380814514f2f19e)]:
+  - @smile/haring-react@0.14.0
+  - @smile/haring-react-shared@0.14.0
+
 ## 0.13.0
 
 ### Minor Changes
