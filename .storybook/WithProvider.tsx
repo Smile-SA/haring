@@ -1,3 +1,4 @@
+import type { DefaultMantineColor } from '@mantine/core';
 import type { StoryContext, StoryFn } from '@storybook/react';
 import type { ReactElement } from 'react';
 
@@ -12,8 +13,22 @@ export default function WithProvider(
   context: StoryContext,
 ): ReactElement {
   const {
+    args,
     globals: { theme },
+    title,
   } = context;
+
+  const isPage = title.toLowerCase().startsWith('3-custom/pages/');
+  if (isPage) {
+    return (
+      <Provider
+        primaryColor={args.themePrimaryColor as DefaultMantineColor}
+        secondaryColor={args.themeSecondaryColor as DefaultMantineColor}
+      >
+        <Story />
+      </Provider>
+    );
+  }
   return (
     <Provider>
       <MantineProvider

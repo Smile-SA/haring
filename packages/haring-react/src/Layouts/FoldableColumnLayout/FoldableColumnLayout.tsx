@@ -7,7 +7,7 @@ import type {
 } from '@mantine/core';
 import type { ReactElement, ReactNode } from 'react';
 
-import { Box, Button, Container, Grid, Switch, Text } from '@mantine/core';
+import { Button, Container, Grid, Paper, Switch, Text } from '@mantine/core';
 import { useUncontrolled } from '@mantine/hooks';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
 import { NestedProvider, useMainTheme } from '@smile/haring-react-shared';
@@ -66,9 +66,10 @@ export function FoldableColumnLayout(
   return (
     <>
       <NestedProvider theme={theme}>
-        <Box
-          className={`${classes.box} ${boxMotif ? classes.boxWithMotif : ''}`}
-          color="primary"
+        <Paper
+          className={`${classes.box} ${
+            boxMotif ? classes.boxWithMotif : classes.boxWithoutMotif
+          }`}
           {...boxProps}
         >
           {Boolean(boxMotif) && (
@@ -108,7 +109,7 @@ export function FoldableColumnLayout(
               </Grid.Col>
             )}
           </Grid>
-        </Box>
+        </Paper>
       </NestedProvider>
       <div
         className={`${classes.collapseButton} ${

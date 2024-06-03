@@ -2,6 +2,7 @@
   padding: 40px 64px 0 64px;
   position: relative;
   width: 100%;
+  border-radius: 0;
 
   /*noinspection CssInvalidAtRule*/
   @mixin smaller-than $mantine-breakpoint-md {
@@ -16,6 +17,10 @@
   @mixin smaller-than $mantine-breakpoint-md {
     padding: 24px;
   }
+}
+
+.boxWithoutMotif {
+  background: transparent;
 }
 
 .collapseButton {
