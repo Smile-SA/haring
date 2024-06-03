@@ -1,5 +1,22 @@
 # @smile/haring-react
 
+## 0.14.0
+
+### Minor Changes
+
+- [#186](https://github.com/Smile-SA/haring/pull/186) [`25456c718328c0547632e201536595045263015c`](https://github.com/Smile-SA/haring/commit/25456c718328c0547632e201536595045263015c) Thanks [@vapersmile](https://github.com/vapersmile)! - Update props names, add exemple with SearchableList on SidebarFilters. Desable options for button, search field and add onChange callback function for SearchableList. Fix Graphic error on SearchableList.
+
+- [#186](https://github.com/Smile-SA/haring/pull/186) [`82463c955e41b6483c4cff3acb2459ac93d582c0`](https://github.com/Smile-SA/haring/commit/82463c955e41b6483c4cff3acb2459ac93d582c0) Thanks [@vapersmile](https://github.com/vapersmile)! - Update SearchableList. Add actives props for search input and submit button.
+
+- [#181](https://github.com/Smile-SA/haring/pull/181) [`fda867d0bb675f159d7a07bb3d23559461a0c6a1`](https://github.com/Smile-SA/haring/commit/fda867d0bb675f159d7a07bb3d23559461a0c6a1) Thanks [@vapersmile](https://github.com/vapersmile)! - add errors support for the AddressFields component
+
+### Patch Changes
+
+- [#185](https://github.com/Smile-SA/haring/pull/185) [`2ac4fa2d6426caca6ee646635380814514f2f19e`](https://github.com/Smile-SA/haring/commit/2ac4fa2d6426caca6ee646635380814514f2f19e) Thanks [@tonai](https://github.com/tonai)! - fix FoldableColumnLayout and SearchResults styles to apply themes correclty
+
+- Updated dependencies []:
+  - @smile/haring-react-shared@0.14.0
+
 ## 0.13.0
 
 ### Minor Changes
