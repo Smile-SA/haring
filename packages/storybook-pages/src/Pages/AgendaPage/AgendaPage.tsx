@@ -10,7 +10,7 @@ import { useState } from 'react';
 export function AgendaPage(): ReactElement {
   function removeSubject(row: any): void {
     if (row.index >= 0 && row.index < data.length) {
-      setData(data.filter((_, i) => i !== row));
+      setData(data.filter((_, i) => i !== row.index));
     }
   }
 
