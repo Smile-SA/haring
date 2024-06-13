@@ -3,11 +3,17 @@
 import type { ReactElement } from 'react';
 
 import { Badge, Button, Group } from '@mantine/core';
-import { PencilSimple, Trash } from '@phosphor-icons/react';
+import { PencilSimple, Plus, Trash } from '@phosphor-icons/react';
 import { Table } from '@smile/haring-react-table';
 import { useState } from 'react';
 
 export function AgendaPage(): ReactElement {
+  function removeSubject(row: any): void {
+    if (row.index >= 0 && row.index < data.length) {
+      setData(data.filter((_, i) => i !== row));
+    }
+  }
+
   const [data, setData] = useState([
     {
       id: 0,
@@ -46,9 +52,49 @@ export function AgendaPage(): ReactElement {
       },
     },
   ]);
+
+  function getDataForTable(): {
+    indicator: ReactElement;
+    schedules: ReactElement;
+    subject: ReactElement;
+  }[] {
+    return data.map((element) => {
+      return {
+        indicator: (
+          <Group gap="5px">
+            {element.indicator.map((badge) => (
+              <Badge key={element.id + badge.value} color={badge.color}>
+                {badge.value}
+              </Badge>
+            ))}
+          </Group>
+        ),
+        schedules: (
+          <div>
+            <p>
+              <strong>
+                {element.schedules.endTime
+                  ? `De ${element.schedules.startTime} à ${element.schedules.endTime}`
+                  : `À ${element.schedules.startTime}`}
+              </strong>
+            </p>
+          </div>
+        ),
+        subject: (
+          <div>
+            <strong>{element.subject.title}</strong>
+            <br />
+            <p>{element.subject.content}</p>
+          </div>
+        ),
+      };
+    });
+  }
   return (
     <>
-      <Button>Ajouter un sujet</Button>
+      <Button mb="md" rightSection={<Plus size={14} />}>
+        Ajouter un sujet
+      </Button>
       <Table
         actions={[
           {
@@ -66,11 +112,8 @@ export function AgendaPage(): ReactElement {
               children: 'Are you sure you want to delete ?',
               confirmColor: 'red',
               confirmLabel: 'Delete',
-              onCancel: () => {
-                console.log('Delete:cancel');
-              },
-              onConfirm: () => {
-                console.log('Delete:Confirm');
+              onConfirm: (row) => {
+                removeSubject(row);
               },
               title: 'Delete ?',
             },
@@ -98,82 +141,15 @@ export function AgendaPage(): ReactElement {
             header: 'Horaires',
           },
         ]}
-        data={[
-          {
-            indicator: (
-              <Group gap="5px">
-                <Badge color="blue">DEV</Badge>
-              </Group>
-            ),
-            schedules: (
-              <div>
-                <p>
-                  <strong>À 9h30</strong>
-                </p>
-              </div>
-            ),
-            subject: (
-              <div>
-                <strong>Dally MFC </strong>
-                <br />
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
-                </p>
-              </div>
-            ),
+        data={getDataForTable()}
+        displayColumnDefOptions={{
+          'mrt-row-actions': {
+            header: undefined,
+            maxSize: 10,
+            minSize: 10,
+            size: 10,
           },
-          {
-            indicator: (
-              <Group gap="5px">
-                <Badge color="blue">Dev</Badge>
-                <Badge>UI</Badge>
-              </Group>
-            ),
-            schedules: (
-              <div>
-                <p>
-                  <strong>De 11h à 12h</strong>
-                </p>
-              </div>
-            ),
-            subject: (
-              <div>
-                <strong>AMF review sprint 2 </strong>
-                <br />
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
-                </p>
-              </div>
-            ),
-          },
-          {
-            indicator: (
-              <Group gap="5px">
-                <Badge color="orange">UX</Badge>
-                <Badge>UI</Badge>
-              </Group>
-            ),
-            schedules: (
-              <div>
-                <p>
-                  <strong>De 16h30 à 18h</strong>
-                </p>
-              </div>
-            ),
-            subject: (
-              <div>
-                <strong>Brainstorming Maquettes TTTS </strong>
-                <br />
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
-                </p>
-              </div>
-            ),
-          },
-        ]}
+        }}
         rowActionNumber={2}
       />
     </>
