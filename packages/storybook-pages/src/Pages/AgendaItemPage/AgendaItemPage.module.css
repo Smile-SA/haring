@@ -2,3 +2,21 @@
   overflow-x: hidden;
   width: 100%;
 }
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+.content {
+  flex-grow: 1;
+  background: lightgray;
+  padding: 0 16px;
+  min-height: 50vh;
+}
+
+.pagination {
+  margin: auto;
+}
