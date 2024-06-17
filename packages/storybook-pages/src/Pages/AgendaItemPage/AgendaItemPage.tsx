@@ -16,6 +16,10 @@ import classes from './AgendaItemPage.module.css';
 export function AgendaItemPage(): ReactElement {
   const toggleLabel = `Voir l'ordre du jour`;
 
+  // TODO: stuff to fix:
+  //  breadcrumbs doesn't take a <></> as children, removes spaces
+  //  paginationProps wrong type, should omit a few properties
+
   return (
     <AppShell classNames={{ main: classes.main }} padding={0}>
       <AppShell.Main>
