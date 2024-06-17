@@ -12,7 +12,7 @@ import { useState } from 'react';
 
 import { menuMock } from '../BrowsingPage/BrowsingPage.mock';
 
-import { texts } from './AgendaPageText.tsx';
+import { texts } from './AgendaPage.txt';
 
 interface IIndicator {
   color: string;
