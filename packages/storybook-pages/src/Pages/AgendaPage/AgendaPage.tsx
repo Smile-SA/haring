@@ -12,15 +12,36 @@ import { menuMock } from '../BrowsingPage/BrowsingPage.mock';
 
 import { texts } from './AgendaPage.txt';
 
+interface IIndicator {
+  color: string;
+  value: string;
+}
+
+interface ISchedules {
+  endTime?: string;
+  startTime: string;
+}
+
+interface ISubject {
+  content: string;
+  title: string;
+}
+
+interface IDataItem {
+  indicator: IIndicator[];
+  schedules: ISchedules;
+  subject: ISubject;
+}
+
 export function AgendaPage(): ReactElement {
   // eslint-disable-next-line
   function removeSubject(row: any): void {
-    if (row.index >= 0 && row.index < data.length) {
+    if (row?.index >= 0 && row.index < data.length) {
       setData(data.filter((_, i) => i !== row.index));
     }
   }
 
-  const [data, setData] = useState([
+  const [data, setData] = useState<IDataItem[]>([
     {
       indicator: [{ color: 'blue', value: 'DEV' }],
       schedules: { startTime: '9h30' },
@@ -79,8 +100,8 @@ export function AgendaPage(): ReactElement {
             <p>
               <strong>
                 {element.schedules.endTime
-                  ? `De ${element.schedules.startTime} à ${element.schedules.endTime}`
-                  : `À ${element.schedules.startTime}`}
+                  ? `${texts.of} ${element.schedules.startTime} ${texts.of} ${element.schedules.endTime}`
+                  : `${texts.to.toUpperCase()} ${element.schedules.startTime}`}
               </strong>
             </p>
           </div>
@@ -102,7 +123,7 @@ export function AgendaPage(): ReactElement {
           <SidebarMenu menu={sidebarMenu} />
         </Flex>
       }
-      sidebarToggleLabel="Afficher la barre latéral"
+      sidebarToggleLabel={texts.sidebarToggleLabel}
     >
       <Group justify="space-between">
         <Button mb="md" rightSection={<Plus size={14} />}>
@@ -117,7 +138,7 @@ export function AgendaPage(): ReactElement {
           {
             icon: <PencilSimple />,
             id: 'edit',
-            label: 'Edit document',
+            label: texts.editDocument,
             onAction: () => {
               window.parent.location.href =
                 'http://localhost:6006/?path=/story/3-custom-pages-agendaitempage--agenda-item-page';
@@ -126,20 +147,20 @@ export function AgendaPage(): ReactElement {
           {
             color: 'red',
             confirmModalProps: {
-              cancelLabel: 'Annuler',
-              children: 'Etes-vous sûr que vous voulez supprimer ?',
+              cancelLabel: texts.cancel,
+              children: texts.removeVerif,
               confirmColor: 'red',
-              confirmLabel: 'Supprimer',
+              confirmLabel: texts.remove,
               onConfirm: (row) => {
                 removeSubject(row);
               },
-              title: 'Supprimer ?',
+              title: `${texts.remove} ?`,
             },
             confirmation: true,
             icon: <Trash />,
             id: 'delete',
             isMassAction: true,
-            label: 'Supprimer',
+            label: texts.remove,
             onAction: () => {
               console.log('Delete');
             },
@@ -157,7 +178,7 @@ export function AgendaPage(): ReactElement {
               }
               return false;
             },
-            header: 'Sujets',
+            header: texts.topics,
           },
           {
             accessorKey: 'indicator',
@@ -168,7 +189,7 @@ export function AgendaPage(): ReactElement {
                 }).length > 0
               );
             },
-            header: 'Indicateurs',
+            header: texts.indicator,
           },
           {
             accessorKey: 'schedules',
@@ -183,7 +204,7 @@ export function AgendaPage(): ReactElement {
               }
               return false;
             },
-            header: 'Horaires',
+            header: texts.schedules,
           },
         ]}
         data={getDataForTable()}
@@ -199,13 +220,13 @@ export function AgendaPage(): ReactElement {
           pagination: { pageIndex: 0, pageSize: 6 },
         }}
         paginationProps={{
-          itemsPerPageAriaLabel: 'Nombre de résultats par page',
+          itemsPerPageAriaLabel: texts.resutsNbr,
           itemsPerPageOptions: [
             {
-              label: 'Afficher 6 résultats',
+              label: texts.displaySpecificResultNbr(6),
               value: 6,
             },
-            { label: 'Afficher 15 résultats', value: 15 },
+            { label: texts.displaySpecificResultNbr(15), value: 15 },
           ],
         }}
         rowActionNumber={2}
