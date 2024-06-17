@@ -2,23 +2,23 @@
 
 import type { ReactElement } from 'react';
 
-import { AppShell, Tabs } from '@mantine/core';
+import { AppShell, Button, Tabs } from '@mantine/core';
 import {
   Breadcrumbs,
   FoldableColumnLayout,
-  Pagination,
   SidebarMenu,
 } from '@smile/haring-react';
 
-import { menusMock } from './AgendaItemPage.mock';
+import { breadcrumbsMock, menusMock } from './AgendaItemPage.mock';
 import classes from './AgendaItemPage.module.css';
 
 export function AgendaItemPage(): ReactElement {
   const toggleLabel = `Voir l'ordre du jour`;
 
   // TODO: stuff to fix:
-  //  breadcrumbs doesn't take a <></> as children, removes spaces
-  //  paginationProps wrong type, should omit a few properties
+  //  have an active menu in sidebar, this is the active page
+  //  buttons at the bottom change this menu, change the page content
+  //  also link switch state in layout
 
   return (
     <AppShell classNames={{ main: classes.main }} padding={0}>
@@ -30,13 +30,7 @@ export function AgendaItemPage(): ReactElement {
           }
           sidebarContent={<SidebarMenu menu={menusMock} />}
           sidebarToggleLabel={toggleLabel}
-          topBarRight={
-            <Breadcrumbs>
-              <a href="#">First level</a>
-              <a href="#">Second level</a>
-              <a href="#">Third level</a>
-            </Breadcrumbs>
-          }
+          topBarRight={<Breadcrumbs>{...breadcrumbsMock}</Breadcrumbs>}
         >
           <div className={classes.box}>
             <Tabs defaultValue="order">
@@ -54,12 +48,8 @@ export function AgendaItemPage(): ReactElement {
               <p>Contenu page</p>
             </div>
             <div className={classes.pagination}>
-              <Pagination
-                itemsPerPage={1}
-                page={1}
-                paginationProps={{ withControls: true }}
-                totalPages={20}
-              />
+              <Button>Précédent</Button>
+              <Button>Suivant</Button>
             </div>
           </div>
         </FoldableColumnLayout>
