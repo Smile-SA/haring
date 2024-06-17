@@ -1,12 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { sharedMeta } from '../pages-story';
-
 import { AgendaPage as Cmp } from './AgendaPage';
 
 const meta = {
-  ...sharedMeta,
-  args: { themePrimaryColor: 'cyan', themeSecondaryColor: 'gray' },
   component: Cmp,
   parameters: {
     layout: 'fullscreen',

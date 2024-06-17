@@ -1,5 +1,6 @@
 'use client';
 
+import type { MRT_Row } from 'mantine-react-table';
 import type { ReactElement } from 'react';
 
 import { Badge, Button, Flex, Group } from '@mantine/core';
@@ -34,9 +35,8 @@ interface IDataItem {
 }
 
 export function AgendaPage(): ReactElement {
-  // eslint-disable-next-line
-  function removeSubject(row: any): void {
-    if (row?.index >= 0 && row.index < data.length) {
+  function removeSubject(row: MRT_Row<IDataItem>): void {
+    if (row.index >= 0 && row.index < data.length) {
       setData(data.filter((_, i) => i !== row.index));
     }
   }
@@ -171,8 +171,12 @@ export function AgendaPage(): ReactElement {
             accessorKey: 'subject',
             filterFn: (row, _id, value: string) => {
               if (
-                data[row.index].subject.title.toLowerCase().includes(value) ||
-                data[row.index].subject.content.toLowerCase().includes(value)
+                data[row.index].subject.title
+                  .toLowerCase()
+                  .includes(value.toLowerCase()) ||
+                data[row.index].subject.content
+                  .toLowerCase()
+                  .includes(value.toLowerCase())
               ) {
                 return true;
               }
