@@ -13,7 +13,6 @@ export const texts = {
   resutsNbr: 'Number of results per page',
   schedules: 'Horaires',
   sidebarToggleLabel: 'Afficher la barre latéral',
-  test: 'test',
   to: 'à',
   topics: 'Sujets',
 };
