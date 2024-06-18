@@ -7,6 +7,7 @@ import { Badge, Button, Flex, Group } from '@mantine/core';
 import { FilePdf, PencilSimple, Plus, Trash } from '@phosphor-icons/react';
 import { FoldableColumnLayout, SidebarMenu } from '@smile/haring-react';
 import { Table } from '@smile/haring-react-table';
+import { linkTo } from '@storybook/addon-links';
 import { useState } from 'react';
 
 import { menuMock } from '../BrowsingPage/BrowsingPage.mock';
@@ -35,12 +36,6 @@ interface IDataItem {
 }
 
 export function AgendaPage(): ReactElement {
-  function removeSubject(row: MRT_Row<IDataItem>): void {
-    if (row.index >= 0 && row.index < data.length) {
-      setData(data.filter((_, i) => i !== row.index));
-    }
-  }
-
   const [data, setData] = useState<IDataItem[]>([
     {
       indicator: [{ color: 'blue', value: 'DEV' }],
@@ -77,45 +72,50 @@ export function AgendaPage(): ReactElement {
     },
   ]);
 
+  function removeSubject(row: MRT_Row<IDataItem>): void {
+    if (row.index >= 0 && row.index < data.length) {
+      setData(data.filter((_, i) => i !== row.index));
+    }
+  }
+
   const sidebarMenu = menuMock;
 
-  function getDataForTable(): {
+  const tableData: {
     indicator: ReactElement;
     schedules: ReactElement;
     subject: ReactElement;
-  }[] {
-    return data.map((element) => {
-      return {
-        indicator: (
-          <Group gap="5px">
-            {element.indicator.map((badge) => (
-              <Badge key={badge.value} color={badge.color}>
-                {badge.value}
-              </Badge>
-            ))}
-          </Group>
-        ),
-        schedules: (
-          <div>
-            <p>
-              <strong>
-                {element.schedules.endTime
-                  ? `${texts.of} ${element.schedules.startTime} ${texts.of} ${element.schedules.endTime}`
-                  : `${texts.to.toUpperCase()} ${element.schedules.startTime}`}
-              </strong>
-            </p>
-          </div>
-        ),
-        subject: (
-          <div>
-            <strong>{element.subject.title}</strong>
-            <br />
-            <p>{element.subject.content}</p>
-          </div>
-        ),
-      };
-    });
-  }
+  }[] = data.map((element) => {
+    return {
+      indicator: (
+        <Group gap="5px">
+          {element.indicator.map((badge) => (
+            <Badge key={badge.value} color={badge.color}>
+              {badge.value}
+            </Badge>
+          ))}
+        </Group>
+      ),
+      schedules: (
+        <div>
+          <p>
+            <strong>
+              {element.schedules.endTime
+                ? `${texts.of} ${element.schedules.startTime} ${texts.of} ${element.schedules.endTime}`
+                : `${texts.to.toUpperCase()} ${element.schedules.startTime}`}
+            </strong>
+          </p>
+        </div>
+      ),
+      subject: (
+        <div>
+          <strong>{element.subject.title}</strong>
+          <br />
+          <p>{element.subject.content}</p>
+        </div>
+      ),
+    };
+  });
+
   return (
     <FoldableColumnLayout
       sidebarContent={
@@ -140,8 +140,9 @@ export function AgendaPage(): ReactElement {
             id: 'edit',
             label: texts.editDocument,
             onAction: () => {
-              window.parent.location.href =
-                'http://localhost:6006/?path=/story/3-custom-pages-agendaitempage--agenda-item-page';
+              linkTo('3-custom/Pages/AgendaItemPage', 'AgendaItemPage');
+              // window.parent.location.href =
+              //   'http://localhost:6006/?path=/story/3-custom-pages-agendaitempage--agenda-item-page';
             },
           },
           {
@@ -211,7 +212,7 @@ export function AgendaPage(): ReactElement {
             header: texts.schedules,
           },
         ]}
-        data={getDataForTable()}
+        data={tableData}
         displayColumnDefOptions={{
           'mrt-row-actions': {
             header: undefined,

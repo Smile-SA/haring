@@ -27,6 +27,7 @@
     "@smile/haring-react-dropzone": "*",
     "@smile/haring-react-shared": "*",
     "@smile/haring-react-table": "*",
+    "@storybook/addon-links": "^8.1.10",
     "embla-carousel-react": "^7.1.0",
     "react-hook-form": "^7.50.1",
     "recharts": "^2.12.3"
