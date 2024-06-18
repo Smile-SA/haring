@@ -109,7 +109,7 @@ export interface ISidebarMenuProps<
   /** Controlled callback called when the value of menus open/closed changes */
   onMenuOpenChange?: (value: T[]) => void;
   /** Controlled callback called when the value of the selected menu changes */
-  onSelectedChange?: (value?: T) => void;
+  onSelectedChange?: (value: T | undefined) => void;
   /** Controlled state of which menu is currently selected, using `id` field of `IMenuItem` */
   selectedValue?: T;
 }

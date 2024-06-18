@@ -48,6 +48,7 @@ export function AgendaItemPage(): ReactElement {
               menu={menusMock}
               menuOpenValue={[openedMenu]}
               onMenuOpenChange={(v: string[]) => setOpenedMenu(v[0])}
+              onSelectedChange={(v) => (v ? setOpenedMenu(v) : null)}
               selectedValue={openedMenu}
             />
           }
