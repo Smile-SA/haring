@@ -7,12 +7,11 @@ import { Badge, Button, Flex, Group } from '@mantine/core';
 import { FilePdf, PencilSimple, Plus, Trash } from '@phosphor-icons/react';
 import { FoldableColumnLayout, SidebarMenu } from '@smile/haring-react';
 import { Table } from '@smile/haring-react-table';
-import { linkTo } from '@storybook/addon-links';
 import { useState } from 'react';
 
 import { menuMock } from '../BrowsingPage/BrowsingPage.mock';
 
-import { texts } from './AgendaPageText';
+import { texts } from './AgendaPage.mock';
 
 interface IIndicator {
   color: string;
@@ -29,14 +28,14 @@ interface ISubject {
   title: string;
 }
 
-interface IDataItem {
+interface IDataItem extends Record<string, unknown> {
   indicator: IIndicator[];
   schedules: ISchedules;
   subject: ISubject;
 }
 
 export function AgendaPage(): ReactElement {
-  const [data, setData] = useState<IDataItem[]>([
+  const [data, setData] = useState([
     {
       indicator: [{ color: 'blue', value: 'DEV' }],
       schedules: { startTime: '9h30' },
@@ -80,11 +79,9 @@ export function AgendaPage(): ReactElement {
 
   const sidebarMenu = menuMock;
 
-  const tableData: {
-    indicator: ReactElement;
-    schedules: ReactElement;
-    subject: ReactElement;
-  }[] = data.map((element) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  const tableData: IDataItem[] = data.map((element) => {
     return {
       indicator: (
         <Group gap="5px">
@@ -133,16 +130,15 @@ export function AgendaPage(): ReactElement {
           {texts.pdfExport}
         </Button>
       </Group>
-      <Table
+      <Table<IDataItem>
         actions={[
           {
             icon: <PencilSimple />,
             id: 'edit',
             label: texts.editDocument,
             onAction: () => {
-              linkTo('3-custom/Pages/AgendaItemPage', 'AgendaItemPage');
-              // window.parent.location.href =
-              //   'http://localhost:6006/?path=/story/3-custom-pages-agendaitempage--agenda-item-page';
+              window.parent.location.href =
+                'http://localhost:6006/?path=/story/3-custom-pages-agendaitempage--agenda-item-page';
             },
           },
           {
@@ -153,7 +149,7 @@ export function AgendaPage(): ReactElement {
               confirmColor: 'red',
               confirmLabel: texts.remove,
               onConfirm: (row) => {
-                removeSubject(row);
+                removeSubject(row as MRT_Row<IDataItem>);
               },
               title: `${texts.remove} ?`,
             },
