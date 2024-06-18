@@ -15,7 +15,7 @@ export interface IPaginationProps extends FlexProps {
   onItemsPerPageChange?: (value: number) => void;
   onPageChange?: (value: number) => void;
   page: number;
-  paginationProps?: PaginationProps;
+  paginationProps?: Omit<PaginationProps, 'total'>;
   selectProps?: SelectProps;
   totalPages: number;
 }
