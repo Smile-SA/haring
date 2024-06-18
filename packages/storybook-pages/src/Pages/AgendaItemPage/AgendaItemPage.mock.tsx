@@ -1,6 +1,19 @@
 import type { IMenuItem } from '@smile/haring-react';
 import type { ReactNode } from 'react';
 
+export const texts = {
+  conflicts: `Conflits d'intérêt`,
+  decisions: 'Décisions',
+  details: 'Détails',
+  history: 'Historique',
+  next: 'Suivant',
+  order: `Ordre du jour`,
+  previous: 'Précédent',
+  pv: 'PV',
+  sends: 'Envois',
+  toggleLabel: `Voir l'ordre du jour`,
+};
+
 export const breadcrumbsMock = [
   <a key="1" href="#">
     First level

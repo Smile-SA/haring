@@ -10,12 +10,15 @@ import {
 } from '@smile/haring-react';
 import { useState } from 'react';
 
-import { breadcrumbsMock, menusMock, tabsMock } from './AgendaItemPage.mock';
+import {
+  breadcrumbsMock,
+  menusMock,
+  tabsMock,
+  texts,
+} from './AgendaItemPage.mock';
 import classes from './AgendaItemPage.module.css';
 
 export function AgendaItemPage(): ReactElement {
-  const toggleLabel = `Voir l'ordre du jour`;
-
   const [openedMenu, setOpenedMenu] = useState<string>(menusMock[0].id);
   const [activeTab, setActiveTab] = useState<string | null>('order');
 
@@ -48,23 +51,23 @@ export function AgendaItemPage(): ReactElement {
               menu={menusMock}
               menuOpenValue={[openedMenu]}
               onMenuOpenChange={(v: string[]) => setOpenedMenu(v[0])}
-              onSelectedChange={(v) => (v ? setOpenedMenu(v) : null)}
+              onSelectedChange={(v?: string) => (v ? setOpenedMenu(v) : null)}
               selectedValue={openedMenu}
             />
           }
-          sidebarToggleLabel={toggleLabel}
+          sidebarToggleLabel={texts.toggleLabel}
           topBarRight={<Breadcrumbs>{...breadcrumbsMock}</Breadcrumbs>}
         >
           <div className={classes.box}>
             <Tabs onChange={setActiveTab} value={activeTab}>
               <Tabs.List>
-                <Tabs.Tab value="order">Ordre du jour</Tabs.Tab>
-                <Tabs.Tab value="details">Détails</Tabs.Tab>
-                <Tabs.Tab value="conflicts">Conflits d&apos;intérêt</Tabs.Tab>
-                <Tabs.Tab value="sends">Envois</Tabs.Tab>
-                <Tabs.Tab value="pv">PV</Tabs.Tab>
-                <Tabs.Tab value="decisions">Décisions</Tabs.Tab>
-                <Tabs.Tab value="history">Historique</Tabs.Tab>
+                <Tabs.Tab value="order">{texts.order}</Tabs.Tab>
+                <Tabs.Tab value="details">{texts.details}</Tabs.Tab>
+                <Tabs.Tab value="conflicts">{texts.conflicts}</Tabs.Tab>
+                <Tabs.Tab value="sends">{texts.sends}</Tabs.Tab>
+                <Tabs.Tab value="pv">{texts.pv}</Tabs.Tab>
+                <Tabs.Tab value="decisions">{texts.decisions}</Tabs.Tab>
+                <Tabs.Tab value="history">{texts.history}</Tabs.Tab>
               </Tabs.List>
             </Tabs>
             <div className={classes.content}>
@@ -75,8 +78,8 @@ export function AgendaItemPage(): ReactElement {
               }
             </div>
             <div className={classes.pagination}>
-              <Button onClick={handlePrevious}>Précédent</Button>
-              <Button onClick={handleNext}>Suivant</Button>
+              <Button onClick={handlePrevious}>{texts.previous}</Button>
+              <Button onClick={handleNext}>{texts.next}</Button>
             </div>
           </div>
         </FoldableColumnLayout>
