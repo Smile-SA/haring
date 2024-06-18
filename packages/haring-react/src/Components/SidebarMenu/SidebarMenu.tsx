@@ -6,7 +6,7 @@ import type { ElementType, ReactElement, ReactNode } from 'react';
 
 import { Paper } from '@mantine/core';
 import { useUncontrolled } from '@mantine/hooks';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 import { addPathAndDepth, flattenNestedObjects } from '../../helpers';
 import { CollapseButtonControlled } from '../CollapseButton/CollapseButtonControlled';
@@ -108,6 +108,10 @@ export interface ISidebarMenuProps<
   onMenuOpen?: (id: T, isOpened: boolean, path: T[]) => void;
   /** Controlled callback called when the value of menus open/closed changes */
   onMenuOpenChange?: (value: T[]) => void;
+  /** Controlled callback called when the value of the selected menu changes */
+  onSelectedChange?: (value: T | undefined) => void;
+  /** Controlled state of which menu is currently selected, using `id` field of `IMenuItem` */
+  selectedValue?: T;
 }
 
 /** Additional props will be forwarded to the [Mantine Paper component](https://mantine.dev/core/paper) */
@@ -125,6 +129,8 @@ export function SidebarMenu<
     onMenuOpenChange,
     menuOpenValue,
     defaultOpenedIds,
+    selectedValue,
+    onSelectedChange,
     ...paperProps
   } = props;
 
@@ -133,9 +139,11 @@ export function SidebarMenu<
     [menu],
   );
 
-  const [selectedId, setSelectedId] = useState<T | undefined>(
-    defaultSelectedId,
-  );
+  const [selectedId, setSelectedId] = useUncontrolled<T | undefined>({
+    defaultValue: defaultSelectedId,
+    onChange: onSelectedChange,
+    value: selectedValue,
+  });
   const defaultOpenedMenuIds = (): T[] => {
     if (defaultSelectedId && !defaultOpenedIds) {
       const path = flatMenu.find((menu) => menu.id === defaultSelectedId)
