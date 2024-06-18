@@ -8,32 +8,54 @@ import {
   FoldableColumnLayout,
   SidebarMenu,
 } from '@smile/haring-react';
+import { useState } from 'react';
 
-import { breadcrumbsMock, menusMock } from './AgendaItemPage.mock';
+import { breadcrumbsMock, menusMock, tabsMock } from './AgendaItemPage.mock';
 import classes from './AgendaItemPage.module.css';
 
 export function AgendaItemPage(): ReactElement {
   const toggleLabel = `Voir l'ordre du jour`;
 
-  // TODO: stuff to fix:
-  //  have an active menu in sidebar, this is the active page
-  //  buttons at the bottom change this menu, change the page content
-  //  also link switch state in layout
+  const [openedMenu, setOpenedMenu] = useState<string>(menusMock[0].id);
+  const [activeTab, setActiveTab] = useState<string | null>('order');
+
+  function handlePrevious(): void {
+    const previousIndex = menusMock.findIndex((m) => m.id === openedMenu) - 1;
+    const newOpenedId: string =
+      previousIndex === -1
+        ? menusMock[menusMock.length - 1].id
+        : menusMock[previousIndex].id;
+    setOpenedMenu(newOpenedId);
+  }
+
+  function handleNext(): void {
+    const nextIndex = menusMock.findIndex((m) => m.id === openedMenu) + 1;
+    const newOpenedId: string =
+      nextIndex > menusMock.length - 1
+        ? menusMock[0].id
+        : menusMock[nextIndex].id;
+    setOpenedMenu(newOpenedId);
+  }
 
   return (
     <AppShell classNames={{ main: classes.main }} padding={0}>
       <AppShell.Main>
         <FoldableColumnLayout
-          onChangeIsColumnVisible={(isVisible) =>
-            // setGridCols(isVisible ? 4 : 5)
-            console.log(isVisible)
+          sidebarContent={
+            <SidebarMenu<string>
+              defaultSelectedId={openedMenu[0]}
+              hasOnlyOneOpenMenu
+              menu={menusMock}
+              menuOpenValue={[openedMenu]}
+              onMenuOpenChange={(v: string[]) => setOpenedMenu(v[0])}
+              selectedValue={openedMenu}
+            />
           }
-          sidebarContent={<SidebarMenu menu={menusMock} />}
           sidebarToggleLabel={toggleLabel}
           topBarRight={<Breadcrumbs>{...breadcrumbsMock}</Breadcrumbs>}
         >
           <div className={classes.box}>
-            <Tabs defaultValue="order">
+            <Tabs onChange={setActiveTab} value={activeTab}>
               <Tabs.List>
                 <Tabs.Tab value="order">Ordre du jour</Tabs.Tab>
                 <Tabs.Tab value="details">Détails</Tabs.Tab>
@@ -45,11 +67,15 @@ export function AgendaItemPage(): ReactElement {
               </Tabs.List>
             </Tabs>
             <div className={classes.content}>
-              <p>Contenu page</p>
+              {
+                tabsMock
+                  .find((o) => o.id === openedMenu)
+                  ?.tabs.find((t) => t.id === activeTab)?.content
+              }
             </div>
             <div className={classes.pagination}>
-              <Button>Précédent</Button>
-              <Button>Suivant</Button>
+              <Button onClick={handlePrevious}>Précédent</Button>
+              <Button onClick={handleNext}>Suivant</Button>
             </div>
           </div>
         </FoldableColumnLayout>
