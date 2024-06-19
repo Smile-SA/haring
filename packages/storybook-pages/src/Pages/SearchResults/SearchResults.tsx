@@ -41,8 +41,8 @@ import {
   searchDocuments,
 } from '../pages.mock';
 
+import { texts } from './SearchResults.mock';
 import classes from './SearchResults.module.css';
-import { texts } from './SearchResultsTexts';
 
 interface IOptionExtended extends IOption<string> {
   label: string;

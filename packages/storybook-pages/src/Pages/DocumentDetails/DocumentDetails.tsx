@@ -35,8 +35,8 @@ import {
   CardsMetadata,
 } from '../pages.mock';
 
+import { texts } from './DocumentDetails.mock';
 import classes from './DocumentDetails.module.css';
-import { texts } from './DocumentDetailsTexts';
 
 /**
  * Example Page of a document preview, actions and attributes in a `ResponsiveTabs` component

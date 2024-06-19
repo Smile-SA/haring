@@ -34,7 +34,7 @@ import {
   SummaryBox,
 } from '@smile/haring-react';
 
-import { texts } from './DashboardPagesTexts';
+import { texts } from './DashboardPages.mock';
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const iconCardMock = {
