@@ -93,7 +93,7 @@ export function AgendaPage(): ReactElement {
       },
     },
   ]);
-  const [addSubjectModalOpened, { open, close }] = useDisclosure(false);
+  const [modalOpened, { open, close }] = useDisclosure(false);
   const [newTitleChecked, setNewTitleChecked] = useState<boolean>(false);
   const [showTimeValueError, setShowTimeValueError] = useState<boolean>(false);
   const [newTempIndicator, setNewTempIndicator] = useState<IIndicator>({
@@ -112,18 +112,15 @@ export function AgendaPage(): ReactElement {
     mode: 'uncontrolled',
     validate: {
       indicator: (value) =>
-        value.length === 0
-          ? 'Veuillez renseigner au moins un indicateur'
-          : null,
+        value.length === 0 && 'Veuillez renseigner au moins un indicateur',
       schedules: {
         startTime: (value) =>
-          value === '' ? 'Veuillez renseigner une heure de début.' : null,
+          value === '' && 'Veuillez renseigner une heure de début.',
       },
       subject: {
         content: (value) =>
-          value === '' ? 'Veuillez renseigner le contenu du sujet' : null,
-        title: (value) =>
-          value === '' ? 'Veuillez renseigner un titre.' : null,
+          value === '' && 'Veuillez renseigner le contenu du sujet',
+        title: (value) => value === '' && 'Veuillez renseigner un titre.',
       },
     },
   });
@@ -138,8 +135,7 @@ export function AgendaPage(): ReactElement {
     const { name, value } = e.target;
     const timeValue = value.toString().replace(':', 'h');
 
-    const { startTime } = addSubjectForm.getValues().schedules;
-    const { endTime } = addSubjectForm.getValues().schedules;
+    const { startTime, endTime } = addSubjectForm.getValues().schedules;
 
     const startTimeNumber =
       name === 'startTime'
@@ -268,14 +264,14 @@ export function AgendaPage(): ReactElement {
       <Stack>
         <Checkbox
           checked={newTitleChecked}
-          label="Nouveau titre"
+          label={texts.modalCheckBox}
           onChange={(event) => setNewTitleChecked(event.currentTarget.checked)}
         />
         {newTitleChecked ? (
           <TextInput
             key={addSubjectForm.key('subject.title')}
-            label="Title"
-            placeholder="Title"
+            label={texts.formTitleLabel}
+            placeholder={texts.formTitleLabel}
             required
             {...addSubjectForm.getInputProps('subject.title')}
           />
@@ -283,8 +279,8 @@ export function AgendaPage(): ReactElement {
           <NativeSelect
             key={addSubjectForm.key('subject.title')}
             data={data.map((item) => item.subject.title)}
-            label="Title"
-            name="title"
+            label={texts.formTitleLabel}
+            name={texts.formTitleLabel}
             onChange={(e) =>
               addSubjectForm.setFieldValue('subject.title', e.target.value)
             }
@@ -295,24 +291,24 @@ export function AgendaPage(): ReactElement {
 
         <TextInput
           key={addSubjectForm.key('subject.content')}
-          label="Content"
-          placeholder="Content"
+          label={texts.formContentLabel}
+          placeholder={texts.formContentLabel}
           required
           {...addSubjectForm.getInputProps('subject.content')}
         />
         <Stack gap={0}>
           <Group grow justify="space-between">
             <TimeInput
-              label="Start time"
+              label={texts.formStartTimeLabel}
               leftSection={<Clock />}
-              name="startTime"
+              name={texts.formStartTimeName}
               onChange={handleSetTimeForm}
               required
             />
             <TimeInput
-              label="End time"
+              label={texts.formEndTimeLabel}
               leftSection={<Clock />}
-              name="endTime"
+              name={texts.formEndTimeName}
               onChange={handleSetTimeForm}
             />
           </Group>
@@ -320,15 +316,15 @@ export function AgendaPage(): ReactElement {
         </Stack>
         <Group align="end" grow justify="space-between">
           <TextInput
-            label="Indicator"
-            name="value"
+            label={texts.indicator}
+            name={texts.value}
             onChange={(e) =>
               setNewTempIndicator({
                 ...newTempIndicator,
                 [e.target.name]: e.target.value,
               })
             }
-            placeholder="Name"
+            placeholder={texts.name}
             value={newTempIndicator.value}
           />
           {!defaultIndicator.find(
@@ -336,10 +332,10 @@ export function AgendaPage(): ReactElement {
               item.value.toLowerCase() === newTempIndicator.value.toLowerCase(),
           ) && (
             <NativeSelect
-              aria-placeholder="Color"
-              data={['blue', 'red', 'green', 'orange']}
-              label="Color"
-              name="color"
+              aria-placeholder={texts.color}
+              data={texts.indicatorColorData}
+              label={texts.color}
+              name={texts.color}
               onChange={(e) =>
                 setNewTempIndicator({
                   ...newTempIndicator,
@@ -380,7 +376,7 @@ export function AgendaPage(): ReactElement {
         onConfirm={() => {
           addSubject();
         }}
-        opened={addSubjectModalOpened}
+        opened={modalOpened}
         title={texts.addSubject}
       >
         {subjectForm}
