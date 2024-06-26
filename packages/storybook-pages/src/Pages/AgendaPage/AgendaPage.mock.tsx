@@ -1,11 +1,21 @@
 export const texts = {
   addSubject: 'Ajouter un sujet',
   cancel: 'Annuler',
+  color: 'color',
   displaySpecificResultNbr(number: number): string {
     return `Afficher ${number} résultats`;
   },
   editDocument: 'Edit document',
+  formContentLabel: 'Content',
+  formEndTimeLabel: 'End time',
+  formEndTimeName: 'endTime',
+  formStartTimeLabel: 'Start time',
+  formStartTimeName: 'startTime',
+  formTitleLabel: 'Titre',
   indicator: 'Indicateurs',
+  indicatorColorData: ['blue', 'red', 'green', 'orange'],
+  modalCheckBox: 'Nouveau titre',
+  name: 'name',
   of: 'De',
   pdfExport: 'Export PDF',
   remove: 'Supprimer',
@@ -13,6 +23,8 @@ export const texts = {
   resutsNbr: 'Number of results per page',
   schedules: 'Horaires',
   sidebarToggleLabel: 'Afficher la barre latéral',
+  timeErrorMessage: 'Invalid end time.',
   to: 'à',
   topics: 'Sujets',
+  value: 'value',
 };
