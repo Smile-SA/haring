@@ -57,6 +57,11 @@ interface IDataItem extends Record<string, unknown> {
   subject: ISubject;
 }
 
+interface IError {
+  show: boolean;
+  value: string;
+}
+
 export function AgendaPage(): ReactElement {
   const [data, setData] = useState<IDataItem[]>([
     {
@@ -100,6 +105,10 @@ export function AgendaPage(): ReactElement {
     color: 'blue',
     value: '',
   });
+  const [emptyTimeError, setEmptyTimeError] = useState<IError>({
+    show: false,
+    value: 'Veuillez rensigner une heure de début.',
+  });
   const addSubjectForm = useForm<IDataItem>({
     initialValues: {
       indicator: [],
@@ -111,18 +120,13 @@ export function AgendaPage(): ReactElement {
     },
     mode: 'uncontrolled',
     validate: {
-      indicator: (value) =>
-        value.length === 0 && 'Veuillez renseigner au moins un indicateur',
-      schedules: {
-        startTime: (value) =>
-          value === '' && 'Veuillez renseigner une heure de début.',
-      },
       subject: {
         content: (value) =>
           value === '' && 'Veuillez renseigner le contenu du sujet',
         title: (value) => value === '' && 'Veuillez renseigner un titre.',
       },
     },
+    validateInputOnChange: true,
   });
 
   function removeSubject(row: MRT_Row<IDataItem>): void {
@@ -192,12 +196,26 @@ export function AgendaPage(): ReactElement {
     }
   }
 
+  const validateEmptyTime = (): boolean => {
+    if (addSubjectForm.getValues().schedules.startTime === '') {
+      setEmptyTimeError({ ...emptyTimeError, show: true });
+      return false;
+    }
+    setEmptyTimeError({ ...emptyTimeError, show: false });
+    return true;
+  };
+
   function addSubject(): void {
-    if (addSubjectForm.isValid() && !showTimeValueError) {
+    if (
+      validateEmptyTime() &&
+      addSubjectForm.isValid() &&
+      !showTimeValueError
+    ) {
       setData([addSubjectForm.getValues(), ...data]);
       addSubjectForm.reset();
       close();
     }
+    addSubjectForm.validate();
   }
 
   const formIndicatorList = addSubjectForm
@@ -299,6 +317,7 @@ export function AgendaPage(): ReactElement {
         <Stack gap={0}>
           <Group grow justify="space-between">
             <TimeInput
+              error={emptyTimeError.show ? emptyTimeError.value : null}
               label={texts.formStartTimeLabel}
               leftSection={<Clock />}
               name={texts.formStartTimeName}
