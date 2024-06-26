@@ -23,6 +23,7 @@ export const texts = {
   resutsNbr: 'Number of results per page',
   schedules: 'Horaires',
   sidebarToggleLabel: 'Afficher la barre latéral',
+  timeErrorMessage: 'Invalid end time.',
   to: 'à',
   topics: 'Sujets',
   value: 'value',

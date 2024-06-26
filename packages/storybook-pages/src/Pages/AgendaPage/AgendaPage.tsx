@@ -312,7 +312,9 @@ export function AgendaPage(): ReactElement {
               onChange={handleSetTimeForm}
             />
           </Group>
-          <Group>{showTimeValueError ? <p>Invalid end time.</p> : null}</Group>
+          <Group>
+            {showTimeValueError ? <p>{texts.timeErrorMessage}</p> : null}
+          </Group>
         </Stack>
         <Group align="end" grow justify="space-between">
           <TextInput
