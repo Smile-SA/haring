@@ -7,6 +7,7 @@ export const texts = {
   },
   editDocument: 'Edit document',
   formContentLabel: 'Content',
+  formContentPlaceholder: 'Description',
   formEndTimeLabel: 'End time',
   formEndTimeName: 'endTime',
   formStartTimeLabel: 'Start time',

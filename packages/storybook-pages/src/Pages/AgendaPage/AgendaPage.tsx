@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 'use client';
 
 import type { MRT_Row } from 'mantine-react-table';
@@ -57,11 +58,6 @@ interface IDataItem extends Record<string, unknown> {
   subject: ISubject;
 }
 
-interface IError {
-  show: boolean;
-  value: string;
-}
-
 export function AgendaPage(): ReactElement {
   const [data, setData] = useState<IDataItem[]>([
     {
@@ -105,10 +101,7 @@ export function AgendaPage(): ReactElement {
     color: 'blue',
     value: '',
   });
-  const [emptyTimeError, setEmptyTimeError] = useState<IError>({
-    show: false,
-    value: 'Veuillez rensigner une heure de début.',
-  });
+
   const addSubjectForm = useForm<IDataItem>({
     initialValues: {
       indicator: [],
@@ -120,6 +113,10 @@ export function AgendaPage(): ReactElement {
     },
     mode: 'uncontrolled',
     validate: {
+      schedules: {
+        startTime: (value) =>
+          value === '' && 'Veuillez renseigner une heure de début.',
+      },
       subject: {
         content: (value) =>
           value === '' && 'Veuillez renseigner le contenu du sujet',
@@ -196,21 +193,8 @@ export function AgendaPage(): ReactElement {
     }
   }
 
-  const validateEmptyTime = (): boolean => {
-    if (addSubjectForm.getValues().schedules.startTime === '') {
-      setEmptyTimeError({ ...emptyTimeError, show: true });
-      return false;
-    }
-    setEmptyTimeError({ ...emptyTimeError, show: false });
-    return true;
-  };
-
   function addSubject(): void {
-    if (
-      validateEmptyTime() &&
-      addSubjectForm.isValid() &&
-      !showTimeValueError
-    ) {
+    if (addSubjectForm.isValid() && !showTimeValueError) {
       setData([addSubjectForm.getValues(), ...data]);
       addSubjectForm.reset();
       close();
@@ -277,13 +261,22 @@ export function AgendaPage(): ReactElement {
     };
   });
 
+  function handleChecked(e: React.ChangeEvent<HTMLInputElement>): void {
+    setNewTitleChecked(!newTitleChecked);
+    if (e.target.checked) {
+      addSubjectForm.setFieldValue('subject.title', '');
+    } else {
+      addSubjectForm.setFieldValue('subject.title', data[0].subject.title);
+    }
+  }
+
   const subjectForm: ReactNode = (
     <form>
       <Stack>
         <Checkbox
           checked={newTitleChecked}
           label={texts.modalCheckBox}
-          onChange={(event) => setNewTitleChecked(event.currentTarget.checked)}
+          onChange={handleChecked}
         />
         {newTitleChecked ? (
           <TextInput
@@ -310,18 +303,21 @@ export function AgendaPage(): ReactElement {
         <TextInput
           key={addSubjectForm.key('subject.content')}
           label={texts.formContentLabel}
-          placeholder={texts.formContentLabel}
+          placeholder={texts.formContentPlaceholder}
           required
           {...addSubjectForm.getInputProps('subject.content')}
         />
         <Stack gap={0}>
           <Group grow justify="space-between">
             <TimeInput
-              error={emptyTimeError.show ? emptyTimeError.value : null}
+              {...addSubjectForm.getInputProps('schedules.startTime')}
               label={texts.formStartTimeLabel}
               leftSection={<Clock />}
               name={texts.formStartTimeName}
-              onChange={handleSetTimeForm}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                handleSetTimeForm(e);
+                addSubjectForm.getInputProps('schedules.startTime').onChange(e);
+              }}
               required
             />
             <TimeInput
