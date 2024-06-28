@@ -59,9 +59,9 @@ import {
   gridProps,
   menuMock,
   tableProps,
+  texts,
 } from './BrowsingPage.mock';
 import classes from './BrowsingPage.module.css';
-import { texts } from './BrowsingPageText';
 
 /**
  * Primary UI component for user interaction
