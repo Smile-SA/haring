@@ -2,4 +2,4 @@
 'storybook-pages': minor
 ---
 
-Add AgendaPage
+Add AgendaPage, Add subject modal
