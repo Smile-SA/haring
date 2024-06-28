@@ -19,24 +19,20 @@ import {
 import classes from './AgendaItemPage.module.css';
 
 export function AgendaItemPage(): ReactElement {
-  const [openedMenu, setOpenedMenu] = useState<string>(menusMock[0].id);
+  const [openedMenu, setOpenedMenu] = useState<number>(0);
   const [activeTab, setActiveTab] = useState<string | null>('order');
 
   function handlePrevious(): void {
-    const previousIndex = menusMock.findIndex((m) => m.id === openedMenu) - 1;
-    const newOpenedId: string =
-      previousIndex === -1
-        ? menusMock[menusMock.length - 1].id
-        : menusMock[previousIndex].id;
+    const previousIndex = openedMenu - 1;
+    const newOpenedId: number =
+      previousIndex === -1 ? menusMock.length - 1 : previousIndex;
     setOpenedMenu(newOpenedId);
   }
 
   function handleNext(): void {
-    const nextIndex = menusMock.findIndex((m) => m.id === openedMenu) + 1;
-    const newOpenedId: string =
-      nextIndex > menusMock.length - 1
-        ? menusMock[0].id
-        : menusMock[nextIndex].id;
+    const nextIndex = openedMenu + 1;
+    const newOpenedId: number =
+      nextIndex > menusMock.length - 1 ? 0 : nextIndex;
     setOpenedMenu(newOpenedId);
   }
 
@@ -46,13 +42,18 @@ export function AgendaItemPage(): ReactElement {
         <FoldableColumnLayout
           sidebarContent={
             <SidebarMenu<string>
-              defaultSelectedId={openedMenu[0]}
+              defaultSelectedId={menusMock[0].id}
               hasOnlyOneOpenMenu
               menu={menusMock}
-              menuOpenValue={[openedMenu]}
-              onMenuOpenChange={(v: string[]) => setOpenedMenu(v[0])}
-              onSelectedChange={(v?: string) => (v ? setOpenedMenu(v) : null)}
-              selectedValue={openedMenu}
+              menuOpenValue={[menusMock[openedMenu].id]}
+              onMenuOpenChange={() => setOpenedMenu(0)}
+              onSelectedChange={(v?: string) => {
+                const newIndex = menusMock.findIndex((menu) => menu.id === v);
+                if (newIndex !== -1) {
+                  setOpenedMenu(newIndex);
+                }
+              }}
+              selectedValue={menusMock[openedMenu].id}
             />
           }
           sidebarToggleLabel={texts.toggleLabel}
@@ -73,7 +74,7 @@ export function AgendaItemPage(): ReactElement {
             <div className={classes.content}>
               {
                 tabsMock
-                  .find((o) => o.id === openedMenu)
+                  .find((o) => o.id === menusMock[openedMenu].id)
                   ?.tabs.find((t) => t.id === activeTab)?.content
               }
             </div>
