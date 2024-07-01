@@ -41,9 +41,9 @@
     "serve-and-test-storybook": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run serve-storybook\" \"npm run wait-and-test-storybook\""
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.4.8",
-    "@changesets/cli": "^2.26.2",
-    "@commitlint/cli": "^17.7.1",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.6",
+    "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^17.7.0",
     "@storybook/addon-a11y": "~7.4.1",
     "@storybook/addon-essentials": "~7.4.1",
@@ -72,12 +72,12 @@
     "wait-on": "^7.0.1"
   },
   "dependencies": {
-    "@mantine/carousel": "^7.5.1",
-    "@mantine/form": "^7.5.1",
-    "@mantine/core": "^7.5.1",
-    "@mantine/dates": "^7.5.1",
-    "@mantine/dropzone": "^7.5.1",
-    "@mantine/hooks": "^7.5.1",
+    "@mantine/carousel": "^7.11.0",
+    "@mantine/form": "^7.11.0",
+    "@mantine/core": "^7.11.0",
+    "@mantine/dates": "^7.11.0",
+    "@mantine/dropzone": "^7.11.0",
+    "@mantine/hooks": "^7.11.0",
     "@phosphor-icons/react": "^2.0.10",
     "@smile/haring-react-shared": "*",
     "react": "^18.2.0",
