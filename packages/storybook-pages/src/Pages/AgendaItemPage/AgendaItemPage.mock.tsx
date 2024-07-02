@@ -46,7 +46,7 @@ export const menusMock: IMenuItem<string>[] = [
 
 export interface IAgendaItemTab {
   content: {
-    composent?: ReactNode;
+    body?: ReactNode;
     description?: string;
     title?: string;
   };
@@ -64,7 +64,7 @@ export const tabsMock: IAgendaItemOrder[] = [
     tabs: [
       {
         content: {
-          composent: (
+          body: (
             <>
               <p>Content of Order 1</p>
               <p>Tab order</p>
@@ -83,7 +83,7 @@ export const tabsMock: IAgendaItemOrder[] = [
       },
       {
         content: {
-          composent: (
+          body: (
             <>
               <p>Content of Order 1</p>
               <p>Tab conflicts</p>
@@ -94,7 +94,7 @@ export const tabsMock: IAgendaItemOrder[] = [
       },
       {
         content: {
-          composent: (
+          body: (
             <>
               <p>Content of Order 1</p>
               <p>Tab sends</p>
@@ -105,7 +105,7 @@ export const tabsMock: IAgendaItemOrder[] = [
       },
       {
         content: {
-          composent: (
+          body: (
             <>
               <p>Content of Order 1</p>
               <p>Tab pv</p>
@@ -116,7 +116,7 @@ export const tabsMock: IAgendaItemOrder[] = [
       },
       {
         content: {
-          composent: (
+          body: (
             <>
               <p>Content of Order 1</p>
               <p>Tab decisions</p>
@@ -127,7 +127,7 @@ export const tabsMock: IAgendaItemOrder[] = [
       },
       {
         content: {
-          composent: (
+          body: (
             <>
               <p>Content of Order 1</p>
               <p>Tab history</p>
@@ -141,7 +141,7 @@ export const tabsMock: IAgendaItemOrder[] = [
   {
     id: '2',
     tabs: [
-      { content: { composent: 'Content of Order 2, Tab order' }, id: 'order' },
+      { content: { body: 'Content of Order 2, Tab order' }, id: 'order' },
       {
         content: {
           description: '',
@@ -150,17 +150,17 @@ export const tabsMock: IAgendaItemOrder[] = [
         id: 'details',
       },
       {
-        content: { composent: 'Content of Order 2, Tab conflicts' },
+        content: { body: 'Content of Order 2, Tab conflicts' },
         id: 'conflicts',
       },
-      { content: { composent: 'Content of Order 2, Tab sends' }, id: 'sends' },
-      { content: { composent: 'Content of Order 2, Tab pv' }, id: 'pv' },
+      { content: { body: 'Content of Order 2, Tab sends' }, id: 'sends' },
+      { content: { body: 'Content of Order 2, Tab pv' }, id: 'pv' },
       {
-        content: { composent: 'Content of Order 2, Tab decisions' },
+        content: { body: 'Content of Order 2, Tab decisions' },
         id: 'decisions',
       },
       {
-        content: { composent: 'Content of Order 2, Tab history' },
+        content: { body: 'Content of Order 2, Tab history' },
         id: 'history',
       },
     ],
@@ -168,7 +168,7 @@ export const tabsMock: IAgendaItemOrder[] = [
   {
     id: '3',
     tabs: [
-      { content: { composent: 'Content of Order 3, Tab order' }, id: 'order' },
+      { content: { body: 'Content of Order 3, Tab order' }, id: 'order' },
       {
         content: {
           description: '',
@@ -177,17 +177,17 @@ export const tabsMock: IAgendaItemOrder[] = [
         id: 'details',
       },
       {
-        content: { composent: 'Content of Order 3, Tab conflicts' },
+        content: { body: 'Content of Order 3, Tab conflicts' },
         id: 'conflicts',
       },
-      { content: { composent: 'Content of Order 3, Tab order' }, id: 'sends' },
-      { content: { composent: 'Content of Order 3, Tab pv' }, id: 'pv' },
+      { content: { body: 'Content of Order 3, Tab order' }, id: 'sends' },
+      { content: { body: 'Content of Order 3, Tab pv' }, id: 'pv' },
       {
-        content: { composent: 'Content of Order 3, Tab decisions' },
+        content: { body: 'Content of Order 3, Tab decisions' },
         id: 'decisions',
       },
       {
-        content: { composent: 'Content of Order 3, Tab history' },
+        content: { body: 'Content of Order 3, Tab history' },
         id: 'history',
       },
     ],
