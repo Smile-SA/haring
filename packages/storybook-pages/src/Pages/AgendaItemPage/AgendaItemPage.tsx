@@ -22,7 +22,7 @@ import {
 import classes from './AgendaItemPage.module.css';
 
 interface IModalConfig {
-  mode: string;
+  mode: 'description' | 'title';
   value?: string;
 }
 
@@ -31,7 +31,7 @@ export function AgendaItemPage(): ReactElement {
   const [activeTab, setActiveTab] = useState<string | null>('order');
   const [tabData, setTabData] = useState<IAgendaItemOrder[]>(tabsMock);
   const [modalConfig, setModalConfig] = useState<IModalConfig>({
-    mode: '',
+    mode: 'title',
     value: '',
   });
 
@@ -54,9 +54,9 @@ export function AgendaItemPage(): ReactElement {
   const tabContent = (): ReactNode => {
     if (activeTab === 'details') {
       const activeTabData = tabData.find(
-        (o) => o.id === menusMock[openedMenu].id,
+        (order) => order.id === menusMock[openedMenu].id,
       );
-      const tabContent = activeTabData?.tabs.find((t) => t.id === activeTab)
+      const tabContent = activeTabData?.tabs.find((tab) => tab.id === activeTab)
         ?.content;
 
       if (tabContent) {
@@ -64,7 +64,7 @@ export function AgendaItemPage(): ReactElement {
         return (
           <Stack>
             <Group>
-              <h2>Titre :</h2>
+              <h2>{texts.titleLabel}</h2>
               <h3>{title}</h3>
               <Button
                 onClick={() => {
@@ -75,13 +75,13 @@ export function AgendaItemPage(): ReactElement {
                   open();
                 }}
               >
-                Modifier
+                {texts.modifyLabel}
               </Button>
             </Group>
 
             <Stack>
               <Group>
-                <h2>Description : </h2>
+                <h2>{texts.descriptionLabel}</h2>
                 <Button
                   onClick={() => {
                     setModalConfig({
@@ -91,7 +91,7 @@ export function AgendaItemPage(): ReactElement {
                     open();
                   }}
                 >
-                  Modifier
+                  {texts.modifyLabel}
                 </Button>
               </Group>
               <p>{description}</p>
@@ -103,8 +103,8 @@ export function AgendaItemPage(): ReactElement {
       return <h1>Details</h1>;
     }
     return tabData
-      .find((o) => o.id === menusMock[openedMenu].id)
-      ?.tabs.find((t) => t.id === activeTab)?.content.composent;
+      .find((order) => order.id === menusMock[openedMenu].id)
+      ?.tabs.find((tab) => tab.id === activeTab)?.content.composent;
   };
 
   const handleConfirmModal = (): void => {
@@ -144,8 +144,10 @@ export function AgendaItemPage(): ReactElement {
               menu={menusMock}
               menuOpenValue={[menusMock[openedMenu].id]}
               onMenuOpenChange={() => setOpenedMenu(0)}
-              onSelectedChange={(v?: string) => {
-                const newIndex = menusMock.findIndex((menu) => menu.id === v);
+              onSelectedChange={(value?: string) => {
+                const newIndex = menusMock.findIndex(
+                  (menu) => menu.id === value,
+                );
                 if (newIndex !== -1) {
                   setOpenedMenu(newIndex);
                 }
@@ -179,8 +181,8 @@ export function AgendaItemPage(): ReactElement {
               onClose={close}
               onConfirm={handleConfirmModal}
               opened={opened}
+              title={`Modify ${modalConfig.mode}`}
             >
-              <h1>Modify {modalConfig.mode}</h1>
               <TextInput
                 label={modalConfig.mode}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>

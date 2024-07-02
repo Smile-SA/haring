@@ -4,13 +4,16 @@ import type { ReactNode } from 'react';
 export const texts = {
   conflicts: `Conflits d'intérêt`,
   decisions: 'Décisions',
+  descriptionLabel: 'Description :',
   details: 'Détails',
   history: 'Historique',
+  modifyLabel: 'Modify',
   next: 'Suivant',
   order: `Ordre du jour`,
   previous: 'Précédent',
   pv: 'PV',
   sends: 'Envois',
+  titleLabel: 'Title :',
   toggleLabel: `Voir l'ordre du jour`,
 };
 
