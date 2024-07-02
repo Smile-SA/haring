@@ -104,7 +104,7 @@ export function AgendaItemPage(): ReactElement {
     }
     return tabData
       .find((order) => order.id === menusMock[openedMenu].id)
-      ?.tabs.find((tab) => tab.id === activeTab)?.content.composent;
+      ?.tabs.find((tab) => tab.id === activeTab)?.content.body;
   };
 
   const handleConfirmModal = (): void => {
