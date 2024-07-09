@@ -494,6 +494,7 @@ export function AgendaPage(): ReactElement {
         initialState={{
           pagination: { pageIndex: 0, pageSize: 6 },
         }}
+        maxVisibleActions={2}
         paginationProps={{
           itemsPerPageAriaLabel: texts.resutsNbr,
           itemsPerPageOptions: [
@@ -504,7 +505,6 @@ export function AgendaPage(): ReactElement {
             { label: texts.displaySpecificResultNbr(15), value: 15 },
           ],
         }}
-        rowActionNumber={2}
       />
     </FoldableColumnLayout>
   );
