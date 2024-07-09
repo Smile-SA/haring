@@ -143,5 +143,5 @@ export const tableMock: ITableProps<Record<string, unknown>> = {
     },
   ],
   manualSorting: false,
-  rowActionNumber: 3,
+  maxVisibleActions: 3,
 };
