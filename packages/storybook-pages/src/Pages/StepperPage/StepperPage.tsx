@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 'use client';
-
 import type { IAddressFieldsValues } from '@smile/haring-react/src/Form/AddressFields/AddressFields';
 import type { IValue } from '@smile/haring-react/src/Form/FetchAutocompleteField/FetchAutocompleteField';
 import type { ReactElement } from 'react';
@@ -12,8 +10,7 @@ import {
   FullNameFields,
   SidebarMenu,
 } from '@smile/haring-react';
-
-// import { AddressAutocompleteFields } from '@smile/haring-react/src/Form/AddressAutocompleteFields/AddressAutocompleteFields';
+import { AddressAutocompleteFields } from '@smile/haring-react/src/Form/AddressAutocompleteFields/AddressAutocompleteFields';
 import { useEffect, useState } from 'react';
 
 import { menuMock } from '../BrowsingPage/BrowsingPage.mock';
@@ -30,7 +27,7 @@ export interface IAddressGouvData {
   };
 }
 
-export async function getDataAddressGouvRequest(
+async function getDataAddressGouvRequest(
   value: string,
 ): Promise<IValue<IAddressGouvData>[]> {
   const response = await fetch(

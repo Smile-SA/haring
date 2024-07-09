@@ -1,6 +1,10 @@
 {
   "extends": "tsconfig/react-library.json",
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@smile/haring-react/*": ["packages/haring-react/*"]
+    },
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "include": [".", ".storybook/*"],
