@@ -11,7 +11,7 @@ import {
   FullNameFields,
   SidebarMenu,
 } from '@smile/haring-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { menuMock } from '../BrowsingPage/BrowsingPage.mock';
 
@@ -45,39 +45,32 @@ async function getDataAddressGouvRequest(
 
 export function StepperPage(): ReactElement {
   const [active, setActive] = useState(0);
-  const [formData, setFormData] = useState({
-    address: {
-      city: '',
-      country: '',
-      number: '',
-      postCode: '',
-      street: '',
-    },
-    fullName: '',
-  });
-
-  const sidebarMenu = menuMock;
 
   const form = useForm({
-    initialValues: formData,
+    initialValues: {
+      address: {
+        city: '',
+        country: '',
+        number: '',
+        postCode: '',
+        street: '',
+      },
+      fullName: {
+        firstName: '',
+        lastName: '',
+      },
+    },
   });
 
   const nextStep = (): void => {
     if (!form.validate().hasErrors) {
-      setFormData(form.values);
       setActive((current) => (current < 3 ? current + 1 : current));
     }
   };
 
   const prevStep = (): void => {
-    setFormData(form.values);
     setActive((current) => (current > 0 ? current - 1 : current));
   };
-
-  useEffect(() => {
-    form.setValues(formData);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   function onOptionSubmitMock(
     value: IValue<IAddressGouvData>,
@@ -91,13 +84,6 @@ export function StepperPage(): ReactElement {
       street: address.street ?? '',
     };
     form.setFieldValue('address', newAddress);
-    setFormData((prevData) => {
-      const updatedData = {
-        ...prevData,
-        address: newAddress,
-      };
-      return updatedData;
-    });
     return newAddress;
   }
 
@@ -105,7 +91,7 @@ export function StepperPage(): ReactElement {
     <FoldableColumnLayout
       sidebarContent={
         <Flex direction="column">
-          <SidebarMenu menu={sidebarMenu} />
+          <SidebarMenu menu={menuMock} />
         </Flex>
       }
     >
@@ -128,16 +114,6 @@ export function StepperPage(): ReactElement {
                 postCode: values.postCode ?? '',
                 street: values.street ?? '',
               });
-              setFormData((prevData) => ({
-                ...prevData,
-                address: {
-                  city: values.city ?? '',
-                  country: values.country ?? form.values.address.country,
-                  number: values.number ?? '',
-                  postCode: values.postCode ?? '',
-                  street: values.street ?? '',
-                },
-              }));
             }}
             onOptionSubmit={onOptionSubmitMock}
           />
