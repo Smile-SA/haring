@@ -159,6 +159,7 @@ export const tableProps: ITableGridViewTableProps<IExampleDataType> = {
     selectedCountOfRowCountRowsSelected: `{selectedCount} fichier(s) sélectionnés`,
   },
   manualPagination: false,
+  maxVisibleActions: 3,
   menuLabel: 'Autres actions',
   paginationProps: {
     itemsPerPageAriaLabel: 'Nombre de résultats par page',
@@ -170,7 +171,6 @@ export const tableProps: ITableGridViewTableProps<IExampleDataType> = {
       { label: 'Afficher 15 résultats', value: 15 },
     ],
   },
-  rowActionNumber: 3,
   rowCount: 6,
 };
 
