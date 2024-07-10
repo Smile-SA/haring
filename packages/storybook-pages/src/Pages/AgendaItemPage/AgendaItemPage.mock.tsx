@@ -4,13 +4,16 @@ import type { ReactNode } from 'react';
 export const texts = {
   conflicts: `Conflits d'intérêt`,
   decisions: 'Décisions',
+  descriptionLabel: 'Description :',
   details: 'Détails',
   history: 'Historique',
+  modifyLabel: 'Modify',
   next: 'Suivant',
   order: `Ordre du jour`,
   previous: 'Précédent',
   pv: 'PV',
   sends: 'Envois',
+  titleLabel: 'Title :',
   toggleLabel: `Voir l'ordre du jour`,
 };
 
@@ -42,7 +45,11 @@ export const menusMock: IMenuItem<string>[] = [
 ];
 
 export interface IAgendaItemTab {
-  content: ReactNode;
+  content: {
+    body?: ReactNode;
+    description?: string;
+    title?: string;
+  };
   id: string;
 }
 
@@ -56,66 +63,77 @@ export const tabsMock: IAgendaItemOrder[] = [
     id: '1',
     tabs: [
       {
-        content: (
-          <>
-            <p>Content of Order 1</p>
-            <p>Tab order</p>
-          </>
-        ),
+        content: {
+          body: (
+            <>
+              <p>Content of Order 1</p>
+              <p>Tab order</p>
+            </>
+          ),
+        },
+
         id: 'order',
       },
       {
-        content: (
-          <>
-            <p>Content of Order 1</p>
-            <p>Tab details</p>
-          </>
-        ),
+        content: {
+          description: '',
+          title: 'Titre tab détails order 1',
+        },
         id: 'details',
       },
       {
-        content: (
-          <>
-            <p>Content of Order 1</p>
-            <p>Tab conflicts</p>
-          </>
-        ),
+        content: {
+          body: (
+            <>
+              <p>Content of Order 1</p>
+              <p>Tab conflicts</p>
+            </>
+          ),
+        },
         id: 'conflicts',
       },
       {
-        content: (
-          <>
-            <p>Content of Order 1</p>
-            <p>Tab sends</p>
-          </>
-        ),
+        content: {
+          body: (
+            <>
+              <p>Content of Order 1</p>
+              <p>Tab sends</p>
+            </>
+          ),
+        },
         id: 'sends',
       },
       {
-        content: (
-          <>
-            <p>Content of Order 1</p>
-            <p>Tab pv</p>
-          </>
-        ),
+        content: {
+          body: (
+            <>
+              <p>Content of Order 1</p>
+              <p>Tab pv</p>
+            </>
+          ),
+        },
         id: 'pv',
       },
       {
-        content: (
-          <>
-            <p>Content of Order 1</p>
-            <p>Tab decisions</p>
-          </>
-        ),
+        content: {
+          body: (
+            <>
+              <p>Content of Order 1</p>
+              <p>Tab decisions</p>
+            </>
+          ),
+        },
         id: 'decisions',
       },
       {
-        content: (
-          <>
-            <p>Content of Order 1</p>
-            <p>Tab history</p>
-          </>
-        ),
+        content: {
+          body: (
+            <>
+              <p>Content of Order 1</p>
+              <p>Tab history</p>
+            </>
+          ),
+        },
         id: 'history',
       },
     ],
@@ -123,25 +141,55 @@ export const tabsMock: IAgendaItemOrder[] = [
   {
     id: '2',
     tabs: [
-      { content: 'Content of Order 2, Tab order', id: 'order' },
-      { content: 'Content of Order 2, Tab details', id: 'details' },
-      { content: 'Content of Order 2, Tab conflicts', id: 'conflicts' },
-      { content: 'Content of Order 2, Tab sends', id: 'sends' },
-      { content: 'Content of Order 2, Tab pv', id: 'pv' },
-      { content: 'Content of Order 2, Tab decisions', id: 'decisions' },
-      { content: 'Content of Order 2, Tab history', id: 'history' },
+      { content: { body: 'Content of Order 2, Tab order' }, id: 'order' },
+      {
+        content: {
+          description: '',
+          title: 'Titre tab détails order 2',
+        },
+        id: 'details',
+      },
+      {
+        content: { body: 'Content of Order 2, Tab conflicts' },
+        id: 'conflicts',
+      },
+      { content: { body: 'Content of Order 2, Tab sends' }, id: 'sends' },
+      { content: { body: 'Content of Order 2, Tab pv' }, id: 'pv' },
+      {
+        content: { body: 'Content of Order 2, Tab decisions' },
+        id: 'decisions',
+      },
+      {
+        content: { body: 'Content of Order 2, Tab history' },
+        id: 'history',
+      },
     ],
   },
   {
     id: '3',
     tabs: [
-      { content: 'Content of Order 3, Tab order', id: 'order' },
-      { content: 'Content of Order 3, Tab details', id: 'details' },
-      { content: 'Content of Order 3, Tab conflicts', id: 'conflicts' },
-      { content: 'Content of Order 3, Tab sends', id: 'sends' },
-      { content: 'Content of Order 3, Tab pv', id: 'pv' },
-      { content: 'Content of Order 3, Tab decisions', id: 'decisions' },
-      { content: 'Content of Order 3, Tab history', id: 'history' },
+      { content: { body: 'Content of Order 3, Tab order' }, id: 'order' },
+      {
+        content: {
+          description: '',
+          title: 'Titre tab détails order 3',
+        },
+        id: 'details',
+      },
+      {
+        content: { body: 'Content of Order 3, Tab conflicts' },
+        id: 'conflicts',
+      },
+      { content: { body: 'Content of Order 3, Tab order' }, id: 'sends' },
+      { content: { body: 'Content of Order 3, Tab pv' }, id: 'pv' },
+      {
+        content: { body: 'Content of Order 3, Tab decisions' },
+        id: 'decisions',
+      },
+      {
+        content: { body: 'Content of Order 3, Tab history' },
+        id: 'history',
+      },
     ],
   },
 ];
