@@ -39,9 +39,9 @@ import classes from './Table.module.css';
 export interface ITableProps<Data extends Record<string, unknown>>
   extends MRT_TableOptions<Data> {
   actions?: ITableAction<Data>[];
+  maxVisibleActions?: number;
   menuLabel?: string;
   paginationProps?: Partial<IPaginationProps>;
-  rowActionNumber?: number;
 }
 
 const tooltipProps = {
@@ -63,7 +63,7 @@ export function Table<Data extends Record<string, unknown>>(
     menuLabel = 'Other actions',
     paginationDisplayMode = 'custom',
     paginationProps,
-    rowActionNumber = 0,
+    maxVisibleActions = 0,
     ...mantineTableProps
   } = props;
   const { enablePagination = true, manualPagination } = mantineTableProps;
@@ -76,8 +76,8 @@ export function Table<Data extends Record<string, unknown>>(
   // Calculated values
   const massActions = actions.filter(({ isMassAction }) => isMassAction);
   const rowActions = actions.filter(({ isItemAction = true }) => isItemAction);
-  const visibleRowActions = rowActions.slice(0, rowActionNumber);
-  const menuRowActions = rowActions.slice(rowActionNumber);
+  const visibleRowActions = rowActions.slice(0, maxVisibleActions);
+  const menuRowActions = rowActions.slice(maxVisibleActions);
 
   // Handle
   function handleMenuChange(opened: boolean, index: number): void {
