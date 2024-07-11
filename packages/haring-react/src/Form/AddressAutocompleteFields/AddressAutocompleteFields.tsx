@@ -7,7 +7,7 @@ import type {
 import type { TextInputProps } from '@mantine/core';
 import type { ElementType, ReactElement } from 'react';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { AddressFields } from '../AddressFields/AddressFields';
 import { FetchAutocompleteField } from '../FetchAutocompleteField/FetchAutocompleteField';
@@ -57,7 +57,9 @@ export function AddressAutocompleteFields<T>(
     setAllFieldsValues(values);
     onFieldsValuesChange?.(values);
   }
-
+  useEffect(() => {
+    setAllFieldsValues(addressFieldsProps ?? {});
+  }, [addressFieldsProps]);
   return (
     <div>
       <AutocompleteField
