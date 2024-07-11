@@ -88,7 +88,7 @@ export function AddressFields(props: IAddressFieldsProps): ReactElement {
     },
     {
       error: errors?.postCode,
-      handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandle('postCode', e.target.value);
       },
       value: value?.postCode,

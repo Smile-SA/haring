@@ -4,6 +4,14 @@
 // component exports
 export type { IFullNameFieldsProps } from './Form/FullNameFields/FullNameFields';
 export { FullNameFields } from './Form/FullNameFields/FullNameFields';
+export type { IAddressAutocompleteFieldsProps } from './Form/AddressAutocompleteFields/AddressAutocompleteFields';
+export { AddressAutocompleteFields } from './Form/AddressAutocompleteFields/AddressAutocompleteFields';
+export type { IFetchAutocompleteFieldProps } from './Form/FetchAutocompleteField/FetchAutocompleteField';
+export { FetchAutocompleteField } from './Form/FetchAutocompleteField/FetchAutocompleteField';
+export type { IAddressAutocompleteFieldProps } from './Form/AddressGouvAutocompleteField/AddressGouvAutocompleteField';
+export { AddressGouvAutocompleteField } from './Form/AddressGouvAutocompleteField/AddressGouvAutocompleteField';
+export type { IAddressFieldsProps } from './Form/AddressFields/AddressFields';
+export { AddressFields } from './Form/AddressFields/AddressFields';
 export type { IIconCardProps } from './Components/IconCard/IconCard';
 export { IconCard } from './Components/IconCard/IconCard';
 export type { IDataBadgeProps } from './Components/DataBadge/DataBadge';
