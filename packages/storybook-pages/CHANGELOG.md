@@ -1,5 +1,29 @@
 # storybook-pages
 
+## 0.15.0
+
+### Minor Changes
+
+- [#196](https://github.com/Smile-SA/haring/pull/196) [`d6f5b76`](https://github.com/Smile-SA/haring/commit/d6f5b76136843967dd745cf85dbb8d0be75be6d2) Thanks [@Meriemu](https://github.com/Meriemu)! - Create Stepper page
+
+- [#195](https://github.com/Smile-SA/haring/pull/195) [`a497148`](https://github.com/Smile-SA/haring/commit/a49714899caec7d747e7b78f68a0482699ff676b) Thanks [@subraAntoine](https://github.com/subraAntoine)! - Added ThemePage to show the application of a customized theme (DSFR)
+
+- [#194](https://github.com/Smile-SA/haring/pull/194) [`97a610a`](https://github.com/Smile-SA/haring/commit/97a610aa02b86423b723ef8ae5d45e8ecf346f92) Thanks [@vapersmile](https://github.com/vapersmile)! - Upgrade mantine version to 7.11.x
+
+- [#193](https://github.com/Smile-SA/haring/pull/193) [`ddc0675`](https://github.com/Smile-SA/haring/commit/ddc067529c2b23dc0704e41eb74f867c86e5f63a) Thanks [@subraAntoine](https://github.com/subraAntoine)! - Add AgendaPage, Add subject modal
+
+- [#195](https://github.com/Smile-SA/haring/pull/195) [`a497148`](https://github.com/Smile-SA/haring/commit/a49714899caec7d747e7b78f68a0482699ff676b) Thanks [@subraAntoine](https://github.com/subraAntoine)! - Add inputs to modify title and description in detail tab on agenda item page
+
+- [#190](https://github.com/Smile-SA/haring/pull/190) [`d041703`](https://github.com/Smile-SA/haring/commit/d04170383484eae2b05f9485d7084c3068a6e70d) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Added AgendaItemPage to storybook pages, Added selectedValue and onSelectedChange props to SidebarMenu
+
+### Patch Changes
+
+- Updated dependencies [[`d6f5b76`](https://github.com/Smile-SA/haring/commit/d6f5b76136843967dd745cf85dbb8d0be75be6d2), [`97a610a`](https://github.com/Smile-SA/haring/commit/97a610aa02b86423b723ef8ae5d45e8ecf346f92), [`d041703`](https://github.com/Smile-SA/haring/commit/d04170383484eae2b05f9485d7084c3068a6e70d)]:
+  - @smile/haring-react@0.15.0
+  - @smile/haring-react-dropzone@0.15.0
+  - @smile/haring-react-shared@0.15.0
+  - @smile/haring-react-table@0.15.0
+
 ## 0.14.0
 
 ### Minor Changes
