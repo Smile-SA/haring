@@ -6,7 +6,7 @@
 }
 
 .input {
-  maxwidth: 300px;
+  max-width: 300px;
   width: calc(50% - 5px);
   @mixin smaller-than $mantine-breakpoint-sm {
     width: 100%;
