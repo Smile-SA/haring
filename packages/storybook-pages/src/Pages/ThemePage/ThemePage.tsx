@@ -112,9 +112,9 @@ const dsfr: MantineThemeOverride = {
     },
   },
   defaultRadius: 0,
-  fontFamily: 'Marianne, Arial, sans-serif',
+  fontFamily: 'Marianne, Arial',
   headings: {
-    fontFamily: 'Marianne, Arial, sans-serif',
+    fontFamily: 'Marianne, Arial',
     sizes: {
       h1: { fontSize: '40px', lineHeight: '48px' },
       h2: { fontSize: '32px', lineHeight: '40px' },
