@@ -305,10 +305,12 @@ export function Table<Data extends Record<string, unknown>>(
 
   function handleItemsPerPageChange(value: number): void {
     setPageSize(value);
+    paginationProps?.onItemsPerPageChange?.(value);
   }
 
   function handlePageChange(value: number): void {
     setPageIndex(value - 1);
+    paginationProps?.onPageChange?.(value - 1);
   }
 
   return (
