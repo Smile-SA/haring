@@ -10,6 +10,7 @@ import {
   FoldableColumnLayout,
   FullNameFields,
   SidebarMenu,
+  SummaryBox,
 } from '@smile/haring-react';
 import { useState } from 'react';
 
@@ -118,7 +119,24 @@ export function StepperPage(): ReactElement {
             onOptionSubmit={onOptionSubmitMock}
           />
         </Stepper.Step>
-        <Stepper.Completed>{texts.steps.step3}</Stepper.Completed>
+        <Stepper.Completed>
+          {texts.steps.step3}
+          <br />
+          <h2>{texts.steps.step3Title}</h2>
+          <SummaryBox titleNode={texts.steps.step3SubTitle1}>
+            {`${form.getValues().fullName.firstName} ${
+              form.getValues().fullName.lastName
+            }`}
+          </SummaryBox>
+          <br />
+          <SummaryBox titleNode={texts.steps.step3SubTitle2}>
+            {form.getValues().address.number}, {form.getValues().address.street}
+            <br />
+            {form.getValues().address.postCode}, {form.getValues().address.city}
+            <br />
+            {form.getValues().address.country}
+          </SummaryBox>
+        </Stepper.Completed>
       </Stepper>
 
       <Group mt="xl">
