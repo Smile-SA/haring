@@ -20,7 +20,7 @@ export const texts = {
   freelance: 'Freelance',
   invoice: 'Factures',
   location: 'emplacement',
-  particular: 'Particulié',
+  particular: 'Particulier',
   period: 'période',
   permanentContract: 'CDI',
   relevance: 'pertinence',
