@@ -70,7 +70,7 @@ export function SearchResults(): ReactElement {
     {
       categoryId: [2, 4],
       id: 7,
-      label: 'Particulié',
+      label: 'Particulier',
       onRemove: () => {
         removeAllFilters();
       },
@@ -474,7 +474,7 @@ export function SearchResults(): ReactElement {
             <DocumentList
               actionBarProps={{
                 selectedElementsLabel: (n) =>
-                  `${n} ${texts.file}{n > 1 ? 's' : ''} ${texts.selected} ${
+                  `${n} ${texts.file}${n > 1 ? 's' : ''} ${texts.selected}${
                     n > 1 ? 's' : ''
                   }`,
               }}
