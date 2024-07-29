@@ -1,6 +1,6 @@
 'use client';
 
-import type { ITableAction, ITableConfirmAction } from '../../types';
+import type { ITableAction } from '../../types';
 import type { FloatingPosition } from '@mantine/core';
 import type { IPaginationProps } from '@smile/haring-react';
 import type { MRT_Row, MRT_TableOptions } from 'mantine-react-table';
@@ -52,6 +52,11 @@ const tooltipProps = {
   withinPortal: true,
 };
 
+interface IConfirmAction<Data extends Record<string, unknown>> {
+  actionIndex: number;
+  item: MRT_Row<Data> | MRT_Row<Data>[];
+}
+
 /** Additional props will be forwarded to the [Mantine React Table useMantineReactTable hook](https://www.mantine-react-table.com/docs/api/table-options) */
 export function Table<Data extends Record<string, unknown>>(
   props: ITableProps<Data>,
@@ -68,7 +73,7 @@ export function Table<Data extends Record<string, unknown>>(
   } = props;
   const { enablePagination = true, manualPagination } = mantineTableProps;
   const [confirmAction, setConfirmAction] =
-    useState<ITableConfirmAction<Data> | null>(null);
+    useState<IConfirmAction<Data> | null>(null);
   const [openedMenuRowIndex, setOpenedMenuRowIndex] = useState<number | null>(
     null,
   );
@@ -90,35 +95,40 @@ export function Table<Data extends Record<string, unknown>>(
 
   function handleAction(
     item: MRT_Row<Data> | MRT_Row<Data>[],
-    action: ITableAction<Data>,
+    actionIndex: number,
   ): void {
+    const action = actions[actionIndex];
     if (action.confirmation) {
-      setConfirmAction({ ...action, item });
+      setConfirmAction({ actionIndex, item });
     } else {
       action.onAction?.(item);
     }
   }
 
   function handleCancel(): void {
-    if (
-      confirmAction?.confirmModalProps?.onCancel?.(confirmAction.item) !== false
-    ) {
-      setConfirmAction(null);
+    if (confirmAction) {
+      const action = actions[confirmAction.actionIndex];
+      if (action.confirmModalProps?.onCancel?.(confirmAction.item) !== false) {
+        setConfirmAction(null);
+      }
     }
   }
 
   function handleClose(): void {
     setConfirmAction(null);
-    confirmAction?.confirmModalProps?.onClose?.();
+    if (confirmAction) {
+      const action = actions[confirmAction.actionIndex];
+      action.confirmModalProps?.onClose?.();
+    }
   }
 
   function handleConfirm(): void {
-    if (
-      confirmAction?.confirmModalProps?.onConfirm?.(confirmAction.item) !==
-      false
-    ) {
-      setConfirmAction(null);
-      confirmAction?.onAction?.(confirmAction.item);
+    if (confirmAction) {
+      const action = actions[confirmAction.actionIndex];
+      if (action.confirmModalProps?.onConfirm?.(confirmAction.item) !== false) {
+        setConfirmAction(null);
+        action.onAction?.(confirmAction.item);
+      }
     }
   }
 
@@ -187,7 +197,7 @@ export function Table<Data extends Record<string, unknown>>(
             >
               <ActionIcon
                 className={classes.action}
-                onClick={() => handleAction(row, action)}
+                onClick={() => handleAction(row, index)}
                 radius={4}
                 type="button"
                 variant="transparent"
@@ -226,7 +236,7 @@ export function Table<Data extends Record<string, unknown>>(
                     key={index}
                     color={action.color}
                     leftSection={getActionIcon(action, row)}
-                    onClick={() => handleAction(row, action)}
+                    onClick={() => handleAction(row, index)}
                     {...getActionComponentProps(action, row)}
                   >
                     {getActionLabel(action, row)}
@@ -252,7 +262,7 @@ export function Table<Data extends Record<string, unknown>>(
                 key={index}
                 color={action.color}
                 leftSection={getActionIcon(action, rows)}
-                onClick={() => handleAction(rows, action)}
+                onClick={() => handleAction(rows, index)}
                 variant="default"
               >
                 {getActionLabel(action, rows)}
@@ -313,6 +323,11 @@ export function Table<Data extends Record<string, unknown>>(
     paginationProps?.onPageChange?.(value - 1);
   }
 
+  let action: ITableAction<Data> | undefined = undefined;
+  if (confirmAction) {
+    action = actions[confirmAction.actionIndex];
+  }
+
   return (
     <>
       <MantineReactTable table={table} />
@@ -335,17 +350,16 @@ export function Table<Data extends Record<string, unknown>>(
           )}
         </>
       )}
-      <ConfirmModal
-        {...confirmAction?.confirmModalProps}
-        onCancel={handleCancel}
-        onClose={handleClose}
-        onConfirm={handleConfirm}
-        opened={Boolean(confirmAction)}
-        title={
-          confirmAction?.confirmModalProps?.title ??
-          getActionLabel(confirmAction)
-        }
-      />
+      {action ? (
+        <ConfirmModal
+          {...action.confirmModalProps}
+          onCancel={handleCancel}
+          onClose={handleClose}
+          onConfirm={handleConfirm}
+          opened={Boolean(confirmAction)}
+          title={action.confirmModalProps?.title ?? getActionLabel(action)}
+        />
+      ) : null}
     </>
   );
 }
