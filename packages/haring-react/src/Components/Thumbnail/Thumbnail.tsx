@@ -111,6 +111,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
               <Menu radius={4} shadow="lg" width={200}>
                 <Menu.Target>
                   <ActionIcon
+                    aria-label="option menu button"
                     className={
                       selected ? classes.menuButtonSelected : classes.menuButton
                     }

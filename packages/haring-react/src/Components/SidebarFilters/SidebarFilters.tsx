@@ -134,6 +134,7 @@ export function SidebarFilters(props: ISidebarFiltersProps): ReactElement {
           opened={activeFiltersCollapseOpened}
           rightSection={
             <ActionIcon
+              aria-label="expand icon"
               data-testid="toggle"
               onClick={() => {
                 setActiveFiltersCollapseOpened(!activeFiltersCollapseOpened);

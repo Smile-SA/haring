@@ -85,10 +85,13 @@ export function CalendarHeader(props: ICalendarHeaderProps): ReactElement {
       <Popover onChange={setOpened} opened={opened} radius={10} width="target">
         <Popover.Target>
           <MantineCalendarHeader
+            aria-label="calendar"
             className={classes.header}
             color="red"
             label={label}
+            nextLabel="Next button"
             onLevelClick={() => setOpened(!opened)}
+            previousLabel="Previous button"
             size="md"
             {...calendarHeaderProps}
           />

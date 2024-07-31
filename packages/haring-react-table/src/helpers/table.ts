@@ -26,6 +26,24 @@ export function getActionLabel<Data extends Record<string, unknown>>(
   return action.label;
 }
 
+export function getAriaLabel<Data extends Record<string, unknown>>(
+  action?: ITableAction<Data> | null,
+  rows?: MRT_Row<Data> | MRT_Row<Data>[],
+): string | undefined {
+  if (!action) {
+    return '';
+  }
+  if (isConfirmAction(action)) {
+    return typeof action.ariaLabel === 'function'
+      ? action.ariaLabel(action.item)
+      : action.ariaLabel;
+  }
+  if (typeof action.ariaLabel === 'function') {
+    return rows ? action.ariaLabel(rows) : '';
+  }
+  return action.ariaLabel;
+}
+
 export function getActionIcon<Data extends Record<string, unknown>>(
   action?: ITableAction<Data> | null,
   rows?: MRT_Row<Data> | MRT_Row<Data>[],

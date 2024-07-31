@@ -13,6 +13,7 @@ import { Motif } from './Motif';
 export type IMantineBreakpoint = 'lg' | 'md' | 'sm' | 'xl' | 'xs';
 
 export interface IContentItem {
+  arialLabel?: string;
   icon?: ReactElement;
   iconProps?: Partial<ActionIconProps>;
   label?: string;
@@ -66,6 +67,9 @@ export function InfoBox(props: IInfoCardProps): ReactElement {
                     >
                       {Boolean(item.icon) && (
                         <ActionIcon
+                          aria-label={
+                            item.arialLabel ? item.arialLabel : item.label
+                          }
                           className={classes.contentItem}
                           color={theme.primaryColor}
                           onClick={() => item.onAction?.(item)}
@@ -93,6 +97,7 @@ export function InfoBox(props: IInfoCardProps): ReactElement {
         </Collapse>
         {Boolean(collapse) && (
           <ActionIcon
+            aria-label="expand button"
             className={`${classes.collapseButton} ${
               !opened && classes.collapseButtonCenter
             }`}

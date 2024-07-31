@@ -34,11 +34,13 @@ export const InfoBox: IStory = {
     ),
     contentItems: [
       {
+        arialLabel: 'user button',
         icon: <User />,
         label: 'Individual contract',
         onAction: action('onAction'),
       },
       {
+        arialLabel: 'suitcase button',
         icon: <Suitcase />,
         label: '2 Lines text for example',
         onAction: action('onAction'),
