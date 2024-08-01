@@ -1067,6 +1067,7 @@ exports[`TableGridView matches snapshot 1`] = `
                     class=" rowActionsRef"
                   >
                     <button
+                      aria-label="Move in tree"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1102,6 +1103,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-label="Open document"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1124,6 +1126,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-label="Edit document"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1149,6 +1152,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       aria-controls="mantine-f4bipx4bi-dropdown"
                       aria-expanded="false"
                       aria-haspopup="menu"
+                      aria-label="other actions"
                       class="haring-focus haring-active undefined undefined m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       id="mantine-f4bipx4bi-target"
@@ -1276,6 +1280,7 @@ exports[`TableGridView matches snapshot 1`] = `
                     class=" rowActionsRef"
                   >
                     <button
+                      aria-label="Move in tree"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1311,6 +1316,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-label="Open document"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1333,6 +1339,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-label="Edit document"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1358,6 +1365,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       aria-controls="mantine-f4bipx4bi-dropdown"
                       aria-expanded="false"
                       aria-haspopup="menu"
+                      aria-label="other actions"
                       class="haring-focus haring-active undefined undefined m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       id="mantine-f4bipx4bi-target"
@@ -1485,6 +1493,7 @@ exports[`TableGridView matches snapshot 1`] = `
                     class=" rowActionsRef"
                   >
                     <button
+                      aria-label="Move in tree"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1520,6 +1529,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-label="Open document"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1542,6 +1552,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-label="Edit document"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1567,6 +1578,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       aria-controls="mantine-f4bipx4bi-dropdown"
                       aria-expanded="false"
                       aria-haspopup="menu"
+                      aria-label="other actions"
                       class="haring-focus haring-active undefined undefined m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       id="mantine-f4bipx4bi-target"
@@ -1694,6 +1706,7 @@ exports[`TableGridView matches snapshot 1`] = `
                     class=" rowActionsRef"
                   >
                     <button
+                      aria-label="Move in tree"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1729,6 +1742,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-label="Open document"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1751,6 +1765,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-label="Edit document"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1776,6 +1791,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       aria-controls="mantine-f4bipx4bi-dropdown"
                       aria-expanded="false"
                       aria-haspopup="menu"
+                      aria-label="other actions"
                       class="haring-focus haring-active undefined undefined m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       id="mantine-f4bipx4bi-target"
@@ -1903,6 +1919,7 @@ exports[`TableGridView matches snapshot 1`] = `
                     class=" rowActionsRef"
                   >
                     <button
+                      aria-label="Move in tree"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1938,6 +1955,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-label="Open document"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1960,6 +1978,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-label="Edit document"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -1985,6 +2004,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       aria-controls="mantine-f4bipx4bi-dropdown"
                       aria-expanded="false"
                       aria-haspopup="menu"
+                      aria-label="other actions"
                       class="haring-focus haring-active undefined undefined m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       id="mantine-f4bipx4bi-target"
@@ -2112,6 +2132,7 @@ exports[`TableGridView matches snapshot 1`] = `
                     class=" rowActionsRef"
                   >
                     <button
+                      aria-label="Move in tree"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -2147,6 +2168,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-label="Open document"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -2169,6 +2191,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-label="Edit document"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -2194,6 +2217,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       aria-controls="mantine-f4bipx4bi-dropdown"
                       aria-expanded="false"
                       aria-haspopup="menu"
+                      aria-label="other actions"
                       class="haring-focus haring-active undefined undefined m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       id="mantine-f4bipx4bi-target"
@@ -2328,6 +2352,7 @@ exports[`TableGridView matches snapshot 1`] = `
                     class=" rowActionsRef"
                   >
                     <button
+                      aria-label="Move in tree"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -2363,6 +2388,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-label="Open document"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -2385,6 +2411,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       </span>
                     </button>
                     <button
+                      aria-label="Edit document"
                       class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: transparent; --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -2410,6 +2437,7 @@ exports[`TableGridView matches snapshot 1`] = `
                       aria-controls="mantine-f4bipx4bi-dropdown"
                       aria-expanded="false"
                       aria-haspopup="menu"
+                      aria-label="other actions"
                       class="haring-focus haring-active undefined undefined m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                       data-variant="transparent"
                       id="mantine-f4bipx4bi-target"

@@ -108,6 +108,7 @@ exports[`InfoBox matches snapshot 1`] = `
         <div />
       </div>
       <button
+        aria-label="expand button"
         class="haring-focus haring-active undefined false m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
         style="--ai-color: var(--mantine-color-white);"
         type="button"

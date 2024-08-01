@@ -63,6 +63,7 @@ exports[`CardList matches snapshot 1`] = `
                   style="gap: calc(1rem * var(--mantine-scale)); align-items: center;"
                 >
                   <button
+                    aria-label="export button"
                     class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -85,6 +86,7 @@ exports[`CardList matches snapshot 1`] = `
                     </span>
                   </button>
                   <button
+                    aria-label="eye button"
                     class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -145,6 +147,7 @@ exports[`CardList matches snapshot 1`] = `
                   style="gap: calc(1rem * var(--mantine-scale)); align-items: center;"
                 >
                   <button
+                    aria-label="export button"
                     class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -167,6 +170,7 @@ exports[`CardList matches snapshot 1`] = `
                     </span>
                   </button>
                   <button
+                    aria-label="eye button"
                     class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -227,6 +231,7 @@ exports[`CardList matches snapshot 1`] = `
                   style="gap: calc(1rem * var(--mantine-scale)); align-items: center;"
                 >
                   <button
+                    aria-label="export button"
                     class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -249,6 +254,7 @@ exports[`CardList matches snapshot 1`] = `
                     </span>
                   </button>
                   <button
+                    aria-label="eye button"
                     class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -309,6 +315,7 @@ exports[`CardList matches snapshot 1`] = `
                   style="gap: calc(1rem * var(--mantine-scale)); align-items: center;"
                 >
                   <button
+                    aria-label="export button"
                     class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
@@ -331,6 +338,7 @@ exports[`CardList matches snapshot 1`] = `
                     </span>
                   </button>
                   <button
+                    aria-label="eye button"
                     class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                     data-variant="subtle"
                     style="--ai-size: calc(1.875rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"

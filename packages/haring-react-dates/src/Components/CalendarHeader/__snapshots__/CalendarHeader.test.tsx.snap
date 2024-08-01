@@ -19,6 +19,7 @@ exports[`CalendarHeader matches snapshot 1`] = `
       aria-controls="mantine-f4bipx4bi-dropdown"
       aria-expanded="false"
       aria-haspopup="dialog"
+      aria-label="calendar"
       class="m_730a79ed mantine-CalendarHeader-calendarHeader"
       color="red"
       data-size="md"
@@ -26,6 +27,7 @@ exports[`CalendarHeader matches snapshot 1`] = `
       style="--dch-control-size: var(--dch-control-size-md); --dch-fz: var(--mantine-font-size-md);"
     >
       <button
+        aria-label="Previous button"
         class="haring-focus m_2351eeb0 mantine-CalendarHeader-calendarHeaderControl m_87cf2631 mantine-UnstyledButton-root"
         data-direction="previous"
         tabindex="0"
@@ -55,6 +57,7 @@ exports[`CalendarHeader matches snapshot 1`] = `
         August 2023
       </button>
       <button
+        aria-label="Next button"
         class="haring-focus m_2351eeb0 mantine-CalendarHeader-calendarHeaderControl m_87cf2631 mantine-UnstyledButton-root"
         data-direction="next"
         tabindex="0"
