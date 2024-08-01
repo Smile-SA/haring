@@ -58,6 +58,7 @@ export function DocumentBox(props: IDocumentBoxProps): ReactNode {
         }`}
       >
         <Image
+          alt="thumbnail"
           classNames={{
             root: classes.imageRoot,
           }}

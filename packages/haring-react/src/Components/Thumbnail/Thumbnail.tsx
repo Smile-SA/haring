@@ -153,7 +153,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
             )}
           </div>
         </Group>
-        <Image radius="16px" src={image} />
+        <Image alt="thumbnail" radius="16px" src={image} />
       </Box>
       <ConfirmModal
         {...confirmAction}
