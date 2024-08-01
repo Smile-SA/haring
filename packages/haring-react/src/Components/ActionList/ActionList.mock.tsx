@@ -7,6 +7,7 @@ import { action } from '@storybook/addon-actions';
 
 export const actionRowOverflowActionsMock: IThumbnailAction[] = [
   {
+    ariaLabel: 'move in tree',
     icon: <FolderMove size={16} />,
     id: 'move',
     isItemAction: false,

@@ -30,6 +30,7 @@ export function SelectableList(props: ISelectableListProps): ReactElement {
           wrap="nowrap"
         >
           <Checkbox
+            aria-label="checkbox input"
             checked={selectedIndexes.includes(index)}
             className="selectableListCheckboxRef"
             onChange={(e) => onSelectChange?.(index, e.currentTarget.checked)}
