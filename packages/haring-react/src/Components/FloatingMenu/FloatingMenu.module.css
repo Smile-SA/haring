@@ -1,0 +1,121 @@
+.floatingMenuContainer {
+  position: fixed;
+  bottom: 0;
+  justify-content: center;
+  align-items: self-start;
+  flex-direction: row;
+  background-color: white;
+  width: 100%;
+  gap: 5px;
+  z-index: 190;
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin larger-than $mantine-breakpoint-xs {
+    justify-content: space-evenly;
+    flex-direction: column;
+    top: 50%;
+    width: 56px;
+    height: max-content;
+    box-shadow: -6px 6px 7px 3px #00000008;
+    transform: translateY(-50%);
+  }
+}
+
+.positionLeft {
+  left: 0;
+  border-radius: 0px 8px 8px 0px;
+  .floatingMenuItem {
+    left: calc(-138px + 56px);
+    transition: left 0.3s ease;
+  }
+
+  .floatingMenuItem {
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .isOpened {
+    justify-content: flex-start;
+    border-radius: 0px 28px 28px 0px;
+    left: 0;
+  }
+  .floatingMenuButton {
+    span {
+      justify-content: flex-start;
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.positionRight {
+  right: 0;
+  border-radius: 8px 0px 0px 8px;
+
+  .floatingMenuItem {
+    right: 0;
+    transition: right 0.3s ease;
+  }
+
+  .isOpened {
+    flex-direction: column;
+    border-radius: 28px 0px 0px 28px;
+    right: calc(138px - 56px);
+  }
+}
+
+.floatingMenuItem {
+  position: relative;
+  padding: 10px 5px;
+  justify-content: space-between;
+  height: 100%;
+
+  span {
+    flex-direction: column;
+    max-width: 84px;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin larger-than $mantine-breakpoint-xs {
+    width: 138px;
+    padding: 0 15px;
+    height: 56px;
+
+    span {
+      flex-direction: row;
+      max-width: 100%;
+    }
+  }
+}
+
+.isOpened {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--mantine-color-cyan-9);
+
+  /*noinspection CssInvalidAtRule*/
+  @mixin larger-than $mantine-breakpoint-xs {
+    align-items: flex-start;
+    border-radius: 28px 0px 0px 28px;
+
+    svg {
+      flex: 1 0 25px;
+    }
+  }
+}
+
+.floatingMenuButton {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+
+  @mixin larger-than $mantine-breakpoint-xs {
+    height: 59px;
+    align-items: flex-start;
+    border-radius: 28px 0px 0px 28px;
+  }
+}
