@@ -25,11 +25,13 @@ import classes from './Thumbnail.module.css';
 
 export interface IThumbnailProps extends IThumbnail {
   actions?: IThumbnailAction[];
+  altText?: string;
 }
 
 export function Thumbnail(props: IThumbnailProps): ReactElement {
   const theme = useMantineTheme();
   const {
+    altText = 'thumbnail',
     actions = [],
     iconType,
     image = defaultImage,
@@ -153,7 +155,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
             )}
           </div>
         </Group>
-        <Image alt="thumbnail" radius="16px" src={image} />
+        <Image alt={altText} radius="16px" src={image} />
       </Box>
       <ConfirmModal
         {...confirmAction}

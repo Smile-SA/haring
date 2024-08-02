@@ -18,6 +18,7 @@ import defaultImage from '../../../assets/defaultImage.jpg';
 import classes from './DocumentBox.module.css';
 
 export interface IDocumentBoxProps {
+  altText?: string;
   author?: ReactNode;
   children?: ReactNode;
   date?: ReactNode;
@@ -31,6 +32,7 @@ export interface IDocumentBoxProps {
 
 export function DocumentBox(props: IDocumentBoxProps): ReactNode {
   const {
+    altText = 'thumbnail',
     author,
     children,
     date,
@@ -58,7 +60,7 @@ export function DocumentBox(props: IDocumentBoxProps): ReactNode {
         }`}
       >
         <Image
-          alt="thumbnail"
+          alt={altText}
           classNames={{
             root: classes.imageRoot,
           }}
