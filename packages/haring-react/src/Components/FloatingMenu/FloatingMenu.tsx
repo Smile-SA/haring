@@ -2,7 +2,6 @@
 import type { ReactElement } from 'react';
 
 import { ActionIcon, Flex, Group, Modal, Text } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
 import {
   CalendarBlank,
   FileText,
@@ -14,7 +13,7 @@ import { useState } from 'react';
 
 import classes from './FloatingMenu.module.css';
 
-type IMenuPosition = 'Left' | 'Right';
+type IMenuPosition = 'left' | 'right';
 
 export interface IMenuItems {
   hasModal: boolean;
@@ -28,10 +27,11 @@ export interface IFloatingMenuProps {
   position?: IMenuPosition;
 }
 
-export function FloatingMenu({
-  position = 'Right',
-  items,
-}: IFloatingMenuProps): ReactElement {
+const icons = [FileText, Star, Newspaper, CalendarBlank, Question];
+
+export function FloatingMenu(props: IFloatingMenuProps): ReactElement {
+  const { position = 'right', items } = props;
+
   const [openedItem, setOpenedItem] = useState<number | null>(null);
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
@@ -48,15 +48,7 @@ export function FloatingMenu({
     setHoveredItem(null);
   };
 
-  const icons = [FileText, Star, Newspaper, CalendarBlank, Question];
-
-  const matches = useMediaQuery('(max-width: 36em)');
-  const positionClass = !matches
-    ? position === 'Right'
-      ? classes.positionRight
-      : classes.positionLeft
-    : '';
-
+  const positionClass = position === 'right' ? classes.right : classes.left;
   return (
     <Flex
       bg="white"
@@ -82,7 +74,7 @@ export function FloatingMenu({
           >
             <ActionIcon
               aria-label={item.text}
-              className={`${classes.floatingMenuButton}`}
+              className={classes.floatingMenuButton}
               color={
                 openedItem === index || hoveredItem === index
                   ? 'white'
@@ -94,20 +86,16 @@ export function FloatingMenu({
               variant="transparent"
             >
               <Icon size={24} />
-              {hoveredItem === index || matches ? (
-                <Text
-                  ml={!matches && position === 'Right' ? '10px' : ''}
-                  mr={!matches && position === 'Left' ? '10px' : ''}
-                  mt={matches ? '10px' : ''}
-                  size="12px"
-                  style={{ width: '100%' }}
-                  truncate="end"
-                >
-                  {item.text}
-                </Text>
-              ) : (
-                ''
-              )}
+              <Text
+                className={`${classes.floatingMenuLabel} ${
+                  hoveredItem === index ? classes.show : ''
+                }`}
+                size="12px"
+                style={{ width: '100%' }}
+                truncate="end"
+              >
+                {item.text}
+              </Text>
             </ActionIcon>
 
             {item.hasModal ? (

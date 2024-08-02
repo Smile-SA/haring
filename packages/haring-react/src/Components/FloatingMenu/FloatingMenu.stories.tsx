@@ -22,6 +22,6 @@ type IStory = StoryObj<typeof meta>;
 export const FloatingMenu: IStory = {
   args: {
     items: floatingMenuLabelMock.children,
-    position: 'Right',
+    position: 'right',
   },
 };

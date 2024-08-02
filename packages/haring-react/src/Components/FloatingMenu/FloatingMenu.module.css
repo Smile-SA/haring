@@ -6,7 +6,6 @@
   flex-direction: row;
   background-color: white;
   width: 100%;
-  gap: 5px;
   z-index: 190;
 
   /*noinspection CssInvalidAtRule*/
@@ -18,51 +17,52 @@
     height: max-content;
     box-shadow: -6px 6px 7px 3px #00000008;
     transform: translateY(-50%);
+    gap: 5px;
   }
 }
-
-.positionLeft {
-  left: 0;
-  border-radius: 0px 8px 8px 0px;
-  .floatingMenuItem {
-    left: calc(-138px + 56px);
-    transition: left 0.3s ease;
-  }
-
-  .floatingMenuItem {
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .isOpened {
-    justify-content: flex-start;
-    border-radius: 0px 28px 28px 0px;
+@mixin larger-than $mantine-breakpoint-xs {
+  .left {
     left: 0;
-  }
-  .floatingMenuButton {
-    span {
+    border-radius: 0px 8px 8px 0px;
+    .floatingMenuItem {
+      left: calc(-138px + 56px);
+      transition: left 0.3s ease;
+    }
+
+    .floatingMenuItem {
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .isOpened {
       justify-content: flex-start;
-      flex-direction: row-reverse;
+      border-radius: 0px 28px 28px 0px;
+      left: 0;
+    }
+    .floatingMenuButton {
+      span {
+        justify-content: flex-start;
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  .right {
+    right: 0;
+    border-radius: 8px 0px 0px 8px;
+
+    .floatingMenuItem {
+      right: 0;
+      transition: right 0.3s ease;
+    }
+
+    .isOpened {
+      flex-direction: column;
+      border-radius: 28px 0px 0px 28px;
+      right: calc(138px - 56px);
     }
   }
 }
-
-.positionRight {
-  right: 0;
-  border-radius: 8px 0px 0px 8px;
-
-  .floatingMenuItem {
-    right: 0;
-    transition: right 0.3s ease;
-  }
-
-  .isOpened {
-    flex-direction: column;
-    border-radius: 28px 0px 0px 28px;
-    right: calc(138px - 56px);
-  }
-}
-
 .floatingMenuItem {
   position: relative;
   padding: 10px 5px;
@@ -75,6 +75,7 @@
     justify-content: flex-start;
     align-items: center;
     text-align: center;
+    gap: 5px;
   }
 
   /*noinspection CssInvalidAtRule*/
@@ -86,6 +87,7 @@
     span {
       flex-direction: row;
       max-width: 100%;
+      gap: 0;
     }
   }
 }
@@ -117,5 +119,15 @@
     height: 59px;
     align-items: flex-start;
     border-radius: 28px 0px 0px 28px;
+  }
+}
+
+.floatingMenuLabel {
+  @mixin larger-than $mantine-breakpoint-xs {
+    display: none;
+
+    &.show {
+      display: block;
+    }
   }
 }

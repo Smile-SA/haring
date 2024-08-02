@@ -29,6 +29,7 @@ export { ButtonList } from './Components/ButtonList/ButtonList';
 export { ActionBar } from './Components/ActionBar/ActionBar';
 export type { IActionBarProps } from './Components/ActionBar/ActionBar';
 export { FloatingMenu } from './Components/FloatingMenu/FloatingMenu';
+export type { IFloatingMenuProps } from './Components/FloatingMenu/FloatingMenu';
 export { ActionList } from './Components/ActionList/ActionList';
 export type {
   IActionListProps,
