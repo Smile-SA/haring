@@ -33,19 +33,13 @@ export function FloatingMenu(props: IFloatingMenuProps): ReactElement {
   const { position = 'right', items } = props;
 
   const [openedItem, setOpenedItem] = useState<number | null>(null);
-  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
   const handleOpen = (index: number) => () => {
     setOpenedItem(openedItem === index ? null : index);
   };
 
-  const handleMouseEnter = (index: number) => () => {
-    setHoveredItem(index);
-  };
-
   const handleClose: () => void = () => {
     setOpenedItem(null);
-    setHoveredItem(null);
   };
 
   const positionClass = position === 'right' ? classes.right : classes.left;
@@ -63,23 +57,15 @@ export function FloatingMenu(props: IFloatingMenuProps): ReactElement {
           <Group
             key={`${index + index}`}
             className={`${classes.floatingMenuItem} ${
-              openedItem === index || hoveredItem === index
-                ? classes.isOpened
-                : ''
+              openedItem === index ? classes.isOpened : ''
             }`}
             justify="center"
             onClick={item.hasModal ? handleOpen(index) : undefined}
-            onMouseEnter={handleMouseEnter(index)}
-            onMouseLeave={() => setHoveredItem(null)}
           >
             <ActionIcon
               aria-label={item.text}
               className={classes.floatingMenuButton}
-              color={
-                openedItem === index || hoveredItem === index
-                  ? 'white'
-                  : 'black'
-              }
+              color={openedItem === index ? 'white' : 'black'}
               component={item.hasModal ? 'button' : 'a'}
               display="flex"
               href={!item.hasModal ? item.href : ''}
@@ -87,9 +73,7 @@ export function FloatingMenu(props: IFloatingMenuProps): ReactElement {
             >
               <Icon size={24} />
               <Text
-                className={`${classes.floatingMenuLabel} ${
-                  hoveredItem === index ? classes.show : ''
-                }`}
+                className={classes.floatingMenuLabel}
                 size="12px"
                 style={{ width: '100%' }}
                 truncate="end"
