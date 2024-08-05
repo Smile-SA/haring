@@ -19,6 +19,7 @@ exports[`DocumentBox matches snapshot 1`] = `
       class="undefined "
     >
       <img
+        alt="thumbnail"
         class="m_9e117634 mantine-Image-root"
         src=""
         style="--image-radius: calc(1rem * var(--mantine-scale));"
