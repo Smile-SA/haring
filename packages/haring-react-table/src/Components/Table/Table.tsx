@@ -32,6 +32,7 @@ import {
   getActionComponentProps,
   getActionIcon,
   getActionLabel,
+  getAriaLabel,
 } from '../../helpers';
 
 import classes from './Table.module.css';
@@ -196,6 +197,11 @@ export function Table<Data extends Record<string, unknown>>(
               {...tooltipProps}
             >
               <ActionIcon
+                aria-label={
+                  getAriaLabel(action, row)
+                    ? getAriaLabel(action, row)
+                    : getActionLabel(action, row)
+                }
                 className={classes.action}
                 onClick={() => handleAction(row, index)}
                 radius={4}
@@ -219,6 +225,7 @@ export function Table<Data extends Record<string, unknown>>(
             >
               <Menu.Target>
                 <ActionIcon
+                  aria-label="other actions"
                   className={`${classes.menuButton} ${classes.action}`}
                   radius={4}
                   type="button"

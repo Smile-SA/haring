@@ -14,6 +14,7 @@ import { action } from '@storybook/addon-actions';
 export const tableMock: ITableProps<Record<string, unknown>> = {
   actions: [
     {
+      ariaLabel: 'move',
       icon: <FolderMove />,
       id: 'move',
       isMassAction: true,

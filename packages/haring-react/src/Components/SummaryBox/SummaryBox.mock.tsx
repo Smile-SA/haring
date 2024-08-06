@@ -54,10 +54,20 @@ export const childrenExampleMock = (key?: number): ReactElement => (
         Approved
       </Button>
       <Flex align="center" gap={16}>
-        <ActionIcon color="cyan" size={30} variant="subtle">
+        <ActionIcon
+          aria-label="export button"
+          color="cyan"
+          size={30}
+          variant="subtle"
+        >
           <Export size={24} />
         </ActionIcon>
-        <ActionIcon color="cyan" size={30} variant="subtle">
+        <ActionIcon
+          aria-label="eye button"
+          color="cyan"
+          size={30}
+          variant="subtle"
+        >
           <Eye size={24} />
         </ActionIcon>
       </Flex>

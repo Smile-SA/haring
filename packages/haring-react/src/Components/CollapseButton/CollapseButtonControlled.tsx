@@ -111,6 +111,7 @@ export function CollapseButtonControlled<
         rightSection={
           Boolean(children) && (
             <ActionIcon
+              aria-label="expand button"
               data-testid="toggle"
               onClick={handleClick}
               radius="sm"
