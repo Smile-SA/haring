@@ -52,6 +52,13 @@ const meta = {
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
+const customPrimaryTheme = {
+  ...primaryTheme,
+  colors: {
+    dark: ['#1E0303'],
+    ...primaryTheme.colors,
+  },
+};
 
 export const Header: IStory = {
   args: {
@@ -66,7 +73,7 @@ export const Header: IStory = {
     },
     onSearchSubmit: action('search input submitted'),
     right: rightContentMock,
-    searchTheme: primaryTheme,
+    searchTheme: customPrimaryTheme,
     searchValue: '',
     withBorder: false,
   },
