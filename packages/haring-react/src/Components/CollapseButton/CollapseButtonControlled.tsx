@@ -89,7 +89,6 @@ export function CollapseButtonControlled<
           root: rootClasses.join(' '),
           section: classes.section,
         }}
-        component="div"
         data-selected={selected}
         data-testid="root"
         fullWidth={fullWidth}
