@@ -83,12 +83,12 @@ export function CollapseButtonControlled<
   return (
     <>
       <Button
-        aria-expanded={opened ? 'true' : 'false'}
         classNames={{
           label: labelClasses.join(' '),
           root: rootClasses.join(' '),
           section: classes.section,
         }}
+        component="div"
         data-selected={selected}
         data-testid="root"
         fullWidth={fullWidth}
