@@ -23,14 +23,20 @@ import { ConfirmModal } from '../ConfirmModal/ConfirmModal';
 
 import classes from './Thumbnail.module.css';
 
+export interface IThumbnailAriaLabels {
+  optionMenu?: string;
+}
+
 export interface IThumbnailProps extends IThumbnail {
   actions?: IThumbnailAction[];
+  ariaLabels?: IThumbnailAriaLabels;
 }
 
 export function Thumbnail(props: IThumbnailProps): ReactElement {
   const theme = useMantineTheme();
   const {
     actions = [],
+    ariaLabels,
     iconType,
     image = defaultImage,
     label,
@@ -111,7 +117,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
               <Menu radius={4} shadow="lg" width={200}>
                 <Menu.Target>
                   <ActionIcon
-                    aria-label="option menu button"
+                    aria-label={ariaLabels?.optionMenu || 'option menu button'}
                     className={
                       selected ? classes.menuButtonSelected : classes.menuButton
                     }

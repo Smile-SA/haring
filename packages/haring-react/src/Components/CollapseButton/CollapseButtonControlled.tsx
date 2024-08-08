@@ -9,10 +9,15 @@ import { CaretDown, CaretRight } from '@phosphor-icons/react';
 
 import classes from './CollapseButton.module.css';
 
+export interface ICollapseButtonAriaLabels {
+  expandButton?: string;
+}
+
 export interface ICollapseButtonControlledProps<
   T extends number | string,
   C extends ElementType,
 > extends ICollapseButtonProps<T, C> {
+  ariaLabels?: ICollapseButtonAriaLabels;
   collapseProps?: Partial<CollapseProps>;
   /** Only in the Controlled version, use this prop to provide the setter function for the opened/collapsed state */
   onCollapseChange?: (isOpened: boolean) => void;
@@ -25,6 +30,7 @@ export function CollapseButtonControlled<
   C extends ElementType = 'button',
 >(props: ICollapseButtonControlledProps<T, C>): ReactElement {
   const {
+    ariaLabels,
     children,
     collapseProps,
     component: Component = 'button',
@@ -111,7 +117,7 @@ export function CollapseButtonControlled<
         rightSection={
           Boolean(children) && (
             <ActionIcon
-              aria-label="expand button"
+              aria-label={ariaLabels?.expandButton || 'expand button'}
               data-testid="toggle"
               onClick={handleClick}
               radius="sm"

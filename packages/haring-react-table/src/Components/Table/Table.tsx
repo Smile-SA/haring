@@ -37,9 +37,14 @@ import {
 
 import classes from './Table.module.css';
 
+export interface ITableAriaLabels {
+  otherActions: string;
+}
+
 export interface ITableProps<Data extends Record<string, unknown>>
   extends MRT_TableOptions<Data> {
   actions?: ITableAction<Data>[];
+  ariaLabels?: ITableAriaLabels;
   maxVisibleActions?: number;
   menuLabel?: string;
   paginationProps?: Partial<IPaginationProps>;
@@ -64,6 +69,7 @@ export function Table<Data extends Record<string, unknown>>(
 ): ReactElement {
   const {
     actions = [],
+    ariaLabels,
     icons,
     initialState,
     menuLabel = 'Other actions',
@@ -193,14 +199,14 @@ export function Table<Data extends Record<string, unknown>>(
           {visibleRowActions.map((action, index) => (
             <Tooltip
               key={`${index + index}`}
-              label={getActionLabel(action, row)}
+              label={getAriaLabel(action, row, 'actionLabel')}
               {...tooltipProps}
             >
               <ActionIcon
                 aria-label={
-                  getAriaLabel(action, row)
-                    ? getAriaLabel(action, row)
-                    : getActionLabel(action, row)
+                  getAriaLabel(action, row, 'ariaLabel')
+                    ? getAriaLabel(action, row, 'ariaLabel')
+                    : getAriaLabel(action, row, 'actionLabel')
                 }
                 className={classes.action}
                 onClick={() => handleAction(row, index)}
@@ -225,7 +231,7 @@ export function Table<Data extends Record<string, unknown>>(
             >
               <Menu.Target>
                 <ActionIcon
-                  aria-label="other actions"
+                  aria-label={ariaLabels?.otherActions || 'Other actions'}
                   className={`${classes.menuButton} ${classes.action}`}
                   radius={4}
                   type="button"

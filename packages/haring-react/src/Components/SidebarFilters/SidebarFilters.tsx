@@ -29,10 +29,15 @@ export interface ISidebarFilter {
   value: unknown;
 }
 
+export interface ISidebarFiltersAriaLabels {
+  expandIcon?: string;
+}
+
 type IId = number | string;
 
 export interface ISidebarFiltersProps {
   activeFilters?: ISidebarFilter[] | [];
+  ariaLabels?: ISidebarFiltersAriaLabels;
   closeAllFiltersLabel?: string;
   defaultOpenedActiveFilters?: boolean;
   defaultOpenedMenuIds?: IId[];
@@ -48,6 +53,7 @@ export interface ISidebarFiltersProps {
 export function SidebarFilters(props: ISidebarFiltersProps): ReactElement {
   const {
     activeFilters = [],
+    ariaLabels,
     closeAllFiltersLabel = 'Close all',
     title = 'Active filters',
     menus = [],
@@ -134,7 +140,7 @@ export function SidebarFilters(props: ISidebarFiltersProps): ReactElement {
           opened={activeFiltersCollapseOpened}
           rightSection={
             <ActionIcon
-              aria-label="expand icon"
+              aria-label={ariaLabels?.expandIcon || 'expand icon'}
               data-testid="toggle"
               onClick={() => {
                 setActiveFiltersCollapseOpened(!activeFiltersCollapseOpened);

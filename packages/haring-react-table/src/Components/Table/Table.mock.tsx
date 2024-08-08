@@ -70,6 +70,9 @@ export const tableMock: ITableProps<Record<string, unknown>> = {
       onAction: action('Delete'),
     },
   ],
+  ariaLabels: {
+    otherActions: 'Other actions',
+  },
   columns: [
     {
       accessorKey: 'id',
