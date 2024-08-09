@@ -137,6 +137,7 @@ exports[`ResponsiveTabs matches snapshot 1`] = `
         class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
         data-variant="subtle"
         id="responsive-tabs-overflow-button-target"
+        role="tab"
         style="--ai-radius: var(--mantine-radius-sm); --ai-bg: transparent; --ai-hover: rgba(0, 0, 0, 0.12); --ai-color: gray-9; --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
         type="button"
       >

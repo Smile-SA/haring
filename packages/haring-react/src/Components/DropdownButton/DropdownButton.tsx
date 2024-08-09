@@ -12,6 +12,7 @@ export interface IDropdownButtonProps extends MenuProps {
   buttonComponent?: ReactNode;
   children?: ReactNode;
   label?: string;
+  role?: string;
 }
 
 /** Additional props will be forwarded to the [Mantine Menu component](https://mantine.dev/core/menu) */
@@ -32,7 +33,6 @@ export function DropdownButton(props: IDropdownButtonProps): ReactElement {
       onChange={setOpened}
       opened={opened}
       position={position}
-      role="tab"
       {...menuProps}
     >
       <Menu.Target>

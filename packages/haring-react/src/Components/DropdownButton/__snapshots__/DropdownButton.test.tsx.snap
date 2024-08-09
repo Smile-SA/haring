@@ -20,6 +20,7 @@ exports[`DropdownButton matches snapshot 1`] = `
     data-testid="button"
     data-with-right-section="true"
     id=":r0:-target"
+    role="tab"
     style="--button-color: var(--mantine-color-white);"
     type="button"
   >
