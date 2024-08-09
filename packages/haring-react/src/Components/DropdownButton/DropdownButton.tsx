@@ -32,6 +32,7 @@ export function DropdownButton(props: IDropdownButtonProps): ReactElement {
       onChange={setOpened}
       opened={opened}
       position={position}
+      role="tab"
       {...menuProps}
     >
       <Menu.Target>
