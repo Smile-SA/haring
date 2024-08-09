@@ -135,7 +135,6 @@ export function Table<Data extends Record<string, unknown>>(
   const table = useMantineReactTable({
     displayColumnDefOptions: {
       'mrt-row-actions': {
-        header: undefined,
         size: 124,
       },
     },
