@@ -5,7 +5,12 @@ import { Checkbox, Group, Stack } from '@mantine/core';
 
 import classes from './SelectableList.module.css';
 
+export interface ISelectableListAriaLabels {
+  checkboxInput?: string;
+}
+
 export interface ISelectableListProps extends StackProps {
+  ariaLabels?: ISelectableListAriaLabels;
   children: ReactElement[];
   onSelectChange?: (index: number, isSelected: boolean) => void;
   selectedIndexes?: number[];
@@ -13,6 +18,7 @@ export interface ISelectableListProps extends StackProps {
 
 export function SelectableList(props: ISelectableListProps): ReactElement {
   const {
+    ariaLabels,
     children,
     onSelectChange,
     selectedIndexes = [],
@@ -30,6 +36,7 @@ export function SelectableList(props: ISelectableListProps): ReactElement {
           wrap="nowrap"
         >
           <Checkbox
+            aria-label={ariaLabels?.checkboxInput || 'checkbox input'}
             checked={selectedIndexes.includes(index)}
             className="selectableListCheckboxRef"
             onChange={(e) => onSelectChange?.(index, e.currentTarget.checked)}

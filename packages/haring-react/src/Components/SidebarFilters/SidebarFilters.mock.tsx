@@ -37,15 +37,25 @@ export function getMenu(checked: boolean): IMenuItem<number>[] {
       content: (
         <>
           <Group>
-            <Checkbox defaultChecked={checked} value="Dupont" /> Dupont
+            <Checkbox
+              aria-label="Dupont checkbox"
+              defaultChecked={checked}
+              value="Dupont"
+            />{' '}
+            Dupont
           </Group>
           <br />
           <Group>
-            <Checkbox defaultChecked={checked} value="Martin" /> Martin
+            <Checkbox
+              aria-label="Martin checkbox"
+              defaultChecked={checked}
+              value="Martin"
+            />{' '}
+            Martin
           </Group>
           <br />
           <Group>
-            <Checkbox value="André" /> Andrée
+            <Checkbox aria-label="André checkbox" value="André" /> Andrée
           </Group>
         </>
       ),
@@ -58,11 +68,16 @@ export function getMenu(checked: boolean): IMenuItem<number>[] {
           content: (
             <>
               <Group>
-                <Checkbox defaultChecked={checked} value="CDI" /> CDI
+                <Checkbox
+                  aria-label="CDI checkbox"
+                  defaultChecked={checked}
+                  value="CDI"
+                />{' '}
+                CDI
               </Group>
               <br />
               <Group>
-                <Checkbox value="CDD" /> CDD
+                <Checkbox aria-label="CDD checkbox" value="CDD" /> CDD
               </Group>
             </>
           ),
@@ -72,7 +87,12 @@ export function getMenu(checked: boolean): IMenuItem<number>[] {
         {
           content: (
             <Group>
-              <Checkbox defaultChecked={checked} value="FREELANCE" /> Freelance
+              <Checkbox
+                aria-label="Freelance checkbox"
+                defaultChecked={checked}
+                value="FREELANCE"
+              />{' '}
+              Freelance
             </Group>
           ),
           id: 11,
