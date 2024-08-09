@@ -17,7 +17,6 @@ exports[`SidebarFilters matches snapshot 1`] = `
   >
     <div>
       <div
-        aria-expanded="true"
         class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-block="true"
         data-size="md"
@@ -219,7 +218,6 @@ exports[`SidebarFilters matches snapshot 1`] = `
         style="padding: 0rem;"
       >
         <div
-          aria-expanded="true"
           class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-block="true"
           data-selected="false"
@@ -419,7 +417,6 @@ exports[`SidebarFilters matches snapshot 1`] = `
           </div>
         </div>
         <div
-          aria-expanded="true"
           class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-block="true"
           data-selected="false"
@@ -480,7 +477,6 @@ exports[`SidebarFilters matches snapshot 1`] = `
           style="box-sizing: border-box; opacity: 1; transition: opacity 200ms ease; border-top: 1px solid #dee2e6;"
         >
           <div
-            aria-expanded="true"
             class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
             data-block="true"
             data-selected="false"
@@ -634,7 +630,6 @@ exports[`SidebarFilters matches snapshot 1`] = `
             </div>
           </div>
           <div
-            aria-expanded="true"
             class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
             data-block="true"
             data-selected="false"
@@ -744,7 +739,6 @@ exports[`SidebarFilters matches snapshot 1`] = `
           </div>
         </div>
         <div
-          aria-expanded="false"
           class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-block="true"
           data-selected="false"
@@ -770,7 +764,6 @@ exports[`SidebarFilters matches snapshot 1`] = `
           </span>
         </div>
         <div
-          aria-expanded="false"
           class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-block="true"
           data-selected="false"

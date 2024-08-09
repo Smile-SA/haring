@@ -83,7 +83,6 @@ export function CollapseButtonControlled<
   return (
     <>
       <Button
-        aria-expanded={opened ? 'true' : 'false'}
         classNames={{
           label: labelClasses.join(' '),
           root: rootClasses.join(' '),
