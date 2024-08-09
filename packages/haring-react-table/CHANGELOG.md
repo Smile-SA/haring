@@ -1,5 +1,19 @@
 # @smile/haring-react-table
 
+## 0.16.0
+
+### Minor Changes
+
+- [#209](https://github.com/Smile-SA/haring/pull/209) [`eaf66ee`](https://github.com/Smile-SA/haring/commit/eaf66eef3b2000758c5497d3126f0c886bc454a0) Thanks [@Meriemu](https://github.com/Meriemu)! - Accessibility corrections to table header text
+
+### Patch Changes
+
+- [#203](https://github.com/Smile-SA/haring/pull/203) [`4bed473`](https://github.com/Smile-SA/haring/commit/4bed47334b645d5868ddb67cd8e851433bf85d09) Thanks [@tonai](https://github.com/tonai)! - Fix table actions
+
+- Updated dependencies [[`2a9441f`](https://github.com/Smile-SA/haring/commit/2a9441fd5b0d794abd10b622c695eae2ab5c54c0), [`85e6198`](https://github.com/Smile-SA/haring/commit/85e6198db3bf58afbf3ebf1e256fa4c8ae1c6785), [`0f0d647`](https://github.com/Smile-SA/haring/commit/0f0d647eda2e3af05f1d678f2529c9f7d95d4129), [`810c143`](https://github.com/Smile-SA/haring/commit/810c143ae7761c07943797a5a6d300bf5b21c840), [`81ba004`](https://github.com/Smile-SA/haring/commit/81ba004b67465466235a68a80c1c7f2c4131cb93)]:
+  - @smile/haring-react@0.16.0
+  - @smile/haring-react-shared@0.16.0
+
 ## 0.15.0
 
 ### Minor Changes

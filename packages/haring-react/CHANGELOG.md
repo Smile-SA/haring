@@ -1,5 +1,24 @@
 # @smile/haring-react
 
+## 0.16.0
+
+### Minor Changes
+
+- [#210](https://github.com/Smile-SA/haring/pull/210) [`2a9441f`](https://github.com/Smile-SA/haring/commit/2a9441fd5b0d794abd10b622c695eae2ab5c54c0) Thanks [@Meriemu](https://github.com/Meriemu)! - Accessibility Correction unsupported ARIA attributes
+
+- [#208](https://github.com/Smile-SA/haring/pull/208) [`85e6198`](https://github.com/Smile-SA/haring/commit/85e6198db3bf58afbf3ebf1e256fa4c8ae1c6785) Thanks [@Meriemu](https://github.com/Meriemu)! - make corrections to color contrasts
+
+- [#211](https://github.com/Smile-SA/haring/pull/211) [`0f0d647`](https://github.com/Smile-SA/haring/commit/0f0d647eda2e3af05f1d678f2529c9f7d95d4129) Thanks [@Meriemu](https://github.com/Meriemu)! - correction to dropdownMenu role
+
+- [#206](https://github.com/Smile-SA/haring/pull/206) [`810c143`](https://github.com/Smile-SA/haring/commit/810c143ae7761c07943797a5a6d300bf5b21c840) Thanks [@Meriemu](https://github.com/Meriemu)! - Creating a floating menu
+
+- [#207](https://github.com/Smile-SA/haring/pull/207) [`81ba004`](https://github.com/Smile-SA/haring/commit/81ba004b67465466235a68a80c1c7f2c4131cb93) Thanks [@Meriemu](https://github.com/Meriemu)! - (accessibility) make corrections in Image/Avatar component
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @smile/haring-react-shared@0.16.0
+
 ## 0.15.0
 
 ### Minor Changes
