@@ -101,6 +101,7 @@ export function ResponsiveTabs(props: IResponsiveTabs): ReactNode {
             onChange={setOpened}
             opened={opened}
             position="bottom-end"
+            role="tab"
             {...dropdownButtonProps}
           >
             <div className={classes.dropdownContainer}>
