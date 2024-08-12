@@ -1,11 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { DEFAULT_THEME } from '@mantine/core';
+
 import { DataBadge as Cmp } from './DataBadge';
 
+const colorOptions = Object.keys(DEFAULT_THEME.colors);
 const meta = {
   argTypes: {
     color: {
-      control: { type: 'color' },
+      control: 'select',
+      options: colorOptions,
     },
   },
   component: Cmp,

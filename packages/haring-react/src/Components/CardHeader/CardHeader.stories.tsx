@@ -27,7 +27,7 @@ const meta = {
               </Badge>
             </Group>
 
-            <Text color="dimmed" size="sm">
+            <Text c="dark.3" size="sm">
               With Fjord Tours you can explore more of the magical fjord
               landscapes with tours and activities on and around the fjords of
               Norway

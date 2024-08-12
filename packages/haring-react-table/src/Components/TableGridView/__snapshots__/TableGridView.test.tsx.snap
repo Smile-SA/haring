@@ -954,7 +954,9 @@ exports[`TableGridView matches snapshot 1`] = `
                     >
                       <div
                         class="mrt-table-head-cell-content-wrapper MRT_TableHeadCell-module_content-wrapper__py6aJ MRT_TableHeadCell-module_content-wrapper-nowrap__-4aIg m_8bffd616 mantine-Flex-root __m__-r6q"
-                      />
+                      >
+                        Actions
+                      </div>
                     </div>
                     <div
                       class="mrt-table-head-cell-content-actions MRT_TableHeadCell-module_content-actions__utxbm m_8bffd616 mantine-Flex-root __m__-r6s"
