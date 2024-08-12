@@ -23,6 +23,7 @@ exports[`CalendarHeader matches snapshot 1`] = `
       color="red"
       data-size="md"
       id="mantine-f4bipx4bi-target"
+      role="region"
       style="--dch-control-size: var(--dch-control-size-md); --dch-fz: var(--mantine-font-size-md);"
     >
       <button
