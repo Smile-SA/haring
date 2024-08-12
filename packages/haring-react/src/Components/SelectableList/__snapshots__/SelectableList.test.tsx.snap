@@ -33,6 +33,7 @@ exports[`SelectableList matches snapshot 1`] = `
             data-label-position="right"
           >
             <input
+              aria-label="checkbox input"
               class="haring-focus m_26063560 mantine-Checkbox-input"
               id="mantine-f4bipx4bi"
               type="checkbox"
@@ -202,6 +203,7 @@ exports[`SelectableList matches snapshot 1`] = `
             data-label-position="right"
           >
             <input
+              aria-label="checkbox input"
               checked=""
               class="haring-focus m_26063560 mantine-Checkbox-input"
               id="mantine-f4bipx4bi"
@@ -371,6 +373,7 @@ exports[`SelectableList matches snapshot 1`] = `
             data-label-position="right"
           >
             <input
+              aria-label="checkbox input"
               class="haring-focus m_26063560 mantine-Checkbox-input"
               id="mantine-f4bipx4bi"
               type="checkbox"
