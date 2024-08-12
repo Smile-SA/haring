@@ -38,6 +38,7 @@ export function DropdownButton(props: IDropdownButtonProps): ReactElement {
       <Menu.Target>
         {buttonComponent ?? (
           <Button
+            component="span"
             data-testid="button"
             rightSection={opened ? <CaretUp /> : <CaretDown />}
           >
