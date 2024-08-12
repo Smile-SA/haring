@@ -29,9 +29,8 @@ export interface IThumbnailAriaLabels {
 
 export interface IThumbnailProps extends IThumbnail {
   actions?: IThumbnailAction[];
-  ariaLabels?: IThumbnailAriaLabels;
   altText?: string;
-
+  ariaLabels?: IThumbnailAriaLabels;
 }
 
 export function Thumbnail(props: IThumbnailProps): ReactElement {
