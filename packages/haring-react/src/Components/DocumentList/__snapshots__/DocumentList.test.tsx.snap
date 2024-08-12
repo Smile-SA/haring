@@ -217,6 +217,7 @@ exports[`DocumentList matches snapshot 1`] = `
               data-label-position="right"
             >
               <input
+                aria-label="checkbox input"
                 class="haring-focus m_26063560 mantine-Checkbox-input"
                 id="mantine-f4bipx4bi"
                 type="checkbox"
@@ -313,6 +314,7 @@ exports[`DocumentList matches snapshot 1`] = `
                     class="m_811560b9 mantine-Button-label"
                   >
                     <svg
+                      aria-label="download icon"
                       fill="currentColor"
                       height="1em"
                       viewBox="0 0 256 256"
@@ -386,6 +388,7 @@ exports[`DocumentList matches snapshot 1`] = `
               data-label-position="right"
             >
               <input
+                aria-label="checkbox input"
                 checked=""
                 class="haring-focus m_26063560 mantine-Checkbox-input"
                 id="mantine-f4bipx4bi"
@@ -555,6 +558,7 @@ exports[`DocumentList matches snapshot 1`] = `
               data-label-position="right"
             >
               <input
+                aria-label="checkbox input"
                 class="haring-focus m_26063560 mantine-Checkbox-input"
                 id="mantine-f4bipx4bi"
                 type="checkbox"
