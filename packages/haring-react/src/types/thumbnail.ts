@@ -1,7 +1,6 @@
 import type { IAction } from '@smile/haring-react-shared';
 
 export interface IThumbnail extends Record<string, unknown> {
-  ariaLabel?: string;
   iconType?: string;
   id: number | string;
   image?: string;
