@@ -16,7 +16,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
     class="m_1b7284a3 mantine-Paper-root"
   >
     <div
-      aria-expanded="false"
       class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
       data-block="true"
       data-selected="false"
@@ -105,7 +104,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
       style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
     >
       <div
-        aria-expanded="false"
         class="haring-focus haring-active   m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-block="true"
         data-selected="false"
@@ -132,7 +130,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
       </div>
     </div>
     <div
-      aria-expanded="false"
       class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
       data-block="true"
       data-selected="false"
@@ -221,7 +218,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
       style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
     >
       <div
-        aria-expanded="false"
         class="haring-focus haring-active   m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-block="true"
         data-selected="false"
@@ -248,7 +244,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
       </div>
     </div>
     <div
-      aria-expanded="false"
       class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
       data-block="true"
       data-selected="false"
@@ -337,7 +332,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
       style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
     >
       <div
-        aria-expanded="false"
         class="haring-focus haring-active   m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-block="true"
         data-selected="false"
@@ -363,7 +357,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
         </span>
       </div>
       <div
-        aria-expanded="false"
         class="haring-focus haring-active   m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-block="true"
         data-selected="false"
@@ -425,7 +418,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
         style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
       >
         <div
-          aria-expanded="false"
           class="haring-focus haring-active   m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-block="true"
           data-selected="false"
@@ -452,7 +444,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
         </div>
       </div>
       <div
-        aria-expanded="false"
         class="haring-focus haring-active   m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-block="true"
         data-selected="false"
@@ -479,7 +470,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
       </div>
     </div>
     <div
-      aria-expanded="false"
       class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
       data-block="true"
       data-selected="false"
@@ -532,7 +522,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
       </span>
     </div>
     <div
-      aria-expanded="false"
       class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
       data-block="true"
       data-selected="false"
@@ -621,7 +610,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
       style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
     >
       <div
-        aria-expanded="false"
         class="haring-focus haring-active   m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-block="true"
         data-selected="false"
@@ -683,7 +671,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
         style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
       >
         <div
-          aria-expanded="false"
           class="haring-focus haring-active   m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-block="true"
           data-selected="false"
@@ -709,7 +696,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
           </span>
         </div>
         <div
-          aria-expanded="false"
           class="haring-focus haring-active   m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-block="true"
           data-selected="false"
@@ -736,7 +722,6 @@ exports[`SidebarMenu matches snapshot 1`] = `
         </div>
       </div>
       <div
-        aria-expanded="false"
         class="haring-focus haring-active   m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
         data-block="true"
         data-selected="false"

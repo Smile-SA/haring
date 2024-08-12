@@ -171,6 +171,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
           </div>
         </div>
         <img
+          alt="thumbnail"
           class="m_9e117634 mantine-Image-root"
           src=""
           style="--image-radius: calc(1rem * var(--mantine-scale));"
@@ -234,6 +235,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
           </div>
         </div>
         <img
+          alt="thumbnail"
           class="m_9e117634 mantine-Image-root"
           src=""
           style="--image-radius: calc(1rem * var(--mantine-scale));"
@@ -298,6 +300,7 @@ exports[`ThumbnailGrid matches snapshot 1`] = `
           </div>
         </div>
         <img
+          alt="thumbnail"
           class="m_9e117634 mantine-Image-root"
           src=""
           style="--image-radius: calc(1rem * var(--mantine-scale));"

@@ -30,11 +30,14 @@ export interface IThumbnailAriaLabels {
 export interface IThumbnailProps extends IThumbnail {
   actions?: IThumbnailAction[];
   ariaLabels?: IThumbnailAriaLabels;
+  altText?: string;
+
 }
 
 export function Thumbnail(props: IThumbnailProps): ReactElement {
   const theme = useMantineTheme();
   const {
+    altText = 'thumbnail',
     actions = [],
     ariaLabels,
     iconType,
@@ -160,7 +163,7 @@ export function Thumbnail(props: IThumbnailProps): ReactElement {
             )}
           </div>
         </Group>
-        <Image radius="16px" src={image} />
+        <Image alt={altText} radius="16px" src={image} />
       </Box>
       <ConfirmModal
         {...confirmAction}
