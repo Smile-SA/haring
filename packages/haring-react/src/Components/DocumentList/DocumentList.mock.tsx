@@ -14,7 +14,7 @@ export const documentsMock: IDocument[] = [
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
         </p>
         <Button color="gray.8">
-          <DownloadSimple width={12} />
+          <DownloadSimple aria-label="download icon" width={12} />
           <Space w={8} />
           PDF, FR - 1Mo
         </Button>
