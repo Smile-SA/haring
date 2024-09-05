@@ -12,7 +12,12 @@ import { Motif } from './Motif';
 
 export type IMantineBreakpoint = 'lg' | 'md' | 'sm' | 'xl' | 'xs';
 
+export interface IInfoBoxAriaLabels {
+  expandButton?: string;
+}
+
 export interface IContentItem {
+  arialLabel?: string;
   icon?: ReactElement;
   iconProps?: Partial<ActionIconProps>;
   label?: string;
@@ -20,6 +25,7 @@ export interface IContentItem {
 }
 
 export interface IInfoCardProps extends PaperProps {
+  ariaLabels?: IInfoBoxAriaLabels;
   children?: ReactElement;
   collapse?: boolean;
   content?: ReactElement;
@@ -35,6 +41,7 @@ export interface IInfoCardProps extends PaperProps {
 export function InfoBox(props: IInfoCardProps): ReactElement {
   const theme = useMantineTheme();
   const {
+    ariaLabels,
     children,
     collapse = true,
     content,
@@ -66,6 +73,9 @@ export function InfoBox(props: IInfoCardProps): ReactElement {
                     >
                       {Boolean(item.icon) && (
                         <ActionIcon
+                          aria-label={
+                            item.arialLabel ? item.arialLabel : item.label
+                          }
                           className={classes.contentItem}
                           color={theme.primaryColor}
                           onClick={() => item.onAction?.(item)}
@@ -93,6 +103,7 @@ export function InfoBox(props: IInfoCardProps): ReactElement {
         </Collapse>
         {Boolean(collapse) && (
           <ActionIcon
+            aria-label={ariaLabels?.expandButton || 'expand button'}
             className={`${classes.collapseButton} ${
               !opened && classes.collapseButtonCenter
             }`}

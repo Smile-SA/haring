@@ -19,6 +19,7 @@ export interface IActionConfirmModalProps<Item>
 }
 
 export interface IAction<Item> {
+  ariaLabel?: string | ((item: Item) => string);
   color?: string;
   componentProps?:
     | Record<string, unknown>
