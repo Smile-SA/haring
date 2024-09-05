@@ -10,6 +10,8 @@ export type { IFetchAutocompleteFieldProps } from './Form/FetchAutocompleteField
 export { FetchAutocompleteField } from './Form/FetchAutocompleteField/FetchAutocompleteField';
 export type { IAddressAutocompleteFieldProps } from './Form/AddressGouvAutocompleteField/AddressGouvAutocompleteField';
 export { AddressGouvAutocompleteField } from './Form/AddressGouvAutocompleteField/AddressGouvAutocompleteField';
+export type { IDynamicZoneProps } from './Form/DynamicZone/DynamicZone';
+export { DynamicZone } from './Form/DynamicZone/DynamicZone';
 export type { IAddressFieldsProps } from './Form/AddressFields/AddressFields';
 export { AddressFields } from './Form/AddressFields/AddressFields';
 export type { IIconCardProps } from './Components/IconCard/IconCard';
@@ -124,4 +126,11 @@ export {
   setChildrenToTree,
 } from './helpers';
 // type exports
-export type { IThumbnail, IThumbnailAction, IThumbnailData } from './types';
+export type {
+  IThumbnail,
+  IThumbnailAction,
+  IThumbnailData,
+  IBaseBlock,
+  IBaseBlockButton,
+  IBaseBlockType,
+} from './types';

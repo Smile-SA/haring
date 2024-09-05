@@ -1,0 +1,12 @@
+.buttonsContainer {
+  border-radius: 0.5rem;
+  border: 1px dashed black;
+}
+
+.buttonsLabel {
+  &:empty {
+    display: none;
+  }
+
+  margin-bottom: 10px;
+}

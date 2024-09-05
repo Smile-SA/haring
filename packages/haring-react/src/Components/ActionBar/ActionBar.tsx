@@ -21,7 +21,9 @@ export function ActionBar<Data extends Record<string, unknown>>(
       `${selectedElements} file(s) selected`,
     ...actionRowOverflowProps
   } = props;
-  const numberOfSelectedElements = selectedElements.length;
+  const numberOfSelectedElements = Array.isArray(selectedElements)
+    ? selectedElements.length
+    : [selectedElements].length;
 
   return (
     <div className={`${classes.actionBar} actionBarRef`}>

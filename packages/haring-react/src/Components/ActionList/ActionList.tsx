@@ -28,9 +28,9 @@ const defaultTooltipProps = {
   withArrow: true,
 };
 
-export type IActionListAction<Data extends Record<string, unknown>> = IAction<
-  Data[]
->;
+export type IActionListAction<Data extends Record<string, unknown>> =
+  | IAction<Data[]>
+  | IAction<Data>;
 
 export interface IActionListProps<Data extends Record<string, unknown>>
   extends GroupProps {
@@ -41,7 +41,7 @@ export interface IActionListProps<Data extends Record<string, unknown>>
   maxVisibleActions?: number;
   modalProps?: Omit<ModalProps, 'title'>;
   overflowMenuLabel?: string;
-  selectedElements: Data[];
+  selectedElements: Data | Data[];
 }
 
 export function ActionList<Data extends Record<string, unknown>>(
@@ -72,7 +72,7 @@ export function ActionList<Data extends Record<string, unknown>>(
       children: action.confirmModalProps?.children,
       confirmColor: action.confirmModalProps?.confirmColor,
       confirmLabel: action.confirmModalProps?.confirmLabel,
-      onConfirm: () => action.onAction?.(selectedElements),
+      onConfirm: () => action.onAction?.(selectedElements as Data & Data[]),
       title: action.confirmModalProps?.title,
     });
   }
@@ -85,7 +85,7 @@ export function ActionList<Data extends Record<string, unknown>>(
     clearConfirmAction();
   }
 
-  function handleModalButton(onAction?: (item: Data[]) => void): void {
+  function handleModalButton(onAction?: (item: Data | Data[]) => void): void {
     onAction?.(selectedElements);
     handleClose();
   }
@@ -94,7 +94,7 @@ export function ActionList<Data extends Record<string, unknown>>(
     if (action.confirmation) {
       setModal(action);
     } else {
-      action.onAction?.(selectedElements);
+      action.onAction?.(selectedElements as Data & Data[]);
     }
   }
 
@@ -103,7 +103,7 @@ export function ActionList<Data extends Record<string, unknown>>(
       return '';
     }
     return typeof action.label === 'function'
-      ? action.label(selectedElements)
+      ? action.label(selectedElements as Data & Data[])
       : action.label;
   }
 
@@ -112,7 +112,7 @@ export function ActionList<Data extends Record<string, unknown>>(
       return null;
     }
     return typeof action.icon === 'function'
-      ? action.icon(selectedElements)
+      ? action.icon(selectedElements as Data & Data[])
       : action.icon;
   }
 
@@ -123,7 +123,7 @@ export function ActionList<Data extends Record<string, unknown>>(
       return undefined;
     }
     return typeof action.componentProps === 'function'
-      ? action.componentProps(selectedElements)
+      ? action.componentProps(selectedElements as Data & Data[])
       : action.componentProps;
   }
 
