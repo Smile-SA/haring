@@ -2,6 +2,8 @@ import type { ITableAction, ITableConfirmAction } from '../types';
 import type { MRT_Row } from 'mantine-react-table';
 import type { ReactNode } from 'react';
 
+export type ILabelProperty = 'actionLabel' | 'ariaLabel';
+
 export function isConfirmAction<Data extends Record<string, unknown>>(
   action: ITableAction<Data>,
 ): action is ITableConfirmAction<Data> {
@@ -24,6 +26,28 @@ export function getActionLabel<Data extends Record<string, unknown>>(
     return rows ? action.label(rows) : '';
   }
   return action.label;
+}
+
+export function getAriaLabel<Data extends Record<string, unknown>>(
+  action?: ITableAction<Data> | null,
+  rows?: MRT_Row<Data> | MRT_Row<Data>[],
+  property?: ILabelProperty,
+): string | undefined {
+  if (property === 'actionLabel') {
+    return getActionLabel(action, rows);
+  }
+  if (!action) {
+    return '';
+  }
+  if (isConfirmAction(action)) {
+    return typeof action.ariaLabel === 'function'
+      ? action.ariaLabel(action.item)
+      : action.ariaLabel;
+  }
+  if (typeof action.ariaLabel === 'function') {
+    return rows ? action.ariaLabel(rows) : '';
+  }
+  return action.ariaLabel;
 }
 
 export function getActionIcon<Data extends Record<string, unknown>>(

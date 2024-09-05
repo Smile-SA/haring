@@ -71,6 +71,7 @@ exports[`SidebarMenu matches snapshot 1`] = `
           data-position="right"
         >
           <button
+            aria-label="expand button"
             class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
             data-testid="toggle"
             data-variant="transparent"
@@ -184,6 +185,7 @@ exports[`SidebarMenu matches snapshot 1`] = `
           data-position="right"
         >
           <button
+            aria-label="expand button"
             class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
             data-testid="toggle"
             data-variant="transparent"
@@ -297,6 +299,7 @@ exports[`SidebarMenu matches snapshot 1`] = `
           data-position="right"
         >
           <button
+            aria-label="expand button"
             class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
             data-testid="toggle"
             data-variant="transparent"
@@ -382,6 +385,7 @@ exports[`SidebarMenu matches snapshot 1`] = `
             data-position="right"
           >
             <button
+              aria-label="expand button"
               class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
               data-testid="toggle"
               data-variant="transparent"
@@ -573,6 +577,7 @@ exports[`SidebarMenu matches snapshot 1`] = `
           data-position="right"
         >
           <button
+            aria-label="expand button"
             class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
             data-testid="toggle"
             data-variant="transparent"
@@ -633,6 +638,7 @@ exports[`SidebarMenu matches snapshot 1`] = `
             data-position="right"
           >
             <button
+              aria-label="expand button"
               class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
               data-testid="toggle"
               data-variant="transparent"
