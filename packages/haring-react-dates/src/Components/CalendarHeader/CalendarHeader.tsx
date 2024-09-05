@@ -92,6 +92,7 @@ export function CalendarHeader(props: ICalendarHeaderProps): ReactElement {
             nextLabel="Next button"
             onLevelClick={() => setOpened(!opened)}
             previousLabel="Previous button"
+            role="region"
             size="md"
             {...calendarHeaderProps}
           />
