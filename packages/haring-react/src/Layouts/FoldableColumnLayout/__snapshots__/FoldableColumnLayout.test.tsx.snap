@@ -71,6 +71,7 @@ exports[`FoldableColumnLayout matches snapshot 1`] = `
                   aria-hidden="true"
                   class="m_9307d992 mantine-Switch-track"
                   data-label-position="right"
+                  data-without-labels="true"
                 >
                   <span
                     class="m_93039a1d mantine-Switch-thumb"
