@@ -89,6 +89,7 @@ export function CalendarHeader(props: ICalendarHeaderProps): ReactElement {
             color="red"
             label={label}
             onLevelClick={() => setOpened(!opened)}
+            role="region"
             size="md"
             {...calendarHeaderProps}
           />
