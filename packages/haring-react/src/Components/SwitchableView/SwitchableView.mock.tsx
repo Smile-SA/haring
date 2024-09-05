@@ -37,17 +37,17 @@ export const viewMockC = (
 export const viewsMock = [
   {
     dataView: viewMockA,
-    label: <ListBullets />,
+    label: <ListBullets aria-label="square icon" />,
     value: 'a',
   },
   {
     dataView: viewMockB,
-    label: <SquaresFour />,
+    label: <SquaresFour aria-label="square icon" />,
     value: 'b',
   },
   {
     dataView: viewMockC,
-    label: <Star />,
+    label: <Star aria-label="star icon" />,
     value: 'c',
   },
 ];
