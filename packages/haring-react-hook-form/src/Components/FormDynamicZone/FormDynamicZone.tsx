@@ -1,6 +1,7 @@
 import type {
   IFormDynBlock,
   IFormDynSubmit,
+  IFormDynSubmitResults,
   IFormField,
   IFormFieldWithoutId,
 } from '../../types';
@@ -30,6 +31,7 @@ export interface IFormDynamicZoneProps {
   actionLabels?: IFormDynamicZoneActionLabels;
   dynamicBlocks: IFormDynBlock[];
   dynamicZoneName: string;
+  onFormSubmit: (data: IFormDynSubmitResults) => void;
 }
 
 export function FormDynamicZone(props: IFormDynamicZoneProps): ReactElement {
@@ -37,9 +39,10 @@ export function FormDynamicZone(props: IFormDynamicZoneProps): ReactElement {
     dynamicBlocks,
     dynamicZoneName,
     actionLabels = defaultActionLabels,
+    onFormSubmit,
   } = props;
 
-  const { control, register, handleSubmit } =
+  const { control, register, handleSubmit, getValues } =
     useFormContext<Record<typeof dynamicZoneName, IFormFieldWithoutId[]>>();
   const { fields, append, remove, swap, update } = useFieldArray({
     control,
@@ -78,9 +81,9 @@ export function FormDynamicZone(props: IFormDynamicZoneProps): ReactElement {
     }
   }
 
-  function onToggle(block: IFormField, index: number, opened: boolean): void {
-    const { id, ...blockWithoutId } = block;
-    update(index, { ...blockWithoutId, opened });
+  function onToggle(_block: IFormField, index: number, opened: boolean): void {
+    const updatedBlock = getValues(dynamicZoneName)[index];
+    update(index, { ...updatedBlock, opened });
   }
 
   function isMoveDisabled(
@@ -131,7 +134,11 @@ export function FormDynamicZone(props: IFormDynamicZoneProps): ReactElement {
   }
 
   function onSubmit(data: IFormDynSubmit): void {
-    console.log(data);
+    onFormSubmit(
+      data[dynamicZoneName].map(
+        ({ blockActions, blockHeader, blockFooter, ...block }) => block,
+      ),
+    );
   }
 
   return (
@@ -147,6 +154,11 @@ export function FormDynamicZone(props: IFormDynamicZoneProps): ReactElement {
           onRenderBlockContent={renderBlock}
           onToggleBlock={onToggle}
         />
+        {/* TODO: Move this out, should be in the story/text not part of this component since it's just a field */}
+        {/* TODO: then decide how to send errors/messages upwards, where they can go (everything should be doable with props) */}
+        {/* TODO: build mock example of error messages and where they can go (at the form level, somewhere inside this component, in blocks... */}
+        {/* TODO: then focus and nested focus, multiple errors, auto-opening a block if it wants to focus inside, auto-scroll the page */}
+        {/* TODO: then animations */}
         <input style={{ margin: 'auto' }} type="submit" />
       </Stack>
     </form>

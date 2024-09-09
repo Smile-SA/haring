@@ -2,6 +2,7 @@ import type { IFormDynamicZoneProps } from './FormDynamicZone';
 import type { Meta, StoryObj } from '@storybook/react';
 import type { ReactElement } from 'react';
 
+import { action } from '@storybook/addon-actions';
 import { FormProvider, useForm } from 'react-hook-form';
 
 import { FormDynamicZone as Cmp } from './FormDynamicZone';
@@ -30,6 +31,10 @@ function render() {
 }
 
 export const FormDynamicZone: IStory = {
-  args: { dynamicBlocks: dynamicBlocksMock, dynamicZoneName: 'dynTest' },
+  args: {
+    dynamicBlocks: dynamicBlocksMock,
+    dynamicZoneName: 'dynTest',
+    onFormSubmit: action('results'),
+  },
   render: render(),
 };

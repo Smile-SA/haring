@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react';
 
 import { renderWithProviders } from '@smile/haring-react-shared/test-utils';
+import { action } from '@storybook/addon-actions';
 import { FormProvider, useForm } from 'react-hook-form';
 
 import { FormDynamicZone } from './FormDynamicZone';
@@ -15,6 +16,7 @@ describe('FormDynamicZone', () => {
           <FormDynamicZone
             dynamicBlocks={dynamicBlocksMock}
             dynamicZoneName="dynamicZoneTest"
+            onFormSubmit={action('results')}
           />
         </FormProvider>
       );

@@ -29,3 +29,7 @@ export interface IFormDynBlock {
 }
 
 export type IFormDynSubmit = Record<string, IFormFieldWithoutId[]>;
+export type IFormDynSubmitResults = IOmitRespectIndexSignature<
+  IFormFieldWithoutId,
+  'blockActions' | 'blockFooter' | 'blockHeader'
+>[];
