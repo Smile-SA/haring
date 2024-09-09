@@ -44,6 +44,7 @@ export type {
   IThemeOverride,
   IThemes,
   IFilter,
+  IOmitRespectIndexSignature,
 } from './types';
 // type exports
 export { mainTheme, primaryTheme, secondaryTheme, themes } from './theme';
