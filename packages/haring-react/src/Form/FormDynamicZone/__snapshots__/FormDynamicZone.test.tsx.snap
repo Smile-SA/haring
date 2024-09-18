@@ -1,0 +1,457 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormDynamicZone matches snapshot 1`] = `
+<div>
+  <style
+    data-mantine-styles="true"
+  >
+    :root{--mantine-cursor-type: pointer;--mantine-color-black: #2e2e2e;--mantine-font-family: var(--rfk-font, Open Sans);--mantine-font-family-headings: var(--rfk-font, Open Sans);--mantine-radius-default: calc(1.5rem * var(--mantine-scale));--mantine-primary-color-filled: var(--mantine-color-cyan-filled);--mantine-primary-color-filled-hover: var(--mantine-color-cyan-filled-hover);--mantine-primary-color-light: var(--mantine-color-cyan-light);--mantine-primary-color-light-hover: var(--mantine-color-cyan-light-hover);--mantine-primary-color-light-color: var(--mantine-color-cyan-light-color);--mantine-font-size-xs: 10px;--mantine-font-size-sm: 12px;--mantine-font-size-md: 14px;--mantine-font-size-lg: 18px;--mantine-font-size-xl: 20px;--mantine-primary-color-0: var(--mantine-color-cyan-0);--mantine-primary-color-1: var(--mantine-color-cyan-1);--mantine-primary-color-2: var(--mantine-color-cyan-2);--mantine-primary-color-3: var(--mantine-color-cyan-3);--mantine-primary-color-4: var(--mantine-color-cyan-4);--mantine-primary-color-5: var(--mantine-color-cyan-5);--mantine-primary-color-6: var(--mantine-color-cyan-6);--mantine-primary-color-7: var(--mantine-color-cyan-7);--mantine-primary-color-8: var(--mantine-color-cyan-8);--mantine-primary-color-9: var(--mantine-color-cyan-9);--mantine-h1-font-size: 26px;--mantine-h1-line-height: 135%;--mantine-h2-font-size: 18px;--mantine-h2-line-height: 155%;--mantine-h3-font-size: 14px;--mantine-h3-line-height: 155%;}:root[data-mantine-color-scheme="dark"]{--mantine-color-anchor: var(--mantine-color-cyan-4);--mantine-color-dark-filled: var(--mantine-color-dark-9);--mantine-color-dark-filled-hover: var(--mantine-color-dark-8);--mantine-color-dark-light: rgba(36, 36, 36, 0.15);--mantine-color-dark-light-hover: rgba(36, 36, 36, 0.2);--mantine-color-dark-light-color: var(--mantine-color-dark-4);--mantine-color-dark-outline: var(--mantine-color-dark-5);--mantine-color-dark-outline-hover: rgba(59, 59, 59, 0.05);--mantine-color-gray-filled: var(--mantine-color-gray-9);--mantine-color-gray-filled-hover: var(--mantine-color-gray-8);--mantine-color-gray-light: rgba(73, 80, 87, 0.15);--mantine-color-gray-light-hover: rgba(73, 80, 87, 0.2);--mantine-color-gray-light-color: var(--mantine-color-gray-4);--mantine-color-gray-outline: var(--mantine-color-gray-5);--mantine-color-gray-outline-hover: rgba(173, 181, 189, 0.05);--mantine-color-red-filled: var(--mantine-color-red-9);--mantine-color-red-filled-hover: var(--mantine-color-red-8);--mantine-color-red-light: rgba(240, 62, 62, 0.15);--mantine-color-red-light-hover: rgba(240, 62, 62, 0.2);--mantine-color-red-light-color: var(--mantine-color-red-4);--mantine-color-red-outline: var(--mantine-color-red-5);--mantine-color-red-outline-hover: rgba(255, 107, 107, 0.05);--mantine-color-pink-filled: var(--mantine-color-pink-9);--mantine-color-pink-filled-hover: var(--mantine-color-pink-8);--mantine-color-pink-light: rgba(214, 51, 108, 0.15);--mantine-color-pink-light-hover: rgba(214, 51, 108, 0.2);--mantine-color-pink-light-color: var(--mantine-color-pink-4);--mantine-color-pink-outline: var(--mantine-color-pink-5);--mantine-color-pink-outline-hover: rgba(240, 101, 149, 0.05);--mantine-color-grape-filled: var(--mantine-color-grape-9);--mantine-color-grape-filled-hover: var(--mantine-color-grape-8);--mantine-color-grape-light: rgba(174, 62, 201, 0.15);--mantine-color-grape-light-hover: rgba(174, 62, 201, 0.2);--mantine-color-grape-light-color: var(--mantine-color-grape-4);--mantine-color-grape-outline: var(--mantine-color-grape-5);--mantine-color-grape-outline-hover: rgba(204, 93, 232, 0.05);--mantine-color-violet-filled: var(--mantine-color-violet-9);--mantine-color-violet-filled-hover: var(--mantine-color-violet-8);--mantine-color-violet-light: rgba(112, 72, 232, 0.15);--mantine-color-violet-light-hover: rgba(112, 72, 232, 0.2);--mantine-color-violet-light-color: var(--mantine-color-violet-4);--mantine-color-violet-outline: var(--mantine-color-violet-5);--mantine-color-violet-outline-hover: rgba(132, 94, 247, 0.05);--mantine-color-indigo-filled: var(--mantine-color-indigo-9);--mantine-color-indigo-filled-hover: var(--mantine-color-indigo-8);--mantine-color-indigo-light: rgba(66, 99, 235, 0.15);--mantine-color-indigo-light-hover: rgba(66, 99, 235, 0.2);--mantine-color-indigo-light-color: var(--mantine-color-indigo-4);--mantine-color-indigo-outline: var(--mantine-color-indigo-5);--mantine-color-indigo-outline-hover: rgba(92, 124, 250, 0.05);--mantine-color-blue-filled: var(--mantine-color-blue-9);--mantine-color-blue-filled-hover: var(--mantine-color-blue-8);--mantine-color-blue-light: rgba(28, 126, 214, 0.15);--mantine-color-blue-light-hover: rgba(28, 126, 214, 0.2);--mantine-color-blue-light-color: var(--mantine-color-blue-4);--mantine-color-blue-outline: var(--mantine-color-blue-5);--mantine-color-blue-outline-hover: rgba(51, 154, 240, 0.05);--mantine-color-cyan-filled: var(--mantine-color-cyan-9);--mantine-color-cyan-filled-hover: var(--mantine-color-cyan-8);--mantine-color-cyan-light: rgba(16, 152, 173, 0.15);--mantine-color-cyan-light-hover: rgba(16, 152, 173, 0.2);--mantine-color-cyan-light-color: var(--mantine-color-cyan-4);--mantine-color-cyan-outline: var(--mantine-color-cyan-5);--mantine-color-cyan-outline-hover: rgba(34, 184, 207, 0.05);--mantine-color-teal-filled: var(--mantine-color-teal-9);--mantine-color-teal-filled-hover: var(--mantine-color-teal-8);--mantine-color-teal-light: rgba(12, 166, 120, 0.15);--mantine-color-teal-light-hover: rgba(12, 166, 120, 0.2);--mantine-color-teal-light-color: var(--mantine-color-teal-4);--mantine-color-teal-outline: var(--mantine-color-teal-5);--mantine-color-teal-outline-hover: rgba(32, 201, 151, 0.05);--mantine-color-green-filled: var(--mantine-color-green-9);--mantine-color-green-filled-hover: var(--mantine-color-green-8);--mantine-color-green-light: rgba(55, 178, 77, 0.15);--mantine-color-green-light-hover: rgba(55, 178, 77, 0.2);--mantine-color-green-light-color: var(--mantine-color-green-4);--mantine-color-green-outline: var(--mantine-color-green-5);--mantine-color-green-outline-hover: rgba(81, 207, 102, 0.05);--mantine-color-lime-filled: var(--mantine-color-lime-9);--mantine-color-lime-filled-hover: var(--mantine-color-lime-8);--mantine-color-lime-light: rgba(116, 184, 22, 0.15);--mantine-color-lime-light-hover: rgba(116, 184, 22, 0.2);--mantine-color-lime-light-color: var(--mantine-color-lime-4);--mantine-color-lime-outline: var(--mantine-color-lime-5);--mantine-color-lime-outline-hover: rgba(148, 216, 45, 0.05);--mantine-color-yellow-filled: var(--mantine-color-yellow-9);--mantine-color-yellow-filled-hover: var(--mantine-color-yellow-8);--mantine-color-yellow-light: rgba(245, 159, 0, 0.15);--mantine-color-yellow-light-hover: rgba(245, 159, 0, 0.2);--mantine-color-yellow-light-color: var(--mantine-color-yellow-4);--mantine-color-yellow-outline: var(--mantine-color-yellow-5);--mantine-color-yellow-outline-hover: rgba(252, 196, 25, 0.05);--mantine-color-orange-filled: var(--mantine-color-orange-9);--mantine-color-orange-filled-hover: var(--mantine-color-orange-8);--mantine-color-orange-light: rgba(247, 103, 7, 0.15);--mantine-color-orange-light-hover: rgba(247, 103, 7, 0.2);--mantine-color-orange-light-color: var(--mantine-color-orange-4);--mantine-color-orange-outline: var(--mantine-color-orange-5);--mantine-color-orange-outline-hover: rgba(255, 146, 43, 0.05);}:root[data-mantine-color-scheme="light"]{--mantine-color-text: #2e2e2e;--mantine-color-anchor: var(--mantine-color-cyan-9);--mantine-color-dark-filled: var(--mantine-color-dark-9);--mantine-color-dark-filled-hover: var(--mantine-color-dark-8);--mantine-color-dark-light: rgba(20, 20, 20, 0.1);--mantine-color-dark-light-hover: rgba(20, 20, 20, 0.12);--mantine-color-dark-light-color: var(--mantine-color-dark-9);--mantine-color-dark-outline: var(--mantine-color-dark-9);--mantine-color-dark-outline-hover: rgba(20, 20, 20, 0.05);--mantine-color-gray-filled: var(--mantine-color-gray-9);--mantine-color-gray-filled-hover: var(--mantine-color-gray-8);--mantine-color-gray-light: rgba(33, 37, 41, 0.1);--mantine-color-gray-light-hover: rgba(33, 37, 41, 0.12);--mantine-color-gray-light-color: var(--mantine-color-gray-9);--mantine-color-gray-outline: var(--mantine-color-gray-9);--mantine-color-gray-outline-hover: rgba(33, 37, 41, 0.05);--mantine-color-red-filled: var(--mantine-color-red-9);--mantine-color-red-filled-hover: var(--mantine-color-red-8);--mantine-color-red-light: rgba(201, 42, 42, 0.1);--mantine-color-red-light-hover: rgba(201, 42, 42, 0.12);--mantine-color-red-light-color: var(--mantine-color-red-9);--mantine-color-red-outline: var(--mantine-color-red-9);--mantine-color-red-outline-hover: rgba(201, 42, 42, 0.05);--mantine-color-pink-filled: var(--mantine-color-pink-9);--mantine-color-pink-filled-hover: var(--mantine-color-pink-8);--mantine-color-pink-light: rgba(166, 30, 77, 0.1);--mantine-color-pink-light-hover: rgba(166, 30, 77, 0.12);--mantine-color-pink-light-color: var(--mantine-color-pink-9);--mantine-color-pink-outline: var(--mantine-color-pink-9);--mantine-color-pink-outline-hover: rgba(166, 30, 77, 0.05);--mantine-color-grape-filled: var(--mantine-color-grape-9);--mantine-color-grape-filled-hover: var(--mantine-color-grape-8);--mantine-color-grape-light: rgba(134, 46, 156, 0.1);--mantine-color-grape-light-hover: rgba(134, 46, 156, 0.12);--mantine-color-grape-light-color: var(--mantine-color-grape-9);--mantine-color-grape-outline: var(--mantine-color-grape-9);--mantine-color-grape-outline-hover: rgba(134, 46, 156, 0.05);--mantine-color-violet-filled: var(--mantine-color-violet-9);--mantine-color-violet-filled-hover: var(--mantine-color-violet-8);--mantine-color-violet-light: rgba(95, 61, 196, 0.1);--mantine-color-violet-light-hover: rgba(95, 61, 196, 0.12);--mantine-color-violet-light-color: var(--mantine-color-violet-9);--mantine-color-violet-outline: var(--mantine-color-violet-9);--mantine-color-violet-outline-hover: rgba(95, 61, 196, 0.05);--mantine-color-indigo-filled: var(--mantine-color-indigo-9);--mantine-color-indigo-filled-hover: var(--mantine-color-indigo-8);--mantine-color-indigo-light: rgba(54, 79, 199, 0.1);--mantine-color-indigo-light-hover: rgba(54, 79, 199, 0.12);--mantine-color-indigo-light-color: var(--mantine-color-indigo-9);--mantine-color-indigo-outline: var(--mantine-color-indigo-9);--mantine-color-indigo-outline-hover: rgba(54, 79, 199, 0.05);--mantine-color-blue-filled: var(--mantine-color-blue-9);--mantine-color-blue-filled-hover: var(--mantine-color-blue-8);--mantine-color-blue-light: rgba(24, 100, 171, 0.1);--mantine-color-blue-light-hover: rgba(24, 100, 171, 0.12);--mantine-color-blue-light-color: var(--mantine-color-blue-9);--mantine-color-blue-outline: var(--mantine-color-blue-9);--mantine-color-blue-outline-hover: rgba(24, 100, 171, 0.05);--mantine-color-cyan-filled: var(--mantine-color-cyan-9);--mantine-color-cyan-filled-hover: var(--mantine-color-cyan-8);--mantine-color-cyan-light: rgba(11, 114, 133, 0.1);--mantine-color-cyan-light-hover: rgba(11, 114, 133, 0.12);--mantine-color-cyan-light-color: var(--mantine-color-cyan-9);--mantine-color-cyan-outline: var(--mantine-color-cyan-9);--mantine-color-cyan-outline-hover: rgba(11, 114, 133, 0.05);--mantine-color-teal-filled: var(--mantine-color-teal-9);--mantine-color-teal-filled-hover: var(--mantine-color-teal-8);--mantine-color-teal-light: rgba(8, 127, 91, 0.1);--mantine-color-teal-light-hover: rgba(8, 127, 91, 0.12);--mantine-color-teal-light-color: var(--mantine-color-teal-9);--mantine-color-teal-outline: var(--mantine-color-teal-9);--mantine-color-teal-outline-hover: rgba(8, 127, 91, 0.05);--mantine-color-green-filled: var(--mantine-color-green-9);--mantine-color-green-filled-hover: var(--mantine-color-green-8);--mantine-color-green-light: rgba(43, 138, 62, 0.1);--mantine-color-green-light-hover: rgba(43, 138, 62, 0.12);--mantine-color-green-light-color: var(--mantine-color-green-9);--mantine-color-green-outline: var(--mantine-color-green-9);--mantine-color-green-outline-hover: rgba(43, 138, 62, 0.05);--mantine-color-lime-filled: var(--mantine-color-lime-9);--mantine-color-lime-filled-hover: var(--mantine-color-lime-8);--mantine-color-lime-light: rgba(92, 148, 13, 0.1);--mantine-color-lime-light-hover: rgba(92, 148, 13, 0.12);--mantine-color-lime-light-color: var(--mantine-color-lime-9);--mantine-color-lime-outline: var(--mantine-color-lime-9);--mantine-color-lime-outline-hover: rgba(92, 148, 13, 0.05);--mantine-color-yellow-filled: var(--mantine-color-yellow-9);--mantine-color-yellow-filled-hover: var(--mantine-color-yellow-8);--mantine-color-yellow-light: rgba(230, 119, 0, 0.1);--mantine-color-yellow-light-hover: rgba(230, 119, 0, 0.12);--mantine-color-yellow-light-color: var(--mantine-color-yellow-9);--mantine-color-yellow-outline: var(--mantine-color-yellow-9);--mantine-color-yellow-outline-hover: rgba(230, 119, 0, 0.05);--mantine-color-orange-filled: var(--mantine-color-orange-9);--mantine-color-orange-filled-hover: var(--mantine-color-orange-8);--mantine-color-orange-light: rgba(217, 72, 15, 0.1);--mantine-color-orange-light-hover: rgba(217, 72, 15, 0.12);--mantine-color-orange-light-color: var(--mantine-color-orange-9);--mantine-color-orange-outline: var(--mantine-color-orange-9);--mantine-color-orange-outline-hover: rgba(217, 72, 15, 0.05);}
+  </style>
+  <style
+    data-mantine-styles="classes"
+  >
+    @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
+  </style>
+  <div
+    class="m_7485cace mantine-Container-root"
+    data-fluid="true"
+    style="margin: 0rem; padding: 0rem;"
+  >
+    <div
+      class="m_6d731127 mantine-Stack-root"
+      style="--stack-gap: var(--mantine-spacing-sm); --stack-align: stretch; --stack-justify: flex-start;"
+    >
+      <div
+        class="m_e615b15f mantine-Card-root m_1b7284a3 mantine-Paper-root"
+        data-with-border="true"
+        style="--paper-radius: var(--mantine-radius-md); --paper-shadow: var(--mantine-shadow-sm);"
+      >
+        <div
+          class="m_599a2148 mantine-Card-section"
+          data-first-section="true"
+          data-with-border="true"
+          role="button"
+        >
+          <div
+            class="m_4081bf90 mantine-Group-root"
+            style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: space-between; --group-wrap: wrap;"
+          >
+            <div
+              class="m_4081bf90 mantine-Group-root"
+              style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
+            >
+              <button
+                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
+                data-variant="default"
+                style="--ai-bg: var(--mantine-color-default); --ai-hover: var(--mantine-color-default-hover); --ai-color: var(--mantine-color-default-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
+                type="button"
+              >
+                <span
+                  class="m_8d3afb97 mantine-ActionIcon-icon"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    viewBox="0 0 256 256"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <div
+                class=""
+              />
+              <svg
+                fill="currentColor"
+                height="1em"
+                viewBox="0 0 256 256"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M223.68,66.15,135.68,18h0a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32h0l80.34,44L128,120,47.66,76ZM40,90l80,43.78v85.79L40,175.82Zm96,129.57V133.82L216,90v85.78Z"
+                />
+              </svg>
+              <span>
+                Example A
+              </span>
+            </div>
+            <div
+              class="m_4081bf90 mantine-Group-root"
+              style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
+            >
+              <button
+                aria-label="Move Up"
+                class="haring-focus m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
+                data-disabled="true"
+                data-variant="subtle"
+                disabled=""
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                type="button"
+              >
+                <span
+                  class="m_8d3afb97 mantine-ActionIcon-icon"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 256 256"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <button
+                aria-label="Move Down"
+                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
+                data-variant="subtle"
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                type="button"
+              >
+                <span
+                  class="m_8d3afb97 mantine-ActionIcon-icon"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 256 256"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M205.66,149.66l-72,72a8,8,0,0,1-11.32,0l-72-72a8,8,0,0,1,11.32-11.32L120,196.69V40a8,8,0,0,1,16,0V196.69l58.34-58.35a8,8,0,0,1,11.32,11.32Z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <button
+                aria-label="Delete"
+                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
+                data-variant="subtle"
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                type="button"
+              >
+                <span
+                  class="m_8d3afb97 mantine-ActionIcon-icon"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 256 256"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden="false"
+          class=""
+          style="box-sizing: border-box; opacity: 1; transition: opacity 200ms ease;"
+        >
+          <div
+            class="m_7485cace mantine-Container-root"
+            data-fluid="true"
+          >
+            <div
+              class="m_4081bf90 mantine-Group-root"
+              style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
+            >
+              <input
+                id="example.0.input1"
+                placeholder="nested field 1"
+                required=""
+                value="existing value"
+              />
+              <input
+                id="example.0.input2"
+                placeholder="nested field 2"
+                required=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="m_599a2148 mantine-Card-section"
+          data-last-section="true"
+          style="padding: 0rem;"
+        />
+      </div>
+      <div
+        class="m_e615b15f mantine-Card-root m_1b7284a3 mantine-Paper-root"
+        data-with-border="true"
+        style="--paper-radius: var(--mantine-radius-md); --paper-shadow: var(--mantine-shadow-sm);"
+      >
+        <div
+          class="m_599a2148 mantine-Card-section"
+          data-first-section="true"
+          data-with-border="true"
+          role="button"
+        >
+          <div
+            class="m_4081bf90 mantine-Group-root"
+            style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: space-between; --group-wrap: wrap;"
+          >
+            <div
+              class="m_4081bf90 mantine-Group-root"
+              style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
+            >
+              <button
+                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
+                data-variant="default"
+                style="--ai-bg: var(--mantine-color-default); --ai-hover: var(--mantine-color-default-hover); --ai-color: var(--mantine-color-default-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
+                type="button"
+              >
+                <span
+                  class="m_8d3afb97 mantine-ActionIcon-icon"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    viewBox="0 0 256 256"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <div
+                class=""
+              />
+              <svg
+                fill="currentColor"
+                height="1em"
+                viewBox="0 0 256 256"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M223.45,40.07a8,8,0,0,0-7.52-7.52C139.8,28.08,78.82,51,52.82,94a87.09,87.09,0,0,0-12.76,49c.57,15.92,5.21,32,13.79,47.85l-19.51,19.5a8,8,0,0,0,11.32,11.32l19.5-19.51C81,210.73,97.09,215.37,113,215.94q1.67.06,3.33.06A86.93,86.93,0,0,0,162,203.18C205,177.18,227.93,116.21,223.45,40.07ZM153.75,189.5c-22.75,13.78-49.68,14-76.71.77l88.63-88.62a8,8,0,0,0-11.32-11.32L65.73,179c-13.19-27-13-54,.77-76.71,22.09-36.47,74.6-56.44,141.31-54.06C210.2,114.89,190.22,167.41,153.75,189.5Z"
+                />
+              </svg>
+              <span>
+                Example B
+              </span>
+            </div>
+            <div
+              class="m_4081bf90 mantine-Group-root"
+              style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
+            >
+              <button
+                aria-label="Move Up"
+                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
+                data-variant="subtle"
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                type="button"
+              >
+                <span
+                  class="m_8d3afb97 mantine-ActionIcon-icon"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 256 256"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <button
+                aria-label="Move Down"
+                class="haring-focus m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
+                data-disabled="true"
+                data-variant="subtle"
+                disabled=""
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                type="button"
+              >
+                <span
+                  class="m_8d3afb97 mantine-ActionIcon-icon"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 256 256"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M205.66,149.66l-72,72a8,8,0,0,1-11.32,0l-72-72a8,8,0,0,1,11.32-11.32L120,196.69V40a8,8,0,0,1,16,0V196.69l58.34-58.35a8,8,0,0,1,11.32,11.32Z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <button
+                aria-label="Delete"
+                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
+                data-variant="subtle"
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                type="button"
+              >
+                <span
+                  class="m_8d3afb97 mantine-ActionIcon-icon"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 256 256"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden="false"
+          class=""
+          style="box-sizing: border-box; opacity: 1; transition: opacity 200ms ease;"
+        >
+          <div
+            class="m_7485cace mantine-Container-root"
+            data-fluid="true"
+          >
+            <select
+              id="example.1"
+              required=""
+            >
+              <option
+                disabled=""
+                value=""
+              >
+                -- Please choose an option --
+              </option>
+              <option
+                value="selectA"
+              >
+                Value A
+              </option>
+              <option
+                selected=""
+                value="selectB"
+              >
+                Value B
+              </option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="m_599a2148 mantine-Card-section"
+          data-last-section="true"
+          style="padding: 0rem;"
+        />
+      </div>
+    </div>
+    <div
+      class="m_7485cace mantine-Container-root"
+      data-fluid="true"
+    >
+      <p
+        class="haring-focus m_b6d8b162 mantine-Text-root"
+        style="font-weight: bold;"
+      />
+      <div
+        class="m_4081bf90 mantine-Group-root"
+        style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
+      >
+        <button
+          class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
+          data-size="md"
+          data-variant="default"
+          data-with-left-section="true"
+          label="Example A"
+          style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: var(--mantine-radius-md); --button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
+          type="button"
+        >
+          <span
+            class="m_80f1301b mantine-Button-inner"
+          >
+            <span
+              class="m_a74036a mantine-Button-section"
+              data-position="left"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                viewBox="0 0 256 256"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M223.68,66.15,135.68,18h0a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32h0l80.34,44L128,120,47.66,76ZM40,90l80,43.78v85.79L40,175.82Zm96,129.57V133.82L216,90v85.78Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="m_811560b9 mantine-Button-label"
+            >
+              Example A
+            </span>
+          </span>
+        </button>
+        <button
+          class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
+          data-size="md"
+          data-variant="default"
+          data-with-left-section="true"
+          label="Example B"
+          style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: var(--mantine-radius-md); --button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
+          type="button"
+        >
+          <span
+            class="m_80f1301b mantine-Button-inner"
+          >
+            <span
+              class="m_a74036a mantine-Button-section"
+              data-position="left"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                viewBox="0 0 256 256"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M223.45,40.07a8,8,0,0,0-7.52-7.52C139.8,28.08,78.82,51,52.82,94a87.09,87.09,0,0,0-12.76,49c.57,15.92,5.21,32,13.79,47.85l-19.51,19.5a8,8,0,0,0,11.32,11.32l19.5-19.51C81,210.73,97.09,215.37,113,215.94q1.67.06,3.33.06A86.93,86.93,0,0,0,162,203.18C205,177.18,227.93,116.21,223.45,40.07ZM153.75,189.5c-22.75,13.78-49.68,14-76.71.77l88.63-88.62a8,8,0,0,0-11.32-11.32L65.73,179c-13.19-27-13-54,.77-76.71,22.09-36.47,74.6-56.44,141.31-54.06C210.2,114.89,190.22,167.41,153.75,189.5Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="m_811560b9 mantine-Button-label"
+            >
+              Example B
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
