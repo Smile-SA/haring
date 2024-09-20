@@ -50,7 +50,7 @@ export interface IDynamicZoneBlockProps extends CardProps {
   actions?: IAction<IDynamicZoneBlockReference>[];
   children: ReactNode;
   footerChildren?: ReactNode;
-  headerChildren: ReactNode;
+  headerChildren?: ReactNode;
   internalComponentProps?: IDynamicZoneBlockInternalComponentProps;
   onToggle: (opened: boolean) => void;
   opened: boolean;

@@ -19,6 +19,9 @@ export const FormDynamicZone: IStory = {
   args: {
     availableBlocks: availableBlocksMock,
     blocksArray: blocksMock,
-    onUpdatedArray: action('results'),
+    onAppendUpdate: action('append'),
+    onRemoveUpdate: action('remove'),
+    onSwapUpdate: action('swap'),
+    onToggleUpdate: action('toggle'),
   },
 };

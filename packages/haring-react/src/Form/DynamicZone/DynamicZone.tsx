@@ -1,5 +1,9 @@
 import type { IDynamicZoneBlockInternalComponentProps } from './DynamicZoneBlock/DynamicZoneBlock';
-import type { IBaseBlock, IBaseBlockButton, IBaseBlockType } from '../../types';
+import type {
+  IBaseBlockButton,
+  IBaseBlockFull,
+  IBaseBlockType,
+} from '../../types';
 import type {
   CardProps,
   ContainerProps,
@@ -14,11 +18,10 @@ import { Button, Container, Group, Stack, Text } from '@mantine/core';
 import classes from './DynamicZone.module.css';
 import { DynamicZoneBlock } from './DynamicZoneBlock/DynamicZoneBlock';
 
-export interface IDynamicZoneProps<Block extends IBaseBlock>
-  extends ContainerProps {
+export interface IDynamicZoneProps extends ContainerProps {
   blockCardProps?: CardProps;
   blockOptions: IBaseBlockButton[];
-  blocks: Block[];
+  blocks: IBaseBlockFull[];
   blocksStackProps?: StackProps;
   bottomContainerProps?: ContainerProps;
   buttonsGroupProps?: GroupProps;
@@ -26,13 +29,15 @@ export interface IDynamicZoneProps<Block extends IBaseBlock>
   buttonsTextProps?: TextProps;
   internalBlockCardProps?: IDynamicZoneBlockInternalComponentProps;
   onAppendBlock: (blockType: IBaseBlockType) => void;
-  onRenderBlockContent: (block: Block, index: number) => ReactElement;
-  onToggleBlock: (block: Block, index: number, opened: boolean) => void;
+  onRenderBlockContent: (block: IBaseBlockFull, index: number) => ReactElement;
+  onToggleBlock: (
+    block: IBaseBlockFull,
+    index: number,
+    opened: boolean,
+  ) => void;
 }
 
-export function DynamicZone<Block extends IBaseBlock>(
-  props: IDynamicZoneProps<Block>,
-): ReactElement {
+export function DynamicZone(props: IDynamicZoneProps): ReactElement {
   const {
     blockCardProps,
     blockOptions,

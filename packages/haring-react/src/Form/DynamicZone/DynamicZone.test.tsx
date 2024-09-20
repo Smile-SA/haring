@@ -1,4 +1,4 @@
-import type { IBaseBlock } from '../../types';
+import type { IBaseBlockOptions } from '../../types';
 import type { ReactElement } from 'react';
 
 import { renderWithProviders } from '@smile/haring-react-shared/test-utils';
@@ -10,7 +10,7 @@ import { dynamicZoneBlocks, dynamicZoneButtons } from './DynamicZone.mock';
 
 describe('DynamicZone', () => {
   it('matches snapshot', () => {
-    const onRender = (_b: IBaseBlock, index: number): ReactElement => (
+    const onRender = (_b: IBaseBlockOptions, index: number): ReactElement => (
       <input key={index} />
     );
     const { container } = renderWithProviders(

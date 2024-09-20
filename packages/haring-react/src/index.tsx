@@ -133,6 +133,8 @@ export type {
   IThumbnailAction,
   IThumbnailData,
   IBaseBlock,
+  IBaseBlockOptions,
+  IBaseBlockFull,
   IBaseBlockButton,
   IBaseBlockType,
   IFormDynamicZoneBlock,

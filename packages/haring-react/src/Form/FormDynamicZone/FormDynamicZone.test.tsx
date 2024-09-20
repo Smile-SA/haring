@@ -12,7 +12,10 @@ describe('FormDynamicZone', () => {
       <FormDynamicZone<IExampleBlock>
         availableBlocks={availableBlocksMock}
         blocksArray={blocksMock}
-        onUpdatedArray={action('onUpdatedArray')}
+        onAppendUpdate={action('append')}
+        onRemoveUpdate={action('remove')}
+        onSwapUpdate={action('swap')}
+        onToggleUpdate={action('toggle')}
       />,
     );
     expect(container).toMatchSnapshot();

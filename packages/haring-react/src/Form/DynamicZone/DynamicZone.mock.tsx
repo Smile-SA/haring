@@ -1,5 +1,5 @@
 import type { IDynamicZoneBlockReference } from './DynamicZoneBlock/DynamicZoneBlock';
-import type { IBaseBlock, IBaseBlockButton } from '../../types';
+import type { IBaseBlockButton, IBaseBlockFull } from '../../types';
 import type { IAction } from '@smile/haring-react-shared';
 
 import {
@@ -36,7 +36,7 @@ const dynamicZoneBlockActionsMock: IAction<IDynamicZoneBlockReference>[] = [
   },
 ];
 
-export const dynamicZoneBlocks: IBaseBlock[] = [
+export const dynamicZoneBlocks: IBaseBlockFull[] = [
   {
     blockActions: dynamicZoneBlockActionsMock,
     blockHeader: (

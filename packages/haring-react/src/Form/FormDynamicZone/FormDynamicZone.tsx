@@ -1,10 +1,15 @@
-import type { IBaseBlock, IFormDynamicZoneBlock } from '../../types';
+import type {
+  IBaseBlock,
+  IBaseBlockFull,
+  IFormDynamicZoneBlock,
+} from '../../types';
 import type { IBaseBlockButton, IBaseBlockType } from '@smile/haring-react';
 import type { IDynamicZoneBlockReference } from '@smile/haring-react/src/Form/DynamicZone/DynamicZoneBlock/DynamicZoneBlock';
 import type { IAction } from '@smile/haring-react-shared';
 import type { ReactElement } from 'react';
 
 import { ArrowDown, ArrowUp, Trash } from '@phosphor-icons/react';
+import { isNotNullNorEmpty } from '@smile/haring-react-shared';
 
 import { DynamicZone } from '../DynamicZone/DynamicZone';
 
@@ -20,26 +25,32 @@ const defaultActionLabels: IFormDynamicZoneActionLabels = {
   moveUpLabel: 'Move Up',
 };
 
-export interface IFormDynamicZoneProps<T extends IBaseBlock> {
+export interface IFormDynamicZoneProps<Block extends IBaseBlock> {
   actionLabels?: IFormDynamicZoneActionLabels;
-  availableBlocks: IFormDynamicZoneBlock<T>[];
-  blocksArray: T[];
-  onUpdatedArray: (newBlocksArray: T[]) => void;
+  availableBlocks: IFormDynamicZoneBlock<Block>[];
+  blocksArray: Block[];
+  onAppendUpdate: (newBlock: Block) => void;
+  onRemoveUpdate: (index: number) => void;
+  onSwapUpdate: (firstIndex: number, secondIndex: number) => void;
+  onToggleUpdate: (index: number, opened: boolean) => void;
 }
 
-export function FormDynamicZone<T extends IBaseBlock>(
-  props: IFormDynamicZoneProps<T>,
+export function FormDynamicZone<Block extends IBaseBlock>(
+  props: IFormDynamicZoneProps<Block>,
 ): ReactElement {
   const {
     actionLabels = defaultActionLabels,
     availableBlocks,
     blocksArray,
-    onUpdatedArray,
+    onAppendUpdate,
+    onRemoveUpdate,
+    onSwapUpdate,
+    onToggleUpdate,
   } = props;
 
   const blockOptions: IBaseBlockButton[] = availableBlocks.map((b) => b.button);
 
-  function renderBlock(block: T, index: number): ReactElement {
+  function renderBlock(block: IBaseBlockFull, index: number): ReactElement {
     const correspondingType = availableBlocks.find(
       (b) => b.block.blockType === block.blockType,
     );
@@ -52,9 +63,7 @@ export function FormDynamicZone<T extends IBaseBlock>(
   }
 
   function onRemove(ref: IDynamicZoneBlockReference): void {
-    const newArray = [...blocksArray];
-    delete newArray[ref.index];
-    onUpdatedArray(newArray);
+    onRemoveUpdate(ref.index);
   }
 
   function onSwap(
@@ -63,21 +72,16 @@ export function FormDynamicZone<T extends IBaseBlock>(
   ): void {
     const secondIndex = ref.index + (direction === 'up' ? -1 : 1);
     if (secondIndex >= 0 && secondIndex < ref.arrayLength) {
-      const newArray = [...blocksArray];
-      // swap two elements in array
-      newArray[ref.index] = newArray.splice(
-        secondIndex,
-        1,
-        newArray[ref.index],
-      )[0];
-      onUpdatedArray(newArray);
+      onSwapUpdate(ref.index, secondIndex);
     }
   }
 
-  function onToggle(_block: T, index: number, opened: boolean): void {
-    const newArray = [...blocksArray];
-    newArray[index] = { ...newArray[index], opened };
-    onUpdatedArray(newArray);
+  function onToggle(
+    _block: IBaseBlockFull,
+    index: number,
+    opened: boolean,
+  ): void {
+    onToggleUpdate(index, opened);
   }
 
   function isMoveDisabled(
@@ -121,23 +125,26 @@ export function FormDynamicZone<T extends IBaseBlock>(
         `Could not append a block of blockType '${type} in given IFormDynamicZoneBlock[]'`,
       );
     }
-    const newArray = [...blocksArray];
-    newArray.push({
-      ...(correspondingType.block as T),
+    const newBlock = {
+      ...correspondingType.block,
       id: crypto.randomUUID(),
-    });
-    onUpdatedArray(newArray);
+    } as Block;
+    onAppendUpdate(newBlock);
   }
 
-  const blocksWithActions = blocksArray.map((b) => ({
-    ...b,
-    blockActions: formDynamicZoneDefaultActions,
-  }));
+  const blocksWithOptionsAndActions: IBaseBlockFull[] = blocksArray
+    .filter(isNotNullNorEmpty)
+    .map((b) => ({
+      ...b,
+      blockActions: formDynamicZoneDefaultActions,
+      ...availableBlocks.find((o) => o.block.blockType === b.blockType)
+        ?.blockOptions,
+    }));
 
   return (
-    <DynamicZone<T>
+    <DynamicZone
       blockOptions={blockOptions}
-      blocks={blocksWithActions}
+      blocks={blocksWithOptionsAndActions}
       fluid
       m={0}
       onAppendBlock={onAppend}

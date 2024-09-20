@@ -1,4 +1,8 @@
-import type { IBaseBlock, IFormDynamicZoneBlock } from '../../types';
+import type {
+  IBaseBlock,
+  IBaseBlockFull,
+  IFormDynamicZoneBlock,
+} from '../../types';
 import type { ReactElement } from 'react';
 
 import { Group } from '@mantine/core';
@@ -8,7 +12,7 @@ export interface IExampleBlock extends IBaseBlock {
   value?: string;
 }
 
-export const blocksMock: IExampleBlock[] = [
+export const blocksMock: IBaseBlockFull<IExampleBlock>[] = [
   {
     blockHeader: (
       <>
@@ -38,15 +42,17 @@ export const blocksMock: IExampleBlock[] = [
 export const availableBlocksMock: IFormDynamicZoneBlock<IExampleBlock>[] = [
   {
     block: {
+      blockType: 'exampleA',
+      opened: true,
+      value: '',
+    },
+    blockOptions: {
       blockHeader: (
         <>
           <Cube key="1" />
           <span key="2">Example A</span>
         </>
       ),
-      blockType: 'exampleA',
-      opened: true,
-      value: '',
     },
     button: {
       blockType: 'exampleA',
@@ -75,15 +81,17 @@ export const availableBlocksMock: IFormDynamicZoneBlock<IExampleBlock>[] = [
   },
   {
     block: {
+      blockType: 'exampleB',
+      opened: true,
+      value: '',
+    },
+    blockOptions: {
       blockHeader: (
         <>
           <Leaf key="1" />
           <span key="2">Example B</span>
         </>
       ),
-      blockType: 'exampleB',
-      opened: true,
-      value: '',
     },
     button: {
       blockType: 'exampleB',
