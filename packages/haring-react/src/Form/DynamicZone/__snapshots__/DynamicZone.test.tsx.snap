@@ -85,7 +85,7 @@ exports[`DynamicZone matches snapshot 1`] = `
                 aria-label="Move Up"
                 class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                 data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: rgba(0, 0, 0, 0.12); --ai-color: white; --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                 type="button"
               >
                 <span
@@ -108,7 +108,7 @@ exports[`DynamicZone matches snapshot 1`] = `
                 aria-label="Move Down"
                 class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                 data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: rgba(0, 0, 0, 0.12); --ai-color: white; --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                 type="button"
               >
                 <span
@@ -131,7 +131,7 @@ exports[`DynamicZone matches snapshot 1`] = `
                 aria-label="Delete"
                 class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                 data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: rgba(0, 0, 0, 0.12); --ai-color: white; --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                 type="button"
               >
                 <span
@@ -236,7 +236,7 @@ exports[`DynamicZone matches snapshot 1`] = `
                 aria-label="Move Up"
                 class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                 data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: rgba(0, 0, 0, 0.12); --ai-color: white; --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                 type="button"
               >
                 <span
@@ -259,7 +259,7 @@ exports[`DynamicZone matches snapshot 1`] = `
                 aria-label="Move Down"
                 class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                 data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: rgba(0, 0, 0, 0.12); --ai-color: white; --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                 type="button"
               >
                 <span
@@ -282,7 +282,7 @@ exports[`DynamicZone matches snapshot 1`] = `
                 aria-label="Delete"
                 class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                 data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: rgba(0, 0, 0, 0.12); --ai-color: white; --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                 type="button"
               >
                 <span
@@ -389,7 +389,7 @@ exports[`DynamicZone matches snapshot 1`] = `
                 aria-label="Move Up"
                 class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                 data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: rgba(0, 0, 0, 0.12); --ai-color: white; --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                 type="button"
               >
                 <span
@@ -412,7 +412,7 @@ exports[`DynamicZone matches snapshot 1`] = `
                 aria-label="Move Down"
                 class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                 data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: rgba(0, 0, 0, 0.12); --ai-color: white; --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                 type="button"
               >
                 <span
@@ -435,7 +435,7 @@ exports[`DynamicZone matches snapshot 1`] = `
                 aria-label="Delete"
                 class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
                 data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: rgba(0, 0, 0, 0.12); --ai-color: white; --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
                 type="button"
               >
                 <span
@@ -481,10 +481,6 @@ exports[`DynamicZone matches snapshot 1`] = `
       class="m_7485cace mantine-Container-root"
       data-fluid="true"
     >
-      <p
-        class="haring-focus m_b6d8b162 mantine-Text-root"
-        style="font-weight: bold;"
-      />
       <div
         class="m_4081bf90 mantine-Group-root"
         style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
@@ -494,7 +490,6 @@ exports[`DynamicZone matches snapshot 1`] = `
           data-size="md"
           data-variant="default"
           data-with-left-section="true"
-          label="Default"
           style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: var(--mantine-radius-md); --button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
           type="button"
         >
@@ -529,7 +524,6 @@ exports[`DynamicZone matches snapshot 1`] = `
           data-size="md"
           data-variant="default"
           data-with-left-section="true"
-          label="Other"
           style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: var(--mantine-radius-md); --button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
           type="button"
         >
@@ -564,7 +558,6 @@ exports[`DynamicZone matches snapshot 1`] = `
           data-size="md"
           data-variant="default"
           data-with-left-section="true"
-          label="Stuff"
           style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: var(--mantine-radius-md); --button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
           type="button"
         >

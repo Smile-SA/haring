@@ -1,6 +1,7 @@
 'use client';
 
 import type {
+  ActionIconProps,
   ButtonProps,
   FloatingPosition,
   GroupProps,
@@ -34,7 +35,8 @@ export type IActionListAction<Data extends Record<string, unknown>> =
 
 export interface IActionListProps<Data extends Record<string, unknown>>
   extends GroupProps {
-  actionButtonProps?: ButtonProps;
+  actionButtonDefaultProps?: ButtonProps;
+  actionIconDefaultProps?: ActionIconProps;
   actionTooltipProps?: TooltipProps;
   actions: IActionListAction<Data>[];
   isCompactStyle?: boolean;
@@ -48,7 +50,8 @@ export function ActionList<Data extends Record<string, unknown>>(
   props: IActionListProps<Data>,
 ): ReactNode {
   const {
-    actionButtonProps,
+    actionButtonDefaultProps,
+    actionIconDefaultProps,
     actionTooltipProps,
     actions,
     isCompactStyle = false,
@@ -140,6 +143,7 @@ export function ActionList<Data extends Record<string, unknown>>(
         leftSection={getActionIcon(action)}
         onClick={() => handleAction(action)}
         variant={action.color ? 'filled' : 'default'}
+        {...actionButtonDefaultProps}
         {...getActionComponentProps(action)}
       >
         {getActionLabel(action)}
@@ -159,6 +163,7 @@ export function ActionList<Data extends Record<string, unknown>>(
           radius={4}
           type="button"
           variant="subtle"
+          {...actionIconDefaultProps}
           {...getActionComponentProps(action)}
         >
           {getActionIcon(action)}

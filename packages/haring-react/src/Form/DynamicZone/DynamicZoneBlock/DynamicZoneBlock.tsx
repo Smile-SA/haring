@@ -28,7 +28,10 @@ export interface IDynamicZoneBlockInternalComponentProps {
   contentCollapseProps?: CollapseProps;
   contentContainerProps?: ContainerProps;
   footerCardSectionProps?: CardSectionProps;
-  headerActionListProps?: IActionListProps<IDynamicZoneBlockReference>;
+  headerActionListProps?: Omit<
+    IActionListProps<IDynamicZoneBlockReference>,
+    'actions' | 'isCompactStyle' | 'selectedElements'
+  >;
   headerCardSectionProps?: CardSectionProps;
   headerGroupProps?: GroupProps;
   toggleComponentProps?: IDynamicZoneBlockToggleProps;

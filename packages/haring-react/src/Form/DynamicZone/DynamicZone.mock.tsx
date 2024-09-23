@@ -1,5 +1,5 @@
 import type { IDynamicZoneBlockReference } from './DynamicZoneBlock/DynamicZoneBlock';
-import type { IBaseBlockButton, IBaseBlockFull } from '../../types';
+import type { IBaseBlockButtonOptions, IBaseBlockFull } from '../../types';
 import type { IAction } from '@smile/haring-react-shared';
 
 import {
@@ -14,21 +14,18 @@ import { action } from '@storybook/addon-actions';
 
 const dynamicZoneBlockActionsMock: IAction<IDynamicZoneBlockReference>[] = [
   {
-    color: 'white',
     icon: <ArrowUp size={16} />,
     id: 'move-up',
     label: 'Move Up',
     onAction: action('Move block up'),
   },
   {
-    color: 'white',
     icon: <ArrowDown size={16} />,
     id: 'move-down',
     label: 'Move Down',
     onAction: action('Move block down'),
   },
   {
-    color: 'white',
     icon: <Trash size={16} />,
     id: 'delete',
     label: 'Delete',
@@ -80,7 +77,7 @@ export const dynamicZoneBlocks: IBaseBlockFull[] = [
   },
 ];
 
-export const dynamicZoneButtons: IBaseBlockButton[] = [
+export const dynamicZoneButtons: IBaseBlockButtonOptions[] = [
   { blockType: 'default', label: 'Default', leftSection: <Alien /> },
   { blockType: 'other', label: 'Other', leftSection: <Leaf /> },
   { blockType: 'stuff', label: 'Stuff', leftSection: <TreasureChest /> },

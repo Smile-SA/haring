@@ -1,5 +1,5 @@
 import type { IDynamicZoneBlockReference } from '../Form/DynamicZone/DynamicZoneBlock/DynamicZoneBlock';
-import type { ButtonProps } from '@mantine/core';
+import type { ButtonProps, CardProps, TooltipProps } from '@mantine/core';
 import type {
   IAction,
   IOmitRespectIndexSignature,
@@ -14,23 +14,30 @@ export interface IBaseBlock extends Record<string, unknown> {
   opened: boolean;
 }
 
-export interface IBaseBlockOptions {
+export interface IBaseBlockCardOptions {
   blockActions?: IAction<IDynamicZoneBlockReference>[];
+  blockCardProps?: CardProps;
   blockFooter?: ReactNode;
   blockHeader?: ReactNode;
 }
 
 export type IBaseBlockFull<Block extends IBaseBlock = IBaseBlock> = Block &
-  IBaseBlockOptions;
+  IBaseBlockCardOptions;
 
-export interface IBaseBlockButton extends ButtonProps {
+export interface IBaseBlockButtonOptions extends ButtonProps {
   blockType: IBaseBlockType;
-  label: string;
+  label: string | ((buttonProps: ButtonProps) => string);
+  tooltipLabel?: string | ((buttonProps: ButtonProps) => string);
+  tooltipProps?: Omit<TooltipProps, 'children' | 'key' | 'label'>;
+}
+
+export interface IBaseBlockButtonFullOptions extends IBaseBlockButtonOptions {
+  maxInstances?: number;
 }
 
 export interface IFormDynamicZoneBlock<Block extends IBaseBlock> {
   block: IOmitRespectIndexSignature<Block, 'id'>;
-  blockOptions: IBaseBlockOptions;
-  button: IBaseBlockButton;
+  blockButtonOptions: IBaseBlockButtonFullOptions;
+  blockCardOptions: IBaseBlockCardOptions;
   renderFunc: (block: IBaseBlockFull, index: number) => ReactElement;
 }

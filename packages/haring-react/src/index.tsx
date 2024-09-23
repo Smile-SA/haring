@@ -133,9 +133,9 @@ export type {
   IThumbnailAction,
   IThumbnailData,
   IBaseBlock,
-  IBaseBlockOptions,
+  IBaseBlockCardOptions,
   IBaseBlockFull,
-  IBaseBlockButton,
+  IBaseBlockButtonOptions,
   IBaseBlockType,
   IFormDynamicZoneBlock,
 } from './types';

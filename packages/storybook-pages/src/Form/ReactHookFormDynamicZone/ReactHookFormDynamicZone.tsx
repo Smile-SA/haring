@@ -88,18 +88,18 @@ export function ReactHookFormDynamicZone(
         opened: true,
         value: '',
       },
-      blockOptions: {
+      blockButtonOptions: {
+        blockType: 'exampleA',
+        label: 'Example A',
+        leftSection: <Cube />,
+      },
+      blockCardOptions: {
         blockHeader: (
           <>
             <Cube key="1" />
             <span key="2">Example A</span>
           </>
         ),
-      },
-      button: {
-        blockType: 'exampleA',
-        label: 'Example A',
-        leftSection: <Cube />,
       },
       renderFunc: (b: IExampleBlock, i: number): ReactElement => {
         return (
@@ -130,18 +130,18 @@ export function ReactHookFormDynamicZone(
         opened: true,
         selected: '',
       },
-      blockOptions: {
+      blockButtonOptions: {
+        blockType: 'exampleB',
+        label: 'Example B',
+        leftSection: <Leaf />,
+      },
+      blockCardOptions: {
         blockHeader: (
           <>
             <Leaf key="1" />
             <span key="2">Example B</span>
           </>
         ),
-      },
-      button: {
-        blockType: 'exampleB',
-        label: 'Example B',
-        leftSection: <Leaf />,
       },
       renderFunc: (b: IExampleBlock, i: number): ReactElement => {
         return (
@@ -167,7 +167,6 @@ export function ReactHookFormDynamicZone(
   //  feeding it into the form defaultValues and sending it down into the dynamic zone,
   //  then maybe some way to give default values on register?,
   //  then test error display and various complex use cases,
-  //  then add the feature of limited quantity of some blocks (through the blockOptions probably, and i'd assume at the FormDynamicZone level?)
   //  then maybe test animations
 
   return (

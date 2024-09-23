@@ -1,15 +1,21 @@
 import type {
   IBaseBlock,
+  IBaseBlockButtonOptions,
   IBaseBlockFull,
   IFormDynamicZoneBlock,
 } from '../../types';
-import type { IBaseBlockButton, IBaseBlockType } from '@smile/haring-react';
-import type { IDynamicZoneBlockReference } from '@smile/haring-react/src/Form/DynamicZone/DynamicZoneBlock/DynamicZoneBlock';
+import type { IDynamicZoneInternalComponentProps } from '../DynamicZone/DynamicZone';
+import type { IBaseBlockType } from '@smile/haring-react';
+import type {
+  IDynamicZoneBlockInternalComponentProps,
+  IDynamicZoneBlockReference,
+} from '@smile/haring-react/src/Form/DynamicZone/DynamicZoneBlock/DynamicZoneBlock';
 import type { IAction } from '@smile/haring-react-shared';
 import type { ReactElement } from 'react';
 
 import { ArrowDown, ArrowUp, Trash } from '@phosphor-icons/react';
 import { isNotNullNorEmpty } from '@smile/haring-react-shared';
+import { useMemo } from 'react';
 
 import { DynamicZone } from '../DynamicZone/DynamicZone';
 
@@ -29,6 +35,10 @@ export interface IFormDynamicZoneProps<Block extends IBaseBlock> {
   actionLabels?: IFormDynamicZoneActionLabels;
   availableBlocks: IFormDynamicZoneBlock<Block>[];
   blocksArray: Block[];
+  internalDynamicZoneProps?: {
+    internalBlockComponentProps?: IDynamicZoneBlockInternalComponentProps;
+    internalComponentProps?: IDynamicZoneInternalComponentProps;
+  };
   onAppendUpdate: (newBlock: Block) => void;
   onRemoveUpdate: (index: number) => void;
   onSwapUpdate: (firstIndex: number, secondIndex: number) => void;
@@ -42,13 +52,29 @@ export function FormDynamicZone<Block extends IBaseBlock>(
     actionLabels = defaultActionLabels,
     availableBlocks,
     blocksArray,
+    internalDynamicZoneProps,
     onAppendUpdate,
     onRemoveUpdate,
     onSwapUpdate,
     onToggleUpdate,
   } = props;
 
-  const blockOptions: IBaseBlockButton[] = availableBlocks.map((b) => b.button);
+  const blockOptions: IBaseBlockButtonOptions[] = useMemo(
+    () =>
+      availableBlocks.map((b) => {
+        const { maxInstances, ...options } = b.blockButtonOptions;
+        // compare buttonOptions maxInstances with current number of instances, disable button if the limit is hit
+        const max = maxInstances ?? -1;
+        const current = blocksArray.filter(
+          (bl) => bl.blockType === b.block.blockType,
+        ).length;
+        return {
+          ...options,
+          disabled: max > -1 && current >= max,
+        };
+      }),
+    [availableBlocks, blocksArray],
+  );
 
   function renderBlock(block: IBaseBlockFull, index: number): ReactElement {
     const correspondingType = availableBlocks.find(
@@ -138,7 +164,7 @@ export function FormDynamicZone<Block extends IBaseBlock>(
       ...b,
       blockActions: formDynamicZoneDefaultActions,
       ...availableBlocks.find((o) => o.block.blockType === b.blockType)
-        ?.blockOptions,
+        ?.blockCardOptions,
     }));
 
   return (
@@ -150,6 +176,7 @@ export function FormDynamicZone<Block extends IBaseBlock>(
       onAppendBlock={onAppend}
       onRenderBlockContent={renderBlock}
       onToggleBlock={onToggle}
+      {...internalDynamicZoneProps}
     />
   );
 }

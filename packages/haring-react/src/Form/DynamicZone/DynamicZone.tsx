@@ -1,6 +1,6 @@
 import type { IDynamicZoneBlockInternalComponentProps } from './DynamicZoneBlock/DynamicZoneBlock';
 import type {
-  IBaseBlockButton,
+  IBaseBlockButtonOptions,
   IBaseBlockFull,
   IBaseBlockType,
 } from '../../types';
@@ -13,21 +13,25 @@ import type {
 } from '@mantine/core';
 import type { ReactElement } from 'react';
 
-import { Button, Container, Group, Stack, Text } from '@mantine/core';
+import { Button, Container, Group, Stack, Text, Tooltip } from '@mantine/core';
 
 import classes from './DynamicZone.module.css';
 import { DynamicZoneBlock } from './DynamicZoneBlock/DynamicZoneBlock';
 
-export interface IDynamicZoneProps extends ContainerProps {
+export interface IDynamicZoneInternalComponentProps {
   blockCardProps?: CardProps;
-  blockOptions: IBaseBlockButton[];
-  blocks: IBaseBlockFull[];
   blocksStackProps?: StackProps;
   bottomContainerProps?: ContainerProps;
   buttonsGroupProps?: GroupProps;
-  buttonsText?: string;
   buttonsTextProps?: TextProps;
-  internalBlockCardProps?: IDynamicZoneBlockInternalComponentProps;
+}
+
+export interface IDynamicZoneProps extends ContainerProps {
+  blockOptions: IBaseBlockButtonOptions[];
+  blocks: IBaseBlockFull[];
+  buttonsText?: string;
+  internalBlockComponentProps?: IDynamicZoneBlockInternalComponentProps;
+  internalComponentProps?: IDynamicZoneInternalComponentProps;
   onAppendBlock: (blockType: IBaseBlockType) => void;
   onRenderBlockContent: (block: IBaseBlockFull, index: number) => ReactElement;
   onToggleBlock: (
@@ -39,15 +43,11 @@ export interface IDynamicZoneProps extends ContainerProps {
 
 export function DynamicZone(props: IDynamicZoneProps): ReactElement {
   const {
-    blockCardProps,
     blockOptions,
     blocks,
-    blocksStackProps,
-    bottomContainerProps,
-    buttonsGroupProps,
     buttonsText,
-    buttonsTextProps,
-    internalBlockCardProps,
+    internalComponentProps,
+    internalBlockComponentProps,
     onAppendBlock,
     onRenderBlockContent,
     onToggleBlock,
@@ -60,15 +60,16 @@ export function DynamicZone(props: IDynamicZoneProps): ReactElement {
 
   return (
     <Container fluid p={0} {...rootContainerProps}>
-      <Stack gap="sm" {...blocksStackProps}>
+      <Stack gap="sm" {...internalComponentProps?.blocksStackProps}>
         {blocks.map((block, index) => (
           <DynamicZoneBlock
-            {...blockCardProps}
+            {...internalComponentProps?.blockCardProps}
+            {...block.blockCardProps}
             key={block.id}
             actions={block.blockActions}
             footerChildren={block.blockFooter}
             headerChildren={block.blockHeader}
-            internalComponentProps={internalBlockCardProps}
+            internalComponentProps={internalBlockComponentProps}
             onToggle={(opened) => onToggleBlock(block, index, opened)}
             opened={block.opened}
             reference={{ arrayLength: blocks.length, id: block.id, index }}
@@ -82,25 +83,48 @@ export function DynamicZone(props: IDynamicZoneProps): ReactElement {
         fluid
         mt="lg"
         p="sm"
-        {...bottomContainerProps}
+        {...internalComponentProps?.bottomContainerProps}
       >
-        <Text className={classes.buttonsLabel} fw="bold" {...buttonsTextProps}>
-          {buttonsText}
-        </Text>
-        <Group {...buttonsGroupProps}>
-          {blockOptions.map(({ blockType, ...button }) => (
-            <Button
-              radius="md"
-              size="md"
-              type="button"
-              variant="default"
-              {...button}
-              key={`button-${blockType}`}
-              onClick={() => onAddBlock(blockType)}
-            >
-              {button.label}
-            </Button>
-          ))}
+        {Boolean(buttonsText) && (
+          <Text
+            className={classes.buttonsLabel}
+            fw="bold"
+            {...internalComponentProps?.buttonsTextProps}
+          >
+            {buttonsText}
+          </Text>
+        )}
+        <Group {...internalComponentProps?.buttonsGroupProps}>
+          {blockOptions.map(
+            ({ blockType, label, tooltipLabel, tooltipProps, ...button }) => (
+              <Tooltip
+                key={`button-${blockType}`}
+                disabled={
+                  tooltipLabel === '' ||
+                  tooltipLabel === undefined ||
+                  (typeof tooltipLabel === 'function' &&
+                    tooltipLabel(button) === '')
+                }
+                label={
+                  typeof tooltipLabel === 'function' && tooltipLabel(button)
+                }
+                {...tooltipProps}
+              >
+                <Button
+                  className={classes.button}
+                  radius="md"
+                  size="md"
+                  type="button"
+                  variant="default"
+                  {...button}
+                  onClick={() => onAddBlock(blockType)}
+                >
+                  {(typeof label === 'function' && label(button)) ||
+                    (typeof label === 'string' && label)}
+                </Button>
+              </Tooltip>
+            ),
+          )}
         </Group>
       </Container>
     </Container>

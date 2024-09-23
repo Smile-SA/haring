@@ -10,3 +10,11 @@
 
   margin-bottom: 10px;
 }
+
+.button {
+  &:disabled,
+  &[data-disabled] {
+    border-color: var(--mantine-color-gray-4);
+    background-color: transparent;
+  }
+}

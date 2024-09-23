@@ -28,12 +28,23 @@ export const blocksMock: IBaseBlockFull<IExampleBlock>[] = [
   {
     blockHeader: (
       <>
+        <Cube key="1" />
+        <span key="2">Example A</span>
+      </>
+    ),
+    blockType: 'exampleA',
+    id: '1',
+    opened: false,
+  },
+  {
+    blockHeader: (
+      <>
         <Leaf key="1" />
         <span key="2">Example B</span>
       </>
     ),
     blockType: 'exampleB',
-    id: '1',
+    id: '2',
     opened: true,
     value: 'selectB',
   },
@@ -46,18 +57,18 @@ export const availableBlocksMock: IFormDynamicZoneBlock<IExampleBlock>[] = [
       opened: true,
       value: '',
     },
-    blockOptions: {
+    blockButtonOptions: {
+      blockType: 'exampleA',
+      label: 'Example A',
+      leftSection: <Cube />,
+    },
+    blockCardOptions: {
       blockHeader: (
         <>
           <Cube key="1" />
           <span key="2">Example A</span>
         </>
       ),
-    },
-    button: {
-      blockType: 'exampleA',
-      label: 'Example A',
-      leftSection: <Cube />,
     },
     renderFunc: (b: IExampleBlock, i: number): ReactElement => {
       return (
@@ -85,18 +96,21 @@ export const availableBlocksMock: IFormDynamicZoneBlock<IExampleBlock>[] = [
       opened: true,
       value: '',
     },
-    blockOptions: {
+    blockButtonOptions: {
+      blockType: 'exampleB',
+      label: 'Example B',
+      leftSection: <Leaf />,
+      maxInstances: 1,
+      tooltipLabel: (b) => (b.disabled ? 'Cannot add more than 1' : ''),
+      variant: 'outline',
+    },
+    blockCardOptions: {
       blockHeader: (
         <>
           <Leaf key="1" />
           <span key="2">Example B</span>
         </>
       ),
-    },
-    button: {
-      blockType: 'exampleB',
-      label: 'Example B',
-      leftSection: <Leaf />,
     },
     renderFunc: (b: IExampleBlock, i: number): ReactElement => {
       return (
