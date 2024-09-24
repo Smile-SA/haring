@@ -67,8 +67,16 @@ export function DynamicZone(props: IDynamicZoneProps): ReactElement {
             {...block.blockCardProps}
             key={block.id}
             actions={block.blockActions}
-            footerChildren={block.blockFooter}
-            headerChildren={block.blockHeader}
+            footerChildren={
+              typeof block.blockFooter === 'function'
+                ? block.blockFooter(block, index)
+                : block.blockFooter
+            }
+            headerChildren={
+              typeof block.blockHeader === 'function'
+                ? block.blockHeader(block, index)
+                : block.blockHeader
+            }
             internalComponentProps={internalBlockComponentProps}
             onToggle={(opened) => onToggleBlock(block, index, opened)}
             opened={block.opened}

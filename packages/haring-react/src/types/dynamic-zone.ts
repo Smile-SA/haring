@@ -17,8 +17,12 @@ export interface IBaseBlock extends Record<string, unknown> {
 export interface IBaseBlockCardOptions {
   blockActions?: IAction<IDynamicZoneBlockReference>[];
   blockCardProps?: CardProps;
-  blockFooter?: ReactNode;
-  blockHeader?: ReactNode;
+  blockFooter?:
+    | ReactNode
+    | ((block: IBaseBlockFull, index: number) => ReactNode);
+  blockHeader?:
+    | ReactNode
+    | ((block: IBaseBlockFull, index: number) => ReactNode);
 }
 
 export type IBaseBlockFull<Block extends IBaseBlock = IBaseBlock> = Block &

@@ -6,13 +6,17 @@ import type {
   SubmitErrorHandler,
   SubmitHandler,
 } from 'react-hook-form';
+import type { UseFormRegister } from 'react-hook-form/dist/types/form';
 
+import { ErrorMessage } from '@hookform/error-message';
 import { Box, Group, Stack } from '@mantine/core';
 import { Cube, Leaf } from '@phosphor-icons/react';
 import { FormDynamicZone } from '@smile/haring-react';
 import { useFieldArray, useForm } from 'react-hook-form';
 
 import { withExceptionCapturing } from '../utilities/react-hook-form-utilities';
+
+import { CommonFormErrorText } from './ReactHookFormDynamicZone.mock';
 
 interface IContentA extends IBaseBlock {
   value: string;
@@ -39,6 +43,117 @@ const initialBlocks: IDynamicContents[] = [
   },
 ];
 
+const availableBlock: (
+  register: UseFormRegister<IFields>,
+  errors: object,
+) => IFormDynamicZoneBlock<IDynamicContents>[] = (register, errors) => [
+  {
+    block: {
+      blockType: 'exampleA',
+      opened: true,
+      value: '',
+    },
+    blockButtonOptions: {
+      blockType: 'exampleA',
+      label: 'Example A',
+      leftSection: <Cube />,
+    },
+    blockCardOptions: {
+      blockFooter: (_b, i) => (
+        <Stack>
+          <ErrorMessage
+            errors={errors}
+            name={`content.${i}.value.input1`}
+            render={({ message }: { message: string }) => (
+              <CommonFormErrorText message={message} />
+            )}
+          />
+          <ErrorMessage
+            errors={errors}
+            name={`content.${i}.value.input2`}
+            render={({ message }: { message: string }) => (
+              <CommonFormErrorText message={message} />
+            )}
+          />
+        </Stack>
+      ),
+      blockHeader: (
+        <>
+          <Cube key="1" />
+          <span key="2">Example A</span>
+        </>
+      ),
+    },
+    renderFunc: (b: IExampleBlock, i: number): ReactElement => {
+      return (
+        <Group>
+          <input
+            key={b.id + 1}
+            {...register(`content.${i}.value.input1`, {
+              minLength: { message: '3 characters minimum', value: 3 },
+              required: 'The first field is required',
+            })}
+            placeholder="nested field 1"
+          />
+          <input
+            key={b.id + 2}
+            {...register(`content.${i}.value.input2`, {
+              minLength: { message: '3 characters minimum', value: 3 },
+              required: 'The second field is required',
+            })}
+            placeholder="nested field 2"
+          />
+        </Group>
+      );
+    },
+  },
+  {
+    block: {
+      blockType: 'exampleB',
+      opened: true,
+      selected: '',
+    },
+    blockButtonOptions: {
+      blockType: 'exampleB',
+      label: 'Example B',
+      leftSection: <Leaf />,
+    },
+    blockCardOptions: {
+      blockFooter: (_b, i) => (
+        <ErrorMessage
+          errors={errors}
+          name={`content.${i}.selected`}
+          render={({ message }: { message: string }) => (
+            <CommonFormErrorText message={message} />
+          )}
+        />
+      ),
+      blockHeader: (
+        <>
+          <Leaf key="1" />
+          <span key="2">Example B</span>
+        </>
+      ),
+    },
+    renderFunc: (b: IExampleBlock, i: number): ReactElement => {
+      return (
+        <select
+          key={b.id}
+          {...register(`content.${i}.selected`, {
+            required: 'This field is required',
+          })}
+        >
+          <option disabled value="">
+            -- Please choose an option --
+          </option>
+          <option value="selectA">Value A</option>
+          <option value="selectB">Value B</option>
+        </select>
+      );
+    },
+  },
+];
+
 interface IFields {
   content: IDynamicContents[];
   email: string;
@@ -59,8 +174,7 @@ export function ReactHookFormDynamicZone(
     handleSubmit,
     register,
     getValues,
-    watch,
-    // formState: { errors },
+    formState: { errors },
   } = useForm<IFields>({
     defaultValues: {
       content: initialBlocks,
@@ -81,94 +195,6 @@ export function ReactHookFormDynamicZone(
     update(index, { ...updatedBlock, opened });
   }
 
-  const availableBlocks: IFormDynamicZoneBlock<IDynamicContents>[] = [
-    {
-      block: {
-        blockType: 'exampleA',
-        opened: true,
-        value: '',
-      },
-      blockButtonOptions: {
-        blockType: 'exampleA',
-        label: 'Example A',
-        leftSection: <Cube />,
-      },
-      blockCardOptions: {
-        blockHeader: (
-          <>
-            <Cube key="1" />
-            <span key="2">Example A</span>
-          </>
-        ),
-      },
-      renderFunc: (b: IExampleBlock, i: number): ReactElement => {
-        return (
-          <Group>
-            <input
-              key={b.id + 1}
-              {...register(`content.${i}.value.input1`, {
-                minLength: 3,
-                required: 'This field is required',
-              })}
-              placeholder="nested field 1"
-            />
-            <input
-              key={b.id + 2}
-              {...register(`content.${i}.value.input2`, {
-                minLength: 3,
-                required: 'This field is required',
-              })}
-              placeholder="nested field 2"
-            />
-          </Group>
-        );
-      },
-    },
-    {
-      block: {
-        blockType: 'exampleB',
-        opened: true,
-        selected: '',
-      },
-      blockButtonOptions: {
-        blockType: 'exampleB',
-        label: 'Example B',
-        leftSection: <Leaf />,
-      },
-      blockCardOptions: {
-        blockHeader: (
-          <>
-            <Leaf key="1" />
-            <span key="2">Example B</span>
-          </>
-        ),
-      },
-      renderFunc: (b: IExampleBlock, i: number): ReactElement => {
-        return (
-          <select
-            key={b.id}
-            {...register(`content.${i}.selected`, {
-              required: 'This field is required',
-            })}
-          >
-            <option disabled value="">
-              -- Please choose an option --
-            </option>
-            <option value="selectA">Value A</option>
-            <option value="selectB">Value B</option>
-          </select>
-        );
-      },
-    },
-  ];
-
-  console.log('watch', watch('content'));
-  // TODO: everything important seems to work, now test default values (first in the sense of giving an existing array of blocks with existing values,
-  //  feeding it into the form defaultValues and sending it down into the dynamic zone,
-  //  then maybe some way to give default values on register?,
-  //  then test error display and various complex use cases,
-  //  then maybe test animations
-
   return (
     <Box mx="auto">
       <form
@@ -178,7 +204,7 @@ export function ReactHookFormDynamicZone(
       >
         <Stack>
           <FormDynamicZone<IDynamicContents>
-            availableBlocks={availableBlocks}
+            availableBlocks={availableBlock(register, errors)}
             blocksArray={fields}
             onAppendUpdate={(newBlock: IDynamicContents) => append(newBlock)}
             onRemoveUpdate={(i: number) => remove(i)}
@@ -186,16 +212,6 @@ export function ReactHookFormDynamicZone(
             onToggleUpdate={onToggle}
           />
           <input type="submit" />
-          {/* <ErrorMessage*/}
-          {/*  errors={errors}*/}
-          {/*  name="content.0.input1"*/}
-          {/*  render={({ messages }) =>*/}
-          {/*    messages &&*/}
-          {/*    Object.entries(messages).map(([type, message]) => (*/}
-          {/*      <p key={type}>{message}</p>*/}
-          {/*    ))*/}
-          {/*  }*/}
-          {/*/ >*/}
         </Stack>
       </form>
     </Box>
