@@ -2,22 +2,33 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
 
-import { DynamicZone as Cmp } from './DynamicZone';
-import { dynamicZoneBlocks, dynamicZoneButtons } from './DynamicZone.mock';
+import { Zone as Cmp } from './Zone';
+import { withActionsMock, zoneBlocksMock, zoneButtonsMock } from './Zone.mock';
 
 const meta = {
   component: Cmp,
   tags: ['autodocs'],
-  title: '3-custom/Form/DynamicZone',
+  title: '3-custom/Components/Zone',
 } satisfies Meta<typeof Cmp>;
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const DynamicZone: IStory = {
+export const Zone: IStory = {
   args: {
-    blockOptions: dynamicZoneButtons,
-    blocks: dynamicZoneBlocks,
+    blockOptions: zoneButtonsMock,
+    blocks: zoneBlocksMock,
+    buttonsText: 'Ajouter un block',
+    onAppendBlock: action('onAppendBlock, id'),
+    onRenderBlockContent: (_b, index) => <input key={index} />,
+    onToggleBlock: action('onToggleBlock'),
+  },
+};
+
+export const ZoneWithActions: IStory = {
+  args: {
+    blockOptions: zoneButtonsMock,
+    blocks: withActionsMock,
     buttonsText: 'Ajouter un block',
     onAppendBlock: action('onAppendBlock, id'),
     onRenderBlockContent: (_b, index) => <input key={index} />,
@@ -27,8 +38,8 @@ export const DynamicZone: IStory = {
 
 export const CustomInternalProps: IStory = {
   args: {
-    blockOptions: dynamicZoneButtons,
-    blocks: dynamicZoneBlocks,
+    blockOptions: zoneButtonsMock,
+    blocks: withActionsMock,
     internalBlockComponentProps: {
       headerActionListProps: {
         actionIconDefaultProps: {

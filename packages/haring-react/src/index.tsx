@@ -10,10 +10,10 @@ export type { IFetchAutocompleteFieldProps } from './Form/FetchAutocompleteField
 export { FetchAutocompleteField } from './Form/FetchAutocompleteField/FetchAutocompleteField';
 export type { IAddressAutocompleteFieldProps } from './Form/AddressGouvAutocompleteField/AddressGouvAutocompleteField';
 export { AddressGouvAutocompleteField } from './Form/AddressGouvAutocompleteField/AddressGouvAutocompleteField';
-export type { IDynamicZoneProps } from './Form/DynamicZone/DynamicZone';
-export { DynamicZone } from './Form/DynamicZone/DynamicZone';
-export type { IFormDynamicZoneProps } from './Form/FormDynamicZone/FormDynamicZone';
-export { FormDynamicZone } from './Form/FormDynamicZone/FormDynamicZone';
+export type { IZoneProps } from './Components/Zone/Zone';
+export { Zone } from './Components/Zone/Zone';
+export type { IDynamicZoneProps } from './Components/DynamicZone/DynamicZone';
+export { DynamicZone } from './Components/DynamicZone/DynamicZone';
 export type { IAddressFieldsProps } from './Form/AddressFields/AddressFields';
 export { AddressFields } from './Form/AddressFields/AddressFields';
 export type { IIconCardProps } from './Components/IconCard/IconCard';
@@ -137,5 +137,5 @@ export type {
   IBaseBlockFull,
   IBaseBlockButtonOptions,
   IBaseBlockType,
-  IFormDynamicZoneBlock,
+  IDynamicZoneBlock,
 } from './types';

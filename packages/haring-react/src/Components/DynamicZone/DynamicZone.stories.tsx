@@ -1,24 +1,27 @@
-import type { IExampleBlock } from './FormDynamicZone.mock';
+import type { IExampleBlock } from './DynamicZone.mock';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
 
-import { FormDynamicZone as Cmp } from './FormDynamicZone';
-import { availableBlocksMock, blocksMock } from './FormDynamicZone.mock';
+import { DynamicZone as Cmp } from './DynamicZone';
+import {
+  dynamicZoneAvailableBlocksMock,
+  dynamicZoneBlocksMock,
+} from './DynamicZone.mock';
 
 const meta = {
   component: Cmp<IExampleBlock>,
   tags: ['autodocs'],
-  title: '3-custom/Form/FormDynamicZone',
+  title: '3-custom/Components/DynamicZone',
 } satisfies Meta<typeof Cmp<IExampleBlock>>;
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
 
-export const FormDynamicZone: IStory = {
+export const DynamicZone: IStory = {
   args: {
-    availableBlocks: availableBlocksMock,
-    blocksArray: blocksMock,
+    availableBlocks: dynamicZoneAvailableBlocksMock,
+    blocksArray: dynamicZoneBlocksMock,
     onAppendUpdate: action('append'),
     onRemoveUpdate: action('remove'),
     onSwapUpdate: action('swap'),
@@ -28,8 +31,8 @@ export const FormDynamicZone: IStory = {
 
 export const CustomInternalProps: IStory = {
   args: {
-    availableBlocks: availableBlocksMock,
-    blocksArray: blocksMock,
+    availableBlocks: dynamicZoneAvailableBlocksMock,
+    blocksArray: dynamicZoneBlocksMock,
     internalDynamicZoneProps: {
       internalBlockComponentProps: {
         headerActionListProps: {

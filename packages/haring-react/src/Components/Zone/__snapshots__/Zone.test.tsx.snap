@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormDynamicZone matches snapshot 1`] = `
+exports[`Zone matches snapshot 1`] = `
 <div>
   <style
     data-mantine-styles="true"
@@ -15,182 +15,12 @@ exports[`FormDynamicZone matches snapshot 1`] = `
   <div
     class="m_7485cace mantine-Container-root"
     data-fluid="true"
-    style="margin: 0rem; padding: 0rem;"
+    style="padding: 0rem;"
   >
     <div
       class="m_6d731127 mantine-Stack-root"
       style="--stack-gap: var(--mantine-spacing-sm); --stack-align: stretch; --stack-justify: flex-start;"
     >
-      <div
-        class="m_e615b15f mantine-Card-root m_1b7284a3 mantine-Paper-root"
-        data-with-border="true"
-        style="--paper-radius: var(--mantine-radius-md); --paper-shadow: var(--mantine-shadow-sm);"
-      >
-        <div
-          class="m_599a2148 mantine-Card-section"
-          data-first-section="true"
-          data-with-border="true"
-          role="button"
-        >
-          <div
-            class="m_4081bf90 mantine-Group-root"
-            style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: space-between; --group-wrap: wrap;"
-          >
-            <div
-              class="m_4081bf90 mantine-Group-root"
-              style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
-            >
-              <button
-                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
-                data-variant="default"
-                style="--ai-bg: var(--mantine-color-default); --ai-hover: var(--mantine-color-default-hover); --ai-color: var(--mantine-color-default-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
-                type="button"
-              >
-                <span
-                  class="m_8d3afb97 mantine-ActionIcon-icon"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="1em"
-                    viewBox="0 0 256 256"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <div
-                class=""
-              />
-              <svg
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 256 256"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M223.68,66.15,135.68,18h0a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32h0l80.34,44L128,120,47.66,76ZM40,90l80,43.78v85.79L40,175.82Zm96,129.57V133.82L216,90v85.78Z"
-                />
-              </svg>
-              <span>
-                Example A
-              </span>
-            </div>
-            <div
-              class="m_4081bf90 mantine-Group-root"
-              style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
-            >
-              <button
-                aria-label="Move Up"
-                class="haring-focus m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
-                data-disabled="true"
-                data-variant="subtle"
-                disabled=""
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
-                type="button"
-              >
-                <span
-                  class="m_8d3afb97 mantine-ActionIcon-icon"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="16"
-                    viewBox="0 0 256 256"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <button
-                aria-label="Move Down"
-                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
-                data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
-                type="button"
-              >
-                <span
-                  class="m_8d3afb97 mantine-ActionIcon-icon"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="16"
-                    viewBox="0 0 256 256"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M205.66,149.66l-72,72a8,8,0,0,1-11.32,0l-72-72a8,8,0,0,1,11.32-11.32L120,196.69V40a8,8,0,0,1,16,0V196.69l58.34-58.35a8,8,0,0,1,11.32,11.32Z"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <button
-                aria-label="Delete"
-                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
-                data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
-                type="button"
-              >
-                <span
-                  class="m_8d3afb97 mantine-ActionIcon-icon"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="16"
-                    viewBox="0 0 256 256"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-hidden="false"
-          class=""
-          style="box-sizing: border-box; opacity: 1; transition: opacity 200ms ease;"
-        >
-          <div
-            class="m_7485cace mantine-Container-root"
-            data-fluid="true"
-          >
-            <div
-              class="m_4081bf90 mantine-Group-root"
-              style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
-            >
-              <input
-                id="example.0.input1"
-                placeholder="nested field 1"
-                required=""
-                value="existing value"
-              />
-              <input
-                id="example.0.input2"
-                placeholder="nested field 2"
-                required=""
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="m_599a2148 mantine-Card-section"
-          data-last-section="true"
-          style="padding: 0rem;"
-        />
-      </div>
       <div
         class="m_e615b15f mantine-Card-root m_1b7284a3 mantine-Paper-root"
         data-with-border="true"
@@ -242,86 +72,10 @@ exports[`FormDynamicZone matches snapshot 1`] = `
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M223.68,66.15,135.68,18h0a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32h0l80.34,44L128,120,47.66,76ZM40,90l80,43.78v85.79L40,175.82Zm96,129.57V133.82L216,90v85.78Z"
+                  d="M128,16a96.11,96.11,0,0,0-96,96c0,24,12.56,55.06,33.61,83,21.18,28.15,44.5,45,62.39,45s41.21-16.81,62.39-45c21.05-28,33.61-59,33.61-83A96.11,96.11,0,0,0,128,16Zm49.61,169.42C160.24,208.49,140.31,224,128,224s-32.24-15.51-49.61-38.58C59.65,160.5,48,132.37,48,112a80,80,0,0,1,160,0C208,132.37,196.35,160.5,177.61,185.42ZM120,136A40,40,0,0,0,80,96a16,16,0,0,0-16,16,40,40,0,0,0,40,40A16,16,0,0,0,120,136ZM80,112a24,24,0,0,1,24,24h0A24,24,0,0,1,80,112Zm96-16a40,40,0,0,0-40,40,16,16,0,0,0,16,16,40,40,0,0,0,40-40A16,16,0,0,0,176,96Zm-24,40a24,24,0,0,1,24-24A24,24,0,0,1,152,136Zm0,48a8,8,0,0,1-8,8H112a8,8,0,0,1,0-16h32A8,8,0,0,1,152,184Z"
                 />
               </svg>
-              <span>
-                Example A
-              </span>
-            </div>
-            <div
-              class="m_4081bf90 mantine-Group-root"
-              style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
-            >
-              <button
-                aria-label="Move Up"
-                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
-                data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
-                type="button"
-              >
-                <span
-                  class="m_8d3afb97 mantine-ActionIcon-icon"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="16"
-                    viewBox="0 0 256 256"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <button
-                aria-label="Move Down"
-                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
-                data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
-                type="button"
-              >
-                <span
-                  class="m_8d3afb97 mantine-ActionIcon-icon"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="16"
-                    viewBox="0 0 256 256"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M205.66,149.66l-72,72a8,8,0,0,1-11.32,0l-72-72a8,8,0,0,1,11.32-11.32L120,196.69V40a8,8,0,0,1,16,0V196.69l58.34-58.35a8,8,0,0,1,11.32,11.32Z"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <button
-                aria-label="Delete"
-                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
-                data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
-                type="button"
-              >
-                <span
-                  class="m_8d3afb97 mantine-ActionIcon-icon"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="16"
-                    viewBox="0 0 256 256"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
-                    />
-                  </svg>
-                </span>
-              </button>
+              First
             </div>
           </div>
         </div>
@@ -334,22 +88,7 @@ exports[`FormDynamicZone matches snapshot 1`] = `
             class="m_7485cace mantine-Container-root"
             data-fluid="true"
           >
-            <div
-              class="m_4081bf90 mantine-Group-root"
-              style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
-            >
-              <input
-                id="example.1.input1"
-                placeholder="nested field 1"
-                required=""
-                value=""
-              />
-              <input
-                id="example.1.input2"
-                placeholder="nested field 2"
-                required=""
-              />
-            </div>
+            <input />
           </div>
         </div>
         <div
@@ -413,85 +152,7 @@ exports[`FormDynamicZone matches snapshot 1`] = `
                   d="M223.45,40.07a8,8,0,0,0-7.52-7.52C139.8,28.08,78.82,51,52.82,94a87.09,87.09,0,0,0-12.76,49c.57,15.92,5.21,32,13.79,47.85l-19.51,19.5a8,8,0,0,0,11.32,11.32l19.5-19.51C81,210.73,97.09,215.37,113,215.94q1.67.06,3.33.06A86.93,86.93,0,0,0,162,203.18C205,177.18,227.93,116.21,223.45,40.07ZM153.75,189.5c-22.75,13.78-49.68,14-76.71.77l88.63-88.62a8,8,0,0,0-11.32-11.32L65.73,179c-13.19-27-13-54,.77-76.71,22.09-36.47,74.6-56.44,141.31-54.06C210.2,114.89,190.22,167.41,153.75,189.5Z"
                 />
               </svg>
-              <span>
-                Example B
-              </span>
-            </div>
-            <div
-              class="m_4081bf90 mantine-Group-root"
-              style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
-            >
-              <button
-                aria-label="Move Up"
-                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
-                data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
-                type="button"
-              >
-                <span
-                  class="m_8d3afb97 mantine-ActionIcon-icon"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="16"
-                    viewBox="0 0 256 256"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <button
-                aria-label="Move Down"
-                class="haring-focus m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
-                data-disabled="true"
-                data-variant="subtle"
-                disabled=""
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
-                type="button"
-              >
-                <span
-                  class="m_8d3afb97 mantine-ActionIcon-icon"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="16"
-                    viewBox="0 0 256 256"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M205.66,149.66l-72,72a8,8,0,0,1-11.32,0l-72-72a8,8,0,0,1,11.32-11.32L120,196.69V40a8,8,0,0,1,16,0V196.69l58.34-58.35a8,8,0,0,1,11.32,11.32Z"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <button
-                aria-label="Delete"
-                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
-                data-variant="subtle"
-                style="--ai-radius: calc(0.25rem * var(--mantine-scale)); --ai-bg: transparent; --ai-hover: var(--mantine-color-cyan-light-hover); --ai-color: var(--mantine-color-cyan-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
-                type="button"
-              >
-                <span
-                  class="m_8d3afb97 mantine-ActionIcon-icon"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="16"
-                    viewBox="0 0 256 256"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
-                    />
-                  </svg>
-                </span>
-              </button>
+              Second
             </div>
           </div>
         </div>
@@ -504,35 +165,94 @@ exports[`FormDynamicZone matches snapshot 1`] = `
             class="m_7485cace mantine-Container-root"
             data-fluid="true"
           >
-            <select
-              id="example.2"
-              required=""
-            >
-              <option
-                disabled=""
-                value=""
-              >
-                -- Please choose an option --
-              </option>
-              <option
-                value="selectA"
-              >
-                Value A
-              </option>
-              <option
-                selected=""
-                value="selectB"
-              >
-                Value B
-              </option>
-            </select>
+            <input />
           </div>
         </div>
         <div
           class="m_599a2148 mantine-Card-section"
           data-last-section="true"
-          style="padding: 0rem;"
-        />
+          data-with-border="true"
+        >
+          footer
+        </div>
+      </div>
+      <div
+        class="m_e615b15f mantine-Card-root m_1b7284a3 mantine-Paper-root"
+        data-with-border="true"
+        style="--paper-radius: var(--mantine-radius-md); --paper-shadow: var(--mantine-shadow-sm);"
+      >
+        <div
+          class="m_599a2148 mantine-Card-section"
+          data-first-section="true"
+          data-with-border="true"
+          role="button"
+        >
+          <div
+            class="m_4081bf90 mantine-Group-root"
+            style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: space-between; --group-wrap: wrap;"
+          >
+            <div
+              class="m_4081bf90 mantine-Group-root"
+              style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
+            >
+              <button
+                class="haring-focus haring-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
+                data-variant="default"
+                style="--ai-bg: var(--mantine-color-default); --ai-hover: var(--mantine-color-default-hover); --ai-color: var(--mantine-color-default-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
+                type="button"
+              >
+                <span
+                  class="m_8d3afb97 mantine-ActionIcon-icon"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    viewBox="0 0 256 256"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <div
+                class=""
+              />
+              <svg
+                fill="currentColor"
+                height="1em"
+                viewBox="0 0 256 256"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M184,40H72A56.06,56.06,0,0,0,16,96v96a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V96A56.06,56.06,0,0,0,184,40Zm40,56v8H192V56.8A40.07,40.07,0,0,1,224,96Zm-88,40H120V104h16Zm-24,16h32a8,8,0,0,0,8-8V120h24v72H80V120h24v24A8,8,0,0,0,112,152Zm40-48V96a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v8H80V56h96v48ZM64,56.8V104H32V96A40.07,40.07,0,0,1,64,56.8ZM32,120H64v72H32Zm192,72H192V120h32v72Z"
+                />
+              </svg>
+              Third
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          class=""
+          style="box-sizing: border-box; opacity: 0; transition: opacity 200ms ease; display: none; height: 0px; overflow: hidden;"
+        >
+          <div
+            class="m_7485cace mantine-Container-root"
+            data-fluid="true"
+          >
+            <input />
+          </div>
+        </div>
+        <div
+          class="m_599a2148 mantine-Card-section"
+          data-last-section="true"
+        >
+          footer
+        </div>
       </div>
     </div>
     <div
@@ -566,25 +286,23 @@ exports[`FormDynamicZone matches snapshot 1`] = `
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M223.68,66.15,135.68,18h0a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32h0l80.34,44L128,120,47.66,76ZM40,90l80,43.78v85.79L40,175.82Zm96,129.57V133.82L216,90v85.78Z"
+                  d="M128,16a96.11,96.11,0,0,0-96,96c0,24,12.56,55.06,33.61,83,21.18,28.15,44.5,45,62.39,45s41.21-16.81,62.39-45c21.05-28,33.61-59,33.61-83A96.11,96.11,0,0,0,128,16Zm49.61,169.42C160.24,208.49,140.31,224,128,224s-32.24-15.51-49.61-38.58C59.65,160.5,48,132.37,48,112a80,80,0,0,1,160,0C208,132.37,196.35,160.5,177.61,185.42ZM120,136A40,40,0,0,0,80,96a16,16,0,0,0-16,16,40,40,0,0,0,40,40A16,16,0,0,0,120,136ZM80,112a24,24,0,0,1,24,24h0A24,24,0,0,1,80,112Zm96-16a40,40,0,0,0-40,40,16,16,0,0,0,16,16,40,40,0,0,0,40-40A16,16,0,0,0,176,96Zm-24,40a24,24,0,0,1,24-24A24,24,0,0,1,152,136Zm0,48a8,8,0,0,1-8,8H112a8,8,0,0,1,0-16h32A8,8,0,0,1,152,184Z"
                 />
               </svg>
             </span>
             <span
               class="m_811560b9 mantine-Button-label"
             >
-              Example A
+              Default
             </span>
           </span>
         </button>
         <button
-          class="haring-focus m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
-          data-disabled="true"
+          class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
           data-size="md"
-          data-variant="outline"
+          data-variant="default"
           data-with-left-section="true"
-          disabled=""
-          style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: var(--mantine-radius-md); --button-bg: transparent; --button-hover: var(--mantine-color-cyan-outline-hover); --button-color: var(--mantine-color-cyan-outline); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-cyan-outline);"
+          style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: var(--mantine-radius-md); --button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
           type="button"
         >
           <span
@@ -609,7 +327,41 @@ exports[`FormDynamicZone matches snapshot 1`] = `
             <span
               class="m_811560b9 mantine-Button-label"
             >
-              Example B
+              Other
+            </span>
+          </span>
+        </button>
+        <button
+          class="haring-focus haring-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root"
+          data-size="md"
+          data-variant="default"
+          data-with-left-section="true"
+          style="--button-height: var(--button-height-md); --button-padding-x: var(--button-padding-x-md); --button-fz: var(--mantine-font-size-md); --button-radius: var(--mantine-radius-md); --button-bg: var(--mantine-color-default); --button-hover: var(--mantine-color-default-hover); --button-color: var(--mantine-color-default-color); --button-bd: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);"
+          type="button"
+        >
+          <span
+            class="m_80f1301b mantine-Button-inner"
+          >
+            <span
+              class="m_a74036a mantine-Button-section"
+              data-position="left"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                viewBox="0 0 256 256"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M184,40H72A56.06,56.06,0,0,0,16,96v96a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V96A56.06,56.06,0,0,0,184,40Zm40,56v8H192V56.8A40.07,40.07,0,0,1,224,96Zm-88,40H120V104h16Zm-24,16h32a8,8,0,0,0,8-8V120h24v72H80V120h24v24A8,8,0,0,0,112,152Zm40-48V96a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v8H80V56h96v48ZM64,56.8V104H32V96A40.07,40.07,0,0,1,64,56.8ZM32,120H64v72H32Zm192,72H192V120h32v72Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="m_811560b9 mantine-Button-label"
+            >
+              Stuff
             </span>
           </span>
         </button>

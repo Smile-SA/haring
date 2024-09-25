@@ -1,4 +1,4 @@
-import type { IActionListProps } from '../../../Components/ActionList/ActionList';
+import type { IActionListProps } from '../../ActionList/ActionList';
 import type {
   ActionIconProps,
   CardProps,
@@ -20,47 +20,47 @@ import {
 } from '@mantine/core';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
 
-import { ActionList } from '../../../Components/ActionList/ActionList';
+import { ActionList } from '../../ActionList/ActionList';
 
-import classes from './DynamicZoneBlock.module.css';
+import classes from './ZoneBlock.module.css';
 
-export interface IDynamicZoneBlockInternalComponentProps {
+export interface IZoneBlockInternalComponentProps {
   contentCollapseProps?: CollapseProps;
   contentContainerProps?: ContainerProps;
   footerCardSectionProps?: CardSectionProps;
   headerActionListProps?: Omit<
-    IActionListProps<IDynamicZoneBlockReference>,
+    IActionListProps<IZoneBlockReference>,
     'actions' | 'isCompactStyle' | 'selectedElements'
   >;
   headerCardSectionProps?: CardSectionProps;
   headerGroupProps?: GroupProps;
-  toggleComponentProps?: IDynamicZoneBlockToggleProps;
+  toggleComponentProps?: IZoneBlockToggleProps;
 }
 
-export interface IDynamicZoneBlockToggleProps {
+export interface IZoneBlockToggleProps {
   actionIconProps?: ActionIconProps;
   downIcon?: ReactNode;
   upIcon?: ReactNode;
 }
 
-export interface IDynamicZoneBlockReference extends Record<string, unknown> {
+export interface IZoneBlockReference extends Record<string, unknown> {
   arrayLength: number;
   id: string;
   index: number;
 }
 
-export interface IDynamicZoneBlockProps extends CardProps {
-  actions?: IAction<IDynamicZoneBlockReference>[];
+export interface IZoneBlockProps extends CardProps {
+  actions?: IAction<IZoneBlockReference>[];
   children: ReactNode;
   footerChildren?: ReactNode;
   headerChildren?: ReactNode;
-  internalComponentProps?: IDynamicZoneBlockInternalComponentProps;
+  internalComponentProps?: IZoneBlockInternalComponentProps;
   onToggle: (opened: boolean) => void;
   opened: boolean;
-  reference: IDynamicZoneBlockReference;
+  reference: IZoneBlockReference;
 }
 
-export function DynamicZoneBlock(props: IDynamicZoneBlockProps): ReactElement {
+export function ZoneBlock(props: IZoneBlockProps): ReactElement {
   const {
     actions,
     children,
@@ -72,7 +72,7 @@ export function DynamicZoneBlock(props: IDynamicZoneBlockProps): ReactElement {
     reference,
     ...cardProps
   } = props;
-  const toggleProps: IDynamicZoneBlockToggleProps = {
+  const toggleProps: IZoneBlockToggleProps = {
     downIcon: <CaretDown />,
     upIcon: <CaretUp />,
     ...internalComponentProps?.toggleComponentProps,
@@ -103,7 +103,7 @@ export function DynamicZoneBlock(props: IDynamicZoneBlockProps): ReactElement {
             {headerChildren}
           </Group>
           {actions && actions.length > 0 ? (
-            <ActionList<IDynamicZoneBlockReference>
+            <ActionList<IZoneBlockReference>
               actions={actions}
               isCompactStyle
               selectedElements={reference}

@@ -1,4 +1,4 @@
-import type { IDynamicZoneBlockInternalComponentProps } from './DynamicZoneBlock/DynamicZoneBlock';
+import type { IZoneBlockInternalComponentProps } from './ZoneBlock/ZoneBlock';
 import type {
   IBaseBlockButtonOptions,
   IBaseBlockFull,
@@ -11,14 +11,15 @@ import type {
   StackProps,
   TextProps,
 } from '@mantine/core';
-import type { ReactElement } from 'react';
+import type { ReactElement, Ref } from 'react';
 
 import { Button, Container, Group, Stack, Text, Tooltip } from '@mantine/core';
 
-import classes from './DynamicZone.module.css';
-import { DynamicZoneBlock } from './DynamicZoneBlock/DynamicZoneBlock';
+import classes from './Zone.module.css';
+import { ZoneBlock } from './ZoneBlock/ZoneBlock';
 
-export interface IDynamicZoneInternalComponentProps {
+export interface IZoneInternalComponentProps {
+  arrayRootRef?: Ref<HTMLDivElement>;
   blockCardProps?: CardProps;
   blocksStackProps?: StackProps;
   bottomContainerProps?: ContainerProps;
@@ -26,12 +27,12 @@ export interface IDynamicZoneInternalComponentProps {
   buttonsTextProps?: TextProps;
 }
 
-export interface IDynamicZoneProps extends ContainerProps {
+export interface IZoneProps extends ContainerProps {
   blockOptions: IBaseBlockButtonOptions[];
   blocks: IBaseBlockFull[];
   buttonsText?: string;
-  internalBlockComponentProps?: IDynamicZoneBlockInternalComponentProps;
-  internalComponentProps?: IDynamicZoneInternalComponentProps;
+  internalBlockComponentProps?: IZoneBlockInternalComponentProps;
+  internalComponentProps?: IZoneInternalComponentProps;
   onAppendBlock: (blockType: IBaseBlockType) => void;
   onRenderBlockContent: (block: IBaseBlockFull, index: number) => ReactElement;
   onToggleBlock: (
@@ -41,7 +42,7 @@ export interface IDynamicZoneProps extends ContainerProps {
   ) => void;
 }
 
-export function DynamicZone(props: IDynamicZoneProps): ReactElement {
+export function Zone(props: IZoneProps): ReactElement {
   const {
     blockOptions,
     blocks,
@@ -60,9 +61,13 @@ export function DynamicZone(props: IDynamicZoneProps): ReactElement {
 
   return (
     <Container fluid p={0} {...rootContainerProps}>
-      <Stack gap="sm" {...internalComponentProps?.blocksStackProps}>
+      <Stack
+        gap="sm"
+        {...internalComponentProps?.blocksStackProps}
+        ref={internalComponentProps?.arrayRootRef}
+      >
         {blocks.map((block, index) => (
-          <DynamicZoneBlock
+          <ZoneBlock
             {...internalComponentProps?.blockCardProps}
             {...block.blockCardProps}
             key={block.id}
@@ -83,7 +88,7 @@ export function DynamicZone(props: IDynamicZoneProps): ReactElement {
             reference={{ arrayLength: blocks.length, id: block.id, index }}
           >
             {onRenderBlockContent(block, index)}
-          </DynamicZoneBlock>
+          </ZoneBlock>
         ))}
       </Stack>
       <Container

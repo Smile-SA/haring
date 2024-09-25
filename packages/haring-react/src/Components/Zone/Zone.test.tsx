@@ -5,19 +5,19 @@ import { renderWithProviders } from '@smile/haring-react-shared/test-utils';
 import { action } from '@storybook/addon-actions';
 import { expect } from '@storybook/jest';
 
-import { DynamicZone } from './DynamicZone';
-import { dynamicZoneBlocks, dynamicZoneButtons } from './DynamicZone.mock';
+import { Zone } from './Zone';
+import { zoneBlocksMock, zoneButtonsMock } from './Zone.mock';
 
-describe('DynamicZone', () => {
+describe('Zone', () => {
   it('matches snapshot', () => {
     const onRender = (
       _b: IBaseBlockCardOptions,
       index: number,
     ): ReactElement => <input key={index} />;
     const { container } = renderWithProviders(
-      <DynamicZone
-        blockOptions={dynamicZoneButtons}
-        blocks={dynamicZoneBlocks}
+      <Zone
+        blockOptions={zoneButtonsMock}
+        blocks={zoneBlocksMock}
         onAppendBlock={action('onAppendBlock, id')}
         onRenderBlockContent={onRender}
         onToggleBlock={action('onToggleBlock')}
