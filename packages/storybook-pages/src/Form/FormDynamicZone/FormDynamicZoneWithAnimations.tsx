@@ -1,5 +1,5 @@
-import type { IBaseBlock, IFormDynamicZoneBlock } from '@smile/haring-react';
-import type { IExampleBlock } from '@smile/haring-react/src/Form/FormDynamicZone/FormDynamicZone.mock';
+import type { IExampleBlock } from './FormDynamicZone.mock';
+import type { IBaseBlock, IDynamicZoneBlock } from '@smile/haring-react';
 import type { ReactElement } from 'react';
 import type {
   FieldErrors,
@@ -12,12 +12,12 @@ import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { ErrorMessage } from '@hookform/error-message';
 import { Box, Group, Stack } from '@mantine/core';
 import { Cube, Leaf } from '@phosphor-icons/react';
-import { FormDynamicZone } from '@smile/haring-react';
+import { DynamicZone } from '@smile/haring-react';
 import { useFieldArray, useForm } from 'react-hook-form';
 
 import { withExceptionCapturing } from '../utilities/react-hook-form-utilities';
 
-import { CommonFormErrorText } from './ReactHookFormDynamicZone.mock';
+import { CommonFormErrorText } from './FormDynamicZone.mock';
 
 interface IContentA extends IBaseBlock {
   value: string;
@@ -47,7 +47,7 @@ const initialBlocks: IDynamicContents[] = [
 const availableBlock: (
   register: UseFormRegister<IFields>,
   errors: object,
-) => IFormDynamicZoneBlock<IDynamicContents>[] = (register, errors) => [
+) => IDynamicZoneBlock<IDynamicContents>[] = (register, errors) => [
   {
     block: {
       blockType: 'exampleA',
@@ -166,7 +166,7 @@ export interface IReactHookFormProps {
   onFormSubmit: (data: IFields) => void;
 }
 
-export function ReactHookFormDynamicZone(
+export function FormDynamicZoneWithAnimations(
   props: IReactHookFormProps,
 ): ReactElement {
   const { onFormErrors, onFormSubmit } = props;
@@ -187,13 +187,29 @@ export function ReactHookFormDynamicZone(
     control,
     name: 'content',
   });
-  const [parent] = useAutoAnimate();
+  const [parent, enable] = useAutoAnimate();
 
   const onValidSubmit: SubmitHandler<IFields> = (data) => onFormSubmit(data);
   const onInvalidSubmit: SubmitErrorHandler<IFields> = (errors) =>
     onFormErrors(errors);
 
+  function onAppend(newBlock: IDynamicContents): void {
+    enable(false);
+    append(newBlock);
+  }
+
+  function onRemove(i: number): void {
+    enable(true);
+    remove(i);
+  }
+
+  function onSwap(i: number, ii: number): void {
+    enable(true);
+    swap(i, ii);
+  }
+
   function onToggle(index: number, opened: boolean): void {
+    enable(false);
     const updatedBlock = getValues('content')[index];
     update(index, { ...updatedBlock, opened });
   }
@@ -206,15 +222,15 @@ export function ReactHookFormDynamicZone(
         )}
       >
         <Stack>
-          <FormDynamicZone<IDynamicContents>
+          <DynamicZone<IDynamicContents>
             availableBlocks={availableBlock(register, errors)}
             blocksArray={fields}
             internalDynamicZoneProps={{
               internalComponentProps: { arrayRootRef: parent },
             }}
-            onAppendUpdate={(newBlock: IDynamicContents) => append(newBlock)}
-            onRemoveUpdate={(i: number) => remove(i)}
-            onSwapUpdate={(i: number, ii: number) => swap(i, ii)}
+            onAppendUpdate={onAppend}
+            onRemoveUpdate={onRemove}
+            onSwapUpdate={onSwap}
             onToggleUpdate={onToggle}
           />
           <input type="submit" />

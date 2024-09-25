@@ -2,12 +2,12 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
 
-import { ReactHookFormDynamicZone } from './ReactHookFormDynamicZone';
+import { FormDynamicZone } from './FormDynamicZone';
 
 const meta = {
-  component: ReactHookFormDynamicZone,
-  title: '2-mantine/Form',
-} satisfies Meta<typeof ReactHookFormDynamicZone>;
+  component: FormDynamicZone,
+  title: '2-mantine/Form/FormDynamicZone',
+} satisfies Meta<typeof FormDynamicZone>;
 
 export default meta;
 type IStory = StoryObj<typeof meta>;
