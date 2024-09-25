@@ -8,6 +8,7 @@ import type {
 } from 'react-hook-form';
 import type { UseFormRegister } from 'react-hook-form/dist/types/form';
 
+import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { ErrorMessage } from '@hookform/error-message';
 import { Box, Group, Stack } from '@mantine/core';
 import { Cube, Leaf } from '@phosphor-icons/react';
@@ -186,6 +187,8 @@ export function ReactHookFormDynamicZone(
     control,
     name: 'content',
   });
+  const [parent] = useAutoAnimate();
+
   const onValidSubmit: SubmitHandler<IFields> = (data) => onFormSubmit(data);
   const onInvalidSubmit: SubmitErrorHandler<IFields> = (errors) =>
     onFormErrors(errors);
@@ -206,6 +209,9 @@ export function ReactHookFormDynamicZone(
           <FormDynamicZone<IDynamicContents>
             availableBlocks={availableBlock(register, errors)}
             blocksArray={fields}
+            internalDynamicZoneProps={{
+              internalComponentProps: { arrayRootRef: parent },
+            }}
             onAppendUpdate={(newBlock: IDynamicContents) => append(newBlock)}
             onRemoveUpdate={(i: number) => remove(i)}
             onSwapUpdate={(i: number, ii: number) => swap(i, ii)}

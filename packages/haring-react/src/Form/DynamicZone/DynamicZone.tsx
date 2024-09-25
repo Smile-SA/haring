@@ -11,7 +11,7 @@ import type {
   StackProps,
   TextProps,
 } from '@mantine/core';
-import type { ReactElement } from 'react';
+import type { ReactElement, Ref } from 'react';
 
 import { Button, Container, Group, Stack, Text, Tooltip } from '@mantine/core';
 
@@ -19,6 +19,7 @@ import classes from './DynamicZone.module.css';
 import { DynamicZoneBlock } from './DynamicZoneBlock/DynamicZoneBlock';
 
 export interface IDynamicZoneInternalComponentProps {
+  arrayRootRef?: Ref<HTMLDivElement>;
   blockCardProps?: CardProps;
   blocksStackProps?: StackProps;
   bottomContainerProps?: ContainerProps;
@@ -60,7 +61,11 @@ export function DynamicZone(props: IDynamicZoneProps): ReactElement {
 
   return (
     <Container fluid p={0} {...rootContainerProps}>
-      <Stack gap="sm" {...internalComponentProps?.blocksStackProps}>
+      <Stack
+        gap="sm"
+        {...internalComponentProps?.blocksStackProps}
+        ref={internalComponentProps?.arrayRootRef}
+      >
         {blocks.map((block, index) => (
           <DynamicZoneBlock
             {...internalComponentProps?.blockCardProps}
