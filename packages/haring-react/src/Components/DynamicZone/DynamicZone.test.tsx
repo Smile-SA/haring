@@ -1,17 +1,20 @@
-import type { IExampleBlock } from './FormDynamicZone.mock';
+import type { IExampleBlock } from './DynamicZone.mock';
 
 import { renderWithProviders } from '@smile/haring-react-shared/test-utils';
 import { action } from '@storybook/addon-actions';
 
-import { FormDynamicZone } from './FormDynamicZone';
-import { availableBlocksMock, blocksMock } from './FormDynamicZone.mock';
+import { DynamicZone } from './DynamicZone';
+import {
+  dynamicZoneAvailableBlocksMock,
+  dynamicZoneBlocksMock,
+} from './DynamicZone.mock';
 
-describe('FormDynamicZone', () => {
+describe('DynamicZone', () => {
   it('matches snapshot', () => {
     const { container } = renderWithProviders(
-      <FormDynamicZone<IExampleBlock>
-        availableBlocks={availableBlocksMock}
-        blocksArray={blocksMock}
+      <DynamicZone<IExampleBlock>
+        availableBlocks={dynamicZoneAvailableBlocksMock}
+        blocksArray={dynamicZoneBlocksMock}
         onAppendUpdate={action('append')}
         onRemoveUpdate={action('remove')}
         onSwapUpdate={action('swap')}

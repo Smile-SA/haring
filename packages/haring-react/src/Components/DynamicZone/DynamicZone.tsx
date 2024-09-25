@@ -2,14 +2,14 @@ import type {
   IBaseBlock,
   IBaseBlockButtonOptions,
   IBaseBlockFull,
-  IFormDynamicZoneBlock,
+  IDynamicZoneBlock,
 } from '../../types';
-import type { IDynamicZoneInternalComponentProps } from '../DynamicZone/DynamicZone';
-import type { IBaseBlockType } from '@smile/haring-react';
+import type { IZoneInternalComponentProps } from '../Zone/Zone';
 import type {
-  IDynamicZoneBlockInternalComponentProps,
-  IDynamicZoneBlockReference,
-} from '@smile/haring-react/src/Form/DynamicZone/DynamicZoneBlock/DynamicZoneBlock';
+  IZoneBlockInternalComponentProps,
+  IZoneBlockReference,
+} from '../Zone/ZoneBlock/ZoneBlock';
+import type { IBaseBlockType } from '@smile/haring-react';
 import type { IAction } from '@smile/haring-react-shared';
 import type { ReactElement } from 'react';
 
@@ -17,27 +17,27 @@ import { ArrowDown, ArrowUp, Trash } from '@phosphor-icons/react';
 import { isNotNullNorEmpty } from '@smile/haring-react-shared';
 import { useMemo } from 'react';
 
-import { DynamicZone } from '../DynamicZone/DynamicZone';
+import { Zone } from '../Zone/Zone';
 
-interface IFormDynamicZoneActionLabels {
+interface IDynamicZoneActionLabels {
   deleteLabel: string;
   moveDownLabel: string;
   moveUpLabel: string;
 }
 
-const defaultActionLabels: IFormDynamicZoneActionLabels = {
+const defaultActionLabels: IDynamicZoneActionLabels = {
   deleteLabel: 'Delete',
   moveDownLabel: 'Move Down',
   moveUpLabel: 'Move Up',
 };
 
-export interface IFormDynamicZoneProps<Block extends IBaseBlock> {
-  actionLabels?: IFormDynamicZoneActionLabels;
-  availableBlocks: IFormDynamicZoneBlock<Block>[];
+export interface IDynamicZoneProps<Block extends IBaseBlock> {
+  actionLabels?: IDynamicZoneActionLabels;
+  availableBlocks: IDynamicZoneBlock<Block>[];
   blocksArray: Block[];
   internalDynamicZoneProps?: {
-    internalBlockComponentProps?: IDynamicZoneBlockInternalComponentProps;
-    internalComponentProps?: IDynamicZoneInternalComponentProps;
+    internalBlockComponentProps?: IZoneBlockInternalComponentProps;
+    internalComponentProps?: IZoneInternalComponentProps;
   };
   onAppendUpdate: (newBlock: Block) => void;
   onRemoveUpdate: (index: number) => void;
@@ -45,8 +45,8 @@ export interface IFormDynamicZoneProps<Block extends IBaseBlock> {
   onToggleUpdate: (index: number, opened: boolean) => void;
 }
 
-export function FormDynamicZone<Block extends IBaseBlock>(
-  props: IFormDynamicZoneProps<Block>,
+export function DynamicZone<Block extends IBaseBlock>(
+  props: IDynamicZoneProps<Block>,
 ): ReactElement {
   const {
     actionLabels = defaultActionLabels,
@@ -82,20 +82,17 @@ export function FormDynamicZone<Block extends IBaseBlock>(
     );
     if (correspondingType === undefined) {
       throw Error(
-        `Could not render a block of blockType '${block.blockType} in given IFormDynamicZoneBlock[]'`,
+        `Could not render a block of blockType '${block.blockType} in given IDynamicZoneBlock[]'`,
       );
     }
     return correspondingType.renderFunc(block, index);
   }
 
-  function onRemove(ref: IDynamicZoneBlockReference): void {
+  function onRemove(ref: IZoneBlockReference): void {
     onRemoveUpdate(ref.index);
   }
 
-  function onSwap(
-    ref: IDynamicZoneBlockReference,
-    direction: 'down' | 'up',
-  ): void {
+  function onSwap(ref: IZoneBlockReference, direction: 'down' | 'up'): void {
     const secondIndex = ref.index + (direction === 'up' ? -1 : 1);
     if (secondIndex >= 0 && secondIndex < ref.arrayLength) {
       onSwapUpdate(ref.index, secondIndex);
@@ -111,7 +108,7 @@ export function FormDynamicZone<Block extends IBaseBlock>(
   }
 
   function isMoveDisabled(
-    ref: IDynamicZoneBlockReference,
+    ref: IZoneBlockReference,
     direction: 'down' | 'up',
   ): boolean {
     return direction === 'up'
@@ -119,7 +116,7 @@ export function FormDynamicZone<Block extends IBaseBlock>(
       : ref.index === ref.arrayLength - 1;
   }
 
-  const formDynamicZoneDefaultActions: IAction<IDynamicZoneBlockReference>[] = [
+  const dynamicZoneDefaultActions: IAction<IZoneBlockReference>[] = [
     {
       componentProps: (ref) => ({ disabled: isMoveDisabled(ref, 'up') }),
       icon: <ArrowUp size={16} />,
@@ -148,7 +145,7 @@ export function FormDynamicZone<Block extends IBaseBlock>(
     );
     if (correspondingType === undefined) {
       throw Error(
-        `Could not append a block of blockType '${type} in given IFormDynamicZoneBlock[]'`,
+        `Could not append a block of blockType '${type} in given IDynamicZoneBlock[]'`,
       );
     }
     const newBlock = {
@@ -162,13 +159,13 @@ export function FormDynamicZone<Block extends IBaseBlock>(
     .filter(isNotNullNorEmpty)
     .map((b) => ({
       ...b,
-      blockActions: formDynamicZoneDefaultActions,
+      blockActions: dynamicZoneDefaultActions,
       ...availableBlocks.find((o) => o.block.blockType === b.blockType)
         ?.blockCardOptions,
     }));
 
   return (
-    <DynamicZone
+    <Zone
       blockOptions={blockOptions}
       blocks={blocksWithOptionsAndActions}
       fluid

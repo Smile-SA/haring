@@ -30,6 +30,7 @@
     "embla-carousel-react": "^7.1.0",
     "react-hook-form": "^7.50.1",
     "@hookform/error-message": "^2.0.1",
+    "@formkit/auto-animate": "^0.8.2",
     "recharts": "^2.12.3"
   },
   "devDependencies": {
