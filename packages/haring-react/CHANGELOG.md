@@ -1,5 +1,36 @@
 # @smile/haring-react
 
+## 0.16.0
+
+### Minor Changes
+
+- [#216](https://github.com/Smile-SA/haring/pull/216) [`2004835`](https://github.com/Smile-SA/haring/commit/200483533f4a10665709deb9545c5c564fdb8d3d) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Refactored DynamicZone and FormDynamicZone to be more configurable, remove state and react-hook-form dependency and make them neutral, fixed errors and added a few features, added example page ReactHookFormDynamicZone to implement FormDynamicZone example with react-hook-form, added/reworked types and utilities
+
+- [#210](https://github.com/Smile-SA/haring/pull/210) [`2a9441f`](https://github.com/Smile-SA/haring/commit/2a9441fd5b0d794abd10b622c695eae2ab5c54c0) Thanks [@Meriemu](https://github.com/Meriemu)! - Accessibility Correction unsupported ARIA attributes
+
+- [#208](https://github.com/Smile-SA/haring/pull/208) [`85e6198`](https://github.com/Smile-SA/haring/commit/85e6198db3bf58afbf3ebf1e256fa4c8ae1c6785) Thanks [@Meriemu](https://github.com/Meriemu)! - make corrections to color contrasts
+
+- [#204](https://github.com/Smile-SA/haring/pull/204) [`2aead99`](https://github.com/Smile-SA/haring/commit/2aead99da90fc43254d1b8882d33132612e767dc) Thanks [@subraAntoine](https://github.com/subraAntoine)! - fixed button accessibility erros
+
+- [#211](https://github.com/Smile-SA/haring/pull/211) [`0f0d647`](https://github.com/Smile-SA/haring/commit/0f0d647eda2e3af05f1d678f2529c9f7d95d4129) Thanks [@Meriemu](https://github.com/Meriemu)! - correction to dropdownMenu role
+
+- [#206](https://github.com/Smile-SA/haring/pull/206) [`810c143`](https://github.com/Smile-SA/haring/commit/810c143ae7761c07943797a5a6d300bf5b21c840) Thanks [@Meriemu](https://github.com/Meriemu)! - Creating a floating menu
+
+- [#207](https://github.com/Smile-SA/haring/pull/207) [`81ba004`](https://github.com/Smile-SA/haring/commit/81ba004b67465466235a68a80c1c7f2c4131cb93) Thanks [@Meriemu](https://github.com/Meriemu)! - (accessibility) make corrections in Image/Avatar component
+
+- [#215](https://github.com/Smile-SA/haring/pull/215) [`61b6f39`](https://github.com/Smile-SA/haring/commit/61b6f394adcfdb6ee250ae81894534677cf87224) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Added DynamicZone component, related types and utilities, updated snapshot
+
+- [#217](https://github.com/Smile-SA/haring/pull/217) [`4538167`](https://github.com/Smile-SA/haring/commit/4538167d2f6700399f55c645bba44cf5f66fb6ec) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Renamed components into Zone, DynamicZone, and the example page into FormDynamicZone, added example page with animations using AutoAnimate
+
+- [#212](https://github.com/Smile-SA/haring/pull/212) [`3d27f22`](https://github.com/Smile-SA/haring/commit/3d27f22453fccc14bc7babc0b7cac21b5b60da5f) Thanks [@Meriemu](https://github.com/Meriemu)! - correction to accessibility error dropdownMenu (focusable element)
+
+- [#205](https://github.com/Smile-SA/haring/pull/205) [`69a0aba`](https://github.com/Smile-SA/haring/commit/69a0aba210283bfc4374d7c5e5d7cff62d5234b4) Thanks [@subraAntoine](https://github.com/subraAntoine)! - Fixed form elements accessibility error
+
+### Patch Changes
+
+- Updated dependencies [[`2004835`](https://github.com/Smile-SA/haring/commit/200483533f4a10665709deb9545c5c564fdb8d3d), [`61b6f39`](https://github.com/Smile-SA/haring/commit/61b6f394adcfdb6ee250ae81894534677cf87224)]:
+  - @smile/haring-react-shared@0.16.0
+
 ## 0.15.0
 
 ### Minor Changes

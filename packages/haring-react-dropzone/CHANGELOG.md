@@ -1,5 +1,13 @@
 # @smile/haring-react-dropzone
 
+## 0.16.0
+
+### Patch Changes
+
+- Updated dependencies [[`2004835`](https://github.com/Smile-SA/haring/commit/200483533f4a10665709deb9545c5c564fdb8d3d), [`2a9441f`](https://github.com/Smile-SA/haring/commit/2a9441fd5b0d794abd10b622c695eae2ab5c54c0), [`85e6198`](https://github.com/Smile-SA/haring/commit/85e6198db3bf58afbf3ebf1e256fa4c8ae1c6785), [`2aead99`](https://github.com/Smile-SA/haring/commit/2aead99da90fc43254d1b8882d33132612e767dc), [`0f0d647`](https://github.com/Smile-SA/haring/commit/0f0d647eda2e3af05f1d678f2529c9f7d95d4129), [`810c143`](https://github.com/Smile-SA/haring/commit/810c143ae7761c07943797a5a6d300bf5b21c840), [`81ba004`](https://github.com/Smile-SA/haring/commit/81ba004b67465466235a68a80c1c7f2c4131cb93), [`61b6f39`](https://github.com/Smile-SA/haring/commit/61b6f394adcfdb6ee250ae81894534677cf87224), [`4538167`](https://github.com/Smile-SA/haring/commit/4538167d2f6700399f55c645bba44cf5f66fb6ec), [`3d27f22`](https://github.com/Smile-SA/haring/commit/3d27f22453fccc14bc7babc0b7cac21b5b60da5f), [`69a0aba`](https://github.com/Smile-SA/haring/commit/69a0aba210283bfc4374d7c5e5d7cff62d5234b4)]:
+  - @smile/haring-react-shared@0.16.0
+  - @smile/haring-react@0.16.0
+
 ## 0.15.0
 
 ### Minor Changes
