@@ -28,7 +28,10 @@ export interface IDynamicZoneBlockInternalComponentProps {
   contentCollapseProps?: CollapseProps;
   contentContainerProps?: ContainerProps;
   footerCardSectionProps?: CardSectionProps;
-  headerActionListProps?: IActionListProps<IDynamicZoneBlockReference>;
+  headerActionListProps?: Omit<
+    IActionListProps<IDynamicZoneBlockReference>,
+    'actions' | 'isCompactStyle' | 'selectedElements'
+  >;
   headerCardSectionProps?: CardSectionProps;
   headerGroupProps?: GroupProps;
   toggleComponentProps?: IDynamicZoneBlockToggleProps;
@@ -50,7 +53,7 @@ export interface IDynamicZoneBlockProps extends CardProps {
   actions?: IAction<IDynamicZoneBlockReference>[];
   children: ReactNode;
   footerChildren?: ReactNode;
-  headerChildren: ReactNode;
+  headerChildren?: ReactNode;
   internalComponentProps?: IDynamicZoneBlockInternalComponentProps;
   onToggle: (opened: boolean) => void;
   opened: boolean;

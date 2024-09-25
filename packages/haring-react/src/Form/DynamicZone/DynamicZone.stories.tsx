@@ -19,7 +19,22 @@ export const DynamicZone: IStory = {
     blockOptions: dynamicZoneButtons,
     blocks: dynamicZoneBlocks,
     buttonsText: 'Ajouter un block',
-    internalBlockCardProps: {
+    onAppendBlock: action('onAppendBlock, id'),
+    onRenderBlockContent: (_b, index) => <input key={index} />,
+    onToggleBlock: action('onToggleBlock'),
+  },
+};
+
+export const CustomInternalProps: IStory = {
+  args: {
+    blockOptions: dynamicZoneButtons,
+    blocks: dynamicZoneBlocks,
+    internalBlockComponentProps: {
+      headerActionListProps: {
+        actionIconDefaultProps: {
+          color: 'white',
+        },
+      },
       headerCardSectionProps: {
         bg: 'cadetblue',
         c: 'white',

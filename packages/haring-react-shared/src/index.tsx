@@ -22,6 +22,8 @@ export {
   createThemes,
   isCallback,
   isNotNullNorEmpty,
+  isObject,
+  findNestedObject,
   typeGuard,
   typeGuardInterface,
 } from './helpers';

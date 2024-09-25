@@ -29,6 +29,7 @@
     "@smile/haring-react-table": "*",
     "embla-carousel-react": "^7.1.0",
     "react-hook-form": "^7.50.1",
+    "@hookform/error-message": "^2.0.1",
     "recharts": "^2.12.3"
   },
   "devDependencies": {
@@ -41,6 +42,8 @@
     "@mantine/core": ">=7.11.0",
     "@mantine/dates": ">=7.11.0",
     "@mantine/hooks": ">=7.11.0",
+    "react-hook-form": "^7.52.2",
+    "@hookform/error-message": "^2.0.1",
     "@phosphor-icons/react": ">=2",
     "react": ">=18.0",
     "react-dom": ">=18.0"

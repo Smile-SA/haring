@@ -12,6 +12,8 @@ export type { IAddressAutocompleteFieldProps } from './Form/AddressGouvAutocompl
 export { AddressGouvAutocompleteField } from './Form/AddressGouvAutocompleteField/AddressGouvAutocompleteField';
 export type { IDynamicZoneProps } from './Form/DynamicZone/DynamicZone';
 export { DynamicZone } from './Form/DynamicZone/DynamicZone';
+export type { IFormDynamicZoneProps } from './Form/FormDynamicZone/FormDynamicZone';
+export { FormDynamicZone } from './Form/FormDynamicZone/FormDynamicZone';
 export type { IAddressFieldsProps } from './Form/AddressFields/AddressFields';
 export { AddressFields } from './Form/AddressFields/AddressFields';
 export type { IIconCardProps } from './Components/IconCard/IconCard';
@@ -131,6 +133,9 @@ export type {
   IThumbnailAction,
   IThumbnailData,
   IBaseBlock,
-  IBaseBlockButton,
+  IBaseBlockCardOptions,
+  IBaseBlockFull,
+  IBaseBlockButtonOptions,
   IBaseBlockType,
+  IFormDynamicZoneBlock,
 } from './types';
