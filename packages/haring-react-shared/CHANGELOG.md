@@ -1,5 +1,13 @@
 # @smile/haring-react-shared
 
+## 0.16.0
+
+### Minor Changes
+
+- [#216](https://github.com/Smile-SA/haring/pull/216) [`2004835`](https://github.com/Smile-SA/haring/commit/200483533f4a10665709deb9545c5c564fdb8d3d) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Refactored DynamicZone and FormDynamicZone to be more configurable, remove state and react-hook-form dependency and make them neutral, fixed errors and added a few features, added example page ReactHookFormDynamicZone to implement FormDynamicZone example with react-hook-form, added/reworked types and utilities
+
+- [#215](https://github.com/Smile-SA/haring/pull/215) [`61b6f39`](https://github.com/Smile-SA/haring/commit/61b6f394adcfdb6ee250ae81894534677cf87224) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Added DynamicZone component, related types and utilities, updated snapshot
+
 ## 0.15.0
 
 ### Minor Changes
