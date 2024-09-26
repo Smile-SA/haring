@@ -1,5 +1,25 @@
 # storybook-pages
 
+## 0.16.0
+
+### Minor Changes
+
+- [#216](https://github.com/Smile-SA/haring/pull/216) [`2004835`](https://github.com/Smile-SA/haring/commit/200483533f4a10665709deb9545c5c564fdb8d3d) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Refactored DynamicZone and FormDynamicZone to be more configurable, remove state and react-hook-form dependency and make them neutral, fixed errors and added a few features, added example page ReactHookFormDynamicZone to implement FormDynamicZone example with react-hook-form, added/reworked types and utilities
+
+- [#202](https://github.com/Smile-SA/haring/pull/202) [`d162e5f`](https://github.com/Smile-SA/haring/commit/d162e5fd1ca9af5f3db407ba299b8558a90712ac) Thanks [@Meriemu](https://github.com/Meriemu)! - some corrections
+
+- [#217](https://github.com/Smile-SA/haring/pull/217) [`4538167`](https://github.com/Smile-SA/haring/commit/4538167d2f6700399f55c645bba44cf5f66fb6ec) Thanks [@QuentinLeCaignec](https://github.com/QuentinLeCaignec)! - Renamed components into Zone, DynamicZone, and the example page into FormDynamicZone, added example page with animations using AutoAnimate
+
+- [#199](https://github.com/Smile-SA/haring/pull/199) [`d46907c`](https://github.com/Smile-SA/haring/commit/d46907cbd38b7ae9e90c38c9f04b7d76d934d4c0) Thanks [@Meriemu](https://github.com/Meriemu)! - StepperPage: add step 3
+
+### Patch Changes
+
+- Updated dependencies [[`4bed473`](https://github.com/Smile-SA/haring/commit/4bed47334b645d5868ddb67cd8e851433bf85d09), [`2004835`](https://github.com/Smile-SA/haring/commit/200483533f4a10665709deb9545c5c564fdb8d3d), [`2a9441f`](https://github.com/Smile-SA/haring/commit/2a9441fd5b0d794abd10b622c695eae2ab5c54c0), [`85e6198`](https://github.com/Smile-SA/haring/commit/85e6198db3bf58afbf3ebf1e256fa4c8ae1c6785), [`2aead99`](https://github.com/Smile-SA/haring/commit/2aead99da90fc43254d1b8882d33132612e767dc), [`eaf66ee`](https://github.com/Smile-SA/haring/commit/eaf66eef3b2000758c5497d3126f0c886bc454a0), [`0f0d647`](https://github.com/Smile-SA/haring/commit/0f0d647eda2e3af05f1d678f2529c9f7d95d4129), [`810c143`](https://github.com/Smile-SA/haring/commit/810c143ae7761c07943797a5a6d300bf5b21c840), [`81ba004`](https://github.com/Smile-SA/haring/commit/81ba004b67465466235a68a80c1c7f2c4131cb93), [`61b6f39`](https://github.com/Smile-SA/haring/commit/61b6f394adcfdb6ee250ae81894534677cf87224), [`4538167`](https://github.com/Smile-SA/haring/commit/4538167d2f6700399f55c645bba44cf5f66fb6ec), [`3d27f22`](https://github.com/Smile-SA/haring/commit/3d27f22453fccc14bc7babc0b7cac21b5b60da5f), [`69a0aba`](https://github.com/Smile-SA/haring/commit/69a0aba210283bfc4374d7c5e5d7cff62d5234b4)]:
+  - @smile/haring-react-table@0.16.0
+  - @smile/haring-react-shared@0.16.0
+  - @smile/haring-react@0.16.0
+  - @smile/haring-react-dropzone@0.16.0
+
 ## 0.15.0
 
 ### Minor Changes
